@@ -1,0 +1,64 @@
+---
+// Variable Fraunces: full axis set (wght + opsz + SOFT + WONK) — design uses
+// opsz/SOFT for TocSide numerals. Size optimization is an M4 concern.
+import '@fontsource-variable/fraunces/full.css';
+import '@fontsource-variable/fraunces/full-italic.css';
+import '@fontsource/instrument-sans/400.css';
+import '@fontsource/instrument-sans/400-italic.css';
+import '@fontsource/instrument-sans/500.css';
+import '@fontsource/noto-serif-sc/400.css';
+import '@fontsource/noto-serif-jp/400.css';
+import '@fontsource/noto-serif-kr/400.css';
+
+import '../../styles/tokens.css';
+import '../../styles/typography.css';
+import '../../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Distant Friends — phrases for friends across languages',
+  description = 'A warm glossary of friendly phrases across languages, tuned to who you write to and how you want to sound.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <title>{title}</title>
+
+    <script is:inline>
+      // FOUC defense: apply theme before stylesheet parse so first paint is
+      // correct. Persisted as raw string by @nanostores/persistent under the
+      // same key as $theme in src/lib/stores.ts.
+      try {
+        var t = localStorage.getItem('distant-friends:theme:v1');
+        if (t === 'dark' || t === 'light') {
+          document.documentElement.dataset.theme = t;
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body data-view="table">
+    <script is:inline>
+      // FOUC defense for view mode: persistent atom is stored as raw string.
+      // Resolve 'auto' via matchMedia so the first paint matches the toggle's
+      // initial state.
+      try {
+        var v = localStorage.getItem('distant-friends:view:v1');
+        if (v !== 'cards' && v !== 'table') {
+          v = window.matchMedia('(min-width: 960px)').matches ? 'table' : 'cards';
+        }
+        document.body.dataset.view = v;
+      } catch (e) {}
+    </script>
+    <slot />
+  </body>
+</html>
