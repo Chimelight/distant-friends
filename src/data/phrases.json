@@ -1,0 +1,13 @@
+[
+  {
+    "id": "greeting-hello",
+    "scene": "greetings",
+    "order": 1,
+    "trans": {
+      "zh": {
+        "gloss": "问候",
+        "variants": [{ "text": "你好", "rom": "nǐ hǎo" }]
+      }
+    }
+  }
+]

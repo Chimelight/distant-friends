@@ -1,0 +1,10 @@
+[
+  {
+    "code": "zh",
+    "native": "中文",
+    "tts": "zh-CN",
+    "rtl": false,
+    "defaultOn": true,
+    "defaultAnchor": true
+  }
+]
