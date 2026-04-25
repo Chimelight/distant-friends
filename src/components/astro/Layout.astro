@@ -23,6 +23,10 @@ const {
   title = 'Distant Friends — phrases for friends across languages',
   description = 'A warm glossary of friendly phrases across languages, tuned to who you write to and how you want to sound.',
 } = Astro.props;
+
+// Canonical URL points at GitHub Pages; Vercel build is treated as preview.
+const canonical = 'https://chimelight.github.io/distant-friends/';
+const ogImage = `${canonical.replace(/\/$/, '')}/og-image.png`;
 ---
 
 <!doctype html>
@@ -31,8 +35,26 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Distant Friends" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <script is:inline>
       // FOUC defense: apply theme before stylesheet parse so first paint is
