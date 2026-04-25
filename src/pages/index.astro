@@ -1,0 +1,25 @@
+---
+import { LanguagesFile, ScenesFile, PhrasesFile } from '../lib/schema';
+import languagesRaw from '../data/languages.json';
+import scenesRaw from '../data/scenes.json';
+import phrasesRaw from '../data/phrases.json';
+
+// Build-time schema validation. A Zod error here fails `astro build` — which
+// is what we want: never ship malformed data.
+const languages = LanguagesFile.parse(languagesRaw);
+const scenes = ScenesFile.parse(scenesRaw);
+const phrases = PhrasesFile.parse(phrasesRaw);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <title>Distant Friends</title>
+  </head>
+  <body>
+    <p>Hello — {languages.length} language, {scenes.length} scene, {phrases.length} phrase.</p>
+  </body>
+</html>
