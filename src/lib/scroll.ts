@@ -2,17 +2,17 @@ import { atom } from 'nanostores';
 
 export const SCROLL_THRESHOLD = 420;
 
-export const $scrolled = atom<boolean>(false);
-export const $activeScene = atom<string>('');
-export const $tocExpanded = atom<boolean>(false);
+export const scrolled = atom<boolean>(false);
+export const activeScene = atom<string>('');
+export const tocExpanded = atom<boolean>(false);
 
 let initialized = false;
 
 /**
- * Attach a RAF-coalesced window scroll listener that updates $scrolled and
- * $activeScene. Idempotent — safe to call from multiple component mounts.
- * Callers provide a selector for scene block elements so this module stays
- * decoupled from DOM structure.
+ * Attach a RAF-coalesced window scroll listener that updates scrolled and
+ * activeScene. Idempotent — safe to call from multiple component mounts.
+ * Mirrors `scrolled` to body.classList so global CSS selectors can react
+ * without each component subscribing.
  */
 export function initScrollListener(sceneSelector = '.scene-block'): () => void {
   if (typeof window === 'undefined') return () => {};
@@ -22,7 +22,11 @@ export function initScrollListener(sceneSelector = '.scene-block'): () => void {
   let rafId = 0;
   const tick = () => {
     rafId = 0;
-    $scrolled.set(window.scrollY > SCROLL_THRESHOLD);
+    const next = window.scrollY > SCROLL_THRESHOLD;
+    if (next !== scrolled.get()) {
+      scrolled.set(next);
+      document.body.classList.toggle('scrolled', next);
+    }
 
     const blocks = document.querySelectorAll<HTMLElement>(sceneSelector);
     let active = '';
@@ -31,7 +35,7 @@ export function initScrollListener(sceneSelector = '.scene-block'): () => void {
       if (top <= 120) active = block.dataset.scene ?? active;
       else break;
     }
-    if (active && active !== $activeScene.get()) $activeScene.set(active);
+    if (active && active !== activeScene.get()) activeScene.set(active);
   };
 
   const onScroll = () => {
