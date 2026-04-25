@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { tone, addressee, showToast } from '../../lib/stores';
+  import { tone, showToast } from '../../lib/stores';
   import { copyText } from '../../lib/clipboard';
   import type { TVariant } from '../../lib/schema';
 
@@ -19,6 +19,10 @@
   let copied = $state(false);
   let copiedTimer: number | undefined;
 
+  // Tag line is passive disclosure: shows the variant's tone (only when the
+  // tone slot is 'any', otherwise the slot itself already communicates it),
+  // who-says, and to-whom hints. Addressee gender / count are surfaced here
+  // because they no longer have a UI filter.
   const tagText = $derived.by(() => {
     const bits: string[] = [];
     if ($tone === 'any' && variant.tone && TONE_LABELS[variant.tone]) {
@@ -26,9 +30,9 @@
     }
     if (variant.speakerGender === 'm') bits.push('he writes');
     if (variant.speakerGender === 'f') bits.push('she writes');
-    if (variant.addresseeCount === 'many' && $addressee !== 'everyone') {
-      bits.push('to everyone');
-    }
+    if (variant.addresseeGender === 'f') bits.push('to a woman');
+    if (variant.addresseeGender === 'm') bits.push('to a man');
+    if (variant.addresseeCount === 'many') bits.push('to everyone');
     return bits.join(' · ');
   });
 

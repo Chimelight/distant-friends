@@ -1,6 +1,6 @@
 <script lang="ts">
   import TranslationCell from './TranslationCell.svelte';
-  import { selectedLangs, anchor, tone, addressee } from '../../lib/stores';
+  import { selectedLangs, anchor, tone } from '../../lib/stores';
   import { visibleVariants } from '../../lib/filter';
   import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
@@ -37,7 +37,7 @@
   function anchorVariants(p: TPhrase) {
     const tr = p.trans[$anchor];
     if (!tr) return null;
-    const vs = visibleVariants(tr.variants, $tone, $addressee);
+    const vs = visibleVariants(tr.variants, $tone);
     const primary = vs[0] || tr.variants[0];
     return { primary, gloss: tr.gloss };
   }
@@ -93,7 +93,7 @@
                   </td>
                   {#each otherLangs as L (L.code)}
                     {@const tr = p.trans[L.code]}
-                    {@const vs = tr ? visibleVariants(tr.variants, $tone, $addressee) : []}
+                    {@const vs = tr ? visibleVariants(tr.variants, $tone) : []}
                     {#if !tr || !vs.length}
                       <td class="trans-cell empty"></td>
                     {:else}

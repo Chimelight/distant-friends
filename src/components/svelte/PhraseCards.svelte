@@ -1,6 +1,6 @@
 <script lang="ts">
   import TranslationCell from './TranslationCell.svelte';
-  import { selectedLangs, anchor, tone, addressee } from '../../lib/stores';
+  import { selectedLangs, anchor, tone } from '../../lib/stores';
   import { visibleVariants } from '../../lib/filter';
   import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
@@ -49,7 +49,7 @@
         <div class="card-list">
           {#each items as p, i (p.id)}
             {@const tr = p.trans[$anchor]}
-            {@const anchorVs = tr ? visibleVariants(tr.variants, $tone, $addressee) : []}
+            {@const anchorVs = tr ? visibleVariants(tr.variants, $tone) : []}
             {@const primary = anchorVs[0] ?? tr?.variants[0]}
             <article class="card" style={`animation-delay:${i * 30}ms`}>
               <div class="card-head">
@@ -67,7 +67,7 @@
               </div>
               {#each otherLangs as L (L.code)}
                 {@const t = p.trans[L.code]}
-                {@const vs = t ? visibleVariants(t.variants, $tone, $addressee) : []}
+                {@const vs = t ? visibleVariants(t.variants, $tone) : []}
                 {#if t && vs.length}
                   <div class="lang-block">
                     <div class="lang-label">

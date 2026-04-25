@@ -7,19 +7,12 @@
     "capHint": "up to 5 at a time",
     "anchoredIn": "Anchored in",
     "iWrite": "I write",
-    "to": "to",
     "tones": {
       "any": "in any tone",
       "close": "tenderly",
       "casual": "casually",
       "neutral": "evenly",
       "polite": "politely"
-    },
-    "addressees": {
-      "friend": "a friend",
-      "woman": "a woman",
-      "man": "a man",
-      "everyone": "everyone"
     }
   },
   "actions": {
