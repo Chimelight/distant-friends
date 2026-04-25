@@ -1,0 +1,9 @@
+[
+  { "code": "zh", "native": "中文",      "tts": "zh-CN", "rtl": false, "defaultOn": true,  "defaultAnchor": true },
+  { "code": "en", "native": "English",   "tts": "en-US", "rtl": false, "defaultOn": true,  "defaultAnchor": false },
+  { "code": "ja", "native": "日本語",    "tts": "ja-JP", "rtl": false, "defaultOn": true,  "defaultAnchor": false },
+  { "code": "ko", "native": "한국어",    "tts": "ko-KR", "rtl": false, "defaultOn": false, "defaultAnchor": false },
+  { "code": "es", "native": "Español",   "tts": "es-ES", "rtl": false, "defaultOn": false, "defaultAnchor": false },
+  { "code": "pt", "native": "Português", "tts": "pt-BR", "rtl": false, "defaultOn": true,  "defaultAnchor": false },
+  { "code": "fr", "native": "Français",  "tts": "fr-FR", "rtl": false, "defaultOn": true,  "defaultAnchor": false }
+]

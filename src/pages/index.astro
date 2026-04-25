@@ -1,0 +1,48 @@
+---
+import Layout from '../components/astro/Layout.astro';
+import Masthead from '../components/astro/Masthead.astro';
+import Footer from '../components/astro/Footer.astro';
+
+import ViewToggle from '../components/svelte/ViewToggle.svelte';
+import Stationery from '../components/svelte/Stationery.svelte';
+import TocTop from '../components/svelte/TocTop.svelte';
+import TocSide from '../components/svelte/TocSide.svelte';
+import StickyBar from '../components/svelte/StickyBar.svelte';
+import PhraseTable from '../components/svelte/PhraseTable.svelte';
+import PhraseCards from '../components/svelte/PhraseCards.svelte';
+import Toast from '../components/svelte/Toast.svelte';
+
+import { LanguagesFile, ScenesFile, PhrasesFile } from '../lib/schema';
+import languagesRaw from '../data/languages.json';
+import scenesRaw from '../data/scenes.json';
+import phrasesRaw from '../data/phrases.json';
+
+// Build-time schema validation. A Zod error here fails `astro build`.
+LanguagesFile.parse(languagesRaw);
+ScenesFile.parse(scenesRaw);
+PhrasesFile.parse(phrasesRaw);
+---
+
+<Layout>
+  <StickyBar client:load />
+
+  <div class="shell">
+    <Masthead>
+      <ViewToggle slot="view-toggle" client:load />
+    </Masthead>
+
+    <Stationery client:load />
+
+    <TocTop client:load />
+
+    <main>
+      <PhraseTable client:load />
+      <PhraseCards client:load />
+    </main>
+
+    <Footer />
+  </div>
+
+  <TocSide client:load />
+  <Toast client:load />
+</Layout>

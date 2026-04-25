@@ -1,0 +1,33 @@
+{
+  "masthead": {
+    "tagline": "A warm glossary — small enough to hold, tuned to <em>who</em> you're writing to and <em>how</em> you want to sound."
+  },
+  "stationery": {
+    "langsLabel": "Letters",
+    "capHint": "up to 5 at a time",
+    "anchoredIn": "Anchored in",
+    "iWrite": "I write",
+    "tones": {
+      "any": "in any tone",
+      "close": "tenderly",
+      "casual": "casually",
+      "neutral": "evenly",
+      "polite": "politely"
+    }
+  },
+  "actions": {
+    "copy": "copy",
+    "copied": "✓ copied",
+    "listen": "listen",
+    "star": "starred"
+  },
+  "filters": {
+    "starredOnly": "Starred only"
+  },
+  "footer": {
+    "line1": "Sent with care across rivers and oceans.",
+    "sig": "made for friends, by a friend",
+    "sourceLabel": "View source on GitHub",
+    "sourceUrl": "https://github.com/Chimelight/distant-friends"
+  }
+}

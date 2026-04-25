@@ -1,0 +1,8 @@
+[
+  { "id": "greetings",   "num": "No. I",   "title": "Greetings",   "em": "Greetings"   },
+  { "id": "catching-up", "num": "No. II",  "title": "Catching Up", "em": "Up"          },
+  { "id": "gratitude",   "num": "No. III", "title": "Gratitude",   "em": "Gratitude"   },
+  { "id": "affection",   "num": "No. IV",  "title": "Affection",   "em": "Affection"   },
+  { "id": "well-wishes", "num": "No. V",   "title": "Warm Wishes", "em": "Wishes"      },
+  { "id": "farewells",   "num": "No. VI",  "title": "Farewells",   "em": "Farewells"   }
+]
