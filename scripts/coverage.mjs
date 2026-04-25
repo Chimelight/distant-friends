@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 /**
- * Print a per-phrase × per-language coverage matrix.
+ * Print a per-phrase × per-language coverage matrix plus data-maturity
+ * metrics that decide when to bring back a UI control.
  *
- * Usage:  pnpm run coverage
+ * Matrix:  ✓ = at least one variant for that language; · = missing.
+ * Maturity:
+ *   - speakerGender variants → triggers a "Signed by" Stationery slot at ≥10
+ *   - addresseeGender variants → triggers an addressee gender slot at ≥10
+ *   - addresseeCount  variants → informational
  *
- * A `✓` means the phrase has at least one variant in that language.
- * A `·` means the language is missing for that phrase.
+ * Usage:  pnpm coverage
  */
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -26,13 +30,22 @@ console.log('-'.repeat(head.length));
 
 let totalCells = 0;
 let filledCells = 0;
+let unreviewedCells = 0;
+const tally = { speakerGender: 0, addresseeGender: 0, addresseeCount: 0 };
 
 for (const p of phrases) {
   const cells = codes.map((c) => {
     totalCells++;
-    const has = p.trans?.[c]?.variants?.length > 0;
-    if (has) filledCells++;
-    return has ? '✓' : '·';
+    const tr = p.trans?.[c];
+    const variants = tr?.variants ?? [];
+    if (variants.length > 0) filledCells++;
+    for (const v of variants) {
+      if (v.speakerGender) tally.speakerGender++;
+      if (v.addresseeGender) tally.addresseeGender++;
+      if (v.addresseeCount) tally.addresseeCount++;
+      if (v.reviewed === false) unreviewedCells++;
+    }
+    return variants.length ? '✓' : '·';
   });
   console.log(p.id.padEnd(idCol) + '  ' + cells.map((c) => c.padEnd(2)).join('  '));
 }
@@ -40,13 +53,33 @@ for (const p of phrases) {
 console.log();
 const pct = ((filledCells / totalCells) * 100).toFixed(1);
 console.log(`Coverage: ${filledCells} / ${totalCells} cells (${pct}%)`);
+if (unreviewedCells) {
+  console.log(`Unreviewed variants: ${unreviewedCells}`);
+}
 
+console.log();
+console.log('Per language:');
 const perLang = codes.map((c) => {
   const have = phrases.filter((p) => p.trans?.[c]?.variants?.length > 0).length;
   return { code: c, have, miss: phrases.length - have };
 });
-console.log();
-console.log('Per language:');
 for (const row of perLang) {
-  console.log(`  ${row.code}  ${row.have}/${phrases.length}` + (row.miss ? `  (missing ${row.miss})` : ''));
+  const note = row.miss ? `  (missing ${row.miss})` : '';
+  console.log(`  ${row.code}  ${row.have}/${phrases.length}${note}`);
 }
+
+const THRESHOLD = 10;
+function bar(n, label, threshold = null) {
+  if (threshold === null) {
+    return `  ${label.padEnd(16)} ${n}`;
+  }
+  const ready = n >= threshold;
+  const tag = ready ? '✓ ready to surface' : `${threshold - n} away from threshold (${threshold})`;
+  return `  ${label.padEnd(16)} ${String(n).padEnd(4)} ${tag}`;
+}
+
+console.log();
+console.log('Data maturity (gender / count axes):');
+console.log(bar(tally.speakerGender, 'speakerGender', THRESHOLD));
+console.log(bar(tally.addresseeGender, 'addresseeGender', THRESHOLD));
+console.log(bar(tally.addresseeCount, 'addresseeCount'));
