@@ -346,26 +346,16 @@ export type TScene    = z.infer<typeof Scene>;
 
 ### 5.7 变体筛选逻辑（`src/lib/filter.ts`）
 
-UI 状态有三个维度影响变体显示：`anchor`（哪种语言放锚点列）、`tone`（`any` 或某一档）、`addressee`（`friend` / `woman` / `man` / `everyone`）。
+UI 状态有两个维度影响变体显示：`anchor`（哪种语言放锚点列）、`tone`（`any` 或某一档）。
 
 ```ts
 export function visibleVariants(
   all: TVariant[],
   tone: 'any' | 'close' | 'casual' | 'neutral' | 'polite',
-  addressee: 'friend' | 'woman' | 'man' | 'everyone',
 ): TVariant[] {
   if (!all?.length) return [];
   let pool = all;
 
-  // 1. addressee count: everyone -> only many; otherwise -> exclude many
-  if (addressee === 'everyone') {
-    pool = pool.filter(v => v.addresseeCount === 'many');
-    if (!pool.length) return [];
-  } else {
-    pool = pool.filter(v => v.addresseeCount !== 'many');
-  }
-
-  // 2. tone: filter or fallback
   if (tone !== 'any') {
     const toned = pool.filter(v => v.tone === tone);
     if (toned.length) pool = toned;
@@ -376,18 +366,13 @@ export function visibleVariants(
     }
   }
 
-  // 3. addressee gender (rare)
-  const g = addressee === 'woman' ? 'f' : addressee === 'man' ? 'm' : null;
-  if (g) {
-    const matched = pool.filter(v => v.addresseeGender === g);
-    if (matched.length) pool = matched;
-  }
-
   return pool;
 }
 ```
 
-**关键原则**：筛选失败时优雅降级，不返回空数组（除非 `everyone` 模式下完全没有 `many` 变体）。这保证 UI 里永远有东西显示。
+**关键原则**：筛选失败时优雅降级，不返回空数组。这保证 UI 里永远有东西显示。
+
+**addressee 维度故意省略**。`speakerGender` / `addresseeGender` / `addresseeCount` 仍然在 schema 上保留，但只作为**被动描述标签**通过 VariantRow 的 tag line 渲染（"he writes" / "to a woman" / "to everyone"），不参与筛选。原因：v1 数据下这三个轴的命中率太低（speakerGender 2/77、addresseeGender 0/77、addresseeCount 7/77），做成显眼的 UI 控件让用户拨了发现没变化反而更糟。`scripts/coverage.mjs` 会持续打印这三个轴的命中数 + 距阈值的差距；当 speakerGender 或 addresseeGender 累积超过 ~10 个 cell 时再考虑加回 UI 控件（届时 Stationery 大概是 *signed by [me · he · she]* 的第三句，或类似 addressee gender 的写法）。
 
 ### 5.8 UI 字符串（`src/content/ui/en.json`）
 
@@ -505,15 +490,16 @@ export function visibleVariants(
 - **状态变化反馈**：选中后 slot 文字更新 + 一个 `.pulse` 短动画（350ms）+ 主视图重渲染
 - **键盘可用**：Tab 聚焦，Enter/Space 展开，方向键移动选项，Enter 选定
 
-**三个 slot 的值域**
+**两个 slot 的值域**
 
 | Slot | 值 |
 |---|---|
 | `anchor` | 所有语言 `languages.json` |
 | `tone` | `any` / `close` / `casual` / `neutral` / `polite`（文案 "in any tone" / "tenderly" / "casually" / "evenly" / "politely"） |
-| `addressee` | `friend` / `woman` / `man` / `everyone`（文案 "a friend" / "a woman" / "a man" / "everyone"） |
 
-**默认状态**：`anchor=zh` / `tone=any` / `addressee=friend`。所有文案从 `ui/en.json` 读。
+**默认状态**：`anchor=zh` / `tone=any`。所有文案从 `ui/en.json` 读。
+
+> v1.5 起 `addressee` slot（friend / woman / man / everyone）从 Stationery 撤掉。原因：当前数据下 addresseeGender 命中率 0、addresseeCount 仅 7/77，控件存在但拨动无变化，反而违反"美学优先"+"内容是主角"。schema 字段保留，相关 tag（"to a woman" / "to everyone"）改在 VariantRow tag line 被动展示。详见 §5.7。
 
 **实现注意 ⚠️**：popover 内的选项 button 关闭态必须 `tabindex="-1"`，展开时才改为 `tabindex="0"`。否则即使视觉上 opacity:0，Tab 键焦点也会进入隐藏选项，浏览器自动滚动把它带进视口，造成"按 Tab 莫名弹窗"的 bug（demo 早期踩过）。`closeAllSlots()` 函数里要把所有 popover 子按钮 tabindex 重置为 -1。
 
@@ -694,7 +680,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Affection · V. War
 
 - 左：`<button class="sb-mark">致 · 远 · 方</button>`——点击 smooth scroll 回顶
 - 细竖线分隔
-- 中：`<StickyBarProse>` 包含一句缩略版 stationery —— "I write — [tone] — to [addressee]"。**不含 anchor slot**（锚点语言切换频率极低，留在 stationery）。tone / addressee 仍是 `<SlotPicker>` 实例，跟主 stationery 共享同一个 store，任一处修改两处同步。
+- 中：`<StickyBarProse>` 包含一句缩略版 stationery —— "I write — [tone]"。**不含 anchor slot**（锚点语言切换频率极低，留在 stationery）。**不含 addressee slot**（v1.5 起整体撤掉，详见 §5.7 / §6.2）。tone 是 `<SlotPicker>` 实例，跟主 stationery 共享同一个 store，任一处修改两处同步。
 
 **响应式**
 
@@ -1010,7 +996,7 @@ jobs:
 - [ ] **验收清单**（对照 v3 demo 逐一确认）：
   - [ ] 首屏状态：TocTop 可见、TocSide 不可见、StickyBar 不可见、ViewToggle 右上角可见
   - [ ] 滚动过 420px：TocTop 淡出、TocSide 淡入（仅卡片视图）、StickyBar 淡入
-  - [ ] Stationery 三个 slot 都能展开选项并同步到数据
+  - [ ] Stationery 两个 slot（anchor / tone）都能展开选项并同步到数据
   - [ ] 复制任一 variant 行：行内 `✓ copied` + 全局 Toast
   - [ ] LangChips 选第 6 个：chip shake + 末尾小提示 "up to 5 at a time"
   - [ ] Tab 键穿行：不出现"按 Tab 莫名弹窗"
@@ -1134,7 +1120,8 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 - **v1.1**（2026-04-22）— 加入变体系统（register / gender / count 维度）、UI i18n 结构、per-phrase 文件夹 + per-language trans 文件
 - **v1.2**（2026-04-22）— 大幅简化：所有语言平等、tone 四档固定、手写体 Stationery 替代所有 chips/pills、扁平三文件数据结构、UI 锁英文、每语言有自己的 gloss、语言数量上限 5 种
 - **v1.3**（2026-04-23）— 交互与视觉收尾：TOC 拆为 TocTop（首屏）+ TocSide（滚动后 sidebar，collapse/expand hover 展开）双形态；StickyBar 简化为 mark + tone + addressee；ViewToggle 提前到 M1（与卡片宽度约束 720px 强绑定）；`scroll.ts` 作为全局滚动状态中心；新增语义化 surface tokens；踩坑案例文档化（copy hint / SlotPicker tabindex）；shell 宽度 1180 → 1240px
+- **v1.5**（2026-04-26）— addressee slot（friend / woman / man / everyone）从 Stationery 和 StickyBar 整体撤掉：当前数据下 addresseeGender 命中率 0、addresseeCount 仅 9% 且只对单条短语有效，控件存在却拨动无效违反"内容是主角"原则。schema 字段（`speakerGender` / `addresseeGender` / `addresseeCount`）保留，VariantRow tag line 被动展示（"he writes" / "to a woman" / "to everyone"）。`scripts/coverage.mjs` 升级输出三个轴的命中数 + 距阈值（10）的差距，作为未来何时恢复 UI 控件的触发指标。`visibleVariants()` 简化为只接受 tone。
 
 ---
 
-*文档版本 v1.3 · 最后更新 2026-04-23*
+*文档版本 v1.5 · 最后更新 2026-04-26*
