@@ -33,6 +33,8 @@
   },
   "footer": {
     "line1": "Sent with care across rivers and oceans.",
-    "sig": "made for friends, by a friend"
+    "sig": "made for friends, by a friend",
+    "sourceLabel": "View source on GitHub",
+    "sourceUrl": "https://github.com/Chimelight/distant-friends"
   }
 }
