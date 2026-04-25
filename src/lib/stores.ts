@@ -4,7 +4,7 @@
 import { atom } from 'nanostores';
 import { persistentAtom } from '@nanostores/persistent';
 import languages from '../data/languages.json';
-import type { ToneFilter, AddresseeFilter } from './filter';
+import type { ToneFilter } from './filter';
 
 const jsonCodec = {
   encode: JSON.stringify,
@@ -20,11 +20,6 @@ export const selectedLangs = persistentAtom<string[] | null>(
 export const anchor = persistentAtom<string>('distant-friends:anchor:v1', 'zh');
 
 export const tone = persistentAtom<ToneFilter>('distant-friends:tone:v1', 'any');
-
-export const addressee = persistentAtom<AddresseeFilter>(
-  'distant-friends:addressee:v1',
-  'friend',
-);
 
 export type ViewMode = 'auto' | 'table' | 'cards';
 export const view = persistentAtom<ViewMode>('distant-friends:view:v1', 'auto');

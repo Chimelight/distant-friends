@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import SlotPicker from './SlotPicker.svelte';
-  import { tone, addressee } from '../../lib/stores';
+  import { tone } from '../../lib/stores';
   import { scrolled, initScrollListener } from '../../lib/scroll';
-  import type { ToneFilter, AddresseeFilter } from '../../lib/filter';
+  import type { ToneFilter } from '../../lib/filter';
   import ui from '../../content/ui/en.json';
 
   const toneOptions: { key: ToneFilter; label: string }[] = [
@@ -13,18 +13,9 @@
     { key: 'neutral', label: ui.stationery.tones.neutral },
     { key: 'polite', label: ui.stationery.tones.polite },
   ];
-  const addrOptions: { key: AddresseeFilter; label: string }[] = [
-    { key: 'friend', label: ui.stationery.addressees.friend },
-    { key: 'woman', label: ui.stationery.addressees.woman },
-    { key: 'man', label: ui.stationery.addressees.man },
-    { key: 'everyone', label: ui.stationery.addressees.everyone },
-  ];
 
   function setTone(t: ToneFilter) {
     tone.set(t);
-  }
-  function setAddr(a: AddresseeFilter) {
-    addressee.set(a);
   }
   function backToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -46,14 +37,6 @@
       options={toneOptions}
       value={$tone}
       onChange={setTone}
-    />
-    <span class="punct">—</span>
-    <em>{ui.stationery.to}</em>
-    <SlotPicker
-      name="addr"
-      options={addrOptions}
-      value={$addressee}
-      onChange={setAddr}
     />
   </div>
 </div>

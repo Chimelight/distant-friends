@@ -1,13 +1,8 @@
 <script lang="ts">
   import LangChips from './LangChips.svelte';
   import SlotPicker from './SlotPicker.svelte';
-  import {
-    anchor,
-    tone,
-    addressee,
-    selectedLangs,
-  } from '../../lib/stores';
-  import type { ToneFilter, AddresseeFilter } from '../../lib/filter';
+  import { anchor, tone, selectedLangs } from '../../lib/stores';
+  import type { ToneFilter } from '../../lib/filter';
   import languages from '../../data/languages.json';
   import ui from '../../content/ui/en.json';
 
@@ -19,12 +14,6 @@
     { key: 'neutral', label: ui.stationery.tones.neutral },
     { key: 'polite', label: ui.stationery.tones.polite },
   ];
-  const addrOptions: { key: AddresseeFilter; label: string }[] = [
-    { key: 'friend', label: ui.stationery.addressees.friend },
-    { key: 'woman', label: ui.stationery.addressees.woman },
-    { key: 'man', label: ui.stationery.addressees.man },
-    { key: 'everyone', label: ui.stationery.addressees.everyone },
-  ];
 
   function setAnchor(code: string) {
     anchor.set(code);
@@ -34,9 +23,6 @@
   }
   function setTone(t: ToneFilter) {
     tone.set(t);
-  }
-  function setAddr(a: AddresseeFilter) {
-    addressee.set(a);
   }
 </script>
 
@@ -61,14 +47,6 @@
       options={toneOptions}
       value={$tone}
       onChange={setTone}
-    />
-    <span class="punct">—</span>
-    <em>{ui.stationery.to}</em>
-    <SlotPicker
-      name="addr"
-      options={addrOptions}
-      value={$addressee}
-      onChange={setAddr}
     />
     <span class="punct">.</span>
   </p>

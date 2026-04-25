@@ -8,7 +8,7 @@
 
 ## What it is
 
-A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, gratitude, affection, warm wishes, farewells — across seven languages at v1, extensible. Click any cell to copy. Switch the anchor language at any time. Tune what you see by **tone** (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`) and **addressee** (`a friend` / `a woman` / `a man` / `everyone`).
+A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, gratitude, affection, warm wishes, farewells — across seven languages at v1, extensible. Click any cell to copy. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`) and gender / count distinctions surface as quiet tag-line labels next to each variant.
 
 What it isn't:
 
