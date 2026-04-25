@@ -91,10 +91,10 @@ distant-friends/                 # 项目根（建议名字，可换）
 │   │   └── svelte/              # 交互 islands
 │   │       ├── LangChips.svelte
 │   │       ├── Stationery.svelte   # 手写体预设句容器
-│   │       ├── SlotPicker.svelte   # 可点击的斜体词（anchor/tone/addressee）
+│   │       ├── SlotPicker.svelte   # 可点击的斜体词（anchor/tone）
 │   │       ├── TocTop.svelte       # 首屏横向目录页（未滚动时显示）
 │   │       ├── TocSide.svelte      # 右侧 sidebar TOC（滚动后显现 + hover 展开）
-│   │       ├── StickyBar.svelte    # 顶部细 bar（mark + tone/addressee slots）
+│   │       ├── StickyBar.svelte    # 顶部细 bar（mark + tone slot）
 │   │       ├── ViewToggle.svelte
 │   │       ├── PhraseTable.svelte
 │   │       ├── PhraseCards.svelte
@@ -110,7 +110,7 @@ distant-friends/                 # 项目根（建议名字，可换）
 │   │   └── scenes.json          # 场景有序列表
 │   ├── lib/
 │   │   ├── schema.ts            # Zod schema + 类型导出
-│   │   ├── stores.ts            # nanostores: selectedLangs / anchor / tone / addressee / view / theme / starred
+│   │   ├── stores.ts            # nanostores: selectedLangs / anchor / tone / view / theme / starred
 │   │   ├── filter.ts            # visibleVariants() 变体筛选逻辑
 │   │   ├── scroll.ts            # 全局滚动状态：scrolled / activeScene / tocExpanded（nanostores + RAF listener）
 │   │   ├── clipboard.ts         # 带 fallback 的复制工具
@@ -395,12 +395,6 @@ export function visibleVariants(
       "casual":  "casually",
       "neutral": "evenly",
       "polite":  "politely"
-    },
-    "addressees": {
-      "friend":   "a friend",
-      "woman":    "a woman",
-      "man":      "a man",
-      "everyone": "everyone"
     }
   },
   "actions": {
@@ -482,7 +476,7 @@ export function visibleVariants(
 > *Anchored in* **Chinese**.
 > *I write* — **in any tone** — *to* **a friend**.
 
-加粗的三个词（anchor / tone / addressee）是 `<SlotPicker>` 实例：
+加粗的两个词（anchor / tone）是 `<SlotPicker>` 实例：
 
 - **视觉**：斜体 Fraunces，赤陶色文字，下方虚线（dashed underline）+ 小 `▾`
 - **交互**：点击展开一个 popover 菜单（斜体选项列表，当前值带赤陶色小圆点）
@@ -811,7 +805,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Affection · V. War
 | LangChips | Svelte | ✓ | 本地名 chip toggle + 锚点高亮 + 5 种上限 shake 反馈 |
 | TocTop | Svelte | ✓ | 首屏横向目录页，fade-out on scroll |
 | TocSide | Svelte | ✓ | 右侧 sidebar，`$scrolled + $view==='cards'` 时出现，hover/scroll-activity 展开 |
-| StickyBar | Svelte | ✓ | 顶部浮动工具栏（mark + tone + addressee），滚动后淡入 |
+| StickyBar | Svelte | ✓ | 顶部浮动工具栏（mark + tone），滚动后淡入 |
 | PhraseTable | Svelte | ✓ | 桌面表格布局，按场景分 block |
 | PhraseCards | Svelte | ✓ | 卡片布局，`.card-list` max-width 720px 居中 |
 | TranslationCell | Svelte | ✓ | 单元格容器，根据筛选结果渲染 0-N 个 VariantRow |
@@ -941,7 +935,7 @@ jobs:
 - [ ] 建目录结构（见 §4）
 - [ ] `src/lib/schema.ts` — Zod schema（§5.6）
 - [ ] `src/lib/filter.ts` — `visibleVariants()`（§5.7）
-- [ ] `src/lib/stores.ts` — nanostores: `$selectedLangs`, `$anchor`, `$tone`, `$addressee`, `$view`, `$theme`, `$starred`, `$uiLocale`
+- [ ] `src/lib/stores.ts` — nanostores: `$selectedLangs`, `$anchor`, `$tone`, `$view`, `$theme`, `$starred`, `$uiLocale`
 - [ ] `src/lib/scroll.ts` — 全局滚动状态（`$scrolled`, `$activeScene`, `$tocExpanded`），内部一个 RAF 合流的 window scroll listener
 - [ ] `src/lib/clipboard.ts` — 带 textarea fallback
 - [ ] `src/lib/storage.ts` — localStorage 版本化封装
@@ -981,7 +975,7 @@ jobs:
 - [ ] `SlotPicker.svelte` — **注意** popover 内部按钮 tabindex 规则（§6.2 踩坑说明），点击外部/Esc 关闭，pulse 反馈
 - [ ] `TocTop.svelte` — 文档流内横向目录页，`$scrolled` 订阅 → fade-out
 - [ ] `TocSide.svelte` — 右侧 fixed，`body.scrolled + [data-view=cards]` 才显示；collapse/expand 按§6.4.2 全套；订阅 `$activeScene`
-- [ ] `StickyBar.svelte` — 顶部 fixed 浮条；mark + tone + addressee（无 anchor slot）
+- [ ] `StickyBar.svelte` — 顶部 fixed 浮条；mark + tone（无 anchor / addressee slot）
 - [ ] `ViewToggle.svelte` — 药丸形两档切换；驱动 `body[data-view]` 切换
 - [ ] `PhraseTable.svelte` — 表格视图；按场景分 block，每 block 一个 `<table>` + 场景小标题
 - [ ] `PhraseCards.svelte` — 卡片视图；`.card-list` max-width 720px 居中
