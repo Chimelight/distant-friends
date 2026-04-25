@@ -1,0 +1,20 @@
+/* Typography base.
+ *
+ * Font families are imported as JS modules in Layout.astro so Astro can
+ * fingerprint and self-host them. CJK fallbacks are loaded with default
+ * font-display: swap (set per @fontsource defaults).
+ */
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga";
+}
+
+:lang(zh), :lang(ja), :lang(ko) {
+  font-feature-settings: normal;
+}

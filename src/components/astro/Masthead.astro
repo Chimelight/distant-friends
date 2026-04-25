@@ -1,0 +1,73 @@
+---
+import ui from '../../content/ui/en.json';
+---
+
+<header class="masthead">
+  <slot name="view-toggle" />
+  <div class="mark">致 · 远 · 方</div>
+  <h1 class="title">Phrases for <span class="amp">Distant</span> Friends</h1>
+  <p class="tagline" set:html={ui.masthead.tagline}></p>
+</header>
+
+<style>
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .masthead::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 7px;
+    background: var(--bg);
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+  }
+  .mark {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.6em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+  .title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(40px, 7vw, 80px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    color: var(--ink);
+  }
+  .title :global(.amp) {
+    color: var(--accent);
+    font-style: italic;
+  }
+  .tagline {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: 17px;
+    max-width: 520px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .tagline :global(em) {
+    font-style: italic;
+    color: var(--accent);
+  }
+</style>

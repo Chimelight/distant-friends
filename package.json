@@ -11,7 +11,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check",
+    "coverage": "node scripts/coverage.mjs",
+    "new-phrase": "node scripts/new-phrase.mjs"
   },
   "dependencies": {
     "@astrojs/svelte": "^8.0.5",

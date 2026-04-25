@@ -1,0 +1,32 @@
+---
+import ui from '../../content/ui/en.json';
+---
+
+<footer class="end">
+  {ui.footer.line1}<br />
+  <span class="sig">— {ui.footer.sig} —</span>
+</footer>
+
+<style>
+  .end {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-mute);
+    line-height: 1.7;
+  }
+  .end .sig {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-style: normal;
+    font-family: var(--font-sans);
+    color: var(--gold);
+  }
+</style>

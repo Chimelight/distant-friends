@@ -1,0 +1,92 @@
+/* Design tokens — light + dark.
+ *
+ * Theme resolution:
+ *   :root                          → light (default)
+ *   [data-theme="dark"]            → dark (forced)
+ *   [data-theme="light"]           → light (forced)
+ *   prefers-color-scheme: dark
+ *     AND no [data-theme="light"]  → dark (system follow)
+ *
+ * The FOUC defense inline script in Layout.astro sets data-theme from
+ * localStorage before stylesheet parse so the first paint is correct.
+ */
+
+:root {
+  /* —— ink & paper —— */
+  --bg:          #EBE1CC;
+  --paper:       #F5EDD9;
+  --paper-up:    #FAF4E3;
+  --ink:         #1F1A14;
+  --ink-soft:    #524838;
+  --ink-mute:    #8F8370;
+  --accent:      #B0522E;
+  --accent-soft: #D89876;
+  --gold:        #A6824A;
+  --line:        #D4C6A8;
+  --line-soft:   #E2D6B8;
+
+  /* —— semantic surfaces —— */
+  --surface-stickybar:  rgba(235, 225, 204, 0.86);
+  --surface-toc-panel:  rgba(245, 237, 217, 0.22);
+  --surface-toc-border: rgba(212, 198, 168, 0.22);
+  --shadow-toc-panel:   0 12px 32px -24px rgba(138, 98, 67, 0.08);
+  --shadow-stickybar:   0 1px 0 rgba(212, 198, 168, 0.5);
+
+  /* —— typography —— */
+  --font-serif: "Fraunces Variable", "Fraunces", "Noto Serif SC", "Noto Serif JP", "Noto Serif KR", ui-serif, Georgia, serif;
+  --font-sans:  "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+  /* —— motion —— */
+  --dur-hover:    120ms;
+  --dur-switch:   240ms;
+  --dur-feedback: 350ms;
+  --dur-reveal:   420ms;
+  --dur-entrance: 800ms;
+  --ease-out:    cubic-bezier(0.2, 0.9, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-linear: linear;
+}
+
+/* —— dark, forced —— */
+[data-theme="dark"] {
+  --bg:          #1B1813;
+  --paper:       #242018;
+  --paper-up:    #2D2820;
+  --ink:         #EDE1C8;
+  --ink-soft:    #BDB29A;
+  --ink-mute:    #877E6B;
+  --accent:      #D47649;
+  --accent-soft: #A55E3A;
+  --gold:        #C9A668;
+  --line:        #3A3226;
+  --line-soft:   #2E2820;
+
+  --surface-stickybar:  rgba(36, 32, 24, 0.86);
+  --surface-toc-panel:  rgba(45, 40, 32, 0.4);
+  --surface-toc-border: rgba(58, 50, 38, 0.6);
+  --shadow-toc-panel:   0 12px 32px -24px rgba(0, 0, 0, 0.4);
+  --shadow-stickybar:   0 1px 0 rgba(58, 50, 38, 0.6);
+}
+
+/* —— dark, system follow (only when not explicitly forced light) —— */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --bg:          #1B1813;
+    --paper:       #242018;
+    --paper-up:    #2D2820;
+    --ink:         #EDE1C8;
+    --ink-soft:    #BDB29A;
+    --ink-mute:    #877E6B;
+    --accent:      #D47649;
+    --accent-soft: #A55E3A;
+    --gold:        #C9A668;
+    --line:        #3A3226;
+    --line-soft:   #2E2820;
+
+    --surface-stickybar:  rgba(36, 32, 24, 0.86);
+    --surface-toc-panel:  rgba(45, 40, 32, 0.4);
+    --surface-toc-border: rgba(58, 50, 38, 0.6);
+    --shadow-toc-panel:   0 12px 32px -24px rgba(0, 0, 0, 0.4);
+    --shadow-stickybar:   0 1px 0 rgba(58, 50, 38, 0.6);
+  }
+}

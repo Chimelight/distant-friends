@@ -1,0 +1,80 @@
+---
+import type { TScene } from '../../lib/schema';
+
+interface Props {
+  scene: TScene;
+  /** When true, omits the trailing rule (used by card view per v3 demo). */
+  noRule?: boolean;
+}
+
+const { scene, noRule = false } = Astro.props;
+const idx = scene.title.indexOf(scene.em);
+const before = idx >= 0 ? scene.title.slice(0, idx) : scene.title;
+const emPart = idx >= 0 ? scene.em : '';
+const after = idx >= 0 ? scene.title.slice(idx + scene.em.length) : '';
+---
+
+<div class="scene-header">
+  <span class="scene-num">{scene.num}</span>
+  <h2 class="scene-ttl">
+    {before}{emPart && <em>{emPart}</em>}{after}
+  </h2>
+  {!noRule && <span class="scene-rule"></span>}
+</div>
+
+<style>
+  .scene-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding: 0 4px;
+  }
+  .scene-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 0.16em;
+    flex-shrink: 0;
+  }
+  .scene-ttl {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(26px, 3.2vw, 34px);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .scene-ttl :global(em) {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .scene-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    align-self: center;
+    position: relative;
+  }
+  .scene-rule::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -2.5px;
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  @media (max-width: 640px) {
+    .scene-header {
+      margin-bottom: 20px;
+    }
+    .scene-rule {
+      display: none;
+    }
+  }
+</style>
