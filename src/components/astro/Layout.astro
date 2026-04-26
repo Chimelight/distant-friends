@@ -70,14 +70,14 @@ const ogImage = `${canonical.replace(/\/$/, '')}/og-image.png`;
   </head>
   <body data-view="table">
     <script is:inline>
-      // FOUC defense for view mode: persistent atom is stored as raw string.
-      // Resolve 'auto' via matchMedia so the first paint matches the toggle's
-      // initial state.
+      // FOUC defense for view mode. Below the table breakpoint, lock to cards
+      // regardless of stored preference (the toggle is hidden there). Above
+      // it, honor the stored value or fall back to table.
       try {
         var v = localStorage.getItem('distant-friends:view:v1');
-        if (v !== 'cards' && v !== 'table') {
-          v = window.matchMedia('(min-width: 960px)').matches ? 'table' : 'cards';
-        }
+        var wide = window.matchMedia('(min-width: 640px)').matches;
+        if (!wide) v = 'cards';
+        else if (v !== 'cards' && v !== 'table') v = 'table';
         document.body.dataset.view = v;
       } catch (e) {}
     </script>
