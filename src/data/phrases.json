@@ -521,54 +521,5 @@
         ]
       }
     }
-  },
-  {
-    "id": "farewell-everyone",
-    "scene": "farewells",
-    "order": 2,
-    "trans": {
-      "zh": {
-        "gloss": "群体告别",
-        "variants": [
-          { "text": "大家再见", "rom": "dàjiā zàijiàn", "addresseeCount": "many" }
-        ]
-      },
-      "en": {
-        "gloss": "group farewell",
-        "variants": [
-          { "text": "Bye everyone", "addresseeCount": "many" }
-        ]
-      },
-      "ja": {
-        "gloss": "みんなへの別れ",
-        "variants": [
-          { "text": "みんなまたね", "rom": "minna mata ne", "addresseeCount": "many" }
-        ]
-      },
-      "ko": {
-        "gloss": "모두에게 작별",
-        "variants": [
-          { "text": "모두 잘 가", "rom": "modu jal ga", "addresseeCount": "many" }
-        ]
-      },
-      "es": {
-        "gloss": "despedida a todos",
-        "variants": [
-          { "text": "¡Adiós a todos!", "addresseeCount": "many" }
-        ]
-      },
-      "pt": {
-        "gloss": "tchau coletivo",
-        "variants": [
-          { "text": "Tchau, pessoal", "addresseeCount": "many" }
-        ]
-      },
-      "fr": {
-        "gloss": "au revoir collectif",
-        "variants": [
-          { "text": "Salut tout le monde", "addresseeCount": "many" }
-        ]
-      }
-    }
   }
 ]
