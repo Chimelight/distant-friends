@@ -113,6 +113,17 @@
 </div>
 
 <style>
+  /* Reserve right-edge space for the TocSide rail when it can be visible
+   * (viewport ≥ 1024 in table view). Reserve of 56px clears the rail's
+   * 40px width + 24px gap minus the shell's existing 32px padding-right.
+   * Smoothly tapers to 0 at viewport ≥ 1304 where the shell's natural
+   * margin (above shell max-width 1240) already separates rail from table. */
+  @media (min-width: 1024px) {
+    :global(body[data-view="table"]) .view-desktop {
+      padding-right: clamp(0px, calc((1304px - 100vw) * 56 / 64), 56px);
+    }
+  }
+
   .table-wrap {
     border: 1px solid var(--line);
     background: var(--paper);
@@ -145,7 +156,9 @@
 
   .scene-block {
     margin-bottom: 48px;
-    scroll-margin-top: 24px;
+    /* Clear the StickyBar (~44px tall) when scrollIntoView lands on a
+     * section — without this margin the title hides under the bar. */
+    scroll-margin-top: 80px;
   }
   .scene-header {
     display: flex;
