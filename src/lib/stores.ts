@@ -6,6 +6,9 @@ import { persistentAtom } from '@nanostores/persistent';
 import languages from '../data/languages.json';
 import type { ToneFilter } from './filter';
 
+/** Max languages visible at once, anchor included. */
+export const MAX_LANGS = 5;
+
 const jsonCodec = {
   encode: JSON.stringify,
   decode: JSON.parse,

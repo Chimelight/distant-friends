@@ -4,11 +4,10 @@
     selectedLangs,
     anchor,
     ensureSelectedLangsInitialized,
+    MAX_LANGS,
   } from '../../lib/stores';
   import languages from '../../data/languages.json';
   import ui from '../../content/ui/en.json';
-
-  const MAX_LANGS = 5;
 
   let shakingCode = $state<string | null>(null);
   let capHintOn = $state(false);
