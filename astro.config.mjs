@@ -9,7 +9,10 @@ const isVercel = !!process.env.VERCEL;
 const site = isVercel
   ? 'https://distant-friends.vercel.app'
   : 'https://chimelight.github.io';
-const base = isVercel ? '/' : '/distant-friends';
+// Trailing slash matters: import.meta.env.BASE_URL reflects this verbatim,
+// so '/distant-friends' (no slash) breaks string concatenation in templates
+// like ${BASE_URL}favicon.svg → /distant-friendsfavicon.svg.
+const base = isVercel ? '/' : '/distant-friends/';
 
 // https://astro.build/config
 export default defineConfig({
