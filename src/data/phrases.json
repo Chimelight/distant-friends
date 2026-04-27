@@ -12,13 +12,6 @@
           { "text": "您好", "rom": "nín hǎo", "tone": "polite", "note": "Honorific; to elders or strangers." }
         ]
       },
-      "en": {
-        "gloss": "a greeting",
-        "variants": [
-          { "text": "Hello" },
-          { "text": "Hi", "tone": "casual" }
-        ]
-      },
       "ja": {
         "gloss": "挨拶",
         "variants": [
@@ -31,6 +24,21 @@
         "variants": [
           { "text": "안녕", "rom": "annyeong", "tone": "casual" },
           { "text": "안녕하세요", "rom": "annyeonghaseyo", "tone": "polite" }
+        ]
+      },
+      "en": {
+        "gloss": "a greeting",
+        "variants": [
+          { "text": "Hello" },
+          { "text": "Hi", "tone": "casual" }
+        ]
+      },
+      "de": {
+        "gloss": "eine Begrüßung",
+        "variants": [
+          { "text": "Hallo", "reviewed": false },
+          { "text": "Hi", "tone": "casual", "note": "English-borrowed but everyday in German.", "reviewed": false },
+          { "text": "Guten Tag", "tone": "polite", "note": "Daytime formal; to strangers or elders.", "reviewed": false }
         ]
       },
       "es": {
@@ -52,6 +60,40 @@
           { "text": "Salut", "tone": "casual" },
           { "text": "Bonjour", "tone": "neutral", "note": "Universal — works anywhere." }
         ]
+      },
+      "ru": {
+        "gloss": "приветствие",
+        "variants": [
+          { "text": "Привет", "rom": "privet", "tone": "casual", "reviewed": false },
+          { "text": "Здравствуйте", "rom": "zdravstvuyte", "tone": "polite", "note": "Formal; to elders, strangers, or in writing.", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "powitanie",
+        "variants": [
+          { "text": "Cześć", "tone": "casual", "note": "Doubles as “bye” between friends.", "reviewed": false },
+          { "text": "Dzień dobry", "tone": "polite", "note": "Lit. “good day”; daytime formal.", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "अभिवादन",
+        "variants": [
+          { "text": "नमस्ते", "rom": "namaste", "note": "Hands together; respectful, ageless.", "reviewed": false },
+          { "text": "हाय", "rom": "hāy", "tone": "casual", "note": "English-borrowed; common in casual Hindi.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "শুভেচ্ছা",
+        "variants": [
+          { "text": "নমস্কার", "rom": "nômôshkar", "note": "Respectful greeting, neutral register.", "reviewed": false },
+          { "text": "হাই", "rom": "hai", "tone": "casual", "note": "English-borrowed; everyday casual.", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "chibai",
+        "variants": [
+          { "text": "Chibai", "note": "The everyday Mizo greeting.", "reviewed": false }
+        ]
       }
     }
   },
@@ -63,13 +105,9 @@
       "zh": {
         "gloss": "近况",
         "variants": [
-          { "text": "你怎么样", "rom": "nǐ zěnmeyàng" }
-        ]
-      },
-      "en": {
-        "gloss": "checking in",
-        "variants": [
-          { "text": "How are you?" }
+          { "text": "最近怎么样", "rom": "zuìjìn zěnmeyàng" },
+          { "text": "还好吗", "rom": "hái hǎo ma", "tone": "casual" },
+          { "text": "您最近还好吗", "rom": "nín zuìjìn hái hǎo ma", "tone": "polite", "note": "Honorific 您 to elders or in formal writing." }
         ]
       },
       "ja": {
@@ -84,6 +122,20 @@
         "variants": [
           { "text": "잘 지내?", "rom": "jal jinae?", "tone": "casual" },
           { "text": "잘 지내세요?", "rom": "jal jinaeseyo?", "tone": "polite" }
+        ]
+      },
+      "en": {
+        "gloss": "checking in",
+        "variants": [
+          { "text": "How are you?" }
+        ]
+      },
+      "de": {
+        "gloss": "wie es jemandem geht",
+        "variants": [
+          { "text": "Wie geht's?", "tone": "casual", "note": "Contracted, everyday between friends.", "reviewed": false },
+          { "text": "Wie geht es dir?", "reviewed": false },
+          { "text": "Wie geht es Ihnen?", "tone": "polite", "note": "Formal Sie-form to elders or strangers.", "reviewed": false }
         ]
       },
       "es": {
@@ -105,6 +157,42 @@
           { "text": "Ça va ?", "tone": "casual" },
           { "text": "Comment allez-vous ?", "tone": "polite" }
         ]
+      },
+      "ru": {
+        "gloss": "узнать, как дела",
+        "variants": [
+          { "text": "Как дела?", "rom": "kak dela?", "note": "Lit. “how are things?” — the standard opener.", "reviewed": false },
+          { "text": "Как ты?", "rom": "kak ty?", "tone": "casual", "note": "Warmer, between friends.", "reviewed": false },
+          { "text": "Как Вы?", "rom": "kak Vy?", "tone": "polite", "note": "Formal Vy-form.", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "pytać, co słychać",
+        "variants": [
+          { "text": "Co u ciebie?", "tone": "casual", "note": "Lit. “what’s with you?” — friendly check-in.", "reviewed": false },
+          { "text": "Jak się masz?", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "कुशल पूछना",
+        "variants": [
+          { "text": "कैसे हो?", "rom": "kaise ho?", "tone": "casual", "addresseeGender": "m", "note": "To a male friend.", "reviewed": false },
+          { "text": "कैसी हो?", "rom": "kaisī ho?", "tone": "casual", "addresseeGender": "f", "note": "To a female friend.", "reviewed": false },
+          { "text": "आप कैसे हैं?", "rom": "āp kaise hain?", "tone": "polite", "note": "Polite āp-form, gender-neutral.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "খবর জিজ্ঞাসা",
+        "variants": [
+          { "text": "কেমন আছ?", "rom": "kemon achho?", "note": "Standard “how are you” to friends.", "reviewed": false },
+          { "text": "কেমন আছেন?", "rom": "kemon achhen?", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "i dam em?",
+        "variants": [
+          { "text": "I dam em?", "note": "Lit. “are you well?”", "reviewed": false }
+        ]
       }
     }
   },
@@ -119,12 +207,6 @@
           { "text": "好久不见", "rom": "hǎo jiǔ bù jiàn" }
         ]
       },
-      "en": {
-        "gloss": "long absence",
-        "variants": [
-          { "text": "Long time no see" }
-        ]
-      },
       "ja": {
         "gloss": "再会の言葉",
         "variants": [
@@ -136,6 +218,18 @@
         "variants": [
           { "text": "오랜만이야", "rom": "oraenmaniya", "tone": "casual" },
           { "text": "오랜만이에요", "rom": "oraenmanieyo", "tone": "polite" }
+        ]
+      },
+      "en": {
+        "gloss": "long absence",
+        "variants": [
+          { "text": "Long time no see" }
+        ]
+      },
+      "de": {
+        "gloss": "nach langer Zeit",
+        "variants": [
+          { "text": "Lange nicht gesehen!", "note": "Lit. “(been) long not seen!”", "reviewed": false }
         ]
       },
       "es": {
@@ -155,6 +249,38 @@
         "variants": [
           { "text": "Ça fait longtemps !" }
         ]
+      },
+      "ru": {
+        "gloss": "после долгой разлуки",
+        "variants": [
+          { "text": "Давно не виделись", "rom": "davno ne videlis'", "note": "Lit. “we haven’t seen each other for a long time.”", "reviewed": false },
+          { "text": "Сколько лет, сколько зим!", "rom": "skol'ko let, skol'ko zim!", "tone": "close", "note": "Lit. “so many years, so many winters!” — warm reunion idiom.", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "po dłuższym czasie",
+        "variants": [
+          { "text": "Kopę lat!", "tone": "casual", "note": "Lit. “a heap of years!” — warm, idiomatic.", "reviewed": false },
+          { "text": "Dawno się nie widzieliśmy", "note": "Lit. “(we) haven’t seen each other in a long time.”", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "बहुत दिनों बाद",
+        "variants": [
+          { "text": "बहुत दिनों बाद!", "rom": "bahut dinon bād!", "note": "Lit. “after many days!”", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "অনেক দিন পরে",
+        "variants": [
+          { "text": "অনেক দিন পর!", "rom": "onek din por!", "note": "Lit. “after many days!”", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "hun rei hnu",
+        "variants": [
+          { "text": "Hun rei tak hnu!", "note": "Lit. “after a very long time!” — a reunion exclamation.", "reviewed": false }
+        ]
       }
     }
   },
@@ -170,12 +296,6 @@
           { "text": "谢谢你", "rom": "xièxie nǐ", "note": "Slightly warmer — specifies \"you\"." }
         ]
       },
-      "en": {
-        "gloss": "gratitude",
-        "variants": [
-          { "text": "Thank you" }
-        ]
-      },
       "ja": {
         "gloss": "感謝",
         "variants": [
@@ -188,6 +308,20 @@
         "variants": [
           { "text": "고마워", "rom": "gomawo", "tone": "casual" },
           { "text": "감사합니다", "rom": "gamsahamnida", "tone": "polite" }
+        ]
+      },
+      "en": {
+        "gloss": "gratitude",
+        "variants": [
+          { "text": "Thank you" }
+        ]
+      },
+      "de": {
+        "gloss": "Dank",
+        "variants": [
+          { "text": "Danke", "reviewed": false },
+          { "text": "Vielen Dank", "note": "Warmer, lit. “many thanks.”", "reviewed": false },
+          { "text": "Dankeschön", "tone": "close", "note": "Soft and friendly.", "reviewed": false }
         ]
       },
       "es": {
@@ -209,6 +343,40 @@
         "variants": [
           { "text": "Merci" }
         ]
+      },
+      "ru": {
+        "gloss": "благодарность",
+        "variants": [
+          { "text": "Спасибо", "rom": "spasibo", "reviewed": false },
+          { "text": "Большое спасибо", "rom": "bol'shoe spasibo", "note": "Lit. “big thanks” — warmer.", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "podziękowanie",
+        "variants": [
+          { "text": "Dziękuję", "reviewed": false },
+          { "text": "Dzięki", "tone": "casual", "note": "Short, friendly.", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "धन्यवाद",
+        "variants": [
+          { "text": "शुक्रिया", "rom": "shukriyā", "note": "Urdu-derived; warm and everyday.", "reviewed": false },
+          { "text": "धन्यवाद", "rom": "dhanyavād", "tone": "polite", "note": "Sanskritic; more formal.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "ধন্যবাদ",
+        "variants": [
+          { "text": "ধন্যবাদ", "rom": "dhonnobad", "reviewed": false },
+          { "text": "থ্যাংক ইউ", "rom": "thank you", "tone": "casual", "note": "English-borrowed; everyday casual.", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "ka lawm",
+        "variants": [
+          { "text": "Ka lawm e", "note": "The everyday “thank you.”", "reviewed": false }
+        ]
       }
     }
   },
@@ -221,14 +389,8 @@
         "gloss": "致歉",
         "variants": [
           { "text": "对不起", "rom": "duìbuqǐ" },
+          { "text": "不好意思", "rom": "bùhǎoyìsi", "tone": "casual", "note": "Light apology — bumping into someone, interrupting, small slips." },
           { "text": "抱歉", "rom": "bàoqiàn", "tone": "neutral" }
-        ]
-      },
-      "en": {
-        "gloss": "apology",
-        "variants": [
-          { "text": "Sorry", "tone": "casual" },
-          { "text": "I'm sorry" }
         ]
       },
       "ja": {
@@ -244,6 +406,21 @@
         "variants": [
           { "text": "미안해", "rom": "mianhae", "tone": "casual" },
           { "text": "죄송합니다", "rom": "joesonghamnida", "tone": "polite" }
+        ]
+      },
+      "en": {
+        "gloss": "apology",
+        "variants": [
+          { "text": "Sorry", "tone": "casual" },
+          { "text": "I'm sorry" }
+        ]
+      },
+      "de": {
+        "gloss": "Entschuldigung",
+        "variants": [
+          { "text": "Entschuldigung", "reviewed": false },
+          { "text": "Tut mir leid", "note": "Lit. “(it) makes me sorry” — warmer, more emotional.", "reviewed": false },
+          { "text": "Sorry", "tone": "casual", "note": "English-borrowed; very common in casual German.", "reviewed": false }
         ]
       },
       "es": {
@@ -266,6 +443,41 @@
           { "text": "Désolé(e)" },
           { "text": "Pardon", "tone": "casual" }
         ]
+      },
+      "ru": {
+        "gloss": "извинение",
+        "variants": [
+          { "text": "Извини", "rom": "izvini", "tone": "casual", "note": "Imperative; “excuse me.”", "reviewed": false },
+          { "text": "Прости", "rom": "prosti", "note": "Lit. “forgive me” — warmer.", "reviewed": false },
+          { "text": "Извините", "rom": "izvinite", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "przeprosiny",
+        "variants": [
+          { "text": "Przepraszam", "reviewed": false },
+          { "text": "Wybacz", "tone": "casual", "note": "Lit. “forgive (me)” — informal imperative.", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "क्षमा",
+        "variants": [
+          { "text": "माफ़ करो", "rom": "māf karo", "tone": "casual", "note": "Lit. “forgive (me).”", "reviewed": false },
+          { "text": "माफ़ कीजिए", "rom": "māf kījie", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "ক্ষমা",
+        "variants": [
+          { "text": "দুঃখিত", "rom": "duḥkhito", "note": "Lit. “(I am) saddened.”", "reviewed": false },
+          { "text": "মাফ করো", "rom": "māf koro", "tone": "casual", "note": "Lit. “forgive (me).”", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "min ngaidam rawh",
+        "variants": [
+          { "text": "Min ngaidam rawh", "note": "Lit. “please forgive me.”", "reviewed": false }
+        ]
       }
     }
   },
@@ -277,13 +489,9 @@
       "zh": {
         "gloss": "思念",
         "variants": [
-          { "text": "想你了", "rom": "xiǎng nǐ le" }
-        ]
-      },
-      "en": {
-        "gloss": "thinking of someone far",
-        "variants": [
-          { "text": "I miss you" }
+          { "text": "我想你", "rom": "wǒ xiǎng nǐ" },
+          { "text": "好想你", "rom": "hǎo xiǎng nǐ", "tone": "close", "note": "Warmer; longer separation or stronger feeling." },
+          { "text": "想你了", "rom": "xiǎng nǐ le", "tone": "casual" }
         ]
       },
       "ja": {
@@ -296,6 +504,19 @@
         "gloss": "그리움",
         "variants": [
           { "text": "보고 싶어", "rom": "bogo sipeo", "note": "Literally \"I want to see you.\"" }
+        ]
+      },
+      "en": {
+        "gloss": "thinking of someone far",
+        "variants": [
+          { "text": "I miss you" }
+        ]
+      },
+      "de": {
+        "gloss": "vermissen",
+        "variants": [
+          { "text": "Du fehlst mir", "note": "Lit. “you are missing to me” — softer, deeper than “Ich vermisse dich.”", "reviewed": false },
+          { "text": "Ich vermisse dich", "reviewed": false }
         ]
       },
       "es": {
@@ -315,6 +536,38 @@
         "variants": [
           { "text": "Tu me manques", "note": "Lit. \"you are missing from me.\"" }
         ]
+      },
+      "ru": {
+        "gloss": "тоска по кому-то",
+        "variants": [
+          { "text": "Я скучаю по тебе", "rom": "ya skuchayu po tebe", "note": "“I miss you” — the standard form.", "reviewed": false },
+          { "text": "Скучаю", "rom": "skuchayu", "tone": "casual", "note": "Short, intimate; “you” implied.", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "tęsknota",
+        "variants": [
+          { "text": "Tęsknię za tobą", "note": "Lit. “I yearn for you.”", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "याद",
+        "variants": [
+          { "text": "तुम्हारी याद आती है", "rom": "tumhārī yād ātī hai", "note": "Lit. “your memory comes (to me)” — soft, idiomatic.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "মনে পড়া",
+        "variants": [
+          { "text": "তোমাকে মিস করি", "rom": "tomāke miss kori", "note": "English-borrowed “miss”; everyday casual.", "reviewed": false },
+          { "text": "তোমাকে মনে পড়ছে", "rom": "tomāke mône poṛchhe", "note": "Lit. “you come to (my) mind” — softer, more lyrical.", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "ngaih",
+        "variants": [
+          { "text": "Ka ngai che", "note": "Lit. “I miss you”; ngai = long for / think of.", "reviewed": false }
+        ]
       }
     }
   },
@@ -326,13 +579,9 @@
       "zh": {
         "gloss": "关心",
         "variants": [
-          { "text": "我很在乎你", "rom": "wǒ hěn zàihu nǐ" }
-        ]
-      },
-      "en": {
-        "gloss": "expressing care",
-        "variants": [
-          { "text": "I care about you" }
+          { "text": "我很关心你", "rom": "wǒ hěn guānxīn nǐ" },
+          { "text": "我很在乎你", "rom": "wǒ hěn zàihu nǐ", "note": "Slightly more possessive; closer than 关心." },
+          { "text": "你对我很重要", "rom": "nǐ duì wǒ hěn zhòngyào", "note": "Lit. “you are very important to me.”" }
         ]
       },
       "ja": {
@@ -345,6 +594,18 @@
         "gloss": "소중함",
         "variants": [
           { "text": "네가 소중해", "rom": "nega sojunghae" }
+        ]
+      },
+      "en": {
+        "gloss": "expressing care",
+        "variants": [
+          { "text": "I care about you" }
+        ]
+      },
+      "de": {
+        "gloss": "Fürsorge",
+        "variants": [
+          { "text": "Du bist mir wichtig", "note": "Lit. “you are important to me.”", "reviewed": false }
         ]
       },
       "es": {
@@ -364,6 +625,38 @@
         "variants": [
           { "text": "Tu comptes pour moi" }
         ]
+      },
+      "ru": {
+        "gloss": "забота",
+        "variants": [
+          { "text": "Ты мне дорог", "rom": "ty mne dorog", "addresseeGender": "m", "note": "Lit. “you are dear to me” — to a male.", "reviewed": false },
+          { "text": "Ты мне дорога", "rom": "ty mne doroga", "addresseeGender": "f", "note": "Lit. “you are dear to me” — to a female.", "reviewed": false },
+          { "text": "Я о тебе забочусь", "rom": "ya o tebe zabochus'", "note": "Lit. “I care for you” — gender-neutral.", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "troska",
+        "variants": [
+          { "text": "Zależy mi na tobie", "note": "Lit. “you matter to me.”", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "स्नेह",
+        "variants": [
+          { "text": "तुम मेरे लिए ख़ास हो", "rom": "tum mere liye khās ho", "note": "Lit. “you are special to me.”", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "যত্ন",
+        "variants": [
+          { "text": "তুমি আমার কাছে গুরুত্বপূর্ণ", "rom": "tumi āmār kāchhe gurutwapūrṇo", "note": "Lit. “you are important to me.”", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "ngaihtuah",
+        "variants": [
+          { "text": "Ka ngaihtuah reng che", "note": "Lit. “I always think of you” — used to mean I care.", "reviewed": false }
+        ]
       }
     }
   },
@@ -378,12 +671,6 @@
           { "text": "晚安", "rom": "wǎn ān" }
         ]
       },
-      "en": {
-        "gloss": "parting before sleep",
-        "variants": [
-          { "text": "Goodnight" }
-        ]
-      },
       "ja": {
         "gloss": "おやすみの挨拶",
         "variants": [
@@ -396,6 +683,19 @@
         "variants": [
           { "text": "잘 자", "rom": "jal ja", "tone": "close", "note": "For close people only." },
           { "text": "안녕히 주무세요", "rom": "annyeonghi jumuseyo", "tone": "polite" }
+        ]
+      },
+      "en": {
+        "gloss": "parting before sleep",
+        "variants": [
+          { "text": "Goodnight" }
+        ]
+      },
+      "de": {
+        "gloss": "Gute Nacht",
+        "variants": [
+          { "text": "Gute Nacht", "reviewed": false },
+          { "text": "Schlaf gut", "tone": "close", "note": "Lit. “sleep well” — warmer, friendly.", "reviewed": false }
         ]
       },
       "es": {
@@ -415,6 +715,39 @@
         "variants": [
           { "text": "Bonne nuit" }
         ]
+      },
+      "ru": {
+        "gloss": "пожелание перед сном",
+        "variants": [
+          { "text": "Спокойной ночи", "rom": "spokojnoj nochi", "note": "Lit. “(I wish you) peaceful night.”", "reviewed": false },
+          { "text": "Сладких снов", "rom": "sladkih snov", "tone": "close", "note": "Lit. “sweet dreams.”", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "życzenie na noc",
+        "variants": [
+          { "text": "Dobranoc", "reviewed": false },
+          { "text": "Słodkich snów", "tone": "close", "note": "Lit. “sweet dreams.”", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "रात की शुभकामना",
+        "variants": [
+          { "text": "शुभ रात्रि", "rom": "shubh rātri", "tone": "polite", "note": "Sanskritic; formal.", "reviewed": false },
+          { "text": "शब बख़ैर", "rom": "shab bakhair", "note": "Urdu-influenced — common in casual Hindi.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "শুভ রাত্রি",
+        "variants": [
+          { "text": "শুভ রাত্রি", "rom": "śubho rātri", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "mu tha rawh",
+        "variants": [
+          { "text": "Mu tha rawh", "note": "Lit. “sleep well.”", "reviewed": false }
+        ]
       }
     }
   },
@@ -429,12 +762,6 @@
           { "text": "生日快乐", "rom": "shēngrì kuàilè" }
         ]
       },
-      "en": {
-        "gloss": "a yearly celebration",
-        "variants": [
-          { "text": "Happy birthday" }
-        ]
-      },
       "ja": {
         "gloss": "誕生日祝い",
         "variants": [
@@ -445,6 +772,19 @@
         "gloss": "생일 축하",
         "variants": [
           { "text": "생일 축하해", "rom": "saengil chukahae" }
+        ]
+      },
+      "en": {
+        "gloss": "a yearly celebration",
+        "variants": [
+          { "text": "Happy birthday" }
+        ]
+      },
+      "de": {
+        "gloss": "Geburtstagsglückwunsch",
+        "variants": [
+          { "text": "Alles Gute zum Geburtstag", "reviewed": false },
+          { "text": "Herzlichen Glückwunsch zum Geburtstag", "tone": "polite", "note": "Heartier, more formal.", "reviewed": false }
         ]
       },
       "es": {
@@ -464,6 +804,38 @@
         "variants": [
           { "text": "Joyeux anniversaire" }
         ]
+      },
+      "ru": {
+        "gloss": "поздравление с днём рождения",
+        "variants": [
+          { "text": "С днём рождения!", "rom": "s dnyom rozhdeniya!", "note": "Lit. “(congrats) with (your) birthday!”", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "życzenia urodzinowe",
+        "variants": [
+          { "text": "Wszystkiego najlepszego!", "note": "Lit. “(I wish you) all the best!” — the everyday birthday phrase.", "reviewed": false },
+          { "text": "Sto lat!", "tone": "close", "note": "Lit. “a hundred years!” — sung as a traditional birthday wish.", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "जन्मदिन की शुभकामना",
+        "variants": [
+          { "text": "जन्मदिन मुबारक", "rom": "janmadin mubārak", "note": "Lit. “birthday blessed” — warm, everyday.", "reviewed": false },
+          { "text": "जन्मदिन की शुभकामनाएँ", "rom": "janmadin kī śubhakāmnāen", "tone": "polite", "note": "Sanskritic, more formal.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "জন্মদিনের শুভেচ্ছা",
+        "variants": [
+          { "text": "শুভ জন্মদিন", "rom": "śubho jonmodin", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "pian champha",
+        "variants": [
+          { "text": "Happy Birthday!", "note": "English-borrowed; everyday Mizo speech routinely code-switches here.", "reviewed": false }
+        ]
       }
     }
   },
@@ -476,14 +848,9 @@
         "gloss": "告别",
         "variants": [
           { "text": "再见", "rom": "zàijiàn" },
-          { "text": "拜拜", "rom": "báibái", "tone": "casual" }
-        ]
-      },
-      "en": {
-        "gloss": "a simple farewell",
-        "variants": [
-          { "text": "Bye", "tone": "casual" },
-          { "text": "Goodbye" }
+          { "text": "拜拜", "rom": "báibái", "tone": "casual" },
+          { "text": "回头见", "rom": "huítóu jiàn", "tone": "casual", "note": "Lit. “see you later” — implies you’ll meet again soon." },
+          { "text": "先这样", "rom": "xiān zhèyàng", "tone": "casual", "note": "Lit. “let’s leave it here” — used when ending a chat." }
         ]
       },
       "ja": {
@@ -498,6 +865,20 @@
         "variants": [
           { "text": "잘 가", "rom": "jal ga", "tone": "casual", "note": "\"Go well\" — to someone leaving." },
           { "text": "안녕히 가세요", "rom": "annyeonghi gaseyo", "tone": "polite" }
+        ]
+      },
+      "en": {
+        "gloss": "a simple farewell",
+        "variants": [
+          { "text": "Bye", "tone": "casual" },
+          { "text": "Goodbye" }
+        ]
+      },
+      "de": {
+        "gloss": "Abschied",
+        "variants": [
+          { "text": "Tschüss", "tone": "casual", "reviewed": false },
+          { "text": "Auf Wiedersehen", "tone": "polite", "note": "Lit. “until we see again.”", "reviewed": false }
         ]
       },
       "es": {
@@ -518,6 +899,43 @@
         "variants": [
           { "text": "Salut", "tone": "casual" },
           { "text": "Au revoir", "tone": "neutral" }
+        ]
+      },
+      "ru": {
+        "gloss": "прощание",
+        "variants": [
+          { "text": "Пока", "rom": "poka", "tone": "casual", "reviewed": false },
+          { "text": "До свидания", "rom": "do svidaniya", "tone": "polite", "note": "Lit. “until our meeting.”", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "pożegnanie",
+        "variants": [
+          { "text": "Cześć", "tone": "casual", "note": "Same word as “hi” — context decides.", "reviewed": false },
+          { "text": "Pa", "tone": "casual", "note": "Very casual “bye.”", "reviewed": false },
+          { "text": "Do widzenia", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "विदाई",
+        "variants": [
+          { "text": "अलविदा", "rom": "alvidā", "note": "Poetic, lingering — a “farewell” feel.", "reviewed": false },
+          { "text": "फिर मिलेंगे", "rom": "phir milenge", "note": "Lit. “we’ll meet again.”", "reviewed": false },
+          { "text": "बाय", "rom": "bāy", "tone": "casual", "note": "English-borrowed; everyday casual.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "বিদায়",
+        "variants": [
+          { "text": "বিদায়", "rom": "bidāy", "note": "Formal, more lasting farewell.", "reviewed": false },
+          { "text": "আবার দেখা হবে", "rom": "ābār dekhā hôbe", "note": "Lit. “we’ll meet again.”", "reviewed": false },
+          { "text": "টা টা", "rom": "ṭā ṭā", "tone": "casual", "note": "Casual “ta ta”; common.", "reviewed": false }
+        ]
+      },
+      "mizo": {
+        "gloss": "inhmu leh ang",
+        "variants": [
+          { "text": "Inhmu leh ang", "note": "Lit. “we’ll see (each other) again.”", "reviewed": false }
         ]
       }
     }
