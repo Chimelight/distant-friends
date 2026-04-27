@@ -2,13 +2,20 @@
   import { onMount } from 'svelte';
   import { view, type ViewMode } from '../../lib/stores';
 
-  const QUERY = '(min-width: 960px)';
+  const QUERY = '(min-width: 640px)';
   let mounted = $state(false);
   let resolved = $state<'table' | 'cards'>('table');
 
+  /**
+   * Below the table breakpoint, lock to cards regardless of stored preference.
+   * Above it, honor the stored value (auto → table, else literal).
+   * The user's stored 'table' preference is preserved across narrow visits so
+   * desktop returns to table without losing intent.
+   */
   function resolve(v: ViewMode): 'table' | 'cards' {
-    if (v === 'auto') return window.matchMedia(QUERY).matches ? 'table' : 'cards';
-    return v;
+    const wide = window.matchMedia(QUERY).matches;
+    if (!wide) return 'cards';
+    return v === 'cards' ? 'cards' : 'table';
   }
   function applyToBody(v: 'table' | 'cards') {
     document.body.dataset.view = v;
@@ -26,10 +33,10 @@
 
     const mql = window.matchMedia(QUERY);
     const onChange = () => {
-      if (view.get() === 'auto') {
-        resolved = resolve('auto');
-        applyToBody(resolved);
-      }
+      // Re-resolve on every viewport crossing — the mobile lock means the
+      // body attribute can change even when $view itself didn't.
+      resolved = resolve(view.get());
+      applyToBody(resolved);
     };
     mql.addEventListener('change', onChange);
 
@@ -58,10 +65,12 @@
 </div>
 
 <style>
+  /* In-flow placement: top-right of the masthead, claiming its own band above
+   * the centered title rather than floating detached over it. Reads as a
+   * library card stuck to the upper corner of a title page. */
   .view-toggle {
-    position: absolute;
-    top: 24px;
-    right: 24px;
+    align-self: flex-end;
+    margin-bottom: 28px;
     display: inline-flex;
     align-items: center;
     gap: 2px;
@@ -69,7 +78,6 @@
     background: var(--paper);
     border: 1px solid var(--line);
     border-radius: 999px;
-    z-index: 40;
   }
   .view-toggle button {
     font-family: var(--font-sans);
@@ -91,14 +99,12 @@
     background: var(--ink);
     color: var(--paper-up);
   }
-  @media (max-width: 640px) {
+
+  /* Below the table breakpoint: cards is the only sensible layout, so
+   * hide the toggle entirely instead of offering a choice that overflows. */
+  @media (max-width: 639px) {
     .view-toggle {
-      top: 16px;
-      right: 16px;
-    }
-    .view-toggle button {
-      font-size: 9px;
-      padding: 6px 10px;
+      display: none;
     }
   }
 </style>

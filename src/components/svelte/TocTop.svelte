@@ -8,8 +8,15 @@
   });
 
   function jumpTo(id: string) {
-    const el = document.getElementById(`scene-${id}`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // See TocSide.jumpTo for why this uses data-scene + offsetParent rather
+    // than getElementById — both views render scene blocks with the same ID.
+    const all = document.querySelectorAll<HTMLElement>(`[data-scene="${id}"]`);
+    for (const el of all) {
+      if (el.offsetParent !== null) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    }
   }
 </script>
 
