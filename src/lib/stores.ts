@@ -36,11 +36,33 @@ export const starred = persistentAtom<string[]>(
 export const uiLocale = persistentAtom<string>('distant-friends:uiLocale:v1', 'en');
 
 export function ensureSelectedLangsInitialized(): void {
-  if (selectedLangs.get() === null) {
+  const validCodes = new Set(languages.map((l) => l.code));
+  const current = selectedLangs.get();
+
+  if (current === null) {
     const defaults = languages
       .filter((l) => l.defaultOn)
       .map((l) => l.code);
     selectedLangs.set(defaults);
+    return;
+  }
+
+  // Garbage-collect codes that no longer exist in languages.json — happens
+  // when a previously-selected language is dropped from the dataset between
+  // visits (e.g. the brief zh-TW track). Without this, ghost entries stay
+  // in the persisted Set, count toward the 5-chip cap, and cause the
+  // "up to 5 at a time" hint to fire when the visible selection is fewer.
+  const cleaned = current.filter((c) => validCodes.has(c));
+  if (cleaned.length !== current.length) {
+    selectedLangs.set(cleaned);
+  }
+
+  // Same for anchor — if the persisted anchor is a code that no longer
+  // exists, fall back to the dataset's defaultAnchor (or first language).
+  const a = anchor.get();
+  if (!validCodes.has(a)) {
+    const fallback = languages.find((l) => l.defaultAnchor)?.code ?? languages[0]?.code;
+    if (fallback) anchor.set(fallback);
   }
 }
 
