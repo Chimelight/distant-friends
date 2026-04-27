@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import SlotPicker from './SlotPicker.svelte';
+  import ViewToggle from './ViewToggle.svelte';
   import { tone } from '../../lib/stores';
   import { scrolled, initScrollListener } from '../../lib/scroll';
   import type { ToneFilter } from '../../lib/filter';
@@ -39,6 +40,7 @@
       onChange={setTone}
     />
   </div>
+  <ViewToggle />
 </div>
 
 <style>
@@ -126,6 +128,29 @@
     color: var(--ink-mute);
   }
 
+  /* ViewToggle anchored to the right edge of the bar, vertically centered.
+   * Absolute so it stays out of the centered flex composition (mark + prose
+   * remain optically centered without the toggle's width pulling them off). */
+  .sticky-bar :global(.view-toggle) {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    background: transparent;
+    border-color: var(--line-soft);
+    flex-shrink: 0;
+  }
+  .sticky-bar :global(.view-toggle button) {
+    font-size: 9px;
+    padding: 4px 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0.18em;
+  }
+  .sticky-bar :global(.view-toggle button[aria-pressed="true"]) {
+    background: var(--ink);
+    color: var(--paper-up);
+  }
+
   @media (max-width: 820px) {
     .sb-mark,
     .sb-sep {
@@ -137,6 +162,9 @@
     }
     .sb-prose {
       font-size: 14px;
+    }
+    .sticky-bar :global(.view-toggle) {
+      right: 18px;
     }
   }
   @media (max-width: 640px) {

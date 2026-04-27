@@ -49,8 +49,18 @@
   }
 
   function jumpTo(id: string) {
-    const el = document.getElementById(`scene-${id}`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Both PhraseTable and PhraseCards render scene blocks with the same ID
+    // but only the active view is visible (the other has display:none).
+    // Pick the visible one via offsetParent — null when any ancestor is
+    // hidden — and use the data-scene attribute to avoid the duplicate-ID
+    // collision that getElementById would hit.
+    const all = document.querySelectorAll<HTMLElement>(`[data-scene="${id}"]`);
+    for (const el of all) {
+      if (el.offsetParent !== null) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    }
   }
 
   onMount(() => {
@@ -91,13 +101,9 @@
 </nav>
 
 <style>
-  /* Default: hidden — only the cards view in scrolled state shows TocSide. */
+  /* Layout always applies; visibility is gated separately by view + viewport
+   * so we can show in cards OR table as long as the rail has room. */
   .toc {
-    display: none;
-  }
-
-  :global(body[data-view="cards"].scrolled) .toc {
-    display: flex;
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
@@ -106,7 +112,7 @@
     padding: 32px 28px 32px 30px;
     width: fit-content;
     max-width: 240px;
-    right: max(14px, calc((100vw - 1240px) / 2 + 32px));
+    right: 24px;
     pointer-events: auto;
     background: rgba(250, 244, 227, 0);
     border-radius: 2px;
@@ -117,6 +123,23 @@
       background var(--dur-reveal) ease,
       box-shadow 0.5s ease,
       padding 0.4s var(--ease-spring);
+    display: none;
+  }
+
+  /* Cards view: rail tolerated as low as ~tablet/phone-landscape because
+   * cards stay 720 max-width centered, leaving right whitespace for the rail. */
+  @media (min-width: 640px) {
+    :global(body[data-view="cards"].scrolled) .toc {
+      display: flex;
+    }
+  }
+
+  /* Table view: needs more horizontal room — at narrow widths the rail
+   * would visually crowd the right-most translation column. */
+  @media (min-width: 1024px) {
+    :global(body[data-view="table"].scrolled) .toc {
+      display: flex;
+    }
   }
 
   /* Expanded — barely-there parchment whisper, no glass. */
@@ -127,11 +150,13 @@
       var(--shadow-toc-panel);
   }
 
-  /* Vertical rail on the right side; numerals sit to the right of it. */
+  /* Vertical rail centered in the gap between titles and numerals.
+   * Calculation: numeral width 22 + gap 16 = 38 of horizontal "right column";
+   * with toc padding-right 28, gap center sits 28 + 22 + 8 = 58 from toc edge. */
   .toc::before {
     content: "";
     position: absolute;
-    right: 48px;
+    right: 58px;
     top: 44px;
     bottom: 44px;
     width: 1px;
@@ -154,7 +179,7 @@
   .toc::after {
     content: "❋";
     position: absolute;
-    right: 48px;
+    right: 58px;
     top: 20px;
     transform: translateX(50%);
     font-family: var(--font-serif);
@@ -170,7 +195,7 @@
 
   .toc-fleuron-bottom {
     position: absolute;
-    right: 48px;
+    right: 58px;
     bottom: 20px;
     transform: translateX(50%);
     font-family: var(--font-serif);
@@ -261,7 +286,7 @@
     opacity: 1;
   }
   .toc-item.active .ttl {
-    color: var(--ink);
+    color: var(--accent);
     font-weight: 500;
   }
   .toc-item.active::before {
@@ -296,9 +321,4 @@
     border-radius: 2px;
   }
 
-  @media (max-width: 640px) {
-    :global(body[data-view="cards"].scrolled) .toc {
-      display: none;
-    }
-  }
 </style>

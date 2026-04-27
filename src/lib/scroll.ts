@@ -28,9 +28,13 @@ export function initScrollListener(sceneSelector = '.scene-block'): () => void {
       document.body.classList.toggle('scrolled', next);
     }
 
+    // Skip hidden scene blocks (the other view's). offsetParent is null
+    // when any ancestor has display:none, which lets us treat the visible
+    // view's blocks as the only source of truth without view-aware logic.
     const blocks = document.querySelectorAll<HTMLElement>(sceneSelector);
     let active = '';
     for (const block of blocks) {
+      if (block.offsetParent === null) continue;
       const top = block.getBoundingClientRect().top;
       if (top <= 120) active = block.dataset.scene ?? active;
       else break;

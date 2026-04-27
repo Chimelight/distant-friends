@@ -91,7 +91,9 @@
 <style>
   .scene-block {
     margin-bottom: 48px;
-    scroll-margin-top: 24px;
+    /* Clear the StickyBar (~44px tall) when scrollIntoView lands on a
+     * section — without this margin the title hides under the bar. */
+    scroll-margin-top: 80px;
   }
   .scene-header {
     display: flex;
@@ -196,15 +198,14 @@
     border-radius: 3px;
   }
 
-  /* On wider viewports the cards container is constrained; this lets the
-   * TocSide sit naturally to its right. */
-  @media (min-width: 1100px) {
-    :global(body[data-view="cards"]) .view-mobile :global(.card-list),
-    :global(body[data-view="cards"]) .view-mobile :global(.scene-header) {
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  /* Cards container is always 720px max — no width jump at any viewport
+   * boundary. Below 720 the natural shell padding takes over and cards
+   * become fluid. TocSide (when visible) sits in the right whitespace. */
+  .card-list,
+  .scene-header {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (max-width: 640px) {

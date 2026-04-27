@@ -46,7 +46,7 @@ src/
 ├── data/
 │   ├── languages.json
 │   ├── scenes.json
-│   └── phrases.json  # 11 phrases at v1, ~30 by v2
+│   └── phrases.json  # 10 phrases at v1, ~30 by v2
 ├── lib/              # schema (Zod), filter, stores, scroll, clipboard, storage
 ├── pages/index.astro
 └── styles/           # tokens.css (light + dark), global.css, typography.css
