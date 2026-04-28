@@ -61,6 +61,14 @@
           { "text": "Bonjour", "tone": "neutral", "note": "Universal — works anywhere.", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "un saluto",
+        "variants": [
+          { "text": "Ciao", "reviewed": false },
+          { "text": "Salve", "tone": "neutral", "note": "Slightly more formal than ciao; works with strangers.", "reviewed": false },
+          { "text": "Buongiorno", "tone": "polite", "note": "Daytime formal; lit. \"good day.\"", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "приветствие",
         "variants": [
@@ -75,6 +83,13 @@
           { "text": "Dzień dobry", "tone": "polite", "note": "Lit. “good day”; daytime formal.", "reviewed": false }
         ]
       },
+      "tr": {
+        "gloss": "selamlaşma",
+        "variants": [
+          { "text": "Merhaba", "reviewed": false },
+          { "text": "Selam", "tone": "casual", "reviewed": false }
+        ]
+      },
       "hi": {
         "gloss": "अभिवादन",
         "variants": [
@@ -87,6 +102,45 @@
         "variants": [
           { "text": "নমস্কার", "rom": "nômôshkar", "note": "Respectful greeting, neutral register.", "reviewed": false },
           { "text": "হাই", "rom": "hai", "tone": "casual", "note": "English-borrowed; everyday casual.", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "salam",
+        "variants": [
+          { "text": "Halo", "reviewed": false },
+          { "text": "Hai", "tone": "casual", "reviewed": false },
+          { "text": "Selamat siang", "tone": "polite", "note": "Daytime formal greeting; lit. \"good day.\"", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "salam",
+        "variants": [
+          { "text": "Helo", "reviewed": false },
+          { "text": "Hai", "tone": "casual", "reviewed": false },
+          { "text": "Selamat sejahtera", "tone": "polite", "note": "Formal; lit. \"peaceful greetings.\"", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "การทักทาย",
+        "variants": [
+          { "text": "สวัสดี", "rom": "sawatdee", "reviewed": false },
+          { "text": "สวัสดีครับ", "rom": "sawatdee khrap", "tone": "polite", "speakerGender": "m", "note": "Polite particle ครับ for male speakers.", "reviewed": false },
+          { "text": "สวัสดีค่ะ", "rom": "sawatdee kha", "tone": "polite", "speakerGender": "f", "note": "Polite particle ค่ะ for female speakers.", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "lời chào",
+        "variants": [
+          { "text": "Chào bạn", "note": "Friendly default; bạn = peer pronoun.", "reviewed": false },
+          { "text": "Xin chào", "tone": "polite", "note": "More formal; to strangers or seniors.", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pagbati",
+        "variants": [
+          { "text": "Kumusta", "note": "The everyday Filipino greeting.", "reviewed": false },
+          { "text": "Hi", "tone": "casual", "note": "English-borrowed; common in everyday speech.", "reviewed": false },
+          { "text": "Magandang araw", "tone": "polite", "note": "Lit. \"beautiful day.\"", "reviewed": false }
         ]
       },
       "mizo": {
@@ -157,6 +211,14 @@
           { "text": "Comment allez-vous ?", "tone": "polite", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "chiedere come sta",
+        "variants": [
+          { "text": "Come stai?", "reviewed": false },
+          { "text": "Come va?", "tone": "casual", "note": "Lit. \"how's it going?\"", "reviewed": false },
+          { "text": "Come sta?", "tone": "polite", "note": "Formal Lei-form to strangers or seniors.", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "узнать, как дела",
         "variants": [
@@ -172,6 +234,13 @@
           { "text": "Jak się masz?", "reviewed": false }
         ]
       },
+      "tr": {
+        "gloss": "hâl hatır sormak",
+        "variants": [
+          { "text": "Nasılsın?", "reviewed": false },
+          { "text": "Nasılsınız?", "tone": "polite", "note": "Formal siz-form to strangers or seniors.", "reviewed": false }
+        ]
+      },
       "hi": {
         "gloss": "कुशल पूछना",
         "variants": [
@@ -185,6 +254,41 @@
         "variants": [
           { "text": "কেমন আছ?", "rom": "kemon achho?", "note": "Standard “how are you” to friends.", "reviewed": false },
           { "text": "কেমন আছেন?", "rom": "kemon achhen?", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "menanyakan kabar",
+        "variants": [
+          { "text": "Apa kabar?", "note": "Lit. \"what news?\"", "reviewed": false },
+          { "text": "Gimana kabarnya?", "tone": "casual", "note": "Colloquial; \"how's it going.\"", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "bertanya khabar",
+        "variants": [
+          { "text": "Apa khabar?", "note": "Lit. \"what news?\"", "reviewed": false },
+          { "text": "Macam mana?", "tone": "casual", "note": "Lit. \"how is it.\"", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ถามสารทุกข์สุกดิบ",
+        "variants": [
+          { "text": "สบายดีไหม", "rom": "sabai dee mai", "note": "Lit. \"are you well?\"", "reviewed": false },
+          { "text": "เป็นยังไงบ้าง", "rom": "pen yang-ngai baang", "tone": "casual", "note": "Casual \"how's it going.\"", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "hỏi thăm",
+        "variants": [
+          { "text": "Bạn khỏe không?", "note": "Lit. \"are you well?\"", "reviewed": false },
+          { "text": "Dạo này thế nào?", "tone": "casual", "note": "Lit. \"how have things been lately?\"", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pagtatanong ng kalagayan",
+        "variants": [
+          { "text": "Kumusta ka?", "note": "Lit. \"how are you?\"", "reviewed": false },
+          { "text": "Kumusta na?", "tone": "casual", "note": "With na — softer reunion check-in.", "reviewed": false }
         ]
       },
       "mizo": {
@@ -249,6 +353,13 @@
           { "text": "Ça fait longtemps !", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "dopo tanto tempo",
+        "variants": [
+          { "text": "Quanto tempo!", "note": "Lit. \"how much time!\" — warm reunion exclamation.", "reviewed": false },
+          { "text": "Da quanto non ci vediamo!", "note": "Lit. \"how long since we saw each other!\"", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "после долгой разлуки",
         "variants": [
@@ -263,6 +374,13 @@
           { "text": "Dawno się nie widzieliśmy", "note": "Lit. “(we) haven’t seen each other in a long time.”", "reviewed": false }
         ]
       },
+      "tr": {
+        "gloss": "uzun zaman sonra",
+        "variants": [
+          { "text": "Uzun zamandır görüşmedik!", "note": "Lit. \"we haven't met for a long time!\"", "reviewed": false },
+          { "text": "Ne zaman oldu!", "tone": "casual", "note": "Idiomatic \"it's been forever!\"", "reviewed": false }
+        ]
+      },
       "hi": {
         "gloss": "बहुत दिनों बाद",
         "variants": [
@@ -273,6 +391,38 @@
         "gloss": "অনেক দিন পরে",
         "variants": [
           { "text": "অনেক দিন পর!", "rom": "onek din por!", "note": "Lit. “after many days!”", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "setelah lama",
+        "variants": [
+          { "text": "Lama tidak bertemu!", "note": "Lit. \"long not meet.\"", "reviewed": false },
+          { "text": "Lama tak ketemu!", "tone": "casual", "note": "Colloquial form.", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "selepas lama",
+        "variants": [
+          { "text": "Lama tak jumpa!", "note": "Lit. \"long not meet.\"", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "หลังจากไม่ได้เจอกันนาน",
+        "variants": [
+          { "text": "ไม่ได้เจอกันนานเลย", "rom": "mai dai jer gan naan loei", "note": "Lit. \"haven't met for so long.\"", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "sau lâu không gặp",
+        "variants": [
+          { "text": "Lâu rồi không gặp!", "note": "Lit. \"long time not met!\"", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "matagal nang hindi nagkita",
+        "variants": [
+          { "text": "Ang tagal!", "tone": "casual", "note": "Lit. \"so long!\" — a warm reunion exclamation.", "reviewed": false },
+          { "text": "Tagal nating hindi nagkita", "note": "Lit. \"long time we haven't met.\"", "reviewed": false }
         ]
       },
       "mizo": {
@@ -343,6 +493,13 @@
           { "text": "Merci", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "ringraziamento",
+        "variants": [
+          { "text": "Grazie", "reviewed": false },
+          { "text": "Grazie mille", "note": "Lit. \"a thousand thanks\" — warmer.", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "благодарность",
         "variants": [
@@ -357,6 +514,14 @@
           { "text": "Dzięki", "tone": "casual", "note": "Short, friendly.", "reviewed": false }
         ]
       },
+      "tr": {
+        "gloss": "teşekkür",
+        "variants": [
+          { "text": "Teşekkür ederim", "note": "Lit. \"I thank (you).\"", "reviewed": false },
+          { "text": "Teşekkürler", "tone": "neutral", "note": "Shorter, everyday.", "reviewed": false },
+          { "text": "Sağ ol", "tone": "casual", "note": "Lit. \"be well\" — warm, friendly.", "reviewed": false }
+        ]
+      },
       "hi": {
         "gloss": "धन्यवाद",
         "variants": [
@@ -369,6 +534,45 @@
         "variants": [
           { "text": "ধন্যবাদ", "rom": "dhonnobad", "reviewed": false },
           { "text": "থ্যাংক ইউ", "rom": "thank you", "tone": "casual", "note": "English-borrowed; everyday casual.", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "terima kasih",
+        "variants": [
+          { "text": "Terima kasih", "reviewed": false },
+          { "text": "Makasih", "tone": "casual", "note": "Shortened, everyday.", "reviewed": false },
+          { "text": "Terima kasih banyak", "note": "Lit. \"thank you much\" — warmer.", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "terima kasih",
+        "variants": [
+          { "text": "Terima kasih", "reviewed": false },
+          { "text": "Terima kasih banyak", "note": "Warmer, lit. \"thank you much.\"", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ขอบคุณ",
+        "variants": [
+          { "text": "ขอบคุณ", "rom": "khop khun", "reviewed": false },
+          { "text": "ขอบใจ", "rom": "khop jai", "tone": "casual", "note": "To peers or younger; warmer.", "reviewed": false },
+          { "text": "ขอบคุณครับ", "rom": "khop khun khrap", "tone": "polite", "speakerGender": "m", "reviewed": false },
+          { "text": "ขอบคุณค่ะ", "rom": "khop khun kha", "tone": "polite", "speakerGender": "f", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "lời cảm ơn",
+        "variants": [
+          { "text": "Cảm ơn", "reviewed": false },
+          { "text": "Cảm ơn bạn", "note": "Adds \"you\" — warmer.", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pasasalamat",
+        "variants": [
+          { "text": "Salamat", "reviewed": false },
+          { "text": "Maraming salamat", "note": "Lit. \"many thanks\" — warmer.", "reviewed": false },
+          { "text": "Salamat po", "tone": "polite", "note": "po — respectful particle for elders or strangers.", "reviewed": false }
         ]
       },
       "mizo": {
@@ -443,6 +647,14 @@
           { "text": "Pardon", "tone": "casual", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "scuse",
+        "variants": [
+          { "text": "Scusa", "tone": "casual", "reviewed": false },
+          { "text": "Mi dispiace", "note": "Lit. \"it pains me\" — warmer, more emotional.", "reviewed": false },
+          { "text": "Scusami", "note": "Lit. \"forgive me\" — direct, sincere.", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "извинение",
         "variants": [
@@ -456,6 +668,14 @@
         "variants": [
           { "text": "Przepraszam", "reviewed": false },
           { "text": "Wybacz", "tone": "casual", "note": "Lit. “forgive (me)” — informal imperative.", "reviewed": false }
+        ]
+      },
+      "tr": {
+        "gloss": "özür",
+        "variants": [
+          { "text": "Özür dilerim", "note": "Lit. \"I ask forgiveness\" — the standard form.", "reviewed": false },
+          { "text": "Pardon", "tone": "casual", "note": "French-borrowed; everyday casual.", "reviewed": false },
+          { "text": "Affedersin", "tone": "casual", "note": "Lit. \"forgive (me).\"", "reviewed": false }
         ]
       },
       "hi": {
@@ -472,6 +692,42 @@
           { "text": "দুঃখিত", "rom": "duḥkhito", "note": "Lit. “(I am) saddened.”" },
           { "text": "আমায় মাফ করো", "rom": "āmāy māf koro", "note": "Warm, direct “forgive me.”" },
           { "text": "মাফ করো", "rom": "māf koro", "tone": "casual", "note": "Lit. “forgive (me).”" }
+        ]
+      },
+      "id": {
+        "gloss": "permintaan maaf",
+        "variants": [
+          { "text": "Maaf", "reviewed": false },
+          { "text": "Maafkan aku", "note": "Lit. \"forgive me\" — warmer, complete form.", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "memohon maaf",
+        "variants": [
+          { "text": "Maaf", "reviewed": false },
+          { "text": "Minta maaf", "note": "Lit. \"ask for forgiveness.\"", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ขอโทษ",
+        "variants": [
+          { "text": "ขอโทษ", "rom": "khor thot", "reviewed": false },
+          { "text": "ขอโทษนะ", "rom": "khor thot na", "tone": "casual", "note": "Soft particle นะ — lighter, friendly.", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "lời xin lỗi",
+        "variants": [
+          { "text": "Xin lỗi", "reviewed": false },
+          { "text": "Mình xin lỗi", "note": "With mình — warmer, \"I'm sorry\" to a friend.", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "paghingi ng tawad",
+        "variants": [
+          { "text": "Pasensya na", "note": "Lit. \"have patience\" — softer everyday apology.", "reviewed": false },
+          { "text": "Paumanhin", "tone": "polite", "note": "More formal.", "reviewed": false },
+          { "text": "Sorry", "tone": "casual", "note": "English-borrowed; very common.", "reviewed": false }
         ]
       },
       "mizo": {
@@ -538,6 +794,12 @@
           { "text": "Tu me manques", "note": "Lit. \"you are missing from me.\"", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "mancanza",
+        "variants": [
+          { "text": "Mi manchi", "note": "Lit. \"you are missing from me.\"", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "тоска по кому-то",
         "variants": [
@@ -551,6 +813,12 @@
           { "text": "Tęsknię za tobą", "note": "Lit. “I yearn for you.”", "reviewed": false }
         ]
       },
+      "tr": {
+        "gloss": "özlem",
+        "variants": [
+          { "text": "Seni özledim", "note": "Lit. \"I missed you\" — the standard form.", "reviewed": false }
+        ]
+      },
       "hi": {
         "gloss": "याद",
         "variants": [
@@ -562,6 +830,41 @@
         "variants": [
           { "text": "তোমাকে মিস করি", "rom": "tomāke miss kori", "note": "English-borrowed “miss”; everyday casual." },
           { "text": "তোমায় মনে পড়ছে", "rom": "tomāy mône poṛchhe", "note": "Lit. “you come to (my) mind” — softer, more lyrical." }
+        ]
+      },
+      "id": {
+        "gloss": "rindu",
+        "variants": [
+          { "text": "Aku rindu kamu", "note": "Standard \"I miss you.\"", "reviewed": false },
+          { "text": "Kangen kamu", "tone": "close", "note": "Kangen — warmer, deeper longing.", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "rindu",
+        "variants": [
+          { "text": "Saya rindu awak", "note": "Standard \"I miss you.\"", "reviewed": false },
+          { "text": "Rindu", "tone": "casual", "note": "Short, \"you\" implied.", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ความคิดถึง",
+        "variants": [
+          { "text": "คิดถึง", "rom": "kit theung", "note": "Lit. \"think (of you)\" — the everyday \"miss you.\"", "reviewed": false },
+          { "text": "คิดถึงนะ", "rom": "kit theung na", "tone": "close", "note": "With soft particle นะ — warmer.", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "nỗi nhớ",
+        "variants": [
+          { "text": "Mình nhớ bạn", "note": "Standard \"I miss you\" between friends.", "reviewed": false },
+          { "text": "Nhớ bạn lắm", "tone": "close", "note": "Lit. \"miss you a lot.\"", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pagkangulila",
+        "variants": [
+          { "text": "Miss kita", "note": "Code-switched; the most common form.", "reviewed": false },
+          { "text": "Namimiss kita", "note": "Tagalog-conjugated form of \"miss.\"", "reviewed": false }
         ]
       },
       "mizo": {
@@ -628,6 +931,13 @@
           { "text": "Tu comptes pour moi", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "affetto",
+        "variants": [
+          { "text": "Tieni a me", "note": "Lit. \"you hold (something for) me\" — \"I matter to you, you matter to me.\"", "reviewed": false },
+          { "text": "Sei importante per me", "note": "Lit. \"you are important to me.\"", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "забота",
         "variants": [
@@ -642,6 +952,12 @@
           { "text": "Zależy mi na tobie", "note": "Lit. “you matter to me.”", "reviewed": false }
         ]
       },
+      "tr": {
+        "gloss": "değer vermek",
+        "variants": [
+          { "text": "Sen benim için önemlisin", "note": "Lit. \"you are important to me.\"", "reviewed": false }
+        ]
+      },
       "hi": {
         "gloss": "स्नेह",
         "variants": [
@@ -652,6 +968,36 @@
         "gloss": "যত্ন",
         "variants": [
           { "text": "তুমি আমার কাছে গুরুত্বপূর্ণ", "rom": "tumi āmār kāchhe gurutwapūrṇo", "note": "Lit. “you are important to me.”", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "peduli",
+        "variants": [
+          { "text": "Kamu penting buatku", "note": "Lit. \"you're important to me.\"", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "ambil berat",
+        "variants": [
+          { "text": "Awak penting bagi saya", "note": "Lit. \"you're important to me.\"", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ห่วงใย",
+        "variants": [
+          { "text": "เธอสำคัญกับฉัน", "rom": "ter samkhan kap chan", "note": "Lit. \"you're important to me.\"", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "quan tâm",
+        "variants": [
+          { "text": "Bạn rất quan trọng với mình", "note": "Lit. \"you're very important to me.\"", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pagmamalasakit",
+        "variants": [
+          { "text": "Mahalaga ka sa akin", "note": "Lit. \"you are important to me.\"", "reviewed": false }
         ]
       },
       "mizo": {
@@ -718,6 +1064,13 @@
           { "text": "Bonne nuit", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "buona notte",
+        "variants": [
+          { "text": "Buonanotte", "reviewed": false },
+          { "text": "Sogni d'oro", "tone": "close", "note": "Lit. \"golden dreams.\"", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "пожелание перед сном",
         "variants": [
@@ -732,6 +1085,13 @@
           { "text": "Słodkich snów", "tone": "close", "note": "Lit. “sweet dreams.”", "reviewed": false }
         ]
       },
+      "tr": {
+        "gloss": "iyi geceler",
+        "variants": [
+          { "text": "İyi geceler", "note": "Lit. \"good nights\" (always plural).", "reviewed": false },
+          { "text": "Tatlı rüyalar", "tone": "close", "note": "Lit. \"sweet dreams.\"", "reviewed": false }
+        ]
+      },
       "hi": {
         "gloss": "रात की शुभकामना",
         "variants": [
@@ -743,6 +1103,41 @@
         "gloss": "শুভ রাত্রি",
         "variants": [
           { "text": "শুভ রাত্রি", "rom": "śubho rātri", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "selamat malam",
+        "variants": [
+          { "text": "Selamat malam", "note": "Standard \"good night.\"", "reviewed": false },
+          { "text": "Selamat tidur", "tone": "close", "note": "Lit. \"good sleep\" — warmer to a friend.", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "selamat malam",
+        "variants": [
+          { "text": "Selamat malam", "reviewed": false },
+          { "text": "Tidur lena", "tone": "close", "note": "Lit. \"sleep deeply\" — warm.", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ราตรีสวัสดิ์",
+        "variants": [
+          { "text": "ราตรีสวัสดิ์", "rom": "raatree sawat", "note": "Formal \"good night.\"", "reviewed": false },
+          { "text": "ฝันดีนะ", "rom": "fan dee na", "tone": "close", "note": "Lit. \"sweet dreams\" — soft, warm.", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "chúc ngủ ngon",
+        "variants": [
+          { "text": "Chúc ngủ ngon", "reviewed": false },
+          { "text": "Ngủ ngon", "tone": "casual", "note": "Shortened; everyday between friends.", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "magandang gabi",
+        "variants": [
+          { "text": "Magandang gabi", "note": "Lit. \"beautiful evening\" — also used at parting.", "reviewed": false },
+          { "text": "Matulog ka nang mahimbing", "tone": "close", "note": "Lit. \"sleep deeply\" — warmer.", "reviewed": false }
         ]
       },
       "mizo": {
@@ -807,6 +1202,13 @@
           { "text": "Joyeux anniversaire", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "auguri di compleanno",
+        "variants": [
+          { "text": "Buon compleanno", "reviewed": false },
+          { "text": "Tanti auguri!", "note": "Lit. \"many wishes!\" — also the birthday-song refrain.", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "поздравление с днём рождения",
         "variants": [
@@ -818,6 +1220,13 @@
         "variants": [
           { "text": "Wszystkiego najlepszego!", "note": "Lit. “(I wish you) all the best!” — the everyday birthday phrase.", "reviewed": false },
           { "text": "Sto lat!", "tone": "close", "note": "Lit. “a hundred years!” — sung as a traditional birthday wish.", "reviewed": false }
+        ]
+      },
+      "tr": {
+        "gloss": "doğum günü kutlaması",
+        "variants": [
+          { "text": "Doğum günün kutlu olsun", "note": "Lit. \"may your birthday be blessed.\"", "reviewed": false },
+          { "text": "İyi ki doğdun", "tone": "close", "note": "Lit. \"good thing you were born\" — warmer, very common.", "reviewed": false }
         ]
       },
       "hi": {
@@ -832,6 +1241,38 @@
         "variants": [
           { "text": "জন্মদিনের শুভেচ্ছা", "rom": "jonmodiner śubhechchhā", "note": "Warmer, full form; lit. “birthday’s good wishes.”" },
           { "text": "শুভ জন্মদিন", "rom": "śubho jonmodin", "note": "Short and simple." }
+        ]
+      },
+      "id": {
+        "gloss": "ucapan ulang tahun",
+        "variants": [
+          { "text": "Selamat ulang tahun", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "ucapan hari jadi",
+        "variants": [
+          { "text": "Selamat hari jadi", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "อวยพรวันเกิด",
+        "variants": [
+          { "text": "สุขสันต์วันเกิด", "rom": "suk san wan gert", "note": "Lit. \"happy birthday.\"", "reviewed": false },
+          { "text": "Happy birthday", "tone": "casual", "note": "English-borrowed; very common in casual Thai.", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "chúc mừng sinh nhật",
+        "variants": [
+          { "text": "Chúc mừng sinh nhật", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pagbati sa kaarawan",
+        "variants": [
+          { "text": "Maligayang kaarawan", "note": "Standard Filipino birthday greeting.", "reviewed": false },
+          { "text": "Happy birthday", "tone": "casual", "note": "English-borrowed; just as common.", "reviewed": false }
         ]
       },
       "mizo": {
@@ -904,6 +1345,14 @@
           { "text": "Au revoir", "tone": "neutral", "reviewed": false }
         ]
       },
+      "it": {
+        "gloss": "congedo",
+        "variants": [
+          { "text": "Ciao", "tone": "casual", "note": "Same word as \"hi\" — context decides.", "reviewed": false },
+          { "text": "Arrivederci", "tone": "neutral", "note": "Lit. \"until we see (each other) again.\"", "reviewed": false },
+          { "text": "A presto", "tone": "casual", "note": "Lit. \"see you soon.\"", "reviewed": false }
+        ]
+      },
       "ru": {
         "gloss": "прощание",
         "variants": [
@@ -917,6 +1366,14 @@
           { "text": "Cześć", "tone": "casual", "note": "Same word as “hi” — context decides.", "reviewed": false },
           { "text": "Pa", "tone": "casual", "note": "Very casual “bye.”", "reviewed": false },
           { "text": "Do widzenia", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "tr": {
+        "gloss": "vedalaşma",
+        "variants": [
+          { "text": "Hoşça kal", "note": "Said to the one staying; lit. \"stay well.\"", "reviewed": false },
+          { "text": "Güle güle", "note": "Said to the one leaving; lit. \"go laughing.\"", "reviewed": false },
+          { "text": "Görüşürüz", "tone": "casual", "note": "Lit. \"we'll see (each other).\"", "reviewed": false }
         ]
       },
       "hi": {
@@ -933,6 +1390,45 @@
           { "text": "বিদায়", "rom": "bidāy", "note": "Standard goodbye." },
           { "text": "আবার দেখা হবে", "rom": "ābār dekhā hôbe", "note": "Lit. “we’ll meet again.”" },
           { "text": "টা টা", "rom": "ṭā ṭā", "tone": "casual", "note": "Casual “ta ta”; common.", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "perpisahan",
+        "variants": [
+          { "text": "Sampai jumpa", "note": "Lit. \"until we meet.\"", "reviewed": false },
+          { "text": "Dadah", "tone": "casual", "note": "Casual \"bye-bye.\"", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "perpisahan",
+        "variants": [
+          { "text": "Jumpa lagi", "note": "Lit. \"meet again.\"", "reviewed": false },
+          { "text": "Selamat tinggal", "tone": "polite", "note": "Said to one staying behind; lit. \"safely stay.\"", "reviewed": false },
+          { "text": "Bye", "tone": "casual", "note": "English-borrowed; common.", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "การลา",
+        "variants": [
+          { "text": "ลาก่อน", "rom": "la gon", "note": "Standard \"goodbye.\"", "reviewed": false },
+          { "text": "บาย", "rom": "bai", "tone": "casual", "note": "English-borrowed; very common.", "reviewed": false },
+          { "text": "ไว้เจอกันใหม่", "rom": "wai jer gan mai", "note": "Lit. \"see you next time.\"", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "lời tạm biệt",
+        "variants": [
+          { "text": "Tạm biệt", "reviewed": false },
+          { "text": "Hẹn gặp lại", "note": "Lit. \"until we meet again.\"", "reviewed": false },
+          { "text": "Bye", "tone": "casual", "note": "English-borrowed; very common.", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "paalam",
+        "variants": [
+          { "text": "Paalam", "note": "More poetic, lingering.", "reviewed": false },
+          { "text": "Sige", "tone": "casual", "note": "Lit. \"go ahead\" — casual \"see you.\"", "reviewed": false },
+          { "text": "Bye", "tone": "casual", "note": "English-borrowed; everyday.", "reviewed": false }
         ]
       },
       "mizo": {
