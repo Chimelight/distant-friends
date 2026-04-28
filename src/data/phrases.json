@@ -152,6 +152,513 @@
     }
   },
   {
+    "id": "greeting-morning",
+    "scene": "greetings",
+    "order": 2,
+    "trans": {
+      "zh": {
+        "gloss": "早安",
+        "variants": [
+          { "text": "早上好", "rom": "zǎoshang hǎo", "reviewed": false },
+          { "text": "早", "rom": "zǎo", "tone": "casual", "note": "Short and friendly.", "reviewed": false },
+          { "text": "早安", "rom": "zǎo'ān", "note": "Common in Taiwan; warmer.", "reviewed": false }
+        ]
+      },
+      "ja": {
+        "gloss": "朝の挨拶",
+        "variants": [
+          { "text": "おはよう", "rom": "ohayō", "tone": "casual", "reviewed": false },
+          { "text": "おはようございます", "rom": "ohayō gozaimasu", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "ko": {
+        "gloss": "아침 인사",
+        "variants": [
+          { "text": "좋은 아침", "rom": "joeun achim", "tone": "casual", "note": "Lit. \"good morning.\"", "reviewed": false },
+          { "text": "좋은 아침이에요", "rom": "joeun achimieyo", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "en": {
+        "gloss": "morning greeting",
+        "variants": [
+          { "text": "Good morning", "reviewed": false },
+          { "text": "Morning", "tone": "casual", "note": "Clipped, everyday casual.", "reviewed": false }
+        ]
+      },
+      "de": {
+        "gloss": "Morgengruß",
+        "variants": [
+          { "text": "Guten Morgen", "reviewed": false },
+          { "text": "Morgen", "tone": "casual", "note": "Clipped form; everyday between friends.", "reviewed": false }
+        ]
+      },
+      "es": {
+        "gloss": "saludo matutino",
+        "variants": [
+          { "text": "Buenos días", "note": "Covers morning through midday.", "reviewed": false }
+        ]
+      },
+      "pt": {
+        "gloss": "saudação matinal",
+        "variants": [
+          { "text": "Bom dia", "reviewed": false }
+        ]
+      },
+      "fr": {
+        "gloss": "salutation du matin",
+        "variants": [
+          { "text": "Bonjour", "note": "Default morning/daytime greeting.", "reviewed": false }
+        ]
+      },
+      "it": {
+        "gloss": "saluto del mattino",
+        "variants": [
+          { "text": "Buongiorno", "note": "Lit. \"good day\"; standard morning greeting.", "reviewed": false }
+        ]
+      },
+      "ru": {
+        "gloss": "утреннее приветствие",
+        "variants": [
+          { "text": "Доброе утро", "rom": "dobroe utro", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "powitanie poranne",
+        "variants": [
+          { "text": "Dzień dobry", "note": "Standard morning/daytime greeting; lit. \"good day.\"", "reviewed": false }
+        ]
+      },
+      "tr": {
+        "gloss": "sabah selamı",
+        "variants": [
+          { "text": "Günaydın", "note": "Lit. \"day-bright\"; everyday morning greeting.", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "सुबह का अभिवादन",
+        "variants": [
+          { "text": "सुप्रभात", "rom": "suprabhāt", "tone": "polite", "note": "Sanskritic; formal.", "reviewed": false },
+          { "text": "गुड मॉर्निंग", "rom": "gud mŏrning", "tone": "casual", "note": "English-borrowed; common in everyday Hindi.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "সকালের শুভেচ্ছা",
+        "variants": [
+          { "text": "সুপ্রভাত", "rom": "suprôbhat", "tone": "polite", "note": "Sanskritic; formal.", "reviewed": false },
+          { "text": "শুভ সকাল", "rom": "śubho śôkal", "note": "Lit. \"good morning.\"", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "salam pagi",
+        "variants": [
+          { "text": "Selamat pagi", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "salam pagi",
+        "variants": [
+          { "text": "Selamat pagi", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pagbati sa umaga",
+        "variants": [
+          { "text": "Magandang umaga", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "chào buổi sáng",
+        "variants": [
+          { "text": "Chào buổi sáng", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ทักทายตอนเช้า",
+        "variants": [
+          { "text": "อรุณสวัสดิ์", "rom": "arun sawat", "tone": "polite", "note": "Sanskritic; formal/literary.", "reviewed": false },
+          { "text": "สวัสดีตอนเช้า", "rom": "sawatdee ton chao", "note": "Standard morning greeting.", "reviewed": false }
+        ]
+      }
+    }
+  },
+  {
+    "id": "greeting-afternoon",
+    "scene": "greetings",
+    "order": 3,
+    "trans": {
+      "zh": {
+        "gloss": "下午问候",
+        "variants": [
+          { "text": "下午好", "rom": "xiàwǔ hǎo", "reviewed": false }
+        ]
+      },
+      "ja": {
+        "gloss": "昼の挨拶",
+        "variants": [
+          { "text": "こんにちは", "rom": "konnichiwa", "note": "Daytime/afternoon standard.", "reviewed": false }
+        ]
+      },
+      "en": {
+        "gloss": "afternoon greeting",
+        "variants": [
+          { "text": "Good afternoon", "reviewed": false }
+        ]
+      },
+      "de": {
+        "gloss": "Tagesgruß",
+        "variants": [
+          { "text": "Guten Tag", "note": "Daytime greeting; covers afternoon.", "reviewed": false }
+        ]
+      },
+      "es": {
+        "gloss": "saludo de la tarde",
+        "variants": [
+          { "text": "Buenas tardes", "note": "Used from midday into early evening.", "reviewed": false }
+        ]
+      },
+      "pt": {
+        "gloss": "saudação da tarde",
+        "variants": [
+          { "text": "Boa tarde", "reviewed": false }
+        ]
+      },
+      "it": {
+        "gloss": "saluto del pomeriggio",
+        "variants": [
+          { "text": "Buon pomeriggio", "reviewed": false }
+        ]
+      },
+      "ru": {
+        "gloss": "дневное приветствие",
+        "variants": [
+          { "text": "Добрый день", "rom": "dobryĭ den'", "note": "Lit. \"good day\"; used in daytime/afternoon.", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "powitanie popołudniowe",
+        "variants": [
+          { "text": "Dzień dobry", "note": "Same form as morning; daytime greeting.", "reviewed": false }
+        ]
+      },
+      "tr": {
+        "gloss": "öğleden sonra selamı",
+        "variants": [
+          { "text": "İyi günler", "note": "Lit. \"good days\"; daytime greeting.", "reviewed": false },
+          { "text": "Tünaydın", "note": "Specific afternoon greeting; somewhat dated.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "অপরাহ্ণ শুভেচ্ছা",
+        "variants": [
+          { "text": "শুভ অপরাহ্ণ", "rom": "śubho ôporahṇo", "tone": "polite", "note": "Literary/formal; spoken Bangla rarely uses an afternoon-specific greeting.", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "salam siang/sore",
+        "variants": [
+          { "text": "Selamat siang", "note": "Midday (~10am–3pm).", "reviewed": false },
+          { "text": "Selamat sore", "note": "Late afternoon (~3pm–6pm).", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "salam petang",
+        "variants": [
+          { "text": "Selamat petang", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pagbati sa hapon",
+        "variants": [
+          { "text": "Magandang hapon", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "chào buổi chiều",
+        "variants": [
+          { "text": "Chào buổi chiều", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ทักทายตอนบ่าย",
+        "variants": [
+          { "text": "สวัสดีตอนบ่าย", "rom": "sawatdee ton bai", "reviewed": false }
+        ]
+      }
+    }
+  },
+  {
+    "id": "greeting-evening",
+    "scene": "greetings",
+    "order": 4,
+    "trans": {
+      "zh": {
+        "gloss": "晚间问候",
+        "variants": [
+          { "text": "晚上好", "rom": "wǎnshang hǎo", "reviewed": false }
+        ]
+      },
+      "ja": {
+        "gloss": "夜の挨拶",
+        "variants": [
+          { "text": "こんばんは", "rom": "konbanwa", "reviewed": false }
+        ]
+      },
+      "ko": {
+        "gloss": "저녁 인사",
+        "variants": [
+          { "text": "좋은 저녁", "rom": "joeun jeonyeok", "tone": "casual", "reviewed": false },
+          { "text": "좋은 저녁이에요", "rom": "joeun jeonyeogieyo", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "en": {
+        "gloss": "evening greeting",
+        "variants": [
+          { "text": "Good evening", "reviewed": false }
+        ]
+      },
+      "de": {
+        "gloss": "Abendgruß",
+        "variants": [
+          { "text": "Guten Abend", "reviewed": false }
+        ]
+      },
+      "es": {
+        "gloss": "saludo de la noche",
+        "variants": [
+          { "text": "Buenas tardes", "note": "Used into early evening; switches to buenas noches at dusk.", "reviewed": false },
+          { "text": "Buenas noches", "note": "Greeting on nighttime arrival; also a goodnight.", "reviewed": false }
+        ]
+      },
+      "pt": {
+        "gloss": "saudação da noite",
+        "variants": [
+          { "text": "Boa noite", "note": "Covers evening greeting and goodnight.", "reviewed": false }
+        ]
+      },
+      "fr": {
+        "gloss": "salutation du soir",
+        "variants": [
+          { "text": "Bonsoir", "reviewed": false }
+        ]
+      },
+      "it": {
+        "gloss": "saluto della sera",
+        "variants": [
+          { "text": "Buonasera", "reviewed": false }
+        ]
+      },
+      "ru": {
+        "gloss": "вечернее приветствие",
+        "variants": [
+          { "text": "Добрый вечер", "rom": "dobryĭ vecher", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "powitanie wieczorne",
+        "variants": [
+          { "text": "Dobry wieczór", "reviewed": false }
+        ]
+      },
+      "tr": {
+        "gloss": "akşam selamı",
+        "variants": [
+          { "text": "İyi akşamlar", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "शाम का अभिवादन",
+        "variants": [
+          { "text": "शुभ संध्या", "rom": "śubh sandhyā", "tone": "polite", "note": "Sanskritic; formal/literary.", "reviewed": false },
+          { "text": "गुड इवनिंग", "rom": "gud ivning", "tone": "casual", "note": "English-borrowed; common in everyday Hindi.", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "সন্ধ্যার শুভেচ্ছা",
+        "variants": [
+          { "text": "শুভ সন্ধ্যা", "rom": "śubho śondhya", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "salam malam",
+        "variants": [
+          { "text": "Selamat malam", "note": "Greeting for evening/night.", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "salam malam",
+        "variants": [
+          { "text": "Selamat malam", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "pagbati sa gabi",
+        "variants": [
+          { "text": "Magandang gabi", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "chào buổi tối",
+        "variants": [
+          { "text": "Chào buổi tối", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "ทักทายตอนเย็น",
+        "variants": [
+          { "text": "สวัสดีตอนเย็น", "rom": "sawatdee ton yen", "reviewed": false }
+        ]
+      }
+    }
+  },
+  {
+    "id": "greeting-nice-to-meet",
+    "scene": "greetings",
+    "order": 5,
+    "trans": {
+      "zh": {
+        "gloss": "初次见面",
+        "variants": [
+          { "text": "很高兴认识你", "rom": "hěn gāoxìng rènshi nǐ", "reviewed": false },
+          { "text": "幸会", "rom": "xìnghuì", "tone": "polite", "note": "Literary/formal; warm respect on first meeting.", "reviewed": false }
+        ]
+      },
+      "ja": {
+        "gloss": "初対面の挨拶",
+        "variants": [
+          { "text": "はじめまして", "rom": "hajimemashite", "note": "Standard first-meeting greeting.", "reviewed": false },
+          { "text": "よろしくお願いします", "rom": "yoroshiku onegai shimasu", "tone": "polite", "note": "Often paired after はじめまして; \"I look forward to (knowing you).\"", "reviewed": false }
+        ]
+      },
+      "ko": {
+        "gloss": "첫 인사",
+        "variants": [
+          { "text": "만나서 반가워요", "rom": "mannaseo bangawoyo", "note": "Lit. \"glad to meet (you).\"", "reviewed": false },
+          { "text": "처음 뵙겠습니다", "rom": "cheoeum boepgesseumnida", "tone": "polite", "note": "Formal first-meeting greeting.", "reviewed": false }
+        ]
+      },
+      "en": {
+        "gloss": "first meeting",
+        "variants": [
+          { "text": "Nice to meet you", "reviewed": false },
+          { "text": "Pleased to meet you", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "de": {
+        "gloss": "Erstbegegnung",
+        "variants": [
+          { "text": "Freut mich", "tone": "casual", "note": "Short for \"freut mich, dich kennenzulernen.\"", "reviewed": false },
+          { "text": "Schön, Sie kennenzulernen", "tone": "polite", "note": "Lit. \"nice to get to know you.\"", "reviewed": false }
+        ]
+      },
+      "es": {
+        "gloss": "primer encuentro",
+        "variants": [
+          { "text": "Mucho gusto", "note": "Standard \"nice to meet you.\"", "reviewed": false },
+          { "text": "Encantado", "speakerGender": "m", "note": "Lit. \"delighted\" — male speaker.", "reviewed": false },
+          { "text": "Encantada", "speakerGender": "f", "note": "Lit. \"delighted\" — female speaker.", "reviewed": false }
+        ]
+      },
+      "pt": {
+        "gloss": "primeiro encontro",
+        "variants": [
+          { "text": "Muito prazer", "note": "Lit. \"much pleasure.\"", "reviewed": false },
+          { "text": "Prazer em conhecê-lo", "tone": "polite", "addresseeGender": "m", "reviewed": false },
+          { "text": "Prazer em conhecê-la", "tone": "polite", "addresseeGender": "f", "reviewed": false }
+        ]
+      },
+      "fr": {
+        "gloss": "première rencontre",
+        "variants": [
+          { "text": "Enchanté", "speakerGender": "m", "note": "Lit. \"enchanted\" — male speaker.", "reviewed": false },
+          { "text": "Enchantée", "speakerGender": "f", "note": "Lit. \"enchanted\" — female speaker.", "reviewed": false },
+          { "text": "Ravi de te rencontrer", "tone": "casual", "speakerGender": "m", "reviewed": false },
+          { "text": "Ravie de te rencontrer", "tone": "casual", "speakerGender": "f", "reviewed": false }
+        ]
+      },
+      "it": {
+        "gloss": "primo incontro",
+        "variants": [
+          { "text": "Piacere", "note": "Standard \"pleased (to meet you).\"", "reviewed": false },
+          { "text": "Piacere di conoscerti", "tone": "casual", "reviewed": false },
+          { "text": "Lieto di conoscerla", "tone": "polite", "speakerGender": "m", "reviewed": false },
+          { "text": "Lieta di conoscerla", "tone": "polite", "speakerGender": "f", "reviewed": false }
+        ]
+      },
+      "ru": {
+        "gloss": "знакомство",
+        "variants": [
+          { "text": "Приятно познакомиться", "rom": "priyatno poznakomit'sya", "reviewed": false },
+          { "text": "Очень приятно", "rom": "ochen' priyatno", "tone": "casual", "note": "Lit. \"very pleasant\"; common short form.", "reviewed": false }
+        ]
+      },
+      "pl": {
+        "gloss": "pierwsze spotkanie",
+        "variants": [
+          { "text": "Miło mi cię poznać", "tone": "casual", "reviewed": false },
+          { "text": "Miło mi pana poznać", "tone": "polite", "addresseeGender": "m", "reviewed": false },
+          { "text": "Miło mi panią poznać", "tone": "polite", "addresseeGender": "f", "reviewed": false }
+        ]
+      },
+      "tr": {
+        "gloss": "ilk tanışma",
+        "variants": [
+          { "text": "Memnun oldum", "note": "Short, everyday \"pleased (to meet you).\"", "reviewed": false },
+          { "text": "Tanıştığımıza memnun oldum", "tone": "polite", "note": "Lit. \"pleased that we have met.\"", "reviewed": false }
+        ]
+      },
+      "hi": {
+        "gloss": "पहली मुलाक़ात",
+        "variants": [
+          { "text": "आपसे मिलकर खुशी हुई", "rom": "āpse milkar khushī huī", "tone": "polite", "note": "Lit. \"meeting you brought happiness.\"", "reviewed": false },
+          { "text": "मिलकर अच्छा लगा", "rom": "milkar achchhā lagā", "note": "Lit. \"it felt good to meet (you).\"", "reviewed": false }
+        ]
+      },
+      "bn": {
+        "gloss": "প্রথম দেখা",
+        "variants": [
+          { "text": "আপনার সাথে দেখা হয়ে ভালো লাগলো", "rom": "āpnār śathe dekha hoye bhalo laglo", "tone": "polite", "note": "Lit. \"it was good to meet you.\"", "reviewed": false },
+          { "text": "তোমার সাথে দেখা হয়ে ভালো লাগলো", "rom": "tomār śathe dekha hoye bhalo laglo", "note": "Same warmth, peer-pronoun form.", "reviewed": false }
+        ]
+      },
+      "id": {
+        "gloss": "perkenalan",
+        "variants": [
+          { "text": "Senang bertemu denganmu", "tone": "casual", "reviewed": false },
+          { "text": "Senang bertemu Anda", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "ms": {
+        "gloss": "perkenalan",
+        "variants": [
+          { "text": "Selamat berkenalan", "note": "Lit. \"happy acquaintance.\"", "reviewed": false },
+          { "text": "Gembira bertemu dengan anda", "tone": "polite", "reviewed": false }
+        ]
+      },
+      "fil": {
+        "gloss": "unang pagkikita",
+        "variants": [
+          { "text": "Ikinagagalak kong makilala ka", "tone": "polite", "note": "Lit. \"I am delighted to meet you.\"", "reviewed": false },
+          { "text": "Nice to meet you", "tone": "casual", "note": "English-borrowed; very common in everyday speech.", "reviewed": false }
+        ]
+      },
+      "vi": {
+        "gloss": "lần đầu gặp mặt",
+        "variants": [
+          { "text": "Rất vui được gặp bạn", "note": "Standard \"nice to meet you\"; bạn = peer pronoun.", "reviewed": false },
+          { "text": "Hân hạnh được gặp bạn", "tone": "polite", "note": "More formal; lit. \"honored to meet you.\"", "reviewed": false }
+        ]
+      },
+      "th": {
+        "gloss": "การพบกันครั้งแรก",
+        "variants": [
+          { "text": "ยินดีที่ได้รู้จัก", "rom": "yindee thi dai rujak", "note": "Standard \"nice to meet you.\"", "reviewed": false },
+          { "text": "ยินดีที่ได้รู้จักครับ", "rom": "yindee thi dai rujak khrap", "tone": "polite", "speakerGender": "m", "note": "With polite particle ครับ for male speakers.", "reviewed": false },
+          { "text": "ยินดีที่ได้รู้จักค่ะ", "rom": "yindee thi dai rujak kha", "tone": "polite", "speakerGender": "f", "note": "With polite particle ค่ะ for female speakers.", "reviewed": false }
+        ]
+      }
+    }
+  },
+  {
     "id": "catch-how-are-you",
     "scene": "catching-up",
     "order": 1,
