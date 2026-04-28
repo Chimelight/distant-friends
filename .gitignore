@@ -27,3 +27,4 @@ pnpm-debug.log*
 
 # local-only references
 reference/
+tmp/

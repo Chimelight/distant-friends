@@ -8,7 +8,7 @@
 
 ## What it is
 
-A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, gratitude, affection, warm wishes, farewells — across seven languages at v1, extensible. Click any cell to copy. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`) and gender / count distinctions surface as quiet tag-line labels next to each variant.
+A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, gratitude, affection, warm wishes, farewells — across thirteen languages at v0.1.1, extensible. Click any cell to copy. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`); gender and count distinctions surface as quiet tag-line labels next to each variant.
 
 What it isn't:
 
@@ -46,7 +46,7 @@ src/
 ├── data/
 │   ├── languages.json
 │   ├── scenes.json
-│   └── phrases.json  # 10 phrases at v1, ~30 by v2
+│   └── phrases.json  # 10 phrases × 13 languages at v0.1.1, ~30 by v2
 ├── lib/              # schema (Zod), filter, stores, scroll, clipboard, storage
 ├── pages/index.astro
 └── styles/           # tokens.css (light + dark), global.css, typography.css
@@ -133,4 +133,13 @@ The release flow is wrapped in a `/release` slash command (Claude Code) that dra
 
 ## Roadmap
 
-See [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单). Current state: M1 (visual + interactive parity with v3 demo) complete. Next: M2 (dark-mode toggle + starring), M3 (TTS + PWA precache), M4 (a11y + Lighthouse polish).
+See [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单) for the full task list with checkboxes.
+
+| Milestone | State |
+| --- | --- |
+| M0 — project skeleton | ✅ shipped in v0.1.0 |
+| M1 — visual + interactive parity with v3 demo | ✅ shipped in v0.1.0 |
+| M2 — dark mode + starring | partial — dark tokens + FOUC defense in place; `ThemeToggle` and `StarButton` UI not built yet |
+| M3 — TTS + PWA precache | not started |
+| M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README done |
+| M5 — content (ongoing) | 13 languages × 10 phrases at v0.1.1 (122 of 130 cells unreviewed) |

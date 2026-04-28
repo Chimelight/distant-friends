@@ -14,7 +14,8 @@
     "astro": "astro",
     "check": "astro check",
     "coverage": "node scripts/coverage.mjs",
-    "new-phrase": "node scripts/new-phrase.mjs"
+    "new-phrase": "node scripts/new-phrase.mjs",
+    "review": "node scripts/export-review.mjs"
   },
   "dependencies": {
     "@astrojs/svelte": "^8.0.5",

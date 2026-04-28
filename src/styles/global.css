@@ -122,6 +122,28 @@ button {
   }
 }
 
+/* —— theme switch (two-group stagger) ——
+ * On theme change, ThemeToggle adds .is-theme-changing on <html> for
+ * ~700ms. While it's on, every element runs grouped color transitions:
+ *   - surfaces  (background / border / shadow)  start at 0
+ *   - ink       (color / fill / stroke)         start at +180ms
+ * Reads like paper recoloring first, then ink settling onto it.
+ * !important is needed because individual components own their own
+ * `transition` declarations for hover/etc; we override briefly during
+ * the change window only. */
+.is-theme-changing,
+.is-theme-changing *,
+.is-theme-changing *::before,
+.is-theme-changing *::after {
+  transition:
+    background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color     0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow       0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    color            0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.36s,
+    fill             0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.36s,
+    stroke           0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.36s !important;
+}
+
 /* —— view-mode toggle (driven by body[data-view]) —— */
 body[data-view="cards"] .view-desktop { display: none !important; }
 body[data-view="cards"] .view-mobile  { display: block !important; }
