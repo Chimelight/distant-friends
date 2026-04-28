@@ -266,7 +266,7 @@
       "hi": {
         "gloss": "बहुत दिनों बाद",
         "variants": [
-          { "text": "बहुत दिनों बाद!", "rom": "bahut dinon bād!", "note": "Lit. “after many days!”", "reviewed": false }
+          { "text": "बहुत दिनों के बाद!", "rom": "bahut dinon ke bād!", "note": "Lit. “after many days!”" }
         ]
       },
       "bn": {
@@ -360,7 +360,7 @@
       "hi": {
         "gloss": "धन्यवाद",
         "variants": [
-          { "text": "शुक्रिया", "rom": "shukriyā", "note": "Urdu-derived; warm and everyday.", "reviewed": false },
+          { "text": "शुक्रिया", "rom": "shukriyā", "note": "Urdu-derived; warm and everyday." },
           { "text": "धन्यवाद", "rom": "dhanyavād", "tone": "polite", "note": "Sanskritic; more formal.", "reviewed": false }
         ]
       },
@@ -461,15 +461,17 @@
       "hi": {
         "gloss": "क्षमा",
         "variants": [
-          { "text": "माफ़ करो", "rom": "māf karo", "tone": "casual", "note": "Lit. “forgive (me).”", "reviewed": false },
-          { "text": "माफ़ कीजिए", "rom": "māf kījie", "tone": "polite", "reviewed": false }
+          { "text": "माफ़ करो", "rom": "māf karo", "tone": "casual", "note": "Lit. “forgive (me).”" },
+          { "text": "मुझे माफ़ कर दीजिए", "rom": "mujhe māf kar dījie", "tone": "polite", "note": "Lit. “please forgive me” — warmer, complete form." },
+          { "text": "मुझे क्षमा कीजिए", "rom": "mujhe kshamā kījie", "tone": "polite", "note": "Sanskritic; sincere, respectful weight." }
         ]
       },
       "bn": {
         "gloss": "ক্ষমা",
         "variants": [
-          { "text": "দুঃখিত", "rom": "duḥkhito", "note": "Lit. “(I am) saddened.”", "reviewed": false },
-          { "text": "মাফ করো", "rom": "māf koro", "tone": "casual", "note": "Lit. “forgive (me).”", "reviewed": false }
+          { "text": "দুঃখিত", "rom": "duḥkhito", "note": "Lit. “(I am) saddened.”" },
+          { "text": "আমায় মাফ করো", "rom": "āmāy māf koro", "note": "Warm, direct “forgive me.”" },
+          { "text": "মাফ করো", "rom": "māf koro", "tone": "casual", "note": "Lit. “forgive (me).”" }
         ]
       },
       "mizo": {
@@ -558,8 +560,8 @@
       "bn": {
         "gloss": "মনে পড়া",
         "variants": [
-          { "text": "তোমাকে মিস করি", "rom": "tomāke miss kori", "note": "English-borrowed “miss”; everyday casual.", "reviewed": false },
-          { "text": "তোমাকে মনে পড়ছে", "rom": "tomāke mône poṛchhe", "note": "Lit. “you come to (my) mind” — softer, more lyrical.", "reviewed": false }
+          { "text": "তোমাকে মিস করি", "rom": "tomāke miss kori", "note": "English-borrowed “miss”; everyday casual." },
+          { "text": "তোমায় মনে পড়ছে", "rom": "tomāy mône poṛchhe", "note": "Lit. “you come to (my) mind” — softer, more lyrical." }
         ]
       },
       "mizo": {
@@ -828,7 +830,8 @@
       "bn": {
         "gloss": "জন্মদিনের শুভেচ্ছা",
         "variants": [
-          { "text": "শুভ জন্মদিন", "rom": "śubho jonmodin", "reviewed": false }
+          { "text": "জন্মদিনের শুভেচ্ছা", "rom": "jonmodiner śubhechchhā", "note": "Warmer, full form; lit. “birthday’s good wishes.”" },
+          { "text": "শুভ জন্মদিন", "rom": "śubho jonmodin", "note": "Short and simple." }
         ]
       },
       "mizo": {
@@ -927,8 +930,8 @@
       "bn": {
         "gloss": "বিদায়",
         "variants": [
-          { "text": "বিদায়", "rom": "bidāy", "note": "Formal, more lasting farewell.", "reviewed": false },
-          { "text": "আবার দেখা হবে", "rom": "ābār dekhā hôbe", "note": "Lit. “we’ll meet again.”", "reviewed": false },
+          { "text": "বিদায়", "rom": "bidāy", "note": "Standard goodbye." },
+          { "text": "আবার দেখা হবে", "rom": "ābār dekhā hôbe", "note": "Lit. “we’ll meet again.”" },
           { "text": "টা টা", "rom": "ṭā ṭā", "tone": "casual", "note": "Casual “ta ta”; common.", "reviewed": false }
         ]
       },
