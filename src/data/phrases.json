@@ -7,30 +7,30 @@
       "zh": {
         "gloss": "问候",
         "variants": [
-          { "text": "你好", "rom": "nǐ hǎo" },
-          { "text": "嗨", "rom": "hāi", "tone": "casual" },
-          { "text": "您好", "rom": "nín hǎo", "tone": "polite", "note": "Honorific; to elders or strangers." }
+          { "text": "你好", "rom": "nǐ hǎo", "reviewed": false },
+          { "text": "嗨", "rom": "hāi", "tone": "casual", "reviewed": false },
+          { "text": "您好", "rom": "nín hǎo", "tone": "polite", "note": "Honorific; to elders or strangers.", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "挨拶",
         "variants": [
-          { "text": "こんにちは", "rom": "konnichiwa", "tone": "neutral", "note": "Daytime standard; works with anyone." },
-          { "text": "やっほー", "rom": "yahhō", "tone": "close", "note": "Playful; between close friends." }
+          { "text": "こんにちは", "rom": "konnichiwa", "tone": "neutral", "note": "Daytime standard; works with anyone.", "reviewed": false },
+          { "text": "やっほー", "rom": "yahhō", "tone": "close", "note": "Playful; between close friends.", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "인사",
         "variants": [
-          { "text": "안녕", "rom": "annyeong", "tone": "casual" },
-          { "text": "안녕하세요", "rom": "annyeonghaseyo", "tone": "polite" }
+          { "text": "안녕", "rom": "annyeong", "tone": "casual", "reviewed": false },
+          { "text": "안녕하세요", "rom": "annyeonghaseyo", "tone": "polite", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "a greeting",
         "variants": [
-          { "text": "Hello" },
-          { "text": "Hi", "tone": "casual" }
+          { "text": "Hello", "reviewed": false },
+          { "text": "Hi", "tone": "casual", "reviewed": false }
         ]
       },
       "de": {
@@ -44,21 +44,21 @@
       "es": {
         "gloss": "un saludo",
         "variants": [
-          { "text": "Hola" }
+          { "text": "Hola", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "uma saudação",
         "variants": [
-          { "text": "Olá" },
-          { "text": "Oi", "tone": "casual" }
+          { "text": "Olá", "reviewed": false },
+          { "text": "Oi", "tone": "casual", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "une salutation",
         "variants": [
-          { "text": "Salut", "tone": "casual" },
-          { "text": "Bonjour", "tone": "neutral", "note": "Universal — works anywhere." }
+          { "text": "Salut", "tone": "casual", "reviewed": false },
+          { "text": "Bonjour", "tone": "neutral", "note": "Universal — works anywhere.", "reviewed": false }
         ]
       },
       "ru": {
@@ -105,29 +105,28 @@
       "zh": {
         "gloss": "近况",
         "variants": [
-          { "text": "最近怎么样", "rom": "zuìjìn zěnmeyàng" },
-          { "text": "还好吗", "rom": "hái hǎo ma", "tone": "casual" },
-          { "text": "您最近还好吗", "rom": "nín zuìjìn hái hǎo ma", "tone": "polite", "note": "Honorific 您 to elders or in formal writing." }
+          { "text": "最近怎么样", "rom": "zuìjìn zěnmeyàng", "reviewed": false },
+          { "text": "还好吗", "rom": "hái hǎo ma", "tone": "casual", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "様子を尋ねる",
         "variants": [
-          { "text": "元気？", "rom": "genki?", "tone": "casual", "note": "Lit. \"are you well?\"" },
-          { "text": "お元気ですか", "rom": "ogenki desu ka", "tone": "polite" }
+          { "text": "元気？", "rom": "genki?", "tone": "casual", "note": "Lit. \"are you well?\"", "reviewed": false },
+          { "text": "お元気ですか", "rom": "ogenki desu ka", "tone": "polite", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "안부",
         "variants": [
-          { "text": "잘 지내?", "rom": "jal jinae?", "tone": "casual" },
-          { "text": "잘 지내세요?", "rom": "jal jinaeseyo?", "tone": "polite" }
+          { "text": "잘 지내?", "rom": "jal jinae?", "tone": "casual", "reviewed": false },
+          { "text": "잘 지내세요?", "rom": "jal jinaeseyo?", "tone": "polite", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "checking in",
         "variants": [
-          { "text": "How are you?" }
+          { "text": "How are you?", "reviewed": false }
         ]
       },
       "de": {
@@ -141,21 +140,21 @@
       "es": {
         "gloss": "preguntar cómo está",
         "variants": [
-          { "text": "¿Qué tal?", "tone": "casual" },
-          { "text": "¿Cómo estás?" }
+          { "text": "¿Qué tal?", "tone": "casual", "reviewed": false },
+          { "text": "¿Cómo estás?", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "saber como vai",
         "variants": [
-          { "text": "Tudo bem?" }
+          { "text": "Tudo bem?", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "prendre des nouvelles",
         "variants": [
-          { "text": "Ça va ?", "tone": "casual" },
-          { "text": "Comment allez-vous ?", "tone": "polite" }
+          { "text": "Ça va ?", "tone": "casual", "reviewed": false },
+          { "text": "Comment allez-vous ?", "tone": "polite", "reviewed": false }
         ]
       },
       "ru": {
@@ -204,26 +203,26 @@
       "zh": {
         "gloss": "久别重逢",
         "variants": [
-          { "text": "好久不见", "rom": "hǎo jiǔ bù jiàn" }
+          { "text": "好久不见", "rom": "hǎo jiǔ bù jiàn", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "再会の言葉",
         "variants": [
-          { "text": "久しぶり", "rom": "hisashiburi", "note": "The most-used reunion word." }
+          { "text": "久しぶり", "rom": "hisashiburi", "note": "The most-used reunion word.", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "오랜만의 인사",
         "variants": [
-          { "text": "오랜만이야", "rom": "oraenmaniya", "tone": "casual" },
-          { "text": "오랜만이에요", "rom": "oraenmanieyo", "tone": "polite" }
+          { "text": "오랜만이야", "rom": "oraenmaniya", "tone": "casual", "reviewed": false },
+          { "text": "오랜만이에요", "rom": "oraenmanieyo", "tone": "polite", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "long absence",
         "variants": [
-          { "text": "Long time no see" }
+          { "text": "Long time no see", "reviewed": false }
         ]
       },
       "de": {
@@ -235,19 +234,19 @@
       "es": {
         "gloss": "después de tiempo",
         "variants": [
-          { "text": "¡Cuánto tiempo!" }
+          { "text": "¡Cuánto tiempo!", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "reencontro",
         "variants": [
-          { "text": "Quanto tempo!" }
+          { "text": "Quanto tempo!", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "après longtemps",
         "variants": [
-          { "text": "Ça fait longtemps !" }
+          { "text": "Ça fait longtemps !", "reviewed": false }
         ]
       },
       "ru": {
@@ -292,28 +291,28 @@
       "zh": {
         "gloss": "致谢",
         "variants": [
-          { "text": "谢谢", "rom": "xièxie" },
-          { "text": "谢谢你", "rom": "xièxie nǐ", "note": "Slightly warmer — specifies \"you\"." }
+          { "text": "谢谢", "rom": "xièxie", "reviewed": false },
+          { "text": "谢谢你", "rom": "xièxie nǐ", "note": "Slightly warmer — specifies \"you\".", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "感謝",
         "variants": [
-          { "text": "ありがとう", "rom": "arigatō", "tone": "casual" },
-          { "text": "ありがとうございます", "rom": "arigatō gozaimasu", "tone": "polite" }
+          { "text": "ありがとう", "rom": "arigatō", "tone": "casual", "reviewed": false },
+          { "text": "ありがとうございます", "rom": "arigatō gozaimasu", "tone": "polite", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "감사",
         "variants": [
-          { "text": "고마워", "rom": "gomawo", "tone": "casual" },
-          { "text": "감사합니다", "rom": "gamsahamnida", "tone": "polite" }
+          { "text": "고마워", "rom": "gomawo", "tone": "casual", "reviewed": false },
+          { "text": "감사합니다", "rom": "gamsahamnida", "tone": "polite", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "gratitude",
         "variants": [
-          { "text": "Thank you" }
+          { "text": "Thank you", "reviewed": false }
         ]
       },
       "de": {
@@ -327,21 +326,21 @@
       "es": {
         "gloss": "agradecimiento",
         "variants": [
-          { "text": "Gracias" }
+          { "text": "Gracias", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "agradecimento",
         "variants": [
-          { "text": "Obrigado", "speakerGender": "m", "note": "Said by male speakers." },
-          { "text": "Obrigada", "speakerGender": "f", "note": "Said by female speakers." },
-          { "text": "Valeu", "tone": "casual", "note": "Very casual, Brazilian." }
+          { "text": "Obrigado", "speakerGender": "m", "note": "Said by male speakers.", "reviewed": false },
+          { "text": "Obrigada", "speakerGender": "f", "note": "Said by female speakers.", "reviewed": false },
+          { "text": "Valeu", "tone": "casual", "note": "Very casual, Brazilian.", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "remerciement",
         "variants": [
-          { "text": "Merci" }
+          { "text": "Merci", "reviewed": false }
         ]
       },
       "ru": {
@@ -388,31 +387,31 @@
       "zh": {
         "gloss": "致歉",
         "variants": [
-          { "text": "对不起", "rom": "duìbuqǐ" },
-          { "text": "不好意思", "rom": "bùhǎoyìsi", "tone": "casual", "note": "Light apology — bumping into someone, interrupting, small slips." },
-          { "text": "抱歉", "rom": "bàoqiàn", "tone": "neutral" }
+          { "text": "对不起", "rom": "duìbuqǐ", "reviewed": false },
+          { "text": "不好意思", "rom": "bùhǎoyìsi", "tone": "casual", "note": "Light apology — bumping into someone, interrupting, small slips.", "reviewed": false },
+          { "text": "抱歉", "rom": "bàoqiàn", "tone": "neutral", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "謝罪",
         "variants": [
-          { "text": "ごめん", "rom": "gomen", "tone": "casual" },
-          { "text": "ごめんなさい", "rom": "gomen nasai", "tone": "neutral" },
-          { "text": "すみません", "rom": "sumimasen", "tone": "polite" }
+          { "text": "ごめん", "rom": "gomen", "tone": "casual", "reviewed": false },
+          { "text": "ごめんなさい", "rom": "gomen nasai", "tone": "neutral", "reviewed": false },
+          { "text": "すみません", "rom": "sumimasen", "tone": "polite", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "사과",
         "variants": [
-          { "text": "미안해", "rom": "mianhae", "tone": "casual" },
-          { "text": "죄송합니다", "rom": "joesonghamnida", "tone": "polite" }
+          { "text": "미안해", "rom": "mianhae", "tone": "casual", "reviewed": false },
+          { "text": "죄송합니다", "rom": "joesonghamnida", "tone": "polite", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "apology",
         "variants": [
-          { "text": "Sorry", "tone": "casual" },
-          { "text": "I'm sorry" }
+          { "text": "Sorry", "tone": "casual", "reviewed": false },
+          { "text": "I'm sorry", "reviewed": false }
         ]
       },
       "de": {
@@ -426,22 +425,22 @@
       "es": {
         "gloss": "disculpa",
         "variants": [
-          { "text": "Lo siento" },
-          { "text": "Perdón", "tone": "casual" }
+          { "text": "Lo siento", "reviewed": false },
+          { "text": "Perdón", "tone": "casual", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "desculpa",
         "variants": [
-          { "text": "Desculpa", "tone": "casual" },
-          { "text": "Me desculpe", "tone": "polite" }
+          { "text": "Desculpa", "tone": "casual", "reviewed": false },
+          { "text": "Me desculpe", "tone": "polite", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "excuse",
         "variants": [
-          { "text": "Désolé(e)" },
-          { "text": "Pardon", "tone": "casual" }
+          { "text": "Désolé(e)", "reviewed": false },
+          { "text": "Pardon", "tone": "casual", "reviewed": false }
         ]
       },
       "ru": {
@@ -489,27 +488,27 @@
       "zh": {
         "gloss": "思念",
         "variants": [
-          { "text": "我想你", "rom": "wǒ xiǎng nǐ" },
-          { "text": "好想你", "rom": "hǎo xiǎng nǐ", "tone": "close", "note": "Warmer; longer separation or stronger feeling." },
-          { "text": "想你了", "rom": "xiǎng nǐ le", "tone": "casual" }
+          { "text": "我想你", "rom": "wǒ xiǎng nǐ", "reviewed": false },
+          { "text": "好想你", "rom": "hǎo xiǎng nǐ", "tone": "close", "note": "Warmer; longer separation or stronger feeling.", "reviewed": false },
+          { "text": "想你了", "rom": "xiǎng nǐ le", "tone": "casual", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "会いたい気持ち",
         "variants": [
-          { "text": "会いたいな", "rom": "aitai na", "note": "Soft \"I wish I could see you\"; friends do say this." }
+          { "text": "会いたいな", "rom": "aitai na", "note": "Soft \"I wish I could see you\"; friends do say this.", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "그리움",
         "variants": [
-          { "text": "보고 싶어", "rom": "bogo sipeo", "note": "Literally \"I want to see you.\"" }
+          { "text": "보고 싶어", "rom": "bogo sipeo", "note": "Literally \"I want to see you.\"", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "thinking of someone far",
         "variants": [
-          { "text": "I miss you" }
+          { "text": "I miss you", "reviewed": false }
         ]
       },
       "de": {
@@ -522,19 +521,19 @@
       "es": {
         "gloss": "extrañar",
         "variants": [
-          { "text": "Te extraño" }
+          { "text": "Te extraño", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "saudade",
         "variants": [
-          { "text": "Tô com saudade", "tone": "casual", "note": "Warm, deeply Brazilian; no exact English equivalent." }
+          { "text": "Tô com saudade", "tone": "casual", "note": "Warm, deeply Brazilian; no exact English equivalent.", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "manque",
         "variants": [
-          { "text": "Tu me manques", "note": "Lit. \"you are missing from me.\"" }
+          { "text": "Tu me manques", "note": "Lit. \"you are missing from me.\"", "reviewed": false }
         ]
       },
       "ru": {
@@ -577,29 +576,30 @@
     "order": 2,
     "trans": {
       "zh": {
-        "gloss": "关心",
+        "gloss": "在乎",
         "variants": [
-          { "text": "我很关心你", "rom": "wǒ hěn guānxīn nǐ" },
-          { "text": "我很在乎你", "rom": "wǒ hěn zàihu nǐ", "note": "Slightly more possessive; closer than 关心." },
-          { "text": "你对我很重要", "rom": "nǐ duì wǒ hěn zhòngyào", "note": "Lit. “you are very important to me.”" }
+          { "text": "你对我很重要", "rom": "nǐ duì wǒ hěn zhòngyào", "reviewed": false },
+          { "text": "我心里一直有你", "rom": "wǒ xīnli yīzhí yǒu nǐ", "tone": "close", "note": "心里 carries it; warmer than 在乎.", "reviewed": false },
+          { "text": "想着你呢", "rom": "xiǎngzhe nǐ ne", "tone": "casual", "note": "Light check-in vibe; “you’re on my mind.”", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "大切な気持ち",
         "variants": [
-          { "text": "大切に思ってる", "rom": "taisetsu ni omotteru", "note": "Lit. \"I think of you as precious.\"" }
+          { "text": "大切に思ってる", "rom": "taisetsu ni omotteru", "note": "Lit. \"I think of you as precious.\"", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "소중함",
         "variants": [
-          { "text": "네가 소중해", "rom": "nega sojunghae" }
+          { "text": "네가 소중해", "rom": "nega sojunghae", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "expressing care",
         "variants": [
-          { "text": "I care about you" }
+          { "text": "You mean a lot to me", "reviewed": false },
+          { "text": "Thinking of you", "tone": "casual", "note": "What you’d actually write on a card.", "reviewed": false }
         ]
       },
       "de": {
@@ -611,19 +611,19 @@
       "es": {
         "gloss": "cariño",
         "variants": [
-          { "text": "Me importas" }
+          { "text": "Me importas", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "cuidado",
         "variants": [
-          { "text": "Você é importante pra mim" }
+          { "text": "Você é importante pra mim", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "tendresse",
         "variants": [
-          { "text": "Tu comptes pour moi" }
+          { "text": "Tu comptes pour moi", "reviewed": false }
         ]
       },
       "ru": {
@@ -668,27 +668,27 @@
       "zh": {
         "gloss": "晚安祝福",
         "variants": [
-          { "text": "晚安", "rom": "wǎn ān" }
+          { "text": "晚安", "rom": "wǎn ān", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "おやすみの挨拶",
         "variants": [
-          { "text": "おやすみ", "rom": "oyasumi", "tone": "casual" },
-          { "text": "おやすみなさい", "rom": "oyasumi nasai", "tone": "polite" }
+          { "text": "おやすみ", "rom": "oyasumi", "tone": "casual", "reviewed": false },
+          { "text": "おやすみなさい", "rom": "oyasumi nasai", "tone": "polite", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "잘 자라는 인사",
         "variants": [
-          { "text": "잘 자", "rom": "jal ja", "tone": "close", "note": "For close people only." },
-          { "text": "안녕히 주무세요", "rom": "annyeonghi jumuseyo", "tone": "polite" }
+          { "text": "잘 자", "rom": "jal ja", "tone": "close", "note": "For close people only.", "reviewed": false },
+          { "text": "안녕히 주무세요", "rom": "annyeonghi jumuseyo", "tone": "polite", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "parting before sleep",
         "variants": [
-          { "text": "Goodnight" }
+          { "text": "Goodnight", "reviewed": false }
         ]
       },
       "de": {
@@ -701,19 +701,19 @@
       "es": {
         "gloss": "buenas noches",
         "variants": [
-          { "text": "Buenas noches" }
+          { "text": "Buenas noches", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "boa noite",
         "variants": [
-          { "text": "Boa noite" }
+          { "text": "Boa noite", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "bonne nuit",
         "variants": [
-          { "text": "Bonne nuit" }
+          { "text": "Bonne nuit", "reviewed": false }
         ]
       },
       "ru": {
@@ -759,25 +759,25 @@
       "zh": {
         "gloss": "生日祝福",
         "variants": [
-          { "text": "生日快乐", "rom": "shēngrì kuàilè" }
+          { "text": "生日快乐", "rom": "shēngrì kuàilè", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "誕生日祝い",
         "variants": [
-          { "text": "お誕生日おめでとう", "rom": "otanjōbi omedetō" }
+          { "text": "お誕生日おめでとう", "rom": "otanjōbi omedetō", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "생일 축하",
         "variants": [
-          { "text": "생일 축하해", "rom": "saengil chukahae" }
+          { "text": "생일 축하해", "rom": "saengil chukahae", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "a yearly celebration",
         "variants": [
-          { "text": "Happy birthday" }
+          { "text": "Happy birthday", "reviewed": false }
         ]
       },
       "de": {
@@ -790,19 +790,19 @@
       "es": {
         "gloss": "felicitar un cumpleaños",
         "variants": [
-          { "text": "Feliz cumpleaños" }
+          { "text": "Feliz cumpleaños", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "parabéns de aniversário",
         "variants": [
-          { "text": "Feliz aniversário" }
+          { "text": "Feliz aniversário", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "vœu d'anniversaire",
         "variants": [
-          { "text": "Joyeux anniversaire" }
+          { "text": "Joyeux anniversaire", "reviewed": false }
         ]
       },
       "ru": {
@@ -847,31 +847,31 @@
       "zh": {
         "gloss": "告别",
         "variants": [
-          { "text": "再见", "rom": "zàijiàn" },
-          { "text": "拜拜", "rom": "báibái", "tone": "casual" },
-          { "text": "回头见", "rom": "huítóu jiàn", "tone": "casual", "note": "Lit. “see you later” — implies you’ll meet again soon." },
-          { "text": "先这样", "rom": "xiān zhèyàng", "tone": "casual", "note": "Lit. “let’s leave it here” — used when ending a chat." }
+          { "text": "再见", "rom": "zàijiàn", "reviewed": false },
+          { "text": "拜拜", "rom": "báibái", "tone": "casual", "reviewed": false },
+          { "text": "回头见", "rom": "huítóu jiàn", "tone": "casual", "note": "Lit. “see you later” — implies you’ll meet again soon.", "reviewed": false },
+          { "text": "先这样", "rom": "xiān zhèyàng", "tone": "casual", "note": "Lit. “let’s leave it here” — used when ending a chat.", "reviewed": false }
         ]
       },
       "ja": {
         "gloss": "別れの挨拶",
         "variants": [
-          { "text": "じゃあね", "rom": "jā ne", "tone": "casual" },
-          { "text": "さようなら", "rom": "sayōnara", "tone": "polite", "note": "Feels somewhat final." }
+          { "text": "またね", "rom": "mata ne", "note": "Lit. “again, yeah” — the everyday “see you.”", "reviewed": false },
+          { "text": "じゃあね", "rom": "jā ne", "tone": "casual", "reviewed": false }
         ]
       },
       "ko": {
         "gloss": "작별",
         "variants": [
-          { "text": "잘 가", "rom": "jal ga", "tone": "casual", "note": "\"Go well\" — to someone leaving." },
-          { "text": "안녕히 가세요", "rom": "annyeonghi gaseyo", "tone": "polite" }
+          { "text": "잘 가", "rom": "jal ga", "tone": "casual", "note": "\"Go well\" — to someone leaving.", "reviewed": false },
+          { "text": "안녕히 가세요", "rom": "annyeonghi gaseyo", "tone": "polite", "reviewed": false }
         ]
       },
       "en": {
         "gloss": "a simple farewell",
         "variants": [
-          { "text": "Bye", "tone": "casual" },
-          { "text": "Goodbye" }
+          { "text": "Bye", "tone": "casual", "reviewed": false },
+          { "text": "Goodbye", "reviewed": false }
         ]
       },
       "de": {
@@ -884,21 +884,21 @@
       "es": {
         "gloss": "despedida",
         "variants": [
-          { "text": "Adiós" },
-          { "text": "Chao", "tone": "casual" }
+          { "text": "Adiós", "reviewed": false },
+          { "text": "Chao", "tone": "casual", "reviewed": false }
         ]
       },
       "pt": {
         "gloss": "despedida",
         "variants": [
-          { "text": "Tchau" }
+          { "text": "Tchau", "reviewed": false }
         ]
       },
       "fr": {
         "gloss": "au revoir",
         "variants": [
-          { "text": "Salut", "tone": "casual" },
-          { "text": "Au revoir", "tone": "neutral" }
+          { "text": "Salut", "tone": "casual", "reviewed": false },
+          { "text": "Au revoir", "tone": "neutral", "reviewed": false }
         ]
       },
       "ru": {
