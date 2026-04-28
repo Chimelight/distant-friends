@@ -1,0 +1,135 @@
+{
+  "id": "wish-birthday",
+  "scene": "well-wishes",
+  "order": 2,
+  "trans": {
+    "zh": {
+      "gloss": "生日祝福",
+      "variants": [
+        { "text": "生日快乐", "rom": "shēngrì kuàilè", "reviewed": true }
+      ]
+    },
+    "ja": {
+      "gloss": "誕生日祝い",
+      "variants": [
+        { "text": "お誕生日おめでとう", "rom": "otanjōbi omedetō", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "생일 축하",
+      "variants": [
+        { "text": "생일 축하해", "rom": "saengil chukahae", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "a yearly celebration",
+      "variants": [
+        { "text": "Happy birthday", "reviewed": true }
+      ]
+    },
+    "de": {
+      "gloss": "Geburtstagsglückwunsch",
+      "variants": [
+        { "text": "Alles Gute zum Geburtstag", "reviewed": false },
+        { "text": "Herzlichen Glückwunsch zum Geburtstag", "tone": "polite", "note": "Heartier, more formal.", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "felicitar un cumpleaños",
+      "variants": [
+        { "text": "Feliz cumpleaños", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "parabéns de aniversário",
+      "variants": [
+        { "text": "Feliz aniversário", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "vœu d'anniversaire",
+      "variants": [
+        { "text": "Joyeux anniversaire", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "auguri di compleanno",
+      "variants": [
+        { "text": "Buon compleanno", "reviewed": false },
+        { "text": "Tanti auguri!", "note": "Lit. \"many wishes!\" — also the birthday-song refrain.", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "поздравление с днём рождения",
+      "variants": [
+        { "text": "С днём рождения!", "rom": "s dnyom rozhdeniya!", "note": "Lit. “(congrats) with (your) birthday!”", "reviewed": true }
+      ]
+    },
+    "pl": {
+      "gloss": "życzenia urodzinowe",
+      "variants": [
+        { "text": "Wszystkiego najlepszego!", "note": "Lit. “(I wish you) all the best!” — the everyday birthday phrase.", "reviewed": true },
+        { "text": "Sto lat!", "tone": "close", "note": "Lit. “a hundred years!” — sung as a traditional birthday wish.", "reviewed": true }
+      ]
+    },
+    "tr": {
+      "gloss": "doğum günü kutlaması",
+      "variants": [
+        { "text": "Doğum günün kutlu olsun", "note": "Lit. \"may your birthday be blessed.\"", "reviewed": false },
+        { "text": "İyi ki doğdun", "tone": "close", "note": "Lit. \"good thing you were born\" — warmer, very common.", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "जन्मदिन की शुभकामना",
+      "variants": [
+        { "text": "जन्मदिन मुबारक", "rom": "janmadin mubārak", "note": "Lit. “birthday blessed” — warm, everyday.", "reviewed": true },
+        { "text": "जन्मदिन की शुभकामनाएँ", "rom": "janmadin kī śubhakāmnāen", "tone": "polite", "note": "Sanskritic, more formal.", "reviewed": true }
+      ]
+    },
+    "bn": {
+      "gloss": "জন্মদিনের শুভেচ্ছা",
+      "variants": [
+        { "text": "জন্মদিনের শুভেচ্ছা", "rom": "jonmodiner śubhechchhā", "note": "Warmer, full form; lit. “birthday’s good wishes.”", "reviewed": true },
+        { "text": "শুভ জন্মদিন", "rom": "śubho jonmodin", "note": "Short and simple.", "reviewed": true }
+      ]
+    },
+    "id": {
+      "gloss": "ucapan ulang tahun",
+      "variants": [
+        { "text": "Selamat ulang tahun", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "ucapan hari jadi",
+      "variants": [
+        { "text": "Selamat hari jadi", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "อวยพรวันเกิด",
+      "variants": [
+        { "text": "สุขสันต์วันเกิด", "rom": "suk san wan gert", "note": "Lit. \"happy birthday.\"", "reviewed": false },
+        { "text": "Happy birthday", "tone": "casual", "note": "English-borrowed; very common in casual Thai.", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "chúc mừng sinh nhật",
+      "variants": [
+        { "text": "Chúc mừng sinh nhật", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "pagbati sa kaarawan",
+      "variants": [
+        { "text": "Maligayang kaarawan", "note": "Standard Filipino birthday greeting.", "reviewed": false },
+        { "text": "Happy birthday", "tone": "casual", "note": "English-borrowed; just as common.", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "pian champha",
+      "variants": [
+        { "text": "Happy Birthday!", "note": "English-borrowed; everyday Mizo speech routinely code-switches here.", "reviewed": false }
+      ]
+    }
+  }
+}

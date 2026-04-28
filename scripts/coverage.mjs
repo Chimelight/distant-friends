@@ -14,11 +14,12 @@
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { loadPhrases } from './_load-phrases.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const dataDir = resolve(here, '..', 'src', 'data');
 
-const phrases = JSON.parse(await readFile(resolve(dataDir, 'phrases.json'), 'utf8'));
+const phrases = await loadPhrases(dataDir);
 const languages = JSON.parse(await readFile(resolve(dataDir, 'languages.json'), 'utf8'));
 
 const codes = languages.map((l) => l.code);

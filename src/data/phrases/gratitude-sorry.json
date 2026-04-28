@@ -1,0 +1,155 @@
+{
+  "id": "gratitude-sorry",
+  "scene": "gratitude",
+  "order": 2,
+  "trans": {
+    "zh": {
+      "gloss": "致歉",
+      "variants": [
+        { "text": "对不起", "rom": "duìbuqǐ", "reviewed": true },
+        { "text": "不好意思", "rom": "bùhǎoyìsi", "tone": "casual", "note": "Light apology — bumping into someone, interrupting, small slips.", "reviewed": true },
+        { "text": "抱歉", "rom": "bàoqiàn", "tone": "neutral", "reviewed": true }
+      ]
+    },
+    "ja": {
+      "gloss": "謝罪",
+      "variants": [
+        { "text": "ごめん", "rom": "gomen", "tone": "casual", "reviewed": false },
+        { "text": "ごめんなさい", "rom": "gomen nasai", "tone": "neutral", "reviewed": false },
+        { "text": "すみません", "rom": "sumimasen", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "사과",
+      "variants": [
+        { "text": "미안해", "rom": "mianhae", "tone": "casual", "reviewed": false },
+        { "text": "죄송합니다", "rom": "joesonghamnida", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "apology",
+      "variants": [
+        { "text": "Sorry", "tone": "casual", "reviewed": true },
+        { "text": "I'm sorry", "reviewed": true }
+      ]
+    },
+    "de": {
+      "gloss": "Entschuldigung",
+      "variants": [
+        { "text": "Entschuldigung", "reviewed": false },
+        { "text": "Tut mir leid", "note": "Lit. “(it) makes me sorry” — warmer, more emotional.", "reviewed": false },
+        { "text": "Sorry", "tone": "casual", "note": "English-borrowed; very common in casual German.", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "disculpa",
+      "variants": [
+        { "text": "Lo siento", "reviewed": false },
+        { "text": "Perdón", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "desculpa",
+      "variants": [
+        { "text": "Desculpa", "tone": "casual", "reviewed": false },
+        { "text": "Me desculpe", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "excuse",
+      "variants": [
+        { "text": "Désolé(e)", "reviewed": false },
+        { "text": "Pardon", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "scuse",
+      "variants": [
+        { "text": "Scusa", "tone": "casual", "reviewed": false },
+        { "text": "Mi dispiace", "note": "Lit. \"it pains me\" — warmer, more emotional.", "reviewed": false },
+        { "text": "Scusami", "note": "Lit. \"forgive me\" — direct, sincere.", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "извинение",
+      "variants": [
+        { "text": "Извини", "rom": "izvini", "tone": "casual", "note": "Imperative; “excuse me.”", "reviewed": true },
+        { "text": "Прости", "rom": "prosti", "note": "Lit. “forgive me” — warmer.", "reviewed": true },
+        { "text": "Извините", "rom": "izvinite", "tone": "polite", "reviewed": true }
+      ]
+    },
+    "pl": {
+      "gloss": "przeprosiny",
+      "variants": [
+        { "text": "Przepraszam", "reviewed": true },
+        { "text": "Wybacz", "tone": "casual", "note": "Lit. “forgive (me)” — informal imperative.", "reviewed": true }
+      ]
+    },
+    "tr": {
+      "gloss": "özür",
+      "variants": [
+        { "text": "Özür dilerim", "note": "Lit. \"I ask forgiveness\" — the standard form.", "reviewed": false },
+        { "text": "Pardon", "tone": "casual", "note": "French-borrowed; everyday casual.", "reviewed": false },
+        { "text": "Affedersin", "tone": "casual", "note": "Lit. \"forgive (me).\"", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "क्षमा",
+      "variants": [
+        { "text": "माफ़ करो", "rom": "māf karo", "tone": "casual", "note": "Lit. “forgive (me).”", "reviewed": true },
+        { "text": "मुझे माफ़ कर दीजिए", "rom": "mujhe māf kar dījie", "tone": "polite", "note": "Lit. “please forgive me” — warmer, complete form.", "reviewed": true },
+        { "text": "मुझे क्षमा कीजिए", "rom": "mujhe kshamā kījie", "tone": "polite", "note": "Sanskritic; sincere, respectful weight.", "reviewed": true }
+      ]
+    },
+    "bn": {
+      "gloss": "ক্ষমা",
+      "variants": [
+        { "text": "দুঃখিত", "rom": "duḥkhito", "note": "Lit. “(I am) saddened.”", "reviewed": true },
+        { "text": "আমায় মাফ করো", "rom": "āmāy māf koro", "note": "Warm, direct “forgive me.”", "reviewed": true },
+        { "text": "মাফ করো", "rom": "māf koro", "tone": "casual", "note": "Lit. “forgive (me).”", "reviewed": true }
+      ]
+    },
+    "id": {
+      "gloss": "permintaan maaf",
+      "variants": [
+        { "text": "Maaf", "reviewed": false },
+        { "text": "Maafkan aku", "note": "Lit. \"forgive me\" — warmer, complete form.", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "memohon maaf",
+      "variants": [
+        { "text": "Maaf", "reviewed": false },
+        { "text": "Minta maaf", "note": "Lit. \"ask for forgiveness.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ขอโทษ",
+      "variants": [
+        { "text": "ขอโทษ", "rom": "khor thot", "reviewed": false },
+        { "text": "ขอโทษนะ", "rom": "khor thot na", "tone": "casual", "note": "Soft particle นะ — lighter, friendly.", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "lời xin lỗi",
+      "variants": [
+        { "text": "Xin lỗi", "reviewed": false },
+        { "text": "Mình xin lỗi", "note": "With mình — warmer, \"I'm sorry\" to a friend.", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "paghingi ng tawad",
+      "variants": [
+        { "text": "Pasensya na", "note": "Lit. \"have patience\" — softer everyday apology.", "reviewed": false },
+        { "text": "Paumanhin", "tone": "polite", "note": "More formal.", "reviewed": false },
+        { "text": "Sorry", "tone": "casual", "note": "English-borrowed; very common.", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "min ngaidam rawh",
+      "variants": [
+        { "text": "Min ngaidam rawh", "note": "Lit. “please forgive me.”", "reviewed": false }
+      ]
+    }
+  }
+}

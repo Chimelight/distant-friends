@@ -1,0 +1,124 @@
+{
+  "id": "greeting-evening",
+  "scene": "greetings",
+  "order": 4,
+  "trans": {
+    "zh": {
+      "gloss": "晚间问候",
+      "variants": [
+        { "text": "晚上好", "rom": "wǎnshang hǎo", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "夜の挨拶",
+      "variants": [
+        { "text": "こんばんは", "rom": "konbanwa", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "저녁 인사",
+      "variants": [
+        { "text": "좋은 저녁", "rom": "joeun jeonyeok", "tone": "casual", "reviewed": false },
+        { "text": "좋은 저녁이에요", "rom": "joeun jeonyeogieyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "evening greeting",
+      "variants": [
+        { "text": "Good evening", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Abendgruß",
+      "variants": [
+        { "text": "Guten Abend", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "saludo de la noche",
+      "variants": [
+        { "text": "Buenas tardes", "note": "Used into early evening; switches to buenas noches at dusk.", "reviewed": false },
+        { "text": "Buenas noches", "note": "Greeting on nighttime arrival; also a goodnight.", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "saudação da noite",
+      "variants": [
+        { "text": "Boa noite", "note": "Covers evening greeting and goodnight.", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "salutation du soir",
+      "variants": [
+        { "text": "Bonsoir", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "saluto della sera",
+      "variants": [
+        { "text": "Buonasera", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "вечернее приветствие",
+      "variants": [
+        { "text": "Добрый вечер", "rom": "dobryĭ vecher", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "powitanie wieczorne",
+      "variants": [
+        { "text": "Dobry wieczór", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "akşam selamı",
+      "variants": [
+        { "text": "İyi akşamlar", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "शाम का अभिवादन",
+      "variants": [
+        { "text": "शुभ संध्या", "rom": "śubh sandhyā", "tone": "polite", "note": "Sanskritic; formal/literary.", "reviewed": false },
+        { "text": "गुड इवनिंग", "rom": "gud ivning", "tone": "casual", "note": "English-borrowed; common in everyday Hindi.", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "সন্ধ্যার শুভেচ্ছা",
+      "variants": [
+        { "text": "শুভ সন্ধ্যা", "rom": "śubho śondhya", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "salam malam",
+      "variants": [
+        { "text": "Selamat malam", "note": "Greeting for evening/night.", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "salam malam",
+      "variants": [
+        { "text": "Selamat malam", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "pagbati sa gabi",
+      "variants": [
+        { "text": "Magandang gabi", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "chào buổi tối",
+      "variants": [
+        { "text": "Chào buổi tối", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ทักทายตอนเย็น",
+      "variants": [
+        { "text": "สวัสดีตอนเย็น", "rom": "sawatdee ton yen", "reviewed": false }
+      ]
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "id": "affection-care",
+  "scene": "affection",
+  "order": 2,
+  "trans": {
+    "zh": {
+      "gloss": "在乎",
+      "variants": [
+        { "text": "你对我很重要", "rom": "nǐ duì wǒ hěn zhòngyào", "reviewed": true },
+        { "text": "我心里一直有你", "rom": "wǒ xīnli yīzhí yǒu nǐ", "tone": "close", "note": "心里 carries it; warmer than 在乎.", "reviewed": true },
+        { "text": "想着你呢", "rom": "xiǎngzhe nǐ ne", "tone": "casual", "note": "Light check-in vibe; “you’re on my mind.”", "reviewed": true }
+      ]
+    },
+    "ja": {
+      "gloss": "大切な気持ち",
+      "variants": [
+        { "text": "大切に思ってる", "rom": "taisetsu ni omotteru", "note": "Lit. \"I think of you as precious.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "소중함",
+      "variants": [
+        { "text": "네가 소중해", "rom": "nega sojunghae", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "expressing care",
+      "variants": [
+        { "text": "You mean a lot to me", "reviewed": true },
+        { "text": "Thinking of you", "tone": "casual", "note": "What you’d actually write on a card.", "reviewed": true }
+      ]
+    },
+    "de": {
+      "gloss": "Fürsorge",
+      "variants": [
+        { "text": "Du bist mir wichtig", "note": "Lit. “you are important to me.”", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "cariño",
+      "variants": [
+        { "text": "Me importas", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "cuidado",
+      "variants": [
+        { "text": "Você é importante pra mim", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "tendresse",
+      "variants": [
+        { "text": "Tu comptes pour moi", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "affetto",
+      "variants": [
+        { "text": "Tieni a me", "note": "Lit. \"you hold (something for) me\" — \"I matter to you, you matter to me.\"", "reviewed": false },
+        { "text": "Sei importante per me", "note": "Lit. \"you are important to me.\"", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "забота",
+      "variants": [
+        { "text": "Ты мне дорог", "rom": "ty mne dorog", "addresseeGender": "m", "note": "Lit. “you are dear to me” — to a male.", "reviewed": true },
+        { "text": "Ты мне дорога", "rom": "ty mne doroga", "addresseeGender": "f", "note": "Lit. “you are dear to me” — to a female.", "reviewed": true },
+        { "text": "Я о тебе забочусь", "rom": "ya o tebe zabochus'", "note": "Lit. “I care for you” — gender-neutral.", "reviewed": true }
+      ]
+    },
+    "pl": {
+      "gloss": "troska",
+      "variants": [
+        { "text": "Zależy mi na tobie", "note": "Lit. “you matter to me.”", "reviewed": true },
+        { "text": "Jesteś dla mnie ważny", "addresseeGender": "m", "note": "Lit. “you are important to me” — to a male.", "reviewed": true },
+        { "text": "Jesteś dla mnie ważna", "addresseeGender": "f", "note": "Lit. “you are important to me” — to a female.", "reviewed": true }
+      ]
+    },
+    "tr": {
+      "gloss": "değer vermek",
+      "variants": [
+        { "text": "Sen benim için önemlisin", "note": "Lit. \"you are important to me.\"", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "स्नेह",
+      "variants": [
+        { "text": "तुम मेरे लिए ख़ास हो", "rom": "tum mere liye khās ho", "note": "Lit. “you are special to me.”", "reviewed": true },
+        { "text": "तुम मेरे लिए महत्वपूर्ण और ज़रूरी हो", "rom": "tum mere liye mahatvapūrṇa aur zarūrī ho", "note": "Lit. “you are important and necessary to me.”", "reviewed": true }
+      ]
+    },
+    "bn": {
+      "gloss": "যত্ন",
+      "variants": [
+        { "text": "তুমি আমার কাছে গুরুত্বপূর্ণ", "rom": "tumi āmār kāchhe gurutwapūrṇo", "note": "Lit. “you are important to me.”", "reviewed": true }
+      ]
+    },
+    "id": {
+      "gloss": "peduli",
+      "variants": [
+        { "text": "Kamu penting buatku", "note": "Lit. \"you're important to me.\"", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "ambil berat",
+      "variants": [
+        { "text": "Awak penting bagi saya", "note": "Lit. \"you're important to me.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ห่วงใย",
+      "variants": [
+        { "text": "เธอสำคัญกับฉัน", "rom": "ter samkhan kap chan", "note": "Lit. \"you're important to me.\"", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "quan tâm",
+      "variants": [
+        { "text": "Bạn rất quan trọng với mình", "note": "Lit. \"you're very important to me.\"", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "pagmamalasakit",
+      "variants": [
+        { "text": "Mahalaga ka sa akin", "note": "Lit. \"you are important to me.\"", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "ngaihtuah",
+      "variants": [
+        { "text": "Ka ngaihtuah reng che", "note": "Lit. “I always think of you” — used to mean I care.", "reviewed": false }
+      ]
+    }
+  }
+}

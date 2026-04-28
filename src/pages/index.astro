@@ -14,7 +14,7 @@ import Toast from '../components/svelte/Toast.svelte';
 import { LanguagesFile, ScenesFile, PhrasesFile } from '../lib/schema';
 import languagesRaw from '../data/languages.json';
 import scenesRaw from '../data/scenes.json';
-import phrasesRaw from '../data/phrases.json';
+import phrasesRaw from '../data/phrases';
 
 // Build-time schema validation. A Zod error here fails `astro build`.
 LanguagesFile.parse(languagesRaw);

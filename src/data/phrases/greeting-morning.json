@@ -1,0 +1,130 @@
+{
+  "id": "greeting-morning",
+  "scene": "greetings",
+  "order": 2,
+  "trans": {
+    "zh": {
+      "gloss": "早安",
+      "variants": [
+        { "text": "早上好", "rom": "zǎoshang hǎo", "reviewed": false },
+        { "text": "早", "rom": "zǎo", "tone": "casual", "note": "Short and friendly.", "reviewed": false },
+        { "text": "早安", "rom": "zǎo'ān", "note": "Common in Taiwan; warmer.", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "朝の挨拶",
+      "variants": [
+        { "text": "おはよう", "rom": "ohayō", "tone": "casual", "reviewed": false },
+        { "text": "おはようございます", "rom": "ohayō gozaimasu", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "아침 인사",
+      "variants": [
+        { "text": "좋은 아침", "rom": "joeun achim", "tone": "casual", "note": "Lit. \"good morning.\"", "reviewed": false },
+        { "text": "좋은 아침이에요", "rom": "joeun achimieyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "morning greeting",
+      "variants": [
+        { "text": "Good morning", "reviewed": false },
+        { "text": "Morning", "tone": "casual", "note": "Clipped, everyday casual.", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Morgengruß",
+      "variants": [
+        { "text": "Guten Morgen", "reviewed": false },
+        { "text": "Morgen", "tone": "casual", "note": "Clipped form; everyday between friends.", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "saludo matutino",
+      "variants": [
+        { "text": "Buenos días", "note": "Covers morning through midday.", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "saudação matinal",
+      "variants": [
+        { "text": "Bom dia", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "salutation du matin",
+      "variants": [
+        { "text": "Bonjour", "note": "Default morning/daytime greeting.", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "saluto del mattino",
+      "variants": [
+        { "text": "Buongiorno", "note": "Lit. \"good day\"; standard morning greeting.", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "утреннее приветствие",
+      "variants": [
+        { "text": "Доброе утро", "rom": "dobroe utro", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "powitanie poranne",
+      "variants": [
+        { "text": "Dzień dobry", "note": "Standard morning/daytime greeting; lit. \"good day.\"", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "sabah selamı",
+      "variants": [
+        { "text": "Günaydın", "note": "Lit. \"day-bright\"; everyday morning greeting.", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "सुबह का अभिवादन",
+      "variants": [
+        { "text": "सुप्रभात", "rom": "suprabhāt", "tone": "polite", "note": "Sanskritic; formal.", "reviewed": false },
+        { "text": "गुड मॉर्निंग", "rom": "gud mŏrning", "tone": "casual", "note": "English-borrowed; common in everyday Hindi.", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "সকালের শুভেচ্ছা",
+      "variants": [
+        { "text": "সুপ্রভাত", "rom": "suprôbhat", "tone": "polite", "note": "Sanskritic; formal.", "reviewed": false },
+        { "text": "শুভ সকাল", "rom": "śubho śôkal", "note": "Lit. \"good morning.\"", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "salam pagi",
+      "variants": [
+        { "text": "Selamat pagi", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "salam pagi",
+      "variants": [
+        { "text": "Selamat pagi", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "pagbati sa umaga",
+      "variants": [
+        { "text": "Magandang umaga", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "chào buổi sáng",
+      "variants": [
+        { "text": "Chào buổi sáng", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ทักทายตอนเช้า",
+      "variants": [
+        { "text": "อรุณสวัสดิ์", "rom": "arun sawat", "tone": "polite", "note": "Sanskritic; formal/literary.", "reviewed": false },
+        { "text": "สวัสดีตอนเช้า", "rom": "sawatdee ton chao", "note": "Standard morning greeting.", "reviewed": false }
+      ]
+    }
+  }
+}
