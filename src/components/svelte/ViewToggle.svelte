@@ -65,12 +65,10 @@
 </div>
 
 <style>
-  /* In-flow placement: top-right of the masthead, claiming its own band above
-   * the centered title rather than floating detached over it. Reads as a
-   * library card stuck to the upper corner of a title page. */
+  /* The toggle lives inside StickyBar's .sb-controls cluster — no own
+   * positioning, just the pill chrome. Color/size overrides come from
+   * StickyBar.svelte's :global() rules. */
   .view-toggle {
-    align-self: flex-end;
-    margin-bottom: 28px;
     display: inline-flex;
     align-items: center;
     gap: 2px;

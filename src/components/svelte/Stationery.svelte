@@ -6,7 +6,15 @@
   import languages from '../../data/languages.json';
   import ui from '../../content/ui/en.json';
 
-  const anchorOptions = languages.map((l) => ({ key: l.code, label: l.native }));
+  // Anchor options restricted to currently-selected languages — adding a new
+  // language goes through LangChips, switching focus among them goes through
+  // here. This sidesteps the cap-bypass that would happen if "Anchored in"
+  // could pull in a 6th language through the back door.
+  const anchorOptions = $derived(
+    languages
+      .filter((l) => ($selectedLangs ?? []).includes(l.code))
+      .map((l) => ({ key: l.code, label: l.native })),
+  );
   const toneOptions: { key: ToneFilter; label: string }[] = [
     { key: 'any', label: ui.stationery.tones.any },
     { key: 'close', label: ui.stationery.tones.close },
@@ -17,9 +25,6 @@
 
   function setAnchor(code: string) {
     anchor.set(code);
-    const set = new Set(selectedLangs.get() ?? []);
-    set.add(code);
-    selectedLangs.set([...set]);
   }
   function setTone(t: ToneFilter) {
     tone.set(t);

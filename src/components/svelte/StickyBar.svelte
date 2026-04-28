@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import SlotPicker from './SlotPicker.svelte';
   import ViewToggle from './ViewToggle.svelte';
+  import ThemeToggle from './ThemeToggle.svelte';
   import { tone } from '../../lib/stores';
   import { scrolled, initScrollListener } from '../../lib/scroll';
   import type { ToneFilter } from '../../lib/filter';
@@ -40,7 +41,10 @@
       onChange={setTone}
     />
   </div>
-  <ViewToggle />
+  <div class="sb-controls">
+    <ViewToggle />
+    <ThemeToggle />
+  </div>
 </div>
 
 <style>
@@ -128,21 +132,28 @@
     color: var(--ink-mute);
   }
 
-  /* ViewToggle anchored to the right edge of the bar, vertically centered.
-   * Absolute so it stays out of the centered flex composition (mark + prose
-   * remain optically centered without the toggle's width pulling them off). */
-  .sticky-bar :global(.view-toggle) {
+  /* Right-anchored controls cluster — Theme + View toggles. Absolute so
+   * the centered mark + prose composition isn't pulled off-axis by their
+   * width. */
+  .sb-controls {
     position: absolute;
     top: 50%;
     right: 24px;
     transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sticky-bar :global(.view-toggle) {
     background: transparent;
     border-color: var(--line-soft);
     flex-shrink: 0;
   }
   .sticky-bar :global(.view-toggle button) {
     font-size: 9px;
-    padding: 4px 10px;
+    padding: 0 10px;
+    /* Match ThemeToggle's 22px button so the two pills align vertically. */
+    height: 22px;
     color: var(--ink-mute);
     letter-spacing: 0.18em;
   }
@@ -163,7 +174,7 @@
     .sb-prose {
       font-size: 14px;
     }
-    .sticky-bar :global(.view-toggle) {
+    .sb-controls {
       right: 18px;
     }
   }
