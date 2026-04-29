@@ -1,0 +1,138 @@
+{
+  "id": "farewell-sweet-dreams",
+  "scene": "farewells",
+  "order": 8,
+  "trans": {
+    "zh": {
+      "gloss": "好梦",
+      "variants": [
+        { "text": "好梦", "rom": "hǎo mèng", "reviewed": false },
+        { "text": "做个好梦", "rom": "zuò ge hǎo mèng", "note": "Lit. \"have a good dream.\"", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "いい夢を",
+      "variants": [
+        { "text": "いい夢を", "rom": "ii yume o", "note": "Lit. \"(have) a good dream.\")", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "좋은 꿈 꿔",
+      "variants": [
+        { "text": "좋은 꿈 꿔", "rom": "joeun kkum kkwo", "tone": "casual", "reviewed": false },
+        { "text": "좋은 꿈 꾸세요", "rom": "joeun kkum kkuseyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "sweet dreams",
+      "variants": [
+        { "text": "Sweet dreams", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "süße Träume",
+      "variants": [
+        { "text": "Süße Träume", "reviewed": false },
+        { "text": "Träum was Schönes", "tone": "casual", "note": "Lit. \"dream something nice.\"", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "dulces sueños",
+      "variants": [
+        { "text": "Dulces sueños", "reviewed": false },
+        { "text": "Que sueñes con los angelitos", "note": "Lit. \"may you dream of little angels\" — said to children/loved ones.", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "bons sonhos",
+      "variants": [
+        { "text": "Bons sonhos", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "beaux rêves",
+      "variants": [
+        { "text": "Fais de beaux rêves", "reviewed": false },
+        { "text": "Doux rêves", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "sogni d'oro",
+      "variants": [
+        { "text": "Sogni d'oro", "note": "Lit. \"golden dreams\" — the standard \"sweet dreams.\"", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "сладких снов",
+      "variants": [
+        { "text": "Сладких снов", "rom": "sladkikh snov", "note": "Lit. \"sweet dreams.\"", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "słodkich snów",
+      "variants": [
+        { "text": "Słodkich snów", "reviewed": false },
+        { "text": "Kolorowych snów", "note": "Lit. \"colorful dreams.\"", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "tatlı rüyalar",
+      "variants": [
+        { "text": "Tatlı rüyalar", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "मीठे सपने",
+      "variants": [
+        { "text": "मीठे सपने", "rom": "mīṭhe sapne", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "মিষ্টি স্বপ্ন",
+      "variants": [
+        { "text": "মিষ্টি স্বপ্ন", "rom": "miṣṭi shôpno", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "mimpi indah",
+      "variants": [
+        { "text": "Mimpi indah", "reviewed": false },
+        { "text": "Selamat mimpi indah", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "mimpi indah",
+      "variants": [
+        { "text": "Mimpi indah", "reviewed": false },
+        { "text": "Selamat mimpi indah", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "matamis na panaginip",
+      "variants": [
+        { "text": "Matamis na panaginip", "reviewed": false },
+        { "text": "Sweet dreams", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "mơ đẹp",
+      "variants": [
+        { "text": "Mơ đẹp nhé", "reviewed": false },
+        { "text": "Chúc bạn mơ đẹp", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ฝันดี",
+      "variants": [
+        { "text": "ฝันดี", "rom": "fan dee", "reviewed": false },
+        { "text": "ฝันดีนะ", "rom": "fan dee na", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "mumang tha",
+      "variants": [
+        { "text": "Mumang tha mang la", "note": "Lit. \"have a good dream.\"", "reviewed": false }
+      ]
+    }
+  }
+}
