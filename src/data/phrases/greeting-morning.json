@@ -125,6 +125,12 @@
         { "text": "อรุณสวัสดิ์", "rom": "arun sawat", "tone": "polite", "note": "Sanskritic; formal/literary.", "reviewed": false },
         { "text": "สวัสดีตอนเช้า", "rom": "sawatdee ton chao", "note": "Standard morning greeting.", "reviewed": false }
       ]
+    },
+    "mizo": {
+      "gloss": "zîngkâr chibai",
+      "variants": [
+        { "text": "Zîngkâr ṭha", "note": "Lit. \"good morning.\"", "reviewed": false }
+      ]
     }
   }
 }

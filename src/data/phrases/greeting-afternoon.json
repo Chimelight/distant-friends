@@ -100,6 +100,12 @@
       "variants": [
         { "text": "สวัสดีตอนบ่าย", "rom": "sawatdee ton bai", "reviewed": false }
       ]
+    },
+    "mizo": {
+      "gloss": "chawhnu chibai",
+      "variants": [
+        { "text": "Chawhnu ṭha", "note": "Lit. \"good afternoon.\"", "reviewed": false }
+      ]
     }
   }
 }

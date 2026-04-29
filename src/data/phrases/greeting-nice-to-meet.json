@@ -1,7 +1,7 @@
 {
   "id": "greeting-nice-to-meet",
   "scene": "greetings",
-  "order": 5,
+  "order": 6,
   "trans": {
     "zh": {
       "gloss": "初次见面",
@@ -142,6 +142,12 @@
         { "text": "ยินดีที่ได้รู้จัก", "rom": "yindee thi dai rujak", "note": "Standard \"nice to meet you.\"", "reviewed": false },
         { "text": "ยินดีที่ได้รู้จักครับ", "rom": "yindee thi dai rujak khrap", "tone": "polite", "speakerGender": "m", "note": "With polite particle ครับ for male speakers.", "reviewed": false },
         { "text": "ยินดีที่ได้รู้จักค่ะ", "rom": "yindee thi dai rujak kha", "tone": "polite", "speakerGender": "f", "note": "With polite particle ค่ะ for female speakers.", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "hmuh tirh",
+      "variants": [
+        { "text": "Hmuh che ka lawm e", "note": "Lit. \"I'm glad to meet you.\"", "reviewed": false }
       ]
     }
   }

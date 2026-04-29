@@ -119,6 +119,12 @@
       "variants": [
         { "text": "สวัสดีตอนเย็น", "rom": "sawatdee ton yen", "reviewed": false }
       ]
+    },
+    "mizo": {
+      "gloss": "tlai chibai",
+      "variants": [
+        { "text": "Tlai ṭha", "note": "Lit. \"good evening.\"", "reviewed": false }
+      ]
     }
   }
 }
