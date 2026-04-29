@@ -1,0 +1,149 @@
+{
+  "id": "react-its-fine",
+  "scene": "reactions",
+  "order": 12,
+  "trans": {
+    "zh": {
+      "gloss": "没关系",
+      "variants": [
+        { "text": "没关系", "rom": "méi guānxi", "reviewed": false },
+        { "text": "没事", "rom": "méi shì", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "大丈夫",
+      "variants": [
+        { "text": "大丈夫", "rom": "daijōbu", "reviewed": false },
+        { "text": "気にしないで", "rom": "ki ni shinai de", "note": "Lit. \"don't mind it.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "괜찮아",
+      "variants": [
+        { "text": "괜찮아", "rom": "gwaenchana", "tone": "casual", "reviewed": false },
+        { "text": "괜찮아요", "rom": "gwaenchanayo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "it's fine",
+      "variants": [
+        { "text": "It's fine", "reviewed": false },
+        { "text": "No worries", "tone": "casual", "reviewed": false },
+        { "text": "It's okay", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "schon gut",
+      "variants": [
+        { "text": "Macht nichts", "reviewed": false },
+        { "text": "Kein Problem", "reviewed": false },
+        { "text": "Schon gut", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "no pasa nada",
+      "variants": [
+        { "text": "No pasa nada", "reviewed": false },
+        { "text": "Está bien", "reviewed": false },
+        { "text": "Tranquilo", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "tudo bem",
+      "variants": [
+        { "text": "Tudo bem", "reviewed": false },
+        { "text": "Não tem problema", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "pas de souci",
+      "variants": [
+        { "text": "Pas de souci", "reviewed": false },
+        { "text": "C'est pas grave", "tone": "casual", "reviewed": false },
+        { "text": "Ce n'est rien", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "non importa",
+      "variants": [
+        { "text": "Non importa", "reviewed": false },
+        { "text": "Tranquillo", "tone": "casual", "reviewed": false },
+        { "text": "Nessun problema", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "ничего",
+      "variants": [
+        { "text": "Ничего", "rom": "nichego", "note": "Lit. \"nothing\" — \"no big deal.\"", "reviewed": false },
+        { "text": "Ничего страшного", "rom": "nichego strashnogo", "note": "Lit. \"nothing scary.\"", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "nic nie szkodzi",
+      "variants": [
+        { "text": "Nic nie szkodzi", "reviewed": false },
+        { "text": "Nie ma sprawy", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "önemli değil",
+      "variants": [
+        { "text": "Önemli değil", "reviewed": false },
+        { "text": "Sorun değil", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "कोई बात नहीं",
+      "variants": [
+        { "text": "कोई बात नहीं", "rom": "koī bāt nahīn", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "কিছু না",
+      "variants": [
+        { "text": "কিছু না", "rom": "kichhu nā", "reviewed": false },
+        { "text": "কোনো ব্যাপার না", "rom": "kono byāpār nā", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "tidak apa-apa",
+      "variants": [
+        { "text": "Tidak apa-apa", "reviewed": false },
+        { "text": "Nggak apa-apa", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "tak apa",
+      "variants": [
+        { "text": "Tak apa", "tone": "casual", "reviewed": false },
+        { "text": "Tidak mengapa", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "walang anuman",
+      "variants": [
+        { "text": "Walang anuman", "reviewed": false },
+        { "text": "Okay lang", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "không sao",
+      "variants": [
+        { "text": "Không sao", "reviewed": false },
+        { "text": "Không có gì", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ไม่เป็นไร",
+      "variants": [
+        { "text": "ไม่เป็นไร", "rom": "mai pen rai", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a pawi lo",
+      "variants": [
+        { "text": "A pawi lo", "note": "Lit. \"(it) doesn't matter.\"", "reviewed": false }
+      ]
+    }
+  }
+}

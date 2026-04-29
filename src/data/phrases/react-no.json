@@ -1,0 +1,150 @@
+{
+  "id": "react-no",
+  "scene": "reactions",
+  "order": 3,
+  "trans": {
+    "zh": {
+      "gloss": "不",
+      "variants": [
+        { "text": "不是", "rom": "bù shì", "reviewed": false },
+        { "text": "不", "rom": "bù", "reviewed": false },
+        { "text": "不对", "rom": "bù duì", "note": "Lit. \"not right.\"", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "否定",
+      "variants": [
+        { "text": "いいえ", "rom": "iie", "tone": "polite", "reviewed": false },
+        { "text": "ううん", "rom": "uun", "tone": "casual", "reviewed": false },
+        { "text": "違う", "rom": "chigau", "note": "Lit. \"(it's) different.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "부정",
+      "variants": [
+        { "text": "아니", "rom": "ani", "tone": "casual", "reviewed": false },
+        { "text": "아니요", "rom": "aniyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "no",
+      "variants": [
+        { "text": "No", "reviewed": false },
+        { "text": "Nope", "tone": "casual", "reviewed": false },
+        { "text": "Not really", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Verneinung",
+      "variants": [
+        { "text": "Nein", "reviewed": false },
+        { "text": "Nö", "tone": "casual", "reviewed": false },
+        { "text": "Nicht wirklich", "note": "Lit. \"not really.\"", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "no",
+      "variants": [
+        { "text": "No", "reviewed": false },
+        { "text": "Para nada", "tone": "casual", "note": "Lit. \"for nothing.\"", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "não",
+      "variants": [
+        { "text": "Não", "reviewed": false },
+        { "text": "Nada", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "non",
+      "variants": [
+        { "text": "Non", "reviewed": false },
+        { "text": "Pas vraiment", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "no",
+      "variants": [
+        { "text": "No", "reviewed": false },
+        { "text": "Per niente", "tone": "casual", "note": "Lit. \"for nothing.\"", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "нет",
+      "variants": [
+        { "text": "Нет", "rom": "net", "reviewed": false },
+        { "text": "Не-а", "rom": "ne-a", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "nie",
+      "variants": [
+        { "text": "Nie", "reviewed": false },
+        { "text": "Nieprawda", "note": "Lit. \"not true.\"", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "hayır",
+      "variants": [
+        { "text": "Hayır", "reviewed": false },
+        { "text": "Yok", "tone": "casual", "note": "Lit. \"no / none.\"", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "नहीं",
+      "variants": [
+        { "text": "नहीं", "rom": "nahīn", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "না",
+      "variants": [
+        { "text": "না", "rom": "nā", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "tidak",
+      "variants": [
+        { "text": "Tidak", "reviewed": false },
+        { "text": "Nggak", "tone": "casual", "reviewed": false },
+        { "text": "Bukan", "note": "For negating identity (\"it isn't…\").", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "tidak",
+      "variants": [
+        { "text": "Tidak", "reviewed": false },
+        { "text": "Bukan", "note": "For negating identity (\"it isn't…\").", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "hindi",
+      "variants": [
+        { "text": "Hindi", "reviewed": false },
+        { "text": "Hindi po", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "không",
+      "variants": [
+        { "text": "Không", "reviewed": false },
+        { "text": "Không phải", "note": "Lit. \"(it's) not so.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ไม่",
+      "variants": [
+        { "text": "ไม่", "rom": "mai", "reviewed": false },
+        { "text": "ไม่ใช่", "rom": "mai chai", "note": "Lit. \"(it's) not so.\"", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "lo",
+      "variants": [
+        { "text": "Aw lo", "note": "Lit. \"no.\"", "reviewed": false },
+        { "text": "Ni lo", "note": "Lit. \"(it) is not.\"", "reviewed": false }
+      ]
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "id": "react-great",
+  "scene": "reactions",
+  "order": 8,
+  "trans": {
+    "zh": {
+      "gloss": "太好了",
+      "variants": [
+        { "text": "太好了", "rom": "tài hǎo le", "reviewed": false },
+        { "text": "真棒", "rom": "zhēn bàng", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "良い",
+      "variants": [
+        { "text": "良かった", "rom": "yokatta", "note": "Lit. \"(it) was good\" — relief / glad.", "reviewed": false },
+        { "text": "最高", "rom": "saikō", "tone": "casual", "note": "Lit. \"the best.\"", "reviewed": false },
+        { "text": "やった", "rom": "yatta", "tone": "casual", "note": "Triumphant \"yay.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "잘됐다",
+      "variants": [
+        { "text": "잘됐다", "rom": "jaldwaetda", "reviewed": false },
+        { "text": "좋아", "rom": "joa", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "great",
+      "variants": [
+        { "text": "Great", "reviewed": false },
+        { "text": "Awesome", "tone": "casual", "reviewed": false },
+        { "text": "Wonderful", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "super",
+      "variants": [
+        { "text": "Super", "reviewed": false },
+        { "text": "Toll", "reviewed": false },
+        { "text": "Wunderbar", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "genial",
+      "variants": [
+        { "text": "¡Genial!", "reviewed": false },
+        { "text": "¡Qué bien!", "reviewed": false },
+        { "text": "¡Excelente!", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "ótimo",
+      "variants": [
+        { "text": "Ótimo", "reviewed": false },
+        { "text": "Que bom", "reviewed": false },
+        { "text": "Maravilha", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "super",
+      "variants": [
+        { "text": "Super", "reviewed": false },
+        { "text": "Génial", "reviewed": false },
+        { "text": "Parfait", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "ottimo",
+      "variants": [
+        { "text": "Ottimo", "reviewed": false },
+        { "text": "Fantastico", "reviewed": false },
+        { "text": "Che bello", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "отлично",
+      "variants": [
+        { "text": "Отлично", "rom": "otlichno", "reviewed": false },
+        { "text": "Здорово", "rom": "zdorovo", "reviewed": false },
+        { "text": "Класс", "rom": "klass", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "świetnie",
+      "variants": [
+        { "text": "Świetnie", "reviewed": false },
+        { "text": "Super", "reviewed": false },
+        { "text": "Wspaniale", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "harika",
+      "variants": [
+        { "text": "Harika", "reviewed": false },
+        { "text": "Süper", "reviewed": false },
+        { "text": "Mükemmel", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "बहुत बढ़िया",
+      "variants": [
+        { "text": "बहुत बढ़िया", "rom": "bahut baṛhiyā", "reviewed": false },
+        { "text": "शानदार", "rom": "shāndār", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "দারুণ",
+      "variants": [
+        { "text": "দারুণ", "rom": "dārun", "reviewed": false },
+        { "text": "চমৎকার", "rom": "chômôtkar", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "bagus",
+      "variants": [
+        { "text": "Bagus", "reviewed": false },
+        { "text": "Hebat", "reviewed": false },
+        { "text": "Mantap", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "bagus",
+      "variants": [
+        { "text": "Bagus", "reviewed": false },
+        { "text": "Hebat", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "astig",
+      "variants": [
+        { "text": "Mabuti", "reviewed": false },
+        { "text": "Astig", "tone": "casual", "reviewed": false },
+        { "text": "Galing", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "tuyệt",
+      "variants": [
+        { "text": "Tuyệt", "reviewed": false },
+        { "text": "Tuyệt vời", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "เยี่ยม",
+      "variants": [
+        { "text": "เยี่ยม", "rom": "yiam", "reviewed": false },
+        { "text": "ดีมาก", "rom": "dee mak", "reviewed": false },
+        { "text": "สุดยอด", "rom": "sutyot", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a tha em em",
+      "variants": [
+        { "text": "A tha em em", "note": "Lit. \"very good.\"", "reviewed": false },
+        { "text": "Tha tak", "tone": "casual", "reviewed": false }
+      ]
+    }
+  }
+}

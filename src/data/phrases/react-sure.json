@@ -1,0 +1,151 @@
+{
+  "id": "react-sure",
+  "scene": "reactions",
+  "order": 5,
+  "trans": {
+    "zh": {
+      "gloss": "当然",
+      "variants": [
+        { "text": "当然", "rom": "dāngrán", "reviewed": false },
+        { "text": "当然了", "rom": "dāngrán le", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "もちろん",
+      "variants": [
+        { "text": "もちろん", "rom": "mochiron", "reviewed": false },
+        { "text": "もちろんだよ", "rom": "mochiron da yo", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "물론",
+      "variants": [
+        { "text": "물론", "rom": "mullon", "reviewed": false },
+        { "text": "그럼", "rom": "geureom", "tone": "casual", "note": "Lit. \"of course / sure thing.\"", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "sure",
+      "variants": [
+        { "text": "Sure", "reviewed": false },
+        { "text": "Of course", "reviewed": false },
+        { "text": "Definitely", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "klar",
+      "variants": [
+        { "text": "Klar", "tone": "casual", "reviewed": false },
+        { "text": "Natürlich", "reviewed": false },
+        { "text": "Selbstverständlich", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "claro",
+      "variants": [
+        { "text": "Claro", "reviewed": false },
+        { "text": "Por supuesto", "reviewed": false },
+        { "text": "Desde luego", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "claro",
+      "variants": [
+        { "text": "Claro", "reviewed": false },
+        { "text": "Com certeza", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "bien sûr",
+      "variants": [
+        { "text": "Bien sûr", "reviewed": false },
+        { "text": "Évidemment", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "certo",
+      "variants": [
+        { "text": "Certo", "reviewed": false },
+        { "text": "Certamente", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "конечно",
+      "variants": [
+        { "text": "Конечно", "rom": "konechno", "reviewed": false },
+        { "text": "Разумеется", "rom": "razumeyetsya", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "oczywiście",
+      "variants": [
+        { "text": "Oczywiście", "reviewed": false },
+        { "text": "Jasne", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "tabii",
+      "variants": [
+        { "text": "Tabii", "reviewed": false },
+        { "text": "Elbette", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "ज़रूर",
+      "variants": [
+        { "text": "ज़रूर", "rom": "zarūr", "reviewed": false },
+        { "text": "बिल्कुल", "rom": "bilkul", "note": "Lit. \"absolutely.\"", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "অবশ্যই",
+      "variants": [
+        { "text": "অবশ্যই", "rom": "ôboshyô'i", "reviewed": false },
+        { "text": "নিশ্চয়ই", "rom": "niścôyô'i", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "tentu",
+      "variants": [
+        { "text": "Tentu", "reviewed": false },
+        { "text": "Tentu saja", "reviewed": false },
+        { "text": "Pasti", "note": "Lit. \"certainly.\"", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "tentu",
+      "variants": [
+        { "text": "Sudah tentu", "reviewed": false },
+        { "text": "Mestilah", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "syempre",
+      "variants": [
+        { "text": "Sige", "reviewed": false },
+        { "text": "Syempre", "reviewed": false },
+        { "text": "Oo naman", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "tất nhiên",
+      "variants": [
+        { "text": "Tất nhiên", "reviewed": false },
+        { "text": "Chắc chắn", "note": "Lit. \"certainly.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "แน่นอน",
+      "variants": [
+        { "text": "แน่นอน", "rom": "naenon", "reviewed": false },
+        { "text": "ได้สิ", "rom": "dai si", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a ngei",
+      "variants": [
+        { "text": "A ngei", "note": "Lit. \"indeed / of course.\"", "reviewed": false }
+      ]
+    }
+  }
+}
