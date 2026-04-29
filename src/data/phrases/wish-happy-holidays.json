@@ -1,0 +1,130 @@
+{
+  "id": "wish-happy-holidays",
+  "scene": "well-wishes",
+  "order": 4,
+  "trans": {
+    "zh": {
+      "gloss": "节日快乐",
+      "variants": [
+        { "text": "节日快乐", "rom": "jiérì kuàilè", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "良い休日を",
+      "variants": [
+        { "text": "良い休日を", "rom": "yoi kyūjitsu o", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "즐거운 명절",
+      "variants": [
+        { "text": "즐거운 명절 보내세요", "rom": "jeulgeoun myeongjeol bonaeseyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "happy holidays",
+      "variants": [
+        { "text": "Happy holidays", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "frohe Feiertage",
+      "variants": [
+        { "text": "Frohe Feiertage", "reviewed": false },
+        { "text": "Schöne Feiertage", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "felices fiestas",
+      "variants": [
+        { "text": "Felices fiestas", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "boas festas",
+      "variants": [
+        { "text": "Boas festas", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "bonnes fêtes",
+      "variants": [
+        { "text": "Bonnes fêtes", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "buone feste",
+      "variants": [
+        { "text": "Buone feste", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "с праздником",
+      "variants": [
+        { "text": "С праздником", "rom": "s prazdnikom", "reviewed": false },
+        { "text": "Счастливых праздников", "rom": "schastlivykh prazdnikov", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "wesołych świąt",
+      "variants": [
+        { "text": "Wesołych świąt", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "iyi tatiller",
+      "variants": [
+        { "text": "İyi tatiller", "reviewed": false },
+        { "text": "Bayramınız kutlu olsun", "tone": "polite", "note": "For religious holidays.", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "त्यौहार की शुभकामनाएँ",
+      "variants": [
+        { "text": "त्यौहार की शुभकामनाएँ", "rom": "tyauhār kī śubhakāmnāen", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "শুভ উৎসব",
+      "variants": [
+        { "text": "শুভ উৎসব", "rom": "śubho utsôb", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "selamat hari raya",
+      "variants": [
+        { "text": "Selamat hari raya", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "selamat hari raya",
+      "variants": [
+        { "text": "Selamat hari raya", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "maligayang pista",
+      "variants": [
+        { "text": "Maligayang pista", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "chúc lễ vui vẻ",
+      "variants": [
+        { "text": "Chúc lễ vui vẻ", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "สุขสันต์วันหยุด",
+      "variants": [
+        { "text": "สุขสันต์วันหยุด", "rom": "suksan wan yut", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "kut chibai",
+      "variants": [
+        { "text": "Kut chibai", "note": "Lit. \"festival greeting.\"", "reviewed": false }
+      ]
+    }
+  }
+}
