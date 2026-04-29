@@ -1,0 +1,133 @@
+{
+  "id": "encourage-dont-be-sad",
+  "scene": "encouragement",
+  "order": 5,
+  "trans": {
+    "zh": {
+      "gloss": "别难过",
+      "variants": [
+        { "text": "别难过", "rom": "bié nánguò", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "悲しまないで",
+      "variants": [
+        { "text": "悲しまないで", "rom": "kanashimanai de", "reviewed": false },
+        { "text": "元気出して", "rom": "genki dashite", "note": "Lit. \"cheer up.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "슬퍼하지 마",
+      "variants": [
+        { "text": "슬퍼하지 마", "rom": "seulpeohaji ma", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "don't be sad",
+      "variants": [
+        { "text": "Don't be sad", "reviewed": false },
+        { "text": "Cheer up", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "nicht traurig",
+      "variants": [
+        { "text": "Sei nicht traurig", "reviewed": false },
+        { "text": "Kopf hoch", "note": "Lit. \"head up.\"", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "no te pongas triste",
+      "variants": [
+        { "text": "No estés triste", "reviewed": false },
+        { "text": "No te pongas triste", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "não fique triste",
+      "variants": [
+        { "text": "Não fique triste", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "ne sois pas triste",
+      "variants": [
+        { "text": "Ne sois pas triste", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "non essere triste",
+      "variants": [
+        { "text": "Non essere triste", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "не грусти",
+      "variants": [
+        { "text": "Не грусти", "rom": "ne grusti", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "nie smuć się",
+      "variants": [
+        { "text": "Nie smuć się", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "üzülme",
+      "variants": [
+        { "text": "Üzülme", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "उदास मत हो",
+      "variants": [
+        { "text": "उदास मत हो", "rom": "udās mat ho", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "মন খারাপ কোরো না",
+      "variants": [
+        { "text": "মন খারাপ কোরো না", "rom": "môn khārāp koro nā", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "jangan sedih",
+      "variants": [
+        { "text": "Jangan sedih", "reviewed": false },
+        { "text": "Jangan murung", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "jangan sedih",
+      "variants": [
+        { "text": "Jangan sedih", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "wag malungkot",
+      "variants": [
+        { "text": "Wag malungkot", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "đừng buồn",
+      "variants": [
+        { "text": "Đừng buồn", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "อย่าเศร้า",
+      "variants": [
+        { "text": "อย่าเศร้า", "rom": "ya sao", "reviewed": false },
+        { "text": "อย่าเสียใจ", "rom": "ya sia jai", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "lung lo chhia rawh",
+      "variants": [
+        { "text": "Lung lo chhia rawh", "note": "Lit. \"don't be sad.\"", "reviewed": false }
+      ]
+    }
+  }
+}
