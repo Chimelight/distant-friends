@@ -1,0 +1,147 @@
+{
+  "id": "react-no-way",
+  "scene": "reactions",
+  "order": 19,
+  "trans": {
+    "zh": {
+      "gloss": "不会吧",
+      "variants": [
+        { "text": "不会吧", "rom": "bù huì ba", "reviewed": false },
+        { "text": "真的假的", "rom": "zhēn de jiǎ de", "tone": "casual", "note": "Lit. \"real or fake?\"", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "まさか",
+      "variants": [
+        { "text": "まさか", "rom": "masaka", "reviewed": false },
+        { "text": "うそでしょ", "rom": "uso desho", "tone": "casual", "note": "Lit. \"you're kidding.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "말도 안 돼",
+      "variants": [
+        { "text": "말도 안 돼", "rom": "maldo an dwae", "tone": "casual", "note": "Lit. \"(that) makes no sense.\"", "reviewed": false },
+        { "text": "설마", "rom": "seolma", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "no way",
+      "variants": [
+        { "text": "No way", "reviewed": false },
+        { "text": "You're kidding", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "auf keinen Fall",
+      "variants": [
+        { "text": "Auf keinen Fall", "reviewed": false },
+        { "text": "Niemals", "reviewed": false },
+        { "text": "Echt jetzt?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "no puede ser",
+      "variants": [
+        { "text": "No puede ser", "reviewed": false },
+        { "text": "¡No me digas!", "tone": "casual", "note": "Lit. \"don't tell me!\"", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "não acredito",
+      "variants": [
+        { "text": "Não acredito", "reviewed": false },
+        { "text": "Não pode ser", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "pas possible",
+      "variants": [
+        { "text": "Pas possible", "reviewed": false },
+        { "text": "C'est pas vrai", "tone": "casual", "note": "Lit. \"it's not true.", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "non ci credo",
+      "variants": [
+        { "text": "Non ci credo", "reviewed": false },
+        { "text": "Ma dai", "tone": "casual", "note": "Lit. \"come on\" — disbelief.", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "не может быть",
+      "variants": [
+        { "text": "Не может быть", "rom": "ne mozhet byt'", "reviewed": false },
+        { "text": "Да ладно", "rom": "da ladno", "tone": "casual", "note": "Lit. \"yeah, alright\" — disbelief.", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "nie może być",
+      "variants": [
+        { "text": "Nie może być", "reviewed": false },
+        { "text": "Niemożliwe", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "olamaz",
+      "variants": [
+        { "text": "Olamaz", "reviewed": false },
+        { "text": "Yok artık", "tone": "casual", "note": "Lit. \"no more\" — comic disbelief.", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "नहीं हो सकता",
+      "variants": [
+        { "text": "नहीं हो सकता", "rom": "nahīn ho saktā", "reviewed": false },
+        { "text": "सच में?", "rom": "sach men?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "হতে পারে না",
+      "variants": [
+        { "text": "হতে পারে না", "rom": "hôte pāre nā", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "nggak mungkin",
+      "variants": [
+        { "text": "Tidak mungkin", "reviewed": false },
+        { "text": "Nggak mungkin", "tone": "casual", "reviewed": false },
+        { "text": "Yang bener?", "tone": "casual", "note": "Lit. \"(is it) really?\"", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "tidak mungkin",
+      "variants": [
+        { "text": "Tidak mungkin", "reviewed": false },
+        { "text": "Mana mungkin", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "hindi nga",
+      "variants": [
+        { "text": "Hindi nga?", "tone": "casual", "reviewed": false },
+        { "text": "Talaga ba?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "không thể nào",
+      "variants": [
+        { "text": "Không thể nào", "reviewed": false },
+        { "text": "Không tin được", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ไม่จริงน่า",
+      "variants": [
+        { "text": "ไม่จริงน่า", "rom": "mai jing na", "reviewed": false },
+        { "text": "ไปได้ยังไง", "rom": "pai dai yang ngai", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a ni thei lo",
+      "variants": [
+        { "text": "A ni thei lo", "note": "Lit. \"it cannot be.\"", "reviewed": false }
+      ]
+    }
+  }
+}

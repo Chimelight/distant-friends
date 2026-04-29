@@ -1,0 +1,143 @@
+{
+  "id": "encourage-im-proud",
+  "scene": "encouragement",
+  "order": 8,
+  "trans": {
+    "zh": {
+      "gloss": "我为你骄傲",
+      "variants": [
+        { "text": "我为你骄傲", "rom": "wǒ wèi nǐ jiāo'ào", "reviewed": false },
+        { "text": "我为你感到骄傲", "rom": "wǒ wèi nǐ gǎndào jiāo'ào", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "誇りに思う",
+      "variants": [
+        { "text": "君を誇りに思う", "rom": "kimi o hokori ni omou", "reviewed": false },
+        { "text": "すごい！誇らしいよ", "rom": "sugoi! hokorashii yo", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "자랑스러워",
+      "variants": [
+        { "text": "자랑스러워", "rom": "jarangseureowo", "tone": "casual", "reviewed": false },
+        { "text": "네가 자랑스러워", "rom": "nega jarangseureowo", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "I'm proud of you",
+      "variants": [
+        { "text": "I'm proud of you", "reviewed": false },
+        { "text": "So proud of you", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "ich bin stolz",
+      "variants": [
+        { "text": "Ich bin stolz auf dich", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "estoy orgulloso",
+      "variants": [
+        { "text": "Estoy orgulloso de ti", "speakerGender": "m", "reviewed": false },
+        { "text": "Estoy orgullosa de ti", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "orgulhoso",
+      "variants": [
+        { "text": "Estou orgulhoso de você", "speakerGender": "m", "reviewed": false },
+        { "text": "Estou orgulhosa de você", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "je suis fier",
+      "variants": [
+        { "text": "Je suis fier de toi", "speakerGender": "m", "reviewed": false },
+        { "text": "Je suis fière de toi", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "sono fiero",
+      "variants": [
+        { "text": "Sono fiero di te", "speakerGender": "m", "reviewed": false },
+        { "text": "Sono fiera di te", "speakerGender": "f", "reviewed": false },
+        { "text": "Sono orgoglioso di te", "speakerGender": "m", "reviewed": false },
+        { "text": "Sono orgogliosa di te", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "я горжусь тобой",
+      "variants": [
+        { "text": "Я горжусь тобой", "rom": "ya gorzhus' toboy", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "jestem z ciebie dumny",
+      "variants": [
+        { "text": "Jestem z ciebie dumny", "speakerGender": "m", "reviewed": false },
+        { "text": "Jestem z ciebie dumna", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "seninle gurur duyuyorum",
+      "variants": [
+        { "text": "Seninle gurur duyuyorum", "reviewed": false },
+        { "text": "Seninle gurur duyuyorum", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "मुझे तुम पर गर्व है",
+      "variants": [
+        { "text": "मुझे तुम पर गर्व है", "rom": "mujhe tum par garv hai", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "তোমার জন্য গর্বিত",
+      "variants": [
+        { "text": "তোমার জন্য আমি গর্বিত", "rom": "tomār jônno āmi gôrbito", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "aku bangga padamu",
+      "variants": [
+        { "text": "Aku bangga padamu", "reviewed": false },
+        { "text": "Aku bangga sama kamu", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "saya bangga dengan awak",
+      "variants": [
+        { "text": "Saya bangga dengan awak", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "proud ako sa iyo",
+      "variants": [
+        { "text": "Proud ako sa iyo", "reviewed": false },
+        { "text": "Ipinagmamalaki kita", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "mình tự hào về bạn",
+      "variants": [
+        { "text": "Mình tự hào về bạn", "reviewed": false },
+        { "text": "Tôi tự hào về bạn", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ภูมิใจในตัวคุณ",
+      "variants": [
+        { "text": "ภูมิใจในตัวคุณ", "rom": "phumijai nai tua khun", "reviewed": false },
+        { "text": "ภูมิใจมาก", "rom": "phumijai mak", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "ka chhuanlam che",
+      "variants": [
+        { "text": "Ka chhuanlam che", "note": "Lit. \"I am proud of you.\"", "reviewed": false }
+      ]
+    }
+  }
+}
