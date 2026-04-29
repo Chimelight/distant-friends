@@ -24,11 +24,10 @@
   });
 
   /**
-   * Switch theme. Adds a transient `is-theme-changing` class on <html>
-   * that turns on grouped color transitions in global.css — surfaces
-   * (background / border / shadow) start fading first, ink / icons
-   * follow ~180ms later. Class auto-removes after the longest sub-transition
-   * so normal hover transitions resume.
+   * Switch theme. Prefer the View Transitions API: a single GPU-composited
+   * crossfade that stays smooth no matter how many rows are on screen.
+   * Animation timing is tuned in global.css. Firefox falls back to a
+   * grouped CSS transition.
    */
   function set(t: ThemeMode) {
     const reducedMotion =
@@ -40,13 +39,18 @@
       return;
     }
 
+    const doc = document as Document & {
+      startViewTransition?: (cb: () => void) => unknown;
+    };
+    if (typeof doc.startViewTransition === 'function') {
+      doc.startViewTransition(() => theme.set(t));
+      return;
+    }
+
     const root = document.documentElement;
     root.classList.add('is-theme-changing');
     theme.set(t);
-    // Match the longest transition (color: 0.36s delay + 0.45s duration)
-    // plus a small buffer so the class lingers until the last pixel has
-    // settled. Bump this if global.css's delay is widened further.
-    window.setTimeout(() => root.classList.remove('is-theme-changing'), 900);
+    window.setTimeout(() => root.classList.remove('is-theme-changing'), 500);
   }
 </script>
 

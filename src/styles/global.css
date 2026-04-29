@@ -122,26 +122,36 @@ button {
   }
 }
 
-/* —— theme switch (two-group stagger) ——
- * On theme change, ThemeToggle adds .is-theme-changing on <html> for
- * ~700ms. While it's on, every element runs grouped color transitions:
- *   - surfaces  (background / border / shadow)  start at 0
- *   - ink       (color / fill / stroke)         start at +180ms
- * Reads like paper recoloring first, then ink settling onto it.
- * !important is needed because individual components own their own
- * `transition` declarations for hover/etc; we override briefly during
- * the change window only. */
+/* —— theme switch ——
+ * Modern browsers run the change through the View Transitions API (see
+ * ThemeToggle.set) — a single GPU-composited crossfade that stays smooth
+ * regardless of DOM size.
+ *
+ * Tuned to feel deliberate rather than instant: a slow-start / slow-end
+ * sigmoid curve gives the single fade some "linger" so it reads as a
+ * paced transition instead of an abrupt swap. */
+@keyframes theme-fade-out { to   { opacity: 0; } }
+@keyframes theme-fade-in  { from { opacity: 0; } }
+::view-transition-old(root) {
+  animation: theme-fade-out 0.55s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+::view-transition-new(root) {
+  animation: theme-fade-in  0.55s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+/* Firefox fallback — short single-stage fade. We deliberately do NOT
+ * use a two-group stagger here because applying transitions to `*` on
+ * a long phrase list causes per-element repaint jank. */
 .is-theme-changing,
 .is-theme-changing *,
 .is-theme-changing *::before,
 .is-theme-changing *::after {
   transition:
-    background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color     0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow       0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    color            0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.36s,
-    fill             0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.36s,
-    stroke           0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.36s !important;
+    background-color 0.4s ease,
+    border-color     0.4s ease,
+    color            0.4s ease,
+    fill             0.4s ease,
+    stroke           0.4s ease !important;
 }
 
 /* —— view-mode toggle (driven by body[data-view]) —— */
