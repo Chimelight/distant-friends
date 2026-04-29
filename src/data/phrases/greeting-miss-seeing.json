@@ -1,7 +1,7 @@
 {
-  "id": "catch-miss-seeing",
-  "scene": "catching-up",
-  "order": 2,
+  "id": "greeting-miss-seeing",
+  "scene": "greetings",
+  "order": 5,
   "trans": {
     "zh": {
       "gloss": "久别重逢",

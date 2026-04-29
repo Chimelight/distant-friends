@@ -7,7 +7,8 @@
       "gloss": "致谢",
       "variants": [
         { "text": "谢谢", "rom": "xièxie", "reviewed": true },
-        { "text": "谢谢你", "rom": "xièxie nǐ", "note": "Slightly warmer — specifies \"you\".", "reviewed": true }
+        { "text": "谢谢你", "rom": "xièxie nǐ", "note": "Slightly warmer — specifies \"you\".", "reviewed": true },
+        { "text": "非常感谢", "rom": "fēicháng gǎnxiè", "note": "Lit. \"thank you very much.\"", "reviewed": false }
       ]
     },
     "ja": {

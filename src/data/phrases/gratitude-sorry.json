@@ -8,7 +8,8 @@
       "variants": [
         { "text": "对不起", "rom": "duìbuqǐ", "reviewed": true },
         { "text": "不好意思", "rom": "bùhǎoyìsi", "tone": "casual", "note": "Light apology — bumping into someone, interrupting, small slips.", "reviewed": true },
-        { "text": "抱歉", "rom": "bàoqiàn", "tone": "neutral", "reviewed": true }
+        { "text": "抱歉", "rom": "bàoqiàn", "tone": "neutral", "reviewed": true },
+        { "text": "我的错", "rom": "wǒ de cuò", "tone": "casual", "note": "Lit. \"my fault\" — \"my bad.\"", "reviewed": false }
       ]
     },
     "ja": {

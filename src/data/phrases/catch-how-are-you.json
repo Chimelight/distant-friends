@@ -6,8 +6,10 @@
     "zh": {
       "gloss": "近况",
       "variants": [
+        { "text": "你好吗", "rom": "nǐ hǎo ma", "reviewed": true },
         { "text": "最近怎么样", "rom": "zuìjìn zěnmeyàng", "reviewed": true },
-        { "text": "还好吗", "rom": "hái hǎo ma", "tone": "casual", "reviewed": true }
+        { "text": "还好吗", "rom": "hái hǎo ma", "tone": "casual", "reviewed": true },
+        { "text": "一切还好吗", "rom": "yīqiè hái hǎo ma", "reviewed": false }
       ]
     },
     "ja": {
@@ -27,7 +29,9 @@
     "en": {
       "gloss": "checking in",
       "variants": [
-        { "text": "How are you?", "reviewed": true }
+        { "text": "How are you?", "reviewed": true },
+        { "text": "How's it going?", "tone": "casual", "reviewed": false },
+        { "text": "How's everything?", "tone": "casual", "reviewed": false }
       ]
     },
     "de": {
