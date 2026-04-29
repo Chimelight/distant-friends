@@ -1,26 +1,26 @@
 #!/usr/bin/env node
 /**
- * Interactively append a new phrase skeleton to src/data/phrases.json.
+ * Interactively create a new phrase file in src/data/phrases/<id>.json.
  *
  * Usage:  pnpm run new-phrase
  *
- * Prompts for id, scene, order. Generates a stub with the anchor language's
- * `trans` entry pre-filled with empty placeholders for every language listed
- * in languages.json. You then open phrases.json and fill in the strings.
+ * Prompts for id, scene, order. Generates a stub with empty placeholders
+ * for every language listed in languages.json.
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { createInterface } from 'node:readline/promises';
 import { stdin, stdout } from 'node:process';
+import { loadPhrases } from './_load-phrases.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const dataDir = resolve(here, '..', 'src', 'data');
-const phrasesPath = resolve(dataDir, 'phrases.json');
+const phrasesDir = resolve(dataDir, 'phrases');
 const scenesPath = resolve(dataDir, 'scenes.json');
 const languagesPath = resolve(dataDir, 'languages.json');
 
-const phrases = JSON.parse(await readFile(phrasesPath, 'utf8'));
+const phrases = await loadPhrases(dataDir);
 const scenes = JSON.parse(await readFile(scenesPath, 'utf8'));
 const languages = JSON.parse(await readFile(languagesPath, 'utf8'));
 
@@ -62,10 +62,10 @@ for (const L of languages) {
 }
 
 const newPhrase = { id, scene, order, trans };
-phrases.push(newPhrase);
+const newPath = resolve(phrasesDir, `${id}.json`);
 
-await writeFile(phrasesPath, JSON.stringify(phrases, null, 2) + '\n', 'utf8');
+await writeFile(newPath, JSON.stringify(newPhrase, null, 2) + '\n', 'utf8');
 
 console.log();
-console.log(`✓ Appended skeleton for "${id}" (${scene} / order ${order}).`);
-console.log(`  Now open ${phrasesPath} and fill in the gloss + variants.`);
+console.log(`✓ Created skeleton for "${id}" (${scene} / order ${order}).`);
+console.log(`  Now open ${newPath} and fill in the gloss + variants.`);

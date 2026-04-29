@@ -1,0 +1,134 @@
+{
+  "id": "greeting-miss-seeing",
+  "scene": "greetings",
+  "order": 5,
+  "trans": {
+    "zh": {
+      "gloss": "久别重逢",
+      "variants": [
+        { "text": "好久不见", "rom": "hǎo jiǔ bù jiàn", "reviewed": true }
+      ]
+    },
+    "ja": {
+      "gloss": "再会の言葉",
+      "variants": [
+        { "text": "久しぶり", "rom": "hisashiburi", "note": "The most-used reunion word.", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "오랜만의 인사",
+      "variants": [
+        { "text": "오랜만이야", "rom": "oraenmaniya", "tone": "casual", "reviewed": false },
+        { "text": "오랜만이에요", "rom": "oraenmanieyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "long absence",
+      "variants": [
+        { "text": "Long time no see", "reviewed": true }
+      ]
+    },
+    "de": {
+      "gloss": "nach langer Zeit",
+      "variants": [
+        { "text": "Lange nicht gesehen!", "note": "Lit. “(been) long not seen!”", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "después de tiempo",
+      "variants": [
+        { "text": "¡Cuánto tiempo!", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "reencontro",
+      "variants": [
+        { "text": "Quanto tempo!", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "après longtemps",
+      "variants": [
+        { "text": "Ça fait longtemps !", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "dopo tanto tempo",
+      "variants": [
+        { "text": "Quanto tempo!", "note": "Lit. \"how much time!\" — warm reunion exclamation.", "reviewed": false },
+        { "text": "Da quanto non ci vediamo!", "note": "Lit. \"how long since we saw each other!\"", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "после долгой разлуки",
+      "variants": [
+        { "text": "Давно не виделись", "rom": "davno ne videlis'", "note": "Lit. “we haven’t seen each other for a long time.”", "reviewed": true },
+        { "text": "Сколько лет, сколько зим!", "rom": "skol'ko let, skol'ko zim!", "tone": "close", "note": "Lit. “so many years, so many winters!” — warm reunion idiom.", "reviewed": true }
+      ]
+    },
+    "pl": {
+      "gloss": "po dłuższym czasie",
+      "variants": [
+        { "text": "Kopę lat!", "tone": "casual", "note": "Lit. “a heap of years!” — warm, idiomatic.", "reviewed": true },
+        { "text": "Dawno się nie widzieliśmy", "note": "Lit. “(we) haven’t seen each other in a long time.”", "reviewed": true }
+      ]
+    },
+    "tr": {
+      "gloss": "uzun zaman sonra",
+      "variants": [
+        { "text": "Uzun zamandır görüşmedik!", "note": "Lit. \"we haven't met for a long time!\"", "reviewed": false },
+        { "text": "Ne zaman oldu!", "tone": "casual", "note": "Idiomatic \"it's been forever!\"", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "बहुत दिनों बाद",
+      "variants": [
+        { "text": "बहुत दिनों के बाद!", "rom": "bahut dinon ke bād!", "note": "Lit. “after many days!”", "reviewed": true }
+      ]
+    },
+    "bn": {
+      "gloss": "অনেক দিন পরে",
+      "variants": [
+        { "text": "অনেক দিন পর!", "rom": "onek din por!", "note": "Lit. “after many days!”", "reviewed": true }
+      ]
+    },
+    "id": {
+      "gloss": "setelah lama",
+      "variants": [
+        { "text": "Lama tidak bertemu!", "note": "Lit. \"long not meet.\"", "reviewed": false },
+        { "text": "Lama tak ketemu!", "tone": "casual", "note": "Colloquial form.", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "selepas lama",
+      "variants": [
+        { "text": "Lama tak jumpa!", "note": "Lit. \"long not meet.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "หลังจากไม่ได้เจอกันนาน",
+      "variants": [
+        { "text": "ไม่ได้เจอกันนานเลย", "rom": "mai dai jer gan naan loei", "note": "Lit. \"haven't met for so long.\"", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "sau lâu không gặp",
+      "variants": [
+        { "text": "Lâu rồi không gặp!", "note": "Lit. \"long time not met!\"", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "matagal nang hindi nagkita",
+      "variants": [
+        { "text": "Ang tagal!", "tone": "casual", "note": "Lit. \"so long!\" — a warm reunion exclamation.", "reviewed": false },
+        { "text": "Tagal nating hindi nagkita", "note": "Lit. \"long time we haven't met.\"", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "hun rei hnu",
+      "variants": [
+        { "text": "Hun rei tak hnu!", "note": "Lit. “after a very long time!” — a reunion exclamation.", "reviewed": false }
+      ]
+    }
+  }
+}

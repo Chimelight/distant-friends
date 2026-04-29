@@ -1,0 +1,148 @@
+{
+  "id": "compliment-pretty",
+  "scene": "compliments",
+  "order": 6,
+  "trans": {
+    "zh": {
+      "gloss": "好看",
+      "variants": [
+        { "text": "很好看", "rom": "hěn hǎokàn", "reviewed": false },
+        { "text": "真好看", "rom": "zhēn hǎokàn", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "綺麗",
+      "variants": [
+        { "text": "綺麗", "rom": "kirei", "reviewed": false },
+        { "text": "素敵", "rom": "suteki", "note": "Lit. \"lovely.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "예뻐",
+      "variants": [
+        { "text": "예뻐", "rom": "yeppeo", "tone": "casual", "reviewed": false },
+        { "text": "예쁘네", "rom": "yeppeune", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "so pretty",
+      "variants": [
+        { "text": "So pretty", "reviewed": false },
+        { "text": "Beautiful", "reviewed": false },
+        { "text": "Lovely", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "schön",
+      "variants": [
+        { "text": "So schön", "reviewed": false },
+        { "text": "Hübsch", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "qué bonito",
+      "variants": [
+        { "text": "Qué bonito", "addresseeGender": "m", "reviewed": false },
+        { "text": "Qué bonita", "addresseeGender": "f", "reviewed": false },
+        { "text": "Qué guapo", "addresseeGender": "m", "reviewed": false },
+        { "text": "Qué guapa", "addresseeGender": "f", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "que bonito",
+      "variants": [
+        { "text": "Que bonito", "reviewed": false },
+        { "text": "Que lindo", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "joli",
+      "variants": [
+        { "text": "C'est joli", "reviewed": false },
+        { "text": "C'est beau", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "che bello",
+      "variants": [
+        { "text": "Che bello", "addresseeGender": "m", "reviewed": false },
+        { "text": "Che bella", "addresseeGender": "f", "reviewed": false },
+        { "text": "Bellissimo", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "красиво",
+      "variants": [
+        { "text": "Красиво", "rom": "krasivo", "reviewed": false },
+        { "text": "Красивый", "rom": "krasivyi", "addresseeGender": "m", "reviewed": false },
+        { "text": "Красивая", "rom": "krasivaya", "addresseeGender": "f", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "ładnie",
+      "variants": [
+        { "text": "Ładnie", "reviewed": false },
+        { "text": "Ładne", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "çok güzel",
+      "variants": [
+        { "text": "Çok güzel", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "बहुत सुंदर",
+      "variants": [
+        { "text": "बहुत सुंदर", "rom": "bahut sundar", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "খুব সুন্দর",
+      "variants": [
+        { "text": "খুব সুন্দর", "rom": "khub sundôr", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "cantik",
+      "variants": [
+        { "text": "Cantik", "reviewed": false },
+        { "text": "Bagus banget", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "cantik",
+      "variants": [
+        { "text": "Cantik", "reviewed": false },
+        { "text": "Sangat cantik", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "ang ganda",
+      "variants": [
+        { "text": "Ang ganda", "reviewed": false },
+        { "text": "Maganda", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "đẹp quá",
+      "variants": [
+        { "text": "Đẹp quá", "reviewed": false },
+        { "text": "Xinh quá", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "สวยจัง",
+      "variants": [
+        { "text": "สวยจัง", "rom": "suay jang", "reviewed": false },
+        { "text": "น่ารัก", "rom": "na rak", "note": "Lit. \"lovely / cute-pretty.\"", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a mawi em em",
+      "variants": [
+        { "text": "A mawi em em", "note": "Lit. \"very beautiful.\"", "reviewed": false }
+      ]
+    }
+  }
+}

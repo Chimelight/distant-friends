@@ -1,0 +1,154 @@
+{
+  "id": "react-youre-right",
+  "scene": "reactions",
+  "order": 10,
+  "trans": {
+    "zh": {
+      "gloss": "有道理",
+      "variants": [
+        { "text": "有道理", "rom": "yǒu dàolǐ", "reviewed": false },
+        { "text": "你说得对", "rom": "nǐ shuō de duì", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "なるほど",
+      "variants": [
+        { "text": "なるほど", "rom": "naruhodo", "note": "Lit. \"I see.\"", "reviewed": false },
+        { "text": "確かに", "rom": "tashika ni", "note": "Lit. \"indeed.\"", "reviewed": false },
+        { "text": "その通り", "rom": "sono tōri", "note": "Lit. \"exactly so.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "맞아",
+      "variants": [
+        { "text": "맞아", "rom": "maja", "tone": "casual", "reviewed": false },
+        { "text": "그러게", "rom": "geureoge", "tone": "casual", "reviewed": false },
+        { "text": "일리가 있어", "rom": "illiga isseo", "note": "Lit. \"there's reason in (what you said).\"", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "you're right",
+      "variants": [
+        { "text": "You're right", "reviewed": false },
+        { "text": "Good point", "reviewed": false },
+        { "text": "That makes sense", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "stimmt",
+      "variants": [
+        { "text": "Stimmt", "reviewed": false },
+        { "text": "Du hast recht", "reviewed": false },
+        { "text": "Das macht Sinn", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "tienes razón",
+      "variants": [
+        { "text": "Tienes razón", "reviewed": false },
+        { "text": "Buen punto", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "tem razão",
+      "variants": [
+        { "text": "Você tem razão", "reviewed": false },
+        { "text": "Faz sentido", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "tu as raison",
+      "variants": [
+        { "text": "Tu as raison", "reviewed": false },
+        { "text": "C'est vrai", "reviewed": false },
+        { "text": "Bon point", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "hai ragione",
+      "variants": [
+        { "text": "Hai ragione", "reviewed": false },
+        { "text": "Ha senso", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "ты прав",
+      "variants": [
+        { "text": "Ты прав", "rom": "ty prav", "addresseeGender": "m", "reviewed": false },
+        { "text": "Ты права", "rom": "ty prava", "addresseeGender": "f", "reviewed": false },
+        { "text": "Логично", "rom": "logichno", "note": "Lit. \"logical.\"", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "masz rację",
+      "variants": [
+        { "text": "Masz rację", "reviewed": false },
+        { "text": "Ma to sens", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "haklısın",
+      "variants": [
+        { "text": "Haklısın", "reviewed": false },
+        { "text": "Mantıklı", "note": "Lit. \"logical.\"", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "सही कह रहे हो",
+      "variants": [
+        { "text": "सही कह रहे हो", "rom": "sahī kah rahe ho", "addresseeGender": "m", "reviewed": false },
+        { "text": "सही कह रही हो", "rom": "sahī kah rahī ho", "addresseeGender": "f", "reviewed": false },
+        { "text": "बात में दम है", "rom": "bāt men dam hai", "tone": "casual", "note": "Lit. \"there's strength in (your) point.\"", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "ঠিক বলেছ",
+      "variants": [
+        { "text": "ঠিক বলেছ", "rom": "ṭhik bolechho", "reviewed": false },
+        { "text": "যুক্তি আছে", "rom": "jukti achhe", "note": "Lit. \"there is logic (in it).\"", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "kamu benar",
+      "variants": [
+        { "text": "Kamu benar", "reviewed": false },
+        { "text": "Masuk akal", "note": "Lit. \"enters the mind\" — makes sense.", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "awak betul",
+      "variants": [
+        { "text": "Awak betul", "reviewed": false },
+        { "text": "Masuk akal", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "tama ka",
+      "variants": [
+        { "text": "Tama ka", "reviewed": false },
+        { "text": "May point ka", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "bạn nói đúng",
+      "variants": [
+        { "text": "Bạn nói đúng", "reviewed": false },
+        { "text": "Có lý", "note": "Lit. \"(it) has reason.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "คุณพูดถูก",
+      "variants": [
+        { "text": "คุณพูดถูก", "rom": "khun phut thuk", "reviewed": false },
+        { "text": "มีเหตุผล", "rom": "mee het phon", "note": "Lit. \"(it) has reason.\"", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "i sawi a dik",
+      "variants": [
+        { "text": "I sawi a dik", "note": "Lit. \"what you said is right.\"", "reviewed": false },
+        { "text": "A awmze a awm", "note": "Lit. \"(it) has meaning.\"", "reviewed": false }
+      ]
+    }
+  }
+}

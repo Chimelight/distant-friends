@@ -1,0 +1,154 @@
+{
+  "id": "greeting-nice-to-meet",
+  "scene": "greetings",
+  "order": 6,
+  "trans": {
+    "zh": {
+      "gloss": "初次见面",
+      "variants": [
+        { "text": "很高兴认识你", "rom": "hěn gāoxìng rènshi nǐ", "reviewed": false },
+        { "text": "幸会", "rom": "xìnghuì", "tone": "polite", "note": "Literary/formal; warm respect on first meeting.", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "初対面の挨拶",
+      "variants": [
+        { "text": "はじめまして", "rom": "hajimemashite", "note": "Standard first-meeting greeting.", "reviewed": false },
+        { "text": "よろしくお願いします", "rom": "yoroshiku onegai shimasu", "tone": "polite", "note": "Often paired after はじめまして; \"I look forward to (knowing you).\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "첫 인사",
+      "variants": [
+        { "text": "만나서 반가워요", "rom": "mannaseo bangawoyo", "note": "Lit. \"glad to meet (you).\"", "reviewed": false },
+        { "text": "처음 뵙겠습니다", "rom": "cheoeum boepgesseumnida", "tone": "polite", "note": "Formal first-meeting greeting.", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "first meeting",
+      "variants": [
+        { "text": "Nice to meet you", "reviewed": false },
+        { "text": "Pleased to meet you", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Erstbegegnung",
+      "variants": [
+        { "text": "Freut mich", "tone": "casual", "note": "Short for \"freut mich, dich kennenzulernen.\"", "reviewed": false },
+        { "text": "Schön, Sie kennenzulernen", "tone": "polite", "note": "Lit. \"nice to get to know you.\"", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "primer encuentro",
+      "variants": [
+        { "text": "Mucho gusto", "note": "Standard \"nice to meet you.\"", "reviewed": false },
+        { "text": "Encantado", "speakerGender": "m", "note": "Lit. \"delighted\" — male speaker.", "reviewed": false },
+        { "text": "Encantada", "speakerGender": "f", "note": "Lit. \"delighted\" — female speaker.", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "primeiro encontro",
+      "variants": [
+        { "text": "Muito prazer", "note": "Lit. \"much pleasure.\"", "reviewed": false },
+        { "text": "Prazer em conhecê-lo", "tone": "polite", "addresseeGender": "m", "reviewed": false },
+        { "text": "Prazer em conhecê-la", "tone": "polite", "addresseeGender": "f", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "première rencontre",
+      "variants": [
+        { "text": "Enchanté", "speakerGender": "m", "note": "Lit. \"enchanted\" — male speaker.", "reviewed": false },
+        { "text": "Enchantée", "speakerGender": "f", "note": "Lit. \"enchanted\" — female speaker.", "reviewed": false },
+        { "text": "Ravi de te rencontrer", "tone": "casual", "speakerGender": "m", "reviewed": false },
+        { "text": "Ravie de te rencontrer", "tone": "casual", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "primo incontro",
+      "variants": [
+        { "text": "Piacere", "note": "Standard \"pleased (to meet you).\"", "reviewed": false },
+        { "text": "Piacere di conoscerti", "tone": "casual", "reviewed": false },
+        { "text": "Lieto di conoscerla", "tone": "polite", "speakerGender": "m", "reviewed": false },
+        { "text": "Lieta di conoscerla", "tone": "polite", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "знакомство",
+      "variants": [
+        { "text": "Приятно познакомиться", "rom": "priyatno poznakomit'sya", "reviewed": false },
+        { "text": "Очень приятно", "rom": "ochen' priyatno", "tone": "casual", "note": "Lit. \"very pleasant\"; common short form.", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "pierwsze spotkanie",
+      "variants": [
+        { "text": "Miło mi cię poznać", "tone": "casual", "reviewed": false },
+        { "text": "Miło mi pana poznać", "tone": "polite", "addresseeGender": "m", "reviewed": false },
+        { "text": "Miło mi panią poznać", "tone": "polite", "addresseeGender": "f", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "ilk tanışma",
+      "variants": [
+        { "text": "Memnun oldum", "note": "Short, everyday \"pleased (to meet you).\"", "reviewed": false },
+        { "text": "Tanıştığımıza memnun oldum", "tone": "polite", "note": "Lit. \"pleased that we have met.\"", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "पहली मुलाक़ात",
+      "variants": [
+        { "text": "आपसे मिलकर खुशी हुई", "rom": "āpse milkar khushī huī", "tone": "polite", "note": "Lit. \"meeting you brought happiness.\"", "reviewed": false },
+        { "text": "मिलकर अच्छा लगा", "rom": "milkar achchhā lagā", "note": "Lit. \"it felt good to meet (you).\"", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "প্রথম দেখা",
+      "variants": [
+        { "text": "আপনার সাথে দেখা হয়ে ভালো লাগলো", "rom": "āpnār śathe dekha hoye bhalo laglo", "tone": "polite", "note": "Lit. \"it was good to meet you.\"", "reviewed": false },
+        { "text": "তোমার সাথে দেখা হয়ে ভালো লাগলো", "rom": "tomār śathe dekha hoye bhalo laglo", "note": "Same warmth, peer-pronoun form.", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "perkenalan",
+      "variants": [
+        { "text": "Senang bertemu denganmu", "tone": "casual", "reviewed": false },
+        { "text": "Senang bertemu Anda", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "perkenalan",
+      "variants": [
+        { "text": "Selamat berkenalan", "note": "Lit. \"happy acquaintance.\"", "reviewed": false },
+        { "text": "Gembira bertemu dengan anda", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "unang pagkikita",
+      "variants": [
+        { "text": "Ikinagagalak kong makilala ka", "tone": "polite", "note": "Lit. \"I am delighted to meet you.\"", "reviewed": false },
+        { "text": "Nice to meet you", "tone": "casual", "note": "English-borrowed; very common in everyday speech.", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "lần đầu gặp mặt",
+      "variants": [
+        { "text": "Rất vui được gặp bạn", "note": "Standard \"nice to meet you\"; bạn = peer pronoun.", "reviewed": false },
+        { "text": "Hân hạnh được gặp bạn", "tone": "polite", "note": "More formal; lit. \"honored to meet you.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "การพบกันครั้งแรก",
+      "variants": [
+        { "text": "ยินดีที่ได้รู้จัก", "rom": "yindee thi dai rujak", "note": "Standard \"nice to meet you.\"", "reviewed": false },
+        { "text": "ยินดีที่ได้รู้จักครับ", "rom": "yindee thi dai rujak khrap", "tone": "polite", "speakerGender": "m", "note": "With polite particle ครับ for male speakers.", "reviewed": false },
+        { "text": "ยินดีที่ได้รู้จักค่ะ", "rom": "yindee thi dai rujak kha", "tone": "polite", "speakerGender": "f", "note": "With polite particle ค่ะ for female speakers.", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "hmuh tirh",
+      "variants": [
+        { "text": "Hmuh che ka lawm e", "note": "Lit. \"I'm glad to meet you.\"", "reviewed": false }
+      ]
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "id": "farewell-have-nice-day",
+  "scene": "farewells",
+  "order": 6,
+  "trans": {
+    "zh": {
+      "gloss": "祝你愉快",
+      "variants": [
+        { "text": "祝你愉快", "rom": "zhù nǐ yúkuài", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "良い一日を",
+      "variants": [
+        { "text": "良い一日を", "rom": "yoi ichinichi o", "reviewed": false },
+        { "text": "良い日を", "rom": "yoi hi o", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "좋은 하루",
+      "variants": [
+        { "text": "좋은 하루 보내", "rom": "joeun haru bonae", "tone": "casual", "reviewed": false },
+        { "text": "즐거운 하루 되세요", "rom": "jeulgeoun haru doeseyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "have a nice day",
+      "variants": [
+        { "text": "Have a nice day", "reviewed": false },
+        { "text": "Have a good day", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "schönen Tag",
+      "variants": [
+        { "text": "Schönen Tag noch", "reviewed": false },
+        { "text": "Einen schönen Tag", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "buen día",
+      "variants": [
+        { "text": "Que tengas un buen día", "reviewed": false },
+        { "text": "Buen día", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "bom dia",
+      "variants": [
+        { "text": "Tenha um bom dia", "reviewed": false },
+        { "text": "Bom dia", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "bonne journée",
+      "variants": [
+        { "text": "Bonne journée", "reviewed": false },
+        { "text": "Passe une bonne journée", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "buona giornata",
+      "variants": [
+        { "text": "Buona giornata", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "хорошего дня",
+      "variants": [
+        { "text": "Хорошего дня", "rom": "khoroshego dnya", "reviewed": false },
+        { "text": "Удачного дня", "rom": "udachnogo dnya", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "miłego dnia",
+      "variants": [
+        { "text": "Miłego dnia", "reviewed": false },
+        { "text": "Udanego dnia", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "iyi günler",
+      "variants": [
+        { "text": "İyi günler", "reviewed": false },
+        { "text": "Güzel bir gün geçir", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "दिन शुभ हो",
+      "variants": [
+        { "text": "आपका दिन शुभ हो", "rom": "āpkā din shubh ho", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "দিনটি শুভ হোক",
+      "variants": [
+        { "text": "আপনার দিনটি শুভ হোক", "rom": "āpnār dinṭi shubh hok", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "selamat beraktivitas",
+      "variants": [
+        { "text": "Selamat beraktivitas", "reviewed": false },
+        { "text": "Semoga harimu menyenangkan", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "selamat hari",
+      "variants": [
+        { "text": "Selamat hari", "reviewed": false },
+        { "text": "Semoga hari awak indah", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "magandang araw",
+      "variants": [
+        { "text": "Magandang araw", "reviewed": false },
+        { "text": "Have a nice day", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "chúc một ngày vui",
+      "variants": [
+        { "text": "Chúc một ngày vui vẻ", "reviewed": false },
+        { "text": "Chúc bạn một ngày tốt lành", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ขอให้มีวันที่ดี",
+      "variants": [
+        { "text": "ขอให้มีวันที่ดี", "rom": "kho hai mee wan thi dee", "reviewed": false },
+        { "text": "ขอให้วันนี้ดี ๆ", "rom": "kho hai wan nee dee dee", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "ni tha tak",
+      "variants": [
+        { "text": "Ni tha tak nei la", "note": "Lit. \"have a good day.\"", "reviewed": false }
+      ]
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "id": "encourage-take-your-time",
+  "scene": "encouragement",
+  "order": 2,
+  "trans": {
+    "zh": {
+      "gloss": "慢慢来",
+      "variants": [
+        { "text": "慢慢来", "rom": "màn man lái", "reviewed": false },
+        { "text": "不急", "rom": "bù jí", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "ゆっくりで",
+      "variants": [
+        { "text": "ゆっくりでいいよ", "rom": "yukkuri de ii yo", "reviewed": false },
+        { "text": "焦らないで", "rom": "aseranai de", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "천천히 해",
+      "variants": [
+        { "text": "천천히 해", "rom": "cheoncheonhi hae", "tone": "casual", "reviewed": false },
+        { "text": "천천히 해도 돼", "rom": "cheoncheonhi haedo dwae", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "take your time",
+      "variants": [
+        { "text": "Take your time", "reviewed": false },
+        { "text": "No rush", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "lass dir Zeit",
+      "variants": [
+        { "text": "Lass dir Zeit", "reviewed": false },
+        { "text": "Kein Stress", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "tómate tu tiempo",
+      "variants": [
+        { "text": "Tómate tu tiempo", "reviewed": false },
+        { "text": "Sin prisa", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "sem pressa",
+      "variants": [
+        { "text": "Sem pressa", "reviewed": false },
+        { "text": "Tem calma", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "prends ton temps",
+      "variants": [
+        { "text": "Prends ton temps", "reviewed": false },
+        { "text": "Pas de pression", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "con calma",
+      "variants": [
+        { "text": "Con calma", "reviewed": false },
+        { "text": "Prenditi il tuo tempo", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "не спеши",
+      "variants": [
+        { "text": "Не торопись", "rom": "ne toropis'", "reviewed": false },
+        { "text": "Не спеши", "rom": "ne speshi", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "spokojnie",
+      "variants": [
+        { "text": "Spokojnie", "reviewed": false },
+        { "text": "Bez pośpiechu", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "acele etme",
+      "variants": [
+        { "text": "Acele etme", "reviewed": false },
+        { "text": "Yavaş yavaş", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "आराम से",
+      "variants": [
+        { "text": "कोई जल्दी नहीं", "rom": "koī jaldī nahīn", "reviewed": false },
+        { "text": "आराम से", "rom": "ārām se", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "তাড়া নেই",
+      "variants": [
+        { "text": "তাড়া নেই", "rom": "tāṛā nei", "reviewed": false },
+        { "text": "ধীরে ধীরে", "rom": "dhīre dhīre", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "pelan-pelan",
+      "variants": [
+        { "text": "Pelan-pelan saja", "reviewed": false },
+        { "text": "Santai aja", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "perlahan-lahan",
+      "variants": [
+        { "text": "Perlahan-lahan", "reviewed": false },
+        { "text": "Tak perlu cepat", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "dahan-dahan",
+      "variants": [
+        { "text": "Dahan-dahan", "reviewed": false },
+        { "text": "Hindi nagmamadali", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "cứ từ từ",
+      "variants": [
+        { "text": "Cứ từ từ", "reviewed": false },
+        { "text": "Không vội", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ค่อย ๆ",
+      "variants": [
+        { "text": "ค่อย ๆ ทำ", "rom": "khoi khoi tham", "reviewed": false },
+        { "text": "ไม่ต้องรีบ", "rom": "mai tong reep", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a muangchang in",
+      "variants": [
+        { "text": "A muangchang in", "note": "Lit. \"slowly / gently.\"", "reviewed": false }
+      ]
+    }
+  }
+}

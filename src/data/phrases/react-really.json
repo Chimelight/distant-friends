@@ -1,0 +1,151 @@
+{
+  "id": "react-really",
+  "scene": "reactions",
+  "order": 6,
+  "trans": {
+    "zh": {
+      "gloss": "真的吗",
+      "variants": [
+        { "text": "真的吗", "rom": "zhēn de ma", "reviewed": false },
+        { "text": "真的", "rom": "zhēn de", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "本当",
+      "variants": [
+        { "text": "本当？", "rom": "hontō?", "tone": "casual", "reviewed": false },
+        { "text": "本当ですか", "rom": "hontō desu ka", "tone": "polite", "reviewed": false },
+        { "text": "マジで", "rom": "maji de", "tone": "casual", "note": "Slangy \"for real?\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "진짜",
+      "variants": [
+        { "text": "진짜?", "rom": "jinjja?", "tone": "casual", "reviewed": false },
+        { "text": "정말요?", "rom": "jeongmaryo?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "really",
+      "variants": [
+        { "text": "Really?", "reviewed": false },
+        { "text": "For real?", "tone": "casual", "reviewed": false },
+        { "text": "Seriously?", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "wirklich",
+      "variants": [
+        { "text": "Wirklich?", "reviewed": false },
+        { "text": "Echt?", "tone": "casual", "reviewed": false },
+        { "text": "Im Ernst?", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "en serio",
+      "variants": [
+        { "text": "¿En serio?", "reviewed": false },
+        { "text": "¿De verdad?", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "sério",
+      "variants": [
+        { "text": "Sério?", "reviewed": false },
+        { "text": "Mesmo?", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "vraiment",
+      "variants": [
+        { "text": "Vraiment ?", "reviewed": false },
+        { "text": "Sérieux ?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "davvero",
+      "variants": [
+        { "text": "Davvero?", "reviewed": false },
+        { "text": "Sul serio?", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "правда",
+      "variants": [
+        { "text": "Правда?", "rom": "pravda?", "reviewed": false },
+        { "text": "Серьёзно?", "rom": "seryozno?", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "naprawdę",
+      "variants": [
+        { "text": "Naprawdę?", "reviewed": false },
+        { "text": "Serio?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "gerçekten",
+      "variants": [
+        { "text": "Gerçekten mi?", "reviewed": false },
+        { "text": "Sahi mi?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "सच में",
+      "variants": [
+        { "text": "सच में?", "rom": "sach men?", "reviewed": false },
+        { "text": "वाक़ई?", "rom": "vāqaī?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "সত্যি",
+      "variants": [
+        { "text": "সত্যি?", "rom": "shotti?", "reviewed": false },
+        { "text": "আসলে?", "rom": "āshole?", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "beneran",
+      "variants": [
+        { "text": "Beneran?", "tone": "casual", "reviewed": false },
+        { "text": "Sungguh?", "reviewed": false },
+        { "text": "Serius?", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "betul ke",
+      "variants": [
+        { "text": "Betul ke?", "reviewed": false },
+        { "text": "Sungguh?", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "talaga",
+      "variants": [
+        { "text": "Talaga?", "reviewed": false },
+        { "text": "Seryoso?", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "thật không",
+      "variants": [
+        { "text": "Thật không?", "reviewed": false },
+        { "text": "Thiệt hả?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "จริงเหรอ",
+      "variants": [
+        { "text": "จริงเหรอ", "rom": "jing rer", "reviewed": false },
+        { "text": "จริงหรอ", "rom": "jing ror", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a dik takin",
+      "variants": [
+        { "text": "A dik takin?", "note": "Lit. \"truly?\"", "reviewed": false },
+        { "text": "Tih tak?", "tone": "casual", "note": "Casual \"for real?\"", "reviewed": false }
+      ]
+    }
+  }
+}

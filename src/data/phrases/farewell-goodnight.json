@@ -1,0 +1,140 @@
+{
+  "id": "farewell-goodnight",
+  "scene": "farewells",
+  "order": 7,
+  "trans": {
+    "zh": {
+      "gloss": "晚安祝福",
+      "variants": [
+        { "text": "晚安", "rom": "wǎn ān", "reviewed": true }
+      ]
+    },
+    "ja": {
+      "gloss": "おやすみの挨拶",
+      "variants": [
+        { "text": "おやすみ", "rom": "oyasumi", "tone": "casual", "reviewed": false },
+        { "text": "おやすみなさい", "rom": "oyasumi nasai", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "잘 자라는 인사",
+      "variants": [
+        { "text": "잘 자", "rom": "jal ja", "tone": "close", "note": "For close people only.", "reviewed": false },
+        { "text": "안녕히 주무세요", "rom": "annyeonghi jumuseyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "parting before sleep",
+      "variants": [
+        { "text": "Goodnight", "reviewed": true }
+      ]
+    },
+    "de": {
+      "gloss": "Gute Nacht",
+      "variants": [
+        { "text": "Gute Nacht", "reviewed": false },
+        { "text": "Schlaf gut", "tone": "close", "note": "Lit. “sleep well” — warmer, friendly.", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "buenas noches",
+      "variants": [
+        { "text": "Buenas noches", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "boa noite",
+      "variants": [
+        { "text": "Boa noite", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "bonne nuit",
+      "variants": [
+        { "text": "Bonne nuit", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "buona notte",
+      "variants": [
+        { "text": "Buonanotte", "reviewed": false },
+        { "text": "Sogni d'oro", "tone": "close", "note": "Lit. \"golden dreams.\"", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "пожелание перед сном",
+      "variants": [
+        { "text": "Спокойной ночи", "rom": "spokojnoj nochi", "note": "Lit. “(I wish you) peaceful night.”", "reviewed": true },
+        { "text": "Сладких снов", "rom": "sladkih snov", "tone": "close", "note": "Lit. “sweet dreams.”", "reviewed": true }
+      ]
+    },
+    "pl": {
+      "gloss": "życzenie na noc",
+      "variants": [
+        { "text": "Dobranoc", "reviewed": true },
+        { "text": "Słodkich snów", "tone": "close", "note": "Lit. “sweet dreams.”", "reviewed": true }
+      ]
+    },
+    "tr": {
+      "gloss": "iyi geceler",
+      "variants": [
+        { "text": "İyi geceler", "note": "Lit. \"good nights\" (always plural).", "reviewed": false },
+        { "text": "Tatlı rüyalar", "tone": "close", "note": "Lit. \"sweet dreams.\"", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "रात की शुभकामना",
+      "variants": [
+        { "text": "शुभ रात्रि", "rom": "shubh rātri", "tone": "polite", "note": "Sanskritic; formal.", "reviewed": true },
+        { "text": "शब बख़ैर", "rom": "shab bakhair", "note": "Urdu-influenced — common in casual Hindi.", "reviewed": true }
+      ]
+    },
+    "bn": {
+      "gloss": "শুভ রাত্রি",
+      "variants": [
+        { "text": "শুভ রাত্রি", "rom": "śubho rātri", "reviewed": true }
+      ]
+    },
+    "id": {
+      "gloss": "selamat malam",
+      "variants": [
+        { "text": "Selamat malam", "note": "Standard \"good night.\"", "reviewed": false },
+        { "text": "Selamat tidur", "tone": "close", "note": "Lit. \"good sleep\" — warmer to a friend.", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "selamat malam",
+      "variants": [
+        { "text": "Selamat malam", "reviewed": false },
+        { "text": "Tidur lena", "tone": "close", "note": "Lit. \"sleep deeply\" — warm.", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ราตรีสวัสดิ์",
+      "variants": [
+        { "text": "ราตรีสวัสดิ์", "rom": "raatree sawat", "note": "Formal \"good night.\"", "reviewed": false },
+        { "text": "ฝันดีนะ", "rom": "fan dee na", "tone": "close", "note": "Lit. \"sweet dreams\" — soft, warm.", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "chúc ngủ ngon",
+      "variants": [
+        { "text": "Chúc ngủ ngon", "reviewed": false },
+        { "text": "Ngủ ngon", "tone": "casual", "note": "Shortened; everyday between friends.", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "magandang gabi",
+      "variants": [
+        { "text": "Magandang gabi", "note": "Lit. \"beautiful evening\" — also used at parting.", "reviewed": false },
+        { "text": "Matulog ka nang mahimbing", "tone": "close", "note": "Lit. \"sleep deeply\" — warmer.", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "mu tha rawh",
+      "variants": [
+        { "text": "Mu tha rawh", "note": "Lit. “sleep well.”", "reviewed": false }
+      ]
+    }
+  }
+}

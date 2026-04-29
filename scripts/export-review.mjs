@@ -26,7 +26,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..');
 const dataDir = resolve(root, 'src', 'data');
 
-const phrases = JSON.parse(await readFile(resolve(dataDir, 'phrases.json'), 'utf8'));
+const { loadPhrases } = await import('./_load-phrases.mjs');
+const phrases = await loadPhrases(dataDir);
 const languages = JSON.parse(await readFile(resolve(dataDir, 'languages.json'), 'utf8'));
 const scenes = JSON.parse(await readFile(resolve(dataDir, 'scenes.json'), 'utf8'));
 

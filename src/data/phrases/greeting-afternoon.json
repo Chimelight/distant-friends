@@ -1,0 +1,111 @@
+{
+  "id": "greeting-afternoon",
+  "scene": "greetings",
+  "order": 3,
+  "trans": {
+    "zh": {
+      "gloss": "下午问候",
+      "variants": [
+        { "text": "下午好", "rom": "xiàwǔ hǎo", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "昼の挨拶",
+      "variants": [
+        { "text": "こんにちは", "rom": "konnichiwa", "note": "Daytime/afternoon standard.", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "afternoon greeting",
+      "variants": [
+        { "text": "Good afternoon", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Tagesgruß",
+      "variants": [
+        { "text": "Guten Tag", "note": "Daytime greeting; covers afternoon.", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "saludo de la tarde",
+      "variants": [
+        { "text": "Buenas tardes", "note": "Used from midday into early evening.", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "saudação da tarde",
+      "variants": [
+        { "text": "Boa tarde", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "saluto del pomeriggio",
+      "variants": [
+        { "text": "Buon pomeriggio", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "дневное приветствие",
+      "variants": [
+        { "text": "Добрый день", "rom": "dobryĭ den'", "note": "Lit. \"good day\"; used in daytime/afternoon.", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "powitanie popołudniowe",
+      "variants": [
+        { "text": "Dzień dobry", "note": "Same form as morning; daytime greeting.", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "öğleden sonra selamı",
+      "variants": [
+        { "text": "İyi günler", "note": "Lit. \"good days\"; daytime greeting.", "reviewed": false },
+        { "text": "Tünaydın", "note": "Specific afternoon greeting; somewhat dated.", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "অপরাহ্ণ শুভেচ্ছা",
+      "variants": [
+        { "text": "শুভ অপরাহ্ণ", "rom": "śubho ôporahṇo", "tone": "polite", "note": "Literary/formal; spoken Bangla rarely uses an afternoon-specific greeting.", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "salam siang/sore",
+      "variants": [
+        { "text": "Selamat siang", "note": "Midday (~10am–3pm).", "reviewed": false },
+        { "text": "Selamat sore", "note": "Late afternoon (~3pm–6pm).", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "salam petang",
+      "variants": [
+        { "text": "Selamat petang", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "pagbati sa hapon",
+      "variants": [
+        { "text": "Magandang hapon", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "chào buổi chiều",
+      "variants": [
+        { "text": "Chào buổi chiều", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ทักทายตอนบ่าย",
+      "variants": [
+        { "text": "สวัสดีตอนบ่าย", "rom": "sawatdee ton bai", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "chawhnu chibai",
+      "variants": [
+        { "text": "Chawhnu ṭha", "note": "Lit. \"good afternoon.\"", "reviewed": false }
+      ]
+    }
+  }
+}

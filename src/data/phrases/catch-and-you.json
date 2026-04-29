@@ -1,0 +1,148 @@
+{
+  "id": "catch-and-you",
+  "scene": "catching-up",
+  "order": 4,
+  "trans": {
+    "zh": {
+      "gloss": "回问",
+      "variants": [
+        { "text": "你呢", "rom": "nǐ ne", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "問い返し",
+      "variants": [
+        { "text": "あなたは？", "rom": "anata wa?", "reviewed": false },
+        { "text": "そっちは？", "rom": "sotchi wa?", "tone": "casual", "note": "Casual \"and you / your side?\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "되묻기",
+      "variants": [
+        { "text": "너는?", "rom": "neoneun?", "tone": "casual", "reviewed": false },
+        { "text": "그쪽은요?", "rom": "geujjogeunyo?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "returning the question",
+      "variants": [
+        { "text": "And you?", "reviewed": false },
+        { "text": "What about you?", "tone": "casual", "reviewed": false },
+        { "text": "You?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Rückfrage",
+      "variants": [
+        { "text": "Und dir?", "tone": "casual", "reviewed": false },
+        { "text": "Und Ihnen?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "devolver la pregunta",
+      "variants": [
+        { "text": "¿Y tú?", "tone": "casual", "reviewed": false },
+        { "text": "¿Y usted?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "devolver a pergunta",
+      "variants": [
+        { "text": "E você?", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "renvoyer la question",
+      "variants": [
+        { "text": "Et toi ?", "tone": "casual", "reviewed": false },
+        { "text": "Et vous ?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "ricambiare la domanda",
+      "variants": [
+        { "text": "E tu?", "tone": "casual", "reviewed": false },
+        { "text": "E Lei?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "встречный вопрос",
+      "variants": [
+        { "text": "А ты?", "rom": "a ty?", "tone": "casual", "reviewed": false },
+        { "text": "А вы?", "rom": "a vy?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "pytanie zwrotne",
+      "variants": [
+        { "text": "A ty?", "tone": "casual", "reviewed": false },
+        { "text": "A pan?", "tone": "polite", "addresseeGender": "m", "reviewed": false },
+        { "text": "A pani?", "tone": "polite", "addresseeGender": "f", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "karşı soru",
+      "variants": [
+        { "text": "Sen?", "tone": "casual", "reviewed": false },
+        { "text": "Siz?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "और तुम?",
+      "variants": [
+        { "text": "और तुम?", "rom": "aur tum?", "tone": "casual", "reviewed": false },
+        { "text": "और आप?", "rom": "aur āp?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "আর তুমি?",
+      "variants": [
+        { "text": "আর তুমি?", "rom": "ār tumi?", "tone": "casual", "reviewed": false },
+        { "text": "আর আপনি?", "rom": "ār āpni?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "balik bertanya",
+      "variants": [
+        { "text": "Kamu?", "tone": "casual", "reviewed": false },
+        { "text": "Kalau kamu?", "tone": "casual", "note": "Lit. \"and you?\" — softer return question.", "reviewed": false },
+        { "text": "Anda?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "tanya balik",
+      "variants": [
+        { "text": "Awak?", "tone": "casual", "reviewed": false },
+        { "text": "Anda pula?", "tone": "polite", "note": "Lit. \"and you?\"", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "ganting tanong",
+      "variants": [
+        { "text": "Ikaw?", "tone": "casual", "reviewed": false },
+        { "text": "Ikaw naman?", "tone": "casual", "note": "Lit. \"and you?\" — softer turn-back.", "reviewed": false },
+        { "text": "Kayo po?", "tone": "polite", "note": "With po — respectful return question.", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "hỏi lại",
+      "variants": [
+        { "text": "Còn bạn?", "note": "Bạn = peer pronoun.", "reviewed": false },
+        { "text": "Còn bạn thì sao?", "tone": "casual", "note": "Lit. \"and how about you?\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ย้อนถาม",
+      "variants": [
+        { "text": "คุณล่ะ", "rom": "khun la", "reviewed": false },
+        { "text": "แล้วคุณล่ะ", "rom": "laeo khun la", "note": "Lit. \"and you?\"", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "nang erawh?",
+      "variants": [
+        { "text": "Nang erawh?", "note": "Lit. \"and you?\"", "reviewed": false }
+      ]
+    }
+  }
+}

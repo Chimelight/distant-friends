@@ -1,0 +1,138 @@
+{
+  "id": "encourage-i-understand",
+  "scene": "encouragement",
+  "order": 4,
+  "trans": {
+    "zh": {
+      "gloss": "理解",
+      "variants": [
+        { "text": "我理解", "rom": "wǒ lǐjiě", "reviewed": false },
+        { "text": "我能理解", "rom": "wǒ néng lǐjiě", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "わかるよ",
+      "variants": [
+        { "text": "わかるよ", "rom": "wakaru yo", "tone": "casual", "reviewed": false },
+        { "text": "理解できる", "rom": "rikai dekiru", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "이해해",
+      "variants": [
+        { "text": "이해해", "rom": "ihaehae", "reviewed": false },
+        { "text": "이해할 수 있어", "rom": "ihaehal su isseo", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "I understand",
+      "variants": [
+        { "text": "I understand", "reviewed": false },
+        { "text": "I get it", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "ich verstehe",
+      "variants": [
+        { "text": "Ich verstehe", "reviewed": false },
+        { "text": "Verständlich", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "lo entiendo",
+      "variants": [
+        { "text": "Lo entiendo", "reviewed": false },
+        { "text": "Te entiendo", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "entendo",
+      "variants": [
+        { "text": "Entendo", "reviewed": false },
+        { "text": "Compreendo", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "je comprends",
+      "variants": [
+        { "text": "Je comprends", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "capisco",
+      "variants": [
+        { "text": "Capisco", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "понимаю",
+      "variants": [
+        { "text": "Понимаю", "rom": "ponimayu", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "rozumiem",
+      "variants": [
+        { "text": "Rozumiem", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "anlıyorum",
+      "variants": [
+        { "text": "Anlıyorum", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "समझता हूँ",
+      "variants": [
+        { "text": "मैं समझता हूँ", "rom": "main samajhtā hūn", "speakerGender": "m", "reviewed": false },
+        { "text": "मैं समझती हूँ", "rom": "main samajhtī hūn", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "বুঝি",
+      "variants": [
+        { "text": "বুঝি", "rom": "bujhi", "reviewed": false },
+        { "text": "আমি বুঝতে পারছি", "rom": "āmi bujhte pārchhi", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "aku mengerti",
+      "variants": [
+        { "text": "Aku mengerti", "reviewed": false },
+        { "text": "Aku paham", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "saya faham",
+      "variants": [
+        { "text": "Saya faham", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "naiintindihan ko",
+      "variants": [
+        { "text": "Naiintindihan ko", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "mình hiểu",
+      "variants": [
+        { "text": "Mình hiểu", "reviewed": false },
+        { "text": "Tôi hiểu", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ฉันเข้าใจ",
+      "variants": [
+        { "text": "ฉันเข้าใจ", "rom": "chan khaojai", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "ka hre",
+      "variants": [
+        { "text": "Ka hre", "note": "Lit. \"I know / understand.\"", "reviewed": false }
+      ]
+    }
+  }
+}

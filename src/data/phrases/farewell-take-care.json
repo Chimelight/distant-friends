@@ -1,0 +1,145 @@
+{
+  "id": "farewell-take-care",
+  "scene": "farewells",
+  "order": 5,
+  "trans": {
+    "zh": {
+      "gloss": "保重",
+      "variants": [
+        { "text": "保重", "rom": "bǎozhòng", "reviewed": false },
+        { "text": "多保重", "rom": "duō bǎozhòng", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "お大事に",
+      "variants": [
+        { "text": "お大事に", "rom": "o-daiji ni", "tone": "polite", "note": "Often when someone is unwell.", "reviewed": false },
+        { "text": "元気でね", "rom": "genki de ne", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "잘 지내",
+      "variants": [
+        { "text": "잘 지내", "rom": "jal jinae", "tone": "casual", "reviewed": false },
+        { "text": "건강 잘 챙겨", "rom": "geongang jal chaenggyeo", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "take care",
+      "variants": [
+        { "text": "Take care", "reviewed": false },
+        { "text": "Take care of yourself", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "pass auf dich auf",
+      "variants": [
+        { "text": "Pass auf dich auf", "reviewed": false },
+        { "text": "Mach's gut", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "cuídate",
+      "variants": [
+        { "text": "Cuídate", "reviewed": false },
+        { "text": "Que te vaya bien", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "se cuida",
+      "variants": [
+        { "text": "Se cuida", "tone": "casual", "reviewed": false },
+        { "text": "Cuide-se", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "prends soin de toi",
+      "variants": [
+        { "text": "Prends soin de toi", "reviewed": false },
+        { "text": "Fais attention à toi", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "stammi bene",
+      "variants": [
+        { "text": "Stammi bene", "reviewed": false },
+        { "text": "Abbi cura di te", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "береги себя",
+      "variants": [
+        { "text": "Береги себя", "rom": "beregi sebya", "reviewed": false },
+        { "text": "Удачи", "rom": "udachi", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "trzymaj się",
+      "variants": [
+        { "text": "Trzymaj się", "reviewed": false },
+        { "text": "Uważaj na siebie", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "kendine iyi bak",
+      "variants": [
+        { "text": "Kendine iyi bak", "reviewed": false },
+        { "text": "Kendine dikkat et", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "ख्याल रखना",
+      "variants": [
+        { "text": "ख्याल रखना", "rom": "khyāl rakhnā", "reviewed": false },
+        { "text": "अपना ध्यान रखो", "rom": "apnā dhyān rakho", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "যত্ন নিও",
+      "variants": [
+        { "text": "নিজের যত্ন নিও", "rom": "nijer jôtno nio", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "jaga diri",
+      "variants": [
+        { "text": "Jaga diri", "reviewed": false },
+        { "text": "Hati-hati ya", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "jaga diri",
+      "variants": [
+        { "text": "Jaga diri", "reviewed": false },
+        { "text": "Jaga diri baik-baik", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "ingat ka",
+      "variants": [
+        { "text": "Ingat ka", "reviewed": false },
+        { "text": "Ingat lagi", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "giữ gìn sức khỏe",
+      "variants": [
+        { "text": "Giữ gìn sức khỏe", "reviewed": false },
+        { "text": "Bảo trọng", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ดูแลตัวเอง",
+      "variants": [
+        { "text": "ดูแลตัวเองนะ", "rom": "dulae tua eng na", "reviewed": false },
+        { "text": "รักษาสุขภาพ", "rom": "raksa sukkhaphap", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "i dam reng ang",
+      "variants": [
+        { "text": "I dam reng ang u", "note": "Lit. \"stay well.\"", "reviewed": false }
+      ]
+    }
+  }
+}

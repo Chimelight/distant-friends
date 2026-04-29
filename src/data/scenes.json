@@ -1,8 +1,11 @@
 [
-  { "id": "greetings",   "num": "No. I",   "title": "Greetings",   "em": "Greetings"   },
-  { "id": "catching-up", "num": "No. II",  "title": "Catching Up", "em": "Up"          },
-  { "id": "gratitude",   "num": "No. III", "title": "Gratitude",   "em": "Gratitude"   },
-  { "id": "affection",   "num": "No. IV",  "title": "Affection",   "em": "Affection"   },
-  { "id": "well-wishes", "num": "No. V",   "title": "Warm Wishes", "em": "Wishes"      },
-  { "id": "farewells",   "num": "No. VI",  "title": "Farewells",   "em": "Farewells"   }
+  { "id": "greetings",     "num": "No. I",    "title": "Greetings",     "em": "Greetings"     },
+  { "id": "catching-up",   "num": "No. II",   "title": "Catching Up",   "em": "Up"            },
+  { "id": "reactions",     "num": "No. III",  "title": "Reactions",     "em": "Reactions"     },
+  { "id": "gratitude",     "num": "No. IV",   "title": "Gratitude",     "em": "Gratitude"     },
+  { "id": "compliments",   "num": "No. V",    "title": "Compliments",   "em": "Compliments"   },
+  { "id": "affection",     "num": "No. VI",   "title": "Affection",     "em": "Affection"     },
+  { "id": "encouragement", "num": "No. VII",  "title": "Encouragement", "em": "Encouragement" },
+  { "id": "well-wishes",   "num": "No. VIII", "title": "Warm Wishes",   "em": "Wishes"        },
+  { "id": "farewells",     "num": "No. IX",   "title": "Farewells",     "em": "Farewells"     }
 ]

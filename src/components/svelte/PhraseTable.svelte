@@ -4,7 +4,7 @@
   import { visibleVariants } from '../../lib/filter';
   import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
-  import phrases from '../../data/phrases.json';
+  import phrases from '../../data/phrases';
   import type { TPhrase, TLanguage, TScene } from '../../lib/schema';
 
   const allPhrases = phrases as unknown as TPhrase[];
