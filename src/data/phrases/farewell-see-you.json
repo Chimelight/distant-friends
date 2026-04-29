@@ -1,0 +1,146 @@
+{
+  "id": "farewell-see-you",
+  "scene": "farewells",
+  "order": 2,
+  "trans": {
+    "zh": {
+      "gloss": "回头见",
+      "variants": [
+        { "text": "回头见", "rom": "huítóu jiàn", "reviewed": false },
+        { "text": "一会见", "rom": "yīhuì jiàn", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "またね",
+      "variants": [
+        { "text": "またね", "rom": "mata ne", "tone": "casual", "reviewed": false },
+        { "text": "また後で", "rom": "mata ato de", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "또 봐",
+      "variants": [
+        { "text": "또 봐", "rom": "tto bwa", "tone": "casual", "reviewed": false },
+        { "text": "나중에 봐", "rom": "najunge bwa", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "see you",
+      "variants": [
+        { "text": "See you", "reviewed": false },
+        { "text": "See you later", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "bis später",
+      "variants": [
+        { "text": "Bis später", "reviewed": false },
+        { "text": "Bis dann", "reviewed": false },
+        { "text": "Tschüss", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "hasta luego",
+      "variants": [
+        { "text": "Hasta luego", "reviewed": false },
+        { "text": "Nos vemos", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "até logo",
+      "variants": [
+        { "text": "Até logo", "reviewed": false },
+        { "text": "A gente se vê", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "à tout à l'heure",
+      "variants": [
+        { "text": "À tout à l'heure", "reviewed": false },
+        { "text": "À plus", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "a dopo",
+      "variants": [
+        { "text": "A dopo", "reviewed": false },
+        { "text": "Ci vediamo", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "до скорого",
+      "variants": [
+        { "text": "До скорого", "rom": "do skorogo", "reviewed": false },
+        { "text": "Увидимся", "rom": "uvidimsya", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "do zobaczenia",
+      "variants": [
+        { "text": "Do zobaczenia", "reviewed": false },
+        { "text": "Na razie", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "görüşürüz",
+      "variants": [
+        { "text": "Görüşürüz", "reviewed": false },
+        { "text": "Sonra görüşürüz", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "फिर मिलते हैं",
+      "variants": [
+        { "text": "फिर मिलते हैं", "rom": "phir milte hain", "reviewed": false },
+        { "text": "बाद में मिलते हैं", "rom": "bād men milte hain", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "পরে দেখা হবে",
+      "variants": [
+        { "text": "পরে দেখা হবে", "rom": "pôre dekha hôbe", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "sampai jumpa",
+      "variants": [
+        { "text": "Sampai jumpa", "reviewed": false },
+        { "text": "Sampai nanti", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "jumpa lagi",
+      "variants": [
+        { "text": "Jumpa lagi", "reviewed": false },
+        { "text": "Jumpa nanti", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "kita-kita",
+      "variants": [
+        { "text": "Kita-kita", "tone": "casual", "reviewed": false },
+        { "text": "See you", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "hẹn gặp lại",
+      "variants": [
+        { "text": "Hẹn gặp lại", "reviewed": false },
+        { "text": "Gặp lại nhé", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "แล้วเจอกัน",
+      "variants": [
+        { "text": "แล้วเจอกัน", "rom": "laeo jer kan", "reviewed": false },
+        { "text": "เจอกันใหม่", "rom": "jer kan mai", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "hmuh leh ang",
+      "variants": [
+        { "text": "Hmuh leh ang", "note": "Lit. \"(we will) meet again.\"", "reviewed": false }
+      ]
+    }
+  }
+}

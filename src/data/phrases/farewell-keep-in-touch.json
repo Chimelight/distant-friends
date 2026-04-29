@@ -1,0 +1,144 @@
+{
+  "id": "farewell-keep-in-touch",
+  "scene": "farewells",
+  "order": 4,
+  "trans": {
+    "zh": {
+      "gloss": "保持联系",
+      "variants": [
+        { "text": "常联系", "rom": "cháng liánxì", "reviewed": false },
+        { "text": "保持联系", "rom": "bǎochí liánxì", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "連絡して",
+      "variants": [
+        { "text": "連絡して", "rom": "renraku shite", "reviewed": false },
+        { "text": "連絡取り合おう", "rom": "renraku toriaō", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "자주 연락해",
+      "variants": [
+        { "text": "자주 연락해", "rom": "jaju yeollakhae", "tone": "casual", "reviewed": false },
+        { "text": "연락하자", "rom": "yeollakhaja", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "keep in touch",
+      "variants": [
+        { "text": "Keep in touch", "reviewed": false },
+        { "text": "Stay in touch", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "bleib in Kontakt",
+      "variants": [
+        { "text": "Bleib in Kontakt", "reviewed": false },
+        { "text": "Melde dich", "tone": "casual", "note": "Lit. \"get in touch.\"", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "mantente en contacto",
+      "variants": [
+        { "text": "Mantente en contacto", "reviewed": false },
+        { "text": "No pierdas contacto", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "mantenha contato",
+      "variants": [
+        { "text": "Mantenha contato", "reviewed": false },
+        { "text": "Não suma", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "reste en contact",
+      "variants": [
+        { "text": "Reste en contact", "reviewed": false },
+        { "text": "Donne des nouvelles", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "restiamo in contatto",
+      "variants": [
+        { "text": "Restiamo in contatto", "reviewed": false },
+        { "text": "Sentiamoci", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "будь на связи",
+      "variants": [
+        { "text": "Будь на связи", "rom": "bud' na svyazi", "reviewed": false },
+        { "text": "Не пропадай", "rom": "ne propaday", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "bądźmy w kontakcie",
+      "variants": [
+        { "text": "Bądźmy w kontakcie", "reviewed": false },
+        { "text": "Odzywaj się", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "görüşelim",
+      "variants": [
+        { "text": "Görüşelim", "reviewed": false },
+        { "text": "Haberleşelim", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "संपर्क में रहना",
+      "variants": [
+        { "text": "संपर्क में रहना", "rom": "sampark men rahnā", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "যোগাযোগ রেখো",
+      "variants": [
+        { "text": "যোগাযোগ রেখো", "rom": "jogājog rekho", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "tetap kontak",
+      "variants": [
+        { "text": "Tetap kontak", "reviewed": false },
+        { "text": "Jangan hilang", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "kekal berhubung",
+      "variants": [
+        { "text": "Kekal berhubung", "reviewed": false },
+        { "text": "Selalu berhubung", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "magpa-update ka",
+      "variants": [
+        { "text": "Magpa-update ka", "reviewed": false },
+        { "text": "Wag mawala", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "giữ liên lạc",
+      "variants": [
+        { "text": "Giữ liên lạc", "reviewed": false },
+        { "text": "Đừng mất tích", "tone": "casual", "note": "Lit. \"don't go missing.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ติดต่อกันบ่อย ๆ",
+      "variants": [
+        { "text": "ติดต่อกันบ่อย ๆ", "rom": "tit to kan boi boi", "reviewed": false },
+        { "text": "อย่าหายไปนะ", "rom": "ya hai pai na", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "min ngaihtuah la",
+      "variants": [
+        { "text": "Min ngaihtuah reng la", "note": "Lit. \"keep thinking of me.\"", "reviewed": false }
+      ]
+    }
+  }
+}
