@@ -1,0 +1,147 @@
+{
+  "id": "compliment-cool",
+  "scene": "compliments",
+  "order": 8,
+  "trans": {
+    "zh": {
+      "gloss": "酷",
+      "variants": [
+        { "text": "很酷", "rom": "hěn kù", "reviewed": false },
+        { "text": "真酷", "rom": "zhēn kù", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "かっこいい",
+      "variants": [
+        { "text": "かっこいい", "rom": "kakkoii", "reviewed": false },
+        { "text": "クール", "rom": "kūru", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "멋있어",
+      "variants": [
+        { "text": "멋있어", "rom": "meosisseo", "tone": "casual", "reviewed": false },
+        { "text": "멋있네", "rom": "meosinne", "reviewed": false },
+        { "text": "쿨하다", "rom": "kulhada", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "so cool",
+      "variants": [
+        { "text": "So cool", "reviewed": false },
+        { "text": "That's cool", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "cool",
+      "variants": [
+        { "text": "Cool", "reviewed": false },
+        { "text": "Echt cool", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "qué chulo",
+      "variants": [
+        { "text": "Qué chulo", "reviewed": false },
+        { "text": "Qué guay", "reviewed": false },
+        { "text": "Qué genial", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "que legal",
+      "variants": [
+        { "text": "Que legal", "reviewed": false },
+        { "text": "Que maneiro", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "cool",
+      "variants": [
+        { "text": "C'est cool", "reviewed": false },
+        { "text": "Trop cool", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "che figo",
+      "variants": [
+        { "text": "Che figo", "tone": "casual", "reviewed": false },
+        { "text": "Forte", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "круто",
+      "variants": [
+        { "text": "Круто", "rom": "kruto", "reviewed": false },
+        { "text": "Прикольно", "rom": "prikol'no", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "spoko",
+      "variants": [
+        { "text": "Spoko", "tone": "casual", "reviewed": false },
+        { "text": "Fajne", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "havalı",
+      "variants": [
+        { "text": "Havalı", "reviewed": false },
+        { "text": "Çok cool", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "कूल",
+      "variants": [
+        { "text": "बहुत कूल", "rom": "bahut kūl", "tone": "casual", "note": "English-borrowed.", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "কুল",
+      "variants": [
+        { "text": "কুল", "rom": "kul", "tone": "casual", "reviewed": false },
+        { "text": "দারুণ", "rom": "dārun", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "keren",
+      "variants": [
+        { "text": "Keren", "reviewed": false },
+        { "text": "Keren banget", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "hebat",
+      "variants": [
+        { "text": "Hebat", "reviewed": false },
+        { "text": "Power", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "ang cool",
+      "variants": [
+        { "text": "Ang cool", "reviewed": false },
+        { "text": "Astig", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "ngầu",
+      "variants": [
+        { "text": "Ngầu", "tone": "casual", "reviewed": false },
+        { "text": "Chất quá", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "เท่ห์",
+      "variants": [
+        { "text": "เท่ห์", "rom": "the", "reviewed": false },
+        { "text": "เจ๋ง", "rom": "jeng", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a tha tak",
+      "variants": [
+        { "text": "A tha tak", "note": "Lit. \"really good.\"", "reviewed": false }
+      ]
+    }
+  }
+}

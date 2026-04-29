@@ -1,0 +1,164 @@
+{
+  "id": "react-ok",
+  "scene": "reactions",
+  "order": 1,
+  "trans": {
+    "zh": {
+      "gloss": "好的",
+      "variants": [
+        { "text": "好的", "rom": "hǎo de", "reviewed": false },
+        { "text": "好", "rom": "hǎo", "tone": "casual", "reviewed": false },
+        { "text": "行", "rom": "xíng", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "了承",
+      "variants": [
+        { "text": "いいよ", "rom": "ii yo", "tone": "casual", "reviewed": false },
+        { "text": "わかった", "rom": "wakatta", "tone": "casual", "note": "Doubles as \"got it.\"", "reviewed": false },
+        { "text": "はい", "rom": "hai", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "수락",
+      "variants": [
+        { "text": "좋아", "rom": "joa", "tone": "casual", "reviewed": false },
+        { "text": "알았어", "rom": "arasso", "tone": "casual", "note": "Lit. \"got it.\"", "reviewed": false },
+        { "text": "네", "rom": "ne", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "agreement",
+      "variants": [
+        { "text": "OK", "reviewed": false },
+        { "text": "Alright", "reviewed": false },
+        { "text": "Okay", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Zustimmung",
+      "variants": [
+        { "text": "Okay", "reviewed": false },
+        { "text": "Alles klar", "note": "Lit. \"all clear.\"", "reviewed": false },
+        { "text": "In Ordnung", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "vale",
+      "variants": [
+        { "text": "Vale", "reviewed": false },
+        { "text": "Bueno", "reviewed": false },
+        { "text": "Está bien", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "tá bom",
+      "variants": [
+        { "text": "Tá bom", "tone": "casual", "reviewed": false },
+        { "text": "Certo", "reviewed": false },
+        { "text": "Beleza", "tone": "casual", "note": "BR slang.", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "d'accord",
+      "variants": [
+        { "text": "D'accord", "reviewed": false },
+        { "text": "OK", "reviewed": false },
+        { "text": "Très bien", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "va bene",
+      "variants": [
+        { "text": "Va bene", "reviewed": false },
+        { "text": "OK", "reviewed": false },
+        { "text": "D'accordo", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "хорошо",
+      "variants": [
+        { "text": "Хорошо", "rom": "khorosho", "reviewed": false },
+        { "text": "Ладно", "rom": "ladno", "tone": "casual", "reviewed": false },
+        { "text": "Окей", "rom": "okey", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "zgoda",
+      "variants": [
+        { "text": "Dobrze", "reviewed": false },
+        { "text": "OK", "reviewed": false },
+        { "text": "W porządku", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "onay",
+      "variants": [
+        { "text": "Tamam", "reviewed": false },
+        { "text": "Olur", "reviewed": false },
+        { "text": "Peki", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "सहमति",
+      "variants": [
+        { "text": "ठीक है", "rom": "ṭhīk hai", "reviewed": false },
+        { "text": "अच्छा", "rom": "achchhā", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "সম্মতি",
+      "variants": [
+        { "text": "ঠিক আছে", "rom": "ṭhik achhe", "reviewed": false },
+        { "text": "আচ্ছা", "rom": "āchchhā", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "setuju",
+      "variants": [
+        { "text": "Oke", "reviewed": false },
+        { "text": "Baik", "reviewed": false },
+        { "text": "Boleh", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "setuju",
+      "variants": [
+        { "text": "OK", "reviewed": false },
+        { "text": "Baik", "reviewed": false },
+        { "text": "Boleh", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "pagsang-ayon",
+      "variants": [
+        { "text": "Sige", "reviewed": false },
+        { "text": "OK lang", "reviewed": false },
+        { "text": "Okay", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "đồng ý",
+      "variants": [
+        { "text": "Được", "reviewed": false },
+        { "text": "OK", "reviewed": false },
+        { "text": "Ừ", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ตกลง",
+      "variants": [
+        { "text": "โอเค", "rom": "okhe", "reviewed": false },
+        { "text": "ได้", "rom": "dai", "reviewed": false },
+        { "text": "ตกลง", "rom": "toklong", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "aw le",
+      "variants": [
+        { "text": "Ok", "reviewed": false },
+        { "text": "Aw le", "note": "Lit. \"yes / alright.\"", "reviewed": false }
+      ]
+    }
+  }
+}

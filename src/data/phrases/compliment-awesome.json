@@ -1,0 +1,146 @@
+{
+  "id": "compliment-awesome",
+  "scene": "compliments",
+  "order": 4,
+  "trans": {
+    "zh": {
+      "gloss": "棒",
+      "variants": [
+        { "text": "太棒了", "rom": "tài bàng le", "reviewed": false },
+        { "text": "真棒", "rom": "zhēn bàng", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "最高",
+      "variants": [
+        { "text": "最高", "rom": "saikō", "reviewed": false },
+        { "text": "素晴らしい", "rom": "subarashii", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "최고",
+      "variants": [
+        { "text": "최고", "rom": "choego", "reviewed": false },
+        { "text": "끝내준다", "rom": "kkeutnaejunda", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "awesome",
+      "variants": [
+        { "text": "Awesome", "reviewed": false },
+        { "text": "That's awesome", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "genial",
+      "variants": [
+        { "text": "Genial", "reviewed": false },
+        { "text": "Klasse", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "genial",
+      "variants": [
+        { "text": "¡Increíble!", "reviewed": false },
+        { "text": "¡Genial!", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "demais",
+      "variants": [
+        { "text": "Demais", "tone": "casual", "reviewed": false },
+        { "text": "Excelente", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "génial",
+      "variants": [
+        { "text": "Génial", "reviewed": false },
+        { "text": "Top", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "fantastico",
+      "variants": [
+        { "text": "Fantastico", "reviewed": false },
+        { "text": "Forte", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "класс",
+      "variants": [
+        { "text": "Класс", "rom": "klass", "tone": "casual", "reviewed": false },
+        { "text": "Огонь", "rom": "ogon'", "tone": "casual", "note": "Lit. \"fire\" — slangy \"fire.\"", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "super",
+      "variants": [
+        { "text": "Super", "reviewed": false },
+        { "text": "Świetnie", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "süper",
+      "variants": [
+        { "text": "Süper", "reviewed": false },
+        { "text": "Müthiş", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "बहुत बढ़िया",
+      "variants": [
+        { "text": "बहुत बढ़िया", "rom": "bahut baṛhiyā", "reviewed": false },
+        { "text": "ज़बरदस्त", "rom": "zabardast", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "চমৎকার",
+      "variants": [
+        { "text": "অসাধারণ", "rom": "ôshādhārôn", "reviewed": false },
+        { "text": "চমৎকার", "rom": "chômôtkar", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "mantap",
+      "variants": [
+        { "text": "Mantap", "tone": "casual", "reviewed": false },
+        { "text": "Keren", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "hebat",
+      "variants": [
+        { "text": "Hebat", "reviewed": false },
+        { "text": "Mantap", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "astig",
+      "variants": [
+        { "text": "Ang astig", "tone": "casual", "reviewed": false },
+        { "text": "Solid", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "đỉnh",
+      "variants": [
+        { "text": "Đỉnh", "tone": "casual", "reviewed": false },
+        { "text": "Quá tuyệt", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "สุดยอด",
+      "variants": [
+        { "text": "สุดยอด", "rom": "sutyot", "reviewed": false },
+        { "text": "เจ๋งสุด", "rom": "jeng sut", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a tha tak",
+      "variants": [
+        { "text": "A tha tak", "note": "Lit. \"really good.\"", "reviewed": false }
+      ]
+    }
+  }
+}

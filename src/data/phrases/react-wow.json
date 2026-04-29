@@ -1,0 +1,151 @@
+{
+  "id": "react-wow",
+  "scene": "reactions",
+  "order": 7,
+  "trans": {
+    "zh": {
+      "gloss": "哇",
+      "variants": [
+        { "text": "哇", "rom": "wā", "reviewed": false },
+        { "text": "哇塞", "rom": "wāsāi", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "わあ",
+      "variants": [
+        { "text": "わあ", "rom": "wā", "reviewed": false },
+        { "text": "すごい", "rom": "sugoi", "note": "Lit. \"amazing.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "와",
+      "variants": [
+        { "text": "와", "rom": "wa", "reviewed": false },
+        { "text": "우와", "rom": "uwa", "reviewed": false },
+        { "text": "대박", "rom": "daebak", "tone": "casual", "note": "Slangy \"jackpot / wow.\"", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "wow",
+      "variants": [
+        { "text": "Wow", "reviewed": false },
+        { "text": "Whoa", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "wow",
+      "variants": [
+        { "text": "Wow", "reviewed": false },
+        { "text": "Wahnsinn", "note": "Lit. \"madness\" — used like \"incredible.\"", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "vaya",
+      "variants": [
+        { "text": "¡Vaya!", "reviewed": false },
+        { "text": "¡Wow!", "reviewed": false },
+        { "text": "¡Guau!", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "uau",
+      "variants": [
+        { "text": "Uau", "reviewed": false },
+        { "text": "Nossa", "note": "Lit. \"ours\" — common interjection.", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "waouh",
+      "variants": [
+        { "text": "Waouh", "reviewed": false },
+        { "text": "Oh là là", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "wow",
+      "variants": [
+        { "text": "Wow", "reviewed": false },
+        { "text": "Caspita", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "вау",
+      "variants": [
+        { "text": "Вау", "rom": "vau", "reviewed": false },
+        { "text": "Ого", "rom": "ogo", "reviewed": false },
+        { "text": "Ничего себе", "rom": "nichego sebe", "note": "Lit. \"nothing to oneself\" — \"no way!\"", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "wow",
+      "variants": [
+        { "text": "Wow", "reviewed": false },
+        { "text": "Ojej", "note": "Soft surprise.", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "vay",
+      "variants": [
+        { "text": "Vay", "reviewed": false },
+        { "text": "Vay canına", "note": "Lit. \"vay to your soul\" — fond surprise.", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "वाह",
+      "variants": [
+        { "text": "वाह", "rom": "vāh", "reviewed": false },
+        { "text": "अरे वाह", "rom": "are vāh", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "বাহ",
+      "variants": [
+        { "text": "বাহ", "rom": "bāh", "reviewed": false },
+        { "text": "আরে বাহ", "rom": "āre bāh", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "wah",
+      "variants": [
+        { "text": "Wah", "reviewed": false },
+        { "text": "Wow", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "wah",
+      "variants": [
+        { "text": "Wah", "reviewed": false },
+        { "text": "Hebat", "note": "Lit. \"amazing.\"", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "wow",
+      "variants": [
+        { "text": "Wow", "reviewed": false },
+        { "text": "Naks", "tone": "casual", "note": "Tagalog interjection of impressed surprise.", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "wow",
+      "variants": [
+        { "text": "Wow", "reviewed": false },
+        { "text": "Ồ", "reviewed": false },
+        { "text": "Trời ơi", "note": "Lit. \"oh heaven.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ว้าว",
+      "variants": [
+        { "text": "ว้าว", "rom": "wao", "reviewed": false },
+        { "text": "โอ้โห", "rom": "o ho", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "iemaw",
+      "variants": [
+        { "text": "Iemaw", "note": "Interjection of surprise.", "reviewed": false },
+        { "text": "Wah", "reviewed": false }
+      ]
+    }
+  }
+}

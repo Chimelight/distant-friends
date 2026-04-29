@@ -1,0 +1,147 @@
+{
+  "id": "compliment-amazing",
+  "scene": "compliments",
+  "order": 3,
+  "trans": {
+    "zh": {
+      "gloss": "厉害",
+      "variants": [
+        { "text": "太厉害了", "rom": "tài lìhai le", "reviewed": false },
+        { "text": "你真厉害", "rom": "nǐ zhēn lìhai", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "すごい",
+      "variants": [
+        { "text": "すごい", "rom": "sugoi", "reviewed": false },
+        { "text": "半端ない", "rom": "hanpa nai", "tone": "casual", "note": "Slang for \"incredible.\"", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "대단",
+      "variants": [
+        { "text": "대박", "rom": "daebak", "tone": "casual", "reviewed": false },
+        { "text": "짱이다", "rom": "jjangida", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "amazing",
+      "variants": [
+        { "text": "You're amazing", "reviewed": false },
+        { "text": "That's amazing", "reviewed": false },
+        { "text": "Incredible", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "unglaublich",
+      "variants": [
+        { "text": "Unglaublich", "reviewed": false },
+        { "text": "Beeindruckend", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "increíble",
+      "variants": [
+        { "text": "Increíble", "reviewed": false },
+        { "text": "Impresionante", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "incrível",
+      "variants": [
+        { "text": "Incrível", "reviewed": false },
+        { "text": "Impressionante", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "incroyable",
+      "variants": [
+        { "text": "Incroyable", "reviewed": false },
+        { "text": "Impressionnant", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "incredibile",
+      "variants": [
+        { "text": "Incredibile", "reviewed": false },
+        { "text": "Impressionante", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "невероятно",
+      "variants": [
+        { "text": "Невероятно", "rom": "neveroyatno", "reviewed": false },
+        { "text": "Потрясающе", "rom": "potryasayushche", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "niesamowite",
+      "variants": [
+        { "text": "Niesamowite", "reviewed": false },
+        { "text": "Niewiarygodne", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "inanılmaz",
+      "variants": [
+        { "text": "İnanılmaz", "reviewed": false },
+        { "text": "Müthiş", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "ज़बरदस्त",
+      "variants": [
+        { "text": "ज़बरदस्त", "rom": "zabardast", "reviewed": false },
+        { "text": "कमाल है", "rom": "kamāl hai", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "অসাধারণ",
+      "variants": [
+        { "text": "অসাধারণ", "rom": "ôshādhārôn", "reviewed": false },
+        { "text": "দুর্দান্ত", "rom": "durdānto", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "luar biasa",
+      "variants": [
+        { "text": "Luar biasa", "reviewed": false },
+        { "text": "Keren banget", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "luar biasa",
+      "variants": [
+        { "text": "Hebat sekali", "reviewed": false },
+        { "text": "Luar biasa", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "grabe galing",
+      "variants": [
+        { "text": "Ang husay", "reviewed": false },
+        { "text": "Grabe galing", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "quá đỉnh",
+      "variants": [
+        { "text": "Quá đỉnh", "tone": "casual", "reviewed": false },
+        { "text": "Tuyệt vời", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "สุดยอด",
+      "variants": [
+        { "text": "เก่งสุดยอด", "rom": "keng sutyot", "reviewed": false },
+        { "text": "เจ๋งมาก", "rom": "jeng mak", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a mak em em",
+      "variants": [
+        { "text": "A mak em em", "note": "Lit. \"very surprising / amazing.\"", "reviewed": false }
+      ]
+    }
+  }
+}

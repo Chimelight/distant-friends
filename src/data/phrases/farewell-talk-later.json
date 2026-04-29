@@ -1,0 +1,142 @@
+{
+  "id": "farewell-talk-later",
+  "scene": "farewells",
+  "order": 3,
+  "trans": {
+    "zh": {
+      "gloss": "回头聊",
+      "variants": [
+        { "text": "回头聊", "rom": "huítóu liáo", "reviewed": false },
+        { "text": "再聊", "rom": "zài liáo", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "また話そう",
+      "variants": [
+        { "text": "またあとで話そう", "rom": "mata ato de hanasō", "reviewed": false },
+        { "text": "また話そう", "rom": "mata hanasō", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "나중에 얘기하자",
+      "variants": [
+        { "text": "나중에 얘기하자", "rom": "najunge yaegihaja", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "talk later",
+      "variants": [
+        { "text": "Talk later", "tone": "casual", "reviewed": false },
+        { "text": "Talk to you later", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "reden später",
+      "variants": [
+        { "text": "Wir reden später", "reviewed": false },
+        { "text": "Sprechen uns später", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "hablamos luego",
+      "variants": [
+        { "text": "Hablamos luego", "reviewed": false },
+        { "text": "Después hablamos", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "falo depois",
+      "variants": [
+        { "text": "A gente fala depois", "tone": "casual", "reviewed": false },
+        { "text": "Falo contigo depois", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "on se parle plus tard",
+      "variants": [
+        { "text": "On se parle plus tard", "reviewed": false },
+        { "text": "À plus tard", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "sentiamoci dopo",
+      "variants": [
+        { "text": "Sentiamoci dopo", "reviewed": false },
+        { "text": "Ci sentiamo", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "поговорим потом",
+      "variants": [
+        { "text": "Позже поговорим", "rom": "pozzhe pogovorim", "reviewed": false },
+        { "text": "Поговорим потом", "rom": "pogovorim potom", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "pogadamy później",
+      "variants": [
+        { "text": "Pogadamy później", "tone": "casual", "reviewed": false },
+        { "text": "Do pogadania", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "sonra konuşuruz",
+      "variants": [
+        { "text": "Sonra konuşuruz", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "बाद में बात करते हैं",
+      "variants": [
+        { "text": "बाद में बात करते हैं", "rom": "bād men bāt karte hain", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "পরে কথা হবে",
+      "variants": [
+        { "text": "পরে কথা হবে", "rom": "pôre kôtha hôbe", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "ngobrol nanti",
+      "variants": [
+        { "text": "Ngobrol nanti ya", "tone": "casual", "reviewed": false },
+        { "text": "Sampai ketemu lagi", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "borak nanti",
+      "variants": [
+        { "text": "Borak nanti", "tone": "casual", "reviewed": false },
+        { "text": "Sembang nanti", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "mag-usap mamaya",
+      "variants": [
+        { "text": "Mag-usap tayo mamaya", "reviewed": false },
+        { "text": "Chat tayo later", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "nói chuyện sau",
+      "variants": [
+        { "text": "Nói chuyện sau nhé", "reviewed": false },
+        { "text": "Chat lại sau", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ไว้คุยกันใหม่",
+      "variants": [
+        { "text": "ค่อยคุยกันใหม่", "rom": "khoi khui kan mai", "reviewed": false },
+        { "text": "ไว้คุยกันใหม่", "rom": "wai khui kan mai", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "a hnuah biak leh ang",
+      "variants": [
+        { "text": "A hnuah biak leh ang", "note": "Lit. \"(we will) talk later.\"", "reviewed": false }
+      ]
+    }
+  }
+}

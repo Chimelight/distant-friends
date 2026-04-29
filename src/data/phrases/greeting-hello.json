@@ -1,0 +1,152 @@
+{
+  "id": "greeting-hello",
+  "scene": "greetings",
+  "order": 1,
+  "trans": {
+    "zh": {
+      "gloss": "问候",
+      "variants": [
+        { "text": "你好", "rom": "nǐ hǎo", "reviewed": true },
+        { "text": "嗨", "rom": "hāi", "tone": "casual", "reviewed": true },
+        { "text": "您好", "rom": "nín hǎo", "tone": "polite", "note": "Honorific; to elders or strangers.", "reviewed": true }
+      ]
+    },
+    "ja": {
+      "gloss": "挨拶",
+      "variants": [
+        { "text": "こんにちは", "rom": "konnichiwa", "tone": "neutral", "note": "Daytime standard; works with anyone.", "reviewed": false },
+        { "text": "やっほー", "rom": "yahhō", "tone": "close", "note": "Playful; between close friends.", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "인사",
+      "variants": [
+        { "text": "안녕", "rom": "annyeong", "tone": "casual", "reviewed": false },
+        { "text": "안녕하세요", "rom": "annyeonghaseyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "a greeting",
+      "variants": [
+        { "text": "Hello", "reviewed": true },
+        { "text": "Hi", "tone": "casual", "reviewed": true }
+      ]
+    },
+    "de": {
+      "gloss": "eine Begrüßung",
+      "variants": [
+        { "text": "Hallo", "reviewed": false },
+        { "text": "Hi", "tone": "casual", "note": "English-borrowed but everyday in German.", "reviewed": false },
+        { "text": "Guten Tag", "tone": "polite", "note": "Daytime formal; to strangers or elders.", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "un saludo",
+      "variants": [
+        { "text": "Hola", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "uma saudação",
+      "variants": [
+        { "text": "Olá", "reviewed": false },
+        { "text": "Oi", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "une salutation",
+      "variants": [
+        { "text": "Salut", "tone": "casual", "reviewed": false },
+        { "text": "Bonjour", "tone": "neutral", "note": "Universal — works anywhere.", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "un saluto",
+      "variants": [
+        { "text": "Ciao", "reviewed": false },
+        { "text": "Salve", "tone": "neutral", "note": "Slightly more formal than ciao; works with strangers.", "reviewed": false },
+        { "text": "Buongiorno", "tone": "polite", "note": "Daytime formal; lit. \"good day.\"", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "приветствие",
+      "variants": [
+        { "text": "Привет", "rom": "privet", "tone": "casual", "reviewed": true },
+        { "text": "Здравствуйте", "rom": "zdravstvuyte", "tone": "polite", "note": "Formal; to elders, strangers, or in writing.", "reviewed": true }
+      ]
+    },
+    "pl": {
+      "gloss": "powitanie",
+      "variants": [
+        { "text": "Cześć", "tone": "casual", "note": "Doubles as “bye” between friends.", "reviewed": true },
+        { "text": "Dzień dobry", "tone": "polite", "note": "Lit. “good day”; daytime formal.", "reviewed": true }
+      ]
+    },
+    "tr": {
+      "gloss": "selamlaşma",
+      "variants": [
+        { "text": "Merhaba", "reviewed": false },
+        { "text": "Selam", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "अभिवादन",
+      "variants": [
+        { "text": "नमस्ते", "rom": "namaste", "note": "Hands together; respectful, ageless.", "reviewed": true },
+        { "text": "हाय", "rom": "hāy", "tone": "casual", "note": "English-borrowed; common in casual Hindi.", "reviewed": true }
+      ]
+    },
+    "bn": {
+      "gloss": "শুভেচ্ছা",
+      "variants": [
+        { "text": "নমস্কার", "rom": "nômôshkar", "note": "Respectful greeting, neutral register.", "reviewed": true },
+        { "text": "হাই", "rom": "hai", "tone": "casual", "note": "English-borrowed; everyday casual.", "reviewed": true }
+      ]
+    },
+    "id": {
+      "gloss": "salam",
+      "variants": [
+        { "text": "Halo", "reviewed": false },
+        { "text": "Hai", "tone": "casual", "reviewed": false },
+        { "text": "Selamat siang", "tone": "polite", "note": "Daytime formal greeting; lit. \"good day.\"", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "salam",
+      "variants": [
+        { "text": "Helo", "reviewed": false },
+        { "text": "Hai", "tone": "casual", "reviewed": false },
+        { "text": "Selamat sejahtera", "tone": "polite", "note": "Formal; lit. \"peaceful greetings.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "การทักทาย",
+      "variants": [
+        { "text": "สวัสดี", "rom": "sawatdee", "reviewed": false },
+        { "text": "สวัสดีครับ", "rom": "sawatdee khrap", "tone": "polite", "speakerGender": "m", "note": "Polite particle ครับ for male speakers.", "reviewed": false },
+        { "text": "สวัสดีค่ะ", "rom": "sawatdee kha", "tone": "polite", "speakerGender": "f", "note": "Polite particle ค่ะ for female speakers.", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "lời chào",
+      "variants": [
+        { "text": "Chào bạn", "note": "Friendly default; bạn = peer pronoun.", "reviewed": false },
+        { "text": "Xin chào", "tone": "polite", "note": "More formal; to strangers or seniors.", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "pagbati",
+      "variants": [
+        { "text": "Kumusta", "note": "The everyday Filipino greeting.", "reviewed": false },
+        { "text": "Hi", "tone": "casual", "note": "English-borrowed; common in everyday speech.", "reviewed": false },
+        { "text": "Magandang araw", "tone": "polite", "note": "Lit. \"beautiful day.\"", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "chibai",
+      "variants": [
+        { "text": "Chibai", "note": "The everyday Mizo greeting.", "reviewed": false }
+      ]
+    }
+  }
+}

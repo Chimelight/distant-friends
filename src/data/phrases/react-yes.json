@@ -1,0 +1,163 @@
+{
+  "id": "react-yes",
+  "scene": "reactions",
+  "order": 2,
+  "trans": {
+    "zh": {
+      "gloss": "是",
+      "variants": [
+        { "text": "是的", "rom": "shì de", "reviewed": false },
+        { "text": "对", "rom": "duì", "reviewed": false },
+        { "text": "嗯", "rom": "ǹg", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "肯定",
+      "variants": [
+        { "text": "はい", "rom": "hai", "tone": "polite", "reviewed": false },
+        { "text": "うん", "rom": "un", "tone": "casual", "reviewed": false },
+        { "text": "そうです", "rom": "sō desu", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "긍정",
+      "variants": [
+        { "text": "네", "rom": "ne", "tone": "polite", "reviewed": false },
+        { "text": "응", "rom": "eung", "tone": "casual", "reviewed": false },
+        { "text": "맞아", "rom": "maja", "tone": "casual", "note": "Lit. \"that's right.\"", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "yes",
+      "variants": [
+        { "text": "Yes", "reviewed": false },
+        { "text": "Yeah", "tone": "casual", "reviewed": false },
+        { "text": "Yep", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Bejahung",
+      "variants": [
+        { "text": "Ja", "reviewed": false },
+        { "text": "Ja, klar", "tone": "casual", "reviewed": false },
+        { "text": "Genau", "note": "Lit. \"exactly.\"", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "sí",
+      "variants": [
+        { "text": "Sí", "reviewed": false },
+        { "text": "Claro", "note": "Lit. \"clearly\" — emphatic yes.", "reviewed": false },
+        { "text": "Así es", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "sim",
+      "variants": [
+        { "text": "Sim", "reviewed": false },
+        { "text": "Pois", "note": "Confirmation marker.", "reviewed": false },
+        { "text": "Isso", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "oui",
+      "variants": [
+        { "text": "Oui", "reviewed": false },
+        { "text": "Ouais", "tone": "casual", "reviewed": false },
+        { "text": "C'est ça", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "sì",
+      "variants": [
+        { "text": "Sì", "reviewed": false },
+        { "text": "Esatto", "reviewed": false },
+        { "text": "Già", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "да",
+      "variants": [
+        { "text": "Да", "rom": "da", "reviewed": false },
+        { "text": "Ага", "rom": "aga", "tone": "casual", "reviewed": false },
+        { "text": "Точно", "rom": "tochno", "note": "Lit. \"exactly.\"", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "tak",
+      "variants": [
+        { "text": "Tak", "reviewed": false },
+        { "text": "No", "tone": "casual", "reviewed": false },
+        { "text": "Właśnie", "note": "Lit. \"exactly.\"", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "evet",
+      "variants": [
+        { "text": "Evet", "reviewed": false },
+        { "text": "Aynen", "tone": "casual", "note": "Lit. \"exactly.\"", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "हाँ",
+      "variants": [
+        { "text": "हाँ", "rom": "hān", "reviewed": false },
+        { "text": "जी हाँ", "rom": "jī hān", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "হ্যাঁ",
+      "variants": [
+        { "text": "হ্যাঁ", "rom": "hyãn", "reviewed": false },
+        { "text": "জী", "rom": "jī", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "ya",
+      "variants": [
+        { "text": "Iya", "reviewed": false },
+        { "text": "Ya", "reviewed": false },
+        { "text": "Betul", "note": "Lit. \"correct.\"", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "ya",
+      "variants": [
+        { "text": "Ya", "reviewed": false },
+        { "text": "Betul", "note": "Lit. \"correct.\"", "reviewed": false },
+        { "text": "Yup", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "oo",
+      "variants": [
+        { "text": "Oo", "reviewed": false },
+        { "text": "Opo", "tone": "polite", "reviewed": false },
+        { "text": "Tama", "note": "Lit. \"correct.\"", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "vâng",
+      "variants": [
+        { "text": "Vâng", "tone": "polite", "reviewed": false },
+        { "text": "Ừ", "tone": "casual", "reviewed": false },
+        { "text": "Đúng rồi", "note": "Lit. \"that's right.\"", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ใช่",
+      "variants": [
+        { "text": "ใช่", "rom": "chai", "reviewed": false },
+        { "text": "ครับ", "rom": "khrap", "tone": "polite", "speakerGender": "m", "reviewed": false },
+        { "text": "ค่ะ", "rom": "kha", "tone": "polite", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "aw",
+      "variants": [
+        { "text": "Aw", "reviewed": false },
+        { "text": "A ni", "note": "Lit. \"it is.\"", "reviewed": false }
+      ]
+    }
+  }
+}

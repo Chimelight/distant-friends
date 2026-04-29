@@ -1,0 +1,147 @@
+{
+  "id": "compliment-good-job",
+  "scene": "compliments",
+  "order": 1,
+  "trans": {
+    "zh": {
+      "gloss": "好评",
+      "variants": [
+        { "text": "做得很好", "rom": "zuò de hěn hǎo", "reviewed": false },
+        { "text": "干得漂亮", "rom": "gàn de piàoliang", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "称賛",
+      "variants": [
+        { "text": "よくできた", "rom": "yoku dekita", "tone": "casual", "reviewed": false },
+        { "text": "よくやった", "rom": "yoku yatta", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "칭찬",
+      "variants": [
+        { "text": "잘했어", "rom": "jalhaesseo", "tone": "casual", "reviewed": false },
+        { "text": "잘했어요", "rom": "jalhaesseoyo", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "praise for work",
+      "variants": [
+        { "text": "Good job", "reviewed": false },
+        { "text": "Well done", "reviewed": false },
+        { "text": "Nice work", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "Lob für Arbeit",
+      "variants": [
+        { "text": "Gut gemacht", "reviewed": false },
+        { "text": "Gute Arbeit", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "elogio del trabajo",
+      "variants": [
+        { "text": "Buen trabajo", "reviewed": false },
+        { "text": "Bien hecho", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "elogio ao trabalho",
+      "variants": [
+        { "text": "Bom trabalho", "reviewed": false },
+        { "text": "Bem feito", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "bravo",
+      "variants": [
+        { "text": "Bon travail", "reviewed": false },
+        { "text": "Bien joué", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "complimento",
+      "variants": [
+        { "text": "Bel lavoro", "reviewed": false },
+        { "text": "Ben fatto", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "молодец",
+      "variants": [
+        { "text": "Молодец", "rom": "molodets", "note": "Gender-neutral \"well done.\"", "reviewed": false },
+        { "text": "Отличная работа", "rom": "otlichnaya rabota", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "dobra robota",
+      "variants": [
+        { "text": "Dobra robota", "reviewed": false },
+        { "text": "Brawo", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "aferin",
+      "variants": [
+        { "text": "Aferin", "reviewed": false },
+        { "text": "İyi iş çıkardın", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "शाबाश",
+      "variants": [
+        { "text": "शाबाश", "rom": "shābāsh", "reviewed": false },
+        { "text": "बहुत अच्छा किया", "rom": "bahut achchhā kiyā", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "সাবাশ",
+      "variants": [
+        { "text": "বাহ", "rom": "bāh", "reviewed": false },
+        { "text": "দারুণ করেছ", "rom": "dārun kôrechho", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "pujian kerja",
+      "variants": [
+        { "text": "Kerja bagus", "reviewed": false },
+        { "text": "Hebat", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "pujian kerja",
+      "variants": [
+        { "text": "Syabas", "reviewed": false },
+        { "text": "Kerja bagus", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "papuri",
+      "variants": [
+        { "text": "Magaling", "reviewed": false },
+        { "text": "Galing", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "khen ngợi",
+      "variants": [
+        { "text": "Làm tốt lắm", "reviewed": false },
+        { "text": "Giỏi lắm", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ชมการทำงาน",
+      "variants": [
+        { "text": "ทำได้ดี", "rom": "tham dai dee", "reviewed": false },
+        { "text": "เก่งมาก", "rom": "keng mak", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "fakna",
+      "variants": [
+        { "text": "I tih a tha", "note": "Lit. \"what you did is good.\"", "reviewed": false }
+      ]
+    }
+  }
+}
