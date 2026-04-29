@@ -1,0 +1,143 @@
+{
+  "id": "affection-im-here",
+  "scene": "affection",
+  "order": 6,
+  "trans": {
+    "zh": {
+      "gloss": "一直在",
+      "variants": [
+        { "text": "我一直在", "rom": "wǒ yīzhí zài", "reviewed": false },
+        { "text": "我一直陪着你", "rom": "wǒ yīzhí péi zhe nǐ", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "そばにいるよ",
+      "variants": [
+        { "text": "ずっとそばにいるよ", "rom": "zutto soba ni iru yo", "reviewed": false },
+        { "text": "いつもいるよ", "rom": "itsumo iru yo", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "항상 곁에",
+      "variants": [
+        { "text": "항상 곁에 있을게", "rom": "hangsang gyeote isseulge", "reviewed": false },
+        { "text": "늘 여기 있어", "rom": "neul yeogi isseo", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "I'm here",
+      "variants": [
+        { "text": "I'm here", "reviewed": false },
+        { "text": "I'm always here for you", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "ich bin da",
+      "variants": [
+        { "text": "Ich bin da", "reviewed": false },
+        { "text": "Ich bin immer für dich da", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "aquí estoy",
+      "variants": [
+        { "text": "Aquí estoy", "reviewed": false },
+        { "text": "Siempre estoy aquí para ti", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "estou aqui",
+      "variants": [
+        { "text": "Estou aqui", "reviewed": false },
+        { "text": "Estou sempre aqui pra você", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "je suis là",
+      "variants": [
+        { "text": "Je suis là", "reviewed": false },
+        { "text": "Je serai toujours là", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "ci sono",
+      "variants": [
+        { "text": "Ci sono", "reviewed": false },
+        { "text": "Sono sempre qui per te", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "я рядом",
+      "variants": [
+        { "text": "Я рядом", "rom": "ya ryadom", "reviewed": false },
+        { "text": "Я всегда рядом", "rom": "ya vsegda ryadom", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "jestem tu",
+      "variants": [
+        { "text": "Jestem tu", "reviewed": false },
+        { "text": "Zawsze będę przy tobie", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "yanındayım",
+      "variants": [
+        { "text": "Yanındayım", "reviewed": false },
+        { "text": "Her zaman buradayım", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "हमेशा हूँ",
+      "variants": [
+        { "text": "मैं हमेशा हूँ", "rom": "main hameshā hūn", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "সবসময় আছি",
+      "variants": [
+        { "text": "আমি সবসময় আছি", "rom": "āmi sôbsômôy āchhi", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "aku di sini",
+      "variants": [
+        { "text": "Aku di sini", "reviewed": false },
+        { "text": "Aku selalu ada", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "saya selalu ada",
+      "variants": [
+        { "text": "Saya selalu ada", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "andito lang ako",
+      "variants": [
+        { "text": "Andito lang ako", "reviewed": false },
+        { "text": "Lagi akong nandito", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "mình luôn ở đây",
+      "variants": [
+        { "text": "Mình luôn ở đây", "reviewed": false },
+        { "text": "Tôi luôn bên bạn", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ฉันอยู่ตรงนี้",
+      "variants": [
+        { "text": "ฉันอยู่ตรงนี้", "rom": "chan yu trong nee", "reviewed": false },
+        { "text": "ฉันอยู่เคียงข้างเสมอ", "rom": "chan yu khiang khang samoe", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "ka awm reng",
+      "variants": [
+        { "text": "Ka awm reng a che", "note": "Lit. \"I am always with you.\"", "reviewed": false }
+      ]
+    }
+  }
+}

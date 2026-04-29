@@ -1,0 +1,142 @@
+{
+  "id": "affection-nice-talking",
+  "scene": "affection",
+  "order": 4,
+  "trans": {
+    "zh": {
+      "gloss": "愉快交谈",
+      "variants": [
+        { "text": "聊得很开心", "rom": "liáo de hěn kāixīn", "reviewed": false },
+        { "text": "跟你聊天很愉快", "rom": "gēn nǐ liáotiān hěn yúkuài", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "話せて楽しい",
+      "variants": [
+        { "text": "話せて楽しかった", "rom": "hanasete tanoshikatta", "reviewed": false },
+        { "text": "話せてよかった", "rom": "hanasete yokatta", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "얘기 즐거웠어",
+      "variants": [
+        { "text": "얘기 즐거웠어", "rom": "yaegi jeulgeowosseo", "tone": "casual", "reviewed": false },
+        { "text": "얘기해서 좋았어", "rom": "yaegihaeseo joasseo", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "nice talking",
+      "variants": [
+        { "text": "Nice talking to you", "reviewed": false },
+        { "text": "It was nice chatting", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "schön zu reden",
+      "variants": [
+        { "text": "Schön, mit dir zu reden", "reviewed": false },
+        { "text": "Hat Spaß gemacht", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "encantado de hablar",
+      "variants": [
+        { "text": "Encantado de hablar contigo", "speakerGender": "m", "reviewed": false },
+        { "text": "Encantada de hablar contigo", "speakerGender": "f", "reviewed": false },
+        { "text": "Qué bueno hablar contigo", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "foi bom falar",
+      "variants": [
+        { "text": "Foi bom falar com você", "reviewed": false },
+        { "text": "Adorei conversar contigo", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "content de parler",
+      "variants": [
+        { "text": "Content de parler avec toi", "speakerGender": "m", "reviewed": false },
+        { "text": "Contente de parler avec toi", "speakerGender": "f", "reviewed": false },
+        { "text": "Sympa de discuter", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "bello chiacchierare",
+      "variants": [
+        { "text": "Bello chiacchierare con te", "reviewed": false },
+        { "text": "Mi è piaciuto parlare con te", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "приятно поговорить",
+      "variants": [
+        { "text": "Приятно было поговорить", "rom": "priyatno bylo pogovorit'", "reviewed": false },
+        { "text": "Хорошо поболтали", "rom": "khorosho poboltali", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "miło porozmawiać",
+      "variants": [
+        { "text": "Miło było porozmawiać", "reviewed": false },
+        { "text": "Fajna rozmowa", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "konuşmak güzeldi",
+      "variants": [
+        { "text": "Konuşmak güzeldi", "reviewed": false },
+        { "text": "Sohbet hoş oldu", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "बात करके अच्छा लगा",
+      "variants": [
+        { "text": "तुमसे बात करके अच्छा लगा", "rom": "tumse bāt karke achchhā lagā", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "কথা বলে ভালো লাগল",
+      "variants": [
+        { "text": "তোমার সঙ্গে কথা বলে ভালো লাগল", "rom": "tomār śôṅge kôtha bôle bhalo lāgôl", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "senang ngobrol",
+      "variants": [
+        { "text": "Senang ngobrol sama kamu", "tone": "casual", "reviewed": false },
+        { "text": "Asyik ngobrolnya", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "seronok berbual",
+      "variants": [
+        { "text": "Seronok berbual dengan awak", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "sarap mag-usap",
+      "variants": [
+        { "text": "Sarap mag-usap sa iyo", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "vui khi nói chuyện",
+      "variants": [
+        { "text": "Vui khi nói chuyện với bạn", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "คุยสนุก",
+      "variants": [
+        { "text": "คุยกับคุณสนุกมาก", "rom": "khui kap khun sanuk mak", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "biak a lawmawm",
+      "variants": [
+        { "text": "Nang nena ka biak hi a lawmawm", "note": "Lit. \"talking with you was enjoyable.\"", "reviewed": false }
+      ]
+    }
+  }
+}

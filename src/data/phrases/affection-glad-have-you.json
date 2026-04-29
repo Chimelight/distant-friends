@@ -1,0 +1,146 @@
+{
+  "id": "affection-glad-have-you",
+  "scene": "affection",
+  "order": 3,
+  "trans": {
+    "zh": {
+      "gloss": "庆幸",
+      "variants": [
+        { "text": "有你真好", "rom": "yǒu nǐ zhēn hǎo", "reviewed": false },
+        { "text": "真高兴有你", "rom": "zhēn gāoxìng yǒu nǐ", "reviewed": false }
+      ]
+    },
+    "ja": {
+      "gloss": "嬉しい",
+      "variants": [
+        { "text": "君がいてくれてよかった", "rom": "kimi ga ite kurete yokatta", "reviewed": false },
+        { "text": "あなたがいてくれて嬉しい", "rom": "anata ga ite kurete ureshii", "reviewed": false }
+      ]
+    },
+    "ko": {
+      "gloss": "너가 있어서",
+      "variants": [
+        { "text": "네가 있어서 좋아", "rom": "nega isseoseo joa", "tone": "casual", "reviewed": false },
+        { "text": "너 있어서 다행이야", "rom": "neo isseoseo dahaeniya", "reviewed": false }
+      ]
+    },
+    "en": {
+      "gloss": "glad to have you",
+      "variants": [
+        { "text": "Glad to have you", "reviewed": false },
+        { "text": "Glad you're here", "reviewed": false }
+      ]
+    },
+    "de": {
+      "gloss": "froh, dich zu haben",
+      "variants": [
+        { "text": "Schön, dich zu haben", "reviewed": false },
+        { "text": "Froh, dass es dich gibt", "reviewed": false }
+      ]
+    },
+    "es": {
+      "gloss": "me alegra tenerte",
+      "variants": [
+        { "text": "Qué bueno tenerte", "reviewed": false },
+        { "text": "Me alegra tenerte", "reviewed": false }
+      ]
+    },
+    "pt": {
+      "gloss": "que bom ter você",
+      "variants": [
+        { "text": "Que bom ter você", "reviewed": false },
+        { "text": "Ainda bem que te tenho", "reviewed": false }
+      ]
+    },
+    "fr": {
+      "gloss": "content de t'avoir",
+      "variants": [
+        { "text": "Heureux de t'avoir", "speakerGender": "m", "reviewed": false },
+        { "text": "Heureuse de t'avoir", "speakerGender": "f", "reviewed": false },
+        { "text": "Content que tu sois là", "speakerGender": "m", "reviewed": false },
+        { "text": "Contente que tu sois là", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "it": {
+      "gloss": "fortunato ad averti",
+      "variants": [
+        { "text": "Sono fortunato ad averti", "speakerGender": "m", "reviewed": false },
+        { "text": "Sono fortunata ad averti", "speakerGender": "f", "reviewed": false },
+        { "text": "Che bello averti", "reviewed": false }
+      ]
+    },
+    "ru": {
+      "gloss": "хорошо, что ты есть",
+      "variants": [
+        { "text": "Хорошо, что ты есть", "rom": "khorosho, chto ty est'", "reviewed": false },
+        { "text": "Я рад, что ты со мной", "rom": "ya rad, chto ty so mnoy", "speakerGender": "m", "reviewed": false },
+        { "text": "Я рада, что ты со мной", "rom": "ya rada, chto ty so mnoy", "speakerGender": "f", "reviewed": false }
+      ]
+    },
+    "pl": {
+      "gloss": "dobrze, że jesteś",
+      "variants": [
+        { "text": "Dobrze, że jesteś", "reviewed": false },
+        { "text": "Cieszę się, że cię mam", "reviewed": false }
+      ]
+    },
+    "tr": {
+      "gloss": "iyi ki varsın",
+      "variants": [
+        { "text": "İyi ki varsın", "reviewed": false },
+        { "text": "Seni tanıdığıma sevindim", "reviewed": false }
+      ]
+    },
+    "hi": {
+      "gloss": "तुम्हारा साथ अच्छा है",
+      "variants": [
+        { "text": "तुम्हारा साथ अच्छा है", "rom": "tumhārā sāth achchhā hai", "note": "Lit. \"your company is good.\"", "reviewed": false }
+      ]
+    },
+    "bn": {
+      "gloss": "তুমি আছ",
+      "variants": [
+        { "text": "তুমি আছ বলে ভালো লাগে", "rom": "tumi āchho bôle bhalo lāge", "note": "Lit. \"(I) feel good because you are (here).\"", "reviewed": false }
+      ]
+    },
+    "id": {
+      "gloss": "senang ada kamu",
+      "variants": [
+        { "text": "Senang ada kamu", "reviewed": false },
+        { "text": "Beruntung punya kamu", "reviewed": false }
+      ]
+    },
+    "ms": {
+      "gloss": "bertuah ada awak",
+      "variants": [
+        { "text": "Bertuah ada awak", "reviewed": false }
+      ]
+    },
+    "fil": {
+      "gloss": "mabuti at andiyan ka",
+      "variants": [
+        { "text": "Mabuti't andiyan ka", "reviewed": false },
+        { "text": "Salamat at andito ka", "reviewed": false }
+      ]
+    },
+    "vi": {
+      "gloss": "may có bạn",
+      "variants": [
+        { "text": "May có bạn", "reviewed": false },
+        { "text": "Vui vì có bạn", "reviewed": false }
+      ]
+    },
+    "th": {
+      "gloss": "ดีจังที่มีคุณ",
+      "variants": [
+        { "text": "ดีจังที่มีคุณ", "rom": "dee jang thi mee khun", "reviewed": false }
+      ]
+    },
+    "mizo": {
+      "gloss": "i awm hi a tha",
+      "variants": [
+        { "text": "I awm hi a tha em", "note": "Lit. \"it's very good that you are here.\"", "reviewed": false }
+      ]
+    }
+  }
+}
