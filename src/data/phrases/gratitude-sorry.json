@@ -79,6 +79,14 @@
         { "text": "Извините", "rom": "izvinite", "tone": "polite", "reviewed": true }
       ]
     },
+    "uk": {
+      "gloss": "вибачення",
+      "variants": [
+        { "text": "Вибач", "rom": "Vybach", "tone": "casual", "reviewed": false },
+        { "text": "Пробач", "rom": "Probach", "tone": "casual", "reviewed": false },
+        { "text": "Вибачте", "rom": "Vybachte", "tone": "polite", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "przeprosiny",
       "variants": [
@@ -92,6 +100,14 @@
         { "text": "Özür dilerim", "note": "Lit. \"I ask forgiveness\" — the standard form.", "reviewed": false },
         { "text": "Pardon", "tone": "casual", "note": "French-borrowed; everyday casual.", "reviewed": false },
         { "text": "Affedersin", "tone": "casual", "note": "Lit. \"forgive (me).\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "кешірім",
+      "variants": [
+        { "text": "Кешір", "rom": "Keşir", "tone": "casual", "reviewed": false },
+        { "text": "Кешіріңіз", "rom": "Keşiriňiz", "tone": "polite", "reviewed": false },
+        { "text": "Ғафу етші", "rom": "Ğafu etşi", "tone": "casual", "reviewed": false }
       ]
     },
     "hi": {

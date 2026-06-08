@@ -73,6 +73,13 @@
         { "text": "Я горжусь тобой", "rom": "ya gorzhus' toboy", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "пишаюся тобою",
+      "variants": [
+        { "text": "Я пишаюся тобою", "rom": "Ya pyshaiusia toboiu", "reviewed": false },
+        { "text": "Так тобою пишаюся", "rom": "Tak toboiu pyshaiusia", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "jestem z ciebie dumny",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Seninle gurur duyuyorum", "reviewed": false },
         { "text": "Seninle gurur duyuyorum", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "сені мақтан тұтамын",
+      "variants": [
+        { "text": "Сені мақтан тұтамын", "rom": "Seni maqtan tutamyn", "reviewed": false },
+        { "text": "Сен үшін мақтанамын", "rom": "Sen üşin maqtanamyn", "reviewed": false }
       ]
     },
     "hi": {

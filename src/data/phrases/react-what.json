@@ -80,6 +80,14 @@
         { "text": "Простите?", "rom": "prostite?", "tone": "polite", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "що?",
+      "variants": [
+        { "text": "Що?", "rom": "Shcho?", "reviewed": false },
+        { "text": "Га?", "rom": "Ha?", "tone": "casual", "reviewed": false },
+        { "text": "Перепрошую?", "rom": "Pereproshuiu?", "tone": "polite", "note": "Polite \"sorry?\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "co?",
       "variants": [
@@ -92,6 +100,14 @@
       "variants": [
         { "text": "Ne?", "reviewed": false },
         { "text": "Efendim?", "tone": "polite", "note": "Polite \"yes? / pardon?\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "не?",
+      "variants": [
+        { "text": "Не?", "rom": "Ne?", "reviewed": false },
+        { "text": "А?", "rom": "A?", "tone": "casual", "reviewed": false },
+        { "text": "Кешіріңіз?", "rom": "Keşiriňiz?", "tone": "polite", "note": "Polite \"sorry?\"", "reviewed": false }
       ]
     },
     "hi": {

@@ -73,6 +73,13 @@
         { "text": "С Праздником весны", "rom": "s Prazdnikom vesny", "note": "Lit. \"with the Spring Festival.", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "з китайським новим роком",
+      "variants": [
+        { "text": "З Китайським Новим роком", "rom": "Z Kytais'kym Novym rokom", "reviewed": false },
+        { "text": "Зі святом Весни", "rom": "Zi sviatom Vesny", "note": "Lit. \"happy Spring Festival.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "szczęśliwego chińskiego nowego roku",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Mutlu Çin Yeni Yılı", "reviewed": false },
         { "text": "Mutlu Ay Yılı", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "қытай жаңа жылымен",
+      "variants": [
+        { "text": "Қытай Жаңа жылыңмен", "rom": "Qytai Jaňa jylyňmen", "tone": "casual", "reviewed": false },
+        { "text": "Көктем мерекесі құтты болсын", "rom": "Köktem merekesi qutty bolsyn", "note": "Lit. \"happy Spring Festival.\"", "reviewed": false }
       ]
     },
     "hi": {

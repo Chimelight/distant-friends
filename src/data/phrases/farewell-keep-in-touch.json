@@ -73,6 +73,13 @@
         { "text": "Не пропадай", "rom": "ne propaday", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "будь на зв'язку",
+      "variants": [
+        { "text": "Будь на зв'язку", "rom": "Bud' na zv'iazku", "reviewed": false },
+        { "text": "Не пропадай", "rom": "Ne propadai", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "bądźmy w kontakcie",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Görüşelim", "reviewed": false },
         { "text": "Haberleşelim", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "хабарласып тұр",
+      "variants": [
+        { "text": "Хабарласып тұр", "rom": "Habarlasyp tur", "reviewed": false },
+        { "text": "Жоғалып кетпе", "rom": "Joğalyp ketpe", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
       ]
     },
     "hi": {

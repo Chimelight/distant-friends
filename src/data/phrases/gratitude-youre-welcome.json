@@ -75,6 +75,14 @@
         { "text": "Не за что", "rom": "ne za chto", "tone": "casual", "note": "Lit. \"for nothing.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "у відповідь на подяку",
+      "variants": [
+        { "text": "Будь ласка", "rom": "Bud' laska", "reviewed": false },
+        { "text": "Нема за що", "rom": "Nema za shcho", "note": "Lit. \"nothing to thank for.\"", "reviewed": false },
+        { "text": "Немає проблем", "rom": "Nemaie problem", "tone": "casual", "note": "Lit. \"no problem.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "w odpowiedzi na podziękowanie",
       "variants": [
@@ -87,6 +95,13 @@
       "variants": [
         { "text": "Rica ederim", "reviewed": false },
         { "text": "Bir şey değil", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "алғысқа жауап",
+      "variants": [
+        { "text": "Оқасы жоқ", "rom": "Oqasy joq", "note": "Lit. \"it's nothing.\"", "reviewed": false },
+        { "text": "Ештеңе етпейді", "rom": "Eşteňe etpeidi", "note": "Lit. \"it's no trouble.\"", "reviewed": false }
       ]
     },
     "hi": {

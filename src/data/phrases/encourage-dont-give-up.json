@@ -69,6 +69,13 @@
         { "text": "Не сдавайся", "rom": "ne sdavaysya", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "не здавайся",
+      "variants": [
+        { "text": "Не здавайся", "rom": "Ne zdavaisia", "reviewed": false },
+        { "text": "Тримайся", "rom": "Trymaisia", "note": "Lit. \"hold on.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "nie poddawaj się",
       "variants": [
@@ -79,6 +86,13 @@
       "gloss": "pes etme",
       "variants": [
         { "text": "Pes etme", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "берілме",
+      "variants": [
+        { "text": "Берілме", "rom": "Berilme", "reviewed": false },
+        { "text": "Жалғастыра бер", "rom": "Jalğastyra ber", "note": "Lit. \"keep going.\"", "reviewed": false }
       ]
     },
     "hi": {

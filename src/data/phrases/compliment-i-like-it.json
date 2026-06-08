@@ -73,6 +73,13 @@
         { "text": "Обожаю", "rom": "obozhayu", "tone": "casual", "note": "Lit. \"I adore (it).\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "мені подобається",
+      "variants": [
+        { "text": "Мені подобається", "rom": "Meni podobaiet'sia", "reviewed": false },
+        { "text": "Обожнюю", "rom": "Obozhniuiu", "tone": "casual", "note": "Lit. \"I adore it.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "podoba mi się",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Beğendim", "reviewed": false },
         { "text": "Çok hoşuma gitti", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "ұнайды",
+      "variants": [
+        { "text": "Маған ұнайды", "rom": "Mağan unaidy", "reviewed": false },
+        { "text": "Өте ұнады", "rom": "Öte unady", "note": "Lit. \"liked it a lot.\"", "reviewed": false }
       ]
     },
     "hi": {

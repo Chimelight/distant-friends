@@ -74,6 +74,14 @@
         { "text": "Какой милый", "rom": "kakoi milyi", "addresseeGender": "m", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "миле",
+      "variants": [
+        { "text": "Яке миле", "rom": "Yake myle", "note": "Lit. \"how cute\" — of a thing or animal.", "reviewed": false },
+        { "text": "Такий милий", "rom": "Takyi mylyi", "addresseeGender": "m", "reviewed": false },
+        { "text": "Така мила", "rom": "Taka myla", "addresseeGender": "f", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "słodkie",
       "variants": [
@@ -87,6 +95,13 @@
       "variants": [
         { "text": "Çok tatlı", "reviewed": false },
         { "text": "Şirin", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "сүйкімді",
+      "variants": [
+        { "text": "Өте сүйкімді", "rom": "Öte süikimdi", "reviewed": false },
+        { "text": "Қандай тәтті", "rom": "Qandai tätti", "tone": "casual", "note": "Lit. \"how sweet.\"", "reviewed": false }
       ]
     },
     "hi": {

@@ -73,6 +73,13 @@
         { "text": "Не спеши", "rom": "ne speshi", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "не поспішай",
+      "variants": [
+        { "text": "Не поспішай", "rom": "Ne pospishai", "reviewed": false },
+        { "text": "Не квапся", "rom": "Ne kvapsia", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "spokojnie",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Acele etme", "reviewed": false },
         { "text": "Yavaş yavaş", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "асықпа",
+      "variants": [
+        { "text": "Асықпа", "rom": "Asyqpa", "reviewed": false },
+        { "text": "Жайлап", "rom": "Jailap", "tone": "casual", "note": "Lit. \"slowly.\"", "reviewed": false }
       ]
     },
     "hi": {

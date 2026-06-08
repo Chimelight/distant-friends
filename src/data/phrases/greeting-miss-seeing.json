@@ -66,6 +66,13 @@
         { "text": "Сколько лет, сколько зим!", "rom": "skol'ko let, skol'ko zim!", "tone": "close", "note": "Lit. “so many years, so many winters!” — warm reunion idiom.", "reviewed": true }
       ]
     },
+    "uk": {
+      "gloss": "після довгої розлуки",
+      "variants": [
+        { "text": "Давно не бачилися", "rom": "Davno ne bachylysia", "reviewed": false },
+        { "text": "Скільки років, скільки зим!", "rom": "Skil'ky rokiv, skil'ky zym!", "tone": "casual", "note": "Lit. \"how many years, how many winters!\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "po dłuższym czasie",
       "variants": [
@@ -78,6 +85,13 @@
       "variants": [
         { "text": "Uzun zamandır görüşmedik!", "note": "Lit. \"we haven't met for a long time!\"", "reviewed": false },
         { "text": "Ne zaman oldu!", "tone": "casual", "note": "Idiomatic \"it's been forever!\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "ұзақ уақыттан кейін",
+      "variants": [
+        { "text": "Көріспегелі көп болды", "rom": "Körispegeli köp boldy", "note": "Lit. \"it's been long since we met.\"", "reviewed": false },
+        { "text": "Қайдасың, жоғалып кеттің ғой", "rom": "Qaidasyň, joğalyp kettiň ğoi", "tone": "casual", "note": "Lit. \"where are you, you disappeared.\"", "reviewed": false }
       ]
     },
     "hi": {

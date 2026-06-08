@@ -79,6 +79,13 @@
         { "text": "Очень приятно", "rom": "ochen' priyatno", "tone": "casual", "note": "Lit. \"very pleasant\"; common short form.", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "знайомство",
+      "variants": [
+        { "text": "Приємно познайомитися", "rom": "Pryiemno poznaiomytysia", "reviewed": false },
+        { "text": "Дуже приємно", "rom": "Duzhe pryiemno", "tone": "casual", "note": "Lit. \"very pleasant.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "pierwsze spotkanie",
       "variants": [
@@ -92,6 +99,13 @@
       "variants": [
         { "text": "Memnun oldum", "note": "Short, everyday \"pleased (to meet you).\"", "reviewed": false },
         { "text": "Tanıştığımıza memnun oldum", "tone": "polite", "note": "Lit. \"pleased that we have met.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "танысу",
+      "variants": [
+        { "text": "Танысқаныма қуаныштымын", "rom": "Tanysqanyma quanyştymyn", "reviewed": false },
+        { "text": "Өте қуаныштымын", "rom": "Öte quanyştymyn", "tone": "casual", "note": "Lit. \"very glad.\"", "reviewed": false }
       ]
     },
     "hi": {

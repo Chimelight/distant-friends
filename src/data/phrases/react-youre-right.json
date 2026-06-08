@@ -79,6 +79,14 @@
         { "text": "Логично", "rom": "logichno", "note": "Lit. \"logical.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "ти маєш рацію",
+      "variants": [
+        { "text": "Ти маєш рацію", "rom": "Ty maiesh ratsiiu", "reviewed": false },
+        { "text": "Слушно", "rom": "Slushno", "note": "Lit. \"a fair point.\"", "reviewed": false },
+        { "text": "Логічно", "rom": "Lohichno", "tone": "casual", "note": "Lit. \"logical.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "masz rację",
       "variants": [
@@ -91,6 +99,14 @@
       "variants": [
         { "text": "Haklısın", "reviewed": false },
         { "text": "Mantıklı", "note": "Lit. \"logical.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "дұрыс айтасың",
+      "variants": [
+        { "text": "Дұрыс айтасың", "rom": "Durys aitasyň", "tone": "casual", "reviewed": false },
+        { "text": "Қисынды", "rom": "Qisyndy", "note": "Lit. \"makes sense.\"", "reviewed": false },
+        { "text": "Рас айтасың", "rom": "Ras aitasyň", "note": "Lit. \"you speak true.\"", "reviewed": false }
       ]
     },
     "hi": {

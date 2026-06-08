@@ -78,6 +78,14 @@
         { "text": "Понятно", "rom": "ponyatno", "note": "Gender-neutral \"got it.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "зрозуміло",
+      "variants": [
+        { "text": "Зрозумів", "rom": "Zrozumiv", "speakerGender": "m", "reviewed": false },
+        { "text": "Зрозуміла", "rom": "Zrozumila", "speakerGender": "f", "reviewed": false },
+        { "text": "Ясно", "rom": "Yasno", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "rozumiem",
       "variants": [
@@ -90,6 +98,14 @@
       "variants": [
         { "text": "Anladım", "reviewed": false },
         { "text": "Tamam", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "түсінікті",
+      "variants": [
+        { "text": "Түсіндім", "rom": "Tüsindim", "reviewed": false },
+        { "text": "Түсінікті", "rom": "Tüsinikti", "reviewed": false },
+        { "text": "Жарайды", "rom": "Jaraidy", "tone": "casual", "note": "Lit. \"alright.\"", "reviewed": false }
       ]
     },
     "hi": {

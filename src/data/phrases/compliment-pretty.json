@@ -78,6 +78,14 @@
         { "text": "Красивая", "rom": "krasivaya", "addresseeGender": "f", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "гарно",
+      "variants": [
+        { "text": "Так гарно", "rom": "Tak harno", "reviewed": false },
+        { "text": "Красиво", "rom": "Krasyvo", "reviewed": false },
+        { "text": "Чудово", "rom": "Chudovo", "note": "Lit. \"wonderful.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "ładnie",
       "variants": [
@@ -89,6 +97,13 @@
       "gloss": "çok güzel",
       "variants": [
         { "text": "Çok güzel", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "әдемі",
+      "variants": [
+        { "text": "Өте әдемі", "rom": "Öte ädemi", "reviewed": false },
+        { "text": "Сондай сұлу", "rom": "Sondai sulu", "note": "Sulu — beautiful, often of people.", "reviewed": false }
       ]
     },
     "hi": {

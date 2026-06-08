@@ -74,6 +74,14 @@
         { "text": "Что не так?", "rom": "chto ne tak?", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "що сталося",
+      "variants": [
+        { "text": "Що сталося?", "rom": "Shcho stalosia?", "reviewed": false },
+        { "text": "Що не так?", "rom": "Shcho ne tak?", "reviewed": false },
+        { "text": "Ти в порядку?", "rom": "Ty v poriadku?", "tone": "casual", "note": "Lit. \"are you okay?\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "co się stało",
       "variants": [
@@ -86,6 +94,14 @@
       "variants": [
         { "text": "Ne oldu?", "reviewed": false },
         { "text": "Bir sorun mu var?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "не болды",
+      "variants": [
+        { "text": "Не болды?", "rom": "Ne boldy?", "reviewed": false },
+        { "text": "Бір жайт болды ма?", "rom": "Bir jait boldy ma?", "note": "Lit. \"did something happen?\"", "reviewed": false },
+        { "text": "Жағдайың жақсы ма?", "rom": "Jağdaiyň jaqsy ma?", "tone": "casual", "note": "Lit. \"are you okay?\"", "reviewed": false }
       ]
     },
     "hi": {

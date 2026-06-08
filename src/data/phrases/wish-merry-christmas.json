@@ -63,6 +63,13 @@
         { "text": "С Рождеством", "rom": "s Rozhdestvom", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "з різдвом",
+      "variants": [
+        { "text": "З Різдвом", "rom": "Z Rizdvom", "reviewed": false },
+        { "text": "Веселого Різдва", "rom": "Veseloho Rizdva", "note": "Lit. \"merry Christmas.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "wesołych świąt",
       "variants": [
@@ -73,6 +80,12 @@
       "gloss": "mutlu noeller",
       "variants": [
         { "text": "Mutlu Noeller", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "рождество құтты болсын",
+      "variants": [
+        { "text": "Рождество құтты болсын", "rom": "Rojdestvo qutty bolsyn", "reviewed": false }
       ]
     },
     "hi": {

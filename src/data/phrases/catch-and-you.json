@@ -72,6 +72,13 @@
         { "text": "А вы?", "rom": "a vy?", "tone": "polite", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "зустрічне питання",
+      "variants": [
+        { "text": "А ти?", "rom": "A ty?", "tone": "casual", "reviewed": false },
+        { "text": "А ви?", "rom": "A vy?", "tone": "polite", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "pytanie zwrotne",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Sen?", "tone": "casual", "reviewed": false },
         { "text": "Siz?", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "қарсы сұрақ",
+      "variants": [
+        { "text": "Ал сен?", "rom": "Al sen?", "tone": "casual", "reviewed": false },
+        { "text": "Ал сіз?", "rom": "Al siz?", "tone": "polite", "reviewed": false }
       ]
     },
     "hi": {

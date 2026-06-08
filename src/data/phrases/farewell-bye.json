@@ -75,6 +75,13 @@
         { "text": "До свидания", "rom": "do svidaniya", "tone": "polite", "note": "Lit. “until our meeting.”", "reviewed": true }
       ]
     },
+    "uk": {
+      "gloss": "прощання",
+      "variants": [
+        { "text": "Бувай", "rom": "Buvai", "tone": "casual", "reviewed": false },
+        { "text": "До побачення", "rom": "Do pobachennia", "tone": "polite", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "pożegnanie",
       "variants": [
@@ -89,6 +96,14 @@
         { "text": "Hoşça kal", "note": "Said to the one staying; lit. \"stay well.\"", "reviewed": false },
         { "text": "Güle güle", "note": "Said to the one leaving; lit. \"go laughing.\"", "reviewed": false },
         { "text": "Görüşürüz", "tone": "casual", "note": "Lit. \"we'll see (each other).\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "қоштасу",
+      "variants": [
+        { "text": "Сау бол", "rom": "Sau bol", "tone": "casual", "note": "Lit. \"be healthy.\"", "reviewed": false },
+        { "text": "Қош бол", "rom": "Qoş bol", "reviewed": false },
+        { "text": "Сау болыңыз", "rom": "Sau bolyňyz", "tone": "polite", "reviewed": false }
       ]
     },
     "hi": {

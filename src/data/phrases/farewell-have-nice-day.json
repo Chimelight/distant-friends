@@ -71,6 +71,13 @@
         { "text": "Удачного дня", "rom": "udachnogo dnya", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "гарного дня",
+      "variants": [
+        { "text": "Гарного дня", "rom": "Harnoho dnia", "reviewed": false },
+        { "text": "Вдалого дня", "rom": "Vdaloho dnia", "note": "Lit. \"a successful day.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "miłego dnia",
       "variants": [
@@ -83,6 +90,13 @@
       "variants": [
         { "text": "İyi günler", "reviewed": false },
         { "text": "Güzel bir gün geçir", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "күнің сәтті өтсін",
+      "variants": [
+        { "text": "Күнің сәтті өтсін", "rom": "Küniň sätti ötsin", "reviewed": false },
+        { "text": "Жақсы күн тілеймін", "rom": "Jaqsy kün tileimin", "reviewed": false }
       ]
     },
     "hi": {

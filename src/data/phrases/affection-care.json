@@ -69,6 +69,13 @@
         { "text": "Я о тебе забочусь", "rom": "ya o tebe zabochus'", "note": "Lit. “I care for you” — gender-neutral.", "reviewed": true }
       ]
     },
+    "uk": {
+      "gloss": "турбота",
+      "variants": [
+        { "text": "Ти багато для мене значиш", "rom": "Ty bahato dlia mene znachysh", "reviewed": false },
+        { "text": "Я думаю про тебе", "rom": "Ya dumaiu pro tebe", "note": "Lit. \"thinking of you.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "troska",
       "variants": [
@@ -81,6 +88,13 @@
       "gloss": "değer vermek",
       "variants": [
         { "text": "Sen benim için önemlisin", "note": "Lit. \"you are important to me.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "қамқорлық",
+      "variants": [
+        { "text": "Сен мен үшін маңыздысың", "rom": "Sen men üşin maňyzdysyň", "reviewed": false },
+        { "text": "Сені ойлап жүрмін", "rom": "Seni oilap jürmin", "note": "Lit. \"thinking of you.\"", "reviewed": false }
       ]
     },
     "hi": {

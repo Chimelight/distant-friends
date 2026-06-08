@@ -74,6 +74,14 @@
         { "text": "Потрясающе", "rom": "potryasayushche", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "неймовірно",
+      "variants": [
+        { "text": "Ти неймовірний", "rom": "Ty neimovirnyi", "addresseeGender": "m", "reviewed": false },
+        { "text": "Ти неймовірна", "rom": "Ty neimovirna", "addresseeGender": "f", "reviewed": false },
+        { "text": "Це неймовірно", "rom": "Tse neimovirno", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "niesamowite",
       "variants": [
@@ -86,6 +94,14 @@
       "variants": [
         { "text": "İnanılmaz", "reviewed": false },
         { "text": "Müthiş", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "керемет",
+      "variants": [
+        { "text": "Сен кереметсің", "rom": "Sen keremetsiň", "reviewed": false },
+        { "text": "Бұл керемет", "rom": "Bul keremet", "reviewed": false },
+        { "text": "Таңғажайып", "rom": "Taňğajaiyp", "note": "Lit. \"astonishing.\"", "reviewed": false }
       ]
     },
     "hi": {

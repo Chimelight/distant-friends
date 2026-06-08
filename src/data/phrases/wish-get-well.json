@@ -72,6 +72,13 @@
         { "text": "Поправляйся", "rom": "popravlyaysya", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "одужуй",
+      "variants": [
+        { "text": "Одужуй", "rom": "Oduzhui", "reviewed": false },
+        { "text": "Швидше одужуй", "rom": "Shvydshe oduzhui", "note": "Lit. \"get well faster.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "zdrowiej szybko",
       "variants": [
@@ -84,6 +91,13 @@
       "variants": [
         { "text": "Geçmiş olsun", "note": "Lit. \"may it be past\" — said to someone unwell or after misfortune.", "reviewed": false },
         { "text": "Çabuk iyileş", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "жазылып кет",
+      "variants": [
+        { "text": "Тез жазылып кет", "rom": "Tez jazylyp ket", "note": "Lit. \"recover quickly.\"", "reviewed": false },
+        { "text": "Сауығып кет", "rom": "Sauyğyp ket", "reviewed": false }
       ]
     },
     "hi": {

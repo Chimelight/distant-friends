@@ -65,6 +65,13 @@
         { "text": "Счастливых праздников", "rom": "schastlivykh prazdnikov", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "зі святами",
+      "variants": [
+        { "text": "Зі святом", "rom": "Zi sviatom", "reviewed": false },
+        { "text": "Гарних свят", "rom": "Harnykh sviat", "note": "Lit. \"nice holidays.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "wesołych świąt",
       "variants": [
@@ -76,6 +83,13 @@
       "variants": [
         { "text": "İyi tatiller", "reviewed": false },
         { "text": "Bayramınız kutlu olsun", "tone": "polite", "note": "For religious holidays.", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "мерекеңмен",
+      "variants": [
+        { "text": "Мерекеңмен", "rom": "Merekeňmen", "tone": "casual", "reviewed": false },
+        { "text": "Мерекелеріңіз құтты болсын", "rom": "Merekeleriňiz qutty bolsyn", "tone": "polite", "reviewed": false }
       ]
     },
     "hi": {

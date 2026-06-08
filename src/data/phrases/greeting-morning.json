@@ -69,6 +69,13 @@
         { "text": "Доброе утро", "rom": "dobroe utro", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "ранкове привітання",
+      "variants": [
+        { "text": "Доброго ранку", "rom": "Dobroho ranku", "reviewed": false },
+        { "text": "Добрий ранок", "rom": "Dobryi ranok", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "powitanie poranne",
       "variants": [
@@ -79,6 +86,13 @@
       "gloss": "sabah selamı",
       "variants": [
         { "text": "Günaydın", "note": "Lit. \"day-bright\"; everyday morning greeting.", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "таңғы сәлем",
+      "variants": [
+        { "text": "Қайырлы таң", "rom": "Qaiyrly taň", "reviewed": false },
+        { "text": "Таңың жақсы өтсін", "rom": "Taňyň jaqsy ötsin", "tone": "casual", "reviewed": false }
       ]
     },
     "hi": {

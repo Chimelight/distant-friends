@@ -74,6 +74,14 @@
         { "text": "Да ладно", "rom": "da ladno", "tone": "casual", "note": "Lit. \"yeah, alright\" — disbelief.", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "не може бути",
+      "variants": [
+        { "text": "Не може бути", "rom": "Ne mozhe buty", "reviewed": false },
+        { "text": "Та ну", "rom": "Ta nu", "tone": "casual", "reviewed": false },
+        { "text": "Ти жартуєш", "rom": "Ty zhartuiesh", "tone": "casual", "note": "Lit. \"you're joking.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "nie może być",
       "variants": [
@@ -86,6 +94,14 @@
       "variants": [
         { "text": "Olamaz", "reviewed": false },
         { "text": "Yok artık", "tone": "casual", "note": "Lit. \"no more\" — comic disbelief.", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "болуы мүмкін емес",
+      "variants": [
+        { "text": "Болуы мүмкін емес", "rom": "Boluy mümkin emes", "reviewed": false },
+        { "text": "Қойшы", "rom": "Qoişy", "tone": "casual", "note": "Lit. \"come on\" — no way.", "reviewed": false },
+        { "text": "Қалжыңдайсың ғой", "rom": "Qaljyňdaisyň ğoi", "tone": "casual", "note": "Lit. \"you're joking.\"", "reviewed": false }
       ]
     },
     "hi": {
