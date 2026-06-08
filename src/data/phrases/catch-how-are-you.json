@@ -78,6 +78,14 @@
         { "text": "Как Вы?", "rom": "kak Vy?", "tone": "polite", "note": "Formal Vy-form.", "reviewed": true }
       ]
     },
+    "uk": {
+      "gloss": "запитати, як справи",
+      "variants": [
+        { "text": "Як справи?", "rom": "Yak spravy?", "reviewed": false },
+        { "text": "Як ти?", "rom": "Yak ty?", "tone": "casual", "reviewed": false },
+        { "text": "Як ви?", "rom": "Yak vy?", "tone": "polite", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "pytać, co słychać",
       "variants": [
@@ -90,6 +98,14 @@
       "variants": [
         { "text": "Nasılsın?", "reviewed": false },
         { "text": "Nasılsınız?", "tone": "polite", "note": "Formal siz-form to strangers or seniors.", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "хал сұрау",
+      "variants": [
+        { "text": "Қалайсың?", "rom": "Qalaisyň?", "tone": "casual", "reviewed": false },
+        { "text": "Хал-жағдайың қалай?", "rom": "Hal-jağdaiyň qalai?", "note": "Lit. \"how is your condition?\"", "reviewed": false },
+        { "text": "Қалайсыз?", "rom": "Qalaisyz?", "tone": "polite", "reviewed": false }
       ]
     },
     "hi": {

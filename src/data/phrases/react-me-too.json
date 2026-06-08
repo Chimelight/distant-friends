@@ -72,6 +72,13 @@
         { "text": "И я", "rom": "i ya", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "я теж",
+      "variants": [
+        { "text": "Я теж", "rom": "Ya tezh", "reviewed": false },
+        { "text": "І я", "rom": "I ya", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "ja też",
       "variants": [
@@ -82,6 +89,13 @@
       "gloss": "ben de",
       "variants": [
         { "text": "Ben de", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "мен де",
+      "variants": [
+        { "text": "Мен де", "rom": "Men de", "reviewed": false },
+        { "text": "Менде солай", "rom": "Mende solai", "tone": "casual", "note": "Lit. \"same with me.\"", "reviewed": false }
       ]
     },
     "hi": {

@@ -83,6 +83,14 @@
         { "text": "Неплохо", "rom": "neplokho", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "все добре",
+      "variants": [
+        { "text": "Добре", "rom": "Dobre", "reviewed": false },
+        { "text": "Все добре", "rom": "Vse dobre", "reviewed": false },
+        { "text": "Непогано", "rom": "Nepohano", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "u mnie dobrze",
       "variants": [
@@ -97,6 +105,14 @@
         { "text": "İyiyim", "reviewed": false },
         { "text": "İyiyim, teşekkürler", "reviewed": false },
         { "text": "Fena değil", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "жақсымын",
+      "variants": [
+        { "text": "Жақсымын", "rom": "Jaqsymyn", "reviewed": false },
+        { "text": "Бәрі жақсы", "rom": "Bäri jaqsy", "note": "Lit. \"all good.\"", "reviewed": false },
+        { "text": "Жаман емес", "rom": "Jaman emes", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
       ]
     },
     "hi": {

@@ -78,6 +78,14 @@
         { "text": "Ничего страшного", "rom": "nichego strashnogo", "note": "Lit. \"nothing scary.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "нічого",
+      "variants": [
+        { "text": "Нічого", "rom": "Nichoho", "reviewed": false },
+        { "text": "Нічого страшного", "rom": "Nichoho strashnoho", "note": "Lit. \"nothing terrible.\"", "reviewed": false },
+        { "text": "Все нормально", "rom": "Vse normal'no", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "nic nie szkodzi",
       "variants": [
@@ -90,6 +98,14 @@
       "variants": [
         { "text": "Önemli değil", "reviewed": false },
         { "text": "Sorun değil", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "ештеңе етпейді",
+      "variants": [
+        { "text": "Ештеңе етпейді", "rom": "Eşteňe etpeidi", "reviewed": false },
+        { "text": "Оқасы жоқ", "rom": "Oqasy joq", "note": "Lit. \"it's nothing.\"", "reviewed": false },
+        { "text": "Бәрі жақсы", "rom": "Bäri jaqsy", "tone": "casual", "reviewed": false }
       ]
     },
     "hi": {

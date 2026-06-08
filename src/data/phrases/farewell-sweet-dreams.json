@@ -68,6 +68,12 @@
         { "text": "Сладких снов", "rom": "sladkikh snov", "note": "Lit. \"sweet dreams.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "солодких снів",
+      "variants": [
+        { "text": "Солодких снів", "rom": "Solodkykh sniv", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "słodkich snów",
       "variants": [
@@ -79,6 +85,12 @@
       "gloss": "tatlı rüyalar",
       "variants": [
         { "text": "Tatlı rüyalar", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "тәтті түс",
+      "variants": [
+        { "text": "Тәтті түс көр", "rom": "Tätti tüs kör", "reviewed": false }
       ]
     },
     "hi": {

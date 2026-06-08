@@ -77,6 +77,13 @@
         { "text": "Понятия не имею", "rom": "ponyatiya ne imeyu", "tone": "casual", "note": "Lit. \"I have no notion.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "не знаю",
+      "variants": [
+        { "text": "Не знаю", "rom": "Ne znaiu", "reviewed": false },
+        { "text": "Поняття не маю", "rom": "Poniattia ne maiu", "tone": "casual", "note": "Lit. \"no idea.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "nie wiem",
       "variants": [
@@ -89,6 +96,13 @@
       "variants": [
         { "text": "Bilmiyorum", "reviewed": false },
         { "text": "Hiç fikrim yok", "tone": "casual", "note": "Lit. \"I have no idea.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "білмеймін",
+      "variants": [
+        { "text": "Білмеймін", "rom": "Bilmeimin", "reviewed": false },
+        { "text": "Түк білмеймін", "rom": "Tük bilmeimin", "tone": "casual", "note": "Lit. \"I know nothing.\"", "reviewed": false }
       ]
     },
     "hi": {

@@ -73,6 +73,13 @@
         { "text": "Я всегда рядом", "rom": "ya vsegda ryadom", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "я поруч",
+      "variants": [
+        { "text": "Я поруч", "rom": "Ya poruch", "reviewed": false },
+        { "text": "Я завжди поруч", "rom": "Ya zavzhdy poruch", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "jestem tu",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Yanındayım", "reviewed": false },
         { "text": "Her zaman buradayım", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "мен жаныңдамын",
+      "variants": [
+        { "text": "Мен жаныңдамын", "rom": "Men janyňdamyn", "reviewed": false },
+        { "text": "Мен әрқашан жаныңдамын", "rom": "Men ärqaşan janyňdamyn", "reviewed": false }
       ]
     },
     "hi": {

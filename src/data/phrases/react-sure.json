@@ -76,6 +76,14 @@
         { "text": "Разумеется", "rom": "razumeyetsya", "tone": "polite", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "звісно",
+      "variants": [
+        { "text": "Звісно", "rom": "Zvisno", "reviewed": false },
+        { "text": "Звичайно", "rom": "Zvychaino", "reviewed": false },
+        { "text": "Авжеж", "rom": "Avzhezh", "tone": "casual", "note": "Emphatic \"of course.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "oczywiście",
       "variants": [
@@ -88,6 +96,14 @@
       "variants": [
         { "text": "Tabii", "reviewed": false },
         { "text": "Elbette", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "әрине",
+      "variants": [
+        { "text": "Әрине", "rom": "Ärine", "reviewed": false },
+        { "text": "Әлбетте", "rom": "Älbette", "reviewed": false },
+        { "text": "Сөзсіз", "rom": "Sözsiz", "note": "Lit. \"without a word\" — definitely.", "reviewed": false }
       ]
     },
     "hi": {

@@ -68,6 +68,13 @@
         { "text": "С Новым годом", "rom": "s Novym godom", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "з новим роком",
+      "variants": [
+        { "text": "З Новим роком", "rom": "Z Novym rokom", "reviewed": false },
+        { "text": "Щасливого Нового року", "rom": "Shchaslyvoho Novoho roku", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "szczęśliwego nowego roku",
       "variants": [
@@ -79,6 +86,13 @@
       "variants": [
         { "text": "Mutlu yıllar", "reviewed": false },
         { "text": "İyi yıllar", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "жаңа жылмен",
+      "variants": [
+        { "text": "Жаңа жылың құтты болсын", "rom": "Jaňa jylyň qutty bolsyn", "tone": "casual", "reviewed": false },
+        { "text": "Жаңа жылыңыз құтты болсын", "rom": "Jaňa jylyňyz qutty bolsyn", "tone": "polite", "reviewed": false }
       ]
     },
     "hi": {

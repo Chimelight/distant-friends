@@ -73,6 +73,14 @@
         { "text": "Ты классная", "rom": "ty klassnaya", "tone": "casual", "addresseeGender": "f", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "ти молодець",
+      "variants": [
+        { "text": "Ти молодець", "rom": "Ty molodets", "reviewed": false },
+        { "text": "Ти класний", "rom": "Ty klasnyi", "tone": "casual", "addresseeGender": "m", "reviewed": false },
+        { "text": "Ти класна", "rom": "Ty klasna", "tone": "casual", "addresseeGender": "f", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "jesteś świetny",
       "variants": [
@@ -85,6 +93,13 @@
       "variants": [
         { "text": "Harikasın", "reviewed": false },
         { "text": "Müthişsin", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "өзің зорсың",
+      "variants": [
+        { "text": "Сен жарайсың", "rom": "Sen jaraisyň", "tone": "casual", "reviewed": false },
+        { "text": "Сен кереметсің", "rom": "Sen keremetsiň", "reviewed": false }
       ]
     },
     "hi": {

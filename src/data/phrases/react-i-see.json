@@ -77,6 +77,13 @@
         { "text": "Ага", "rom": "aga", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "ясно",
+      "variants": [
+        { "text": "Ясно", "rom": "Yasno", "reviewed": false },
+        { "text": "А, зрозуміло", "rom": "A, zrozumilo", "note": "Lit. \"ah, I see.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "aha",
       "variants": [
@@ -89,6 +96,13 @@
       "variants": [
         { "text": "Anladım", "note": "Lit. \"I understood.\"", "reviewed": false },
         { "text": "Haa", "tone": "casual", "note": "Drawn-out \"ahh\" of recognition.", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "түсінікті",
+      "variants": [
+        { "text": "Түсінікті", "rom": "Tüsinikti", "reviewed": false },
+        { "text": "Аа, солай ма", "rom": "Aa, solai ma", "tone": "casual", "note": "Lit. \"ah, is that so.\"", "reviewed": false }
       ]
     },
     "hi": {

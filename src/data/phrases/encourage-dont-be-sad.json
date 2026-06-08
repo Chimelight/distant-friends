@@ -67,6 +67,13 @@
         { "text": "Не грусти", "rom": "ne grusti", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "не сумуй",
+      "variants": [
+        { "text": "Не сумуй", "rom": "Ne sumui", "reviewed": false },
+        { "text": "Вище носа", "rom": "Vyshche nosa", "tone": "casual", "note": "Lit. \"nose up\" — cheer up.", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "nie smuć się",
       "variants": [
@@ -77,6 +84,13 @@
       "gloss": "üzülme",
       "variants": [
         { "text": "Üzülme", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "уайымдама",
+      "variants": [
+        { "text": "Уайымдама", "rom": "Uaiymdama", "note": "Lit. \"don't grieve.\"", "reviewed": false },
+        { "text": "Қапаланба", "rom": "Qapalanba", "note": "Lit. \"don't be sad.\"", "reviewed": false }
       ]
     },
     "hi": {

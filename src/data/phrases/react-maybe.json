@@ -77,6 +77,14 @@
         { "text": "Наверное", "rom": "navernoe", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "можливо",
+      "variants": [
+        { "text": "Можливо", "rom": "Mozhlyvo", "reviewed": false },
+        { "text": "Мабуть", "rom": "Mabut'", "note": "Lit. \"probably.\"", "reviewed": false },
+        { "text": "Напевно", "rom": "Napevno", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "może",
       "variants": [
@@ -89,6 +97,14 @@
       "variants": [
         { "text": "Belki", "reviewed": false },
         { "text": "Olabilir", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "мүмкін",
+      "variants": [
+        { "text": "Мүмкін", "rom": "Mümkin", "reviewed": false },
+        { "text": "Бәлкім", "rom": "Bälkim", "reviewed": false },
+        { "text": "Шамасы", "rom": "Şamasy", "note": "Lit. \"probably.\"", "reviewed": false }
       ]
     },
     "hi": {

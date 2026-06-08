@@ -74,6 +74,13 @@
         { "text": "Увидимся", "rom": "uvidimsya", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "до зустрічі",
+      "variants": [
+        { "text": "До зустрічі", "rom": "Do zustrichi", "reviewed": false },
+        { "text": "Побачимося", "rom": "Pobachymosia", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "do zobaczenia",
       "variants": [
@@ -86,6 +93,13 @@
       "variants": [
         { "text": "Görüşürüz", "reviewed": false },
         { "text": "Sonra görüşürüz", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "көріскенше",
+      "variants": [
+        { "text": "Көріскенше", "rom": "Köriskenşe", "reviewed": false },
+        { "text": "Кейін көрісеміз", "rom": "Keiin körisemiz", "note": "Lit. \"we'll meet later.\"", "reviewed": false }
       ]
     },
     "hi": {

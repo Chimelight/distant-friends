@@ -68,6 +68,13 @@
         { "text": "Сладких снов", "rom": "sladkih snov", "tone": "close", "note": "Lit. “sweet dreams.”", "reviewed": true }
       ]
     },
+    "uk": {
+      "gloss": "на добраніч",
+      "variants": [
+        { "text": "На добраніч", "rom": "Na dobranich", "reviewed": false },
+        { "text": "Солодких снів", "rom": "Solodkykh sniv", "note": "Lit. \"sweet dreams.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "życzenie na noc",
       "variants": [
@@ -80,6 +87,13 @@
       "variants": [
         { "text": "İyi geceler", "note": "Lit. \"good nights\" (always plural).", "reviewed": false },
         { "text": "Tatlı rüyalar", "tone": "close", "note": "Lit. \"sweet dreams.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "қайырлы түн",
+      "variants": [
+        { "text": "Қайырлы түн", "rom": "Qaiyrly tün", "reviewed": false },
+        { "text": "Тәтті түс көр", "rom": "Tätti tüs kör", "tone": "casual", "note": "Lit. \"see sweet dreams.\"", "reviewed": false }
       ]
     },
     "hi": {

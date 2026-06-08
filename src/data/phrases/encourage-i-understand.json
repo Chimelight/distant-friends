@@ -70,6 +70,13 @@
         { "text": "Понимаю", "rom": "ponimayu", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "розумію",
+      "variants": [
+        { "text": "Розумію", "rom": "Rozumiiu", "reviewed": false },
+        { "text": "Я тебе розумію", "rom": "Ya tebe rozumiiu", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "rozumiem",
       "variants": [
@@ -80,6 +87,13 @@
       "gloss": "anlıyorum",
       "variants": [
         { "text": "Anlıyorum", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "түсінемін",
+      "variants": [
+        { "text": "Түсінемін", "rom": "Tüsinemin", "reviewed": false },
+        { "text": "Сені түсінемін", "rom": "Seni tüsinemin", "reviewed": false }
       ]
     },
     "hi": {

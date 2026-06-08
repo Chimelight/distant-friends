@@ -74,6 +74,14 @@
         { "text": "Простите", "rom": "prostite", "tone": "polite", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "привернути увагу",
+      "variants": [
+        { "text": "Перепрошую", "rom": "Pereproshuiu", "note": "Polite \"excuse me.\"", "reviewed": false },
+        { "text": "Вибачте", "rom": "Vybachte", "tone": "polite", "reviewed": false },
+        { "text": "Пробачте, що турбую", "rom": "Probachte, shcho turbuiu", "note": "Lit. \"sorry to bother.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "przepraszam",
       "variants": [
@@ -85,6 +93,14 @@
       "variants": [
         { "text": "Affedersiniz", "tone": "polite", "reviewed": false },
         { "text": "Pardon", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "назар аудару",
+      "variants": [
+        { "text": "Кешіріңіз", "rom": "Keşiriňiz", "tone": "polite", "note": "Lit. \"forgive me.\"", "reviewed": false },
+        { "text": "Ғафу етіңіз", "rom": "Ğafu etiňiz", "tone": "polite", "reviewed": false },
+        { "text": "Мазалағаным үшін кешіріңіз", "rom": "Mazalağanym üşin keşiriňiz", "note": "Lit. \"sorry for bothering.\"", "reviewed": false }
       ]
     },
     "hi": {

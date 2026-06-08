@@ -81,6 +81,14 @@
         { "text": "Класс", "rom": "klass", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "чудово",
+      "variants": [
+        { "text": "Чудово", "rom": "Chudovo", "reviewed": false },
+        { "text": "Класно", "rom": "Klasno", "tone": "casual", "reviewed": false },
+        { "text": "Прекрасно", "rom": "Prekrasno", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "świetnie",
       "variants": [
@@ -95,6 +103,14 @@
         { "text": "Harika", "reviewed": false },
         { "text": "Süper", "reviewed": false },
         { "text": "Mükemmel", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "тамаша",
+      "variants": [
+        { "text": "Тамаша", "rom": "Tamaşa", "reviewed": false },
+        { "text": "Керемет", "rom": "Keremet", "reviewed": false },
+        { "text": "Өте жақсы", "rom": "Öte jaqsy", "note": "Lit. \"very good.\"", "reviewed": false }
       ]
     },
     "hi": {

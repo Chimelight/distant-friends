@@ -72,6 +72,13 @@
         { "text": "Люблю тебя", "rom": "lyublyu tebya", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "я тебе кохаю",
+      "variants": [
+        { "text": "Я тебе кохаю", "rom": "Ya tebe kokhaiu", "note": "Romantic love.", "reviewed": false },
+        { "text": "Я тебе люблю", "rom": "Ya tebe liubliu", "note": "General \"love you\" — also to family and friends.", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "kocham cię",
       "variants": [
@@ -82,6 +89,13 @@
       "gloss": "seni seviyorum",
       "variants": [
         { "text": "Seni seviyorum", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "сені сүйемін",
+      "variants": [
+        { "text": "Сені сүйемін", "rom": "Seni süiemin", "reviewed": false },
+        { "text": "Мен сені жақсы көремін", "rom": "Men seni jaqsy köremin", "note": "Lit. \"I see you well\" — everyday \"I love you.\"", "reviewed": false }
       ]
     },
     "hi": {

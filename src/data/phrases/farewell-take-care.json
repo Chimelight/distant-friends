@@ -73,6 +73,13 @@
         { "text": "Удачи", "rom": "udachi", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "бережи себе",
+      "variants": [
+        { "text": "Бережи себе", "rom": "Berezhy sebe", "reviewed": false },
+        { "text": "Тримайся", "rom": "Trymaisia", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "trzymaj się",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Kendine iyi bak", "reviewed": false },
         { "text": "Kendine dikkat et", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "өзіңді абайла",
+      "variants": [
+        { "text": "Өзіңе ие бол", "rom": "Öziňe ie bol", "note": "Lit. \"take care of yourself.\"", "reviewed": false },
+        { "text": "Аман бол", "rom": "Aman bol", "tone": "casual", "note": "Lit. \"be safe.\"", "reviewed": false }
       ]
     },
     "hi": {

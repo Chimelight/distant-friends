@@ -72,6 +72,13 @@
         { "text": "Поговорим потом", "rom": "pogovorim potom", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "поговоримо пізніше",
+      "variants": [
+        { "text": "Поговоримо пізніше", "rom": "Pohovorymo piznishe", "reviewed": false },
+        { "text": "Ще поговоримо", "rom": "Shche pohovorymo", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "pogadamy później",
       "variants": [
@@ -83,6 +90,12 @@
       "gloss": "sonra konuşuruz",
       "variants": [
         { "text": "Sonra konuşuruz", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "кейін сөйлесеміз",
+      "variants": [
+        { "text": "Кейін сөйлесеміз", "rom": "Keiin söilesemiz", "reviewed": false }
       ]
     },
     "hi": {

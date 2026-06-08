@@ -75,6 +75,13 @@
         { "text": "Хорошо поболтали", "rom": "khorosho poboltali", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "приємно поспілкуватися",
+      "variants": [
+        { "text": "Приємно було поспілкуватися", "rom": "Pryiemno bulo pospilkuvatysia", "reviewed": false },
+        { "text": "Гарно поговорили", "rom": "Harno pohovoryly", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "miło porozmawiać",
       "variants": [
@@ -87,6 +94,13 @@
       "variants": [
         { "text": "Konuşmak güzeldi", "reviewed": false },
         { "text": "Sohbet hoş oldu", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "әңгімелескеніміз жақсы болды",
+      "variants": [
+        { "text": "Сенімен сөйлескенім жақсы болды", "rom": "Senimen söileskenim jaqsy boldy", "reviewed": false },
+        { "text": "Жақсы әңгімелестік", "rom": "Jaqsy äňgimelestik", "tone": "casual", "reviewed": false }
       ]
     },
     "hi": {
