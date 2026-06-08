@@ -73,6 +73,13 @@
         { "text": "Всё будет хорошо", "rom": "vsyo budet khorosho", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "все налагодиться",
+      "variants": [
+        { "text": "Все налагодиться", "rom": "Vse nalahodyt'sia", "reviewed": false },
+        { "text": "Все буде добре", "rom": "Vse bude dobre", "note": "Lit. \"everything will be good.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "będzie lepiej",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Daha iyi olacak", "reviewed": false },
         { "text": "Her şey düzelecek", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "бәрі жақсы болады",
+      "variants": [
+        { "text": "Бәрі жақсы болады", "rom": "Bäri jaqsy bolady", "reviewed": false },
+        { "text": "Бәрі ретке келеді", "rom": "Bäri retke keledi", "note": "Lit. \"all will fall into place.\"", "reviewed": false }
       ]
     },
     "hi": {

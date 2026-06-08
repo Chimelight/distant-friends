@@ -72,6 +72,14 @@
         { "text": "Зачем?", "rom": "zachem?", "note": "Lit. \"for what purpose?\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "чому",
+      "variants": [
+        { "text": "Чому?", "rom": "Chomu?", "reviewed": false },
+        { "text": "Чого?", "rom": "Choho?", "tone": "casual", "reviewed": false },
+        { "text": "Як так?", "rom": "Yak tak?", "note": "Lit. \"how so?\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "dlaczego",
       "variants": [
@@ -84,6 +92,14 @@
       "variants": [
         { "text": "Neden?", "reviewed": false },
         { "text": "Niye?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "неге",
+      "variants": [
+        { "text": "Неге?", "rom": "Nege?", "reviewed": false },
+        { "text": "Не үшін?", "rom": "Ne üşin?", "note": "Lit. \"for what?\"", "reviewed": false },
+        { "text": "Қалай олай?", "rom": "Qalai olai?", "tone": "casual", "note": "Lit. \"how come?\"", "reviewed": false }
       ]
     },
     "hi": {

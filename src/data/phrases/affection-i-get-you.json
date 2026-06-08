@@ -71,6 +71,13 @@
         { "text": "Понимаю тебя", "rom": "ponimayu tebya", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "я тебе розумію",
+      "variants": [
+        { "text": "Я тебе розумію", "rom": "Ya tebe rozumiiu", "reviewed": false },
+        { "text": "Розумію тебе", "rom": "Rozumiiu tebe", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "rozumiem cię",
       "variants": [
@@ -81,6 +88,13 @@
       "gloss": "seni anlıyorum",
       "variants": [
         { "text": "Seni anlıyorum", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "сені түсінемін",
+      "variants": [
+        { "text": "Сені түсінемін", "rom": "Seni tüsinemin", "reviewed": false },
+        { "text": "Түсінемін сені", "rom": "Tüsinemin seni", "reviewed": false }
       ]
     },
     "hi": {

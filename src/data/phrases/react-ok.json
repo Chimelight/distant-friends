@@ -83,6 +83,14 @@
         { "text": "Окей", "rom": "okey", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "згода",
+      "variants": [
+        { "text": "Добре", "rom": "Dobre", "reviewed": false },
+        { "text": "Гаразд", "rom": "Harazd", "reviewed": false },
+        { "text": "Окей", "rom": "Okei", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "zgoda",
       "variants": [
@@ -97,6 +105,14 @@
         { "text": "Tamam", "reviewed": false },
         { "text": "Olur", "reviewed": false },
         { "text": "Peki", "tone": "polite", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "келісім",
+      "variants": [
+        { "text": "Жарайды", "rom": "Jaraidy", "reviewed": false },
+        { "text": "Мақұл", "rom": "Maqul", "reviewed": false },
+        { "text": "Оқей", "rom": "Oqei", "tone": "casual", "reviewed": false }
       ]
     },
     "hi": {

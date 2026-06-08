@@ -71,6 +71,13 @@
         { "text": "С праздником Ид", "rom": "s prazdnikom Id", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "ід мубарак",
+      "variants": [
+        { "text": "Ід Мубарак", "rom": "Id Mubarak", "reviewed": false },
+        { "text": "Благословенного свята", "rom": "Blahoslovennoho sviata", "note": "Lit. \"a blessed holiday.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "eid mubarak",
       "variants": [
@@ -83,6 +90,13 @@
       "variants": [
         { "text": "Bayramınız mübarek olsun", "note": "The Turkish blessing for Eid; lit. \"may your holiday be blessed.\"", "reviewed": false },
         { "text": "Hayırlı bayramlar", "note": "Lit. \"blessed holidays.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "айт мүбәрак болсын",
+      "variants": [
+        { "text": "Айт мүбәрак болсын", "rom": "Ait mübärak bolsyn", "reviewed": false },
+        { "text": "Айтыңыз құтты болсын", "rom": "Aityňyz qutty bolsyn", "tone": "polite", "note": "Lit. \"may your Eid be blessed.\"", "reviewed": false }
       ]
     },
     "hi": {

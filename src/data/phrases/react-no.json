@@ -77,6 +77,13 @@
         { "text": "Не-а", "rom": "ne-a", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "ні",
+      "variants": [
+        { "text": "Ні", "rom": "Ni", "reviewed": false },
+        { "text": "Не-а", "rom": "Ne-a", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "nie",
       "variants": [
@@ -89,6 +96,13 @@
       "variants": [
         { "text": "Hayır", "reviewed": false },
         { "text": "Yok", "tone": "casual", "note": "Lit. \"no / none.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "жоқ",
+      "variants": [
+        { "text": "Жоқ", "rom": "Joq", "reviewed": false },
+        { "text": "Жоға", "rom": "Joğa", "tone": "casual", "note": "Casual \"nope.\"", "reviewed": false }
       ]
     },
     "hi": {

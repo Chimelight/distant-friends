@@ -83,6 +83,14 @@
         { "text": "Точно", "rom": "tochno", "note": "Lit. \"exactly.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "так",
+      "variants": [
+        { "text": "Так", "rom": "Tak", "reviewed": false },
+        { "text": "Ага", "rom": "Aha", "tone": "casual", "reviewed": false },
+        { "text": "Точно", "rom": "Tochno", "note": "Lit. \"exactly.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "tak",
       "variants": [
@@ -96,6 +104,14 @@
       "variants": [
         { "text": "Evet", "reviewed": false },
         { "text": "Aynen", "tone": "casual", "note": "Lit. \"exactly.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "иә",
+      "variants": [
+        { "text": "Иә", "rom": "Iä", "reviewed": false },
+        { "text": "Ия", "rom": "Iia", "tone": "casual", "reviewed": false },
+        { "text": "Дәл солай", "rom": "Däl solai", "note": "Lit. \"exactly so.\"", "reviewed": false }
       ]
     },
     "hi": {

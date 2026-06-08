@@ -51,6 +51,13 @@
         { "text": "Добрый день", "rom": "dobryĭ den'", "note": "Lit. \"good day\"; used in daytime/afternoon.", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "денне привітання",
+      "variants": [
+        { "text": "Доброго дня", "rom": "Dobroho dnia", "reviewed": false },
+        { "text": "Добрий день", "rom": "Dobryi den'", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "powitanie popołudniowe",
       "variants": [
@@ -62,6 +69,13 @@
       "variants": [
         { "text": "İyi günler", "note": "Lit. \"good days\"; daytime greeting.", "reviewed": false },
         { "text": "Tünaydın", "note": "Specific afternoon greeting; somewhat dated.", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "күндізгі сәлем",
+      "variants": [
+        { "text": "Қайырлы күн", "rom": "Qaiyrly kün", "reviewed": false },
+        { "text": "Күніңіз қайырлы болсын", "rom": "Küniňiz qaiyrly bolsyn", "tone": "polite", "reviewed": false }
       ]
     },
     "bn": {

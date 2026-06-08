@@ -76,6 +76,14 @@
         { "text": "Серьёзно?", "rom": "seryozno?", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "справді",
+      "variants": [
+        { "text": "Справді?", "rom": "Spravdi?", "reviewed": false },
+        { "text": "Серйозно?", "rom": "Seriozno?", "reviewed": false },
+        { "text": "Правда?", "rom": "Pravda?", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "naprawdę",
       "variants": [
@@ -88,6 +96,14 @@
       "variants": [
         { "text": "Gerçekten mi?", "reviewed": false },
         { "text": "Sahi mi?", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "шынымен",
+      "variants": [
+        { "text": "Шын ба?", "rom": "Şyn ba?", "reviewed": false },
+        { "text": "Шынымен бе?", "rom": "Şynymen be?", "reviewed": false },
+        { "text": "Рас па?", "rom": "Ras pa?", "tone": "casual", "note": "Lit. \"is it true?\"", "reviewed": false }
       ]
     },
     "hi": {

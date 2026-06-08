@@ -74,6 +74,13 @@
         { "text": "Мои поздравления", "rom": "moi pozdravleniya", "tone": "polite", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "вітаю",
+      "variants": [
+        { "text": "Вітаю", "rom": "Vitaiu", "reviewed": false },
+        { "text": "Мої вітання", "rom": "Moi vitannia", "note": "Lit. \"my congratulations.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "gratulacje",
       "variants": [
@@ -86,6 +93,13 @@
       "variants": [
         { "text": "Tebrikler", "reviewed": false },
         { "text": "Tebrik ederim", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "құттықтаймын",
+      "variants": [
+        { "text": "Құттықтаймын", "rom": "Quttyqtaimyn", "reviewed": false },
+        { "text": "Құтты болсын", "rom": "Qutty bolsyn", "note": "Lit. \"may it be blessed.\"", "reviewed": false }
       ]
     },
     "hi": {

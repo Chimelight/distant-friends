@@ -74,6 +74,14 @@
         { "text": "Отличная работа", "rom": "otlichnaya rabota", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "молодець",
+      "variants": [
+        { "text": "Молодець", "rom": "Molodets", "reviewed": false },
+        { "text": "Чудова робота", "rom": "Chudova robota", "reviewed": false },
+        { "text": "Гарно зроблено", "rom": "Harno zrobleno", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "dobra robota",
       "variants": [
@@ -86,6 +94,14 @@
       "variants": [
         { "text": "Aferin", "reviewed": false },
         { "text": "İyi iş çıkardın", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "жарайсың",
+      "variants": [
+        { "text": "Жарайсың", "rom": "Jaraisyň", "tone": "casual", "reviewed": false },
+        { "text": "Керемет жұмыс", "rom": "Keremet jumys", "reviewed": false },
+        { "text": "Жақсы істедің", "rom": "Jaqsy istediň", "reviewed": false }
       ]
     },
     "hi": {

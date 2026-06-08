@@ -75,6 +75,14 @@
         { "text": "Здравствуйте", "rom": "zdravstvuyte", "tone": "polite", "note": "Formal; to elders, strangers, or in writing.", "reviewed": true }
       ]
     },
+    "uk": {
+      "gloss": "привітання",
+      "variants": [
+        { "text": "Привіт", "rom": "Pryvit", "tone": "casual", "reviewed": false },
+        { "text": "Вітаю", "rom": "Vitaiu", "tone": "neutral", "note": "Slightly warmer, works with anyone.", "reviewed": false },
+        { "text": "Доброго дня", "rom": "Dobroho dnia", "tone": "polite", "note": "Lit. \"good day\" — polite.", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "powitanie",
       "variants": [
@@ -87,6 +95,14 @@
       "variants": [
         { "text": "Merhaba", "reviewed": false },
         { "text": "Selam", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "сәлемдесу",
+      "variants": [
+        { "text": "Сәлем", "rom": "Sälem", "tone": "casual", "reviewed": false },
+        { "text": "Сәлеметсіз бе", "rom": "Sälemetsiz be", "tone": "polite", "note": "Polite; to elders or strangers.", "reviewed": false },
+        { "text": "Ассалаумағалейкум", "rom": "Assalaumağaleikum", "tone": "polite", "note": "Traditional Muslim greeting.", "reviewed": false }
       ]
     },
     "hi": {

@@ -73,6 +73,14 @@
         { "text": "Большое спасибо", "rom": "bol'shoe spasibo", "note": "Lit. “big thanks” — warmer.", "reviewed": true }
       ]
     },
+    "uk": {
+      "gloss": "подяка",
+      "variants": [
+        { "text": "Дякую", "rom": "Diakuiu", "reviewed": false },
+        { "text": "Дуже дякую", "rom": "Duzhe diakuiu", "note": "Lit. \"thank you very much.\"", "reviewed": false },
+        { "text": "Спасибі", "rom": "Spasybi", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "podziękowanie",
       "variants": [
@@ -86,6 +94,14 @@
         { "text": "Teşekkür ederim", "note": "Lit. \"I thank (you).\"", "reviewed": false },
         { "text": "Teşekkürler", "tone": "neutral", "note": "Shorter, everyday.", "reviewed": false },
         { "text": "Sağ ol", "tone": "casual", "note": "Lit. \"be well\" — warm, friendly.", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "алғыс",
+      "variants": [
+        { "text": "Рахмет", "rom": "Rahmet", "reviewed": false },
+        { "text": "Көп рахмет", "rom": "Köp rahmet", "note": "Lit. \"many thanks.\"", "reviewed": false },
+        { "text": "Рахмет сізге", "rom": "Rahmet sizge", "tone": "polite", "reviewed": false }
       ]
     },
     "hi": {

@@ -75,6 +75,13 @@
         { "text": "Прикольно", "rom": "prikol'no", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "круто",
+      "variants": [
+        { "text": "Так круто", "rom": "Tak kruto", "tone": "casual", "reviewed": false },
+        { "text": "Це круто", "rom": "Tse kruto", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "spoko",
       "variants": [
@@ -87,6 +94,13 @@
       "variants": [
         { "text": "Havalı", "reviewed": false },
         { "text": "Çok cool", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "зор",
+      "variants": [
+        { "text": "Керемет екен", "rom": "Keremet eken", "tone": "casual", "reviewed": false },
+        { "text": "Зор", "rom": "Zor", "tone": "casual", "note": "Lit. \"great / huge.\"", "reviewed": false }
       ]
     },
     "hi": {

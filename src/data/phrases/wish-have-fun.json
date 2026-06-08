@@ -70,6 +70,13 @@
         { "text": "Веселись", "rom": "veselis'", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "гарно повеселися",
+      "variants": [
+        { "text": "Гарно повеселися", "rom": "Harno poveselysia", "reviewed": false },
+        { "text": "Розважайся", "rom": "Rozvazhaisia", "note": "Lit. \"enjoy yourself.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "baw się dobrze",
       "variants": [
@@ -82,6 +89,13 @@
       "variants": [
         { "text": "İyi eğlenceler", "reviewed": false },
         { "text": "Eğlenmene bak", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "көңілді демал",
+      "variants": [
+        { "text": "Көңілді демал", "rom": "Köňildi demal", "note": "Lit. \"rest happily.\"", "reviewed": false },
+        { "text": "Жақсы уақыт өткіз", "rom": "Jaqsy uaqyt ötkiz", "note": "Lit. \"spend a good time.\"", "reviewed": false }
       ]
     },
     "hi": {

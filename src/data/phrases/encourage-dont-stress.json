@@ -74,6 +74,14 @@
         { "text": "Расслабься", "rom": "rasslab'sya", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "не нервуй",
+      "variants": [
+        { "text": "Не нервуй", "rom": "Ne nervui", "reviewed": false },
+        { "text": "Розслабся", "rom": "Rozslabsia", "tone": "casual", "reviewed": false },
+        { "text": "Не хвилюйся", "rom": "Ne khvyliuisia", "note": "Lit. \"don't worry.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "nie stresuj się",
       "variants": [
@@ -86,6 +94,13 @@
       "variants": [
         { "text": "Stres yapma", "reviewed": false },
         { "text": "Sakin ol", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "сабыр сақта",
+      "variants": [
+        { "text": "Қобалжыма", "rom": "Qobaljyma", "note": "Lit. \"don't fret.\"", "reviewed": false },
+        { "text": "Сабыр сақта", "rom": "Sabyr saqta", "note": "Lit. \"keep calm.\"", "reviewed": false }
       ]
     },
     "hi": {

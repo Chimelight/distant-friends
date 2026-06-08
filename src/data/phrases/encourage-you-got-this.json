@@ -79,6 +79,14 @@
         { "text": "Давай", "rom": "davay", "tone": "casual", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "ти зможеш",
+      "variants": [
+        { "text": "Ти зможеш", "rom": "Ty zmozhesh", "reviewed": false },
+        { "text": "Тримайся", "rom": "Trymaisia", "note": "Lit. \"hold on.\"", "reviewed": false },
+        { "text": "Давай", "rom": "Davai", "tone": "casual", "note": "Encouraging \"come on.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "dasz radę",
       "variants": [
@@ -91,6 +99,14 @@
       "variants": [
         { "text": "Sen yaparsın", "reviewed": false },
         { "text": "Hadi", "tone": "casual", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "сен қолыңнан келеді",
+      "variants": [
+        { "text": "Сен жасай аласың", "rom": "Sen jasai alasyň", "note": "Lit. \"you can do it.\"", "reviewed": false },
+        { "text": "Қолыңнан келеді", "rom": "Qolyňnan keledi", "note": "Lit. \"it's within your hands.\"", "reviewed": false },
+        { "text": "Қайрат қыл", "rom": "Qairat qyl", "tone": "casual", "note": "Lit. \"make effort\" — hang in there.", "reviewed": false }
       ]
     },
     "hi": {

@@ -76,6 +76,14 @@
         { "text": "Минутку", "rom": "minutku", "note": "Lit. \"a minute.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "зачекай",
+      "variants": [
+        { "text": "Зачекай", "rom": "Zachekai", "reviewed": false },
+        { "text": "Хвилинку", "rom": "Khvylynku", "note": "Lit. \"a minute.\"", "reviewed": false },
+        { "text": "Стривай", "rom": "Stryvai", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "czekaj",
       "variants": [
@@ -88,6 +96,14 @@
       "variants": [
         { "text": "Bekle", "reviewed": false },
         { "text": "Bir dakika", "note": "Lit. \"one minute.\"", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "тоқта",
+      "variants": [
+        { "text": "Тоқташы", "rom": "Toqtaşy", "tone": "casual", "note": "Lit. \"wait.\"", "reviewed": false },
+        { "text": "Бір минут", "rom": "Bir minut", "note": "Lit. \"one minute.\"", "reviewed": false },
+        { "text": "Сәл күте тұр", "rom": "Säl küte tur", "note": "Lit. \"wait a bit.\"", "reviewed": false }
       ]
     },
     "hi": {

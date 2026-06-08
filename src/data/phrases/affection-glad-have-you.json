@@ -77,6 +77,14 @@
         { "text": "Я рада, что ты со мной", "rom": "ya rada, chto ty so mnoy", "speakerGender": "f", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "добре, що ти є",
+      "variants": [
+        { "text": "Добре, що ти є", "rom": "Dobre, shcho ty ye", "reviewed": false },
+        { "text": "Я радий, що ти поруч", "rom": "Ya radyi, shcho ty poruch", "speakerGender": "m", "reviewed": false },
+        { "text": "Я рада, що ти поруч", "rom": "Ya rada, shcho ty poruch", "speakerGender": "f", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "dobrze, że jesteś",
       "variants": [
@@ -89,6 +97,13 @@
       "variants": [
         { "text": "İyi ki varsın", "reviewed": false },
         { "text": "Seni tanıdığıma sevindim", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "жақсы, сен барсың",
+      "variants": [
+        { "text": "Сен болғаның жақсы", "rom": "Sen bolğanyň jaqsy", "note": "Lit. \"good that you exist.\"", "reviewed": false },
+        { "text": "Сені танығаныма қуаныштымын", "rom": "Seni tanyğanyma quanyştymyn", "note": "Lit. \"glad I met you.\"", "reviewed": false }
       ]
     },
     "hi": {

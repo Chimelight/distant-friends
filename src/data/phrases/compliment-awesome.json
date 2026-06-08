@@ -73,6 +73,13 @@
         { "text": "Огонь", "rom": "ogon'", "tone": "casual", "note": "Lit. \"fire\" — slangy \"fire.\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "клас",
+      "variants": [
+        { "text": "Клас", "rom": "Klas", "tone": "casual", "reviewed": false },
+        { "text": "Це круто", "rom": "Tse kruto", "tone": "casual", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "super",
       "variants": [
@@ -85,6 +92,13 @@
       "variants": [
         { "text": "Süper", "reviewed": false },
         { "text": "Müthiş", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "тамаша",
+      "variants": [
+        { "text": "Тамаша", "rom": "Tamaşa", "reviewed": false },
+        { "text": "Өте керемет", "rom": "Öte keremet", "reviewed": false }
       ]
     },
     "hi": {

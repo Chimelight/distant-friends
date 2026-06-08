@@ -76,6 +76,14 @@
         { "text": "Ничего себе", "rom": "nichego sebe", "note": "Lit. \"nothing to oneself\" — \"no way!\"", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "вау",
+      "variants": [
+        { "text": "Вау", "rom": "Vau", "reviewed": false },
+        { "text": "Ого", "rom": "Oho", "reviewed": false },
+        { "text": "Нічого собі", "rom": "Nichoho sobi", "tone": "casual", "note": "Exclamation of surprise — \"wow.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "wow",
       "variants": [
@@ -88,6 +96,14 @@
       "variants": [
         { "text": "Vay", "reviewed": false },
         { "text": "Vay canına", "note": "Lit. \"vay to your soul\" — fond surprise.", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "пах",
+      "variants": [
+        { "text": "Пах", "rom": "Pah", "reviewed": false },
+        { "text": "Оһо", "rom": "Oho", "reviewed": false },
+        { "text": "Қарай гөр", "rom": "Qarai gör", "tone": "casual", "note": "Lit. \"look at that.\"", "reviewed": false }
       ]
     },
     "hi": {

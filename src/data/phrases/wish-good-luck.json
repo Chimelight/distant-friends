@@ -71,6 +71,13 @@
         { "text": "Желаю удачи", "rom": "zhelayu udachi", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "удачі",
+      "variants": [
+        { "text": "Удачі", "rom": "Udachi", "reviewed": false },
+        { "text": "Хай щастить", "rom": "Khai shchastyt'", "note": "Lit. \"may you have luck.\"", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "powodzenia",
       "variants": [
@@ -82,6 +89,13 @@
       "variants": [
         { "text": "Bol şans", "reviewed": false },
         { "text": "İyi şanslar", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "сәттілік",
+      "variants": [
+        { "text": "Сәттілік тілеймін", "rom": "Sättilik tileimin", "reviewed": false },
+        { "text": "Жолың болсын", "rom": "Jolyň bolsyn", "tone": "casual", "note": "Lit. \"may your road go well.\"", "reviewed": false }
       ]
     },
     "hi": {

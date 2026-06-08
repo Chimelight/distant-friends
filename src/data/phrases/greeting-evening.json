@@ -65,6 +65,13 @@
         { "text": "Добрый вечер", "rom": "dobryĭ vecher", "reviewed": false }
       ]
     },
+    "uk": {
+      "gloss": "вечірнє привітання",
+      "variants": [
+        { "text": "Доброго вечора", "rom": "Dobroho vechora", "reviewed": false },
+        { "text": "Добрий вечір", "rom": "Dobryi vechir", "reviewed": false }
+      ]
+    },
     "pl": {
       "gloss": "powitanie wieczorne",
       "variants": [
@@ -75,6 +82,12 @@
       "gloss": "akşam selamı",
       "variants": [
         { "text": "İyi akşamlar", "reviewed": false }
+      ]
+    },
+    "kk": {
+      "gloss": "кешкі сәлем",
+      "variants": [
+        { "text": "Қайырлы кеш", "rom": "Qaiyrly keş", "reviewed": false }
       ]
     },
     "hi": {
