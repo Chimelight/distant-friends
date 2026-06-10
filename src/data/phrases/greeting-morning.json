@@ -6,144 +6,144 @@
     "zh": {
       "gloss": "早安",
       "variants": [
-        { "text": "早上好", "rom": "zǎoshang hǎo", "reviewed": false },
-        { "text": "早", "rom": "zǎo", "tone": "casual", "note": "Short and friendly.", "reviewed": false },
-        { "text": "早安", "rom": "zǎo'ān", "note": "Common in Taiwan; warmer.", "reviewed": false }
+        { "text": "早上好", "rom": "zǎoshang hǎo" },
+        { "text": "早", "rom": "zǎo", "tone": "casual", "note": "Short and friendly." },
+        { "text": "早安", "rom": "zǎo'ān", "note": "Common in Taiwan; warmer." }
       ]
     },
     "ja": {
       "gloss": "朝の挨拶",
       "variants": [
-        { "text": "おはよう", "rom": "ohayō", "tone": "casual", "reviewed": false },
-        { "text": "おはようございます", "rom": "ohayō gozaimasu", "tone": "polite", "reviewed": false }
+        { "text": "おはよう", "rom": "ohayō", "tone": "casual" },
+        { "text": "おはようございます", "rom": "ohayō gozaimasu", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "아침 인사",
       "variants": [
-        { "text": "좋은 아침", "rom": "joeun achim", "tone": "casual", "note": "Lit. \"good morning.\"", "reviewed": false },
-        { "text": "좋은 아침이에요", "rom": "joeun achimieyo", "tone": "polite", "reviewed": false }
+        { "text": "좋은 아침", "rom": "joeun achim", "tone": "casual", "note": "Lit. \"good morning.\"" },
+        { "text": "좋은 아침이에요", "rom": "joeun achimieyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "morning greeting",
       "variants": [
-        { "text": "Good morning", "reviewed": false },
-        { "text": "Morning", "tone": "casual", "note": "Clipped, everyday casual.", "reviewed": false }
+        { "text": "Good morning" },
+        { "text": "Morning", "tone": "casual", "note": "Clipped, everyday casual." }
       ]
     },
     "de": {
       "gloss": "Morgengruß",
       "variants": [
-        { "text": "Guten Morgen", "reviewed": false },
-        { "text": "Morgen", "tone": "casual", "note": "Clipped form; everyday between friends.", "reviewed": false }
+        { "text": "Guten Morgen" },
+        { "text": "Morgen", "tone": "casual", "note": "Clipped form; everyday between friends." }
       ]
     },
     "es": {
       "gloss": "saludo matutino",
       "variants": [
-        { "text": "Buenos días", "note": "Covers morning through midday.", "reviewed": false }
+        { "text": "Buenos días", "note": "Covers morning through midday." }
       ]
     },
     "pt": {
       "gloss": "saudação matinal",
       "variants": [
-        { "text": "Bom dia", "reviewed": false }
+        { "text": "Bom dia" }
       ]
     },
     "fr": {
       "gloss": "salutation du matin",
       "variants": [
-        { "text": "Bonjour", "note": "Default morning/daytime greeting.", "reviewed": false }
+        { "text": "Bonjour", "note": "Default morning/daytime greeting." }
       ]
     },
     "it": {
       "gloss": "saluto del mattino",
       "variants": [
-        { "text": "Buongiorno", "note": "Lit. \"good day\"; standard morning greeting.", "reviewed": false }
+        { "text": "Buongiorno", "note": "Lit. \"good day\"; standard morning greeting." }
       ]
     },
     "ru": {
       "gloss": "утреннее приветствие",
       "variants": [
-        { "text": "Доброе утро", "rom": "dobroe utro", "reviewed": false }
+        { "text": "Доброе утро", "rom": "dobroe utro" }
       ]
     },
     "uk": {
       "gloss": "ранкове привітання",
       "variants": [
-        { "text": "Доброго ранку", "rom": "Dobroho ranku", "reviewed": false },
-        { "text": "Добрий ранок", "rom": "Dobryi ranok", "reviewed": false }
+        { "text": "Доброго ранку", "rom": "Dobroho ranku" },
+        { "text": "Добрий ранок", "rom": "Dobryi ranok" }
       ]
     },
     "pl": {
       "gloss": "powitanie poranne",
       "variants": [
-        { "text": "Dzień dobry", "note": "Standard morning/daytime greeting; lit. \"good day.\"", "reviewed": false }
+        { "text": "Dzień dobry", "note": "Standard morning/daytime greeting; lit. \"good day.\"" }
       ]
     },
     "tr": {
       "gloss": "sabah selamı",
       "variants": [
-        { "text": "Günaydın", "note": "Lit. \"day-bright\"; everyday morning greeting.", "reviewed": false }
+        { "text": "Günaydın", "note": "Lit. \"day-bright\"; everyday morning greeting." }
       ]
     },
     "kk": {
       "gloss": "таңғы сәлем",
       "variants": [
-        { "text": "Қайырлы таң", "rom": "Qaiyrly taň", "reviewed": false },
-        { "text": "Таңың жақсы өтсін", "rom": "Taňyň jaqsy ötsin", "tone": "casual", "reviewed": false }
+        { "text": "Қайырлы таң", "rom": "Qaiyrly taň" },
+        { "text": "Таңың жақсы өтсін", "rom": "Taňyň jaqsy ötsin", "tone": "casual" }
       ]
     },
     "hi": {
       "gloss": "सुबह का अभिवादन",
       "variants": [
-        { "text": "सुप्रभात", "rom": "suprabhāt", "tone": "polite", "note": "Sanskritic; formal.", "reviewed": false },
-        { "text": "गुड मॉर्निंग", "rom": "gud mŏrning", "tone": "casual", "note": "English-borrowed; common in everyday Hindi.", "reviewed": false }
+        { "text": "सुप्रभात", "rom": "suprabhāt", "tone": "polite", "note": "Sanskritic; formal." },
+        { "text": "गुड मॉर्निंग", "rom": "gud mŏrning", "tone": "casual", "note": "English-borrowed; common in everyday Hindi." }
       ]
     },
     "bn": {
       "gloss": "সকালের শুভেচ্ছা",
       "variants": [
-        { "text": "সুপ্রভাত", "rom": "suprôbhat", "tone": "polite", "note": "Sanskritic; formal.", "reviewed": false },
-        { "text": "শুভ সকাল", "rom": "śubho śôkal", "note": "Lit. \"good morning.\"", "reviewed": false }
+        { "text": "সুপ্রভাত", "rom": "suprôbhat", "tone": "polite", "note": "Sanskritic; formal." },
+        { "text": "শুভ সকাল", "rom": "śubho śôkal", "note": "Lit. \"good morning.\"" }
       ]
     },
     "id": {
       "gloss": "salam pagi",
       "variants": [
-        { "text": "Selamat pagi", "reviewed": false }
+        { "text": "Selamat pagi" }
       ]
     },
     "ms": {
       "gloss": "salam pagi",
       "variants": [
-        { "text": "Selamat pagi", "reviewed": false }
+        { "text": "Selamat pagi" }
       ]
     },
     "fil": {
       "gloss": "pagbati sa umaga",
       "variants": [
-        { "text": "Magandang umaga", "reviewed": false }
+        { "text": "Magandang umaga" }
       ]
     },
     "vi": {
       "gloss": "chào buổi sáng",
       "variants": [
-        { "text": "Chào buổi sáng", "reviewed": false }
+        { "text": "Chào buổi sáng" }
       ]
     },
     "th": {
       "gloss": "ทักทายตอนเช้า",
       "variants": [
-        { "text": "อรุณสวัสดิ์", "rom": "arun sawat", "tone": "polite", "note": "Sanskritic; formal/literary.", "reviewed": false },
-        { "text": "สวัสดีตอนเช้า", "rom": "sawatdee ton chao", "note": "Standard morning greeting.", "reviewed": false }
+        { "text": "อรุณสวัสดิ์", "rom": "arun sawat", "tone": "polite", "note": "Sanskritic; formal/literary." },
+        { "text": "สวัสดีตอนเช้า", "rom": "sawatdee ton chao", "note": "Standard morning greeting." }
       ]
     },
     "mizo": {
       "gloss": "zîngkâr chibai",
       "variants": [
-        { "text": "Zîngkâr ṭha", "note": "Lit. \"good morning.\"", "reviewed": false }
+        { "text": "Zîngkâr ṭha", "note": "Lit. \"good morning.\"" }
       ]
     }
   }

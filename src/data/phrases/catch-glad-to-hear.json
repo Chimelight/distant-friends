@@ -1,0 +1,147 @@
+{
+  "id": "catch-glad-to-hear",
+  "scene": "catching-up",
+  "order": 3,
+  "trans": {
+    "zh": {
+      "gloss": "那就好",
+      "variants": [
+        { "text": "那就好", "rom": "nà jiù hǎo" },
+        { "text": "那我就放心了", "rom": "nà wǒ jiù fàngxīn le", "note": "Lit. \"then I'm relieved.\"" }
+      ]
+    },
+    "ja": {
+      "gloss": "よかった",
+      "variants": [
+        { "text": "それはよかった", "rom": "sore wa yokatta", "note": "Lit. \"that's good (to hear).\"" }
+      ]
+    },
+    "ko": {
+      "gloss": "다행이다",
+      "variants": [
+        { "text": "다행이다", "rom": "dahaengida", "tone": "casual", "note": "Lit. \"what a relief.\"" },
+        { "text": "다행이네요", "rom": "dahaengineyo", "tone": "polite" }
+      ]
+    },
+    "en": {
+      "gloss": "glad to hear that",
+      "variants": [
+        { "text": "Glad to hear that" },
+        { "text": "Good to hear", "tone": "casual" }
+      ]
+    },
+    "de": {
+      "gloss": "schön zu hören",
+      "variants": [
+        { "text": "Schön zu hören" },
+        { "text": "Das freut mich", "note": "Lit. \"that pleases me.\"" }
+      ]
+    },
+    "es": {
+      "gloss": "me alegro",
+      "variants": [
+        { "text": "Me alegro", "note": "Lit. \"I'm glad.\"" },
+        { "text": "Qué bueno", "tone": "casual" }
+      ]
+    },
+    "pt": {
+      "gloss": "que bom",
+      "variants": [
+        { "text": "Que bom", "note": "Lit. \"how good.\"" },
+        { "text": "Fico feliz", "note": "Lit. \"I'm happy (to hear it).\"" }
+      ]
+    },
+    "fr": {
+      "gloss": "tant mieux",
+      "variants": [
+        { "text": "Tant mieux", "note": "Lit. \"all the better\" — the standard glad-to-hear-it." }
+      ]
+    },
+    "it": {
+      "gloss": "mi fa piacere",
+      "variants": [
+        { "text": "Mi fa piacere", "note": "Lit. \"it pleases me.\"" }
+      ]
+    },
+    "ru": {
+      "gloss": "рад слышать",
+      "variants": [
+        { "text": "Рад слышать", "rom": "rad slyshat'", "speakerGender": "m" },
+        { "text": "Рада слышать", "rom": "rada slyshat'", "speakerGender": "f" }
+      ]
+    },
+    "uk": {
+      "gloss": "радий чути",
+      "variants": [
+        { "text": "Радий чути", "rom": "Radyi chuty", "speakerGender": "m" },
+        { "text": "Рада чути", "rom": "Rada chuty", "speakerGender": "f" }
+      ]
+    },
+    "pl": {
+      "gloss": "miło słyszeć",
+      "variants": [
+        { "text": "Miło słyszeć", "note": "Lit. \"nice to hear.\"" }
+      ]
+    },
+    "tr": {
+      "gloss": "sevindim",
+      "variants": [
+        { "text": "Sevindim", "note": "Lit. \"I'm glad (to hear it).\"" }
+      ]
+    },
+    "kk": {
+      "gloss": "жақсы екен",
+      "variants": [
+        { "text": "Жақсы екен", "rom": "Jaqsy eken", "note": "Lit. \"that's good (then).\"" }
+      ]
+    },
+    "hi": {
+      "gloss": "सुनकर अच्छा लगा",
+      "variants": [
+        { "text": "यह सुनकर अच्छा लगा", "rom": "yeh sunkar achchhā lagā", "note": "Lit. \"felt good hearing this.\"" }
+      ]
+    },
+    "bn": {
+      "gloss": "শুনে ভালো লাগল",
+      "variants": [
+        { "text": "শুনে ভালো লাগল", "rom": "shune bhalo laglo", "note": "Lit. \"felt good to hear.\"" }
+      ]
+    },
+    "id": {
+      "gloss": "syukurlah",
+      "variants": [
+        { "text": "Syukurlah", "note": "Lit. \"thank goodness.\"" }
+      ]
+    },
+    "ms": {
+      "gloss": "baguslah",
+      "variants": [
+        { "text": "Baguslah", "note": "Lit. \"that's good then.\"" }
+      ]
+    },
+    "fil": {
+      "gloss": "buti naman",
+      "variants": [
+        { "text": "Buti naman", "note": "Lit. \"that's good (to hear).\"" }
+      ]
+    },
+    "vi": {
+      "gloss": "vậy thì tốt rồi",
+      "variants": [
+        { "text": "Vậy thì tốt rồi", "note": "Lit. \"then that's good.\"" }
+      ]
+    },
+    "th": {
+      "gloss": "ดีใจด้วย",
+      "variants": [
+        { "text": "ดีใจด้วย", "rom": "dee jai duai", "note": "Lit. \"glad with you.\"" }
+      ]
+    },
+    "mizo": {
+      "gloss": "a tha khawp mai",
+      "variants": [
+        { "text": "A tha khawp mai", "note": "Lit. \"that's really good (to hear).\"" }
+      ]
+    }
+  }
+}

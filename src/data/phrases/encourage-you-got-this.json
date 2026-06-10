@@ -6,161 +6,153 @@
     "zh": {
       "gloss": "加油",
       "variants": [
-        { "text": "加油", "rom": "jiāyóu", "reviewed": false },
-        { "text": "你可以的", "rom": "nǐ kěyǐ de", "reviewed": false }
+        { "text": "加油", "rom": "jiāyóu" },
+        { "text": "你可以的", "rom": "nǐ kěyǐ de" }
       ]
     },
     "ja": {
       "gloss": "頑張って",
       "variants": [
-        { "text": "頑張って", "rom": "ganbatte", "reviewed": false },
-        { "text": "ファイト", "rom": "faito", "tone": "casual", "reviewed": false }
+        { "text": "頑張って", "rom": "ganbatte" },
+        { "text": "ファイト", "rom": "faito", "tone": "casual" }
       ]
     },
     "ko": {
       "gloss": "힘내",
       "variants": [
-        { "text": "힘내", "rom": "himnae", "tone": "casual", "reviewed": false },
-        { "text": "파이팅", "rom": "paiting", "tone": "casual", "reviewed": false }
+        { "text": "힘내", "rom": "himnae", "tone": "casual" },
+        { "text": "파이팅", "rom": "paiting", "tone": "casual" },
+        { "text": "힘내세요", "rom": "himnaeseyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "you got this",
       "variants": [
-        { "text": "You got this", "tone": "casual", "reviewed": false },
-        { "text": "You can do it", "reviewed": false },
-        { "text": "Hang in there", "reviewed": false }
+        { "text": "You got this", "tone": "casual" },
+        { "text": "Hang in there" }
       ]
     },
     "de": {
       "gloss": "du schaffst das",
       "variants": [
-        { "text": "Du schaffst das", "reviewed": false },
-        { "text": "Komm schon", "tone": "casual", "reviewed": false }
+        { "text": "Du schaffst das" },
+        { "text": "Komm schon", "tone": "casual" }
       ]
     },
     "es": {
       "gloss": "tú puedes",
       "variants": [
-        { "text": "Tú puedes", "reviewed": false },
-        { "text": "Vamos", "reviewed": false },
-        { "text": "Ánimo", "reviewed": false }
+        { "text": "Tú puedes" },
+        { "text": "Ánimo" }
       ]
     },
     "pt": {
       "gloss": "você consegue",
       "variants": [
-        { "text": "Você consegue", "reviewed": false },
-        { "text": "Vai conseguir", "reviewed": false },
-        { "text": "Força", "reviewed": false }
+        { "text": "Você consegue" },
+        { "text": "Força" }
       ]
     },
     "fr": {
       "gloss": "tu peux le faire",
       "variants": [
-        { "text": "Tu peux le faire", "reviewed": false },
-        { "text": "Allez", "reviewed": false },
-        { "text": "Courage", "reviewed": false }
+        { "text": "Tu peux le faire" },
+        { "text": "Courage" }
       ]
     },
     "it": {
       "gloss": "ce la fai",
       "variants": [
-        { "text": "Ce la fai", "reviewed": false },
-        { "text": "Forza", "reviewed": false },
-        { "text": "Dai", "reviewed": false }
+        { "text": "Ce la fai" },
+        { "text": "Forza" }
       ]
     },
     "ru": {
       "gloss": "ты сможешь",
       "variants": [
-        { "text": "Ты сможешь", "rom": "ty smozhesh'", "reviewed": false },
-        { "text": "Держись", "rom": "derzhis'", "reviewed": false },
-        { "text": "Давай", "rom": "davay", "tone": "casual", "reviewed": false }
+        { "text": "Ты сможешь", "rom": "ty smozhesh'" },
+        { "text": "Держись", "rom": "derzhis'" }
       ]
     },
     "uk": {
       "gloss": "ти зможеш",
       "variants": [
-        { "text": "Ти зможеш", "rom": "Ty zmozhesh", "reviewed": false },
-        { "text": "Тримайся", "rom": "Trymaisia", "note": "Lit. \"hold on.\"", "reviewed": false },
-        { "text": "Давай", "rom": "Davai", "tone": "casual", "note": "Encouraging \"come on.\"", "reviewed": false }
+        { "text": "Ти зможеш", "rom": "Ty zmozhesh" },
+        { "text": "Давай", "rom": "Davai", "tone": "casual", "note": "Encouraging \"come on.\"" }
       ]
     },
     "pl": {
       "gloss": "dasz radę",
       "variants": [
-        { "text": "Dasz radę", "reviewed": false },
-        { "text": "Powodzenia", "reviewed": false }
+        { "text": "Dasz radę" }
       ]
     },
     "tr": {
       "gloss": "sen yaparsın",
       "variants": [
-        { "text": "Sen yaparsın", "reviewed": false },
-        { "text": "Hadi", "tone": "casual", "reviewed": false }
+        { "text": "Sen yaparsın" },
+        { "text": "Hadi", "tone": "casual" }
       ]
     },
     "kk": {
       "gloss": "сен қолыңнан келеді",
       "variants": [
-        { "text": "Сен жасай аласың", "rom": "Sen jasai alasyň", "note": "Lit. \"you can do it.\"", "reviewed": false },
-        { "text": "Қолыңнан келеді", "rom": "Qolyňnan keledi", "note": "Lit. \"it's within your hands.\"", "reviewed": false },
-        { "text": "Қайрат қыл", "rom": "Qairat qyl", "tone": "casual", "note": "Lit. \"make effort\" — hang in there.", "reviewed": false }
+        { "text": "Сен жасай аласың", "rom": "Sen jasai alasyň", "note": "Lit. \"you can do it.\"" },
+        { "text": "Қолыңнан келеді", "rom": "Qolyňnan keledi", "note": "Lit. \"it's within your hands.\"" }
       ]
     },
     "hi": {
       "gloss": "तुम कर सकते हो",
       "variants": [
-        { "text": "तुम कर सकते हो", "rom": "tum kar sakte ho", "addresseeGender": "m", "reviewed": false },
-        { "text": "तुम कर सकती हो", "rom": "tum kar saktī ho", "addresseeGender": "f", "reviewed": false }
+        { "text": "तुम कर सकते हो", "rom": "tum kar sakte ho", "addresseeGender": "m" },
+        { "text": "तुम कर सकती हो", "rom": "tum kar saktī ho", "addresseeGender": "f" }
       ]
     },
     "bn": {
       "gloss": "তুমি পারবে",
       "variants": [
-        { "text": "তুমি পারবে", "rom": "tumi pārbe", "reviewed": false }
+        { "text": "তুমি পারবে", "rom": "tumi pārbe" }
       ]
     },
     "id": {
       "gloss": "kamu pasti bisa",
       "variants": [
-        { "text": "Kamu pasti bisa", "reviewed": false },
-        { "text": "Semangat", "reviewed": false }
+        { "text": "Kamu pasti bisa" },
+        { "text": "Semangat" }
       ]
     },
     "ms": {
       "gloss": "awak boleh",
       "variants": [
-        { "text": "Awak boleh", "reviewed": false },
-        { "text": "Semangat", "reviewed": false }
+        { "text": "Awak boleh" },
+        { "text": "Semangat" }
       ]
     },
     "fil": {
       "gloss": "kaya mo yan",
       "variants": [
-        { "text": "Kaya mo yan", "reviewed": false },
-        { "text": "Laban", "reviewed": false }
+        { "text": "Kaya mo yan" },
+        { "text": "Laban" }
       ]
     },
     "vi": {
       "gloss": "bạn làm được",
       "variants": [
-        { "text": "Bạn làm được", "reviewed": false },
-        { "text": "Cố lên", "reviewed": false }
+        { "text": "Bạn làm được" },
+        { "text": "Cố lên" }
       ]
     },
     "th": {
       "gloss": "สู้ๆ",
       "variants": [
-        { "text": "สู้ๆ", "rom": "su su", "reviewed": false },
-        { "text": "คุณทำได้", "rom": "khun tham dai", "reviewed": false }
+        { "text": "สู้ๆ", "rom": "su su" },
+        { "text": "คุณทำได้", "rom": "khun tham dai" }
       ]
     },
     "mizo": {
       "gloss": "i theih",
       "variants": [
-        { "text": "I theih ang", "note": "Lit. \"you will be able to.\"", "reviewed": false }
+        { "text": "I theih ang", "note": "Lit. \"you will be able to.\"" }
       ]
     }
   }

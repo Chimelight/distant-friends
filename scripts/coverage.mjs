@@ -31,7 +31,6 @@ console.log('-'.repeat(head.length));
 
 let totalCells = 0;
 let filledCells = 0;
-let unreviewedCells = 0;
 const tally = { speakerGender: 0, addresseeGender: 0, addresseeCount: 0 };
 
 for (const p of phrases) {
@@ -44,7 +43,6 @@ for (const p of phrases) {
       if (v.speakerGender) tally.speakerGender++;
       if (v.addresseeGender) tally.addresseeGender++;
       if (v.addresseeCount) tally.addresseeCount++;
-      if (v.reviewed === false) unreviewedCells++;
     }
     return variants.length ? '✓' : '·';
   });
@@ -54,9 +52,6 @@ for (const p of phrases) {
 console.log();
 const pct = ((filledCells / totalCells) * 100).toFixed(1);
 console.log(`Coverage: ${filledCells} / ${totalCells} cells (${pct}%)`);
-if (unreviewedCells) {
-  console.log(`Unreviewed variants: ${unreviewedCells}`);
-}
 
 console.log();
 console.log('Per language:');

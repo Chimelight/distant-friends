@@ -6,162 +6,161 @@
     "zh": {
       "gloss": "近况",
       "variants": [
-        { "text": "你好吗", "rom": "nǐ hǎo ma", "reviewed": true },
-        { "text": "最近怎么样", "rom": "zuìjìn zěnmeyàng", "reviewed": true },
-        { "text": "还好吗", "rom": "hái hǎo ma", "tone": "casual", "reviewed": true },
-        { "text": "一切还好吗", "rom": "yīqiè hái hǎo ma", "reviewed": false }
+        { "text": "你好吗", "rom": "nǐ hǎo ma" },
+        { "text": "最近怎么样", "rom": "zuìjìn zěnmeyàng" },
+        { "text": "还好吗", "rom": "hái hǎo ma", "tone": "casual" }
       ]
     },
     "ja": {
       "gloss": "様子を尋ねる",
       "variants": [
-        { "text": "元気？", "rom": "genki?", "tone": "casual", "note": "Lit. \"are you well?\"", "reviewed": false },
-        { "text": "お元気ですか", "rom": "ogenki desu ka", "tone": "polite", "reviewed": false }
+        { "text": "元気？", "rom": "genki?", "tone": "casual", "note": "Lit. \"are you well?\"" },
+        { "text": "お元気ですか", "rom": "ogenki desu ka", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "안부",
       "variants": [
-        { "text": "잘 지내?", "rom": "jal jinae?", "tone": "casual", "reviewed": false },
-        { "text": "잘 지내세요?", "rom": "jal jinaeseyo?", "tone": "polite", "reviewed": false }
+        { "text": "잘 지내?", "rom": "jal jinae?", "tone": "casual" },
+        { "text": "잘 지내세요?", "rom": "jal jinaeseyo?", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "checking in",
       "variants": [
-        { "text": "How are you?", "reviewed": true },
-        { "text": "How's it going?", "tone": "casual", "reviewed": false },
-        { "text": "How's everything?", "tone": "casual", "reviewed": false }
+        { "text": "How are you?" },
+        { "text": "How's it going?", "tone": "casual" },
+        { "text": "How's everything?", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "wie es jemandem geht",
       "variants": [
-        { "text": "Wie geht's?", "tone": "casual", "note": "Contracted, everyday between friends.", "reviewed": false },
-        { "text": "Wie geht es dir?", "reviewed": false },
-        { "text": "Wie geht es Ihnen?", "tone": "polite", "note": "Formal Sie-form to elders or strangers.", "reviewed": false }
+        { "text": "Wie geht's?", "tone": "casual", "note": "Contracted, everyday between friends." },
+        { "text": "Wie geht es dir?" },
+        { "text": "Wie geht es Ihnen?", "tone": "polite", "note": "Formal Sie-form to elders or strangers." }
       ]
     },
     "es": {
       "gloss": "preguntar cómo está",
       "variants": [
-        { "text": "¿Qué tal?", "tone": "casual", "reviewed": false },
-        { "text": "¿Cómo estás?", "reviewed": false }
+        { "text": "¿Qué tal?", "tone": "casual" },
+        { "text": "¿Cómo estás?" }
       ]
     },
     "pt": {
       "gloss": "saber como vai",
       "variants": [
-        { "text": "Tudo bem?", "reviewed": false }
+        { "text": "Tudo bem?" }
       ]
     },
     "fr": {
       "gloss": "prendre des nouvelles",
       "variants": [
-        { "text": "Ça va ?", "tone": "casual", "reviewed": false },
-        { "text": "Comment allez-vous ?", "tone": "polite", "reviewed": false }
+        { "text": "Ça va ?", "tone": "casual" },
+        { "text": "Comment allez-vous ?", "tone": "polite" }
       ]
     },
     "it": {
       "gloss": "chiedere come sta",
       "variants": [
-        { "text": "Come stai?", "reviewed": false },
-        { "text": "Come va?", "tone": "casual", "note": "Lit. \"how's it going?\"", "reviewed": false },
-        { "text": "Come sta?", "tone": "polite", "note": "Formal Lei-form to strangers or seniors.", "reviewed": false }
+        { "text": "Come stai?" },
+        { "text": "Come va?", "tone": "casual", "note": "Lit. \"how's it going?\"" },
+        { "text": "Come sta?", "tone": "polite", "note": "Formal Lei-form to strangers or seniors." }
       ]
     },
     "ru": {
       "gloss": "узнать, как дела",
       "variants": [
-        { "text": "Как дела?", "rom": "kak dela?", "note": "Lit. “how are things?” — the standard opener.", "reviewed": true },
-        { "text": "Как ты?", "rom": "kak ty?", "tone": "casual", "note": "Warmer, between friends.", "reviewed": true },
-        { "text": "Как Вы?", "rom": "kak Vy?", "tone": "polite", "note": "Formal Vy-form.", "reviewed": true }
+        { "text": "Как дела?", "rom": "kak dela?", "note": "Lit. “how are things?” — the standard opener." },
+        { "text": "Как ты?", "rom": "kak ty?", "tone": "casual", "note": "Warmer, between friends." },
+        { "text": "Как Вы?", "rom": "kak Vy?", "tone": "polite", "note": "Formal Vy-form." }
       ]
     },
     "uk": {
       "gloss": "запитати, як справи",
       "variants": [
-        { "text": "Як справи?", "rom": "Yak spravy?", "reviewed": false },
-        { "text": "Як ти?", "rom": "Yak ty?", "tone": "casual", "reviewed": false },
-        { "text": "Як ви?", "rom": "Yak vy?", "tone": "polite", "reviewed": false }
+        { "text": "Як справи?", "rom": "Yak spravy?" },
+        { "text": "Як ти?", "rom": "Yak ty?", "tone": "casual" },
+        { "text": "Як ви?", "rom": "Yak vy?", "tone": "polite" }
       ]
     },
     "pl": {
       "gloss": "pytać, co słychać",
       "variants": [
-        { "text": "Co u ciebie?", "tone": "casual", "note": "Lit. “what’s with you?” — friendly check-in.", "reviewed": true },
-        { "text": "Jak się masz?", "reviewed": true }
+        { "text": "Co u ciebie?", "tone": "casual", "note": "Lit. “what’s with you?” — friendly check-in." },
+        { "text": "Jak się masz?" }
       ]
     },
     "tr": {
       "gloss": "hâl hatır sormak",
       "variants": [
-        { "text": "Nasılsın?", "reviewed": false },
-        { "text": "Nasılsınız?", "tone": "polite", "note": "Formal siz-form to strangers or seniors.", "reviewed": false }
+        { "text": "Nasılsın?" },
+        { "text": "Nasılsınız?", "tone": "polite", "note": "Formal siz-form to strangers or seniors." }
       ]
     },
     "kk": {
       "gloss": "хал сұрау",
       "variants": [
-        { "text": "Қалайсың?", "rom": "Qalaisyň?", "tone": "casual", "reviewed": false },
-        { "text": "Хал-жағдайың қалай?", "rom": "Hal-jağdaiyň qalai?", "note": "Lit. \"how is your condition?\"", "reviewed": false },
-        { "text": "Қалайсыз?", "rom": "Qalaisyz?", "tone": "polite", "reviewed": false }
+        { "text": "Қалайсың?", "rom": "Qalaisyň?", "tone": "casual" },
+        { "text": "Хал-жағдайың қалай?", "rom": "Hal-jağdaiyň qalai?", "note": "Lit. \"how is your condition?\"" },
+        { "text": "Қалайсыз?", "rom": "Qalaisyz?", "tone": "polite" }
       ]
     },
     "hi": {
       "gloss": "कुशल पूछना",
       "variants": [
-        { "text": "कैसे हो?", "rom": "kaise ho?", "tone": "casual", "addresseeGender": "m", "note": "To a male friend.", "reviewed": true },
-        { "text": "कैसी हो?", "rom": "kaisī ho?", "tone": "casual", "addresseeGender": "f", "note": "To a female friend.", "reviewed": true },
-        { "text": "आप कैसे हो?", "rom": "āp kaise ho?", "tone": "polite", "note": "Polite āp-form, gender-neutral.", "reviewed": true }
+        { "text": "कैसे हो?", "rom": "kaise ho?", "tone": "casual", "addresseeGender": "m", "note": "To a male friend." },
+        { "text": "कैसी हो?", "rom": "kaisī ho?", "tone": "casual", "addresseeGender": "f", "note": "To a female friend." },
+        { "text": "आप कैसे हो?", "rom": "āp kaise ho?", "tone": "polite", "note": "Polite āp-form, gender-neutral." }
       ]
     },
     "bn": {
       "gloss": "খবর জিজ্ঞাসা",
       "variants": [
-        { "text": "কেমন আছ?", "rom": "kemon achho?", "note": "Standard “how are you” to friends.", "reviewed": true },
-        { "text": "কেমন আছেন?", "rom": "kemon achhen?", "tone": "polite", "reviewed": true }
+        { "text": "কেমন আছ?", "rom": "kemon achho?", "note": "Standard “how are you” to friends." },
+        { "text": "কেমন আছেন?", "rom": "kemon achhen?", "tone": "polite" }
       ]
     },
     "id": {
       "gloss": "menanyakan kabar",
       "variants": [
-        { "text": "Apa kabar?", "note": "Lit. \"what news?\"", "reviewed": false },
-        { "text": "Gimana kabarnya?", "tone": "casual", "note": "Colloquial; \"how's it going.\"", "reviewed": false }
+        { "text": "Apa kabar?", "note": "Lit. \"what news?\"" },
+        { "text": "Gimana kabarnya?", "tone": "casual", "note": "Colloquial; \"how's it going.\"" }
       ]
     },
     "ms": {
       "gloss": "bertanya khabar",
       "variants": [
-        { "text": "Apa khabar?", "note": "Lit. \"what news?\"", "reviewed": false },
-        { "text": "Macam mana?", "tone": "casual", "note": "Lit. \"how is it.\"", "reviewed": false }
+        { "text": "Apa khabar?", "note": "Lit. \"what news?\"" },
+        { "text": "Macam mana?", "tone": "casual", "note": "Lit. \"how is it.\"" }
       ]
     },
     "th": {
       "gloss": "ถามสารทุกข์สุกดิบ",
       "variants": [
-        { "text": "สบายดีไหม", "rom": "sabai dee mai", "note": "Lit. \"are you well?\"", "reviewed": false },
-        { "text": "เป็นยังไงบ้าง", "rom": "pen yang-ngai baang", "tone": "casual", "note": "Casual \"how's it going.\"", "reviewed": false }
+        { "text": "สบายดีไหม", "rom": "sabai dee mai", "note": "Lit. \"are you well?\"" },
+        { "text": "เป็นยังไงบ้าง", "rom": "pen yang-ngai baang", "tone": "casual", "note": "Casual \"how's it going.\"" }
       ]
     },
     "vi": {
       "gloss": "hỏi thăm",
       "variants": [
-        { "text": "Bạn khỏe không?", "note": "Lit. \"are you well?\"", "reviewed": false },
-        { "text": "Dạo này thế nào?", "tone": "casual", "note": "Lit. \"how have things been lately?\"", "reviewed": false }
+        { "text": "Bạn khỏe không?", "note": "Lit. \"are you well?\"" },
+        { "text": "Dạo này thế nào?", "tone": "casual", "note": "Lit. \"how have things been lately?\"" }
       ]
     },
     "fil": {
       "gloss": "pagtatanong ng kalagayan",
       "variants": [
-        { "text": "Kumusta ka?", "note": "Lit. \"how are you?\"", "reviewed": false },
-        { "text": "Kumusta na?", "tone": "casual", "note": "With na — softer reunion check-in.", "reviewed": false }
+        { "text": "Kumusta ka?", "note": "Lit. \"how are you?\"" },
+        { "text": "Kumusta na?", "tone": "casual", "note": "With na — softer reunion check-in." }
       ]
     },
     "mizo": {
       "gloss": "i dam em?",
       "variants": [
-        { "text": "I dam em?", "note": "Lit. “are you well?”", "reviewed": false }
+        { "text": "I dam em?", "note": "Lit. “are you well?”" }
       ]
     }
   }

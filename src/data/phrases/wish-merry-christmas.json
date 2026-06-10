@@ -1,140 +1,140 @@
 {
   "id": "wish-merry-christmas",
-  "scene": "well-wishes",
-  "order": 3,
+  "scene": "holidays",
+  "order": 5,
   "trans": {
     "zh": {
       "gloss": "圣诞快乐",
       "variants": [
-        { "text": "圣诞快乐", "rom": "shèngdàn kuàilè", "reviewed": false }
+        { "text": "圣诞快乐", "rom": "shèngdàn kuàilè" }
       ]
     },
     "ja": {
       "gloss": "メリークリスマス",
       "variants": [
-        { "text": "メリークリスマス", "rom": "merī kurisumasu", "reviewed": false }
+        { "text": "メリークリスマス", "rom": "merī kurisumasu" }
       ]
     },
     "ko": {
       "gloss": "메리 크리스마스",
       "variants": [
-        { "text": "메리 크리스마스", "rom": "meri keuriseumaseu", "reviewed": false }
+        { "text": "메리 크리스마스", "rom": "meri keuriseumaseu" }
       ]
     },
     "en": {
       "gloss": "merry christmas",
       "variants": [
-        { "text": "Merry Christmas", "reviewed": false }
+        { "text": "Merry Christmas" }
       ]
     },
     "de": {
       "gloss": "frohe Weihnachten",
       "variants": [
-        { "text": "Frohe Weihnachten", "reviewed": false }
+        { "text": "Frohe Weihnachten" }
       ]
     },
     "es": {
       "gloss": "feliz navidad",
       "variants": [
-        { "text": "Feliz Navidad", "reviewed": false }
+        { "text": "Feliz Navidad" }
       ]
     },
     "pt": {
       "gloss": "feliz natal",
       "variants": [
-        { "text": "Feliz Natal", "reviewed": false }
+        { "text": "Feliz Natal" }
       ]
     },
     "fr": {
       "gloss": "joyeux noël",
       "variants": [
-        { "text": "Joyeux Noël", "reviewed": false }
+        { "text": "Joyeux Noël" }
       ]
     },
     "it": {
       "gloss": "buon natale",
       "variants": [
-        { "text": "Buon Natale", "reviewed": false }
+        { "text": "Buon Natale" }
       ]
     },
     "ru": {
       "gloss": "с рождеством",
       "variants": [
-        { "text": "С Рождеством", "rom": "s Rozhdestvom", "reviewed": false }
+        { "text": "С Рождеством", "rom": "s Rozhdestvom" }
       ]
     },
     "uk": {
       "gloss": "з різдвом",
       "variants": [
-        { "text": "З Різдвом", "rom": "Z Rizdvom", "reviewed": false },
-        { "text": "Веселого Різдва", "rom": "Veseloho Rizdva", "note": "Lit. \"merry Christmas.\"", "reviewed": false }
+        { "text": "З Різдвом", "rom": "Z Rizdvom" },
+        { "text": "Веселого Різдва", "rom": "Veseloho Rizdva", "note": "Lit. \"merry Christmas.\"" }
       ]
     },
     "pl": {
       "gloss": "wesołych świąt",
       "variants": [
-        { "text": "Wesołych Świąt", "reviewed": false }
+        { "text": "Wesołych Świąt" }
       ]
     },
     "tr": {
       "gloss": "mutlu noeller",
       "variants": [
-        { "text": "Mutlu Noeller", "reviewed": false }
+        { "text": "Mutlu Noeller" }
       ]
     },
     "kk": {
       "gloss": "рождество құтты болсын",
       "variants": [
-        { "text": "Рождество құтты болсын", "rom": "Rojdestvo qutty bolsyn", "reviewed": false }
+        { "text": "Рождество құтты болсын", "rom": "Rojdestvo qutty bolsyn" }
       ]
     },
     "hi": {
       "gloss": "मेरी क्रिसमस",
       "variants": [
-        { "text": "मेरी क्रिसमस", "rom": "merī krismas", "reviewed": false }
+        { "text": "मेरी क्रिसमस", "rom": "merī krismas" }
       ]
     },
     "bn": {
       "gloss": "শুভ বড়দিন",
       "variants": [
-        { "text": "শুভ বড়দিন", "rom": "śubho bôṛodin", "reviewed": false }
+        { "text": "শুভ বড়দিন", "rom": "śubho bôṛodin" }
       ]
     },
     "id": {
       "gloss": "selamat natal",
       "variants": [
-        { "text": "Selamat Natal", "reviewed": false }
+        { "text": "Selamat Natal" }
       ]
     },
     "ms": {
       "gloss": "selamat hari krismas",
       "variants": [
-        { "text": "Selamat Hari Krismas", "reviewed": false }
+        { "text": "Selamat Hari Krismas" }
       ]
     },
     "fil": {
       "gloss": "maligayang pasko",
       "variants": [
-        { "text": "Maligayang Pasko", "reviewed": false }
+        { "text": "Maligayang Pasko" }
       ]
     },
     "vi": {
       "gloss": "giáng sinh vui vẻ",
       "variants": [
-        { "text": "Giáng sinh vui vẻ", "reviewed": false },
-        { "text": "Merry Christmas", "tone": "casual", "reviewed": false }
+        { "text": "Giáng sinh vui vẻ" },
+        { "text": "Merry Christmas", "tone": "casual" }
       ]
     },
     "th": {
       "gloss": "สุขสันต์วันคริสต์มาส",
       "variants": [
-        { "text": "สุขสันต์วันคริสต์มาส", "rom": "suksan wan khrisamas", "reviewed": false }
+        { "text": "สุขสันต์วันคริสต์มาส", "rom": "suksan wan khrisamas" }
       ]
     },
     "mizo": {
       "gloss": "krismas chibai",
       "variants": [
-        { "text": "Krismas chibai", "note": "Lit. \"Christmas greeting.\"", "reviewed": false }
+        { "text": "Krismas chibai", "note": "Lit. \"Christmas greeting.\"" }
       ]
     }
   }

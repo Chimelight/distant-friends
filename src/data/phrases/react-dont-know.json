@@ -1,165 +1,161 @@
 {
   "id": "react-dont-know",
-  "scene": "reactions",
-  "order": 16,
+  "scene": "questions",
+  "order": 5,
   "trans": {
     "zh": {
       "gloss": "不知道",
       "variants": [
-        { "text": "不知道", "rom": "bù zhīdào", "reviewed": false },
-        { "text": "我不知道", "rom": "wǒ bù zhīdào", "reviewed": false }
+        { "text": "不知道", "rom": "bù zhīdào" }
       ]
     },
     "ja": {
       "gloss": "知らない",
       "variants": [
-        { "text": "知らない", "rom": "shiranai", "tone": "casual", "reviewed": false },
-        { "text": "わからない", "rom": "wakaranai", "tone": "casual", "note": "Lit. \"I don't understand / don't know.\"", "reviewed": false },
-        { "text": "わかりません", "rom": "wakarimasen", "tone": "polite", "reviewed": false }
+        { "text": "知らない", "rom": "shiranai", "tone": "casual" },
+        { "text": "わからない", "rom": "wakaranai", "tone": "casual", "note": "Lit. \"I don't understand / don't know.\"" },
+        { "text": "わかりません", "rom": "wakarimasen", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "몰라",
       "variants": [
-        { "text": "몰라", "rom": "molla", "tone": "casual", "reviewed": false },
-        { "text": "몰라요", "rom": "mollayo", "tone": "polite", "reviewed": false }
+        { "text": "몰라", "rom": "molla", "tone": "casual" },
+        { "text": "몰라요", "rom": "mollayo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "I don't know",
       "variants": [
-        { "text": "I don't know", "reviewed": false },
-        { "text": "No idea", "tone": "casual", "reviewed": false },
-        { "text": "Dunno", "tone": "casual", "reviewed": false }
+        { "text": "I don't know" },
+        { "text": "No idea", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "weiß nicht",
       "variants": [
-        { "text": "Weiß nicht", "tone": "casual", "reviewed": false },
-        { "text": "Ich weiß es nicht", "reviewed": false },
-        { "text": "Keine Ahnung", "tone": "casual", "note": "Lit. \"no idea.\"", "reviewed": false }
+        { "text": "Ich weiß es nicht" },
+        { "text": "Keine Ahnung", "tone": "casual", "note": "Lit. \"no idea.\"" }
       ]
     },
     "es": {
       "gloss": "no sé",
       "variants": [
-        { "text": "No sé", "reviewed": false },
-        { "text": "Ni idea", "tone": "casual", "reviewed": false }
+        { "text": "No sé" },
+        { "text": "Ni idea", "tone": "casual" }
       ]
     },
     "pt": {
       "gloss": "não sei",
       "variants": [
-        { "text": "Não sei", "reviewed": false },
-        { "text": "Sei lá", "tone": "casual", "note": "Casual \"who knows.\"", "reviewed": false }
+        { "text": "Não sei" },
+        { "text": "Sei lá", "tone": "casual", "note": "Casual \"who knows.\"" }
       ]
     },
     "fr": {
       "gloss": "je ne sais pas",
       "variants": [
-        { "text": "Je ne sais pas", "reviewed": false },
-        { "text": "Aucune idée", "tone": "casual", "reviewed": false },
-        { "text": "J'sais pas", "tone": "casual", "reviewed": false }
+        { "text": "Je ne sais pas" },
+        { "text": "Aucune idée", "tone": "casual" }
       ]
     },
     "it": {
       "gloss": "non lo so",
       "variants": [
-        { "text": "Non lo so", "reviewed": false },
-        { "text": "Boh", "tone": "casual", "note": "Quintessential Italian \"dunno / no idea.\"", "reviewed": false }
+        { "text": "Non lo so" },
+        { "text": "Boh", "tone": "casual", "note": "Quintessential Italian \"dunno / no idea.\"" }
       ]
     },
     "ru": {
       "gloss": "не знаю",
       "variants": [
-        { "text": "Не знаю", "rom": "ne znayu", "reviewed": false },
-        { "text": "Понятия не имею", "rom": "ponyatiya ne imeyu", "tone": "casual", "note": "Lit. \"I have no notion.\"", "reviewed": false }
+        { "text": "Не знаю", "rom": "ne znayu" },
+        { "text": "Понятия не имею", "rom": "ponyatiya ne imeyu", "tone": "casual", "note": "Lit. \"I have no notion.\"" }
       ]
     },
     "uk": {
       "gloss": "не знаю",
       "variants": [
-        { "text": "Не знаю", "rom": "Ne znaiu", "reviewed": false },
-        { "text": "Поняття не маю", "rom": "Poniattia ne maiu", "tone": "casual", "note": "Lit. \"no idea.\"", "reviewed": false }
+        { "text": "Не знаю", "rom": "Ne znaiu" },
+        { "text": "Поняття не маю", "rom": "Poniattia ne maiu", "tone": "casual", "note": "Lit. \"no idea.\"" }
       ]
     },
     "pl": {
       "gloss": "nie wiem",
       "variants": [
-        { "text": "Nie wiem", "reviewed": false },
-        { "text": "Nie mam pojęcia", "tone": "casual", "reviewed": false }
+        { "text": "Nie wiem" },
+        { "text": "Nie mam pojęcia", "tone": "casual" }
       ]
     },
     "tr": {
       "gloss": "bilmiyorum",
       "variants": [
-        { "text": "Bilmiyorum", "reviewed": false },
-        { "text": "Hiç fikrim yok", "tone": "casual", "note": "Lit. \"I have no idea.\"", "reviewed": false }
+        { "text": "Bilmiyorum" },
+        { "text": "Hiç fikrim yok", "tone": "casual", "note": "Lit. \"I have no idea.\"" }
       ]
     },
     "kk": {
       "gloss": "білмеймін",
       "variants": [
-        { "text": "Білмеймін", "rom": "Bilmeimin", "reviewed": false },
-        { "text": "Түк білмеймін", "rom": "Tük bilmeimin", "tone": "casual", "note": "Lit. \"I know nothing.\"", "reviewed": false }
+        { "text": "Білмеймін", "rom": "Bilmeimin" },
+        { "text": "Түк білмеймін", "rom": "Tük bilmeimin", "tone": "casual", "note": "Lit. \"I know nothing.\"" }
       ]
     },
     "hi": {
       "gloss": "पता नहीं",
       "variants": [
-        { "text": "पता नहीं", "rom": "patā nahīn", "reviewed": false },
-        { "text": "मुझे नहीं पता", "rom": "mujhe nahīn patā", "reviewed": false }
+        { "text": "पता नहीं", "rom": "patā nahīn" },
+        { "text": "मुझे नहीं पता", "rom": "mujhe nahīn patā" }
       ]
     },
     "bn": {
       "gloss": "জানি না",
       "variants": [
-        { "text": "জানি না", "rom": "jāni nā", "reviewed": false },
-        { "text": "আমি জানি না", "rom": "āmi jāni nā", "reviewed": false }
+        { "text": "জানি না", "rom": "jāni nā" },
+        { "text": "আমি জানি না", "rom": "āmi jāni nā" }
       ]
     },
     "id": {
       "gloss": "tidak tahu",
       "variants": [
-        { "text": "Tidak tahu", "reviewed": false },
-        { "text": "Nggak tau", "tone": "casual", "reviewed": false },
-        { "text": "Entahlah", "tone": "casual", "note": "Soft \"who knows / dunno.\"", "reviewed": false }
+        { "text": "Tidak tahu" },
+        { "text": "Nggak tau", "tone": "casual" },
+        { "text": "Entahlah", "tone": "casual", "note": "Soft \"who knows / dunno.\"" }
       ]
     },
     "ms": {
       "gloss": "tidak tahu",
       "variants": [
-        { "text": "Tidak tahu", "reviewed": false },
-        { "text": "Tak tahu", "tone": "casual", "reviewed": false },
-        { "text": "Entahlah", "tone": "casual", "reviewed": false }
+        { "text": "Tidak tahu" },
+        { "text": "Tak tahu", "tone": "casual" },
+        { "text": "Entahlah", "tone": "casual" }
       ]
     },
     "fil": {
       "gloss": "hindi ko alam",
       "variants": [
-        { "text": "Hindi ko alam", "reviewed": false },
-        { "text": "Ewan ko", "tone": "casual", "reviewed": false }
+        { "text": "Hindi ko alam" },
+        { "text": "Ewan ko", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "không biết",
       "variants": [
-        { "text": "Không biết", "reviewed": false },
-        { "text": "Mình không biết", "reviewed": false }
+        { "text": "Không biết" },
+        { "text": "Mình không biết" }
       ]
     },
     "th": {
       "gloss": "ไม่รู้",
       "variants": [
-        { "text": "ไม่รู้", "rom": "mai ru", "reviewed": false },
-        { "text": "ไม่ทราบ", "rom": "mai sap", "tone": "polite", "reviewed": false }
+        { "text": "ไม่รู้", "rom": "mai ru" },
+        { "text": "ไม่ทราบ", "rom": "mai sap", "tone": "polite" }
       ]
     },
     "mizo": {
       "gloss": "ka hre lo",
       "variants": [
-        { "text": "Ka hre lo", "note": "Lit. \"I don't know.\"", "reviewed": false }
+        { "text": "Ka hre lo", "note": "Lit. \"I don't know.\"" }
       ]
     }
   }

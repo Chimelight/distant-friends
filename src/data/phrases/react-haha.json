@@ -1,0 +1,161 @@
+{
+  "id": "react-haha",
+  "scene": "reactions",
+  "order": 4,
+  "trans": {
+    "zh": {
+      "gloss": "笑",
+      "variants": [
+        { "text": "哈哈哈", "rom": "hāhāhā" },
+        { "text": "太好笑了", "rom": "tài hǎoxiào le", "tone": "casual" }
+      ]
+    },
+    "ja": {
+      "gloss": "笑い",
+      "variants": [
+        { "text": "ｗｗｗ", "rom": "www", "tone": "casual", "note": "Chat laughter — w from warau, \"to laugh.\"" },
+        { "text": "面白い", "rom": "omoshiroi", "note": "Lit. \"funny!\"" }
+      ]
+    },
+    "ko": {
+      "gloss": "웃음",
+      "variants": [
+        { "text": "ㅋㅋㅋ", "rom": "kkk", "tone": "casual", "note": "Chat laughter — the consonant of 크 (\"keu\")." },
+        { "text": "웃겨", "rom": "utgyeo", "tone": "casual", "note": "Lit. \"that's funny.\"" }
+      ]
+    },
+    "en": {
+      "gloss": "laughter",
+      "variants": [
+        { "text": "Haha" },
+        { "text": "LOL", "tone": "casual", "note": "\"Laughing out loud.\"" }
+      ]
+    },
+    "de": {
+      "gloss": "Lachen",
+      "variants": [
+        { "text": "Haha" },
+        { "text": "Ich musste lachen", "note": "Lit. \"that made me laugh.\"" }
+      ]
+    },
+    "es": {
+      "gloss": "risa",
+      "variants": [
+        { "text": "Jajaja", "note": "Spanish chat laughter — j sounds like English h." },
+        { "text": "Qué risa", "note": "Lit. \"what a laugh.\"" }
+      ]
+    },
+    "pt": {
+      "gloss": "risada",
+      "variants": [
+        { "text": "Kkkk", "tone": "casual", "note": "Brazilian chat laughter." },
+        { "text": "Que engraçado", "note": "Lit. \"how funny.\"" }
+      ]
+    },
+    "fr": {
+      "gloss": "rire",
+      "variants": [
+        { "text": "Haha" },
+        { "text": "MDR", "tone": "casual", "note": "\"Mort de rire\" — died laughing." }
+      ]
+    },
+    "it": {
+      "gloss": "risata",
+      "variants": [
+        { "text": "Ahahah" },
+        { "text": "Che ridere", "note": "Lit. \"what a laugh.\"" }
+      ]
+    },
+    "ru": {
+      "gloss": "смех",
+      "variants": [
+        { "text": "Ахаха", "rom": "akhakha" },
+        { "text": "Смешно", "rom": "smeshno", "note": "Lit. \"funny.\"" }
+      ]
+    },
+    "uk": {
+      "gloss": "сміх",
+      "variants": [
+        { "text": "Ахаха", "rom": "Akhakha" },
+        { "text": "Смішно", "rom": "Smishno", "note": "Lit. \"funny.\"" }
+      ]
+    },
+    "pl": {
+      "gloss": "śmiech",
+      "variants": [
+        { "text": "Haha" },
+        { "text": "Ale śmieszne", "note": "Lit. \"so funny.\"" }
+      ]
+    },
+    "tr": {
+      "gloss": "kahkaha",
+      "variants": [
+        { "text": "Hahaha" },
+        { "text": "Çok komik", "note": "Lit. \"very funny.\"" }
+      ]
+    },
+    "kk": {
+      "gloss": "күлкі",
+      "variants": [
+        { "text": "Ахаха", "rom": "Ahaha" },
+        { "text": "Күлкілі екен", "rom": "Külkili eken", "note": "Lit. \"that's funny.\"" }
+      ]
+    },
+    "hi": {
+      "gloss": "हँसी",
+      "variants": [
+        { "text": "हाहाहा", "rom": "hāhāhā" },
+        { "text": "मज़ा आ गया", "rom": "mazā ā gayā", "note": "Lit. \"that was fun.\"" }
+      ]
+    },
+    "bn": {
+      "gloss": "হাসি",
+      "variants": [
+        { "text": "হাহাহা", "rom": "hāhāhā" },
+        { "text": "খুব মজার", "rom": "khub môjar", "note": "Lit. \"very funny.\"" }
+      ]
+    },
+    "id": {
+      "gloss": "tawa",
+      "variants": [
+        { "text": "Wkwk", "tone": "casual", "note": "Indonesian chat laughter." },
+        { "text": "Lucu banget", "note": "Lit. \"so funny.\"" }
+      ]
+    },
+    "ms": {
+      "gloss": "ketawa",
+      "variants": [
+        { "text": "Hahaha" },
+        { "text": "Kelakar betul", "note": "Lit. \"really funny.\"" }
+      ]
+    },
+    "fil": {
+      "gloss": "tawa",
+      "variants": [
+        { "text": "HAHAHA", "tone": "casual", "note": "Filipino chat laughter is typed in caps." },
+        { "text": "Natawa ako", "note": "Lit. \"I laughed.\"" }
+      ]
+    },
+    "vi": {
+      "gloss": "cười",
+      "variants": [
+        { "text": "Hahaha" },
+        { "text": "Buồn cười quá", "note": "Lit. \"so funny.\"" }
+      ]
+    },
+    "th": {
+      "gloss": "ขำ",
+      "variants": [
+        { "text": "555", "rom": "ha ha ha", "tone": "casual", "note": "5 is pronounced \"ha\" in Thai — the iconic chat laughter." },
+        { "text": "ตลกมาก", "rom": "talok mak", "note": "Lit. \"very funny.\"" }
+      ]
+    },
+    "mizo": {
+      "gloss": "nuih",
+      "variants": [
+        { "text": "Hahaha" },
+        { "text": "A nuihzatthlak", "note": "Lit. \"it's funny.\"" }
+      ]
+    }
+  }
+}

@@ -6,158 +6,153 @@
     "zh": {
       "gloss": "不",
       "variants": [
-        { "text": "不是", "rom": "bù shì", "reviewed": false },
-        { "text": "不", "rom": "bù", "reviewed": false },
-        { "text": "不对", "rom": "bù duì", "note": "Lit. \"not right.\"", "reviewed": false }
+        { "text": "不是", "rom": "bù shì" },
+        { "text": "不对", "rom": "bù duì", "note": "Lit. \"not right.\"" }
       ]
     },
     "ja": {
       "gloss": "否定",
       "variants": [
-        { "text": "いいえ", "rom": "iie", "tone": "polite", "reviewed": false },
-        { "text": "ううん", "rom": "uun", "tone": "casual", "reviewed": false },
-        { "text": "違う", "rom": "chigau", "note": "Lit. \"(it's) different.\"", "reviewed": false }
+        { "text": "いいえ", "rom": "iie", "tone": "polite" },
+        { "text": "ううん", "rom": "uun", "tone": "casual" },
+        { "text": "違う", "rom": "chigau", "note": "Lit. \"(it's) different.\"" }
       ]
     },
     "ko": {
       "gloss": "부정",
       "variants": [
-        { "text": "아니", "rom": "ani", "tone": "casual", "reviewed": false },
-        { "text": "아니요", "rom": "aniyo", "tone": "polite", "reviewed": false }
+        { "text": "아니", "rom": "ani", "tone": "casual" },
+        { "text": "아니요", "rom": "aniyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "no",
       "variants": [
-        { "text": "No", "reviewed": false },
-        { "text": "Nope", "tone": "casual", "reviewed": false },
-        { "text": "Not really", "tone": "casual", "reviewed": false }
+        { "text": "No" },
+        { "text": "Not really", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "Verneinung",
       "variants": [
-        { "text": "Nein", "reviewed": false },
-        { "text": "Nö", "tone": "casual", "reviewed": false },
-        { "text": "Nicht wirklich", "note": "Lit. \"not really.\"", "reviewed": false }
+        { "text": "Nein" },
+        { "text": "Nicht wirklich", "note": "Lit. \"not really.\"" }
       ]
     },
     "es": {
       "gloss": "no",
       "variants": [
-        { "text": "No", "reviewed": false },
-        { "text": "Para nada", "tone": "casual", "note": "Lit. \"for nothing.\"", "reviewed": false }
+        { "text": "No" },
+        { "text": "Para nada", "tone": "casual", "note": "Lit. \"for nothing.\"" }
       ]
     },
     "pt": {
       "gloss": "não",
       "variants": [
-        { "text": "Não", "reviewed": false },
-        { "text": "Nada", "tone": "casual", "reviewed": false }
+        { "text": "Não" },
+        { "text": "Nada", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "non",
       "variants": [
-        { "text": "Non", "reviewed": false },
-        { "text": "Pas vraiment", "tone": "casual", "reviewed": false }
+        { "text": "Non" },
+        { "text": "Pas vraiment", "tone": "casual" }
       ]
     },
     "it": {
       "gloss": "no",
       "variants": [
-        { "text": "No", "reviewed": false },
-        { "text": "Per niente", "tone": "casual", "note": "Lit. \"for nothing.\"", "reviewed": false }
+        { "text": "No" },
+        { "text": "Per niente", "tone": "casual", "note": "Lit. \"for nothing.\"" }
       ]
     },
     "ru": {
       "gloss": "нет",
       "variants": [
-        { "text": "Нет", "rom": "net", "reviewed": false },
-        { "text": "Не-а", "rom": "ne-a", "tone": "casual", "reviewed": false }
+        { "text": "Нет", "rom": "net" },
+        { "text": "Не-а", "rom": "ne-a", "tone": "casual" }
       ]
     },
     "uk": {
       "gloss": "ні",
       "variants": [
-        { "text": "Ні", "rom": "Ni", "reviewed": false },
-        { "text": "Не-а", "rom": "Ne-a", "tone": "casual", "reviewed": false }
+        { "text": "Ні", "rom": "Ni" },
+        { "text": "Не-а", "rom": "Ne-a", "tone": "casual" }
       ]
     },
     "pl": {
       "gloss": "nie",
       "variants": [
-        { "text": "Nie", "reviewed": false },
-        { "text": "Nieprawda", "note": "Lit. \"not true.\"", "reviewed": false }
+        { "text": "Nie" },
+        { "text": "Nieprawda", "note": "Lit. \"not true.\"" }
       ]
     },
     "tr": {
       "gloss": "hayır",
       "variants": [
-        { "text": "Hayır", "reviewed": false },
-        { "text": "Yok", "tone": "casual", "note": "Lit. \"no / none.\"", "reviewed": false }
+        { "text": "Hayır" },
+        { "text": "Yok", "tone": "casual", "note": "Lit. \"no / none.\"" }
       ]
     },
     "kk": {
       "gloss": "жоқ",
       "variants": [
-        { "text": "Жоқ", "rom": "Joq", "reviewed": false },
-        { "text": "Жоға", "rom": "Joğa", "tone": "casual", "note": "Casual \"nope.\"", "reviewed": false }
+        { "text": "Жоқ", "rom": "Joq" }
       ]
     },
     "hi": {
       "gloss": "नहीं",
       "variants": [
-        { "text": "नहीं", "rom": "nahīn", "reviewed": false }
+        { "text": "नहीं", "rom": "nahīn" }
       ]
     },
     "bn": {
       "gloss": "না",
       "variants": [
-        { "text": "না", "rom": "nā", "reviewed": false }
+        { "text": "না", "rom": "nā" }
       ]
     },
     "id": {
       "gloss": "tidak",
       "variants": [
-        { "text": "Tidak", "reviewed": false },
-        { "text": "Nggak", "tone": "casual", "reviewed": false },
-        { "text": "Bukan", "note": "For negating identity (\"it isn't…\").", "reviewed": false }
+        { "text": "Tidak" },
+        { "text": "Nggak", "tone": "casual" },
+        { "text": "Bukan", "note": "For negating identity (\"it isn't…\")." }
       ]
     },
     "ms": {
       "gloss": "tidak",
       "variants": [
-        { "text": "Tidak", "reviewed": false },
-        { "text": "Bukan", "note": "For negating identity (\"it isn't…\").", "reviewed": false }
+        { "text": "Tidak" },
+        { "text": "Bukan", "note": "For negating identity (\"it isn't…\")." }
       ]
     },
     "fil": {
       "gloss": "hindi",
       "variants": [
-        { "text": "Hindi", "reviewed": false },
-        { "text": "Hindi po", "tone": "polite", "reviewed": false }
+        { "text": "Hindi" },
+        { "text": "Hindi po", "tone": "polite" }
       ]
     },
     "vi": {
       "gloss": "không",
       "variants": [
-        { "text": "Không", "reviewed": false },
-        { "text": "Không phải", "note": "Lit. \"(it's) not so.\"", "reviewed": false }
+        { "text": "Không" },
+        { "text": "Không phải", "note": "Lit. \"(it's) not so.\"" }
       ]
     },
     "th": {
       "gloss": "ไม่",
       "variants": [
-        { "text": "ไม่", "rom": "mai", "reviewed": false },
-        { "text": "ไม่ใช่", "rom": "mai chai", "note": "Lit. \"(it's) not so.\"", "reviewed": false }
+        { "text": "ไม่", "rom": "mai" },
+        { "text": "ไม่ใช่", "rom": "mai chai", "note": "Lit. \"(it's) not so.\"" }
       ]
     },
     "mizo": {
       "gloss": "lo",
       "variants": [
-        { "text": "Aw lo", "note": "Lit. \"no.\"", "reviewed": false },
-        { "text": "Ni lo", "note": "Lit. \"(it) is not.\"", "reviewed": false }
+        { "text": "Ni lo", "note": "Lit. \"(it) is not.\"" }
       ]
     }
   }

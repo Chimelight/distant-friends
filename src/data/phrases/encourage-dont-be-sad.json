@@ -6,141 +6,140 @@
     "zh": {
       "gloss": "别难过",
       "variants": [
-        { "text": "别难过", "rom": "bié nánguò", "reviewed": false }
+        { "text": "别难过", "rom": "bié nánguò" }
       ]
     },
     "ja": {
       "gloss": "悲しまないで",
       "variants": [
-        { "text": "悲しまないで", "rom": "kanashimanai de", "reviewed": false },
-        { "text": "元気出して", "rom": "genki dashite", "note": "Lit. \"cheer up.\"", "reviewed": false }
+        { "text": "悲しまないで", "rom": "kanashimanai de" },
+        { "text": "元気出して", "rom": "genki dashite", "note": "Lit. \"cheer up.\"" }
       ]
     },
     "ko": {
       "gloss": "슬퍼하지 마",
       "variants": [
-        { "text": "슬퍼하지 마", "rom": "seulpeohaji ma", "tone": "casual", "reviewed": false }
+        { "text": "슬퍼하지 마", "rom": "seulpeohaji ma", "tone": "casual" },
+        { "text": "슬퍼하지 마세요", "rom": "seulpeohaji maseyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "don't be sad",
       "variants": [
-        { "text": "Don't be sad", "reviewed": false },
-        { "text": "Cheer up", "reviewed": false }
+        { "text": "Don't be sad" },
+        { "text": "Cheer up" }
       ]
     },
     "de": {
       "gloss": "nicht traurig",
       "variants": [
-        { "text": "Sei nicht traurig", "reviewed": false },
-        { "text": "Kopf hoch", "note": "Lit. \"head up.\"", "reviewed": false }
+        { "text": "Sei nicht traurig" },
+        { "text": "Kopf hoch", "note": "Lit. \"head up.\"" }
       ]
     },
     "es": {
       "gloss": "no te pongas triste",
       "variants": [
-        { "text": "No estés triste", "reviewed": false },
-        { "text": "No te pongas triste", "reviewed": false }
+        { "text": "No estés triste" },
+        { "text": "No te pongas triste" }
       ]
     },
     "pt": {
       "gloss": "não fique triste",
       "variants": [
-        { "text": "Não fique triste", "reviewed": false }
+        { "text": "Não fique triste" }
       ]
     },
     "fr": {
       "gloss": "ne sois pas triste",
       "variants": [
-        { "text": "Ne sois pas triste", "reviewed": false }
+        { "text": "Ne sois pas triste" }
       ]
     },
     "it": {
       "gloss": "non essere triste",
       "variants": [
-        { "text": "Non essere triste", "reviewed": false }
+        { "text": "Non essere triste" }
       ]
     },
     "ru": {
       "gloss": "не грусти",
       "variants": [
-        { "text": "Не грусти", "rom": "ne grusti", "reviewed": false }
+        { "text": "Не грусти", "rom": "ne grusti" }
       ]
     },
     "uk": {
       "gloss": "не сумуй",
       "variants": [
-        { "text": "Не сумуй", "rom": "Ne sumui", "reviewed": false },
-        { "text": "Вище носа", "rom": "Vyshche nosa", "tone": "casual", "note": "Lit. \"nose up\" — cheer up.", "reviewed": false }
+        { "text": "Не сумуй", "rom": "Ne sumui" },
+        { "text": "Вище носа", "rom": "Vyshche nosa", "tone": "casual", "note": "Lit. \"nose up\" — cheer up." }
       ]
     },
     "pl": {
       "gloss": "nie smuć się",
       "variants": [
-        { "text": "Nie smuć się", "reviewed": false }
+        { "text": "Nie smuć się" }
       ]
     },
     "tr": {
       "gloss": "üzülme",
       "variants": [
-        { "text": "Üzülme", "reviewed": false }
+        { "text": "Üzülme" }
       ]
     },
     "kk": {
       "gloss": "уайымдама",
       "variants": [
-        { "text": "Уайымдама", "rom": "Uaiymdama", "note": "Lit. \"don't grieve.\"", "reviewed": false },
-        { "text": "Қапаланба", "rom": "Qapalanba", "note": "Lit. \"don't be sad.\"", "reviewed": false }
+        { "text": "Уайымдама", "rom": "Uaiymdama", "note": "Lit. \"don't grieve.\"" }
       ]
     },
     "hi": {
       "gloss": "उदास मत हो",
       "variants": [
-        { "text": "उदास मत हो", "rom": "udās mat ho", "reviewed": false }
+        { "text": "उदास मत हो", "rom": "udās mat ho" }
       ]
     },
     "bn": {
       "gloss": "মন খারাপ কোরো না",
       "variants": [
-        { "text": "মন খারাপ কোরো না", "rom": "môn khārāp koro nā", "reviewed": false }
+        { "text": "মন খারাপ কোরো না", "rom": "môn khārāp koro nā" }
       ]
     },
     "id": {
       "gloss": "jangan sedih",
       "variants": [
-        { "text": "Jangan sedih", "reviewed": false },
-        { "text": "Jangan murung", "reviewed": false }
+        { "text": "Jangan sedih" }
       ]
     },
     "ms": {
       "gloss": "jangan sedih",
       "variants": [
-        { "text": "Jangan sedih", "reviewed": false }
+        { "text": "Jangan sedih" }
       ]
     },
     "fil": {
       "gloss": "wag malungkot",
       "variants": [
-        { "text": "Wag malungkot", "reviewed": false }
+        { "text": "Wag malungkot" }
       ]
     },
     "vi": {
       "gloss": "đừng buồn",
       "variants": [
-        { "text": "Đừng buồn", "reviewed": false }
+        { "text": "Đừng buồn" }
       ]
     },
     "th": {
       "gloss": "อย่าเศร้า",
       "variants": [
-        { "text": "อย่าเศร้า", "rom": "ya sao", "reviewed": false },
-        { "text": "อย่าเสียใจ", "rom": "ya sia jai", "reviewed": false }
+        { "text": "อย่าเศร้า", "rom": "ya sao" },
+        { "text": "อย่าเสียใจ", "rom": "ya sia jai" }
       ]
     },
     "mizo": {
-      "gloss": "lung lo chhia rawh",
+      "gloss": "lungngai suh",
       "variants": [
-        { "text": "Lung lo chhia rawh", "note": "Lit. \"don't be sad.\"", "reviewed": false }
+        { "text": "Lungngai suh", "note": "Lit. \"don't be sad.\"" }
       ]
     }
   }

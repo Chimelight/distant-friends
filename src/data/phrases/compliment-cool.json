@@ -1,160 +1,159 @@
 {
   "id": "compliment-cool",
   "scene": "compliments",
-  "order": 8,
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "酷",
       "variants": [
-        { "text": "很酷", "rom": "hěn kù", "reviewed": false },
-        { "text": "真酷", "rom": "zhēn kù", "reviewed": false }
+        { "text": "很酷", "rom": "hěn kù" }
       ]
     },
     "ja": {
       "gloss": "かっこいい",
       "variants": [
-        { "text": "かっこいい", "rom": "kakkoii", "reviewed": false },
-        { "text": "クール", "rom": "kūru", "tone": "casual", "reviewed": false }
+        { "text": "かっこいい", "rom": "kakkoii" },
+        { "text": "クール", "rom": "kūru", "tone": "casual" }
       ]
     },
     "ko": {
       "gloss": "멋있어",
       "variants": [
-        { "text": "멋있어", "rom": "meosisseo", "tone": "casual", "reviewed": false },
-        { "text": "멋있네", "rom": "meosinne", "reviewed": false },
-        { "text": "쿨하다", "rom": "kulhada", "tone": "casual", "reviewed": false }
+        { "text": "멋있어", "rom": "meosisseo", "tone": "casual" },
+        { "text": "멋있네", "rom": "meosinne" },
+        { "text": "쿨하다", "rom": "kulhada", "tone": "casual" }
       ]
     },
     "en": {
       "gloss": "so cool",
       "variants": [
-        { "text": "So cool", "reviewed": false },
-        { "text": "That's cool", "tone": "casual", "reviewed": false }
+        { "text": "So cool" },
+        { "text": "That's cool", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "cool",
       "variants": [
-        { "text": "Cool", "reviewed": false },
-        { "text": "Echt cool", "tone": "casual", "reviewed": false }
+        { "text": "Cool" },
+        { "text": "Echt cool", "tone": "casual" }
       ]
     },
     "es": {
       "gloss": "qué chulo",
       "variants": [
-        { "text": "Qué chulo", "reviewed": false },
-        { "text": "Qué guay", "reviewed": false },
-        { "text": "Qué genial", "reviewed": false }
+        { "text": "Qué chulo" },
+        { "text": "Qué guay" },
+        { "text": "Qué genial" }
       ]
     },
     "pt": {
       "gloss": "que legal",
       "variants": [
-        { "text": "Que legal", "reviewed": false },
-        { "text": "Que maneiro", "tone": "casual", "reviewed": false }
+        { "text": "Que legal" },
+        { "text": "Que maneiro", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "cool",
       "variants": [
-        { "text": "C'est cool", "reviewed": false },
-        { "text": "Trop cool", "tone": "casual", "reviewed": false }
+        { "text": "C'est cool" },
+        { "text": "Trop cool", "tone": "casual" }
       ]
     },
     "it": {
       "gloss": "che figo",
       "variants": [
-        { "text": "Che figo", "tone": "casual", "reviewed": false },
-        { "text": "Forte", "reviewed": false }
+        { "text": "Che figo", "tone": "casual" },
+        { "text": "Forte" }
       ]
     },
     "ru": {
       "gloss": "круто",
       "variants": [
-        { "text": "Круто", "rom": "kruto", "reviewed": false },
-        { "text": "Прикольно", "rom": "prikol'no", "tone": "casual", "reviewed": false }
+        { "text": "Круто", "rom": "kruto" },
+        { "text": "Прикольно", "rom": "prikol'no", "tone": "casual" }
       ]
     },
     "uk": {
       "gloss": "круто",
       "variants": [
-        { "text": "Так круто", "rom": "Tak kruto", "tone": "casual", "reviewed": false },
-        { "text": "Це круто", "rom": "Tse kruto", "tone": "casual", "reviewed": false }
+        { "text": "Так круто", "rom": "Tak kruto", "tone": "casual" },
+        { "text": "Це круто", "rom": "Tse kruto", "tone": "casual" }
       ]
     },
     "pl": {
       "gloss": "spoko",
       "variants": [
-        { "text": "Spoko", "tone": "casual", "reviewed": false },
-        { "text": "Fajne", "reviewed": false }
+        { "text": "Spoko", "tone": "casual" },
+        { "text": "Fajne" }
       ]
     },
     "tr": {
       "gloss": "havalı",
       "variants": [
-        { "text": "Havalı", "reviewed": false },
-        { "text": "Çok cool", "tone": "casual", "reviewed": false }
+        { "text": "Havalı" },
+        { "text": "Çok cool", "tone": "casual" }
       ]
     },
     "kk": {
       "gloss": "зор",
       "variants": [
-        { "text": "Керемет екен", "rom": "Keremet eken", "tone": "casual", "reviewed": false },
-        { "text": "Зор", "rom": "Zor", "tone": "casual", "note": "Lit. \"great / huge.\"", "reviewed": false }
+        { "text": "Керемет екен", "rom": "Keremet eken", "tone": "casual" },
+        { "text": "Зор", "rom": "Zor", "tone": "casual", "note": "Lit. \"great / huge.\"" }
       ]
     },
     "hi": {
       "gloss": "कूल",
       "variants": [
-        { "text": "बहुत कूल", "rom": "bahut kūl", "tone": "casual", "note": "English-borrowed.", "reviewed": false }
+        { "text": "बहुत कूल", "rom": "bahut kūl", "tone": "casual", "note": "English-borrowed." }
       ]
     },
     "bn": {
       "gloss": "কুল",
       "variants": [
-        { "text": "কুল", "rom": "kul", "tone": "casual", "reviewed": false },
-        { "text": "দারুণ", "rom": "dārun", "reviewed": false }
+        { "text": "কুল", "rom": "kul", "tone": "casual" },
+        { "text": "দারুণ", "rom": "dārun" }
       ]
     },
     "id": {
       "gloss": "keren",
       "variants": [
-        { "text": "Keren", "reviewed": false },
-        { "text": "Keren banget", "tone": "casual", "reviewed": false }
+        { "text": "Keren" },
+        { "text": "Keren banget", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "hebat",
       "variants": [
-        { "text": "Hebat", "reviewed": false },
-        { "text": "Power", "tone": "casual", "reviewed": false }
+        { "text": "Power", "tone": "casual" },
+        { "text": "Cool", "tone": "casual", "note": "English-borrowed; everyday." }
       ]
     },
     "fil": {
       "gloss": "ang cool",
       "variants": [
-        { "text": "Ang cool", "reviewed": false },
-        { "text": "Astig", "tone": "casual", "reviewed": false }
+        { "text": "Ang cool" },
+        { "text": "Astig", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "ngầu",
       "variants": [
-        { "text": "Ngầu", "tone": "casual", "reviewed": false },
-        { "text": "Chất quá", "tone": "casual", "reviewed": false }
+        { "text": "Ngầu", "tone": "casual" },
+        { "text": "Chất quá", "tone": "casual" }
       ]
     },
     "th": {
-      "gloss": "เท่ห์",
+      "gloss": "เท่",
       "variants": [
-        { "text": "เท่ห์", "rom": "the", "reviewed": false },
-        { "text": "เจ๋ง", "rom": "jeng", "tone": "casual", "reviewed": false }
+        { "text": "เท่", "rom": "the" },
+        { "text": "เจ๋ง", "rom": "jeng", "tone": "casual" }
       ]
     },
     "mizo": {
       "gloss": "a tha tak",
       "variants": [
-        { "text": "A tha tak", "note": "Lit. \"really good.\"", "reviewed": false }
+        { "text": "A tha tak", "note": "Lit. \"really good.\"" }
       ]
     }
   }

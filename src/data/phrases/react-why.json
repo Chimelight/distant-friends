@@ -1,156 +1,153 @@
 {
   "id": "react-why",
-  "scene": "reactions",
-  "order": 14,
+  "scene": "questions",
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "为什么",
       "variants": [
-        { "text": "为什么", "rom": "wèishénme", "reviewed": false },
-        { "text": "为啥", "rom": "wèishá", "tone": "casual", "reviewed": false }
+        { "text": "为什么", "rom": "wèishénme" },
+        { "text": "为啥", "rom": "wèishá", "tone": "casual" }
       ]
     },
     "ja": {
       "gloss": "なぜ",
       "variants": [
-        { "text": "なぜ", "rom": "naze", "reviewed": false },
-        { "text": "どうして", "rom": "dōshite", "reviewed": false },
-        { "text": "なんで", "rom": "nande", "tone": "casual", "reviewed": false }
+        { "text": "どうして", "rom": "dōshite" },
+        { "text": "なんで", "rom": "nande", "tone": "casual" }
       ]
     },
     "ko": {
       "gloss": "왜",
       "variants": [
-        { "text": "왜", "rom": "wae", "tone": "casual", "reviewed": false },
-        { "text": "왜요", "rom": "waeyo", "tone": "polite", "reviewed": false }
+        { "text": "왜", "rom": "wae", "tone": "casual" },
+        { "text": "왜요", "rom": "waeyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "why",
       "variants": [
-        { "text": "Why?", "reviewed": false },
-        { "text": "Why is that?", "reviewed": false },
-        { "text": "How come?", "tone": "casual", "reviewed": false }
+        { "text": "Why?" },
+        { "text": "Why is that?" },
+        { "text": "How come?", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "warum",
       "variants": [
-        { "text": "Warum?", "reviewed": false },
-        { "text": "Wieso?", "reviewed": false },
-        { "text": "Weshalb?", "reviewed": false }
+        { "text": "Warum?" },
+        { "text": "Wieso?" }
       ]
     },
     "es": {
       "gloss": "por qué",
       "variants": [
-        { "text": "¿Por qué?", "reviewed": false }
+        { "text": "¿Por qué?" }
       ]
     },
     "pt": {
       "gloss": "por quê",
       "variants": [
-        { "text": "Por quê?", "reviewed": false }
+        { "text": "Por quê?" }
       ]
     },
     "fr": {
       "gloss": "pourquoi",
       "variants": [
-        { "text": "Pourquoi ?", "reviewed": false }
+        { "text": "Pourquoi ?" }
       ]
     },
     "it": {
       "gloss": "perché",
       "variants": [
-        { "text": "Perché?", "reviewed": false }
+        { "text": "Perché?" }
       ]
     },
     "ru": {
       "gloss": "почему",
       "variants": [
-        { "text": "Почему?", "rom": "pochemu?", "reviewed": false },
-        { "text": "Зачем?", "rom": "zachem?", "note": "Lit. \"for what purpose?\"", "reviewed": false }
+        { "text": "Почему?", "rom": "pochemu?" },
+        { "text": "Зачем?", "rom": "zachem?", "note": "Lit. \"for what purpose?\"" }
       ]
     },
     "uk": {
       "gloss": "чому",
       "variants": [
-        { "text": "Чому?", "rom": "Chomu?", "reviewed": false },
-        { "text": "Чого?", "rom": "Choho?", "tone": "casual", "reviewed": false },
-        { "text": "Як так?", "rom": "Yak tak?", "note": "Lit. \"how so?\"", "reviewed": false }
+        { "text": "Чому?", "rom": "Chomu?" },
+        { "text": "Чого?", "rom": "Choho?", "tone": "casual" },
+        { "text": "Як так?", "rom": "Yak tak?", "note": "Lit. \"how so?\"" }
       ]
     },
     "pl": {
       "gloss": "dlaczego",
       "variants": [
-        { "text": "Dlaczego?", "reviewed": false },
-        { "text": "Czemu?", "tone": "casual", "reviewed": false }
+        { "text": "Dlaczego?" },
+        { "text": "Czemu?", "tone": "casual" }
       ]
     },
     "tr": {
       "gloss": "neden",
       "variants": [
-        { "text": "Neden?", "reviewed": false },
-        { "text": "Niye?", "tone": "casual", "reviewed": false }
+        { "text": "Neden?" },
+        { "text": "Niye?", "tone": "casual" }
       ]
     },
     "kk": {
       "gloss": "неге",
       "variants": [
-        { "text": "Неге?", "rom": "Nege?", "reviewed": false },
-        { "text": "Не үшін?", "rom": "Ne üşin?", "note": "Lit. \"for what?\"", "reviewed": false },
-        { "text": "Қалай олай?", "rom": "Qalai olai?", "tone": "casual", "note": "Lit. \"how come?\"", "reviewed": false }
+        { "text": "Неге?", "rom": "Nege?" },
+        { "text": "Қалай олай?", "rom": "Qalai olai?", "tone": "casual", "note": "Lit. \"how come?\"" }
       ]
     },
     "hi": {
       "gloss": "क्यों",
       "variants": [
-        { "text": "क्यों?", "rom": "kyon?", "reviewed": false }
+        { "text": "क्यों?", "rom": "kyon?" }
       ]
     },
     "bn": {
       "gloss": "কেন",
       "variants": [
-        { "text": "কেন?", "rom": "keno?", "reviewed": false }
+        { "text": "কেন?", "rom": "keno?" }
       ]
     },
     "id": {
       "gloss": "kenapa",
       "variants": [
-        { "text": "Kenapa?", "tone": "casual", "reviewed": false },
-        { "text": "Mengapa?", "reviewed": false }
+        { "text": "Kenapa?", "tone": "casual" },
+        { "text": "Mengapa?" }
       ]
     },
     "ms": {
       "gloss": "kenapa",
       "variants": [
-        { "text": "Kenapa?", "tone": "casual", "reviewed": false },
-        { "text": "Mengapa?", "reviewed": false }
+        { "text": "Kenapa?", "tone": "casual" },
+        { "text": "Mengapa?" }
       ]
     },
     "fil": {
       "gloss": "bakit",
       "variants": [
-        { "text": "Bakit?", "reviewed": false }
+        { "text": "Bakit?" }
       ]
     },
     "vi": {
       "gloss": "tại sao",
       "variants": [
-        { "text": "Tại sao?", "reviewed": false },
-        { "text": "Sao vậy?", "tone": "casual", "reviewed": false }
+        { "text": "Tại sao?" },
+        { "text": "Sao vậy?", "tone": "casual" }
       ]
     },
     "th": {
       "gloss": "ทำไม",
       "variants": [
-        { "text": "ทำไม", "rom": "thammai", "reviewed": false }
+        { "text": "ทำไม", "rom": "thammai" }
       ]
     },
     "mizo": {
       "gloss": "eng vang",
       "variants": [
-        { "text": "Eng vang in nge?", "note": "Lit. \"for what reason?\"", "reviewed": false }
+        { "text": "Eng vang in nge?", "note": "Lit. \"for what reason?\"" }
       ]
     }
   }

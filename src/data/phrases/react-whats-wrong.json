@@ -1,160 +1,157 @@
 {
   "id": "react-whats-wrong",
-  "scene": "reactions",
-  "order": 13,
+  "scene": "questions",
+  "order": 3,
   "trans": {
     "zh": {
       "gloss": "怎么了",
       "variants": [
-        { "text": "怎么了", "rom": "zěnme le", "reviewed": false },
-        { "text": "出什么事了", "rom": "chū shénme shì le", "note": "Lit. \"what happened?\"", "reviewed": false }
+        { "text": "怎么了", "rom": "zěnme le" },
+        { "text": "出什么事了", "rom": "chū shénme shì le", "note": "Lit. \"what happened?\"" }
       ]
     },
     "ja": {
       "gloss": "どうしたの",
       "variants": [
-        { "text": "どうしたの", "rom": "dō shita no", "tone": "casual", "reviewed": false },
-        { "text": "どうしました", "rom": "dō shimashita", "tone": "polite", "reviewed": false }
+        { "text": "どうしたの", "rom": "dō shita no", "tone": "casual" },
+        { "text": "どうしました", "rom": "dō shimashita", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "무슨 일이야",
       "variants": [
-        { "text": "무슨 일이야", "rom": "museun iriya", "tone": "casual", "reviewed": false },
-        { "text": "무슨 일 있어요", "rom": "museun il isseoyo", "tone": "polite", "reviewed": false }
+        { "text": "무슨 일이야", "rom": "museun iriya", "tone": "casual" },
+        { "text": "무슨 일 있어요", "rom": "museun il isseoyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "what's wrong",
       "variants": [
-        { "text": "What's wrong?", "reviewed": false },
-        { "text": "What happened?", "reviewed": false },
-        { "text": "Are you okay?", "reviewed": false }
+        { "text": "What's wrong?" },
+        { "text": "What happened?" },
+        { "text": "Are you okay?" }
       ]
     },
     "de": {
       "gloss": "was ist los",
       "variants": [
-        { "text": "Was ist los?", "reviewed": false },
-        { "text": "Alles in Ordnung?", "tone": "polite", "note": "Lit. \"everything in order?\"", "reviewed": false }
+        { "text": "Was ist los?" },
+        { "text": "Alles in Ordnung?", "tone": "polite", "note": "Lit. \"everything in order?\"" }
       ]
     },
     "es": {
       "gloss": "qué pasa",
       "variants": [
-        { "text": "¿Qué pasa?", "reviewed": false },
-        { "text": "¿Qué te pasa?", "reviewed": false }
+        { "text": "¿Qué te pasa?" }
       ]
     },
     "pt": {
       "gloss": "o que houve",
       "variants": [
-        { "text": "O que houve?", "reviewed": false },
-        { "text": "O que aconteceu?", "reviewed": false }
+        { "text": "O que houve?" },
+        { "text": "O que aconteceu?" }
       ]
     },
     "fr": {
       "gloss": "qu'est-ce qui se passe",
       "variants": [
-        { "text": "Qu'est-ce qui se passe ?", "reviewed": false },
-        { "text": "Qu'est-ce qu'il y a ?", "tone": "casual", "reviewed": false }
+        { "text": "Qu'est-ce qui se passe ?" }
       ]
     },
     "it": {
       "gloss": "che succede",
       "variants": [
-        { "text": "Che succede?", "reviewed": false },
-        { "text": "Cosa c'è?", "tone": "casual", "reviewed": false }
+        { "text": "Che succede?" },
+        { "text": "Cosa c'è?", "tone": "casual" }
       ]
     },
     "ru": {
       "gloss": "что случилось",
       "variants": [
-        { "text": "Что случилось?", "rom": "chto sluchilos'?", "reviewed": false },
-        { "text": "Что не так?", "rom": "chto ne tak?", "reviewed": false }
+        { "text": "Что случилось?", "rom": "chto sluchilos'?" },
+        { "text": "Что не так?", "rom": "chto ne tak?" }
       ]
     },
     "uk": {
       "gloss": "що сталося",
       "variants": [
-        { "text": "Що сталося?", "rom": "Shcho stalosia?", "reviewed": false },
-        { "text": "Що не так?", "rom": "Shcho ne tak?", "reviewed": false },
-        { "text": "Ти в порядку?", "rom": "Ty v poriadku?", "tone": "casual", "note": "Lit. \"are you okay?\"", "reviewed": false }
+        { "text": "Що сталося?", "rom": "Shcho stalosia?" },
+        { "text": "Що не так?", "rom": "Shcho ne tak?" },
+        { "text": "Ти в порядку?", "rom": "Ty v poriadku?", "tone": "casual", "note": "Lit. \"are you okay?\"" }
       ]
     },
     "pl": {
       "gloss": "co się stało",
       "variants": [
-        { "text": "Co się stało?", "reviewed": false },
-        { "text": "O co chodzi?", "tone": "casual", "reviewed": false }
+        { "text": "Co się stało?" },
+        { "text": "O co chodzi?", "tone": "casual" }
       ]
     },
     "tr": {
       "gloss": "ne oldu",
       "variants": [
-        { "text": "Ne oldu?", "reviewed": false },
-        { "text": "Bir sorun mu var?", "tone": "polite", "reviewed": false }
+        { "text": "Ne oldu?" },
+        { "text": "Bir sorun mu var?", "tone": "polite" }
       ]
     },
     "kk": {
       "gloss": "не болды",
       "variants": [
-        { "text": "Не болды?", "rom": "Ne boldy?", "reviewed": false },
-        { "text": "Бір жайт болды ма?", "rom": "Bir jait boldy ma?", "note": "Lit. \"did something happen?\"", "reviewed": false },
-        { "text": "Жағдайың жақсы ма?", "rom": "Jağdaiyň jaqsy ma?", "tone": "casual", "note": "Lit. \"are you okay?\"", "reviewed": false }
+        { "text": "Не болды?", "rom": "Ne boldy?" },
+        { "text": "Жағдайың жақсы ма?", "rom": "Jağdaiyň jaqsy ma?", "tone": "casual", "note": "Lit. \"are you okay?\"" }
       ]
     },
     "hi": {
       "gloss": "क्या हुआ",
       "variants": [
-        { "text": "क्या हुआ?", "rom": "kyā huā?", "reviewed": false }
+        { "text": "क्या हुआ?", "rom": "kyā huā?" }
       ]
     },
     "bn": {
       "gloss": "কী হয়েছে",
       "variants": [
-        { "text": "কী হয়েছে?", "rom": "kī hôyechhe?", "reviewed": false }
+        { "text": "কী হয়েছে?", "rom": "kī hôyechhe?" }
       ]
     },
     "id": {
       "gloss": "ada apa",
       "variants": [
-        { "text": "Ada apa?", "reviewed": false },
-        { "text": "Kenapa?", "tone": "casual", "reviewed": false }
+        { "text": "Ada apa?" },
+        { "text": "Kenapa?", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "ada apa",
       "variants": [
-        { "text": "Kenapa?", "tone": "casual", "reviewed": false },
-        { "text": "Ada apa?", "reviewed": false }
+        { "text": "Kenapa?", "tone": "casual" },
+        { "text": "Ada apa?" }
       ]
     },
     "fil": {
       "gloss": "anong nangyari",
       "variants": [
-        { "text": "Anong nangyari?", "reviewed": false },
-        { "text": "Ano'ng problema?", "reviewed": false }
+        { "text": "Anong nangyari?" },
+        { "text": "Ano'ng problema?" }
       ]
     },
     "vi": {
       "gloss": "có chuyện gì",
       "variants": [
-        { "text": "Có chuyện gì vậy?", "reviewed": false },
-        { "text": "Sao thế?", "tone": "casual", "reviewed": false }
+        { "text": "Có chuyện gì vậy?" },
+        { "text": "Sao thế?", "tone": "casual" }
       ]
     },
     "th": {
       "gloss": "เกิดอะไรขึ้น",
       "variants": [
-        { "text": "เกิดอะไรขึ้น", "rom": "kerd arai khuen", "reviewed": false },
-        { "text": "เป็นอะไรไป", "rom": "pen arai pai", "tone": "casual", "reviewed": false }
+        { "text": "เกิดอะไรขึ้น", "rom": "kerd arai khuen" },
+        { "text": "เป็นอะไรไป", "rom": "pen arai pai", "tone": "casual" }
       ]
     },
     "mizo": {
       "gloss": "eng ti nge",
       "variants": [
-        { "text": "Eng ti nge?", "note": "Lit. \"what happened?\"", "reviewed": false }
+        { "text": "Eng ti nge?", "note": "Lit. \"what happened?\"" }
       ]
     }
   }

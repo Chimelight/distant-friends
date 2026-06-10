@@ -1,0 +1,151 @@
+{
+  "id": "react-never-mind",
+  "scene": "reactions",
+  "order": 10,
+  "trans": {
+    "zh": {
+      "gloss": "没事了",
+      "variants": [
+        { "text": "没事了", "rom": "méi shì le" },
+        { "text": "当我没说", "rom": "dāng wǒ méi shuō", "tone": "casual", "note": "Lit. \"pretend I didn't say it.\"" }
+      ]
+    },
+    "ja": {
+      "gloss": "なんでもない",
+      "variants": [
+        { "text": "なんでもない", "rom": "nandemonai", "note": "Lit. \"it's nothing.\"" }
+      ]
+    },
+    "ko": {
+      "gloss": "아무것도 아니야",
+      "variants": [
+        { "text": "아무것도 아니야", "rom": "amugeotdo aniya", "tone": "casual", "note": "Lit. \"it's nothing.\"" },
+        { "text": "신경 쓰지 마", "rom": "singyeong sseuji ma", "tone": "casual", "note": "Lit. \"don't mind it.\"" },
+        { "text": "아무것도 아니에요", "rom": "amugeotdo anieyo", "tone": "polite" }
+      ]
+    },
+    "en": {
+      "gloss": "never mind",
+      "variants": [
+        { "text": "Never mind" },
+        { "text": "Nvm", "tone": "casual", "note": "Standard chat shorthand." }
+      ]
+    },
+    "de": {
+      "gloss": "vergiss es",
+      "variants": [
+        { "text": "Vergiss es", "note": "Lit. \"forget it.\"" },
+        { "text": "Egal", "tone": "casual", "note": "Lit. \"doesn't matter.\"" }
+      ]
+    },
+    "es": {
+      "gloss": "olvídalo",
+      "variants": [
+        { "text": "Olvídalo", "note": "Lit. \"forget it.\"" },
+        { "text": "Nada, nada", "tone": "casual", "note": "Retracting — \"nothing, nothing.\"" }
+      ]
+    },
+    "pt": {
+      "gloss": "deixa pra lá",
+      "variants": [
+        { "text": "Deixa pra lá", "note": "Lit. \"leave it over there\" — let it go." },
+        { "text": "Esquece", "tone": "casual", "note": "Lit. \"forget (it).\"" }
+      ]
+    },
+    "fr": {
+      "gloss": "laisse tomber",
+      "variants": [
+        { "text": "Laisse tomber", "note": "Lit. \"let it drop\" — the standard never-mind." }
+      ]
+    },
+    "it": {
+      "gloss": "lascia stare",
+      "variants": [
+        { "text": "Lascia stare", "note": "Lit. \"let it be.\"" }
+      ]
+    },
+    "ru": {
+      "gloss": "забудь",
+      "variants": [
+        { "text": "Забудь", "rom": "zabud'", "tone": "casual", "note": "Lit. \"forget (it).\"" },
+        { "text": "Неважно", "rom": "nevazhno", "note": "Lit. \"not important.\"" }
+      ]
+    },
+    "uk": {
+      "gloss": "забудь",
+      "variants": [
+        { "text": "Забудь", "rom": "Zabud'", "tone": "casual", "note": "Lit. \"forget (it).\"" },
+        { "text": "Не зважай", "rom": "Ne zvazhai", "note": "Lit. \"pay no mind.\"" }
+      ]
+    },
+    "pl": {
+      "gloss": "nieważne",
+      "variants": [
+        { "text": "Nieważne", "note": "Lit. \"not important.\"" }
+      ]
+    },
+    "tr": {
+      "gloss": "boş ver",
+      "variants": [
+        { "text": "Boş ver", "note": "Lit. \"give it empty\" — let it go." },
+        { "text": "Neyse", "tone": "casual", "note": "Lit. \"anyway.\"" }
+      ]
+    },
+    "kk": {
+      "gloss": "ештеңе емес",
+      "variants": [
+        { "text": "Ештеңе емес", "rom": "Eşteňe emes", "note": "Lit. \"it's nothing.\"" }
+      ]
+    },
+    "hi": {
+      "gloss": "जाने दो",
+      "variants": [
+        { "text": "जाने दो", "rom": "jāne do", "note": "Lit. \"let it go.\"" },
+        { "text": "छोड़ो", "rom": "chhoṛo", "tone": "casual", "note": "Lit. \"drop it.\"" }
+      ]
+    },
+    "bn": {
+      "gloss": "বাদ দাও",
+      "variants": [
+        { "text": "বাদ দাও", "rom": "bād dāo", "note": "Lit. \"drop it.\"" }
+      ]
+    },
+    "id": {
+      "gloss": "nggak jadi",
+      "variants": [
+        { "text": "Tidak jadi", "note": "Lit. \"(it's) off\" — retracting what one just said." },
+        { "text": "Nggak jadi", "tone": "casual", "note": "Colloquial spelling." }
+      ]
+    },
+    "ms": {
+      "gloss": "tak jadi",
+      "variants": [
+        { "text": "Tak jadi", "note": "Lit. \"(it's) off\" — never mind." }
+      ]
+    },
+    "fil": {
+      "gloss": "wag na lang",
+      "variants": [
+        { "text": "Wag na lang", "note": "Lit. \"just don't (bother) anymore.\"" }
+      ]
+    },
+    "vi": {
+      "gloss": "thôi bỏ đi",
+      "variants": [
+        { "text": "Thôi bỏ đi", "note": "Lit. \"let it drop.\"" }
+      ]
+    },
+    "th": {
+      "gloss": "ไม่มีอะไร",
+      "variants": [
+        { "text": "ไม่มีอะไร", "rom": "mai mee arai", "note": "Lit. \"it's nothing\" — never mind." }
+      ]
+    },
+    "mizo": {
+      "gloss": "ngaihtuah suh",
+      "variants": [
+        { "text": "Ngaihtuah suh", "note": "Lit. \"don't think about it.\"" }
+      ]
+    }
+  }
+}

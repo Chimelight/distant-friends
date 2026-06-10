@@ -279,7 +279,6 @@ src/content/ui/
 | `addresseeCount` | `one \| many`? |  | 对几人说（"大家再见" 设 `many`） |
 | `region` | string? |  | 区域变体（`BR` / `PT` / `MX` 等），仅少数场景用 |
 | `note` | string? |  | 自由文案，跟 UI locale 同步（v1 写英文） |
-| `reviewed` | boolean? |  | 是否母语者审过。AI 生成的填 `false`，审过的填 `true` 或省略 |
 
 **rom / tone / note 都跟 variant 绑定**（不属于 UI 文案），原因是它们是在描述"这个翻译"，不是在描述"界面"。判断标准：如果删掉所有翻译，这段文字还有意义吗？没有 → 跟 variant 走。
 
@@ -301,7 +300,6 @@ export const Variant = z.object({
   addresseeCount: Count.optional(),
   region: z.string().optional(),
   note: z.string().optional(),
-  reviewed: z.boolean().optional(),
 });
 
 export const LangTrans = z.object({
@@ -431,7 +429,6 @@ export function visibleVariants(
 1. 在 `languages.json` 里追加一条（code/native/tts 等）
 2. 给 AI 一个大 prompt：`phrases.json` 当前全部内容 + "请给每条短语补上这种语言的 `trans[<new-code>]`"
 3. AI 一次返回整份翻译，你 review 后整体合入
-4. 新增的 variant 都带 `reviewed: false`，未来由母语者朋友审核后逐条去掉该标记
 
 **加一个新场景**
 
@@ -1043,11 +1040,10 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 
 1. **UI 中文化** — 结构已就绪（`ui/zh.json` + `$uiLocale` store + SlotPicker 切换器），只需补译文
 2. **Speaker gender 控件** — Stationery 加第三句 "signed by [me · ♂ · ♀]"，影响葡语等性别分化语言的变体选择。等内容里 speakerGender 变体足够多再加
-3. **Reviewed 标记可视化** — variant 有 `reviewed: false` 时在行尾加一个小 ✱ 符号，点击可提交 Issue（"这里翻译得对吗？"）；母语者友人审过逐个升级
-4. **搜索框** — 输入任一语言或拼音定位到短语行（fuse.js 模糊搜索）
-5. **多标签（tags）** — 短语可挂多个标签（`#morning` `#emotion-joy`），与 scene 正交
-6. **分享链接** — `?anchor=ja&langs=zh,en&tone=casual&addr=friend&phrase=greeting-hello` 一键复刻朋友看到的视图
-7. **导出为图片** — 一条短语做成可发到微博/IG 的卡片（html2canvas）
+3. **搜索框** — 输入任一语言或拼音定位到短语行（fuse.js 模糊搜索）
+4. **多标签（tags）** — 短语可挂多个标签（`#morning` `#emotion-joy`），与 scene 正交
+5. **分享链接** — `?anchor=ja&langs=zh,en&tone=casual&addr=friend&phrase=greeting-hello` 一键复刻朋友看到的视图
+6. **导出为图片** — 一条短语做成可发到微博/IG 的卡片（html2canvas）
 8. **反向查找** — 朋友发来一句外语查意思（需要把数据索引反转，工程量大）
 9. **变体级收藏** — 目前收藏到 phrase 级，未来可深入到 variant
 10. **内容贡献渠道** — 如果开放，用 GitHub Issues 表单模板 + PR 流程（不做 CMS）

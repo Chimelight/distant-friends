@@ -1,180 +1,166 @@
 {
   "id": "catch-im-good",
   "scene": "catching-up",
-  "order": 3,
+  "order": 2,
   "trans": {
     "zh": {
       "gloss": "答近况",
       "variants": [
-        { "text": "我很好", "rom": "wǒ hěn hǎo", "reviewed": false },
-        { "text": "我挺好的", "rom": "wǒ tǐng hǎo de", "tone": "casual", "reviewed": false },
-        { "text": "还不错", "rom": "hái bù cuò", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "我很好", "rom": "wǒ hěn hǎo" },
+        { "text": "还不错", "rom": "hái bù cuò", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "ja": {
       "gloss": "近況に答える",
       "variants": [
-        { "text": "元気だよ", "rom": "genki da yo", "tone": "casual", "reviewed": false },
-        { "text": "元気です", "rom": "genki desu", "tone": "polite", "reviewed": false },
-        { "text": "まあまあ", "rom": "māmā", "tone": "casual", "note": "Lit. \"so-so\" — soft \"not bad.\"", "reviewed": false }
+        { "text": "元気だよ", "rom": "genki da yo", "tone": "casual" },
+        { "text": "元気です", "rom": "genki desu", "tone": "polite" },
+        { "text": "まあまあ", "rom": "māmā", "tone": "casual", "note": "Lit. \"so-so\" — soft \"not bad.\"" }
       ]
     },
     "ko": {
       "gloss": "근황 답하기",
       "variants": [
-        { "text": "잘 지내", "rom": "jal jinae", "tone": "casual", "reviewed": false },
-        { "text": "잘 지내요", "rom": "jal jinaeyo", "tone": "polite", "reviewed": false },
-        { "text": "그럭저럭", "rom": "geureokjeoreok", "tone": "casual", "note": "Lit. \"so-so.\"", "reviewed": false }
+        { "text": "잘 지내", "rom": "jal jinae", "tone": "casual" },
+        { "text": "잘 지내요", "rom": "jal jinaeyo", "tone": "polite" },
+        { "text": "그럭저럭", "rom": "geureokjeoreok", "tone": "casual", "note": "Lit. \"so-so.\"" }
       ]
     },
     "en": {
       "gloss": "doing well",
       "variants": [
-        { "text": "I'm fine", "reviewed": false },
-        { "text": "I'm good", "tone": "casual", "reviewed": false },
-        { "text": "Not bad", "tone": "casual", "reviewed": false }
+        { "text": "I'm fine" },
+        { "text": "I'm good", "tone": "casual" },
+        { "text": "Not bad", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "es geht gut",
       "variants": [
-        { "text": "Mir geht's gut", "tone": "casual", "reviewed": false },
-        { "text": "Gut, danke", "reviewed": false },
-        { "text": "Nicht schlecht", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "Mir geht's gut" },
+        { "text": "Nicht schlecht", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "es": {
       "gloss": "estar bien",
       "variants": [
-        { "text": "Estoy bien", "reviewed": false },
-        { "text": "Bien, gracias", "reviewed": false },
-        { "text": "No me quejo", "tone": "casual", "note": "Lit. \"I can't complain.\"", "reviewed": false }
+        { "text": "Estoy bien" },
+        { "text": "No me quejo", "tone": "casual", "note": "Lit. \"I can't complain.\"" }
       ]
     },
     "pt": {
       "gloss": "estar bem",
       "variants": [
-        { "text": "Estou bem", "reviewed": false },
-        { "text": "Tudo bem", "tone": "casual", "note": "Lit. \"all good.\"", "reviewed": false },
-        { "text": "Nada mal", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "Tudo bem", "note": "Lit. \"all good.\"" },
+        { "text": "Nada mal", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "fr": {
       "gloss": "ça va bien",
       "variants": [
-        { "text": "Ça va", "tone": "casual", "note": "Lit. \"it goes\" — neutral fine.", "reviewed": false },
-        { "text": "Ça va bien", "reviewed": false },
-        { "text": "Pas mal", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "Ça va", "tone": "casual", "note": "Lit. \"it goes\" — neutral fine." },
+        { "text": "Ça va bien" },
+        { "text": "Pas mal", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "it": {
       "gloss": "stare bene",
       "variants": [
-        { "text": "Sto bene", "reviewed": false },
-        { "text": "Bene, grazie", "reviewed": false },
-        { "text": "Non c'è male", "tone": "casual", "note": "Lit. \"there's nothing bad\" — \"not bad.\"", "reviewed": false }
+        { "text": "Sto bene" },
+        { "text": "Non c'è male", "tone": "casual", "note": "Lit. \"there's nothing bad\" — \"not bad.\"" }
       ]
     },
     "ru": {
       "gloss": "всё хорошо",
       "variants": [
-        { "text": "Хорошо", "rom": "khorosho", "reviewed": false },
-        { "text": "Всё хорошо", "rom": "vsyo khorosho", "note": "Lit. \"all is well.\"", "reviewed": false },
-        { "text": "Неплохо", "rom": "neplokho", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "Всё хорошо", "rom": "vsyo khorosho", "note": "Lit. \"all is well.\"" },
+        { "text": "Неплохо", "rom": "neplokho", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "uk": {
       "gloss": "все добре",
       "variants": [
-        { "text": "Добре", "rom": "Dobre", "reviewed": false },
-        { "text": "Все добре", "rom": "Vse dobre", "reviewed": false },
-        { "text": "Непогано", "rom": "Nepohano", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "Все добре", "rom": "Vse dobre" },
+        { "text": "Непогано", "rom": "Nepohano", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "pl": {
       "gloss": "u mnie dobrze",
       "variants": [
-        { "text": "Dobrze", "reviewed": false },
-        { "text": "W porządku", "tone": "casual", "note": "Lit. \"in order\" — fine.", "reviewed": false },
-        { "text": "Nieźle", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "Dobrze" },
+        { "text": "Nieźle", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "tr": {
       "gloss": "iyiyim",
       "variants": [
-        { "text": "İyiyim", "reviewed": false },
-        { "text": "İyiyim, teşekkürler", "reviewed": false },
-        { "text": "Fena değil", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "İyiyim" },
+        { "text": "Fena değil", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "kk": {
       "gloss": "жақсымын",
       "variants": [
-        { "text": "Жақсымын", "rom": "Jaqsymyn", "reviewed": false },
-        { "text": "Бәрі жақсы", "rom": "Bäri jaqsy", "note": "Lit. \"all good.\"", "reviewed": false },
-        { "text": "Жаман емес", "rom": "Jaman emes", "tone": "casual", "note": "Lit. \"not bad.\"", "reviewed": false }
+        { "text": "Жақсымын", "rom": "Jaqsymyn" },
+        { "text": "Бәрі жақсы", "rom": "Bäri jaqsy", "note": "Lit. \"all good.\"" },
+        { "text": "Жаман емес", "rom": "Jaman emes", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
     "hi": {
       "gloss": "ठीक हूँ",
       "variants": [
-        { "text": "मैं ठीक हूँ", "rom": "main ṭhīk hūn", "reviewed": false },
-        { "text": "अच्छा हूँ", "rom": "achchhā hūn", "tone": "casual", "speakerGender": "m", "reviewed": false },
-        { "text": "अच्छी हूँ", "rom": "achchhī hūn", "tone": "casual", "speakerGender": "f", "reviewed": false }
+        { "text": "मैं ठीक हूँ", "rom": "main ṭhīk hūn" },
+        { "text": "अच्छा हूँ", "rom": "achchhā hūn", "tone": "casual", "speakerGender": "m" },
+        { "text": "अच्छी हूँ", "rom": "achchhī hūn", "tone": "casual", "speakerGender": "f" }
       ]
     },
     "bn": {
       "gloss": "ভালো আছি",
       "variants": [
-        { "text": "ভালো আছি", "rom": "bhalo achhi", "reviewed": false },
-        { "text": "চলছে", "rom": "cholchhe", "tone": "casual", "note": "Lit. \"it's going\" — \"so-so.\"", "reviewed": false }
+        { "text": "ভালো আছি", "rom": "bhalo achhi" },
+        { "text": "চলছে", "rom": "cholchhe", "tone": "casual", "note": "Lit. \"it's going\" — \"so-so.\"" }
       ]
     },
     "id": {
       "gloss": "baik-baik saja",
       "variants": [
-        { "text": "Baik", "reviewed": false },
-        { "text": "Baik-baik saja", "note": "Slightly fuller \"all is fine.\"", "reviewed": false },
-        { "text": "Lumayan", "tone": "casual", "note": "Lit. \"so-so / not bad.\"", "reviewed": false }
+        { "text": "Baik-baik saja", "note": "Slightly fuller \"all is fine.\"" },
+        { "text": "Lumayan", "tone": "casual", "note": "Lit. \"so-so / not bad.\"" }
       ]
     },
     "ms": {
       "gloss": "baik-baik saja",
       "variants": [
-        { "text": "Baik", "reviewed": false },
-        { "text": "Baik saja", "reviewed": false },
-        { "text": "Boleh tahan", "tone": "casual", "note": "Lit. \"can endure\" — colloquial \"not bad.\"", "reviewed": false }
+        { "text": "Baik" },
+        { "text": "Boleh tahan", "tone": "casual", "note": "Lit. \"can endure\" — colloquial \"not bad.\"" }
       ]
     },
     "fil": {
       "gloss": "mabuti naman",
       "variants": [
-        { "text": "Mabuti naman", "note": "Standard \"I'm doing well.\"", "reviewed": false },
-        { "text": "Okay lang", "tone": "casual", "note": "Lit. \"just okay.\"", "reviewed": false },
-        { "text": "Ayos lang", "tone": "casual", "note": "Lit. \"all good.\"", "reviewed": false }
+        { "text": "Mabuti naman", "note": "Standard \"I'm doing well.\"" },
+        { "text": "Okay lang", "tone": "casual", "note": "Lit. \"just okay.\"" }
       ]
     },
     "vi": {
       "gloss": "khỏe",
       "variants": [
-        { "text": "Mình khỏe", "note": "Mình = friendly self-reference between peers.", "reviewed": false },
-        { "text": "Khỏe", "tone": "casual", "reviewed": false },
-        { "text": "Bình thường", "tone": "casual", "note": "Lit. \"normal\" — \"so-so.\"", "reviewed": false }
+        { "text": "Mình khỏe", "note": "Mình = friendly self-reference between peers." },
+        { "text": "Bình thường", "tone": "casual", "note": "Lit. \"normal\" — \"so-so.\"" }
       ]
     },
     "th": {
       "gloss": "สบายดี",
       "variants": [
-        { "text": "สบายดี", "rom": "sabai dee", "reviewed": false },
-        { "text": "โอเค", "rom": "okhe", "tone": "casual", "note": "English-borrowed \"OK.\"", "reviewed": false },
-        { "text": "เรื่อย ๆ", "rom": "rueay rueay", "tone": "casual", "note": "Lit. \"steadily\" — \"so-so.\"", "reviewed": false }
+        { "text": "สบายดี", "rom": "sabai dee" },
+        { "text": "เรื่อย ๆ", "rom": "rueay rueay", "tone": "casual", "note": "Lit. \"steadily\" — \"so-so.\"" }
       ]
     },
     "mizo": {
       "gloss": "ka dam",
       "variants": [
-        { "text": "Ka dam", "note": "Lit. \"I am well.\"", "reviewed": false },
-        { "text": "A ṭha", "tone": "casual", "note": "Lit. \"it's good\" — \"all fine.\"", "reviewed": false }
+        { "text": "Ka dam", "note": "Lit. \"I am well.\"" },
+        { "text": "A ṭha", "tone": "casual", "note": "Lit. \"it's good\" — \"all fine.\"" }
       ]
     }
   }

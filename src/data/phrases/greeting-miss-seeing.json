@@ -6,142 +6,142 @@
     "zh": {
       "gloss": "久别重逢",
       "variants": [
-        { "text": "好久不见", "rom": "hǎo jiǔ bù jiàn", "reviewed": true }
+        { "text": "好久不见", "rom": "hǎo jiǔ bù jiàn" }
       ]
     },
     "ja": {
       "gloss": "再会の言葉",
       "variants": [
-        { "text": "久しぶり", "rom": "hisashiburi", "note": "The most-used reunion word.", "reviewed": false }
+        { "text": "久しぶり", "rom": "hisashiburi", "note": "The most-used reunion word." }
       ]
     },
     "ko": {
       "gloss": "오랜만의 인사",
       "variants": [
-        { "text": "오랜만이야", "rom": "oraenmaniya", "tone": "casual", "reviewed": false },
-        { "text": "오랜만이에요", "rom": "oraenmanieyo", "tone": "polite", "reviewed": false }
+        { "text": "오랜만이야", "rom": "oraenmaniya", "tone": "casual" },
+        { "text": "오랜만이에요", "rom": "oraenmanieyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "long absence",
       "variants": [
-        { "text": "Long time no see", "reviewed": true }
+        { "text": "Long time no see" }
       ]
     },
     "de": {
       "gloss": "nach langer Zeit",
       "variants": [
-        { "text": "Lange nicht gesehen!", "note": "Lit. “(been) long not seen!”", "reviewed": false }
+        { "text": "Lange nicht gesehen!", "note": "Lit. “(been) long not seen!”" }
       ]
     },
     "es": {
       "gloss": "después de tiempo",
       "variants": [
-        { "text": "¡Cuánto tiempo!", "reviewed": false }
+        { "text": "¡Cuánto tiempo!" }
       ]
     },
     "pt": {
       "gloss": "reencontro",
       "variants": [
-        { "text": "Quanto tempo!", "reviewed": false }
+        { "text": "Quanto tempo!" }
       ]
     },
     "fr": {
       "gloss": "après longtemps",
       "variants": [
-        { "text": "Ça fait longtemps !", "reviewed": false }
+        { "text": "Ça fait longtemps !" }
       ]
     },
     "it": {
       "gloss": "dopo tanto tempo",
       "variants": [
-        { "text": "Quanto tempo!", "note": "Lit. \"how much time!\" — warm reunion exclamation.", "reviewed": false },
-        { "text": "Da quanto non ci vediamo!", "note": "Lit. \"how long since we saw each other!\"", "reviewed": false }
+        { "text": "Quanto tempo!", "note": "Lit. \"how much time!\" — warm reunion exclamation." },
+        { "text": "Da quanto non ci vediamo!", "note": "Lit. \"how long since we saw each other!\"" }
       ]
     },
     "ru": {
       "gloss": "после долгой разлуки",
       "variants": [
-        { "text": "Давно не виделись", "rom": "davno ne videlis'", "note": "Lit. “we haven’t seen each other for a long time.”", "reviewed": true },
-        { "text": "Сколько лет, сколько зим!", "rom": "skol'ko let, skol'ko zim!", "tone": "close", "note": "Lit. “so many years, so many winters!” — warm reunion idiom.", "reviewed": true }
+        { "text": "Давно не виделись", "rom": "davno ne videlis'", "note": "Lit. “we haven’t seen each other for a long time.”" },
+        { "text": "Сколько лет, сколько зим!", "rom": "skol'ko let, skol'ko zim!", "tone": "close", "note": "Lit. “so many years, so many winters!” — warm reunion idiom." }
       ]
     },
     "uk": {
       "gloss": "після довгої розлуки",
       "variants": [
-        { "text": "Давно не бачилися", "rom": "Davno ne bachylysia", "reviewed": false },
-        { "text": "Скільки років, скільки зим!", "rom": "Skil'ky rokiv, skil'ky zym!", "tone": "casual", "note": "Lit. \"how many years, how many winters!\"", "reviewed": false }
+        { "text": "Давно не бачилися", "rom": "Davno ne bachylysia" },
+        { "text": "Скільки років, скільки зим!", "rom": "Skil'ky rokiv, skil'ky zym!", "tone": "casual", "note": "Lit. \"how many years, how many winters!\"" }
       ]
     },
     "pl": {
       "gloss": "po dłuższym czasie",
       "variants": [
-        { "text": "Kopę lat!", "tone": "casual", "note": "Lit. “a heap of years!” — warm, idiomatic.", "reviewed": true },
-        { "text": "Dawno się nie widzieliśmy", "note": "Lit. “(we) haven’t seen each other in a long time.”", "reviewed": true }
+        { "text": "Kopę lat!", "tone": "casual", "note": "Lit. “a heap of years!” — warm, idiomatic." },
+        { "text": "Dawno się nie widzieliśmy", "note": "Lit. “(we) haven’t seen each other in a long time.”" }
       ]
     },
     "tr": {
       "gloss": "uzun zaman sonra",
       "variants": [
-        { "text": "Uzun zamandır görüşmedik!", "note": "Lit. \"we haven't met for a long time!\"", "reviewed": false },
-        { "text": "Ne zaman oldu!", "tone": "casual", "note": "Idiomatic \"it's been forever!\"", "reviewed": false }
+        { "text": "Uzun zamandır görüşmedik!", "note": "Lit. \"we haven't met for a long time!\"" },
+        { "text": "Görüşmeyeli çok oldu!", "tone": "casual", "note": "Lit. \"it's been long since we (last) met!\"" }
       ]
     },
     "kk": {
       "gloss": "ұзақ уақыттан кейін",
       "variants": [
-        { "text": "Көріспегелі көп болды", "rom": "Körispegeli köp boldy", "note": "Lit. \"it's been long since we met.\"", "reviewed": false },
-        { "text": "Қайдасың, жоғалып кеттің ғой", "rom": "Qaidasyň, joğalyp kettiň ğoi", "tone": "casual", "note": "Lit. \"where are you, you disappeared.\"", "reviewed": false }
+        { "text": "Көріспегелі көп болды", "rom": "Körispegeli köp boldy", "note": "Lit. \"it's been long since we met.\"" },
+        { "text": "Қайдасың, жоғалып кеттің ғой", "rom": "Qaidasyň, joğalyp kettiň ğoi", "tone": "casual", "note": "Lit. \"where are you, you disappeared.\"" }
       ]
     },
     "hi": {
       "gloss": "बहुत दिनों बाद",
       "variants": [
-        { "text": "बहुत दिनों के बाद!", "rom": "bahut dinon ke bād!", "note": "Lit. “after many days!”", "reviewed": true }
+        { "text": "बहुत दिनों के बाद!", "rom": "bahut dinon ke bād!", "note": "Lit. “after many days!”" }
       ]
     },
     "bn": {
       "gloss": "অনেক দিন পরে",
       "variants": [
-        { "text": "অনেক দিন পর!", "rom": "onek din por!", "note": "Lit. “after many days!”", "reviewed": true }
+        { "text": "অনেক দিন পর!", "rom": "onek din por!", "note": "Lit. “after many days!”" }
       ]
     },
     "id": {
       "gloss": "setelah lama",
       "variants": [
-        { "text": "Lama tidak bertemu!", "note": "Lit. \"long not meet.\"", "reviewed": false },
-        { "text": "Lama tak ketemu!", "tone": "casual", "note": "Colloquial form.", "reviewed": false }
+        { "text": "Lama tidak bertemu!", "note": "Lit. \"long not meet.\"" },
+        { "text": "Lama tak ketemu!", "tone": "casual", "note": "Colloquial form." }
       ]
     },
     "ms": {
       "gloss": "selepas lama",
       "variants": [
-        { "text": "Lama tak jumpa!", "note": "Lit. \"long not meet.\"", "reviewed": false }
+        { "text": "Lama tak jumpa!", "note": "Lit. \"long not meet.\"" }
       ]
     },
     "th": {
       "gloss": "หลังจากไม่ได้เจอกันนาน",
       "variants": [
-        { "text": "ไม่ได้เจอกันนานเลย", "rom": "mai dai jer gan naan loei", "note": "Lit. \"haven't met for so long.\"", "reviewed": false }
+        { "text": "ไม่ได้เจอกันนานเลย", "rom": "mai dai jer gan naan loei", "note": "Lit. \"haven't met for so long.\"" }
       ]
     },
     "vi": {
       "gloss": "sau lâu không gặp",
       "variants": [
-        { "text": "Lâu rồi không gặp!", "note": "Lit. \"long time not met!\"", "reviewed": false }
+        { "text": "Lâu rồi không gặp!", "note": "Lit. \"long time not met!\"" }
       ]
     },
     "fil": {
       "gloss": "matagal nang hindi nagkita",
       "variants": [
-        { "text": "Ang tagal!", "tone": "casual", "note": "Lit. \"so long!\" — a warm reunion exclamation.", "reviewed": false },
-        { "text": "Tagal nating hindi nagkita", "note": "Lit. \"long time we haven't met.\"", "reviewed": false }
+        { "text": "Ang tagal!", "tone": "casual", "note": "Lit. \"so long!\" — a warm reunion exclamation." },
+        { "text": "Tagal nating hindi nagkita", "note": "Lit. \"long time we haven't met.\"" }
       ]
     },
     "mizo": {
       "gloss": "hun rei hnu",
       "variants": [
-        { "text": "Hun rei tak hnu!", "note": "Lit. “after a very long time!” — a reunion exclamation.", "reviewed": false }
+        { "text": "Hun rei tak hnu!", "note": "Lit. “after a very long time!” — a reunion exclamation." }
       ]
     }
   }

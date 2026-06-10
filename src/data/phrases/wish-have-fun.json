@@ -1,151 +1,146 @@
 {
   "id": "wish-have-fun",
   "scene": "well-wishes",
-  "order": 6,
+  "order": 1,
   "trans": {
     "zh": {
       "gloss": "玩开心",
       "variants": [
-        { "text": "玩得开心", "rom": "wán de kāixīn", "reviewed": false },
-        { "text": "玩开心点", "rom": "wán kāixīn diǎn", "tone": "casual", "reviewed": false }
+        { "text": "玩得开心", "rom": "wán de kāixīn" }
       ]
     },
     "ja": {
       "gloss": "楽しんで",
       "variants": [
-        { "text": "楽しんでね", "rom": "tanoshinde ne", "reviewed": false }
+        { "text": "楽しんでね", "rom": "tanoshinde ne" }
       ]
     },
     "ko": {
       "gloss": "재밌게 놀아",
       "variants": [
-        { "text": "재밌게 놀아", "rom": "jaemitge nora", "tone": "casual", "reviewed": false },
-        { "text": "즐겁게 보내", "rom": "jeulgeopge bonae", "reviewed": false }
+        { "text": "재밌게 놀아", "rom": "jaemitge nora", "tone": "casual" },
+        { "text": "즐겁게 보내", "rom": "jeulgeopge bonae" }
       ]
     },
     "en": {
       "gloss": "have fun",
       "variants": [
-        { "text": "Have fun", "reviewed": false },
-        { "text": "Enjoy", "reviewed": false }
+        { "text": "Have fun" },
+        { "text": "Enjoy" }
       ]
     },
     "de": {
       "gloss": "viel Spaß",
       "variants": [
-        { "text": "Viel Spaß", "reviewed": false }
+        { "text": "Viel Spaß" }
       ]
     },
     "es": {
       "gloss": "diviértete",
       "variants": [
-        { "text": "Diviértete", "reviewed": false },
-        { "text": "Pásalo bien", "reviewed": false }
+        { "text": "Diviértete" }
       ]
     },
     "pt": {
       "gloss": "divirta-se",
       "variants": [
-        { "text": "Divirta-se", "reviewed": false },
-        { "text": "Aproveite", "reviewed": false }
+        { "text": "Divirta-se" },
+        { "text": "Aproveite" }
       ]
     },
     "fr": {
       "gloss": "amuse-toi bien",
       "variants": [
-        { "text": "Amuse-toi bien", "reviewed": false },
-        { "text": "Profite", "reviewed": false }
+        { "text": "Amuse-toi bien" },
+        { "text": "Profite" }
       ]
     },
     "it": {
       "gloss": "divertiti",
       "variants": [
-        { "text": "Divertiti", "reviewed": false }
+        { "text": "Divertiti" }
       ]
     },
     "ru": {
       "gloss": "веселись",
       "variants": [
-        { "text": "Хорошо повеселись", "rom": "khorosho povestilis'", "reviewed": false },
-        { "text": "Веселись", "rom": "veselis'", "tone": "casual", "reviewed": false }
+        { "text": "Хорошо повеселись", "rom": "khorosho poveselis'" },
+        { "text": "Веселись", "rom": "veselis'", "tone": "casual" }
       ]
     },
     "uk": {
       "gloss": "гарно повеселися",
       "variants": [
-        { "text": "Гарно повеселися", "rom": "Harno poveselysia", "reviewed": false },
-        { "text": "Розважайся", "rom": "Rozvazhaisia", "note": "Lit. \"enjoy yourself.\"", "reviewed": false }
+        { "text": "Гарно повеселися", "rom": "Harno poveselysia" },
+        { "text": "Розважайся", "rom": "Rozvazhaisia", "note": "Lit. \"enjoy yourself.\"" }
       ]
     },
     "pl": {
       "gloss": "baw się dobrze",
       "variants": [
-        { "text": "Baw się dobrze", "reviewed": false },
-        { "text": "Powodzenia", "reviewed": false }
+        { "text": "Baw się dobrze" },
+        { "text": "Miłej zabawy", "note": "Lit. \"(have) nice fun.\"" }
       ]
     },
     "tr": {
       "gloss": "iyi eğlenceler",
       "variants": [
-        { "text": "İyi eğlenceler", "reviewed": false },
-        { "text": "Eğlenmene bak", "tone": "casual", "reviewed": false }
+        { "text": "İyi eğlenceler" }
       ]
     },
     "kk": {
       "gloss": "көңілді демал",
       "variants": [
-        { "text": "Көңілді демал", "rom": "Köňildi demal", "note": "Lit. \"rest happily.\"", "reviewed": false },
-        { "text": "Жақсы уақыт өткіз", "rom": "Jaqsy uaqyt ötkiz", "note": "Lit. \"spend a good time.\"", "reviewed": false }
+        { "text": "Жақсы уақыт өткіз", "rom": "Jaqsy uaqyt ötkiz", "note": "Lit. \"spend a good time.\"" }
       ]
     },
     "hi": {
       "gloss": "मज़े करो",
       "variants": [
-        { "text": "मज़े करो", "rom": "maze karo", "reviewed": false }
+        { "text": "मज़े करो", "rom": "maze karo" }
       ]
     },
     "bn": {
       "gloss": "মজা করো",
       "variants": [
-        { "text": "মজা করো", "rom": "môja koro", "reviewed": false }
+        { "text": "মজা করো", "rom": "môja koro" }
       ]
     },
     "id": {
       "gloss": "selamat bersenang-senang",
       "variants": [
-        { "text": "Selamat bersenang-senang", "reviewed": false },
-        { "text": "Have fun", "tone": "casual", "reviewed": false }
+        { "text": "Selamat bersenang-senang" }
       ]
     },
     "ms": {
       "gloss": "berseronoklah",
       "variants": [
-        { "text": "Berseronoklah", "reviewed": false }
+        { "text": "Berseronoklah" }
       ]
     },
     "fil": {
       "gloss": "have fun",
       "variants": [
-        { "text": "Have fun", "tone": "casual", "reviewed": false },
-        { "text": "Enjoy", "tone": "casual", "reviewed": false }
+        { "text": "Mag-enjoy ka", "note": "Everyday Taglish — \"enjoy yourself.\"" },
+        { "text": "Have fun", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "chơi vui nhé",
       "variants": [
-        { "text": "Chơi vui nhé", "reviewed": false }
+        { "text": "Chơi vui nhé" }
       ]
     },
     "th": {
       "gloss": "ขอให้สนุก",
       "variants": [
-        { "text": "ขอให้สนุก", "rom": "kho hai sanuk", "reviewed": false }
+        { "text": "ขอให้สนุก", "rom": "kho hai sanuk" }
       ]
     },
     "mizo": {
       "gloss": "i ni tha la",
       "variants": [
-        { "text": "I ni tha la", "note": "Lit. \"have a good day / time.\"", "reviewed": false }
+        { "text": "I ni tha la", "note": "Lit. \"have a good day / time.\"" }
       ]
     }
   }
