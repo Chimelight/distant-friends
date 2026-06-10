@@ -1,7 +1,7 @@
 {
   "id": "compliment-pretty",
   "scene": "compliments",
-  "order": 5,
+  "order": 2,
   "trans": {
     "zh": {
       "gloss": "好看",

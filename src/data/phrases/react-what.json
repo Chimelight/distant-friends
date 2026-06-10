@@ -1,7 +1,7 @@
 {
   "id": "react-what",
-  "scene": "reactions",
-  "order": 18,
+  "scene": "questions",
+  "order": 2,
   "trans": {
     "zh": {
       "gloss": "什么",

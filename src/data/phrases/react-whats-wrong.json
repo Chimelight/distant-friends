@@ -1,7 +1,7 @@
 {
   "id": "react-whats-wrong",
-  "scene": "reactions",
-  "order": 13,
+  "scene": "questions",
+  "order": 3,
   "trans": {
     "zh": {
       "gloss": "怎么了",

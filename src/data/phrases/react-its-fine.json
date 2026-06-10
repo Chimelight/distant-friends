@@ -1,7 +1,7 @@
 {
   "id": "react-its-fine",
-  "scene": "reactions",
-  "order": 12,
+  "scene": "gratitude",
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "没关系",

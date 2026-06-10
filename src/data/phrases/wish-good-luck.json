@@ -1,7 +1,7 @@
 {
   "id": "wish-good-luck",
   "scene": "well-wishes",
-  "order": 5,
+  "order": 3,
   "trans": {
     "zh": {
       "gloss": "好运",

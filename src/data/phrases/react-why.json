@@ -1,7 +1,7 @@
 {
   "id": "react-why",
-  "scene": "reactions",
-  "order": 14,
+  "scene": "questions",
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "为什么",

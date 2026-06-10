@@ -1,7 +1,7 @@
 {
   "id": "compliment-i-like-it",
   "scene": "compliments",
-  "order": 4,
+  "order": 1,
   "trans": {
     "zh": {
       "gloss": "喜欢",

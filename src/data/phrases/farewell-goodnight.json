@@ -1,7 +1,7 @@
 {
   "id": "farewell-goodnight",
   "scene": "farewells",
-  "order": 7,
+  "order": 5,
   "trans": {
     "zh": {
       "gloss": "晚安祝福",

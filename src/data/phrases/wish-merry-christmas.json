@@ -1,7 +1,7 @@
 {
   "id": "wish-merry-christmas",
-  "scene": "well-wishes",
-  "order": 3,
+  "scene": "holidays",
+  "order": 5,
   "trans": {
     "zh": {
       "gloss": "圣诞快乐",

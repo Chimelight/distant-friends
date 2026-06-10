@@ -1,7 +1,7 @@
 {
   "id": "compliment-good-job",
   "scene": "compliments",
-  "order": 1,
+  "order": 5,
   "trans": {
     "zh": {
       "gloss": "好评",

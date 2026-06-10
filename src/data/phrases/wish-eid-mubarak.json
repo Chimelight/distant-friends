@@ -1,7 +1,7 @@
 {
   "id": "wish-eid-mubarak",
-  "scene": "well-wishes",
-  "order": 8,
+  "scene": "holidays",
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "开斋节快乐",

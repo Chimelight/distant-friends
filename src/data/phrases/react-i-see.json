@@ -1,7 +1,7 @@
 {
   "id": "react-i-see",
   "scene": "reactions",
-  "order": 15,
+  "order": 7,
   "trans": {
     "zh": {
       "gloss": "恍然",
@@ -88,13 +88,14 @@
     "tr": {
       "gloss": "anladım",
       "variants": [
-        { "text": "Öyle demek", "note": "Lit. \"so that's it.\"" },
+        { "text": "Anladım", "note": "Lit. \"I understood.\"" },
         { "text": "Haa", "tone": "casual", "note": "Drawn-out \"ahh\" of recognition." }
       ]
     },
     "kk": {
       "gloss": "түсінікті",
       "variants": [
+        { "text": "Түсінікті", "rom": "Tüsinikti", "note": "Lit. \"understood / clear.\"" },
         { "text": "Аа, солай ма", "rom": "Aa, solai ma", "tone": "casual", "note": "Lit. \"ah, is that so.\"" }
       ]
     },
@@ -134,6 +135,7 @@
     "vi": {
       "gloss": "ra vậy",
       "variants": [
+        { "text": "Hiểu rồi", "note": "Lit. \"understood.\"" },
         { "text": "Ra vậy", "tone": "casual", "note": "Lit. \"so that's it.\"" },
         { "text": "À", "tone": "casual" }
       ]
@@ -141,6 +143,7 @@
     "th": {
       "gloss": "อ๋อ",
       "variants": [
+        { "text": "เข้าใจแล้ว", "rom": "khaojai laeo", "note": "Lit. \"understood.\"" },
         { "text": "อ๋อ", "rom": "ŏ", "tone": "casual", "note": "The realization \"oh.\"" }
       ]
     },

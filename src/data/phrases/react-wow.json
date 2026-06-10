@@ -1,7 +1,7 @@
 {
   "id": "react-wow",
   "scene": "reactions",
-  "order": 7,
+  "order": 5,
   "trans": {
     "zh": {
       "gloss": "哇",

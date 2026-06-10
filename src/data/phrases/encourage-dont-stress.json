@@ -1,7 +1,7 @@
 {
   "id": "encourage-dont-stress",
   "scene": "encouragement",
-  "order": 6,
+  "order": 3,
   "trans": {
     "zh": {
       "gloss": "别紧张",

@@ -1,7 +1,7 @@
 {
   "id": "react-haha",
   "scene": "reactions",
-  "order": 20,
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "笑",

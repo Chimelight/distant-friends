@@ -1,7 +1,7 @@
 {
   "id": "react-dont-know",
-  "scene": "reactions",
-  "order": 16,
+  "scene": "questions",
+  "order": 5,
   "trans": {
     "zh": {
       "gloss": "不知道",

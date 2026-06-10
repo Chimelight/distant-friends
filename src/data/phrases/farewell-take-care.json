@@ -1,7 +1,7 @@
 {
   "id": "farewell-take-care",
   "scene": "farewells",
-  "order": 5,
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "保重",

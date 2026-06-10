@@ -1,7 +1,7 @@
 {
   "id": "wish-congrats",
   "scene": "well-wishes",
-  "order": 9,
+  "order": 2,
   "trans": {
     "zh": {
       "gloss": "恭喜",
