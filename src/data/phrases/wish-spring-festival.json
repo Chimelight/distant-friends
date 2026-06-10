@@ -1,157 +1,150 @@
 {
   "id": "wish-spring-festival",
-  "scene": "well-wishes",
-  "order": 7,
+  "scene": "holidays",
+  "order": 3,
   "trans": {
     "zh": {
       "gloss": "春节快乐",
       "variants": [
-        { "text": "春节快乐", "rom": "chūnjié kuàilè", "reviewed": false },
-        { "text": "新春快乐", "rom": "xīnchūn kuàilè", "reviewed": false },
-        { "text": "恭喜发财", "rom": "gōngxǐ fācái", "tone": "casual", "note": "Lit. \"wishes for prosperity\" — classic festive greeting.", "reviewed": false }
+        { "text": "春节快乐", "rom": "chūnjié kuàilè" },
+        { "text": "新春快乐", "rom": "xīnchūn kuàilè" },
+        { "text": "恭喜发财", "rom": "gōngxǐ fācái", "tone": "casual", "note": "Lit. \"wishes for prosperity\" — classic festive greeting." }
       ]
     },
     "ja": {
       "gloss": "春節おめでとう",
       "variants": [
-        { "text": "春節おめでとう", "rom": "shunsetsu omedetō", "note": "Used when greeting Chinese-speaking friends.", "reviewed": false }
+        { "text": "春節おめでとう", "rom": "shunsetsu omedetō", "note": "Used when greeting Chinese-speaking friends." }
       ]
     },
     "ko": {
       "gloss": "설 잘 보내",
       "variants": [
-        { "text": "설 잘 보내", "rom": "seol jal bonae", "tone": "casual", "note": "Korean Lunar New Year share greeting.", "reviewed": false },
-        { "text": "새해 복 많이 받으세요", "rom": "saehae bok mani badeuseyo", "tone": "polite", "note": "Standard New Year greeting; doubles for Lunar New Year.", "reviewed": false }
+        { "text": "설 잘 보내", "rom": "seol jal bonae", "tone": "casual", "note": "Korean Lunar New Year share greeting." },
+        { "text": "새해 복 많이 받으세요", "rom": "saehae bok mani badeuseyo", "tone": "polite", "note": "Standard New Year greeting; doubles for Lunar New Year." }
       ]
     },
     "en": {
       "gloss": "happy lunar new year",
       "variants": [
-        { "text": "Happy Lunar New Year", "reviewed": false },
-        { "text": "Happy Chinese New Year", "reviewed": false }
+        { "text": "Happy Lunar New Year" }
       ]
     },
     "de": {
       "gloss": "frohes Frühlingsfest",
       "variants": [
-        { "text": "Frohes chinesisches Neujahr", "reviewed": false },
-        { "text": "Frohes Frühlingsfest", "note": "Lit. \"happy Spring Festival.", "reviewed": false }
+        { "text": "Frohes chinesisches Neujahr" },
+        { "text": "Frohes Frühlingsfest", "note": "Lit. \"happy Spring Festival.\"" }
       ]
     },
     "es": {
       "gloss": "feliz año nuevo chino",
       "variants": [
-        { "text": "Feliz Año Nuevo Chino", "reviewed": false },
-        { "text": "Feliz Año Nuevo Lunar", "reviewed": false }
+        { "text": "Feliz Año Nuevo Chino" }
       ]
     },
     "pt": {
       "gloss": "feliz ano novo chinês",
       "variants": [
-        { "text": "Feliz Ano Novo Chinês", "reviewed": false },
-        { "text": "Feliz Ano Novo Lunar", "reviewed": false }
+        { "text": "Feliz Ano Novo Chinês" }
       ]
     },
     "fr": {
       "gloss": "bonne année chinoise",
       "variants": [
-        { "text": "Bonne année chinoise", "reviewed": false },
-        { "text": "Bon Nouvel An lunaire", "reviewed": false }
+        { "text": "Bonne année chinoise" }
       ]
     },
     "it": {
       "gloss": "buon capodanno cinese",
       "variants": [
-        { "text": "Buon Capodanno cinese", "reviewed": false },
-        { "text": "Buon Capodanno lunare", "reviewed": false }
+        { "text": "Buon Capodanno cinese" }
       ]
     },
     "ru": {
       "gloss": "с китайским новым годом",
       "variants": [
-        { "text": "С китайским Новым годом", "rom": "s kitayskim Novym godom", "reviewed": false },
-        { "text": "С Праздником весны", "rom": "s Prazdnikom vesny", "note": "Lit. \"with the Spring Festival.", "reviewed": false }
+        { "text": "С китайским Новым годом", "rom": "s kitayskim Novym godom" },
+        { "text": "С Праздником весны", "rom": "s Prazdnikom vesny", "note": "Lit. \"with the Spring Festival.\"" }
       ]
     },
     "uk": {
       "gloss": "з китайським новим роком",
       "variants": [
-        { "text": "З Китайським Новим роком", "rom": "Z Kytais'kym Novym rokom", "reviewed": false },
-        { "text": "Зі святом Весни", "rom": "Zi sviatom Vesny", "note": "Lit. \"happy Spring Festival.\"", "reviewed": false }
+        { "text": "З Китайським Новим роком", "rom": "Z Kytais'kym Novym rokom" },
+        { "text": "Зі святом Весни", "rom": "Zi sviatom Vesny", "note": "Lit. \"happy Spring Festival.\"" }
       ]
     },
     "pl": {
       "gloss": "szczęśliwego chińskiego nowego roku",
       "variants": [
-        { "text": "Szczęśliwego chińskiego Nowego Roku", "reviewed": false },
-        { "text": "Szczęśliwego księżycowego Nowego Roku", "reviewed": false }
+        { "text": "Szczęśliwego chińskiego Nowego Roku" }
       ]
     },
     "tr": {
       "gloss": "mutlu çin yeni yılı",
       "variants": [
-        { "text": "Mutlu Çin Yeni Yılı", "reviewed": false },
-        { "text": "Mutlu Ay Yılı", "reviewed": false }
+        { "text": "Çin Yeni Yılınız kutlu olsun", "note": "Lit. \"may your Chinese New Year be blessed.\"" },
+        { "text": "Mutlu Çin Yeni Yılı" }
       ]
     },
     "kk": {
       "gloss": "қытай жаңа жылымен",
       "variants": [
-        { "text": "Қытай Жаңа жылыңмен", "rom": "Qytai Jaňa jylyňmen", "tone": "casual", "reviewed": false },
-        { "text": "Көктем мерекесі құтты болсын", "rom": "Köktem merekesi qutty bolsyn", "note": "Lit. \"happy Spring Festival.\"", "reviewed": false }
+        { "text": "Қытай Жаңа жылыңмен", "rom": "Qytai Jaňa jylyňmen", "tone": "casual" },
+        { "text": "Көктем мерекесі құтты болсын", "rom": "Köktem merekesi qutty bolsyn", "note": "Lit. \"happy Spring Festival.\"" }
       ]
     },
     "hi": {
       "gloss": "चीनी नववर्ष की शुभकामनाएँ",
       "variants": [
-        { "text": "चीनी नववर्ष की शुभकामनाएँ", "rom": "chīnī navavarsh kī śubhakāmnāen", "reviewed": false }
+        { "text": "चीनी नववर्ष की शुभकामनाएँ", "rom": "chīnī navavarsh kī śubhakāmnāen" }
       ]
     },
     "bn": {
       "gloss": "চীনা নববর্ষ শুভেচ্ছা",
       "variants": [
-        { "text": "চীনা নববর্ষের শুভেচ্ছা", "rom": "chīnā nôbôbôrṣer śubhechchhā", "reviewed": false }
+        { "text": "চীনা নববর্ষের শুভেচ্ছা", "rom": "chīnā nôbôbôrṣer śubhechchhā" }
       ]
     },
     "id": {
       "gloss": "selamat tahun baru imlek",
       "variants": [
-        { "text": "Selamat Tahun Baru Imlek", "note": "Imlek = the Indonesian word for Lunar New Year.", "reviewed": false },
-        { "text": "Gong Xi Fa Cai", "tone": "casual", "note": "Borrowed Hokkien greeting; widely used in Indonesia.", "reviewed": false }
+        { "text": "Selamat Tahun Baru Imlek", "note": "Imlek = the Indonesian word for Lunar New Year." },
+        { "text": "Gong Xi Fa Cai", "tone": "casual", "note": "Borrowed Hokkien greeting; widely used in Indonesia." }
       ]
     },
     "ms": {
       "gloss": "selamat tahun baru cina",
       "variants": [
-        { "text": "Selamat Tahun Baru Cina", "reviewed": false },
-        { "text": "Gong Xi Fa Cai", "tone": "casual", "reviewed": false }
+        { "text": "Selamat Tahun Baru Cina" },
+        { "text": "Gong Xi Fa Cai", "tone": "casual" }
       ]
     },
     "fil": {
       "gloss": "manigong bagong taon",
       "variants": [
-        { "text": "Kung Hei Fat Choi", "tone": "casual", "note": "Borrowed Cantonese greeting; common in PH.", "reviewed": false },
-        { "text": "Manigong Bagong Taon ng mga Tsino", "reviewed": false }
+        { "text": "Happy Chinese New Year" },
+        { "text": "Kung Hei Fat Choi", "tone": "casual", "note": "Borrowed Cantonese greeting; common in PH." }
       ]
     },
     "vi": {
       "gloss": "chúc mừng năm mới",
       "variants": [
-        { "text": "Chúc mừng năm mới", "note": "Vietnamese Tết uses the same phrase as the regular new year greeting.", "reviewed": false },
-        { "text": "Tết vui vẻ", "tone": "casual", "note": "Lit. \"happy Tết.", "reviewed": false }
+        { "text": "Chúc mừng năm mới", "note": "Vietnamese Tết uses the same phrase as the regular new year greeting." },
+        { "text": "Tết vui vẻ", "tone": "casual", "note": "Lit. \"happy Tết.\"" }
       ]
     },
     "th": {
       "gloss": "สวัสดีตรุษจีน",
       "variants": [
-        { "text": "สวัสดีตรุษจีน", "rom": "sawatdee trut jeen", "reviewed": false },
-        { "text": "สุขสันต์วันตรุษจีน", "rom": "suksan wan trut jeen", "reviewed": false }
+        { "text": "สวัสดีตรุษจีน", "rom": "sawatdee trut jeen" }
       ]
     },
     "mizo": {
       "gloss": "china kum thar chibai",
       "variants": [
-        { "text": "China kum thar chibai", "note": "Lit. \"Chinese new-year greeting.\"", "reviewed": false }
+        { "text": "China kum thar chibai", "note": "Lit. \"Chinese new-year greeting.\"" }
       ]
     }
   }

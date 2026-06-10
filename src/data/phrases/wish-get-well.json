@@ -1,156 +1,147 @@
 {
   "id": "wish-get-well",
   "scene": "well-wishes",
-  "order": 10,
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "早日康复",
       "variants": [
-        { "text": "早日康复", "rom": "zǎorì kāngfù", "reviewed": false },
-        { "text": "快点好起来", "rom": "kuài diǎn hǎo qǐlái", "tone": "casual", "reviewed": false }
+        { "text": "早日康复", "rom": "zǎorì kāngfù" },
+        { "text": "快点好起来", "rom": "kuài diǎn hǎo qǐlái", "tone": "casual" }
       ]
     },
     "ja": {
       "gloss": "お大事に",
       "variants": [
-        { "text": "お大事に", "rom": "o-daiji ni", "note": "The standard \"take care / get well\" said to someone unwell.", "reviewed": false },
-        { "text": "早くよくなってね", "rom": "hayaku yoku natte ne", "tone": "casual", "reviewed": false }
+        { "text": "お大事に", "rom": "o-daiji ni", "note": "The standard \"take care / get well\" said to someone unwell." },
+        { "text": "早くよくなってね", "rom": "hayaku yoku natte ne", "tone": "casual" }
       ]
     },
     "ko": {
       "gloss": "빨리 나아",
       "variants": [
-        { "text": "빨리 나아", "rom": "ppalli naa", "tone": "casual", "reviewed": false },
-        { "text": "빨리 나으세요", "rom": "ppalli naeuseyo", "tone": "polite", "reviewed": false }
+        { "text": "빨리 나아", "rom": "ppalli naa", "tone": "casual" },
+        { "text": "빨리 나으세요", "rom": "ppalli naeuseyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "get well soon",
       "variants": [
-        { "text": "Get well soon", "reviewed": false },
-        { "text": "Feel better", "reviewed": false }
+        { "text": "Get well soon" },
+        { "text": "Feel better" }
       ]
     },
     "de": {
       "gloss": "gute Besserung",
       "variants": [
-        { "text": "Gute Besserung", "reviewed": false }
+        { "text": "Gute Besserung" }
       ]
     },
     "es": {
       "gloss": "mejórate",
       "variants": [
-        { "text": "Que te mejores", "reviewed": false },
-        { "text": "Mejórate pronto", "reviewed": false }
+        { "text": "Que te mejores" }
       ]
     },
     "pt": {
       "gloss": "melhoras",
       "variants": [
-        { "text": "Melhoras", "reviewed": false },
-        { "text": "Estimo as melhoras", "tone": "polite", "reviewed": false }
+        { "text": "Melhoras" },
+        { "text": "Estimo as melhoras", "tone": "polite" }
       ]
     },
     "fr": {
       "gloss": "bon rétablissement",
       "variants": [
-        { "text": "Bon rétablissement", "reviewed": false },
-        { "text": "Remets-toi vite", "tone": "casual", "reviewed": false }
+        { "text": "Bon rétablissement" },
+        { "text": "Remets-toi vite", "tone": "casual" }
       ]
     },
     "it": {
       "gloss": "guarisci presto",
       "variants": [
-        { "text": "Guarisci presto", "reviewed": false },
-        { "text": "Rimettiti presto", "reviewed": false }
+        { "text": "Guarisci presto" }
       ]
     },
     "ru": {
       "gloss": "выздоравливай",
       "variants": [
-        { "text": "Выздоравливай", "rom": "vyzdoravlivay", "reviewed": false },
-        { "text": "Поправляйся", "rom": "popravlyaysya", "reviewed": false }
+        { "text": "Выздоравливай", "rom": "vyzdoravlivay" }
       ]
     },
     "uk": {
       "gloss": "одужуй",
       "variants": [
-        { "text": "Одужуй", "rom": "Oduzhui", "reviewed": false },
-        { "text": "Швидше одужуй", "rom": "Shvydshe oduzhui", "note": "Lit. \"get well faster.\"", "reviewed": false }
+        { "text": "Одужуй", "rom": "Oduzhui" }
       ]
     },
     "pl": {
       "gloss": "zdrowiej szybko",
       "variants": [
-        { "text": "Zdrowiej szybko", "reviewed": false },
-        { "text": "Szybkiego powrotu do zdrowia", "tone": "polite", "reviewed": false }
+        { "text": "Zdrowiej szybko" },
+        { "text": "Szybkiego powrotu do zdrowia", "tone": "polite" }
       ]
     },
     "tr": {
       "gloss": "geçmiş olsun",
       "variants": [
-        { "text": "Geçmiş olsun", "note": "Lit. \"may it be past\" — said to someone unwell or after misfortune.", "reviewed": false },
-        { "text": "Çabuk iyileş", "reviewed": false }
+        { "text": "Geçmiş olsun", "note": "Lit. \"may it be past\" — said to someone unwell or after misfortune." },
+        { "text": "Çabuk iyileş" }
       ]
     },
     "kk": {
       "gloss": "жазылып кет",
       "variants": [
-        { "text": "Тез жазылып кет", "rom": "Tez jazylyp ket", "note": "Lit. \"recover quickly.\"", "reviewed": false },
-        { "text": "Сауығып кет", "rom": "Sauyğyp ket", "reviewed": false }
+        { "text": "Тез жазылып кет", "rom": "Tez jazylyp ket", "note": "Lit. \"recover quickly.\"" },
+        { "text": "Сауығып кет", "rom": "Sauyğyp ket" }
       ]
     },
     "hi": {
       "gloss": "जल्दी ठीक हो जाओ",
       "variants": [
-        { "text": "जल्दी ठीक हो जाओ", "rom": "jaldī ṭhīk ho jāo", "reviewed": false }
+        { "text": "जल्दी ठीक हो जाओ", "rom": "jaldī ṭhīk ho jāo" }
       ]
     },
     "bn": {
       "gloss": "তাড়াতাড়ি সুস্থ হও",
       "variants": [
-        { "text": "তাড়াতাড়ি সুস্থ হও", "rom": "tāṛātāṛi shustho hôo", "reviewed": false }
+        { "text": "তাড়াতাড়ি সুস্থ হও", "rom": "tāṛātāṛi shustho hôo" }
       ]
     },
     "id": {
       "gloss": "cepat sembuh",
       "variants": [
-        { "text": "Cepat sembuh", "reviewed": false },
-        { "text": "Semoga lekas sembuh", "reviewed": false }
+        { "text": "Semoga lekas sembuh" }
       ]
     },
     "ms": {
       "gloss": "cepat sembuh",
       "variants": [
-        { "text": "Cepat sembuh", "reviewed": false },
-        { "text": "Semoga cepat sembuh", "reviewed": false }
+        { "text": "Semoga cepat sembuh" }
       ]
     },
     "fil": {
       "gloss": "gumaling ka agad",
       "variants": [
-        { "text": "Gumaling ka agad", "reviewed": false },
-        { "text": "Sana gumaling ka na", "reviewed": false }
+        { "text": "Gumaling ka agad" }
       ]
     },
     "vi": {
       "gloss": "mau khỏe",
       "variants": [
-        { "text": "Mau khỏe nhé", "reviewed": false },
-        { "text": "Chúc bạn mau khỏe", "reviewed": false }
+        { "text": "Mau khỏe nhé" }
       ]
     },
     "th": {
       "gloss": "หายไว ๆ",
       "variants": [
-        { "text": "หายไว ๆ", "rom": "hai wai wai", "reviewed": false },
-        { "text": "ขอให้หายไว ๆ", "rom": "kho hai hai wai wai", "reviewed": false }
+        { "text": "หายไว ๆ", "rom": "hai wai wai" }
       ]
     },
     "mizo": {
       "gloss": "i dam thuai ang",
       "variants": [
-        { "text": "I dam thuai ang u", "note": "Lit. \"may you be well soon.\"", "reviewed": false }
+        { "text": "I dam thuai ang", "note": "Lit. \"may you be well soon.\"" }
       ]
     }
   }

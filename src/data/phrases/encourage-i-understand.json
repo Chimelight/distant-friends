@@ -6,146 +6,148 @@
     "zh": {
       "gloss": "理解",
       "variants": [
-        { "text": "我理解", "rom": "wǒ lǐjiě", "reviewed": false },
-        { "text": "我能理解", "rom": "wǒ néng lǐjiě", "reviewed": false }
+        { "text": "我理解", "rom": "wǒ lǐjiě" },
+        { "text": "我懂你", "rom": "wǒ dǒng nǐ" }
       ]
     },
     "ja": {
       "gloss": "わかるよ",
       "variants": [
-        { "text": "わかるよ", "rom": "wakaru yo", "tone": "casual", "reviewed": false },
-        { "text": "理解できる", "rom": "rikai dekiru", "reviewed": false }
+        { "text": "わかるよ", "rom": "wakaru yo", "tone": "casual" },
+        { "text": "気持ちわかるよ", "rom": "kimochi wakaru yo", "note": "Lit. \"I get how you feel.\"" }
       ]
     },
     "ko": {
       "gloss": "이해해",
       "variants": [
-        { "text": "이해해", "rom": "ihaehae", "reviewed": false },
-        { "text": "이해할 수 있어", "rom": "ihaehal su isseo", "reviewed": false }
+        { "text": "이해해", "rom": "ihaehae" },
+        { "text": "네 마음 알아", "rom": "ne maeum ara", "note": "Lit. \"I know your heart.\"" }
       ]
     },
     "en": {
       "gloss": "I understand",
       "variants": [
-        { "text": "I understand", "reviewed": false },
-        { "text": "I get it", "tone": "casual", "reviewed": false }
+        { "text": "I understand" },
+        { "text": "I get it", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "ich verstehe",
       "variants": [
-        { "text": "Ich verstehe", "reviewed": false },
-        { "text": "Verständlich", "reviewed": false }
+        { "text": "Ich verstehe" },
+        { "text": "Verständlich" }
       ]
     },
     "es": {
       "gloss": "lo entiendo",
       "variants": [
-        { "text": "Lo entiendo", "reviewed": false },
-        { "text": "Te entiendo", "reviewed": false }
+        { "text": "Lo entiendo" },
+        { "text": "Te entiendo" }
       ]
     },
     "pt": {
       "gloss": "entendo",
       "variants": [
-        { "text": "Entendo", "reviewed": false },
-        { "text": "Compreendo", "reviewed": false }
+        { "text": "Entendo" },
+        { "text": "Compreendo" }
       ]
     },
     "fr": {
       "gloss": "je comprends",
       "variants": [
-        { "text": "Je comprends", "reviewed": false }
+        { "text": "Je comprends" }
       ]
     },
     "it": {
       "gloss": "capisco",
       "variants": [
-        { "text": "Capisco", "reviewed": false }
+        { "text": "Capisco" }
       ]
     },
     "ru": {
       "gloss": "понимаю",
       "variants": [
-        { "text": "Понимаю", "rom": "ponimayu", "reviewed": false }
+        { "text": "Понимаю", "rom": "ponimayu" }
       ]
     },
     "uk": {
       "gloss": "розумію",
       "variants": [
-        { "text": "Розумію", "rom": "Rozumiiu", "reviewed": false },
-        { "text": "Я тебе розумію", "rom": "Ya tebe rozumiiu", "reviewed": false }
+        { "text": "Розумію", "rom": "Rozumiiu" },
+        { "text": "Я тебе розумію", "rom": "Ya tebe rozumiiu" }
       ]
     },
     "pl": {
       "gloss": "rozumiem",
       "variants": [
-        { "text": "Rozumiem", "reviewed": false }
+        { "text": "Rozumiem" }
       ]
     },
     "tr": {
       "gloss": "anlıyorum",
       "variants": [
-        { "text": "Anlıyorum", "reviewed": false }
+        { "text": "Anlıyorum" }
       ]
     },
     "kk": {
       "gloss": "түсінемін",
       "variants": [
-        { "text": "Түсінемін", "rom": "Tüsinemin", "reviewed": false },
-        { "text": "Сені түсінемін", "rom": "Seni tüsinemin", "reviewed": false }
+        { "text": "Түсінемін", "rom": "Tüsinemin" },
+        { "text": "Сені түсінемін", "rom": "Seni tüsinemin" }
       ]
     },
     "hi": {
       "gloss": "समझता हूँ",
       "variants": [
-        { "text": "मैं समझता हूँ", "rom": "main samajhtā hūn", "speakerGender": "m", "reviewed": false },
-        { "text": "मैं समझती हूँ", "rom": "main samajhtī hūn", "speakerGender": "f", "reviewed": false }
+        { "text": "मैं समझता हूँ", "rom": "main samajhtā hūn", "speakerGender": "m" },
+        { "text": "मैं समझती हूँ", "rom": "main samajhtī hūn", "speakerGender": "f" }
       ]
     },
     "bn": {
       "gloss": "বুঝি",
       "variants": [
-        { "text": "বুঝি", "rom": "bujhi", "reviewed": false },
-        { "text": "আমি বুঝতে পারছি", "rom": "āmi bujhte pārchhi", "reviewed": false }
+        { "text": "বুঝি", "rom": "bujhi" },
+        { "text": "আমি বুঝতে পারছি", "rom": "āmi bujhte pārchhi" }
       ]
     },
     "id": {
       "gloss": "aku mengerti",
       "variants": [
-        { "text": "Aku mengerti", "reviewed": false },
-        { "text": "Aku paham", "reviewed": false }
+        { "text": "Aku mengerti" },
+        { "text": "Aku paham" }
       ]
     },
     "ms": {
       "gloss": "saya faham",
       "variants": [
-        { "text": "Saya faham", "reviewed": false }
+        { "text": "Saya faham" }
       ]
     },
     "fil": {
       "gloss": "naiintindihan ko",
       "variants": [
-        { "text": "Naiintindihan ko", "reviewed": false }
+        { "text": "Naiintindihan ko" }
       ]
     },
     "vi": {
       "gloss": "mình hiểu",
       "variants": [
-        { "text": "Mình hiểu", "reviewed": false },
-        { "text": "Tôi hiểu", "reviewed": false }
+        { "text": "Mình hiểu" },
+        { "text": "Tôi hiểu" }
       ]
     },
     "th": {
       "gloss": "ฉันเข้าใจ",
       "variants": [
-        { "text": "ฉันเข้าใจ", "rom": "chan khaojai", "reviewed": false }
+        { "text": "ฉันเข้าใจ", "rom": "chan khaojai" },
+        { "text": "เข้าใจคุณ", "rom": "khaojai khun" }
       ]
     },
     "mizo": {
       "gloss": "ka hre",
       "variants": [
-        { "text": "Ka hre", "note": "Lit. \"I know / understand.\"", "reviewed": false }
+        { "text": "Ka hria", "note": "Lit. \"I know / understand.\"" },
+        { "text": "Ka hre che", "note": "Lit. \"I understand you.\"" }
       ]
     }
   }

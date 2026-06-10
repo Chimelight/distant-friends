@@ -1,157 +1,157 @@
 {
   "id": "encourage-itll-be-better",
   "scene": "encouragement",
-  "order": 3,
+  "order": 6,
   "trans": {
     "zh": {
       "gloss": "会变好的",
       "variants": [
-        { "text": "会变好的", "rom": "huì biàn hǎo de", "reviewed": false },
-        { "text": "一切都会好起来", "rom": "yīqiè dōu huì hǎo qǐlái", "reviewed": false }
+        { "text": "会变好的", "rom": "huì biàn hǎo de" },
+        { "text": "一切都会好起来", "rom": "yīqiè dōu huì hǎo qǐlái" }
       ]
     },
     "ja": {
       "gloss": "よくなる",
       "variants": [
-        { "text": "きっとよくなるよ", "rom": "kitto yoku naru yo", "reviewed": false },
-        { "text": "だいじょうぶになるよ", "rom": "daijōbu ni naru yo", "reviewed": false }
+        { "text": "きっとよくなるよ", "rom": "kitto yoku naru yo" },
+        { "text": "だいじょうぶになるよ", "rom": "daijōbu ni naru yo" }
       ]
     },
     "ko": {
       "gloss": "잘 될 거야",
       "variants": [
-        { "text": "잘 될 거야", "rom": "jal doel geoya", "tone": "casual", "reviewed": false },
-        { "text": "다 좋아질 거야", "rom": "da joajil geoya", "reviewed": false }
+        { "text": "잘 될 거야", "rom": "jal doel geoya", "tone": "casual" },
+        { "text": "다 좋아질 거야", "rom": "da joajil geoya" }
       ]
     },
     "en": {
       "gloss": "it'll be better",
       "variants": [
-        { "text": "It'll be better", "reviewed": false },
-        { "text": "Things will get better", "reviewed": false }
+        { "text": "It'll be better" },
+        { "text": "Things will get better" }
       ]
     },
     "de": {
       "gloss": "wird besser",
       "variants": [
-        { "text": "Es wird besser", "reviewed": false },
-        { "text": "Es wird schon", "tone": "casual", "reviewed": false }
+        { "text": "Es wird besser" },
+        { "text": "Es wird schon", "tone": "casual" }
       ]
     },
     "es": {
       "gloss": "todo mejorará",
       "variants": [
-        { "text": "Las cosas van a mejorar", "reviewed": false },
-        { "text": "Todo va a estar bien", "reviewed": false }
+        { "text": "Las cosas van a mejorar" },
+        { "text": "Todo va a estar bien" }
       ]
     },
     "pt": {
       "gloss": "vai melhorar",
       "variants": [
-        { "text": "Vai melhorar", "reviewed": false },
-        { "text": "Tudo vai ficar bem", "reviewed": false }
+        { "text": "Vai melhorar" },
+        { "text": "Tudo vai ficar bem" }
       ]
     },
     "fr": {
       "gloss": "ça ira mieux",
       "variants": [
-        { "text": "Ça ira mieux", "reviewed": false },
-        { "text": "Ça va s'arranger", "reviewed": false }
+        { "text": "Ça ira mieux" },
+        { "text": "Ça va s'arranger" }
       ]
     },
     "it": {
       "gloss": "andrà meglio",
       "variants": [
-        { "text": "Andrà meglio", "reviewed": false },
-        { "text": "Tutto andrà bene", "reviewed": false }
+        { "text": "Andrà meglio" },
+        { "text": "Tutto andrà bene" }
       ]
     },
     "ru": {
       "gloss": "всё наладится",
       "variants": [
-        { "text": "Всё наладится", "rom": "vsyo naladitsya", "reviewed": false },
-        { "text": "Всё будет хорошо", "rom": "vsyo budet khorosho", "reviewed": false }
+        { "text": "Всё наладится", "rom": "vsyo naladitsya" },
+        { "text": "Всё будет хорошо", "rom": "vsyo budet khorosho" }
       ]
     },
     "uk": {
       "gloss": "все налагодиться",
       "variants": [
-        { "text": "Все налагодиться", "rom": "Vse nalahodyt'sia", "reviewed": false },
-        { "text": "Все буде добре", "rom": "Vse bude dobre", "note": "Lit. \"everything will be good.\"", "reviewed": false }
+        { "text": "Все налагодиться", "rom": "Vse nalahodyt'sia" },
+        { "text": "Все буде добре", "rom": "Vse bude dobre", "note": "Lit. \"everything will be good.\"" }
       ]
     },
     "pl": {
       "gloss": "będzie lepiej",
       "variants": [
-        { "text": "Będzie lepiej", "reviewed": false },
-        { "text": "Wszystko się ułoży", "reviewed": false }
+        { "text": "Będzie lepiej" },
+        { "text": "Wszystko się ułoży" }
       ]
     },
     "tr": {
       "gloss": "daha iyi olacak",
       "variants": [
-        { "text": "Daha iyi olacak", "reviewed": false },
-        { "text": "Her şey düzelecek", "reviewed": false }
+        { "text": "Daha iyi olacak" },
+        { "text": "Her şey düzelecek" }
       ]
     },
     "kk": {
       "gloss": "бәрі жақсы болады",
       "variants": [
-        { "text": "Бәрі жақсы болады", "rom": "Bäri jaqsy bolady", "reviewed": false },
-        { "text": "Бәрі ретке келеді", "rom": "Bäri retke keledi", "note": "Lit. \"all will fall into place.\"", "reviewed": false }
+        { "text": "Бәрі жақсы болады", "rom": "Bäri jaqsy bolady" },
+        { "text": "Бәрі ретке келеді", "rom": "Bäri retke keledi", "note": "Lit. \"all will fall into place.\"" }
       ]
     },
     "hi": {
       "gloss": "सब ठीक हो जाएगा",
       "variants": [
-        { "text": "सब ठीक हो जाएगा", "rom": "sab ṭhīk ho jāegā", "reviewed": false }
+        { "text": "सब ठीक हो जाएगा", "rom": "sab ṭhīk ho jāegā" }
       ]
     },
     "bn": {
       "gloss": "সব ঠিক হয়ে যাবে",
       "variants": [
-        { "text": "সব ঠিক হয়ে যাবে", "rom": "sôb ṭhik hôye jābe", "reviewed": false }
+        { "text": "সব ঠিক হয়ে যাবে", "rom": "sôb ṭhik hôye jābe" }
       ]
     },
     "id": {
       "gloss": "akan membaik",
       "variants": [
-        { "text": "Pasti akan membaik", "reviewed": false },
-        { "text": "Semua akan baik-baik saja", "reviewed": false }
+        { "text": "Pasti akan membaik" },
+        { "text": "Semua akan baik-baik saja" }
       ]
     },
     "ms": {
       "gloss": "akan jadi baik",
       "variants": [
-        { "text": "Akan jadi baik", "reviewed": false },
-        { "text": "Semua akan baik", "reviewed": false }
+        { "text": "Akan jadi baik" },
+        { "text": "Semua akan baik" }
       ]
     },
     "fil": {
       "gloss": "magiging maayos",
       "variants": [
-        { "text": "Magiging maayos din", "reviewed": false },
-        { "text": "Bubuti rin", "reviewed": false }
+        { "text": "Magiging maayos din" },
+        { "text": "Bubuti rin" }
       ]
     },
     "vi": {
       "gloss": "sẽ ổn",
       "variants": [
-        { "text": "Mọi chuyện sẽ ổn", "reviewed": false },
-        { "text": "Sẽ tốt lên thôi", "reviewed": false }
+        { "text": "Mọi chuyện sẽ ổn" },
+        { "text": "Sẽ tốt lên thôi" }
       ]
     },
     "th": {
       "gloss": "จะดีขึ้น",
       "variants": [
-        { "text": "ทุกอย่างจะดีขึ้น", "rom": "thuk yang ja dee khuen", "reviewed": false },
-        { "text": "เดี๋ยวก็ดีขึ้น", "rom": "diao kor dee khuen", "tone": "casual", "reviewed": false }
+        { "text": "ทุกอย่างจะดีขึ้น", "rom": "thuk yang ja dee khuen" },
+        { "text": "เดี๋ยวก็ดีขึ้น", "rom": "diao kor dee khuen", "tone": "casual" }
       ]
     },
     "mizo": {
       "gloss": "a tha lehzual ang",
       "variants": [
-        { "text": "A tha lehzual ang", "note": "Lit. \"(it) will be good again.\"", "reviewed": false }
+        { "text": "A tha lehzual ang", "note": "Lit. \"(it) will be good again.\"" }
       ]
     }
   }

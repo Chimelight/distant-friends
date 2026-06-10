@@ -91,13 +91,12 @@ Variant fields:
 | `addresseeCount` |   | `one` / `many` (e.g. "Bye everyone" → `many`) |
 | `region` |   | `BR` / `PT` / `MX` etc, only when meaningful |
 | `note` |   | freeform English commentary |
-| `reviewed` |   | `false` for new drafts pending native-speaker review |
 
 ### Add a language
 
 1. Append a row to `src/data/languages.json` (`code`, `native`, `tts`, `rtl`, `defaultOn`, `defaultAnchor`).
 2. Translate every phrase's `trans` block to add the new code.
-3. Run `pnpm coverage` to verify fill rate. New variants ship with `reviewed: false` until a native speaker promotes them.
+3. Run `pnpm coverage` to verify fill rate.
 
 ### Add a scene
 
@@ -105,13 +104,14 @@ Append to `src/data/scenes.json` and use the new `id` in any phrase's `scene` fi
 
 ## Translation philosophy
 
-Three rules behind every variant:
+Four rules behind every variant:
 
 1. **Warmth before grammar.** A phrase that sounds like a friend wins over the textbook-correct one.
 2. **Fill only real distinctions.** Don't tag every variant with `tone: neutral` — leave `tone` unset if the language doesn't actually distinguish at that level.
-3. **Native review pending until proven.** New drafts ship `reviewed: false`. A native speaker promotes by removing the flag.
+3. **Friendly foreigner, not fake native.** The sender is reaching out in a language they don't speak. Variants should be warm and standard — deep slang or buddy-register ("bro" energy) reads as fake fluency and lands wrong coming from a foreign friend. Chat conventions everyone learns on day one (jajaja, ㅋㅋㅋ, 555, wkwk) are fine.
+4. **Every variant must earn its seat.** Most phrases have countless casual paraphrases; listing several synonyms reads as noise, not coverage. A second variant exists only for a grammatical split (gender, politeness), a genuinely different function, or a fixed expression every native reaches for. One canonical form beats a sample of alternatives. When trimming a synonym pair, the **standard/textbook form survives** and the casual duplicate goes — every cell keeps a neutral default ("I'm fine" before "I'm good"), unless the concept itself has no formal register (cool, oops, chat laughter).
 
-Translation drafts are produced in pair-programming with Claude (Opus / Sonnet). Drafts always pass through human review before merging — unreviewed shortcuts have shipped wrong gender forms, wrong politeness levels, and direct-translated English idioms in the past. The flow is intentionally not autonomous.
+Translation drafts are produced in pair-programming with Claude. AI drafts have shipped wrong gender forms, wrong politeness levels, and direct-translated English idioms in the past — `pnpm review` exports a side-by-side HTML table to make spot-checking easy.
 
 ## Deploy
 
@@ -142,4 +142,4 @@ See [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单) for the full task li
 | M2 — dark mode + starring | partial — dark tokens + FOUC defense in place; `ThemeToggle` and `StarButton` UI not built yet |
 | M3 — TTS + PWA precache | not started |
 | M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README done |
-| M5 — content (ongoing) | 13 languages × 10 phrases at v0.1.1 (122 of 130 cells unreviewed) |
+| M5 — content (ongoing) | 13 languages × 10 phrases at v0.1.1 |

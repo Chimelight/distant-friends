@@ -6,161 +6,159 @@
     "zh": {
       "gloss": "致谢",
       "variants": [
-        { "text": "谢谢", "rom": "xièxie", "reviewed": true },
-        { "text": "谢谢你", "rom": "xièxie nǐ", "note": "Slightly warmer — specifies \"you\".", "reviewed": true },
-        { "text": "非常感谢", "rom": "fēicháng gǎnxiè", "note": "Lit. \"thank you very much.\"", "reviewed": false }
+        { "text": "谢谢", "rom": "xièxie" },
+        { "text": "谢谢你", "rom": "xièxie nǐ", "note": "Slightly warmer — specifies \"you\"." },
+        { "text": "非常感谢", "rom": "fēicháng gǎnxiè", "note": "Lit. \"thank you very much.\"" }
       ]
     },
     "ja": {
       "gloss": "感謝",
       "variants": [
-        { "text": "ありがとう", "rom": "arigatō", "tone": "casual", "reviewed": false },
-        { "text": "ありがとうございます", "rom": "arigatō gozaimasu", "tone": "polite", "reviewed": false }
+        { "text": "ありがとう", "rom": "arigatō", "tone": "casual" },
+        { "text": "ありがとうございます", "rom": "arigatō gozaimasu", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "감사",
       "variants": [
-        { "text": "고마워", "rom": "gomawo", "tone": "casual", "reviewed": false },
-        { "text": "감사합니다", "rom": "gamsahamnida", "tone": "polite", "reviewed": false }
+        { "text": "고마워", "rom": "gomawo", "tone": "casual" },
+        { "text": "감사합니다", "rom": "gamsahamnida", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "gratitude",
       "variants": [
-        { "text": "Thank you", "reviewed": true }
+        { "text": "Thank you" }
       ]
     },
     "de": {
       "gloss": "Dank",
       "variants": [
-        { "text": "Danke", "reviewed": false },
-        { "text": "Vielen Dank", "note": "Warmer, lit. “many thanks.”", "reviewed": false },
-        { "text": "Dankeschön", "tone": "close", "note": "Soft and friendly.", "reviewed": false }
+        { "text": "Danke" },
+        { "text": "Vielen Dank", "note": "Warmer, lit. “many thanks.”" }
       ]
     },
     "es": {
       "gloss": "agradecimiento",
       "variants": [
-        { "text": "Gracias", "reviewed": false }
+        { "text": "Gracias" }
       ]
     },
     "pt": {
       "gloss": "agradecimento",
       "variants": [
-        { "text": "Obrigado", "speakerGender": "m", "note": "Said by male speakers.", "reviewed": false },
-        { "text": "Obrigada", "speakerGender": "f", "note": "Said by female speakers.", "reviewed": false },
-        { "text": "Valeu", "tone": "casual", "note": "Very casual, Brazilian.", "reviewed": false }
+        { "text": "Obrigado", "speakerGender": "m", "note": "Said by male speakers." },
+        { "text": "Obrigada", "speakerGender": "f", "note": "Said by female speakers." },
+        { "text": "Valeu", "tone": "casual", "note": "Very casual, Brazilian." }
       ]
     },
     "fr": {
       "gloss": "remerciement",
       "variants": [
-        { "text": "Merci", "reviewed": false }
+        { "text": "Merci" }
       ]
     },
     "it": {
       "gloss": "ringraziamento",
       "variants": [
-        { "text": "Grazie", "reviewed": false },
-        { "text": "Grazie mille", "note": "Lit. \"a thousand thanks\" — warmer.", "reviewed": false }
+        { "text": "Grazie" },
+        { "text": "Grazie mille", "note": "Lit. \"a thousand thanks\" — warmer." }
       ]
     },
     "ru": {
       "gloss": "благодарность",
       "variants": [
-        { "text": "Спасибо", "rom": "spasibo", "reviewed": true },
-        { "text": "Большое спасибо", "rom": "bol'shoe spasibo", "note": "Lit. “big thanks” — warmer.", "reviewed": true }
+        { "text": "Спасибо", "rom": "spasibo" },
+        { "text": "Большое спасибо", "rom": "bol'shoe spasibo", "note": "Lit. “big thanks” — warmer." }
       ]
     },
     "uk": {
       "gloss": "подяка",
       "variants": [
-        { "text": "Дякую", "rom": "Diakuiu", "reviewed": false },
-        { "text": "Дуже дякую", "rom": "Duzhe diakuiu", "note": "Lit. \"thank you very much.\"", "reviewed": false },
-        { "text": "Спасибі", "rom": "Spasybi", "tone": "casual", "reviewed": false }
+        { "text": "Дякую", "rom": "Diakuiu" },
+        { "text": "Дуже дякую", "rom": "Duzhe diakuiu", "note": "Lit. \"thank you very much.\"" },
+        { "text": "Спасибі", "rom": "Spasybi", "tone": "casual" }
       ]
     },
     "pl": {
       "gloss": "podziękowanie",
       "variants": [
-        { "text": "Dziękuję", "reviewed": true },
-        { "text": "Dzięki", "tone": "casual", "note": "Short, friendly.", "reviewed": true }
+        { "text": "Dziękuję" },
+        { "text": "Dzięki", "tone": "casual", "note": "Short, friendly." }
       ]
     },
     "tr": {
       "gloss": "teşekkür",
       "variants": [
-        { "text": "Teşekkür ederim", "note": "Lit. \"I thank (you).\"", "reviewed": false },
-        { "text": "Teşekkürler", "tone": "neutral", "note": "Shorter, everyday.", "reviewed": false },
-        { "text": "Sağ ol", "tone": "casual", "note": "Lit. \"be well\" — warm, friendly.", "reviewed": false }
+        { "text": "Teşekkür ederim", "note": "Lit. \"I thank (you).\"" },
+        { "text": "Sağ ol", "tone": "casual", "note": "Lit. \"be well\" — warm, friendly." }
       ]
     },
     "kk": {
       "gloss": "алғыс",
       "variants": [
-        { "text": "Рахмет", "rom": "Rahmet", "reviewed": false },
-        { "text": "Көп рахмет", "rom": "Köp rahmet", "note": "Lit. \"many thanks.\"", "reviewed": false },
-        { "text": "Рахмет сізге", "rom": "Rahmet sizge", "tone": "polite", "reviewed": false }
+        { "text": "Рахмет", "rom": "Rahmet" },
+        { "text": "Көп рахмет", "rom": "Köp rahmet", "note": "Lit. \"many thanks.\"" },
+        { "text": "Рахмет сізге", "rom": "Rahmet sizge", "tone": "polite" }
       ]
     },
     "hi": {
       "gloss": "धन्यवाद",
       "variants": [
-        { "text": "शुक्रिया", "rom": "shukriyā", "note": "Urdu-derived; warm and everyday.", "reviewed": true },
-        { "text": "धन्यवाद", "rom": "dhanyavād", "tone": "polite", "note": "Sanskritic; more formal.", "reviewed": true }
+        { "text": "शुक्रिया", "rom": "shukriyā", "note": "Urdu-derived; warm and everyday." },
+        { "text": "धन्यवाद", "rom": "dhanyavād", "tone": "polite", "note": "Sanskritic; more formal." }
       ]
     },
     "bn": {
       "gloss": "ধন্যবাদ",
       "variants": [
-        { "text": "ধন্যবাদ", "rom": "dhonnobad", "reviewed": true },
-        { "text": "থ্যাংক ইউ", "rom": "thank you", "tone": "casual", "note": "English-borrowed; everyday casual.", "reviewed": true }
+        { "text": "ধন্যবাদ", "rom": "dhonnobad" },
+        { "text": "থ্যাংক ইউ", "rom": "thank you", "tone": "casual", "note": "English-borrowed; everyday casual." }
       ]
     },
     "id": {
       "gloss": "terima kasih",
       "variants": [
-        { "text": "Terima kasih", "reviewed": false },
-        { "text": "Makasih", "tone": "casual", "note": "Shortened, everyday.", "reviewed": false },
-        { "text": "Terima kasih banyak", "note": "Lit. \"thank you much\" — warmer.", "reviewed": false }
+        { "text": "Terima kasih" },
+        { "text": "Makasih", "tone": "casual", "note": "Shortened, everyday." },
+        { "text": "Terima kasih banyak", "note": "Lit. \"thank you much\" — warmer." }
       ]
     },
     "ms": {
       "gloss": "terima kasih",
       "variants": [
-        { "text": "Terima kasih", "reviewed": false },
-        { "text": "Terima kasih banyak", "note": "Warmer, lit. \"thank you much.\"", "reviewed": false }
+        { "text": "Terima kasih" },
+        { "text": "Terima kasih banyak", "note": "Warmer, lit. \"thank you much.\"" }
       ]
     },
     "th": {
       "gloss": "ขอบคุณ",
       "variants": [
-        { "text": "ขอบคุณ", "rom": "khop khun", "reviewed": false },
-        { "text": "ขอบใจ", "rom": "khop jai", "tone": "casual", "note": "To peers or younger; warmer.", "reviewed": false },
-        { "text": "ขอบคุณครับ", "rom": "khop khun khrap", "tone": "polite", "speakerGender": "m", "reviewed": false },
-        { "text": "ขอบคุณค่ะ", "rom": "khop khun kha", "tone": "polite", "speakerGender": "f", "reviewed": false }
+        { "text": "ขอบคุณ", "rom": "khop khun" },
+        { "text": "ขอบใจ", "rom": "khop jai", "tone": "casual", "note": "To peers or younger; warmer." },
+        { "text": "ขอบคุณครับ", "rom": "khop khun khrap", "tone": "polite", "speakerGender": "m" },
+        { "text": "ขอบคุณค่ะ", "rom": "khop khun kha", "tone": "polite", "speakerGender": "f" }
       ]
     },
     "vi": {
       "gloss": "lời cảm ơn",
       "variants": [
-        { "text": "Cảm ơn", "reviewed": false },
-        { "text": "Cảm ơn bạn", "note": "Adds \"you\" — warmer.", "reviewed": false }
+        { "text": "Cảm ơn" },
+        { "text": "Cảm ơn bạn", "note": "Adds \"you\" — warmer." }
       ]
     },
     "fil": {
       "gloss": "pasasalamat",
       "variants": [
-        { "text": "Salamat", "reviewed": false },
-        { "text": "Maraming salamat", "note": "Lit. \"many thanks\" — warmer.", "reviewed": false },
-        { "text": "Salamat po", "tone": "polite", "note": "po — respectful particle for elders or strangers.", "reviewed": false }
+        { "text": "Salamat" },
+        { "text": "Maraming salamat", "note": "Lit. \"many thanks\" — warmer." },
+        { "text": "Salamat po", "tone": "polite", "note": "po — respectful particle for elders or strangers." }
       ]
     },
     "mizo": {
       "gloss": "ka lawm",
       "variants": [
-        { "text": "Ka lawm e", "note": "The everyday “thank you.”", "reviewed": false }
+        { "text": "Ka lawm e", "note": "The everyday “thank you.”" }
       ]
     }
   }

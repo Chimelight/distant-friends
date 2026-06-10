@@ -1,160 +1,162 @@
 {
   "id": "encourage-dont-stress",
   "scene": "encouragement",
-  "order": 6,
+  "order": 3,
   "trans": {
     "zh": {
       "gloss": "别紧张",
       "variants": [
-        { "text": "别紧张", "rom": "bié jǐnzhāng", "reviewed": false },
-        { "text": "放轻松", "rom": "fàng qīngsōng", "tone": "casual", "reviewed": false }
+        { "text": "别紧张", "rom": "bié jǐnzhāng" },
+        { "text": "放轻松", "rom": "fàng qīngsōng", "tone": "casual" }
       ]
     },
     "ja": {
       "gloss": "緊張しないで",
       "variants": [
-        { "text": "緊張しないで", "rom": "kinchō shinai de", "reviewed": false },
-        { "text": "リラックスして", "rom": "rirakkusu shite", "tone": "casual", "reviewed": false }
+        { "text": "緊張しないで", "rom": "kinchō shinai de" },
+        { "text": "リラックスして", "rom": "rirakkusu shite", "tone": "casual" }
       ]
     },
     "ko": {
       "gloss": "긴장하지 마",
       "variants": [
-        { "text": "긴장하지 마", "rom": "ginjanghaji ma", "tone": "casual", "reviewed": false }
+        { "text": "긴장하지 마", "rom": "ginjanghaji ma", "tone": "casual" },
+        { "text": "긴장하지 마세요", "rom": "ginjanghaji maseyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "don't stress",
       "variants": [
-        { "text": "Don't stress", "tone": "casual", "reviewed": false },
-        { "text": "Relax", "reviewed": false },
-        { "text": "Don't worry", "reviewed": false }
+        { "text": "Don't stress", "tone": "casual" },
+        { "text": "Relax" },
+        { "text": "Don't worry" }
       ]
     },
     "de": {
       "gloss": "keine Sorge",
       "variants": [
-        { "text": "Keine Sorge", "reviewed": false },
-        { "text": "Entspann dich", "tone": "casual", "reviewed": false }
+        { "text": "Keine Sorge" },
+        { "text": "Entspann dich", "tone": "casual" }
       ]
     },
     "es": {
       "gloss": "no te estreses",
       "variants": [
-        { "text": "No te estreses", "reviewed": false },
-        { "text": "Relájate", "reviewed": false },
-        { "text": "Tranquilo", "tone": "casual", "reviewed": false }
+        { "text": "No te estreses" },
+        { "text": "Tranquilo", "tone": "casual", "addresseeGender": "m" },
+        { "text": "Tranquila", "tone": "casual", "addresseeGender": "f" }
       ]
     },
     "pt": {
       "gloss": "não se estresse",
       "variants": [
-        { "text": "Não se estresse", "reviewed": false },
-        { "text": "Relaxa", "tone": "casual", "reviewed": false }
+        { "text": "Não se estresse" },
+        { "text": "Relaxa", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "ne stresse pas",
       "variants": [
-        { "text": "Ne stresse pas", "tone": "casual", "reviewed": false },
-        { "text": "Détends-toi", "reviewed": false }
+        { "text": "Ne stresse pas", "tone": "casual" },
+        { "text": "Détends-toi" }
       ]
     },
     "it": {
       "gloss": "non stressarti",
       "variants": [
-        { "text": "Non stressarti", "tone": "casual", "reviewed": false },
-        { "text": "Rilassati", "reviewed": false }
+        { "text": "Non stressarti", "tone": "casual" },
+        { "text": "Rilassati" }
       ]
     },
     "ru": {
       "gloss": "не нервничай",
       "variants": [
-        { "text": "Не нервничай", "rom": "ne nervnichay", "reviewed": false },
-        { "text": "Расслабься", "rom": "rasslab'sya", "tone": "casual", "reviewed": false }
+        { "text": "Не нервничай", "rom": "ne nervnichay" },
+        { "text": "Расслабься", "rom": "rasslab'sya", "tone": "casual" }
       ]
     },
     "uk": {
       "gloss": "не нервуй",
       "variants": [
-        { "text": "Не нервуй", "rom": "Ne nervui", "reviewed": false },
-        { "text": "Розслабся", "rom": "Rozslabsia", "tone": "casual", "reviewed": false },
-        { "text": "Не хвилюйся", "rom": "Ne khvyliuisia", "note": "Lit. \"don't worry.\"", "reviewed": false }
+        { "text": "Не нервуй", "rom": "Ne nervui" },
+        { "text": "Розслабся", "rom": "Rozslabsia", "tone": "casual" },
+        { "text": "Не хвилюйся", "rom": "Ne khvyliuisia", "note": "Lit. \"don't worry.\"" }
       ]
     },
     "pl": {
       "gloss": "nie stresuj się",
       "variants": [
-        { "text": "Nie stresuj się", "reviewed": false },
-        { "text": "Spokojnie", "reviewed": false }
+        { "text": "Nie stresuj się" },
+        { "text": "Spokojnie" }
       ]
     },
     "tr": {
       "gloss": "stres yapma",
       "variants": [
-        { "text": "Stres yapma", "reviewed": false },
-        { "text": "Sakin ol", "reviewed": false }
+        { "text": "Stres yapma" },
+        { "text": "Sakin ol" }
       ]
     },
     "kk": {
       "gloss": "сабыр сақта",
       "variants": [
-        { "text": "Қобалжыма", "rom": "Qobaljyma", "note": "Lit. \"don't fret.\"", "reviewed": false },
-        { "text": "Сабыр сақта", "rom": "Sabyr saqta", "note": "Lit. \"keep calm.\"", "reviewed": false }
+        { "text": "Қобалжыма", "rom": "Qobaljyma", "note": "Lit. \"don't fret.\"" },
+        { "text": "Сабыр сақта", "rom": "Sabyr saqta", "note": "Lit. \"keep calm.\"" }
       ]
     },
     "hi": {
       "gloss": "चिंता मत करो",
       "variants": [
-        { "text": "चिंता मत करो", "rom": "chintā mat karo", "reviewed": false },
-        { "text": "आराम से", "rom": "ārām se", "reviewed": false }
+        { "text": "चिंता मत करो", "rom": "chintā mat karo" },
+        { "text": "टेंशन मत लो", "rom": "ṭenshan mat lo", "tone": "casual", "note": "Hinglish — \"don't take tension.\"" }
       ]
     },
     "bn": {
       "gloss": "টেনশন কোরো না",
       "variants": [
-        { "text": "টেনশন কোরো না", "rom": "ṭenshôn koro nā", "tone": "casual", "reviewed": false }
+        { "text": "চিন্তা কোরো না", "rom": "chintā koro nā", "note": "Lit. \"don't worry.\"" },
+        { "text": "টেনশন কোরো না", "rom": "ṭenshôn koro nā", "tone": "casual" }
       ]
     },
     "id": {
       "gloss": "jangan tegang",
       "variants": [
-        { "text": "Jangan tegang", "reviewed": false },
-        { "text": "Santai aja", "tone": "casual", "reviewed": false }
+        { "text": "Jangan tegang" },
+        { "text": "Santai aja", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "jangan tegang",
       "variants": [
-        { "text": "Jangan tegang", "reviewed": false },
-        { "text": "Bertenang", "reviewed": false }
+        { "text": "Jangan tegang" },
+        { "text": "Bertenang" }
       ]
     },
     "fil": {
       "gloss": "wag mag-stress",
       "variants": [
-        { "text": "Wag mag-stress", "tone": "casual", "reviewed": false },
-        { "text": "Relax lang", "tone": "casual", "reviewed": false }
+        { "text": "Wag mag-stress" },
+        { "text": "Relax lang", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "đừng căng thẳng",
       "variants": [
-        { "text": "Đừng căng thẳng", "reviewed": false },
-        { "text": "Bình tĩnh", "reviewed": false }
+        { "text": "Đừng căng thẳng" },
+        { "text": "Bình tĩnh" }
       ]
     },
     "th": {
       "gloss": "อย่าเครียด",
       "variants": [
-        { "text": "อย่าเครียด", "rom": "ya khriat", "reviewed": false },
-        { "text": "ใจเย็น ๆ", "rom": "jai yen yen", "reviewed": false }
+        { "text": "อย่าเครียด", "rom": "ya khriat" },
+        { "text": "ใจเย็น ๆ", "rom": "jai yen yen" }
       ]
     },
     "mizo": {
       "gloss": "mangan suh",
       "variants": [
-        { "text": "Mangan suh", "note": "Lit. \"don't be anxious.\"", "reviewed": false }
+        { "text": "Mangan suh", "note": "Lit. \"don't be anxious.\"" }
       ]
     }
   }

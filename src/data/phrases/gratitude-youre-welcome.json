@@ -1,162 +1,159 @@
 {
   "id": "gratitude-youre-welcome",
   "scene": "gratitude",
-  "order": 3,
+  "order": 2,
   "trans": {
     "zh": {
       "gloss": "回礼",
       "variants": [
-        { "text": "不客气", "rom": "bú kèqi", "reviewed": false },
-        { "text": "小事而已", "rom": "xiǎoshì ér yǐ", "tone": "casual", "note": "Lit. \"just a small matter.\"", "reviewed": false }
+        { "text": "不客气", "rom": "bú kèqi" },
+        { "text": "不用谢", "rom": "bú yòng xiè" }
       ]
     },
     "ja": {
       "gloss": "返礼",
       "variants": [
-        { "text": "どういたしまして", "rom": "dō itashimashite", "tone": "polite", "reviewed": false },
-        { "text": "いえいえ", "rom": "ie ie", "tone": "casual", "reviewed": false }
+        { "text": "どういたしまして", "rom": "dō itashimashite", "tone": "polite" },
+        { "text": "いえいえ", "rom": "ie ie", "tone": "casual" }
       ]
     },
     "ko": {
       "gloss": "답례",
       "variants": [
-        { "text": "천만에요", "rom": "cheonmaneyo", "tone": "polite", "reviewed": false },
-        { "text": "아니에요", "rom": "anieyo", "tone": "casual", "reviewed": false }
+        { "text": "천만에요", "rom": "cheonmaneyo", "tone": "polite" },
+        { "text": "아니에요", "rom": "anieyo", "tone": "casual" }
       ]
     },
     "en": {
       "gloss": "reply to thanks",
       "variants": [
-        { "text": "You're welcome", "reviewed": false },
-        { "text": "No problem", "tone": "casual", "reviewed": false },
-        { "text": "It's nothing", "tone": "casual", "reviewed": false }
+        { "text": "You're welcome" },
+        { "text": "No problem", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "Antwort auf Dank",
       "variants": [
-        { "text": "Bitte", "reviewed": false },
-        { "text": "Gern geschehen", "reviewed": false },
-        { "text": "Kein Problem", "tone": "casual", "reviewed": false }
+        { "text": "Bitte" },
+        { "text": "Gern geschehen" },
+        { "text": "Kein Problem", "tone": "casual" }
       ]
     },
     "es": {
       "gloss": "respuesta al agradecimiento",
       "variants": [
-        { "text": "De nada", "reviewed": false },
-        { "text": "No hay de qué", "reviewed": false }
+        { "text": "De nada" },
+        { "text": "No hay de qué" }
       ]
     },
     "pt": {
       "gloss": "resposta a agradecimento",
       "variants": [
-        { "text": "De nada", "reviewed": false },
-        { "text": "Por nada", "tone": "casual", "reviewed": false }
+        { "text": "De nada" },
+        { "text": "Por nada", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "réponse au merci",
       "variants": [
-        { "text": "De rien", "reviewed": false },
-        { "text": "Je t'en prie", "tone": "polite", "reviewed": false }
+        { "text": "De rien" },
+        { "text": "Je t'en prie", "tone": "polite" }
       ]
     },
     "it": {
       "gloss": "risposta al grazie",
       "variants": [
-        { "text": "Prego", "reviewed": false },
-        { "text": "Di niente", "tone": "casual", "reviewed": false }
+        { "text": "Prego" },
+        { "text": "Di niente", "tone": "casual" }
       ]
     },
     "ru": {
       "gloss": "в ответ на благодарность",
       "variants": [
-        { "text": "Пожалуйста", "rom": "pozhaluysta", "reviewed": false },
-        { "text": "Не за что", "rom": "ne za chto", "tone": "casual", "note": "Lit. \"for nothing.\"", "reviewed": false }
+        { "text": "Пожалуйста", "rom": "pozhaluysta" },
+        { "text": "Не за что", "rom": "ne za chto", "tone": "casual", "note": "Lit. \"for nothing.\"" }
       ]
     },
     "uk": {
       "gloss": "у відповідь на подяку",
       "variants": [
-        { "text": "Будь ласка", "rom": "Bud' laska", "reviewed": false },
-        { "text": "Нема за що", "rom": "Nema za shcho", "note": "Lit. \"nothing to thank for.\"", "reviewed": false },
-        { "text": "Немає проблем", "rom": "Nemaie problem", "tone": "casual", "note": "Lit. \"no problem.\"", "reviewed": false }
+        { "text": "Будь ласка", "rom": "Bud' laska" },
+        { "text": "Нема за що", "rom": "Nema za shcho", "note": "Lit. \"nothing to thank for.\"" }
       ]
     },
     "pl": {
       "gloss": "w odpowiedzi na podziękowanie",
       "variants": [
-        { "text": "Proszę", "reviewed": false },
-        { "text": "Nie ma za co", "tone": "casual", "reviewed": false }
+        { "text": "Proszę" },
+        { "text": "Nie ma za co", "tone": "casual" }
       ]
     },
     "tr": {
       "gloss": "teşekküre cevap",
       "variants": [
-        { "text": "Rica ederim", "reviewed": false },
-        { "text": "Bir şey değil", "tone": "casual", "reviewed": false }
+        { "text": "Rica ederim" },
+        { "text": "Bir şey değil", "tone": "casual" }
       ]
     },
     "kk": {
       "gloss": "алғысқа жауап",
       "variants": [
-        { "text": "Оқасы жоқ", "rom": "Oqasy joq", "note": "Lit. \"it's nothing.\"", "reviewed": false },
-        { "text": "Ештеңе етпейді", "rom": "Eşteňe etpeidi", "note": "Lit. \"it's no trouble.\"", "reviewed": false }
+        { "text": "Оқасы жоқ", "rom": "Oqasy joq", "note": "Lit. \"it's nothing.\"" },
+        { "text": "Арзымайды", "rom": "Arzymaidy", "note": "Lit. \"not worth (thanks).\"" }
       ]
     },
     "hi": {
       "gloss": "जवाब",
       "variants": [
-        { "text": "कोई बात नहीं", "rom": "koī bāt nahīn", "reviewed": false },
-        { "text": "कोई ज़रूरत नहीं", "rom": "koī zarūrat nahīn", "reviewed": false }
+        { "text": "कोई बात नहीं", "rom": "koī bāt nahīn" }
       ]
     },
     "bn": {
       "gloss": "উত্তর",
       "variants": [
-        { "text": "স্বাগতম", "rom": "swāgôtôm", "reviewed": false },
-        { "text": "আরে কি যে বলেন", "rom": "āre ki je bôlen", "tone": "casual", "reviewed": false }
+        { "text": "কিছু না", "rom": "kichhu nā", "note": "Lit. \"it's nothing\" — স্বাগতম is a welcome-greeting, not a reply to thanks." },
+        { "text": "আরে কী যে বলো", "rom": "āre kī je bôlo", "tone": "casual", "note": "Lit. \"oh, what are you even saying\" — warm brush-off of thanks." }
       ]
     },
     "id": {
       "gloss": "balasan terima kasih",
       "variants": [
-        { "text": "Sama-sama", "reviewed": false },
-        { "text": "Tidak apa-apa", "tone": "casual", "reviewed": false }
+        { "text": "Sama-sama" },
+        { "text": "Tidak apa-apa", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "balasan terima kasih",
       "variants": [
-        { "text": "Sama-sama", "reviewed": false },
-        { "text": "Tidak mengapa", "reviewed": false }
+        { "text": "Sama-sama" },
+        { "text": "Tidak mengapa" }
       ]
     },
     "fil": {
       "gloss": "sagot sa pasasalamat",
       "variants": [
-        { "text": "Walang anuman", "reviewed": false },
-        { "text": "Wala yun", "tone": "casual", "reviewed": false }
+        { "text": "Walang anuman" },
+        { "text": "Wala yun", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "đáp lại cảm ơn",
       "variants": [
-        { "text": "Không có gì", "reviewed": false },
-        { "text": "Đừng khách sáo", "note": "Lit. \"don't be polite.\"", "reviewed": false }
+        { "text": "Không có gì" },
+        { "text": "Đừng khách sáo", "note": "Lit. \"don't be polite.\"" }
       ]
     },
     "th": {
       "gloss": "ตอบกลับขอบคุณ",
       "variants": [
-        { "text": "ไม่เป็นไร", "rom": "mai pen rai", "reviewed": false },
-        { "text": "ยินดี", "rom": "yindee", "note": "Lit. \"(my) pleasure.\"", "reviewed": false }
+        { "text": "ไม่เป็นไร", "rom": "mai pen rai" },
+        { "text": "ยินดี", "rom": "yindee", "note": "Lit. \"(my) pleasure.\"" }
       ]
     },
     "mizo": {
       "gloss": "lawmthu let",
       "variants": [
-        { "text": "A pawi lo", "note": "Lit. \"(it) doesn't matter.\"", "reviewed": false }
+        { "text": "A pawi lo", "note": "Lit. \"(it) doesn't matter.\"" }
       ]
     }
   }

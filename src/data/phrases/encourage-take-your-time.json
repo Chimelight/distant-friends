@@ -6,154 +6,152 @@
     "zh": {
       "gloss": "慢慢来",
       "variants": [
-        { "text": "慢慢来", "rom": "màn man lái", "reviewed": false },
-        { "text": "不急", "rom": "bù jí", "tone": "casual", "reviewed": false }
+        { "text": "慢慢来", "rom": "màn man lái" },
+        { "text": "不急", "rom": "bù jí", "tone": "casual" }
       ]
     },
     "ja": {
       "gloss": "ゆっくりで",
       "variants": [
-        { "text": "ゆっくりでいいよ", "rom": "yukkuri de ii yo", "reviewed": false },
-        { "text": "焦らないで", "rom": "aseranai de", "reviewed": false }
+        { "text": "ゆっくりでいいよ", "rom": "yukkuri de ii yo" },
+        { "text": "焦らないで", "rom": "aseranai de" }
       ]
     },
     "ko": {
       "gloss": "천천히 해",
       "variants": [
-        { "text": "천천히 해", "rom": "cheoncheonhi hae", "tone": "casual", "reviewed": false },
-        { "text": "천천히 해도 돼", "rom": "cheoncheonhi haedo dwae", "reviewed": false }
+        { "text": "천천히 해", "rom": "cheoncheonhi hae", "tone": "casual" },
+        { "text": "천천히 해도 돼", "rom": "cheoncheonhi haedo dwae" }
       ]
     },
     "en": {
       "gloss": "take your time",
       "variants": [
-        { "text": "Take your time", "reviewed": false },
-        { "text": "No rush", "reviewed": false }
+        { "text": "Take your time" },
+        { "text": "No rush" }
       ]
     },
     "de": {
       "gloss": "lass dir Zeit",
       "variants": [
-        { "text": "Lass dir Zeit", "reviewed": false },
-        { "text": "Kein Stress", "tone": "casual", "reviewed": false }
+        { "text": "Lass dir Zeit" },
+        { "text": "Kein Stress", "tone": "casual" }
       ]
     },
     "es": {
       "gloss": "tómate tu tiempo",
       "variants": [
-        { "text": "Tómate tu tiempo", "reviewed": false },
-        { "text": "Sin prisa", "reviewed": false }
+        { "text": "Tómate tu tiempo" },
+        { "text": "Sin prisa" }
       ]
     },
     "pt": {
       "gloss": "sem pressa",
       "variants": [
-        { "text": "Sem pressa", "reviewed": false },
-        { "text": "Tem calma", "reviewed": false }
+        { "text": "Sem pressa" },
+        { "text": "Tem calma" }
       ]
     },
     "fr": {
       "gloss": "prends ton temps",
       "variants": [
-        { "text": "Prends ton temps", "reviewed": false },
-        { "text": "Pas de pression", "reviewed": false }
+        { "text": "Prends ton temps" },
+        { "text": "Pas de pression" }
       ]
     },
     "it": {
       "gloss": "con calma",
       "variants": [
-        { "text": "Con calma", "reviewed": false },
-        { "text": "Prenditi il tuo tempo", "reviewed": false }
+        { "text": "Con calma" },
+        { "text": "Prenditi il tuo tempo" }
       ]
     },
     "ru": {
       "gloss": "не спеши",
       "variants": [
-        { "text": "Не торопись", "rom": "ne toropis'", "reviewed": false },
-        { "text": "Не спеши", "rom": "ne speshi", "reviewed": false }
+        { "text": "Не торопись", "rom": "ne toropis'" },
+        { "text": "Не спеши", "rom": "ne speshi" }
       ]
     },
     "uk": {
       "gloss": "не поспішай",
       "variants": [
-        { "text": "Не поспішай", "rom": "Ne pospishai", "reviewed": false },
-        { "text": "Не квапся", "rom": "Ne kvapsia", "reviewed": false }
+        { "text": "Не поспішай", "rom": "Ne pospishai" },
+        { "text": "Не квапся", "rom": "Ne kvapsia" }
       ]
     },
     "pl": {
       "gloss": "spokojnie",
       "variants": [
-        { "text": "Spokojnie", "reviewed": false },
-        { "text": "Bez pośpiechu", "reviewed": false }
+        { "text": "Bez pośpiechu" }
       ]
     },
     "tr": {
       "gloss": "acele etme",
       "variants": [
-        { "text": "Acele etme", "reviewed": false },
-        { "text": "Yavaş yavaş", "reviewed": false }
+        { "text": "Acele etme" },
+        { "text": "Yavaş yavaş" }
       ]
     },
     "kk": {
       "gloss": "асықпа",
       "variants": [
-        { "text": "Асықпа", "rom": "Asyqpa", "reviewed": false },
-        { "text": "Жайлап", "rom": "Jailap", "tone": "casual", "note": "Lit. \"slowly.\"", "reviewed": false }
+        { "text": "Асықпа", "rom": "Asyqpa" },
+        { "text": "Жайлап", "rom": "Jailap", "tone": "casual", "note": "Lit. \"slowly.\"" }
       ]
     },
     "hi": {
       "gloss": "आराम से",
       "variants": [
-        { "text": "कोई जल्दी नहीं", "rom": "koī jaldī nahīn", "reviewed": false },
-        { "text": "आराम से", "rom": "ārām se", "reviewed": false }
+        { "text": "कोई जल्दी नहीं", "rom": "koī jaldī nahīn" },
+        { "text": "आराम से", "rom": "ārām se" }
       ]
     },
     "bn": {
       "gloss": "তাড়া নেই",
       "variants": [
-        { "text": "তাড়া নেই", "rom": "tāṛā nei", "reviewed": false },
-        { "text": "ধীরে ধীরে", "rom": "dhīre dhīre", "reviewed": false }
+        { "text": "তাড়া নেই", "rom": "tāṛā nei" },
+        { "text": "ধীরে ধীরে", "rom": "dhīre dhīre" }
       ]
     },
     "id": {
       "gloss": "pelan-pelan",
       "variants": [
-        { "text": "Pelan-pelan saja", "reviewed": false },
-        { "text": "Santai aja", "tone": "casual", "reviewed": false }
+        { "text": "Pelan-pelan saja" }
       ]
     },
     "ms": {
       "gloss": "perlahan-lahan",
       "variants": [
-        { "text": "Perlahan-lahan", "reviewed": false },
-        { "text": "Tak perlu cepat", "tone": "casual", "reviewed": false }
+        { "text": "Perlahan-lahan" },
+        { "text": "Tak perlu cepat", "tone": "casual" }
       ]
     },
     "fil": {
       "gloss": "dahan-dahan",
       "variants": [
-        { "text": "Dahan-dahan", "reviewed": false },
-        { "text": "Hindi nagmamadali", "reviewed": false }
+        { "text": "Dahan-dahan" },
+        { "text": "Hindi nagmamadali" }
       ]
     },
     "vi": {
       "gloss": "cứ từ từ",
       "variants": [
-        { "text": "Cứ từ từ", "reviewed": false },
-        { "text": "Không vội", "reviewed": false }
+        { "text": "Cứ từ từ" },
+        { "text": "Không vội" }
       ]
     },
     "th": {
       "gloss": "ค่อย ๆ",
       "variants": [
-        { "text": "ค่อย ๆ ทำ", "rom": "khoi khoi tham", "reviewed": false },
-        { "text": "ไม่ต้องรีบ", "rom": "mai tong reep", "reviewed": false }
+        { "text": "ค่อย ๆ ทำ", "rom": "khoi khoi tham" },
+        { "text": "ไม่ต้องรีบ", "rom": "mai tong reep" }
       ]
     },
     "mizo": {
       "gloss": "a muangchang in",
       "variants": [
-        { "text": "A muangchang in", "note": "Lit. \"slowly / gently.\"", "reviewed": false }
+        { "text": "A muangchang in", "note": "Lit. \"slowly / gently.\"" }
       ]
     }
   }

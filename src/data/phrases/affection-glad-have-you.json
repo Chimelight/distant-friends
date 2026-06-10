@@ -6,155 +6,153 @@
     "zh": {
       "gloss": "庆幸",
       "variants": [
-        { "text": "有你真好", "rom": "yǒu nǐ zhēn hǎo", "reviewed": false },
-        { "text": "真高兴有你", "rom": "zhēn gāoxìng yǒu nǐ", "reviewed": false }
+        { "text": "有你真好", "rom": "yǒu nǐ zhēn hǎo" },
+        { "text": "幸好有你", "rom": "xìnghǎo yǒu nǐ", "note": "Lit. \"luckily there's you.\"" }
       ]
     },
     "ja": {
       "gloss": "嬉しい",
       "variants": [
-        { "text": "君がいてくれてよかった", "rom": "kimi ga ite kurete yokatta", "reviewed": false },
-        { "text": "あなたがいてくれて嬉しい", "rom": "anata ga ite kurete ureshii", "reviewed": false }
+        { "text": "君がいてくれてよかった", "rom": "kimi ga ite kurete yokatta" },
+        { "text": "あなたがいてくれて嬉しい", "rom": "anata ga ite kurete ureshii" }
       ]
     },
     "ko": {
       "gloss": "너가 있어서",
       "variants": [
-        { "text": "네가 있어서 좋아", "rom": "nega isseoseo joa", "tone": "casual", "reviewed": false },
-        { "text": "너 있어서 다행이야", "rom": "neo isseoseo dahaeniya", "reviewed": false }
+        { "text": "네가 있어서 좋아", "rom": "nega isseoseo joa", "tone": "casual" },
+        { "text": "너 있어서 다행이야", "rom": "neo isseoseo dahaeniya" }
       ]
     },
     "en": {
       "gloss": "glad to have you",
       "variants": [
-        { "text": "Glad to have you", "reviewed": false },
-        { "text": "Glad you're here", "reviewed": false }
+        { "text": "Glad to have you" },
+        { "text": "Glad you're here" }
       ]
     },
     "de": {
       "gloss": "froh, dich zu haben",
       "variants": [
-        { "text": "Schön, dich zu haben", "reviewed": false },
-        { "text": "Froh, dass es dich gibt", "reviewed": false }
+        { "text": "Schön, dich zu haben" },
+        { "text": "Froh, dass es dich gibt" }
       ]
     },
     "es": {
       "gloss": "me alegra tenerte",
       "variants": [
-        { "text": "Qué bueno tenerte", "reviewed": false },
-        { "text": "Me alegra tenerte", "reviewed": false }
+        { "text": "Qué bueno tenerte" },
+        { "text": "Me alegra tenerte" }
       ]
     },
     "pt": {
       "gloss": "que bom ter você",
       "variants": [
-        { "text": "Que bom ter você", "reviewed": false },
-        { "text": "Ainda bem que te tenho", "reviewed": false }
+        { "text": "Que bom ter você" },
+        { "text": "Ainda bem que te tenho" }
       ]
     },
     "fr": {
       "gloss": "content de t'avoir",
       "variants": [
-        { "text": "Heureux de t'avoir", "speakerGender": "m", "reviewed": false },
-        { "text": "Heureuse de t'avoir", "speakerGender": "f", "reviewed": false },
-        { "text": "Content que tu sois là", "speakerGender": "m", "reviewed": false },
-        { "text": "Contente que tu sois là", "speakerGender": "f", "reviewed": false }
+        { "text": "Heureux de t'avoir", "speakerGender": "m" },
+        { "text": "Heureuse de t'avoir", "speakerGender": "f" }
       ]
     },
     "it": {
       "gloss": "fortunato ad averti",
       "variants": [
-        { "text": "Sono fortunato ad averti", "speakerGender": "m", "reviewed": false },
-        { "text": "Sono fortunata ad averti", "speakerGender": "f", "reviewed": false },
-        { "text": "Che bello averti", "reviewed": false }
+        { "text": "Sono fortunato ad averti", "speakerGender": "m" },
+        { "text": "Sono fortunata ad averti", "speakerGender": "f" },
+        { "text": "Che bello averti" }
       ]
     },
     "ru": {
       "gloss": "хорошо, что ты есть",
       "variants": [
-        { "text": "Хорошо, что ты есть", "rom": "khorosho, chto ty est'", "reviewed": false },
-        { "text": "Я рад, что ты со мной", "rom": "ya rad, chto ty so mnoy", "speakerGender": "m", "reviewed": false },
-        { "text": "Я рада, что ты со мной", "rom": "ya rada, chto ty so mnoy", "speakerGender": "f", "reviewed": false }
+        { "text": "Хорошо, что ты есть", "rom": "khorosho, chto ty est'" },
+        { "text": "Я рад, что ты со мной", "rom": "ya rad, chto ty so mnoy", "speakerGender": "m" },
+        { "text": "Я рада, что ты со мной", "rom": "ya rada, chto ty so mnoy", "speakerGender": "f" }
       ]
     },
     "uk": {
       "gloss": "добре, що ти є",
       "variants": [
-        { "text": "Добре, що ти є", "rom": "Dobre, shcho ty ye", "reviewed": false },
-        { "text": "Я радий, що ти поруч", "rom": "Ya radyi, shcho ty poruch", "speakerGender": "m", "reviewed": false },
-        { "text": "Я рада, що ти поруч", "rom": "Ya rada, shcho ty poruch", "speakerGender": "f", "reviewed": false }
+        { "text": "Добре, що ти є", "rom": "Dobre, shcho ty ye" },
+        { "text": "Я радий, що ти поруч", "rom": "Ya radyi, shcho ty poruch", "speakerGender": "m" },
+        { "text": "Я рада, що ти поруч", "rom": "Ya rada, shcho ty poruch", "speakerGender": "f" }
       ]
     },
     "pl": {
       "gloss": "dobrze, że jesteś",
       "variants": [
-        { "text": "Dobrze, że jesteś", "reviewed": false },
-        { "text": "Cieszę się, że cię mam", "reviewed": false }
+        { "text": "Dobrze, że jesteś" },
+        { "text": "Cieszę się, że cię mam" }
       ]
     },
     "tr": {
       "gloss": "iyi ki varsın",
       "variants": [
-        { "text": "İyi ki varsın", "reviewed": false },
-        { "text": "Seni tanıdığıma sevindim", "reviewed": false }
+        { "text": "İyi ki varsın" },
+        { "text": "İyi ki seni tanımışım", "note": "Lit. \"good thing I've come to know you.\"" }
       ]
     },
     "kk": {
       "gloss": "жақсы, сен барсың",
       "variants": [
-        { "text": "Сен болғаның жақсы", "rom": "Sen bolğanyň jaqsy", "note": "Lit. \"good that you exist.\"", "reviewed": false },
-        { "text": "Сені танығаныма қуаныштымын", "rom": "Seni tanyğanyma quanyştymyn", "note": "Lit. \"glad I met you.\"", "reviewed": false }
+        { "text": "Сен болғаның жақсы", "rom": "Sen bolğanyň jaqsy", "note": "Lit. \"good that you exist.\"" },
+        { "text": "Сені танығаныма қуаныштымын", "rom": "Seni tanyğanyma quanyştymyn", "note": "Lit. \"glad I met you.\"" }
       ]
     },
     "hi": {
       "gloss": "तुम्हारा साथ अच्छा है",
       "variants": [
-        { "text": "तुम्हारा साथ अच्छा है", "rom": "tumhārā sāth achchhā hai", "note": "Lit. \"your company is good.\"", "reviewed": false }
+        { "text": "तुम्हारा साथ अच्छा है", "rom": "tumhārā sāth achchhā hai", "note": "Lit. \"your company is good.\"" }
       ]
     },
     "bn": {
       "gloss": "তুমি আছ",
       "variants": [
-        { "text": "তুমি আছ বলে ভালো লাগে", "rom": "tumi āchho bôle bhalo lāge", "note": "Lit. \"(I) feel good because you are (here).\"", "reviewed": false }
+        { "text": "তুমি আছ বলে ভালো লাগে", "rom": "tumi āchho bôle bhalo lāge", "note": "Lit. \"(I) feel good because you are (here).\"" }
       ]
     },
     "id": {
       "gloss": "senang ada kamu",
       "variants": [
-        { "text": "Senang ada kamu", "reviewed": false },
-        { "text": "Beruntung punya kamu", "reviewed": false }
+        { "text": "Senang ada kamu" },
+        { "text": "Beruntung punya kamu" }
       ]
     },
     "ms": {
       "gloss": "bertuah ada awak",
       "variants": [
-        { "text": "Bertuah ada awak", "reviewed": false }
+        { "text": "Bertuah ada awak" }
       ]
     },
     "fil": {
       "gloss": "mabuti at andiyan ka",
       "variants": [
-        { "text": "Mabuti't andiyan ka", "reviewed": false },
-        { "text": "Salamat at andito ka", "reviewed": false }
+        { "text": "Mabuti't andiyan ka" },
+        { "text": "Salamat at andito ka" }
       ]
     },
     "vi": {
       "gloss": "may có bạn",
       "variants": [
-        { "text": "May có bạn", "reviewed": false },
-        { "text": "Vui vì có bạn", "reviewed": false }
+        { "text": "May có bạn" },
+        { "text": "Vui vì có bạn" }
       ]
     },
     "th": {
       "gloss": "ดีจังที่มีคุณ",
       "variants": [
-        { "text": "ดีจังที่มีคุณ", "rom": "dee jang thi mee khun", "reviewed": false }
+        { "text": "ดีจังที่มีคุณ", "rom": "dee jang thi mee khun" }
       ]
     },
     "mizo": {
       "gloss": "i awm hi a tha",
       "variants": [
-        { "text": "I awm hi a tha em", "note": "Lit. \"it's very good that you are here.\"", "reviewed": false }
+        { "text": "I awm hi a tha em", "note": "Lit. \"it's very good that you are here.\"" }
       ]
     }
   }

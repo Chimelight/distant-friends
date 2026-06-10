@@ -1,162 +1,157 @@
 {
   "id": "react-i-see",
   "scene": "reactions",
-  "order": 15,
+  "order": 7,
   "trans": {
     "zh": {
       "gloss": "恍然",
       "variants": [
-        { "text": "原来如此", "rom": "yuánlái rúcǐ", "note": "Lit. \"so that's how it is\" — classic dawning realization.", "reviewed": false },
-        { "text": "这样啊", "rom": "zhèyàng a", "tone": "casual", "reviewed": false },
-        { "text": "哦", "rom": "ó", "tone": "casual", "note": "Soft \"oh\" of understanding.", "reviewed": false }
+        { "text": "原来如此", "rom": "yuánlái rúcǐ", "note": "Lit. \"so that's how it is\" — classic dawning realization." },
+        { "text": "这样啊", "rom": "zhèyàng a", "tone": "casual" }
       ]
     },
     "ja": {
       "gloss": "なるほど",
       "variants": [
-        { "text": "なるほど", "rom": "naruhodo", "note": "Lit. \"I see\" — the canonical realization marker.", "reviewed": false },
-        { "text": "そうなんだ", "rom": "sō nan da", "tone": "casual", "note": "Lit. \"oh, is that so.\"", "reviewed": false },
-        { "text": "そっか", "rom": "sokka", "tone": "casual", "note": "Casual \"oh, I see.\"", "reviewed": false }
+        { "text": "なるほど", "rom": "naruhodo", "note": "Lit. \"I see\" — the canonical realization marker." },
+        { "text": "そうなんだ", "rom": "sō nan da", "tone": "casual", "note": "Lit. \"oh, is that so.\"" }
       ]
     },
     "ko": {
       "gloss": "그렇구나",
       "variants": [
-        { "text": "그렇구나", "rom": "geureokuna", "tone": "casual", "note": "Lit. \"so it is\" — soft realization.", "reviewed": false },
-        { "text": "그렇군요", "rom": "geureokunyo", "tone": "polite", "reviewed": false },
-        { "text": "아 그래", "rom": "a geurae", "tone": "casual", "reviewed": false }
+        { "text": "그렇구나", "rom": "geureokuna", "tone": "casual", "note": "Lit. \"so it is\" — soft realization." },
+        { "text": "그렇군요", "rom": "geureokunyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "i see",
       "variants": [
-        { "text": "I see", "reviewed": false },
-        { "text": "Oh I see", "tone": "casual", "reviewed": false },
-        { "text": "Ah", "tone": "casual", "reviewed": false }
+        { "text": "I see" },
+        { "text": "Ah", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "ach so",
       "variants": [
-        { "text": "Ach so", "tone": "casual", "note": "Lit. \"oh so\" — the German \"I see.\"", "reviewed": false },
-        { "text": "Verstehe", "reviewed": false },
-        { "text": "Aha", "tone": "casual", "reviewed": false }
+        { "text": "Ach so", "tone": "casual", "note": "Lit. \"oh so\" — the German \"I see.\"" },
+        { "text": "Verstehe" }
       ]
     },
     "es": {
       "gloss": "ya veo",
       "variants": [
-        { "text": "Ya veo", "note": "Lit. \"I now see.\"", "reviewed": false },
-        { "text": "Ya entiendo", "reviewed": false }
+        { "text": "Ya veo", "note": "Lit. \"I now see.\"" }
       ]
     },
     "pt": {
       "gloss": "sei",
       "variants": [
-        { "text": "Sei", "tone": "casual", "note": "Lit. \"I know\" — soft \"I see.\"", "reviewed": false }
+        { "text": "Entendi", "note": "Lit. \"understood.\"" },
+        { "text": "Sei", "tone": "casual", "note": "Lit. \"I know\" — soft \"I see.\"" }
       ]
     },
     "fr": {
       "gloss": "je vois",
       "variants": [
-        { "text": "Je vois", "reviewed": false },
-        { "text": "Ah d'accord", "tone": "casual", "note": "Lit. \"ah, ok.\"", "reviewed": false }
+        { "text": "Je vois" },
+        { "text": "Ah d'accord", "tone": "casual", "note": "Lit. \"ah, ok.\"" }
       ]
     },
     "it": {
       "gloss": "ah ecco",
       "variants": [
-        { "text": "Ah ecco", "tone": "casual", "note": "Lit. \"ah, there.\" — recognition.", "reviewed": false },
-        { "text": "Ho capito", "note": "Lit. \"I have understood.\"", "reviewed": false }
+        { "text": "Ah ecco", "tone": "casual", "note": "Lit. \"ah, there.\" — recognition." },
+        { "text": "Ho capito", "note": "Lit. \"I have understood.\"" }
       ]
     },
     "ru": {
       "gloss": "ясно",
       "variants": [
-        { "text": "Ясно", "rom": "yasno", "note": "Lit. \"clear\" — the standard \"I see.\"", "reviewed": false },
-        { "text": "Ага", "rom": "aga", "tone": "casual", "reviewed": false }
+        { "text": "Ясно", "rom": "yasno", "note": "Lit. \"clear\" — the standard \"I see.\"" },
+        { "text": "Ага", "rom": "aga", "tone": "casual" }
       ]
     },
     "uk": {
       "gloss": "ясно",
       "variants": [
-        { "text": "Ясно", "rom": "Yasno", "reviewed": false },
-        { "text": "А, зрозуміло", "rom": "A, zrozumilo", "note": "Lit. \"ah, I see.\"", "reviewed": false }
+        { "text": "Ясно", "rom": "Yasno" },
+        { "text": "А, зрозуміло", "rom": "A, zrozumilo", "note": "Lit. \"ah, I see.\"" }
       ]
     },
     "pl": {
       "gloss": "aha",
       "variants": [
-        { "text": "Aha", "tone": "casual", "reviewed": false },
-        { "text": "Już rozumiem", "note": "Lit. \"now I understand.\"", "reviewed": false }
+        { "text": "Aha", "tone": "casual" },
+        { "text": "Już rozumiem", "note": "Lit. \"now I understand.\"" }
       ]
     },
     "tr": {
       "gloss": "anladım",
       "variants": [
-        { "text": "Anladım", "note": "Lit. \"I understood.\"", "reviewed": false },
-        { "text": "Haa", "tone": "casual", "note": "Drawn-out \"ahh\" of recognition.", "reviewed": false }
+        { "text": "Anladım", "note": "Lit. \"I understood.\"" },
+        { "text": "Haa", "tone": "casual", "note": "Drawn-out \"ahh\" of recognition." }
       ]
     },
     "kk": {
       "gloss": "түсінікті",
       "variants": [
-        { "text": "Түсінікті", "rom": "Tüsinikti", "reviewed": false },
-        { "text": "Аа, солай ма", "rom": "Aa, solai ma", "tone": "casual", "note": "Lit. \"ah, is that so.\"", "reviewed": false }
+        { "text": "Түсінікті", "rom": "Tüsinikti", "note": "Lit. \"understood / clear.\"" },
+        { "text": "Аа, солай ма", "rom": "Aa, solai ma", "tone": "casual", "note": "Lit. \"ah, is that so.\"" }
       ]
     },
     "hi": {
       "gloss": "अच्छा",
       "variants": [
-        { "text": "अच्छा", "rom": "achchhā", "note": "Multi-purpose \"oh, I see.\"", "reviewed": false },
-        { "text": "ओह", "rom": "oh", "tone": "casual", "reviewed": false }
+        { "text": "अच्छा", "rom": "achchhā", "note": "Multi-purpose \"oh, I see.\"" },
+        { "text": "ओह", "rom": "oh", "tone": "casual" }
       ]
     },
     "bn": {
       "gloss": "আচ্ছা",
       "variants": [
-        { "text": "আচ্ছা", "rom": "āchchhā", "note": "Soft realization.", "reviewed": false },
-        { "text": "ওহ", "rom": "oh", "tone": "casual", "reviewed": false }
+        { "text": "আচ্ছা", "rom": "āchchhā", "note": "Soft realization." },
+        { "text": "ওহ", "rom": "oh", "tone": "casual" }
       ]
     },
     "id": {
       "gloss": "oh begitu",
       "variants": [
-        { "text": "Oh begitu", "note": "Lit. \"oh like that.\"", "reviewed": false },
-        { "text": "Aku paham", "reviewed": false }
+        { "text": "Oh begitu", "note": "Lit. \"oh like that.\"" }
       ]
     },
     "ms": {
       "gloss": "oh begitu",
       "variants": [
-        { "text": "Oh begitu", "reviewed": false }
+        { "text": "Oh begitu" }
       ]
     },
     "fil": {
       "gloss": "ah ganun",
       "variants": [
-        { "text": "Ah ganun", "tone": "casual", "note": "Lit. \"ah, like that.\"", "reviewed": false },
-        { "text": "Ah ok", "tone": "casual", "reviewed": false }
+        { "text": "Ganun pala", "note": "Lit. \"so that's how it is.\"" },
+        { "text": "Ah ok", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "ra vậy",
       "variants": [
-        { "text": "Ra vậy", "tone": "casual", "note": "Lit. \"so that's it.\"", "reviewed": false },
-        { "text": "Thì ra là vậy", "note": "Lit. \"so it turns out to be like that.\"", "reviewed": false },
-        { "text": "À", "tone": "casual", "reviewed": false }
+        { "text": "Hiểu rồi", "note": "Lit. \"understood.\"" },
+        { "text": "Ra vậy", "tone": "casual", "note": "Lit. \"so that's it.\"" },
+        { "text": "À", "tone": "casual" }
       ]
     },
     "th": {
       "gloss": "อ๋อ",
       "variants": [
-        { "text": "อ๋อ", "rom": "ŏ", "tone": "casual", "note": "The realization \"oh.\"", "reviewed": false }
+        { "text": "เข้าใจแล้ว", "rom": "khaojai laeo", "note": "Lit. \"understood.\"" },
+        { "text": "อ๋อ", "rom": "ŏ", "tone": "casual", "note": "The realization \"oh.\"" }
       ]
     },
     "mizo": {
       "gloss": "a nih chu",
       "variants": [
-        { "text": "A nih chu", "note": "Lit. \"so it is\" — recognition.", "reviewed": false }
+        { "text": "A nih chu", "note": "Lit. \"so it is\" — recognition." }
       ]
     }
   }

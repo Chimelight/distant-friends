@@ -1,0 +1,155 @@
+{
+  "id": "react-oops",
+  "scene": "reactions",
+  "order": 9,
+  "trans": {
+    "zh": {
+      "gloss": "哎呀",
+      "variants": [
+        { "text": "哎呀", "rom": "āiyā" }
+      ]
+    },
+    "ja": {
+      "gloss": "おっと",
+      "variants": [
+        { "text": "おっと", "rom": "otto", "tone": "casual" },
+        { "text": "しまった", "rom": "shimatta", "note": "Stronger — \"darn, I messed up.\"" }
+      ]
+    },
+    "ko": {
+      "gloss": "앗",
+      "variants": [
+        { "text": "앗", "rom": "at", "tone": "casual" },
+        { "text": "아차", "rom": "acha", "note": "Realizing one's own slip." }
+      ]
+    },
+    "en": {
+      "gloss": "oops",
+      "variants": [
+        { "text": "Oops" },
+        { "text": "My bad", "tone": "casual" }
+      ]
+    },
+    "de": {
+      "gloss": "ups",
+      "variants": [
+        { "text": "Ups" },
+        { "text": "Mein Fehler", "note": "Lit. \"my mistake.\"" }
+      ]
+    },
+    "es": {
+      "gloss": "ups",
+      "variants": [
+        { "text": "Ups" },
+        { "text": "Culpa mía", "tone": "casual", "note": "Lit. \"my fault\" — my bad." }
+      ]
+    },
+    "pt": {
+      "gloss": "ops",
+      "variants": [
+        { "text": "Ops" },
+        { "text": "Foi mal", "tone": "casual", "note": "BR \"my bad.\"" }
+      ]
+    },
+    "fr": {
+      "gloss": "oups",
+      "variants": [
+        { "text": "Oups" },
+        { "text": "Ma faute", "tone": "casual", "note": "Lit. \"my fault.\"" }
+      ]
+    },
+    "it": {
+      "gloss": "ops",
+      "variants": [
+        { "text": "Ops" },
+        { "text": "Colpa mia", "tone": "casual", "note": "Lit. \"my fault.\"" }
+      ]
+    },
+    "ru": {
+      "gloss": "ой",
+      "variants": [
+        { "text": "Ой", "rom": "oy" },
+        { "text": "Я случайно", "rom": "ya sluchayno", "tone": "casual", "note": "Lit. \"(it was) by accident.\"" }
+      ]
+    },
+    "uk": {
+      "gloss": "ой",
+      "variants": [
+        { "text": "Ой", "rom": "Oi" },
+        { "text": "Я випадково", "rom": "Ya vypadkovo", "tone": "casual", "note": "Lit. \"(it was) by accident.\"" }
+      ]
+    },
+    "pl": {
+      "gloss": "ups",
+      "variants": [
+        { "text": "Ups" },
+        { "text": "Moja wina", "tone": "casual", "note": "Lit. \"my fault.\"" }
+      ]
+    },
+    "tr": {
+      "gloss": "eyvah",
+      "variants": [
+        { "text": "Eyvah", "note": "Exclamation at a slip — \"oh no.\"" },
+        { "text": "Benim hatam", "tone": "casual", "note": "Lit. \"my mistake.\"" }
+      ]
+    },
+    "kk": {
+      "gloss": "қап",
+      "variants": [
+        { "text": "Қап", "rom": "Qap", "note": "Exclamation at one's own slip." },
+        { "text": "Ойбай", "rom": "Oibai", "tone": "casual", "note": "The iconic Kazakh exclamation." }
+      ]
+    },
+    "hi": {
+      "gloss": "ग़लती हो गई",
+      "variants": [
+        { "text": "ग़लती हो गई", "rom": "galtī ho gaī", "note": "Lit. \"a mistake happened\" — my bad." }
+      ]
+    },
+    "bn": {
+      "gloss": "ভুল হয়ে গেছে",
+      "variants": [
+        { "text": "ভুল হয়ে গেছে", "rom": "bhul hôye gechhe", "note": "Lit. \"a mistake happened\" — my bad." }
+      ]
+    },
+    "id": {
+      "gloss": "waduh",
+      "variants": [
+        { "text": "Waduh", "note": "The iconic Indonesian \"oops / oh no.\"" },
+        { "text": "Eh salah", "tone": "casual", "note": "Lit. \"oh, wrong one\" — for mis-sends." }
+      ]
+    },
+    "ms": {
+      "gloss": "alamak",
+      "variants": [
+        { "text": "Alamak", "note": "The iconic Malaysian \"oops.\"" }
+      ]
+    },
+    "fil": {
+      "gloss": "ay mali",
+      "variants": [
+        { "text": "Ay mali", "note": "Lit. \"oh, wrong!\" — classic slip reaction." },
+        { "text": "Oops", "tone": "casual", "note": "English-borrowed; everyday." }
+      ]
+    },
+    "vi": {
+      "gloss": "ối",
+      "variants": [
+        { "text": "Ối", "tone": "casual" },
+        { "text": "Nhầm rồi", "note": "Lit. \"got it wrong\" — for mis-sends." }
+      ]
+    },
+    "th": {
+      "gloss": "อุ๊ย",
+      "variants": [
+        { "text": "อุ๊ย", "rom": "ui", "tone": "casual", "note": "Exclamation at a slip." }
+      ]
+    },
+    "mizo": {
+      "gloss": "ka tisual ta",
+      "variants": [
+        { "text": "Ka tisual ta", "note": "Lit. \"I did it wrong\" — my bad." }
+      ]
+    }
+  }
+}

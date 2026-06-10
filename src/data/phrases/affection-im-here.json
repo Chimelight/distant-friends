@@ -1,156 +1,156 @@
 {
   "id": "affection-im-here",
   "scene": "affection",
-  "order": 6,
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "一直在",
       "variants": [
-        { "text": "我一直在", "rom": "wǒ yīzhí zài", "reviewed": false },
-        { "text": "我一直陪着你", "rom": "wǒ yīzhí péi zhe nǐ", "reviewed": false }
+        { "text": "我一直在", "rom": "wǒ yīzhí zài" },
+        { "text": "我一直陪着你", "rom": "wǒ yīzhí péi zhe nǐ" }
       ]
     },
     "ja": {
       "gloss": "そばにいるよ",
       "variants": [
-        { "text": "ずっとそばにいるよ", "rom": "zutto soba ni iru yo", "reviewed": false },
-        { "text": "いつもいるよ", "rom": "itsumo iru yo", "reviewed": false }
+        { "text": "ずっとそばにいるよ", "rom": "zutto soba ni iru yo" },
+        { "text": "いつもいるよ", "rom": "itsumo iru yo" }
       ]
     },
     "ko": {
       "gloss": "항상 곁에",
       "variants": [
-        { "text": "항상 곁에 있을게", "rom": "hangsang gyeote isseulge", "reviewed": false },
-        { "text": "늘 여기 있어", "rom": "neul yeogi isseo", "tone": "casual", "reviewed": false }
+        { "text": "항상 곁에 있을게", "rom": "hangsang gyeote isseulge" },
+        { "text": "늘 여기 있어", "rom": "neul yeogi isseo", "tone": "casual" }
       ]
     },
     "en": {
       "gloss": "I'm here",
       "variants": [
-        { "text": "I'm here", "reviewed": false },
-        { "text": "I'm always here for you", "reviewed": false }
+        { "text": "I'm here" },
+        { "text": "I'm always here for you" }
       ]
     },
     "de": {
       "gloss": "ich bin da",
       "variants": [
-        { "text": "Ich bin da", "reviewed": false },
-        { "text": "Ich bin immer für dich da", "reviewed": false }
+        { "text": "Ich bin da" },
+        { "text": "Ich bin immer für dich da" }
       ]
     },
     "es": {
       "gloss": "aquí estoy",
       "variants": [
-        { "text": "Aquí estoy", "reviewed": false },
-        { "text": "Siempre estoy aquí para ti", "reviewed": false }
+        { "text": "Aquí estoy" },
+        { "text": "Siempre estoy aquí para ti" }
       ]
     },
     "pt": {
       "gloss": "estou aqui",
       "variants": [
-        { "text": "Estou aqui", "reviewed": false },
-        { "text": "Estou sempre aqui pra você", "tone": "casual", "reviewed": false }
+        { "text": "Estou aqui" },
+        { "text": "Estou sempre aqui pra você", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "je suis là",
       "variants": [
-        { "text": "Je suis là", "reviewed": false },
-        { "text": "Je serai toujours là", "reviewed": false }
+        { "text": "Je suis là" },
+        { "text": "Je serai toujours là" }
       ]
     },
     "it": {
       "gloss": "ci sono",
       "variants": [
-        { "text": "Ci sono", "reviewed": false },
-        { "text": "Sono sempre qui per te", "reviewed": false }
+        { "text": "Ci sono" },
+        { "text": "Sono sempre qui per te" }
       ]
     },
     "ru": {
       "gloss": "я рядом",
       "variants": [
-        { "text": "Я рядом", "rom": "ya ryadom", "reviewed": false },
-        { "text": "Я всегда рядом", "rom": "ya vsegda ryadom", "reviewed": false }
+        { "text": "Я рядом", "rom": "ya ryadom" },
+        { "text": "Я всегда рядом", "rom": "ya vsegda ryadom" }
       ]
     },
     "uk": {
       "gloss": "я поруч",
       "variants": [
-        { "text": "Я поруч", "rom": "Ya poruch", "reviewed": false },
-        { "text": "Я завжди поруч", "rom": "Ya zavzhdy poruch", "reviewed": false }
+        { "text": "Я поруч", "rom": "Ya poruch" },
+        { "text": "Я завжди поруч", "rom": "Ya zavzhdy poruch" }
       ]
     },
     "pl": {
       "gloss": "jestem tu",
       "variants": [
-        { "text": "Jestem tu", "reviewed": false },
-        { "text": "Zawsze będę przy tobie", "reviewed": false }
+        { "text": "Jestem tu" },
+        { "text": "Zawsze będę przy tobie" }
       ]
     },
     "tr": {
       "gloss": "yanındayım",
       "variants": [
-        { "text": "Yanındayım", "reviewed": false },
-        { "text": "Her zaman buradayım", "reviewed": false }
+        { "text": "Yanındayım" },
+        { "text": "Her zaman buradayım" }
       ]
     },
     "kk": {
       "gloss": "мен жаныңдамын",
       "variants": [
-        { "text": "Мен жаныңдамын", "rom": "Men janyňdamyn", "reviewed": false },
-        { "text": "Мен әрқашан жаныңдамын", "rom": "Men ärqaşan janyňdamyn", "reviewed": false }
+        { "text": "Мен жаныңдамын", "rom": "Men janyňdamyn" },
+        { "text": "Мен әрқашан жаныңдамын", "rom": "Men ärqaşan janyňdamyn" }
       ]
     },
     "hi": {
       "gloss": "हमेशा हूँ",
       "variants": [
-        { "text": "मैं हमेशा हूँ", "rom": "main hameshā hūn", "reviewed": false }
+        { "text": "मैं हमेशा तुम्हारे साथ हूँ", "rom": "main hameshā tumhāre sāth hūn", "note": "Lit. \"I am always with you.\"" }
       ]
     },
     "bn": {
       "gloss": "সবসময় আছি",
       "variants": [
-        { "text": "আমি সবসময় আছি", "rom": "āmi sôbsômôy āchhi", "reviewed": false }
+        { "text": "আমি সবসময় আছি", "rom": "āmi sôbsômôy āchhi" }
       ]
     },
     "id": {
       "gloss": "aku di sini",
       "variants": [
-        { "text": "Aku di sini", "reviewed": false },
-        { "text": "Aku selalu ada", "reviewed": false }
+        { "text": "Aku di sini" },
+        { "text": "Aku selalu ada" }
       ]
     },
     "ms": {
       "gloss": "saya selalu ada",
       "variants": [
-        { "text": "Saya selalu ada", "reviewed": false }
+        { "text": "Saya selalu ada" }
       ]
     },
     "fil": {
       "gloss": "andito lang ako",
       "variants": [
-        { "text": "Andito lang ako", "reviewed": false },
-        { "text": "Lagi akong nandito", "reviewed": false }
+        { "text": "Andito lang ako" },
+        { "text": "Lagi akong nandito" }
       ]
     },
     "vi": {
       "gloss": "mình luôn ở đây",
       "variants": [
-        { "text": "Mình luôn ở đây", "reviewed": false },
-        { "text": "Tôi luôn bên bạn", "reviewed": false }
+        { "text": "Mình luôn ở đây" },
+        { "text": "Tôi luôn bên bạn" }
       ]
     },
     "th": {
       "gloss": "ฉันอยู่ตรงนี้",
       "variants": [
-        { "text": "ฉันอยู่ตรงนี้", "rom": "chan yu trong nee", "reviewed": false },
-        { "text": "ฉันอยู่เคียงข้างเสมอ", "rom": "chan yu khiang khang samoe", "reviewed": false }
+        { "text": "ฉันอยู่ตรงนี้", "rom": "chan yu trong nee" },
+        { "text": "ฉันอยู่เคียงข้างเสมอ", "rom": "chan yu khiang khang samoe" }
       ]
     },
     "mizo": {
       "gloss": "ka awm reng",
       "variants": [
-        { "text": "Ka awm reng a che", "note": "Lit. \"I am always with you.\"", "reviewed": false }
+        { "text": "Ka awmpui reng ang che", "note": "Lit. \"I will always be with you.\"" }
       ]
     }
   }

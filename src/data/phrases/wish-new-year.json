@@ -1,146 +1,142 @@
 {
   "id": "wish-new-year",
-  "scene": "well-wishes",
+  "scene": "holidays",
   "order": 2,
   "trans": {
     "zh": {
       "gloss": "新年快乐",
       "variants": [
-        { "text": "新年快乐", "rom": "xīnnián kuàilè", "reviewed": false }
+        { "text": "新年快乐", "rom": "xīnnián kuàilè" }
       ]
     },
     "ja": {
       "gloss": "明けましておめでとう",
       "variants": [
-        { "text": "明けましておめでとう", "rom": "akemashite omedetō", "reviewed": false },
-        { "text": "あけおめ", "rom": "ake ome", "tone": "casual", "note": "Slangy contraction.", "reviewed": false }
+        { "text": "明けましておめでとう", "rom": "akemashite omedetō" },
+        { "text": "あけおめ", "rom": "ake ome", "tone": "casual", "note": "Slangy contraction." }
       ]
     },
     "ko": {
       "gloss": "새해 복",
       "variants": [
-        { "text": "새해 복 많이 받으세요", "rom": "saehae bok mani badeuseyo", "tone": "polite", "reviewed": false },
-        { "text": "새해 복", "rom": "saehae bok", "tone": "casual", "reviewed": false }
+        { "text": "새해 복 많이 받으세요", "rom": "saehae bok mani badeuseyo", "tone": "polite" },
+        { "text": "새해 복 많이 받아", "rom": "saehae bok mani bada", "tone": "casual" }
       ]
     },
     "en": {
       "gloss": "happy new year",
       "variants": [
-        { "text": "Happy New Year", "reviewed": false }
+        { "text": "Happy New Year" }
       ]
     },
     "de": {
       "gloss": "frohes neues Jahr",
       "variants": [
-        { "text": "Frohes neues Jahr", "reviewed": false },
-        { "text": "Guten Rutsch", "tone": "casual", "note": "Said before NYE; lit. \"good slide.\"", "reviewed": false }
+        { "text": "Frohes neues Jahr" },
+        { "text": "Guten Rutsch", "tone": "casual", "note": "Said before NYE; lit. \"good slide.\"" }
       ]
     },
     "es": {
       "gloss": "feliz año nuevo",
       "variants": [
-        { "text": "Feliz Año Nuevo", "reviewed": false },
-        { "text": "Próspero año nuevo", "reviewed": false }
+        { "text": "Feliz Año Nuevo" }
       ]
     },
     "pt": {
       "gloss": "feliz ano novo",
       "variants": [
-        { "text": "Feliz Ano Novo", "reviewed": false }
+        { "text": "Feliz Ano Novo" }
       ]
     },
     "fr": {
       "gloss": "bonne année",
       "variants": [
-        { "text": "Bonne année", "reviewed": false }
+        { "text": "Bonne année" }
       ]
     },
     "it": {
       "gloss": "buon anno",
       "variants": [
-        { "text": "Buon anno", "reviewed": false },
-        { "text": "Felice anno nuovo", "reviewed": false }
+        { "text": "Buon anno" }
       ]
     },
     "ru": {
       "gloss": "с новым годом",
       "variants": [
-        { "text": "С Новым годом", "rom": "s Novym godom", "reviewed": false }
+        { "text": "С Новым годом", "rom": "s Novym godom" }
       ]
     },
     "uk": {
       "gloss": "з новим роком",
       "variants": [
-        { "text": "З Новим роком", "rom": "Z Novym rokom", "reviewed": false },
-        { "text": "Щасливого Нового року", "rom": "Shchaslyvoho Novoho roku", "reviewed": false }
+        { "text": "З Новим роком", "rom": "Z Novym rokom" }
       ]
     },
     "pl": {
       "gloss": "szczęśliwego nowego roku",
       "variants": [
-        { "text": "Szczęśliwego Nowego Roku", "reviewed": false }
+        { "text": "Szczęśliwego Nowego Roku" }
       ]
     },
     "tr": {
       "gloss": "mutlu yıllar",
       "variants": [
-        { "text": "Mutlu yıllar", "reviewed": false },
-        { "text": "İyi yıllar", "reviewed": false }
+        { "text": "Mutlu yıllar" }
       ]
     },
     "kk": {
       "gloss": "жаңа жылмен",
       "variants": [
-        { "text": "Жаңа жылың құтты болсын", "rom": "Jaňa jylyň qutty bolsyn", "tone": "casual", "reviewed": false },
-        { "text": "Жаңа жылыңыз құтты болсын", "rom": "Jaňa jylyňyz qutty bolsyn", "tone": "polite", "reviewed": false }
+        { "text": "Жаңа жылың құтты болсын", "rom": "Jaňa jylyň qutty bolsyn", "tone": "casual" },
+        { "text": "Жаңа жылыңыз құтты болсын", "rom": "Jaňa jylyňyz qutty bolsyn", "tone": "polite" }
       ]
     },
     "hi": {
       "gloss": "नववर्ष की शुभकामनाएँ",
       "variants": [
-        { "text": "नववर्ष की शुभकामनाएँ", "rom": "navavarsh kī śubhakāmnāen", "reviewed": false }
+        { "text": "नववर्ष की शुभकामनाएँ", "rom": "navavarsh kī śubhakāmnāen" }
       ]
     },
     "bn": {
       "gloss": "শুভ নববর্ষ",
       "variants": [
-        { "text": "শুভ নববর্ষ", "rom": "śubho nôbôbôrṣô", "reviewed": false }
+        { "text": "শুভ নববর্ষ", "rom": "śubho nôbôbôrṣô" }
       ]
     },
     "id": {
       "gloss": "selamat tahun baru",
       "variants": [
-        { "text": "Selamat Tahun Baru", "reviewed": false }
+        { "text": "Selamat Tahun Baru" }
       ]
     },
     "ms": {
       "gloss": "selamat tahun baru",
       "variants": [
-        { "text": "Selamat Tahun Baru", "reviewed": false }
+        { "text": "Selamat Tahun Baru" }
       ]
     },
     "fil": {
       "gloss": "manigong bagong taon",
       "variants": [
-        { "text": "Manigong Bagong Taon", "reviewed": false }
+        { "text": "Manigong Bagong Taon" }
       ]
     },
     "vi": {
       "gloss": "chúc mừng năm mới",
       "variants": [
-        { "text": "Chúc mừng năm mới", "reviewed": false }
+        { "text": "Chúc mừng năm mới" }
       ]
     },
     "th": {
       "gloss": "สวัสดีปีใหม่",
       "variants": [
-        { "text": "สวัสดีปีใหม่", "rom": "sawatdee pi mai", "reviewed": false }
+        { "text": "สวัสดีปีใหม่", "rom": "sawatdee pi mai" }
       ]
     },
     "mizo": {
       "gloss": "kum thar chibai",
       "variants": [
-        { "text": "Kum thar chibai", "note": "Lit. \"new year greeting.\"", "reviewed": false }
+        { "text": "Kum thar chibai", "note": "Lit. \"new year greeting.\"" }
       ]
     }
   }
