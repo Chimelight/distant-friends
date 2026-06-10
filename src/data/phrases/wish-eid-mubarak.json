@@ -6,152 +6,149 @@
     "zh": {
       "gloss": "开斋节快乐",
       "variants": [
-        { "text": "开斋节快乐", "rom": "kāizhāijié kuàilè", "reviewed": false },
-        { "text": "节日吉庆", "rom": "jiérì jíqìng", "note": "Generic festive blessing used for Eid.", "reviewed": false }
+        { "text": "开斋节快乐", "rom": "kāizhāijié kuàilè" }
       ]
     },
     "ja": {
       "gloss": "イード・ムバーラク",
       "variants": [
-        { "text": "イード・ムバーラク", "rom": "īdo mubāraku", "note": "Eid Mubarak — used as-is in Japanese.", "reviewed": false }
+        { "text": "イード・ムバーラク", "rom": "īdo mubāraku", "note": "Eid Mubarak — used as-is in Japanese." }
       ]
     },
     "ko": {
       "gloss": "이드 무바라크",
       "variants": [
-        { "text": "이드 무바라크", "rom": "ideu mubaraku", "note": "Eid Mubarak — used as-is in Korean.", "reviewed": false }
+        { "text": "이드 무바라크", "rom": "ideu mubarakeu", "note": "Eid Mubarak — used as-is in Korean." }
       ]
     },
     "en": {
       "gloss": "eid mubarak",
       "variants": [
-        { "text": "Eid Mubarak", "note": "Universal greeting for both Eid al-Fitr and Eid al-Adha.", "reviewed": false },
-        { "text": "Happy Eid", "reviewed": false }
+        { "text": "Eid Mubarak", "note": "Universal greeting for both Eid al-Fitr and Eid al-Adha." },
+        { "text": "Happy Eid" }
       ]
     },
     "de": {
       "gloss": "eid mubarak",
       "variants": [
-        { "text": "Eid Mubarak", "reviewed": false },
-        { "text": "Frohes Eid-Fest", "reviewed": false }
+        { "text": "Eid Mubarak" },
+        { "text": "Frohes Eid-Fest" }
       ]
     },
     "es": {
       "gloss": "feliz eid",
       "variants": [
-        { "text": "Eid Mubarak", "reviewed": false },
-        { "text": "Feliz Eid", "reviewed": false }
+        { "text": "Eid Mubarak" },
+        { "text": "Feliz Eid" }
       ]
     },
     "pt": {
       "gloss": "feliz eid",
       "variants": [
-        { "text": "Eid Mubarak", "reviewed": false },
-        { "text": "Feliz Eid", "reviewed": false }
+        { "text": "Eid Mubarak" },
+        { "text": "Feliz Eid" }
       ]
     },
     "fr": {
       "gloss": "aïd moubarak",
       "variants": [
-        { "text": "Aïd Moubarak", "reviewed": false },
-        { "text": "Joyeux Aïd", "reviewed": false }
+        { "text": "Aïd Moubarak" },
+        { "text": "Joyeux Aïd" }
       ]
     },
     "it": {
       "gloss": "eid mubarak",
       "variants": [
-        { "text": "Eid Mubarak", "reviewed": false },
-        { "text": "Buona festa di Eid", "reviewed": false }
+        { "text": "Eid Mubarak" },
+        { "text": "Buona festa di Eid" }
       ]
     },
     "ru": {
       "gloss": "ид мубарак",
       "variants": [
-        { "text": "Ид Мубарак", "rom": "id mubarak", "reviewed": false },
-        { "text": "С праздником Ид", "rom": "s prazdnikom Id", "reviewed": false }
+        { "text": "Ид Мубарак", "rom": "id mubarak" },
+        { "text": "С праздником Ид", "rom": "s prazdnikom Id" }
       ]
     },
     "uk": {
       "gloss": "ід мубарак",
       "variants": [
-        { "text": "Ід Мубарак", "rom": "Id Mubarak", "reviewed": false },
-        { "text": "Благословенного свята", "rom": "Blahoslovennoho sviata", "note": "Lit. \"a blessed holiday.\"", "reviewed": false }
+        { "text": "Ід Мубарак", "rom": "Id Mubarak" },
+        { "text": "Благословенного свята", "rom": "Blahoslovennoho sviata", "note": "Lit. \"a blessed holiday.\"" }
       ]
     },
     "pl": {
       "gloss": "eid mubarak",
       "variants": [
-        { "text": "Eid Mubarak", "reviewed": false },
-        { "text": "Wesołego Eid", "reviewed": false }
+        { "text": "Eid Mubarak" },
+        { "text": "Wesołego Eid" }
       ]
     },
     "tr": {
       "gloss": "bayramınız mübarek olsun",
       "variants": [
-        { "text": "Bayramınız mübarek olsun", "note": "The Turkish blessing for Eid; lit. \"may your holiday be blessed.\"", "reviewed": false },
-        { "text": "Hayırlı bayramlar", "note": "Lit. \"blessed holidays.\"", "reviewed": false }
+        { "text": "Bayramınız mübarek olsun", "note": "The Turkish blessing for Eid; lit. \"may your holiday be blessed.\"" },
+        { "text": "Hayırlı bayramlar", "note": "Lit. \"blessed holidays.\"" }
       ]
     },
     "kk": {
       "gloss": "айт мүбәрак болсын",
       "variants": [
-        { "text": "Айт мүбәрак болсын", "rom": "Ait mübärak bolsyn", "reviewed": false },
-        { "text": "Айтыңыз құтты болсын", "rom": "Aityňyz qutty bolsyn", "tone": "polite", "note": "Lit. \"may your Eid be blessed.\"", "reviewed": false }
+        { "text": "Айт мүбәрак болсын", "rom": "Ait mübärak bolsyn" },
+        { "text": "Айтыңыз құтты болсын", "rom": "Aityňyz qutty bolsyn", "tone": "polite", "note": "Lit. \"may your Eid be blessed.\"" }
       ]
     },
     "hi": {
       "gloss": "ईद मुबारक",
       "variants": [
-        { "text": "ईद मुबारक", "rom": "īd mubārak", "reviewed": false }
+        { "text": "ईद मुबारक", "rom": "īd mubārak" }
       ]
     },
     "bn": {
       "gloss": "ঈদ মোবারক",
       "variants": [
-        { "text": "ঈদ মোবারক", "rom": "īd mobārôk", "reviewed": false }
+        { "text": "ঈদ মোবারক", "rom": "īd mobārôk" }
       ]
     },
     "id": {
       "gloss": "selamat hari raya",
       "variants": [
-        { "text": "Selamat Idul Fitri", "note": "Eid al-Fitr — end of Ramadan.", "reviewed": false },
-        { "text": "Selamat Hari Raya", "note": "Generic festive greeting for Eid.", "reviewed": false },
-        { "text": "Eid Mubarak", "reviewed": false }
+        { "text": "Selamat Idul Fitri", "note": "Eid al-Fitr — end of Ramadan." },
+        { "text": "Selamat Hari Raya", "note": "Generic festive greeting for Eid." }
       ]
     },
     "ms": {
       "gloss": "selamat hari raya",
       "variants": [
-        { "text": "Selamat Hari Raya Aidilfitri", "note": "Eid al-Fitr — end of Ramadan.", "reviewed": false },
-        { "text": "Selamat Hari Raya", "reviewed": false },
-        { "text": "Eid Mubarak", "reviewed": false }
+        { "text": "Selamat Hari Raya Aidilfitri", "note": "Eid al-Fitr — end of Ramadan." },
+        { "text": "Selamat Hari Raya" }
       ]
     },
     "fil": {
       "gloss": "eid mubarak",
       "variants": [
-        { "text": "Eid Mubarak", "reviewed": false },
-        { "text": "Maligayang Eid", "reviewed": false }
+        { "text": "Eid Mubarak" },
+        { "text": "Maligayang Eid" }
       ]
     },
     "vi": {
       "gloss": "eid mubarak",
       "variants": [
-        { "text": "Eid Mubarak", "reviewed": false },
-        { "text": "Chúc mừng lễ Eid", "reviewed": false }
+        { "text": "Eid Mubarak" },
+        { "text": "Chúc mừng lễ Eid" }
       ]
     },
     "th": {
       "gloss": "สุขสันต์วันอีด",
       "variants": [
-        { "text": "สุขสันต์วันอีด", "rom": "suksan wan īd", "reviewed": false },
-        { "text": "Eid Mubarak", "tone": "casual", "reviewed": false }
+        { "text": "สุขสันต์วันอีด", "rom": "suksan wan īd" },
+        { "text": "Eid Mubarak", "tone": "casual" }
       ]
     },
     "mizo": {
       "gloss": "eid chibai",
       "variants": [
-        { "text": "Eid chibai", "note": "Lit. \"Eid greeting.\"", "reviewed": false }
+        { "text": "Eid chibai", "note": "Lit. \"Eid greeting.\"" }
       ]
     }
   }

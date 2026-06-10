@@ -6,146 +6,143 @@
     "zh": {
       "gloss": "好运",
       "variants": [
-        { "text": "祝你好运", "rom": "zhù nǐ hǎoyùn", "reviewed": false },
-        { "text": "好运", "rom": "hǎoyùn", "tone": "casual", "reviewed": false }
+        { "text": "祝你好运", "rom": "zhù nǐ hǎoyùn" }
       ]
     },
     "ja": {
       "gloss": "幸運を",
       "variants": [
-        { "text": "頑張って", "rom": "ganbatte", "note": "Most natural everyday \"good luck.\"", "reviewed": false },
-        { "text": "幸運を祈る", "rom": "kōun o inoru", "tone": "polite", "reviewed": false }
+        { "text": "頑張って", "rom": "ganbatte", "note": "Most natural everyday \"good luck.\"" },
+        { "text": "幸運を祈る", "rom": "kōun o inoru", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "행운을 빌어",
       "variants": [
-        { "text": "행운을 빌어", "rom": "haengeuneul bireo", "tone": "casual", "reviewed": false },
-        { "text": "잘되길 바라", "rom": "jaldoegil bara", "reviewed": false }
+        { "text": "행운을 빌어", "rom": "haengeuneul bireo", "tone": "casual" },
+        { "text": "잘되길 바라", "rom": "jaldoegil bara" }
       ]
     },
     "en": {
       "gloss": "good luck",
       "variants": [
-        { "text": "Good luck", "reviewed": false },
-        { "text": "Best of luck", "reviewed": false }
+        { "text": "Good luck" },
+        { "text": "Best of luck" }
       ]
     },
     "de": {
       "gloss": "viel Glück",
       "variants": [
-        { "text": "Viel Glück", "reviewed": false },
-        { "text": "Alles Gute", "reviewed": false }
+        { "text": "Viel Glück" },
+        { "text": "Alles Gute" }
       ]
     },
     "es": {
       "gloss": "buena suerte",
       "variants": [
-        { "text": "Buena suerte", "reviewed": false },
-        { "text": "Suerte", "tone": "casual", "reviewed": false }
+        { "text": "Buena suerte" },
+        { "text": "Suerte", "tone": "casual" }
       ]
     },
     "pt": {
       "gloss": "boa sorte",
       "variants": [
-        { "text": "Boa sorte", "reviewed": false }
+        { "text": "Boa sorte" }
       ]
     },
     "fr": {
       "gloss": "bonne chance",
       "variants": [
-        { "text": "Bonne chance", "reviewed": false }
+        { "text": "Bonne chance" }
       ]
     },
     "it": {
       "gloss": "buona fortuna",
       "variants": [
-        { "text": "Buona fortuna", "reviewed": false },
-        { "text": "In bocca al lupo", "tone": "casual", "note": "Lit. \"in the wolf's mouth\"; idiomatic \"good luck.\"", "reviewed": false }
+        { "text": "Buona fortuna" },
+        { "text": "In bocca al lupo", "tone": "casual", "note": "Lit. \"in the wolf's mouth\"; idiomatic \"good luck.\"" }
       ]
     },
     "ru": {
       "gloss": "удачи",
       "variants": [
-        { "text": "Удачи", "rom": "udachi", "reviewed": false },
-        { "text": "Желаю удачи", "rom": "zhelayu udachi", "reviewed": false }
+        { "text": "Удачи", "rom": "udachi" }
       ]
     },
     "uk": {
       "gloss": "удачі",
       "variants": [
-        { "text": "Удачі", "rom": "Udachi", "reviewed": false },
-        { "text": "Хай щастить", "rom": "Khai shchastyt'", "note": "Lit. \"may you have luck.\"", "reviewed": false }
+        { "text": "Удачі", "rom": "Udachi" },
+        { "text": "Хай щастить", "rom": "Khai shchastyt'", "note": "Lit. \"may you have luck.\"" }
       ]
     },
     "pl": {
       "gloss": "powodzenia",
       "variants": [
-        { "text": "Powodzenia", "reviewed": false }
+        { "text": "Powodzenia" }
       ]
     },
     "tr": {
       "gloss": "bol şans",
       "variants": [
-        { "text": "Bol şans", "reviewed": false },
-        { "text": "İyi şanslar", "reviewed": false }
+        { "text": "Bol şans" }
       ]
     },
     "kk": {
       "gloss": "сәттілік",
       "variants": [
-        { "text": "Сәттілік тілеймін", "rom": "Sättilik tileimin", "reviewed": false },
-        { "text": "Жолың болсын", "rom": "Jolyň bolsyn", "tone": "casual", "note": "Lit. \"may your road go well.\"", "reviewed": false }
+        { "text": "Сәттілік тілеймін", "rom": "Sättilik tileimin" },
+        { "text": "Жолың болсын", "rom": "Jolyň bolsyn", "tone": "casual", "note": "Lit. \"may your road go well.\"" }
       ]
     },
     "hi": {
       "gloss": "शुभकामनाएँ",
       "variants": [
-        { "text": "शुभकामनाएँ", "rom": "śubhakāmnāen", "reviewed": false }
+        { "text": "शुभकामनाएँ", "rom": "śubhakāmnāen" }
       ]
     },
     "bn": {
       "gloss": "শুভকামনা",
       "variants": [
-        { "text": "শুভকামনা", "rom": "śubhokāmonā", "reviewed": false }
+        { "text": "শুভকামনা", "rom": "śubhokāmonā" }
       ]
     },
     "id": {
       "gloss": "semoga sukses",
       "variants": [
-        { "text": "Semoga sukses", "reviewed": false },
-        { "text": "Semoga berhasil", "reviewed": false }
+        { "text": "Semoga sukses" },
+        { "text": "Semoga berhasil" }
       ]
     },
     "ms": {
       "gloss": "semoga berjaya",
       "variants": [
-        { "text": "Semoga berjaya", "reviewed": false }
+        { "text": "Semoga berjaya" }
       ]
     },
     "fil": {
       "gloss": "good luck",
       "variants": [
-        { "text": "Good luck", "tone": "casual", "reviewed": false },
-        { "text": "Suwertehin ka sana", "reviewed": false }
+        { "text": "Good luck", "tone": "casual" },
+        { "text": "Suwertehin ka sana" }
       ]
     },
     "vi": {
       "gloss": "chúc may mắn",
       "variants": [
-        { "text": "Chúc may mắn", "reviewed": false }
+        { "text": "Chúc may mắn" }
       ]
     },
     "th": {
       "gloss": "ขอให้โชคดี",
       "variants": [
-        { "text": "ขอให้โชคดี", "rom": "kho hai chok dee", "reviewed": false }
+        { "text": "ขอให้โชคดี", "rom": "kho hai chok dee" }
       ]
     },
     "mizo": {
       "gloss": "hamthatna",
       "variants": [
-        { "text": "Hamthatna ka duh a che", "note": "Lit. \"I wish you blessing.\"", "reviewed": false }
+        { "text": "Hamthatna ka duh a che", "note": "Lit. \"I wish you blessing.\"" }
       ]
     }
   }

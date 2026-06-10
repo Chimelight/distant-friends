@@ -6,164 +6,163 @@
     "zh": {
       "gloss": "什么",
       "variants": [
-        { "text": "什么？", "rom": "shénme?", "reviewed": false },
-        { "text": "啊？", "rom": "á?", "tone": "casual", "note": "Sound of surprise / \"huh?\"", "reviewed": false }
+        { "text": "什么？", "rom": "shénme?" },
+        { "text": "啊？", "rom": "á?", "tone": "casual", "note": "Sound of surprise / \"huh?\"" }
       ]
     },
     "ja": {
       "gloss": "何？",
       "variants": [
-        { "text": "何？", "rom": "nani?", "tone": "casual", "reviewed": false },
-        { "text": "えっ？", "rom": "e?", "tone": "casual", "note": "Surprised \"huh?\"", "reviewed": false },
-        { "text": "何ですか", "rom": "nan desu ka", "tone": "polite", "reviewed": false }
+        { "text": "何？", "rom": "nani?", "tone": "casual" },
+        { "text": "えっ？", "rom": "e?", "tone": "casual", "note": "Surprised \"huh?\"" },
+        { "text": "何ですか", "rom": "nan desu ka", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "뭐?",
       "variants": [
-        { "text": "뭐?", "rom": "mwo?", "tone": "casual", "reviewed": false },
-        { "text": "네?", "rom": "ne?", "tone": "polite", "note": "Polite \"pardon?\"", "reviewed": false }
+        { "text": "뭐?", "rom": "mwo?", "tone": "casual" },
+        { "text": "네?", "rom": "ne?", "tone": "polite", "note": "Polite \"pardon?\"" }
       ]
     },
     "en": {
       "gloss": "what?",
       "variants": [
-        { "text": "What?", "reviewed": false },
-        { "text": "Huh?", "tone": "casual", "reviewed": false },
-        { "text": "Sorry?", "tone": "polite", "note": "Polite \"didn't catch that.\"", "reviewed": false }
+        { "text": "What?" },
+        { "text": "Huh?", "tone": "casual" },
+        { "text": "Sorry?", "tone": "polite", "note": "Polite \"didn't catch that.\"" }
       ]
     },
     "de": {
       "gloss": "was?",
       "variants": [
-        { "text": "Was?", "reviewed": false },
-        { "text": "Hä?", "tone": "casual", "reviewed": false },
-        { "text": "Wie bitte?", "tone": "polite", "note": "Polite \"pardon?\"", "reviewed": false }
+        { "text": "Was?" },
+        { "text": "Hä?", "tone": "casual" },
+        { "text": "Wie bitte?", "tone": "polite", "note": "Polite \"pardon?\"" }
       ]
     },
     "es": {
       "gloss": "¿qué?",
       "variants": [
-        { "text": "¿Qué?", "reviewed": false },
-        { "text": "¿Cómo?", "tone": "polite", "note": "Polite \"pardon?\"", "reviewed": false }
+        { "text": "¿Qué?" },
+        { "text": "¿Cómo?", "tone": "polite", "note": "Polite \"pardon?\"" }
       ]
     },
     "pt": {
       "gloss": "o quê?",
       "variants": [
-        { "text": "O quê?", "reviewed": false },
-        { "text": "Hã?", "tone": "casual", "reviewed": false },
-        { "text": "Como?", "tone": "polite", "reviewed": false }
+        { "text": "O quê?" },
+        { "text": "Hã?", "tone": "casual" },
+        { "text": "Como?", "tone": "polite" }
       ]
     },
     "fr": {
       "gloss": "quoi?",
       "variants": [
-        { "text": "Quoi ?", "reviewed": false },
-        { "text": "Hein ?", "tone": "casual", "reviewed": false },
-        { "text": "Pardon ?", "tone": "polite", "reviewed": false }
+        { "text": "Quoi ?" },
+        { "text": "Hein ?", "tone": "casual" },
+        { "text": "Pardon ?", "tone": "polite" }
       ]
     },
     "it": {
       "gloss": "cosa?",
       "variants": [
-        { "text": "Cosa?", "reviewed": false },
-        { "text": "Eh?", "tone": "casual", "reviewed": false },
-        { "text": "Come?", "tone": "polite", "reviewed": false }
+        { "text": "Cosa?" },
+        { "text": "Eh?", "tone": "casual" },
+        { "text": "Come?", "tone": "polite" }
       ]
     },
     "ru": {
       "gloss": "что?",
       "variants": [
-        { "text": "Что?", "rom": "chto?", "reviewed": false },
-        { "text": "А?", "rom": "a?", "tone": "casual", "reviewed": false },
-        { "text": "Простите?", "rom": "prostite?", "tone": "polite", "reviewed": false }
+        { "text": "Что?", "rom": "chto?" },
+        { "text": "А?", "rom": "a?", "tone": "casual" },
+        { "text": "Простите?", "rom": "prostite?", "tone": "polite" }
       ]
     },
     "uk": {
       "gloss": "що?",
       "variants": [
-        { "text": "Що?", "rom": "Shcho?", "reviewed": false },
-        { "text": "Га?", "rom": "Ha?", "tone": "casual", "reviewed": false },
-        { "text": "Перепрошую?", "rom": "Pereproshuiu?", "tone": "polite", "note": "Polite \"sorry?\"", "reviewed": false }
+        { "text": "Що?", "rom": "Shcho?" },
+        { "text": "Га?", "rom": "Ha?", "tone": "casual" },
+        { "text": "Перепрошую?", "rom": "Pereproshuiu?", "tone": "polite", "note": "Polite \"sorry?\"" }
       ]
     },
     "pl": {
       "gloss": "co?",
       "variants": [
-        { "text": "Co?", "reviewed": false },
-        { "text": "Słucham?", "tone": "polite", "note": "Polite \"pardon?\"", "reviewed": false }
+        { "text": "Co?" },
+        { "text": "Słucham?", "tone": "polite", "note": "Polite \"pardon?\"" }
       ]
     },
     "tr": {
       "gloss": "ne?",
       "variants": [
-        { "text": "Ne?", "reviewed": false },
-        { "text": "Efendim?", "tone": "polite", "note": "Polite \"yes? / pardon?\"", "reviewed": false }
+        { "text": "Ne?" },
+        { "text": "Efendim?", "tone": "polite", "note": "Polite \"yes? / pardon?\"" }
       ]
     },
     "kk": {
       "gloss": "не?",
       "variants": [
-        { "text": "Не?", "rom": "Ne?", "reviewed": false },
-        { "text": "А?", "rom": "A?", "tone": "casual", "reviewed": false },
-        { "text": "Кешіріңіз?", "rom": "Keşiriňiz?", "tone": "polite", "note": "Polite \"sorry?\"", "reviewed": false }
+        { "text": "Не?", "rom": "Ne?" },
+        { "text": "А?", "rom": "A?", "tone": "casual" },
+        { "text": "Кешіріңіз?", "rom": "Keşiriňiz?", "tone": "polite", "note": "Polite \"sorry?\"" }
       ]
     },
     "hi": {
       "gloss": "क्या?",
       "variants": [
-        { "text": "क्या?", "rom": "kyā?", "reviewed": false },
-        { "text": "हैं?", "rom": "hain?", "tone": "casual", "reviewed": false }
+        { "text": "क्या?", "rom": "kyā?" },
+        { "text": "हैं?", "rom": "hain?", "tone": "casual" }
       ]
     },
     "bn": {
       "gloss": "কী?",
       "variants": [
-        { "text": "কী?", "rom": "kī?", "reviewed": false }
+        { "text": "কী?", "rom": "kī?" }
       ]
     },
     "id": {
       "gloss": "apa?",
       "variants": [
-        { "text": "Apa?", "reviewed": false },
-        { "text": "Hah?", "tone": "casual", "reviewed": false }
+        { "text": "Apa?" },
+        { "text": "Hah?", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "apa?",
       "variants": [
-        { "text": "Apa?", "reviewed": false },
-        { "text": "Hah?", "tone": "casual", "reviewed": false }
+        { "text": "Apa?" },
+        { "text": "Hah?", "tone": "casual" }
       ]
     },
     "fil": {
       "gloss": "ano?",
       "variants": [
-        { "text": "Ano?", "reviewed": false },
-        { "text": "Ha?", "tone": "casual", "reviewed": false },
-        { "text": "Po?", "tone": "polite", "reviewed": false }
+        { "text": "Ano?" },
+        { "text": "Ha?", "tone": "casual" },
+        { "text": "Po?", "tone": "polite" }
       ]
     },
     "vi": {
       "gloss": "gì?",
       "variants": [
-        { "text": "Gì?", "tone": "casual", "reviewed": false },
-        { "text": "Cái gì?", "reviewed": false },
-        { "text": "Hả?", "tone": "casual", "reviewed": false }
+        { "text": "Cái gì?" },
+        { "text": "Hả?", "tone": "casual" }
       ]
     },
     "th": {
       "gloss": "อะไรนะ",
       "variants": [
-        { "text": "อะไรนะ", "rom": "arai na", "reviewed": false },
-        { "text": "หา", "rom": "hā", "tone": "casual", "reviewed": false }
+        { "text": "อะไรนะ", "rom": "arai na" },
+        { "text": "หา", "rom": "hā", "tone": "casual" }
       ]
     },
     "mizo": {
       "gloss": "eng?",
       "variants": [
-        { "text": "Eng?", "note": "Lit. \"what?\"", "reviewed": false }
+        { "text": "Eng?", "note": "Lit. \"what?\"" }
       ]
     }
   }

@@ -1,156 +1,155 @@
 {
   "id": "compliment-i-like-it",
   "scene": "compliments",
-  "order": 5,
+  "order": 4,
   "trans": {
     "zh": {
       "gloss": "喜欢",
       "variants": [
-        { "text": "我很喜欢", "rom": "wǒ hěn xǐhuan", "reviewed": false },
-        { "text": "我喜欢", "rom": "wǒ xǐhuan", "reviewed": false }
+        { "text": "我很喜欢", "rom": "wǒ hěn xǐhuan" }
       ]
     },
     "ja": {
       "gloss": "好き",
       "variants": [
-        { "text": "好き", "rom": "suki", "tone": "casual", "reviewed": false },
-        { "text": "気に入った", "rom": "ki ni itta", "note": "Lit. \"(it) caught my fancy.\"", "reviewed": false }
+        { "text": "好き", "rom": "suki", "tone": "casual" },
+        { "text": "気に入った", "rom": "ki ni itta", "note": "Lit. \"(it) caught my fancy.\"" }
       ]
     },
     "ko": {
       "gloss": "좋아해",
       "variants": [
-        { "text": "좋아해", "rom": "joahae", "tone": "casual", "reviewed": false },
-        { "text": "마음에 들어", "rom": "maeume deureo", "note": "Lit. \"(it) enters (my) heart.\"", "reviewed": false }
+        { "text": "좋아해", "rom": "joahae", "tone": "casual" },
+        { "text": "마음에 들어", "rom": "maeume deureo", "note": "Lit. \"(it) enters (my) heart.\"" }
       ]
     },
     "en": {
       "gloss": "I like it",
       "variants": [
-        { "text": "I like it", "reviewed": false },
-        { "text": "I love it", "reviewed": false }
+        { "text": "I like it" },
+        { "text": "I love it" }
       ]
     },
     "de": {
       "gloss": "ich mag es",
       "variants": [
-        { "text": "Ich mag es", "reviewed": false },
-        { "text": "Gefällt mir", "note": "Lit. \"(it) pleases me.\"", "reviewed": false }
+        { "text": "Ich mag es" },
+        { "text": "Gefällt mir", "note": "Lit. \"(it) pleases me.\"" }
       ]
     },
     "es": {
       "gloss": "me gusta",
       "variants": [
-        { "text": "Me gusta", "reviewed": false },
-        { "text": "Me encanta", "reviewed": false }
+        { "text": "Me gusta" },
+        { "text": "Me encanta" }
       ]
     },
     "pt": {
       "gloss": "eu gosto",
       "variants": [
-        { "text": "Eu gosto", "reviewed": false },
-        { "text": "Adorei", "reviewed": false }
+        { "text": "Eu gosto" },
+        { "text": "Adorei" }
       ]
     },
     "fr": {
       "gloss": "j'aime",
       "variants": [
-        { "text": "J'aime", "reviewed": false },
-        { "text": "J'adore", "reviewed": false }
+        { "text": "J'aime" },
+        { "text": "J'adore" }
       ]
     },
     "it": {
       "gloss": "mi piace",
       "variants": [
-        { "text": "Mi piace", "reviewed": false },
-        { "text": "Adoro", "reviewed": false }
+        { "text": "Mi piace" },
+        { "text": "Adoro" }
       ]
     },
     "ru": {
       "gloss": "мне нравится",
       "variants": [
-        { "text": "Мне нравится", "rom": "mne nravitsya", "reviewed": false },
-        { "text": "Обожаю", "rom": "obozhayu", "tone": "casual", "note": "Lit. \"I adore (it).\"", "reviewed": false }
+        { "text": "Мне нравится", "rom": "mne nravitsya" },
+        { "text": "Обожаю", "rom": "obozhayu", "tone": "casual", "note": "Lit. \"I adore (it).\"" }
       ]
     },
     "uk": {
       "gloss": "мені подобається",
       "variants": [
-        { "text": "Мені подобається", "rom": "Meni podobaiet'sia", "reviewed": false },
-        { "text": "Обожнюю", "rom": "Obozhniuiu", "tone": "casual", "note": "Lit. \"I adore it.\"", "reviewed": false }
+        { "text": "Мені подобається", "rom": "Meni podobaiet'sia" },
+        { "text": "Обожнюю", "rom": "Obozhniuiu", "tone": "casual", "note": "Lit. \"I adore it.\"" }
       ]
     },
     "pl": {
       "gloss": "podoba mi się",
       "variants": [
-        { "text": "Podoba mi się", "reviewed": false },
-        { "text": "Uwielbiam", "tone": "casual", "reviewed": false }
+        { "text": "Podoba mi się" },
+        { "text": "Uwielbiam", "tone": "casual" }
       ]
     },
     "tr": {
       "gloss": "beğendim",
       "variants": [
-        { "text": "Beğendim", "reviewed": false },
-        { "text": "Çok hoşuma gitti", "reviewed": false }
+        { "text": "Beğendim" },
+        { "text": "Çok hoşuma gitti" }
       ]
     },
     "kk": {
       "gloss": "ұнайды",
       "variants": [
-        { "text": "Маған ұнайды", "rom": "Mağan unaidy", "reviewed": false },
-        { "text": "Өте ұнады", "rom": "Öte unady", "note": "Lit. \"liked it a lot.\"", "reviewed": false }
+        { "text": "Маған ұнайды", "rom": "Mağan unaidy" },
+        { "text": "Өте ұнады", "rom": "Öte unady", "note": "Lit. \"liked it a lot.\"" }
       ]
     },
     "hi": {
       "gloss": "पसंद है",
       "variants": [
-        { "text": "मुझे पसंद है", "rom": "mujhe pasand hai", "reviewed": false }
+        { "text": "मुझे पसंद है", "rom": "mujhe pasand hai" }
       ]
     },
     "bn": {
       "gloss": "ভালো লেগেছে",
       "variants": [
-        { "text": "আমার ভালো লেগেছে", "rom": "āmār bhalo legechhe", "reviewed": false }
+        { "text": "আমার ভালো লেগেছে", "rom": "āmār bhalo legechhe" }
       ]
     },
     "id": {
       "gloss": "aku suka",
       "variants": [
-        { "text": "Aku suka", "reviewed": false },
-        { "text": "Aku suka banget", "tone": "casual", "reviewed": false }
+        { "text": "Aku suka" },
+        { "text": "Aku suka banget", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "saya suka",
       "variants": [
-        { "text": "Saya suka", "reviewed": false }
+        { "text": "Saya suka" }
       ]
     },
     "fil": {
       "gloss": "gusto ko",
       "variants": [
-        { "text": "Gusto ko", "reviewed": false },
-        { "text": "Type ko", "tone": "casual", "reviewed": false }
+        { "text": "Gusto ko" },
+        { "text": "Type ko", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "mình thích",
       "variants": [
-        { "text": "Mình thích", "reviewed": false },
-        { "text": "Tôi rất thích", "reviewed": false }
+        { "text": "Mình thích" },
+        { "text": "Tôi rất thích" }
       ]
     },
     "th": {
       "gloss": "ฉันชอบ",
       "variants": [
-        { "text": "ฉันชอบ", "rom": "chan chop", "reviewed": false },
-        { "text": "ชอบมาก", "rom": "chop mak", "reviewed": false }
+        { "text": "ฉันชอบ", "rom": "chan chop" },
+        { "text": "ชอบมาก", "rom": "chop mak" }
       ]
     },
     "mizo": {
       "gloss": "ka duh",
       "variants": [
-        { "text": "Ka duh", "note": "Lit. \"I like (it).\"", "reviewed": false }
+        { "text": "Ka duh", "note": "Lit. \"I like (it).\"" }
       ]
     }
   }

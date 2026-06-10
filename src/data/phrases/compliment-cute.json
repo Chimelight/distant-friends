@@ -1,162 +1,159 @@
 {
   "id": "compliment-cute",
   "scene": "compliments",
-  "order": 7,
+  "order": 6,
   "trans": {
     "zh": {
       "gloss": "可爱",
       "variants": [
-        { "text": "很可爱", "rom": "hěn kě'ài", "reviewed": false },
-        { "text": "真可爱", "rom": "zhēn kě'ài", "reviewed": false }
+        { "text": "很可爱", "rom": "hěn kě'ài" }
       ]
     },
     "ja": {
       "gloss": "かわいい",
       "variants": [
-        { "text": "かわいい", "rom": "kawaii", "reviewed": false }
+        { "text": "かわいい", "rom": "kawaii" }
       ]
     },
     "ko": {
       "gloss": "귀여워",
       "variants": [
-        { "text": "귀여워", "rom": "gwiyeowo", "tone": "casual", "reviewed": false },
-        { "text": "귀엽다", "rom": "gwiyeopda", "reviewed": false }
+        { "text": "귀여워", "rom": "gwiyeowo", "tone": "casual" },
+        { "text": "귀엽다", "rom": "gwiyeopda" }
       ]
     },
     "en": {
       "gloss": "so cute",
       "variants": [
-        { "text": "So cute", "reviewed": false }
+        { "text": "So cute" }
       ]
     },
     "de": {
       "gloss": "süß",
       "variants": [
-        { "text": "Süß", "reviewed": false },
-        { "text": "Niedlich", "reviewed": false }
+        { "text": "Süß" },
+        { "text": "Niedlich" }
       ]
     },
     "es": {
       "gloss": "qué lindo",
       "variants": [
-        { "text": "Qué lindo", "addresseeGender": "m", "reviewed": false },
-        { "text": "Qué linda", "addresseeGender": "f", "reviewed": false },
-        { "text": "Qué tierno", "addresseeGender": "m", "reviewed": false },
-        { "text": "Qué tierna", "addresseeGender": "f", "reviewed": false }
+        { "text": "Qué lindo", "addresseeGender": "m" },
+        { "text": "Qué linda", "addresseeGender": "f" }
       ]
     },
     "pt": {
       "gloss": "que fofo",
       "variants": [
-        { "text": "Que fofo", "addresseeGender": "m", "reviewed": false },
-        { "text": "Que fofa", "addresseeGender": "f", "reviewed": false }
+        { "text": "Que fofo", "addresseeGender": "m" },
+        { "text": "Que fofa", "addresseeGender": "f" }
       ]
     },
     "fr": {
       "gloss": "mignon",
       "variants": [
-        { "text": "Trop mignon", "addresseeGender": "m", "reviewed": false },
-        { "text": "Trop mignonne", "addresseeGender": "f", "reviewed": false }
+        { "text": "Trop mignon", "addresseeGender": "m" },
+        { "text": "Trop mignonne", "addresseeGender": "f" }
       ]
     },
     "it": {
       "gloss": "carino",
       "variants": [
-        { "text": "Che carino", "addresseeGender": "m", "reviewed": false },
-        { "text": "Che carina", "addresseeGender": "f", "reviewed": false }
+        { "text": "Che carino", "addresseeGender": "m" },
+        { "text": "Che carina", "addresseeGender": "f" }
       ]
     },
     "ru": {
       "gloss": "милый",
       "variants": [
-        { "text": "Милый", "rom": "milyi", "addresseeGender": "m", "reviewed": false },
-        { "text": "Милая", "rom": "milaya", "addresseeGender": "f", "reviewed": false },
-        { "text": "Какой милый", "rom": "kakoi milyi", "addresseeGender": "m", "reviewed": false }
+        { "text": "Какой милый", "rom": "kakoi milyi", "addresseeGender": "m" },
+        { "text": "Какая милая", "rom": "kakaya milaya", "addresseeGender": "f" },
+        { "text": "Мило", "rom": "milo", "note": "Of a thing or photo; standalone \"Милый\" to a person reads as \"sweetheart.\"" }
       ]
     },
     "uk": {
       "gloss": "миле",
       "variants": [
-        { "text": "Яке миле", "rom": "Yake myle", "note": "Lit. \"how cute\" — of a thing or animal.", "reviewed": false },
-        { "text": "Такий милий", "rom": "Takyi mylyi", "addresseeGender": "m", "reviewed": false },
-        { "text": "Така мила", "rom": "Taka myla", "addresseeGender": "f", "reviewed": false }
+        { "text": "Яке миле", "rom": "Yake myle", "note": "Lit. \"how cute\" — of a thing or animal." },
+        { "text": "Такий милий", "rom": "Takyi mylyi", "addresseeGender": "m" },
+        { "text": "Така мила", "rom": "Taka myla", "addresseeGender": "f" }
       ]
     },
     "pl": {
       "gloss": "słodkie",
       "variants": [
-        { "text": "Słodkie", "reviewed": false },
-        { "text": "Uroczy", "addresseeGender": "m", "reviewed": false },
-        { "text": "Urocza", "addresseeGender": "f", "reviewed": false }
+        { "text": "Słodkie" },
+        { "text": "Uroczy", "addresseeGender": "m" },
+        { "text": "Urocza", "addresseeGender": "f" }
       ]
     },
     "tr": {
       "gloss": "çok tatlı",
       "variants": [
-        { "text": "Çok tatlı", "reviewed": false },
-        { "text": "Şirin", "reviewed": false }
+        { "text": "Çok tatlı" },
+        { "text": "Şirin" }
       ]
     },
     "kk": {
       "gloss": "сүйкімді",
       "variants": [
-        { "text": "Өте сүйкімді", "rom": "Öte süikimdi", "reviewed": false },
-        { "text": "Қандай тәтті", "rom": "Qandai tätti", "tone": "casual", "note": "Lit. \"how sweet.\"", "reviewed": false }
+        { "text": "Өте сүйкімді", "rom": "Öte süikimdi" },
+        { "text": "Қандай тәтті", "rom": "Qandai tätti", "tone": "casual", "note": "Lit. \"how sweet.\"" }
       ]
     },
     "hi": {
       "gloss": "बहुत प्यारा",
       "variants": [
-        { "text": "बहुत प्यारा", "rom": "bahut pyārā", "addresseeGender": "m", "reviewed": false },
-        { "text": "बहुत प्यारी", "rom": "bahut pyārī", "addresseeGender": "f", "reviewed": false }
+        { "text": "बहुत प्यारा", "rom": "bahut pyārā", "addresseeGender": "m" },
+        { "text": "बहुत प्यारी", "rom": "bahut pyārī", "addresseeGender": "f" }
       ]
     },
     "bn": {
       "gloss": "খুব মিষ্টি",
       "variants": [
-        { "text": "খুব মিষ্টি", "rom": "khub miṣṭi", "reviewed": false },
-        { "text": "কিউট", "rom": "kiut", "tone": "casual", "reviewed": false }
+        { "text": "খুব মিষ্টি", "rom": "khub miṣṭi" },
+        { "text": "কিউট", "rom": "kiut", "tone": "casual" }
       ]
     },
     "id": {
       "gloss": "lucu",
       "variants": [
-        { "text": "Lucu", "reviewed": false },
-        { "text": "Imut", "tone": "casual", "reviewed": false }
+        { "text": "Lucu" },
+        { "text": "Imut", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "comel",
       "variants": [
-        { "text": "Comel", "reviewed": false },
-        { "text": "Manis", "reviewed": false }
+        { "text": "Comel" },
+        { "text": "Manis" }
       ]
     },
     "fil": {
       "gloss": "ang cute",
       "variants": [
-        { "text": "Ang cute", "reviewed": false },
-        { "text": "Sobrang cute", "tone": "casual", "reviewed": false }
+        { "text": "Ang cute" },
+        { "text": "Sobrang cute", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "dễ thương",
       "variants": [
-        { "text": "Dễ thương", "reviewed": false },
-        { "text": "Đáng yêu", "reviewed": false }
+        { "text": "Dễ thương" },
+        { "text": "Đáng yêu" }
       ]
     },
     "th": {
       "gloss": "น่ารัก",
       "variants": [
-        { "text": "น่ารัก", "rom": "na rak", "reviewed": false },
-        { "text": "น่ารักจัง", "rom": "na rak jang", "reviewed": false }
+        { "text": "น่ารัก", "rom": "na rak" },
+        { "text": "น่ารักจัง", "rom": "na rak jang" }
       ]
     },
     "mizo": {
       "gloss": "a mawi",
       "variants": [
-        { "text": "A mawi", "note": "Lit. \"(it) is pretty / cute.\"", "reviewed": false }
+        { "text": "A mawi", "note": "Lit. \"(it) is pretty / cute.\"" }
       ]
     }
   }

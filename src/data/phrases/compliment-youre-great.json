@@ -6,149 +6,149 @@
     "zh": {
       "gloss": "你很棒",
       "variants": [
-        { "text": "你很棒", "rom": "nǐ hěn bàng", "reviewed": false }
+        { "text": "你很棒", "rom": "nǐ hěn bàng" }
       ]
     },
     "ja": {
       "gloss": "君はすごい",
       "variants": [
-        { "text": "すごいね", "rom": "sugoi ne", "tone": "casual", "reviewed": false },
-        { "text": "君はすごい", "rom": "kimi wa sugoi", "reviewed": false }
+        { "text": "すごいね", "rom": "sugoi ne", "tone": "casual" },
+        { "text": "君はすごい", "rom": "kimi wa sugoi" }
       ]
     },
     "ko": {
       "gloss": "너 멋져",
       "variants": [
-        { "text": "너 멋져", "rom": "neo meotjyeo", "tone": "casual", "reviewed": false },
-        { "text": "대단해", "rom": "daedanhae", "reviewed": false }
+        { "text": "너 멋져", "rom": "neo meotjyeo", "tone": "casual" },
+        { "text": "대단해", "rom": "daedanhae" }
       ]
     },
     "en": {
       "gloss": "you're great",
       "variants": [
-        { "text": "You're great", "reviewed": false },
-        { "text": "You're awesome", "tone": "casual", "reviewed": false }
+        { "text": "You're great" },
+        { "text": "You're awesome", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "du bist toll",
       "variants": [
-        { "text": "Du bist toll", "reviewed": false },
-        { "text": "Du bist großartig", "reviewed": false }
+        { "text": "Du bist toll" },
+        { "text": "Du bist großartig" }
       ]
     },
     "es": {
       "gloss": "eres genial",
       "variants": [
-        { "text": "Eres genial", "reviewed": false },
-        { "text": "Eres increíble", "reviewed": false }
+        { "text": "Eres genial" },
+        { "text": "Eres increíble" }
       ]
     },
     "pt": {
       "gloss": "você é incrível",
       "variants": [
-        { "text": "Você é incrível", "reviewed": false },
-        { "text": "Você é demais", "tone": "casual", "reviewed": false }
+        { "text": "Você é incrível" },
+        { "text": "Você é demais", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "tu es génial",
       "variants": [
-        { "text": "Tu es génial", "speakerGender": "m", "reviewed": false },
-        { "text": "Tu es géniale", "speakerGender": "f", "reviewed": false }
+        { "text": "Tu es génial", "addresseeGender": "m" },
+        { "text": "Tu es géniale", "addresseeGender": "f" }
       ]
     },
     "it": {
       "gloss": "sei fantastico",
       "variants": [
-        { "text": "Sei fantastico", "speakerGender": "m", "reviewed": false },
-        { "text": "Sei fantastica", "speakerGender": "f", "reviewed": false }
+        { "text": "Sei fantastico", "addresseeGender": "m" },
+        { "text": "Sei fantastica", "addresseeGender": "f" }
       ]
     },
     "ru": {
       "gloss": "ты молодец",
       "variants": [
-        { "text": "Ты молодец", "rom": "ty molodets", "reviewed": false },
-        { "text": "Ты классный", "rom": "ty klassnyi", "tone": "casual", "addresseeGender": "m", "reviewed": false },
-        { "text": "Ты классная", "rom": "ty klassnaya", "tone": "casual", "addresseeGender": "f", "reviewed": false }
+        { "text": "Ты молодец", "rom": "ty molodets" },
+        { "text": "Ты классный", "rom": "ty klassnyi", "tone": "casual", "addresseeGender": "m" },
+        { "text": "Ты классная", "rom": "ty klassnaya", "tone": "casual", "addresseeGender": "f" }
       ]
     },
     "uk": {
       "gloss": "ти молодець",
       "variants": [
-        { "text": "Ти молодець", "rom": "Ty molodets", "reviewed": false },
-        { "text": "Ти класний", "rom": "Ty klasnyi", "tone": "casual", "addresseeGender": "m", "reviewed": false },
-        { "text": "Ти класна", "rom": "Ty klasna", "tone": "casual", "addresseeGender": "f", "reviewed": false }
+        { "text": "Ти молодець", "rom": "Ty molodets" },
+        { "text": "Ти класний", "rom": "Ty klasnyi", "tone": "casual", "addresseeGender": "m" },
+        { "text": "Ти класна", "rom": "Ty klasna", "tone": "casual", "addresseeGender": "f" }
       ]
     },
     "pl": {
       "gloss": "jesteś świetny",
       "variants": [
-        { "text": "Jesteś świetny", "addresseeGender": "m", "reviewed": false },
-        { "text": "Jesteś świetna", "addresseeGender": "f", "reviewed": false }
+        { "text": "Jesteś świetny", "addresseeGender": "m" },
+        { "text": "Jesteś świetna", "addresseeGender": "f" }
       ]
     },
     "tr": {
       "gloss": "harikasın",
       "variants": [
-        { "text": "Harikasın", "reviewed": false },
-        { "text": "Müthişsin", "reviewed": false }
+        { "text": "Harikasın" },
+        { "text": "Müthişsin" }
       ]
     },
     "kk": {
       "gloss": "өзің зорсың",
       "variants": [
-        { "text": "Сен жарайсың", "rom": "Sen jaraisyň", "tone": "casual", "reviewed": false },
-        { "text": "Сен кереметсің", "rom": "Sen keremetsiň", "reviewed": false }
+        { "text": "Сен жарайсың", "rom": "Sen jaraisyň", "tone": "casual" },
+        { "text": "Сен кереметсің", "rom": "Sen keremetsiň" }
       ]
     },
     "hi": {
       "gloss": "तुम बहुत अच्छे हो",
       "variants": [
-        { "text": "तुम बहुत अच्छे हो", "rom": "tum bahut achchhe ho", "addresseeGender": "m", "reviewed": false },
-        { "text": "तुम बहुत अच्छी हो", "rom": "tum bahut achchhī ho", "addresseeGender": "f", "reviewed": false }
+        { "text": "तुम बहुत अच्छे हो", "rom": "tum bahut achchhe ho", "addresseeGender": "m" },
+        { "text": "तुम बहुत अच्छी हो", "rom": "tum bahut achchhī ho", "addresseeGender": "f" }
       ]
     },
     "bn": {
       "gloss": "তুমি দারুণ",
       "variants": [
-        { "text": "তুমি দারুণ", "rom": "tumi dārun", "reviewed": false }
+        { "text": "তুমি দারুণ", "rom": "tumi dārun" }
       ]
     },
     "id": {
       "gloss": "kamu hebat",
       "variants": [
-        { "text": "Kamu hebat", "reviewed": false }
+        { "text": "Kamu hebat" }
       ]
     },
     "ms": {
       "gloss": "awak hebat",
       "variants": [
-        { "text": "Awak hebat", "reviewed": false }
+        { "text": "Awak hebat" }
       ]
     },
     "fil": {
       "gloss": "ang galing mo",
       "variants": [
-        { "text": "Ang galing mo", "reviewed": false }
+        { "text": "Ang galing mo" }
       ]
     },
     "vi": {
       "gloss": "bạn giỏi quá",
       "variants": [
-        { "text": "Bạn giỏi quá", "reviewed": false }
+        { "text": "Bạn giỏi quá" }
       ]
     },
     "th": {
       "gloss": "คุณเก่งมาก",
       "variants": [
-        { "text": "คุณเก่งมาก", "rom": "khun keng mak", "reviewed": false }
+        { "text": "คุณเก่งมาก", "rom": "khun keng mak" }
       ]
     },
     "mizo": {
       "gloss": "i tha em em",
       "variants": [
-        { "text": "I tha em em", "note": "Lit. \"you are very good.\"", "reviewed": false }
+        { "text": "I tha em em", "note": "Lit. \"you are very good.\"" }
       ]
     }
   }

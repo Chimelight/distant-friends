@@ -6,153 +6,144 @@
     "zh": {
       "gloss": "保重",
       "variants": [
-        { "text": "保重", "rom": "bǎozhòng", "reviewed": false },
-        { "text": "多保重", "rom": "duō bǎozhòng", "reviewed": false }
+        { "text": "保重", "rom": "bǎozhòng" }
       ]
     },
     "ja": {
       "gloss": "お大事に",
       "variants": [
-        { "text": "お大事に", "rom": "o-daiji ni", "tone": "polite", "note": "Often when someone is unwell.", "reviewed": false },
-        { "text": "元気でね", "rom": "genki de ne", "tone": "casual", "reviewed": false }
+        { "text": "お大事に", "rom": "o-daiji ni", "tone": "polite", "note": "Often when someone is unwell." },
+        { "text": "元気でね", "rom": "genki de ne", "tone": "casual" }
       ]
     },
     "ko": {
       "gloss": "잘 지내",
       "variants": [
-        { "text": "잘 지내", "rom": "jal jinae", "tone": "casual", "reviewed": false },
-        { "text": "건강 잘 챙겨", "rom": "geongang jal chaenggyeo", "reviewed": false }
+        { "text": "잘 지내", "rom": "jal jinae", "tone": "casual" },
+        { "text": "건강 잘 챙겨", "rom": "geongang jal chaenggyeo" }
       ]
     },
     "en": {
       "gloss": "take care",
       "variants": [
-        { "text": "Take care", "reviewed": false },
-        { "text": "Take care of yourself", "reviewed": false }
+        { "text": "Take care" },
+        { "text": "Take care of yourself" }
       ]
     },
     "de": {
       "gloss": "pass auf dich auf",
       "variants": [
-        { "text": "Pass auf dich auf", "reviewed": false },
-        { "text": "Mach's gut", "tone": "casual", "reviewed": false }
+        { "text": "Pass auf dich auf" },
+        { "text": "Mach's gut", "tone": "casual" }
       ]
     },
     "es": {
       "gloss": "cuídate",
       "variants": [
-        { "text": "Cuídate", "reviewed": false },
-        { "text": "Que te vaya bien", "reviewed": false }
+        { "text": "Cuídate" },
+        { "text": "Que te vaya bien" }
       ]
     },
     "pt": {
       "gloss": "se cuida",
       "variants": [
-        { "text": "Se cuida", "tone": "casual", "reviewed": false },
-        { "text": "Cuide-se", "reviewed": false }
+        { "text": "Se cuida", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "prends soin de toi",
       "variants": [
-        { "text": "Prends soin de toi", "reviewed": false },
-        { "text": "Fais attention à toi", "reviewed": false }
+        { "text": "Prends soin de toi" },
+        { "text": "Fais attention à toi" }
       ]
     },
     "it": {
       "gloss": "stammi bene",
       "variants": [
-        { "text": "Stammi bene", "reviewed": false },
-        { "text": "Abbi cura di te", "reviewed": false }
+        { "text": "Stammi bene" }
       ]
     },
     "ru": {
       "gloss": "береги себя",
       "variants": [
-        { "text": "Береги себя", "rom": "beregi sebya", "reviewed": false },
-        { "text": "Удачи", "rom": "udachi", "reviewed": false }
+        { "text": "Береги себя", "rom": "beregi sebya" }
       ]
     },
     "uk": {
       "gloss": "бережи себе",
       "variants": [
-        { "text": "Бережи себе", "rom": "Berezhy sebe", "reviewed": false },
-        { "text": "Тримайся", "rom": "Trymaisia", "tone": "casual", "reviewed": false }
+        { "text": "Бережи себе", "rom": "Berezhy sebe" },
+        { "text": "Тримайся", "rom": "Trymaisia", "tone": "casual" }
       ]
     },
     "pl": {
       "gloss": "trzymaj się",
       "variants": [
-        { "text": "Trzymaj się", "reviewed": false },
-        { "text": "Uważaj na siebie", "reviewed": false }
+        { "text": "Trzymaj się" },
+        { "text": "Uważaj na siebie" }
       ]
     },
     "tr": {
       "gloss": "kendine iyi bak",
       "variants": [
-        { "text": "Kendine iyi bak", "reviewed": false },
-        { "text": "Kendine dikkat et", "reviewed": false }
+        { "text": "Kendine iyi bak" }
       ]
     },
     "kk": {
       "gloss": "өзіңді абайла",
       "variants": [
-        { "text": "Өзіңе ие бол", "rom": "Öziňe ie bol", "note": "Lit. \"take care of yourself.\"", "reviewed": false },
-        { "text": "Аман бол", "rom": "Aman bol", "tone": "casual", "note": "Lit. \"be safe.\"", "reviewed": false }
+        { "text": "Өзіңді абайла", "rom": "Öziňdi abaila", "note": "Lit. \"watch over yourself.\"" },
+        { "text": "Аман бол", "rom": "Aman bol", "tone": "casual", "note": "Lit. \"be safe.\"" }
       ]
     },
     "hi": {
       "gloss": "ख्याल रखना",
       "variants": [
-        { "text": "ख्याल रखना", "rom": "khyāl rakhnā", "reviewed": false },
-        { "text": "अपना ध्यान रखो", "rom": "apnā dhyān rakho", "reviewed": false }
+        { "text": "ख्याल रखना", "rom": "khyāl rakhnā" }
       ]
     },
     "bn": {
       "gloss": "যত্ন নিও",
       "variants": [
-        { "text": "নিজের যত্ন নিও", "rom": "nijer jôtno nio", "reviewed": false }
+        { "text": "নিজের যত্ন নিও", "rom": "nijer jôtno nio" }
       ]
     },
     "id": {
       "gloss": "jaga diri",
       "variants": [
-        { "text": "Jaga diri", "reviewed": false },
-        { "text": "Hati-hati ya", "tone": "casual", "reviewed": false }
+        { "text": "Jaga diri" },
+        { "text": "Hati-hati ya", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "jaga diri",
       "variants": [
-        { "text": "Jaga diri", "reviewed": false },
-        { "text": "Jaga diri baik-baik", "reviewed": false }
+        { "text": "Jaga diri" }
       ]
     },
     "fil": {
       "gloss": "ingat ka",
       "variants": [
-        { "text": "Ingat ka", "reviewed": false },
-        { "text": "Ingat lagi", "reviewed": false }
+        { "text": "Ingat ka" }
       ]
     },
     "vi": {
       "gloss": "giữ gìn sức khỏe",
       "variants": [
-        { "text": "Giữ gìn sức khỏe", "reviewed": false },
-        { "text": "Bảo trọng", "reviewed": false }
+        { "text": "Giữ gìn sức khỏe" }
       ]
     },
     "th": {
       "gloss": "ดูแลตัวเอง",
       "variants": [
-        { "text": "ดูแลตัวเองนะ", "rom": "dulae tua eng na", "reviewed": false },
-        { "text": "รักษาสุขภาพ", "rom": "raksa sukkhaphap", "reviewed": false }
+        { "text": "ดูแลตัวเองนะ", "rom": "dulae tua eng na" },
+        { "text": "รักษาสุขภาพ", "rom": "raksa sukkhaphap" }
       ]
     },
     "mizo": {
       "gloss": "i dam reng ang",
       "variants": [
-        { "text": "I dam reng ang u", "note": "Lit. \"stay well.\"", "reviewed": false }
+        { "text": "I dam reng ang", "note": "Lit. \"stay well.\"" }
       ]
     }
   }

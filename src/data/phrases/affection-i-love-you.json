@@ -1,156 +1,156 @@
 {
   "id": "affection-i-love-you",
   "scene": "affection",
-  "order": 7,
+  "order": 6,
   "trans": {
     "zh": {
       "gloss": "我爱你",
       "variants": [
-        { "text": "我爱你", "rom": "wǒ ài nǐ", "reviewed": false }
+        { "text": "我爱你", "rom": "wǒ ài nǐ" }
       ]
     },
     "ja": {
       "gloss": "愛してる",
       "variants": [
-        { "text": "愛してる", "rom": "aishiteru", "note": "Heavy and earnest; reserved for serious moments.", "reviewed": false },
-        { "text": "好きだよ", "rom": "suki da yo", "tone": "casual", "note": "Lit. \"I like you\" — softer everyday \"love.", "reviewed": false },
-        { "text": "大好き", "rom": "daisuki", "tone": "casual", "note": "Lit. \"really like\" — warm everyday version.", "reviewed": false }
+        { "text": "愛してる", "rom": "aishiteru", "note": "Heavy and earnest; reserved for serious moments." },
+        { "text": "好きだよ", "rom": "suki da yo", "tone": "casual", "note": "Lit. \"I like you\" — softer everyday \"love.\"" },
+        { "text": "大好き", "rom": "daisuki", "tone": "casual", "note": "Lit. \"really like\" — warm everyday version." }
       ]
     },
     "ko": {
       "gloss": "사랑해",
       "variants": [
-        { "text": "사랑해", "rom": "saranghae", "tone": "casual", "reviewed": false },
-        { "text": "사랑해요", "rom": "saranghaeyo", "tone": "polite", "reviewed": false }
+        { "text": "사랑해", "rom": "saranghae", "tone": "casual" },
+        { "text": "사랑해요", "rom": "saranghaeyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "I love you",
       "variants": [
-        { "text": "I love you", "reviewed": false },
-        { "text": "Love you", "tone": "casual", "reviewed": false }
+        { "text": "I love you" },
+        { "text": "Love you", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "ich liebe dich",
       "variants": [
-        { "text": "Ich liebe dich", "reviewed": false },
-        { "text": "Hab dich lieb", "tone": "casual", "note": "Softer, warm — for family/close friends, not just romantic.", "reviewed": false }
+        { "text": "Ich liebe dich" },
+        { "text": "Hab dich lieb", "tone": "casual", "note": "Softer, warm — for family/close friends, not just romantic." }
       ]
     },
     "es": {
       "gloss": "te quiero",
       "variants": [
-        { "text": "Te quiero", "note": "Default warm \"I love you\" — for family, friends, partners.", "reviewed": false },
-        { "text": "Te amo", "note": "Stronger, more romantic register.", "reviewed": false }
+        { "text": "Te quiero", "note": "Default warm \"I love you\" — for family, friends, partners." },
+        { "text": "Te amo", "note": "Stronger, more romantic register." }
       ]
     },
     "pt": {
       "gloss": "eu te amo",
       "variants": [
-        { "text": "Eu te amo", "reviewed": false },
-        { "text": "Te amo", "tone": "casual", "reviewed": false }
+        { "text": "Eu te amo" },
+        { "text": "Te amo", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "je t'aime",
       "variants": [
-        { "text": "Je t'aime", "reviewed": false }
+        { "text": "Je t'aime" }
       ]
     },
     "it": {
       "gloss": "ti amo",
       "variants": [
-        { "text": "Ti amo", "note": "Romantic.", "reviewed": false },
-        { "text": "Ti voglio bene", "note": "Lit. \"I wish you well\" — affection for family and close friends.", "reviewed": false }
+        { "text": "Ti amo", "note": "Romantic." },
+        { "text": "Ti voglio bene", "note": "Lit. \"I wish you well\" — affection for family and close friends." }
       ]
     },
     "ru": {
       "gloss": "я тебя люблю",
       "variants": [
-        { "text": "Я тебя люблю", "rom": "ya tebya lyublyu", "reviewed": false },
-        { "text": "Люблю тебя", "rom": "lyublyu tebya", "tone": "casual", "reviewed": false }
+        { "text": "Я тебя люблю", "rom": "ya tebya lyublyu" },
+        { "text": "Люблю тебя", "rom": "lyublyu tebya", "tone": "casual" }
       ]
     },
     "uk": {
       "gloss": "я тебе кохаю",
       "variants": [
-        { "text": "Я тебе кохаю", "rom": "Ya tebe kokhaiu", "note": "Romantic love.", "reviewed": false },
-        { "text": "Я тебе люблю", "rom": "Ya tebe liubliu", "note": "General \"love you\" — also to family and friends.", "reviewed": false }
+        { "text": "Я тебе кохаю", "rom": "Ya tebe kokhaiu", "note": "Romantic love." },
+        { "text": "Я тебе люблю", "rom": "Ya tebe liubliu", "note": "General \"love you\" — also to family and friends." }
       ]
     },
     "pl": {
       "gloss": "kocham cię",
       "variants": [
-        { "text": "Kocham cię", "reviewed": false }
+        { "text": "Kocham cię" }
       ]
     },
     "tr": {
       "gloss": "seni seviyorum",
       "variants": [
-        { "text": "Seni seviyorum", "reviewed": false }
+        { "text": "Seni seviyorum" }
       ]
     },
     "kk": {
       "gloss": "сені сүйемін",
       "variants": [
-        { "text": "Сені сүйемін", "rom": "Seni süiemin", "reviewed": false },
-        { "text": "Мен сені жақсы көремін", "rom": "Men seni jaqsy köremin", "note": "Lit. \"I see you well\" — everyday \"I love you.\"", "reviewed": false }
+        { "text": "Сені сүйемін", "rom": "Seni süiemin" },
+        { "text": "Мен сені жақсы көремін", "rom": "Men seni jaqsy köremin", "note": "Lit. \"I see you well\" — everyday \"I love you.\"" }
       ]
     },
     "hi": {
       "gloss": "मैं तुमसे प्यार करता हूँ",
       "variants": [
-        { "text": "मैं तुमसे प्यार करता हूँ", "rom": "main tumse pyār kartā hūn", "speakerGender": "m", "reviewed": false },
-        { "text": "मैं तुमसे प्यार करती हूँ", "rom": "main tumse pyār kartī hūn", "speakerGender": "f", "reviewed": false }
+        { "text": "मैं तुमसे प्यार करता हूँ", "rom": "main tumse pyār kartā hūn", "speakerGender": "m" },
+        { "text": "मैं तुमसे प्यार करती हूँ", "rom": "main tumse pyār kartī hūn", "speakerGender": "f" }
       ]
     },
     "bn": {
       "gloss": "আমি তোমাকে ভালোবাসি",
       "variants": [
-        { "text": "আমি তোমাকে ভালোবাসি", "rom": "āmi tomāke bhālobāshi", "reviewed": false }
+        { "text": "আমি তোমাকে ভালোবাসি", "rom": "āmi tomāke bhālobāshi" }
       ]
     },
     "id": {
       "gloss": "aku cinta kamu",
       "variants": [
-        { "text": "Aku cinta kamu", "reviewed": false },
-        { "text": "Aku sayang kamu", "note": "Sayang = deeper \"love/dear\" — used for family and partners.", "reviewed": false }
+        { "text": "Aku cinta kamu" },
+        { "text": "Aku sayang kamu", "note": "Sayang = deeper \"love/dear\" — used for family and partners." }
       ]
     },
     "ms": {
       "gloss": "saya sayang awak",
       "variants": [
-        { "text": "Saya sayang awak", "reviewed": false },
-        { "text": "Saya cintakan awak", "note": "More romantic register.", "reviewed": false }
+        { "text": "Saya sayang awak" },
+        { "text": "Saya cintakan awak", "note": "More romantic register." }
       ]
     },
     "fil": {
       "gloss": "mahal kita",
       "variants": [
-        { "text": "Mahal kita", "reviewed": false }
+        { "text": "Mahal kita" }
       ]
     },
     "vi": {
       "gloss": "mình yêu bạn",
       "variants": [
-        { "text": "Mình yêu bạn", "reviewed": false },
-        { "text": "Anh yêu em", "speakerGender": "m", "note": "Male speaker → female addressee.", "reviewed": false },
-        { "text": "Em yêu anh", "speakerGender": "f", "note": "Female speaker → male addressee.", "reviewed": false }
+        { "text": "Mình yêu bạn" },
+        { "text": "Anh yêu em", "speakerGender": "m", "note": "Male speaker → female addressee." },
+        { "text": "Em yêu anh", "speakerGender": "f", "note": "Female speaker → male addressee." }
       ]
     },
     "th": {
       "gloss": "ฉันรักคุณ",
       "variants": [
-        { "text": "ฉันรักคุณ", "rom": "chan rak khun", "speakerGender": "f", "reviewed": false },
-        { "text": "ผมรักคุณ", "rom": "phom rak khun", "speakerGender": "m", "reviewed": false },
-        { "text": "รักนะ", "rom": "rak na", "tone": "casual", "reviewed": false }
+        { "text": "ฉันรักคุณ", "rom": "chan rak khun", "speakerGender": "f" },
+        { "text": "ผมรักคุณ", "rom": "phom rak khun", "speakerGender": "m" },
+        { "text": "รักนะ", "rom": "rak na", "tone": "casual" }
       ]
     },
     "mizo": {
       "gloss": "ka hmangaih che",
       "variants": [
-        { "text": "Ka hmangaih che", "note": "Lit. \"I love you.\"", "reviewed": false }
+        { "text": "Ka hmangaih che", "note": "Lit. \"I love you.\"" }
       ]
     }
   }

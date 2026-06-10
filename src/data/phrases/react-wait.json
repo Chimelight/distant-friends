@@ -6,159 +6,156 @@
     "zh": {
       "gloss": "等等",
       "variants": [
-        { "text": "等等", "rom": "děng deng", "reviewed": false },
-        { "text": "等一下", "rom": "děng yīxià", "reviewed": false }
+        { "text": "等等", "rom": "děng deng" },
+        { "text": "等一下", "rom": "děng yīxià" }
       ]
     },
     "ja": {
       "gloss": "待って",
       "variants": [
-        { "text": "待って", "rom": "matte", "tone": "casual", "reviewed": false },
-        { "text": "ちょっと待って", "rom": "chotto matte", "tone": "casual", "reviewed": false },
-        { "text": "待ってください", "rom": "matte kudasai", "tone": "polite", "reviewed": false }
+        { "text": "ちょっと待って", "rom": "chotto matte", "tone": "casual" },
+        { "text": "待ってください", "rom": "matte kudasai", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "잠깐",
       "variants": [
-        { "text": "잠깐", "rom": "jamkkan", "tone": "casual", "reviewed": false },
-        { "text": "잠시만요", "rom": "jamsimanyo", "tone": "polite", "reviewed": false }
+        { "text": "잠깐", "rom": "jamkkan", "tone": "casual" },
+        { "text": "잠시만요", "rom": "jamsimanyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "wait",
       "variants": [
-        { "text": "Wait", "reviewed": false },
-        { "text": "Hold on", "reviewed": false },
-        { "text": "Hang on", "tone": "casual", "reviewed": false }
+        { "text": "Wait" },
+        { "text": "Hold on" },
+        { "text": "Hang on", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "warte",
       "variants": [
-        { "text": "Warte", "reviewed": false },
-        { "text": "Moment", "reviewed": false },
-        { "text": "Einen Moment", "tone": "polite", "reviewed": false }
+        { "text": "Warte" },
+        { "text": "Moment" }
       ]
     },
     "es": {
       "gloss": "espera",
       "variants": [
-        { "text": "Espera", "reviewed": false },
-        { "text": "Un momento", "reviewed": false }
+        { "text": "Espera" },
+        { "text": "Un momento" }
       ]
     },
     "pt": {
       "gloss": "espera",
       "variants": [
-        { "text": "Espera", "reviewed": false },
-        { "text": "Um momento", "reviewed": false }
+        { "text": "Espera" },
+        { "text": "Um momento" }
       ]
     },
     "fr": {
       "gloss": "attends",
       "variants": [
-        { "text": "Attends", "tone": "casual", "reviewed": false },
-        { "text": "Un instant", "tone": "polite", "reviewed": false }
+        { "text": "Attends", "tone": "casual" },
+        { "text": "Un instant", "tone": "polite" }
       ]
     },
     "it": {
       "gloss": "aspetta",
       "variants": [
-        { "text": "Aspetta", "reviewed": false },
-        { "text": "Un momento", "reviewed": false }
+        { "text": "Aspetta" },
+        { "text": "Un momento" }
       ]
     },
     "ru": {
       "gloss": "подожди",
       "variants": [
-        { "text": "Подожди", "rom": "podozhdi", "tone": "casual", "reviewed": false },
-        { "text": "Минутку", "rom": "minutku", "note": "Lit. \"a minute.\"", "reviewed": false }
+        { "text": "Подожди", "rom": "podozhdi", "tone": "casual" },
+        { "text": "Минутку", "rom": "minutku", "note": "Lit. \"a minute.\"" }
       ]
     },
     "uk": {
       "gloss": "зачекай",
       "variants": [
-        { "text": "Зачекай", "rom": "Zachekai", "reviewed": false },
-        { "text": "Хвилинку", "rom": "Khvylynku", "note": "Lit. \"a minute.\"", "reviewed": false },
-        { "text": "Стривай", "rom": "Stryvai", "tone": "casual", "reviewed": false }
+        { "text": "Зачекай", "rom": "Zachekai" },
+        { "text": "Хвилинку", "rom": "Khvylynku", "note": "Lit. \"a minute.\"" },
+        { "text": "Стривай", "rom": "Stryvai", "tone": "casual" }
       ]
     },
     "pl": {
       "gloss": "czekaj",
       "variants": [
-        { "text": "Czekaj", "reviewed": false },
-        { "text": "Chwila", "note": "Lit. \"a moment.\"", "reviewed": false }
+        { "text": "Czekaj" },
+        { "text": "Chwila", "note": "Lit. \"a moment.\"" }
       ]
     },
     "tr": {
       "gloss": "bekle",
       "variants": [
-        { "text": "Bekle", "reviewed": false },
-        { "text": "Bir dakika", "note": "Lit. \"one minute.\"", "reviewed": false }
+        { "text": "Bekle" },
+        { "text": "Bir dakika", "note": "Lit. \"one minute.\"" }
       ]
     },
     "kk": {
       "gloss": "тоқта",
       "variants": [
-        { "text": "Тоқташы", "rom": "Toqtaşy", "tone": "casual", "note": "Lit. \"wait.\"", "reviewed": false },
-        { "text": "Бір минут", "rom": "Bir minut", "note": "Lit. \"one minute.\"", "reviewed": false },
-        { "text": "Сәл күте тұр", "rom": "Säl küte tur", "note": "Lit. \"wait a bit.\"", "reviewed": false }
+        { "text": "Тоқташы", "rom": "Toqtaşy", "tone": "casual", "note": "Lit. \"wait.\"" },
+        { "text": "Сәл күте тұр", "rom": "Säl küte tur", "note": "Lit. \"wait a bit.\"" }
       ]
     },
     "hi": {
       "gloss": "रुको",
       "variants": [
-        { "text": "रुको", "rom": "ruko", "reviewed": false },
-        { "text": "एक मिनट", "rom": "ek minute", "reviewed": false }
+        { "text": "रुको", "rom": "ruko" },
+        { "text": "एक मिनट", "rom": "ek minaṭ" }
       ]
     },
     "bn": {
       "gloss": "দাঁড়াও",
       "variants": [
-        { "text": "দাঁড়াও", "rom": "dānṛao", "reviewed": false },
-        { "text": "এক মিনিট", "rom": "ek minute", "reviewed": false }
+        { "text": "দাঁড়াও", "rom": "dānṛao" },
+        { "text": "এক মিনিট", "rom": "ek miniṭ" }
       ]
     },
     "id": {
       "gloss": "tunggu",
       "variants": [
-        { "text": "Tunggu", "reviewed": false },
-        { "text": "Sebentar", "note": "Lit. \"a moment.\"", "reviewed": false }
+        { "text": "Tunggu" },
+        { "text": "Sebentar", "note": "Lit. \"a moment.\"" }
       ]
     },
     "ms": {
       "gloss": "tunggu",
       "variants": [
-        { "text": "Tunggu", "reviewed": false },
-        { "text": "Sekejap", "note": "Lit. \"a moment.\"", "reviewed": false }
+        { "text": "Tunggu" },
+        { "text": "Sekejap", "note": "Lit. \"a moment.\"" }
       ]
     },
     "fil": {
       "gloss": "sandali",
       "variants": [
-        { "text": "Sandali", "reviewed": false },
-        { "text": "Teka", "tone": "casual", "reviewed": false }
+        { "text": "Sandali" },
+        { "text": "Teka", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "đợi đã",
       "variants": [
-        { "text": "Đợi đã", "reviewed": false },
-        { "text": "Khoan", "tone": "casual", "note": "Lit. \"wait up.\"", "reviewed": false }
+        { "text": "Đợi đã" },
+        { "text": "Khoan", "tone": "casual", "note": "Lit. \"wait up.\"" }
       ]
     },
     "th": {
       "gloss": "รอเดี๋ยว",
       "variants": [
-        { "text": "รอเดี๋ยว", "rom": "ro diao", "reviewed": false },
-        { "text": "แป๊บ", "rom": "paep", "tone": "casual", "note": "Casual \"just a sec.\"", "reviewed": false }
+        { "text": "รอเดี๋ยว", "rom": "ro diao" },
+        { "text": "แป๊บ", "rom": "paep", "tone": "casual", "note": "Casual \"just a sec.\"" }
       ]
     },
     "mizo": {
       "gloss": "nghak rawh",
       "variants": [
-        { "text": "Nghak rawh", "note": "Lit. \"wait.\"", "reviewed": false }
+        { "text": "Nghak rawh", "note": "Lit. \"wait.\"" }
       ]
     }
   }

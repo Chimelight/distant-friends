@@ -6,119 +6,119 @@
     "zh": {
       "gloss": "下午问候",
       "variants": [
-        { "text": "下午好", "rom": "xiàwǔ hǎo", "reviewed": false }
+        { "text": "下午好", "rom": "xiàwǔ hǎo" }
       ]
     },
     "ja": {
       "gloss": "昼の挨拶",
       "variants": [
-        { "text": "こんにちは", "rom": "konnichiwa", "note": "Daytime/afternoon standard.", "reviewed": false }
+        { "text": "こんにちは", "rom": "konnichiwa", "note": "Daytime/afternoon standard." }
       ]
     },
     "en": {
       "gloss": "afternoon greeting",
       "variants": [
-        { "text": "Good afternoon", "reviewed": false }
+        { "text": "Good afternoon" }
       ]
     },
     "de": {
       "gloss": "Tagesgruß",
       "variants": [
-        { "text": "Guten Tag", "note": "Daytime greeting; covers afternoon.", "reviewed": false }
+        { "text": "Guten Tag", "note": "Daytime greeting; covers afternoon." }
       ]
     },
     "es": {
       "gloss": "saludo de la tarde",
       "variants": [
-        { "text": "Buenas tardes", "note": "Used from midday into early evening.", "reviewed": false }
+        { "text": "Buenas tardes", "note": "Used from midday into early evening." }
       ]
     },
     "pt": {
       "gloss": "saudação da tarde",
       "variants": [
-        { "text": "Boa tarde", "reviewed": false }
+        { "text": "Boa tarde" }
       ]
     },
     "it": {
       "gloss": "saluto del pomeriggio",
       "variants": [
-        { "text": "Buon pomeriggio", "reviewed": false }
+        { "text": "Buon pomeriggio" }
       ]
     },
     "ru": {
       "gloss": "дневное приветствие",
       "variants": [
-        { "text": "Добрый день", "rom": "dobryĭ den'", "note": "Lit. \"good day\"; used in daytime/afternoon.", "reviewed": false }
+        { "text": "Добрый день", "rom": "dobryĭ den'", "note": "Lit. \"good day\"; used in daytime/afternoon." }
       ]
     },
     "uk": {
       "gloss": "денне привітання",
       "variants": [
-        { "text": "Доброго дня", "rom": "Dobroho dnia", "reviewed": false },
-        { "text": "Добрий день", "rom": "Dobryi den'", "reviewed": false }
+        { "text": "Доброго дня", "rom": "Dobroho dnia" },
+        { "text": "Добрий день", "rom": "Dobryi den'" }
       ]
     },
     "pl": {
       "gloss": "powitanie popołudniowe",
       "variants": [
-        { "text": "Dzień dobry", "note": "Same form as morning; daytime greeting.", "reviewed": false }
+        { "text": "Dzień dobry", "note": "Same form as morning; daytime greeting." }
       ]
     },
     "tr": {
       "gloss": "öğleden sonra selamı",
       "variants": [
-        { "text": "İyi günler", "note": "Lit. \"good days\"; daytime greeting.", "reviewed": false },
-        { "text": "Tünaydın", "note": "Specific afternoon greeting; somewhat dated.", "reviewed": false }
+        { "text": "İyi günler", "note": "Lit. \"good days\"; daytime greeting." },
+        { "text": "Tünaydın", "note": "Specific afternoon greeting; somewhat dated." }
       ]
     },
     "kk": {
       "gloss": "күндізгі сәлем",
       "variants": [
-        { "text": "Қайырлы күн", "rom": "Qaiyrly kün", "reviewed": false },
-        { "text": "Күніңіз қайырлы болсын", "rom": "Küniňiz qaiyrly bolsyn", "tone": "polite", "reviewed": false }
+        { "text": "Қайырлы күн", "rom": "Qaiyrly kün" },
+        { "text": "Күніңіз қайырлы болсын", "rom": "Küniňiz qaiyrly bolsyn", "tone": "polite" }
       ]
     },
     "bn": {
       "gloss": "অপরাহ্ণ শুভেচ্ছা",
       "variants": [
-        { "text": "শুভ অপরাহ্ণ", "rom": "śubho ôporahṇo", "tone": "polite", "note": "Literary/formal; spoken Bangla rarely uses an afternoon-specific greeting.", "reviewed": false }
+        { "text": "শুভ অপরাহ্ণ", "rom": "śubho ôporahṇo", "tone": "polite", "note": "Literary/formal; spoken Bangla rarely uses an afternoon-specific greeting." }
       ]
     },
     "id": {
       "gloss": "salam siang/sore",
       "variants": [
-        { "text": "Selamat siang", "note": "Midday (~10am–3pm).", "reviewed": false },
-        { "text": "Selamat sore", "note": "Late afternoon (~3pm–6pm).", "reviewed": false }
+        { "text": "Selamat siang", "note": "Midday (~10am–3pm)." },
+        { "text": "Selamat sore", "note": "Late afternoon (~3pm–6pm)." }
       ]
     },
     "ms": {
       "gloss": "salam petang",
       "variants": [
-        { "text": "Selamat petang", "reviewed": false }
+        { "text": "Selamat petang" }
       ]
     },
     "fil": {
       "gloss": "pagbati sa hapon",
       "variants": [
-        { "text": "Magandang hapon", "reviewed": false }
+        { "text": "Magandang hapon" }
       ]
     },
     "vi": {
       "gloss": "chào buổi chiều",
       "variants": [
-        { "text": "Chào buổi chiều", "reviewed": false }
+        { "text": "Chào buổi chiều" }
       ]
     },
     "th": {
       "gloss": "ทักทายตอนบ่าย",
       "variants": [
-        { "text": "สวัสดีตอนบ่าย", "rom": "sawatdee ton bai", "reviewed": false }
+        { "text": "สวัสดีตอนบ่าย", "rom": "sawatdee ton bai" }
       ]
     },
     "mizo": {
       "gloss": "chawhnu chibai",
       "variants": [
-        { "text": "Chawhnu ṭha", "note": "Lit. \"good afternoon.\"", "reviewed": false }
+        { "text": "Chawhnu ṭha", "note": "Lit. \"good afternoon.\"" }
       ]
     }
   }

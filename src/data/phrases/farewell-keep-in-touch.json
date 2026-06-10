@@ -6,152 +6,150 @@
     "zh": {
       "gloss": "保持联系",
       "variants": [
-        { "text": "常联系", "rom": "cháng liánxì", "reviewed": false },
-        { "text": "保持联系", "rom": "bǎochí liánxì", "reviewed": false }
+        { "text": "常联系", "rom": "cháng liánxì" },
+        { "text": "保持联系", "rom": "bǎochí liánxì" }
       ]
     },
     "ja": {
       "gloss": "連絡して",
       "variants": [
-        { "text": "連絡して", "rom": "renraku shite", "reviewed": false },
-        { "text": "連絡取り合おう", "rom": "renraku toriaō", "reviewed": false }
+        { "text": "連絡して", "rom": "renraku shite" },
+        { "text": "連絡取り合おう", "rom": "renraku toriaō" }
       ]
     },
     "ko": {
       "gloss": "자주 연락해",
       "variants": [
-        { "text": "자주 연락해", "rom": "jaju yeollakhae", "tone": "casual", "reviewed": false },
-        { "text": "연락하자", "rom": "yeollakhaja", "tone": "casual", "reviewed": false }
+        { "text": "자주 연락해", "rom": "jaju yeollakhae", "tone": "casual" },
+        { "text": "연락하자", "rom": "yeollakhaja", "tone": "casual" }
       ]
     },
     "en": {
       "gloss": "keep in touch",
       "variants": [
-        { "text": "Keep in touch", "reviewed": false },
-        { "text": "Stay in touch", "reviewed": false }
+        { "text": "Keep in touch" },
+        { "text": "Stay in touch" }
       ]
     },
     "de": {
       "gloss": "bleib in Kontakt",
       "variants": [
-        { "text": "Bleib in Kontakt", "reviewed": false },
-        { "text": "Melde dich", "tone": "casual", "note": "Lit. \"get in touch.\"", "reviewed": false }
+        { "text": "Bleib in Kontakt" },
+        { "text": "Melde dich", "tone": "casual", "note": "Lit. \"get in touch.\"" }
       ]
     },
     "es": {
       "gloss": "mantente en contacto",
       "variants": [
-        { "text": "Mantente en contacto", "reviewed": false },
-        { "text": "No pierdas contacto", "reviewed": false }
+        { "text": "Mantente en contacto" }
       ]
     },
     "pt": {
       "gloss": "mantenha contato",
       "variants": [
-        { "text": "Mantenha contato", "reviewed": false },
-        { "text": "Não suma", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+        { "text": "Mantenha contato" },
+        { "text": "Não suma", "tone": "casual", "note": "Lit. \"don't disappear.\"" }
       ]
     },
     "fr": {
       "gloss": "reste en contact",
       "variants": [
-        { "text": "Reste en contact", "reviewed": false },
-        { "text": "Donne des nouvelles", "reviewed": false }
+        { "text": "Reste en contact" },
+        { "text": "Donne des nouvelles" }
       ]
     },
     "it": {
       "gloss": "restiamo in contatto",
       "variants": [
-        { "text": "Restiamo in contatto", "reviewed": false },
-        { "text": "Sentiamoci", "reviewed": false }
+        { "text": "Restiamo in contatto" },
+        { "text": "Sentiamoci" }
       ]
     },
     "ru": {
       "gloss": "будь на связи",
       "variants": [
-        { "text": "Будь на связи", "rom": "bud' na svyazi", "reviewed": false },
-        { "text": "Не пропадай", "rom": "ne propaday", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+        { "text": "Будь на связи", "rom": "bud' na svyazi" },
+        { "text": "Не пропадай", "rom": "ne propaday", "tone": "casual", "note": "Lit. \"don't disappear.\"" }
       ]
     },
     "uk": {
       "gloss": "будь на зв'язку",
       "variants": [
-        { "text": "Будь на зв'язку", "rom": "Bud' na zv'iazku", "reviewed": false },
-        { "text": "Не пропадай", "rom": "Ne propadai", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+        { "text": "Будь на зв'язку", "rom": "Bud' na zv'iazku" },
+        { "text": "Не пропадай", "rom": "Ne propadai", "tone": "casual", "note": "Lit. \"don't disappear.\"" }
       ]
     },
     "pl": {
       "gloss": "bądźmy w kontakcie",
       "variants": [
-        { "text": "Bądźmy w kontakcie", "reviewed": false },
-        { "text": "Odzywaj się", "tone": "casual", "reviewed": false }
+        { "text": "Bądźmy w kontakcie" },
+        { "text": "Odzywaj się", "tone": "casual" }
       ]
     },
     "tr": {
       "gloss": "görüşelim",
       "variants": [
-        { "text": "Görüşelim", "reviewed": false },
-        { "text": "Haberleşelim", "reviewed": false }
+        { "text": "Görüşelim" },
+        { "text": "Haberleşelim" }
       ]
     },
     "kk": {
       "gloss": "хабарласып тұр",
       "variants": [
-        { "text": "Хабарласып тұр", "rom": "Habarlasyp tur", "reviewed": false },
-        { "text": "Жоғалып кетпе", "rom": "Joğalyp ketpe", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+        { "text": "Хабарласып тұр", "rom": "Habarlasyp tur" },
+        { "text": "Жоғалып кетпе", "rom": "Joğalyp ketpe", "tone": "casual", "note": "Lit. \"don't disappear.\"" }
       ]
     },
     "hi": {
       "gloss": "संपर्क में रहना",
       "variants": [
-        { "text": "संपर्क में रहना", "rom": "sampark men rahnā", "reviewed": false }
+        { "text": "संपर्क में रहना", "rom": "sampark men rahnā" }
       ]
     },
     "bn": {
       "gloss": "যোগাযোগ রেখো",
       "variants": [
-        { "text": "যোগাযোগ রেখো", "rom": "jogājog rekho", "reviewed": false }
+        { "text": "যোগাযোগ রেখো", "rom": "jogājog rekho" }
       ]
     },
     "id": {
       "gloss": "tetap kontak",
       "variants": [
-        { "text": "Tetap kontak", "reviewed": false },
-        { "text": "Jangan hilang", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+        { "text": "Tetap kontak" },
+        { "text": "Jangan hilang", "tone": "casual", "note": "Lit. \"don't disappear.\"" }
       ]
     },
     "ms": {
       "gloss": "kekal berhubung",
       "variants": [
-        { "text": "Kekal berhubung", "reviewed": false },
-        { "text": "Selalu berhubung", "reviewed": false }
+        { "text": "Kekal berhubung" }
       ]
     },
     "fil": {
       "gloss": "magpa-update ka",
       "variants": [
-        { "text": "Magpa-update ka", "reviewed": false },
-        { "text": "Wag mawala", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+        { "text": "Magpa-update ka" },
+        { "text": "Wag mawala", "tone": "casual", "note": "Lit. \"don't disappear.\"" }
       ]
     },
     "vi": {
       "gloss": "giữ liên lạc",
       "variants": [
-        { "text": "Giữ liên lạc", "reviewed": false },
-        { "text": "Đừng mất tích", "tone": "casual", "note": "Lit. \"don't go missing.\"", "reviewed": false }
+        { "text": "Giữ liên lạc" },
+        { "text": "Đừng mất tích", "tone": "casual", "note": "Lit. \"don't go missing.\"" }
       ]
     },
     "th": {
       "gloss": "ติดต่อกันบ่อย ๆ",
       "variants": [
-        { "text": "ติดต่อกันบ่อย ๆ", "rom": "tit to kan boi boi", "reviewed": false },
-        { "text": "อย่าหายไปนะ", "rom": "ya hai pai na", "tone": "casual", "note": "Lit. \"don't disappear.\"", "reviewed": false }
+        { "text": "ติดต่อกันบ่อย ๆ", "rom": "tit to kan boi boi" },
+        { "text": "อย่าหายไปนะ", "rom": "ya hai pai na", "tone": "casual", "note": "Lit. \"don't disappear.\"" }
       ]
     },
     "mizo": {
-      "gloss": "min ngaihtuah la",
+      "gloss": "inbiak reng ang u",
       "variants": [
-        { "text": "Min ngaihtuah reng la", "note": "Lit. \"keep thinking of me.\"", "reviewed": false }
+        { "text": "Inbiak reng ang u", "note": "Lit. \"let's keep talking to each other.\"" }
       ]
     }
   }

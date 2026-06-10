@@ -6,154 +6,144 @@
     "zh": {
       "gloss": "恭喜",
       "variants": [
-        { "text": "恭喜", "rom": "gōngxǐ", "reviewed": false },
-        { "text": "恭喜你", "rom": "gōngxǐ nǐ", "reviewed": false },
-        { "text": "祝贺你", "rom": "zhùhè nǐ", "reviewed": false }
+        { "text": "恭喜", "rom": "gōngxǐ" },
+        { "text": "恭喜你", "rom": "gōngxǐ nǐ" }
       ]
     },
     "ja": {
       "gloss": "おめでとう",
       "variants": [
-        { "text": "おめでとう", "rom": "omedetō", "tone": "casual", "reviewed": false },
-        { "text": "おめでとうございます", "rom": "omedetō gozaimasu", "tone": "polite", "reviewed": false }
+        { "text": "おめでとう", "rom": "omedetō", "tone": "casual" },
+        { "text": "おめでとうございます", "rom": "omedetō gozaimasu", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "축하해",
       "variants": [
-        { "text": "축하해", "rom": "chukahae", "tone": "casual", "reviewed": false },
-        { "text": "축하해요", "rom": "chukahaeyo", "tone": "polite", "reviewed": false },
-        { "text": "축하드립니다", "rom": "chukadeurimnida", "tone": "polite", "reviewed": false }
+        { "text": "축하해", "rom": "chukahae", "tone": "casual" },
+        { "text": "축하해요", "rom": "chukahaeyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "congratulations",
       "variants": [
-        { "text": "Congratulations", "reviewed": false },
-        { "text": "Congrats", "tone": "casual", "reviewed": false }
+        { "text": "Congratulations" },
+        { "text": "Congrats", "tone": "casual" }
       ]
     },
     "de": {
       "gloss": "Glückwunsch",
       "variants": [
-        { "text": "Glückwunsch", "reviewed": false },
-        { "text": "Herzlichen Glückwunsch", "note": "Lit. \"heartfelt congratulations.", "reviewed": false }
+        { "text": "Glückwunsch" },
+        { "text": "Herzlichen Glückwunsch", "note": "Lit. \"heartfelt congratulations.\"" }
       ]
     },
     "es": {
       "gloss": "felicidades",
       "variants": [
-        { "text": "Felicidades", "reviewed": false },
-        { "text": "Felicitaciones", "reviewed": false }
+        { "text": "Felicidades" }
       ]
     },
     "pt": {
       "gloss": "parabéns",
       "variants": [
-        { "text": "Parabéns", "reviewed": false }
+        { "text": "Parabéns" }
       ]
     },
     "fr": {
       "gloss": "félicitations",
       "variants": [
-        { "text": "Félicitations", "reviewed": false },
-        { "text": "Bravo", "tone": "casual", "reviewed": false }
+        { "text": "Félicitations" },
+        { "text": "Bravo", "tone": "casual" }
       ]
     },
     "it": {
       "gloss": "congratulazioni",
       "variants": [
-        { "text": "Congratulazioni", "reviewed": false },
-        { "text": "Complimenti", "reviewed": false }
+        { "text": "Congratulazioni" },
+        { "text": "Complimenti" }
       ]
     },
     "ru": {
       "gloss": "поздравляю",
       "variants": [
-        { "text": "Поздравляю", "rom": "pozdravlyayu", "reviewed": false },
-        { "text": "Мои поздравления", "rom": "moi pozdravleniya", "tone": "polite", "reviewed": false }
+        { "text": "Поздравляю", "rom": "pozdravlyayu" }
       ]
     },
     "uk": {
       "gloss": "вітаю",
       "variants": [
-        { "text": "Вітаю", "rom": "Vitaiu", "reviewed": false },
-        { "text": "Мої вітання", "rom": "Moi vitannia", "note": "Lit. \"my congratulations.\"", "reviewed": false }
+        { "text": "Вітаю", "rom": "Vitaiu" }
       ]
     },
     "pl": {
       "gloss": "gratulacje",
       "variants": [
-        { "text": "Gratulacje", "reviewed": false },
-        { "text": "Gratuluję", "reviewed": false }
+        { "text": "Gratulacje" }
       ]
     },
     "tr": {
       "gloss": "tebrikler",
       "variants": [
-        { "text": "Tebrikler", "reviewed": false },
-        { "text": "Tebrik ederim", "reviewed": false }
+        { "text": "Tebrikler" }
       ]
     },
     "kk": {
       "gloss": "құттықтаймын",
       "variants": [
-        { "text": "Құттықтаймын", "rom": "Quttyqtaimyn", "reviewed": false },
-        { "text": "Құтты болсын", "rom": "Qutty bolsyn", "note": "Lit. \"may it be blessed.\"", "reviewed": false }
+        { "text": "Құттықтаймын", "rom": "Quttyqtaimyn" },
+        { "text": "Құтты болсын", "rom": "Qutty bolsyn", "note": "Lit. \"may it be blessed.\"" }
       ]
     },
     "hi": {
       "gloss": "बधाई हो",
       "variants": [
-        { "text": "बधाई हो", "rom": "badhāī ho", "reviewed": false },
-        { "text": "मुबारक हो", "rom": "mubārak ho", "reviewed": false }
+        { "text": "बधाई हो", "rom": "badhāī ho" },
+        { "text": "मुबारक हो", "rom": "mubārak ho" }
       ]
     },
     "bn": {
       "gloss": "অভিনন্দন",
       "variants": [
-        { "text": "অভিনন্দন", "rom": "ôbhinôndôn", "reviewed": false },
-        { "text": "শুভেচ্ছা", "rom": "śubhechchhā", "reviewed": false }
+        { "text": "অভিনন্দন", "rom": "ôbhinôndôn" }
       ]
     },
     "id": {
       "gloss": "selamat",
       "variants": [
-        { "text": "Selamat", "reviewed": false },
-        { "text": "Selamat ya", "tone": "casual", "reviewed": false }
+        { "text": "Selamat" },
+        { "text": "Selamat ya", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "tahniah",
       "variants": [
-        { "text": "Tahniah", "reviewed": false },
-        { "text": "Syabas", "reviewed": false }
+        { "text": "Tahniah" }
       ]
     },
     "fil": {
       "gloss": "binabati kita",
       "variants": [
-        { "text": "Binabati kita", "reviewed": false },
-        { "text": "Congrats", "tone": "casual", "reviewed": false }
+        { "text": "Binabati kita" },
+        { "text": "Congrats", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "chúc mừng",
       "variants": [
-        { "text": "Chúc mừng", "reviewed": false },
-        { "text": "Chúc mừng bạn", "reviewed": false }
+        { "text": "Chúc mừng" }
       ]
     },
     "th": {
       "gloss": "ยินดีด้วย",
       "variants": [
-        { "text": "ยินดีด้วย", "rom": "yindee duai", "reviewed": false }
+        { "text": "ยินดีด้วย", "rom": "yindee duai" }
       ]
     },
     "mizo": {
       "gloss": "lawmpui",
       "variants": [
-        { "text": "Ka lawmpui che", "note": "Lit. \"I rejoice with you.\"", "reviewed": false }
+        { "text": "Ka lawmpui che", "note": "Lit. \"I rejoice with you.\"" }
       ]
     }
   }

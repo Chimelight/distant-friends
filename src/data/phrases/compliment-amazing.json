@@ -6,157 +6,156 @@
     "zh": {
       "gloss": "厉害",
       "variants": [
-        { "text": "太厉害了", "rom": "tài lìhai le", "reviewed": false },
-        { "text": "你真厉害", "rom": "nǐ zhēn lìhai", "reviewed": false }
+        { "text": "太厉害了", "rom": "tài lìhai le" },
+        { "text": "你真厉害", "rom": "nǐ zhēn lìhai" }
       ]
     },
     "ja": {
       "gloss": "すごい",
       "variants": [
-        { "text": "すごい", "rom": "sugoi", "reviewed": false },
-        { "text": "半端ない", "rom": "hanpa nai", "tone": "casual", "note": "Slang for \"incredible.\"", "reviewed": false }
+        { "text": "すごい", "rom": "sugoi" },
+        { "text": "素晴らしい", "rom": "subarashii" }
       ]
     },
     "ko": {
-      "gloss": "대단",
+      "gloss": "대단해",
       "variants": [
-        { "text": "대박", "rom": "daebak", "tone": "casual", "reviewed": false },
-        { "text": "짱이다", "rom": "jjangida", "tone": "casual", "reviewed": false }
+        { "text": "정말 대단해", "rom": "jeongmal daedanhae" },
+        { "text": "대박", "rom": "daebak", "tone": "casual" }
       ]
     },
     "en": {
       "gloss": "amazing",
       "variants": [
-        { "text": "You're amazing", "reviewed": false },
-        { "text": "That's amazing", "reviewed": false },
-        { "text": "Incredible", "reviewed": false }
+        { "text": "You're amazing" },
+        { "text": "That's amazing" }
       ]
     },
     "de": {
       "gloss": "unglaublich",
       "variants": [
-        { "text": "Unglaublich", "reviewed": false },
-        { "text": "Beeindruckend", "reviewed": false }
+        { "text": "Unglaublich" },
+        { "text": "Beeindruckend" }
       ]
     },
     "es": {
       "gloss": "increíble",
       "variants": [
-        { "text": "Increíble", "reviewed": false },
-        { "text": "Impresionante", "reviewed": false }
+        { "text": "Increíble" },
+        { "text": "Impresionante" }
       ]
     },
     "pt": {
       "gloss": "incrível",
       "variants": [
-        { "text": "Incrível", "reviewed": false },
-        { "text": "Impressionante", "reviewed": false }
+        { "text": "Incrível" },
+        { "text": "Impressionante" },
+        { "text": "Demais", "tone": "casual" }
       ]
     },
     "fr": {
       "gloss": "incroyable",
       "variants": [
-        { "text": "Incroyable", "reviewed": false },
-        { "text": "Impressionnant", "reviewed": false }
+        { "text": "Incroyable" },
+        { "text": "Impressionnant" }
       ]
     },
     "it": {
       "gloss": "incredibile",
       "variants": [
-        { "text": "Incredibile", "reviewed": false },
-        { "text": "Impressionante", "reviewed": false }
+        { "text": "Incredibile" },
+        { "text": "Impressionante" }
       ]
     },
     "ru": {
       "gloss": "невероятно",
       "variants": [
-        { "text": "Невероятно", "rom": "neveroyatno", "reviewed": false },
-        { "text": "Потрясающе", "rom": "potryasayushche", "reviewed": false }
+        { "text": "Невероятно", "rom": "neveroyatno" },
+        { "text": "Потрясающе", "rom": "potryasayushche" }
       ]
     },
     "uk": {
       "gloss": "неймовірно",
       "variants": [
-        { "text": "Ти неймовірний", "rom": "Ty neimovirnyi", "addresseeGender": "m", "reviewed": false },
-        { "text": "Ти неймовірна", "rom": "Ty neimovirna", "addresseeGender": "f", "reviewed": false },
-        { "text": "Це неймовірно", "rom": "Tse neimovirno", "reviewed": false }
+        { "text": "Ти неймовірний", "rom": "Ty neimovirnyi", "addresseeGender": "m" },
+        { "text": "Ти неймовірна", "rom": "Ty neimovirna", "addresseeGender": "f" },
+        { "text": "Це неймовірно", "rom": "Tse neimovirno" }
       ]
     },
     "pl": {
       "gloss": "niesamowite",
       "variants": [
-        { "text": "Niesamowite", "reviewed": false },
-        { "text": "Niewiarygodne", "reviewed": false }
+        { "text": "Niesamowite" },
+        { "text": "Super" }
       ]
     },
     "tr": {
       "gloss": "inanılmaz",
       "variants": [
-        { "text": "İnanılmaz", "reviewed": false },
-        { "text": "Müthiş", "reviewed": false }
+        { "text": "İnanılmaz" },
+        { "text": "Müthiş" }
       ]
     },
     "kk": {
       "gloss": "керемет",
       "variants": [
-        { "text": "Сен кереметсің", "rom": "Sen keremetsiň", "reviewed": false },
-        { "text": "Бұл керемет", "rom": "Bul keremet", "reviewed": false },
-        { "text": "Таңғажайып", "rom": "Taňğajaiyp", "note": "Lit. \"astonishing.\"", "reviewed": false }
+        { "text": "Бұл керемет", "rom": "Bul keremet" },
+        { "text": "Таңғажайып", "rom": "Taňğajaiyp", "note": "Lit. \"astonishing.\"" }
       ]
     },
     "hi": {
       "gloss": "ज़बरदस्त",
       "variants": [
-        { "text": "ज़बरदस्त", "rom": "zabardast", "reviewed": false },
-        { "text": "कमाल है", "rom": "kamāl hai", "reviewed": false }
+        { "text": "ज़बरदस्त", "rom": "zabardast" },
+        { "text": "कमाल है", "rom": "kamāl hai" }
       ]
     },
     "bn": {
       "gloss": "অসাধারণ",
       "variants": [
-        { "text": "অসাধারণ", "rom": "ôshādhārôn", "reviewed": false },
-        { "text": "দুর্দান্ত", "rom": "durdānto", "reviewed": false }
+        { "text": "অসাধারণ", "rom": "ôshādhārôn" },
+        { "text": "দুর্দান্ত", "rom": "durdānto" }
       ]
     },
     "id": {
       "gloss": "luar biasa",
       "variants": [
-        { "text": "Luar biasa", "reviewed": false },
-        { "text": "Keren banget", "tone": "casual", "reviewed": false }
+        { "text": "Luar biasa" },
+        { "text": "Hebat banget", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "luar biasa",
       "variants": [
-        { "text": "Hebat sekali", "reviewed": false },
-        { "text": "Luar biasa", "reviewed": false }
+        { "text": "Hebat sekali" },
+        { "text": "Luar biasa" }
       ]
     },
     "fil": {
       "gloss": "grabe galing",
       "variants": [
-        { "text": "Ang husay", "reviewed": false },
-        { "text": "Grabe galing", "tone": "casual", "reviewed": false }
+        { "text": "Ang husay" },
+        { "text": "Grabe galing", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "quá đỉnh",
       "variants": [
-        { "text": "Quá đỉnh", "tone": "casual", "reviewed": false },
-        { "text": "Tuyệt vời", "reviewed": false }
+        { "text": "Quá đỉnh", "tone": "casual" },
+        { "text": "Tuyệt vời" }
       ]
     },
     "th": {
       "gloss": "สุดยอด",
       "variants": [
-        { "text": "เก่งสุดยอด", "rom": "keng sutyot", "reviewed": false },
-        { "text": "เจ๋งมาก", "rom": "jeng mak", "tone": "casual", "reviewed": false }
+        { "text": "สุดยอด", "rom": "sutyot" },
+        { "text": "เจ๋งมาก", "rom": "jeng mak", "tone": "casual" }
       ]
     },
     "mizo": {
       "gloss": "a mak em em",
       "variants": [
-        { "text": "A mak em em", "note": "Lit. \"very surprising / amazing.\"", "reviewed": false }
+        { "text": "A mak em em", "note": "Lit. \"very surprising / amazing.\"" }
       ]
     }
   }

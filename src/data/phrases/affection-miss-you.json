@@ -6,144 +6,144 @@
     "zh": {
       "gloss": "思念",
       "variants": [
-        { "text": "我想你", "rom": "wǒ xiǎng nǐ", "reviewed": true },
-        { "text": "好想你", "rom": "hǎo xiǎng nǐ", "tone": "close", "note": "Warmer; longer separation or stronger feeling.", "reviewed": true },
-        { "text": "想你了", "rom": "xiǎng nǐ le", "tone": "casual", "reviewed": true }
+        { "text": "我想你", "rom": "wǒ xiǎng nǐ" },
+        { "text": "好想你", "rom": "hǎo xiǎng nǐ", "tone": "close", "note": "Warmer; longer separation or stronger feeling." },
+        { "text": "想你了", "rom": "xiǎng nǐ le", "tone": "casual" }
       ]
     },
     "ja": {
       "gloss": "会いたい気持ち",
       "variants": [
-        { "text": "会いたいな", "rom": "aitai na", "note": "Soft \"I wish I could see you\"; friends do say this.", "reviewed": false }
+        { "text": "会いたいな", "rom": "aitai na", "note": "Soft \"I wish I could see you\"; friends do say this." }
       ]
     },
     "ko": {
       "gloss": "그리움",
       "variants": [
-        { "text": "보고 싶어", "rom": "bogo sipeo", "note": "Literally \"I want to see you.\"", "reviewed": false }
+        { "text": "보고 싶어", "rom": "bogo sipeo", "note": "Literally \"I want to see you.\"" }
       ]
     },
     "en": {
       "gloss": "thinking of someone far",
       "variants": [
-        { "text": "I miss you", "reviewed": true }
+        { "text": "I miss you" }
       ]
     },
     "de": {
       "gloss": "vermissen",
       "variants": [
-        { "text": "Du fehlst mir", "note": "Lit. “you are missing to me” — softer, deeper than “Ich vermisse dich.”", "reviewed": false },
-        { "text": "Ich vermisse dich", "reviewed": false }
+        { "text": "Du fehlst mir", "note": "Lit. “you are missing to me” — softer, deeper than “Ich vermisse dich.”" },
+        { "text": "Ich vermisse dich" }
       ]
     },
     "es": {
       "gloss": "extrañar",
       "variants": [
-        { "text": "Te extraño", "reviewed": false }
+        { "text": "Te extraño" }
       ]
     },
     "pt": {
       "gloss": "saudade",
       "variants": [
-        { "text": "Tô com saudade", "tone": "casual", "note": "Warm, deeply Brazilian; no exact English equivalent.", "reviewed": false }
+        { "text": "Tô com saudade", "tone": "casual", "note": "Warm, deeply Brazilian; no exact English equivalent." }
       ]
     },
     "fr": {
       "gloss": "manque",
       "variants": [
-        { "text": "Tu me manques", "note": "Lit. \"you are missing from me.\"", "reviewed": false }
+        { "text": "Tu me manques", "note": "Lit. \"you are missing from me.\"" }
       ]
     },
     "it": {
       "gloss": "mancanza",
       "variants": [
-        { "text": "Mi manchi", "note": "Lit. \"you are missing from me.\"", "reviewed": false }
+        { "text": "Mi manchi", "note": "Lit. \"you are missing from me.\"" }
       ]
     },
     "ru": {
       "gloss": "тоска по кому-то",
       "variants": [
-        { "text": "Я скучаю по тебе", "rom": "ya skuchayu po tebe", "note": "“I miss you” — the standard form.", "reviewed": true },
-        { "text": "Скучаю", "rom": "skuchayu", "tone": "casual", "note": "Short, intimate; “you” implied.", "reviewed": true }
+        { "text": "Я скучаю по тебе", "rom": "ya skuchayu po tebe", "note": "“I miss you” — the standard form." },
+        { "text": "Скучаю", "rom": "skuchayu", "tone": "casual", "note": "Short, intimate; “you” implied." }
       ]
     },
     "uk": {
       "gloss": "я сумую",
       "variants": [
-        { "text": "Я за тобою сумую", "rom": "Ya za toboiu sumuiu", "reviewed": false },
-        { "text": "Скучаю за тобою", "rom": "Skuchaiu za toboiu", "tone": "casual", "reviewed": false }
+        { "text": "Я за тобою сумую", "rom": "Ya za toboiu sumuiu" },
+        { "text": "Скучаю за тобою", "rom": "Skuchaiu za toboiu", "tone": "casual" }
       ]
     },
     "pl": {
       "gloss": "tęsknota",
       "variants": [
-        { "text": "Tęsknię za tobą", "note": "Lit. “I yearn for you.”", "reviewed": true }
+        { "text": "Tęsknię za tobą", "note": "Lit. “I yearn for you.”" }
       ]
     },
     "tr": {
       "gloss": "özlem",
       "variants": [
-        { "text": "Seni özledim", "note": "Lit. \"I missed you\" — the standard form.", "reviewed": false }
+        { "text": "Seni özledim", "note": "Lit. \"I missed you\" — the standard form." }
       ]
     },
     "kk": {
       "gloss": "сені сағындым",
       "variants": [
-        { "text": "Сені сағындым", "rom": "Seni sağyndym", "reviewed": false }
+        { "text": "Сені сағындым", "rom": "Seni sağyndym" }
       ]
     },
     "hi": {
       "gloss": "याद",
       "variants": [
-        { "text": "तुम्हारी याद आती है", "rom": "tumhārī yād ātī hai", "note": "Lit. “your memory comes (to me)” — soft, idiomatic.", "reviewed": true }
+        { "text": "तुम्हारी याद आती है", "rom": "tumhārī yād ātī hai", "note": "Lit. “your memory comes (to me)” — soft, idiomatic." }
       ]
     },
     "bn": {
       "gloss": "মনে পড়া",
       "variants": [
-        { "text": "তোমাকে মিস করি", "rom": "tomāke miss kori", "note": "English-borrowed “miss”; everyday casual.", "reviewed": true },
-        { "text": "তোমায় মনে পড়ছে", "rom": "tomāy mône poṛchhe", "note": "Lit. “you come to (my) mind” — softer, more lyrical.", "reviewed": true }
+        { "text": "তোমাকে মিস করি", "rom": "tomāke miss kori", "note": "English-borrowed “miss”; everyday casual." },
+        { "text": "তোমায় মনে পড়ছে", "rom": "tomāy mône poṛchhe", "note": "Lit. “you come to (my) mind” — softer, more lyrical." }
       ]
     },
     "id": {
       "gloss": "rindu",
       "variants": [
-        { "text": "Aku rindu kamu", "note": "Standard \"I miss you.\"", "reviewed": false },
-        { "text": "Kangen kamu", "tone": "close", "note": "Kangen — warmer, deeper longing.", "reviewed": false }
+        { "text": "Aku rindu kamu", "note": "Standard \"I miss you.\"" },
+        { "text": "Kangen kamu", "tone": "close", "note": "Kangen — warmer, deeper longing." }
       ]
     },
     "ms": {
       "gloss": "rindu",
       "variants": [
-        { "text": "Saya rindu awak", "note": "Standard \"I miss you.\"", "reviewed": false },
-        { "text": "Rindu", "tone": "casual", "note": "Short, \"you\" implied.", "reviewed": false }
+        { "text": "Saya rindu awak", "note": "Standard \"I miss you.\"" },
+        { "text": "Rindu", "tone": "casual", "note": "Short, \"you\" implied." }
       ]
     },
     "th": {
       "gloss": "ความคิดถึง",
       "variants": [
-        { "text": "คิดถึง", "rom": "kit theung", "note": "Lit. \"think (of you)\" — the everyday \"miss you.\"", "reviewed": false },
-        { "text": "คิดถึงนะ", "rom": "kit theung na", "tone": "close", "note": "With soft particle นะ — warmer.", "reviewed": false }
+        { "text": "คิดถึง", "rom": "kit theung", "note": "Lit. \"think (of you)\" — the everyday \"miss you.\"" },
+        { "text": "คิดถึงนะ", "rom": "kit theung na", "tone": "close", "note": "With soft particle นะ — warmer." }
       ]
     },
     "vi": {
       "gloss": "nỗi nhớ",
       "variants": [
-        { "text": "Mình nhớ bạn", "note": "Standard \"I miss you\" between friends.", "reviewed": false },
-        { "text": "Nhớ bạn lắm", "tone": "close", "note": "Lit. \"miss you a lot.\"", "reviewed": false }
+        { "text": "Mình nhớ bạn", "note": "Standard \"I miss you\" between friends." },
+        { "text": "Nhớ bạn lắm", "tone": "close", "note": "Lit. \"miss you a lot.\"" }
       ]
     },
     "fil": {
       "gloss": "pagkangulila",
       "variants": [
-        { "text": "Miss kita", "note": "Code-switched; the most common form.", "reviewed": false },
-        { "text": "Namimiss kita", "note": "Tagalog-conjugated form of \"miss.\"", "reviewed": false }
+        { "text": "Miss kita", "note": "Code-switched; the most common form." },
+        { "text": "Namimiss kita", "note": "Tagalog-conjugated form of \"miss.\"" }
       ]
     },
     "mizo": {
       "gloss": "ngaih",
       "variants": [
-        { "text": "Ka ngai che", "note": "Lit. “I miss you”; ngai = long for / think of.", "reviewed": false }
+        { "text": "Ka ngai che", "note": "Lit. “I miss you”; ngai = long for / think of." }
       ]
     }
   }

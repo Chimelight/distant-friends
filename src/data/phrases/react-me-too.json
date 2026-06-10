@@ -6,148 +6,143 @@
     "zh": {
       "gloss": "我也是",
       "variants": [
-        { "text": "我也是", "rom": "wǒ yě shì", "reviewed": false },
-        { "text": "我也", "rom": "wǒ yě", "tone": "casual", "reviewed": false }
+        { "text": "我也是", "rom": "wǒ yě shì" }
       ]
     },
     "ja": {
       "gloss": "私も",
       "variants": [
-        { "text": "私も", "rom": "watashi mo", "reviewed": false },
-        { "text": "僕も", "rom": "boku mo", "speakerGender": "m", "reviewed": false },
-        { "text": "俺も", "rom": "ore mo", "tone": "casual", "speakerGender": "m", "reviewed": false },
-        { "text": "私もです", "rom": "watashi mo desu", "tone": "polite", "reviewed": false }
+        { "text": "私も", "rom": "watashi mo" },
+        { "text": "僕も", "rom": "boku mo", "speakerGender": "m" },
+        { "text": "私もです", "rom": "watashi mo desu", "tone": "polite" }
       ]
     },
     "ko": {
       "gloss": "나도",
       "variants": [
-        { "text": "나도", "rom": "nado", "tone": "casual", "reviewed": false },
-        { "text": "저도요", "rom": "jeodoyo", "tone": "polite", "reviewed": false }
+        { "text": "나도", "rom": "nado", "tone": "casual" },
+        { "text": "저도요", "rom": "jeodoyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "me too",
       "variants": [
-        { "text": "Me too", "reviewed": false },
-        { "text": "Same here", "tone": "casual", "reviewed": false },
-        { "text": "Likewise", "reviewed": false }
+        { "text": "Me too" },
+        { "text": "Same here", "tone": "casual" },
+        { "text": "Likewise" }
       ]
     },
     "de": {
       "gloss": "ich auch",
       "variants": [
-        { "text": "Ich auch", "reviewed": false },
-        { "text": "Mir auch", "note": "When matching a \"mir\" / dative line.", "reviewed": false }
+        { "text": "Ich auch" },
+        { "text": "Mir auch", "note": "When matching a \"mir\" / dative line." }
       ]
     },
     "es": {
       "gloss": "yo también",
       "variants": [
-        { "text": "Yo también", "reviewed": false }
+        { "text": "Yo también" }
       ]
     },
     "pt": {
       "gloss": "eu também",
       "variants": [
-        { "text": "Eu também", "reviewed": false }
+        { "text": "Eu também" }
       ]
     },
     "fr": {
       "gloss": "moi aussi",
       "variants": [
-        { "text": "Moi aussi", "reviewed": false }
+        { "text": "Moi aussi" }
       ]
     },
     "it": {
       "gloss": "anch'io",
       "variants": [
-        { "text": "Anch'io", "reviewed": false }
+        { "text": "Anch'io" }
       ]
     },
     "ru": {
       "gloss": "я тоже",
       "variants": [
-        { "text": "Я тоже", "rom": "ya tozhe", "reviewed": false },
-        { "text": "И я", "rom": "i ya", "tone": "casual", "reviewed": false }
+        { "text": "Я тоже", "rom": "ya tozhe" }
       ]
     },
     "uk": {
       "gloss": "я теж",
       "variants": [
-        { "text": "Я теж", "rom": "Ya tezh", "reviewed": false },
-        { "text": "І я", "rom": "I ya", "tone": "casual", "reviewed": false }
+        { "text": "Я теж", "rom": "Ya tezh" }
       ]
     },
     "pl": {
       "gloss": "ja też",
       "variants": [
-        { "text": "Ja też", "reviewed": false }
+        { "text": "Ja też" }
       ]
     },
     "tr": {
       "gloss": "ben de",
       "variants": [
-        { "text": "Ben de", "reviewed": false }
+        { "text": "Ben de" }
       ]
     },
     "kk": {
       "gloss": "мен де",
       "variants": [
-        { "text": "Мен де", "rom": "Men de", "reviewed": false },
-        { "text": "Менде солай", "rom": "Mende solai", "tone": "casual", "note": "Lit. \"same with me.\"", "reviewed": false }
+        { "text": "Мен де", "rom": "Men de" }
       ]
     },
     "hi": {
       "gloss": "मैं भी",
       "variants": [
-        { "text": "मैं भी", "rom": "main bhī", "reviewed": false }
+        { "text": "मैं भी", "rom": "main bhī" }
       ]
     },
     "bn": {
       "gloss": "আমিও",
       "variants": [
-        { "text": "আমিও", "rom": "āmi'o", "reviewed": false }
+        { "text": "আমিও", "rom": "āmi'o" }
       ]
     },
     "id": {
       "gloss": "aku juga",
       "variants": [
-        { "text": "Aku juga", "tone": "casual", "reviewed": false },
-        { "text": "Saya juga", "reviewed": false }
+        { "text": "Aku juga", "tone": "casual" },
+        { "text": "Saya juga" }
       ]
     },
     "ms": {
       "gloss": "saya juga",
       "variants": [
-        { "text": "Saya juga", "reviewed": false }
+        { "text": "Saya juga" }
       ]
     },
     "fil": {
       "gloss": "ako rin",
       "variants": [
-        { "text": "Ako rin", "reviewed": false },
-        { "text": "Ako din", "tone": "casual", "reviewed": false }
+        { "text": "Ako rin" },
+        { "text": "Ako din", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "mình cũng",
       "variants": [
-        { "text": "Mình cũng vậy", "reviewed": false },
-        { "text": "Tôi cũng thế", "reviewed": false }
+        { "text": "Mình cũng vậy" },
+        { "text": "Tôi cũng thế" }
       ]
     },
     "th": {
       "gloss": "ฉันก็เหมือนกัน",
       "variants": [
-        { "text": "ฉันก็เหมือนกัน", "rom": "chan kor mueankan", "speakerGender": "f", "reviewed": false },
-        { "text": "ผมก็เหมือนกัน", "rom": "phom kor mueankan", "speakerGender": "m", "reviewed": false }
+        { "text": "ฉันก็เหมือนกัน", "rom": "chan kor mueankan", "speakerGender": "f" },
+        { "text": "ผมก็เหมือนกัน", "rom": "phom kor mueankan", "speakerGender": "m" }
       ]
     },
     "mizo": {
       "gloss": "kei pawh",
       "variants": [
-        { "text": "Kei pawh", "note": "Lit. \"me too.\"", "reviewed": false }
+        { "text": "Kei pawh", "note": "Lit. \"me too.\"" }
       ]
     }
   }

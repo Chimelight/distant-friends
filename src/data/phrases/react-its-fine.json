@@ -6,159 +6,158 @@
     "zh": {
       "gloss": "没关系",
       "variants": [
-        { "text": "没关系", "rom": "méi guānxi", "reviewed": false },
-        { "text": "没事", "rom": "méi shì", "tone": "casual", "reviewed": false }
+        { "text": "没关系", "rom": "méi guānxi" },
+        { "text": "没事", "rom": "méi shì", "tone": "casual" }
       ]
     },
     "ja": {
       "gloss": "大丈夫",
       "variants": [
-        { "text": "大丈夫", "rom": "daijōbu", "reviewed": false },
-        { "text": "気にしないで", "rom": "ki ni shinai de", "note": "Lit. \"don't mind it.\"", "reviewed": false }
+        { "text": "大丈夫", "rom": "daijōbu" },
+        { "text": "気にしないで", "rom": "ki ni shinai de", "note": "Lit. \"don't mind it.\"" }
       ]
     },
     "ko": {
       "gloss": "괜찮아",
       "variants": [
-        { "text": "괜찮아", "rom": "gwaenchana", "tone": "casual", "reviewed": false },
-        { "text": "괜찮아요", "rom": "gwaenchanayo", "tone": "polite", "reviewed": false }
+        { "text": "괜찮아", "rom": "gwaenchana", "tone": "casual" },
+        { "text": "괜찮아요", "rom": "gwaenchanayo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "it's fine",
       "variants": [
-        { "text": "It's fine", "reviewed": false },
-        { "text": "No worries", "tone": "casual", "reviewed": false },
-        { "text": "It's okay", "reviewed": false }
+        { "text": "It's fine" },
+        { "text": "No worries", "tone": "casual" },
+        { "text": "It's okay" }
       ]
     },
     "de": {
       "gloss": "schon gut",
       "variants": [
-        { "text": "Macht nichts", "reviewed": false },
-        { "text": "Kein Problem", "reviewed": false },
-        { "text": "Schon gut", "tone": "casual", "reviewed": false }
+        { "text": "Macht nichts" },
+        { "text": "Kein Problem" },
+        { "text": "Schon gut", "tone": "casual" }
       ]
     },
     "es": {
       "gloss": "no pasa nada",
       "variants": [
-        { "text": "No pasa nada", "reviewed": false },
-        { "text": "Está bien", "reviewed": false },
-        { "text": "Tranquilo", "tone": "casual", "reviewed": false }
+        { "text": "No pasa nada" },
+        { "text": "Tranquilo", "tone": "casual", "addresseeGender": "m" },
+        { "text": "Tranquila", "tone": "casual", "addresseeGender": "f" }
       ]
     },
     "pt": {
       "gloss": "tudo bem",
       "variants": [
-        { "text": "Tudo bem", "reviewed": false },
-        { "text": "Não tem problema", "reviewed": false }
+        { "text": "Tudo bem" },
+        { "text": "Não tem problema" }
       ]
     },
     "fr": {
       "gloss": "pas de souci",
       "variants": [
-        { "text": "Pas de souci", "reviewed": false },
-        { "text": "C'est pas grave", "tone": "casual", "reviewed": false },
-        { "text": "Ce n'est rien", "reviewed": false }
+        { "text": "Pas de souci" },
+        { "text": "C'est pas grave", "tone": "casual" },
+        { "text": "Ce n'est rien" }
       ]
     },
     "it": {
       "gloss": "non importa",
       "variants": [
-        { "text": "Non importa", "reviewed": false },
-        { "text": "Tranquillo", "tone": "casual", "reviewed": false },
-        { "text": "Nessun problema", "reviewed": false }
+        { "text": "Non importa" },
+        { "text": "Tranquillo", "tone": "casual", "addresseeGender": "m" },
+        { "text": "Tranquilla", "tone": "casual", "addresseeGender": "f" }
       ]
     },
     "ru": {
       "gloss": "ничего",
       "variants": [
-        { "text": "Ничего", "rom": "nichego", "note": "Lit. \"nothing\" — \"no big deal.\"", "reviewed": false },
-        { "text": "Ничего страшного", "rom": "nichego strashnogo", "note": "Lit. \"nothing scary.\"", "reviewed": false }
+        { "text": "Ничего", "rom": "nichego", "note": "Lit. \"nothing\" — \"no big deal.\"" },
+        { "text": "Ничего страшного", "rom": "nichego strashnogo", "note": "Lit. \"nothing scary.\"" }
       ]
     },
     "uk": {
       "gloss": "нічого",
       "variants": [
-        { "text": "Нічого", "rom": "Nichoho", "reviewed": false },
-        { "text": "Нічого страшного", "rom": "Nichoho strashnoho", "note": "Lit. \"nothing terrible.\"", "reviewed": false },
-        { "text": "Все нормально", "rom": "Vse normal'no", "tone": "casual", "reviewed": false }
+        { "text": "Нічого", "rom": "Nichoho" },
+        { "text": "Нічого страшного", "rom": "Nichoho strashnoho", "note": "Lit. \"nothing terrible.\"" },
+        { "text": "Все нормально", "rom": "Vse normal'no", "tone": "casual" }
       ]
     },
     "pl": {
       "gloss": "nic nie szkodzi",
       "variants": [
-        { "text": "Nic nie szkodzi", "reviewed": false },
-        { "text": "Nie ma sprawy", "tone": "casual", "reviewed": false }
+        { "text": "Nic nie szkodzi" },
+        { "text": "Nie ma sprawy", "tone": "casual" }
       ]
     },
     "tr": {
       "gloss": "önemli değil",
       "variants": [
-        { "text": "Önemli değil", "reviewed": false },
-        { "text": "Sorun değil", "reviewed": false }
+        { "text": "Önemli değil" },
+        { "text": "Sorun değil" }
       ]
     },
     "kk": {
       "gloss": "ештеңе етпейді",
       "variants": [
-        { "text": "Ештеңе етпейді", "rom": "Eşteňe etpeidi", "reviewed": false },
-        { "text": "Оқасы жоқ", "rom": "Oqasy joq", "note": "Lit. \"it's nothing.\"", "reviewed": false },
-        { "text": "Бәрі жақсы", "rom": "Bäri jaqsy", "tone": "casual", "reviewed": false }
+        { "text": "Ештеңе етпейді", "rom": "Eşteňe etpeidi" },
+        { "text": "Бәрі жақсы", "rom": "Bäri jaqsy", "tone": "casual" }
       ]
     },
     "hi": {
       "gloss": "कोई बात नहीं",
       "variants": [
-        { "text": "कोई बात नहीं", "rom": "koī bāt nahīn", "reviewed": false }
+        { "text": "कोई बात नहीं", "rom": "koī bāt nahīn" }
       ]
     },
     "bn": {
       "gloss": "কিছু না",
       "variants": [
-        { "text": "কিছু না", "rom": "kichhu nā", "reviewed": false },
-        { "text": "কোনো ব্যাপার না", "rom": "kono byāpār nā", "reviewed": false }
+        { "text": "কিছু না", "rom": "kichhu nā" },
+        { "text": "কোনো ব্যাপার না", "rom": "kono byāpār nā" }
       ]
     },
     "id": {
       "gloss": "tidak apa-apa",
       "variants": [
-        { "text": "Tidak apa-apa", "reviewed": false },
-        { "text": "Nggak apa-apa", "tone": "casual", "reviewed": false }
+        { "text": "Tidak apa-apa" },
+        { "text": "Nggak apa-apa", "tone": "casual" }
       ]
     },
     "ms": {
       "gloss": "tak apa",
       "variants": [
-        { "text": "Tak apa", "tone": "casual", "reviewed": false },
-        { "text": "Tidak mengapa", "reviewed": false }
+        { "text": "Tak apa", "tone": "casual" },
+        { "text": "Tidak mengapa" }
       ]
     },
     "fil": {
       "gloss": "walang anuman",
       "variants": [
-        { "text": "Walang anuman", "reviewed": false },
-        { "text": "Okay lang", "tone": "casual", "reviewed": false }
+        { "text": "Walang anuman" },
+        { "text": "Okay lang", "tone": "casual" }
       ]
     },
     "vi": {
       "gloss": "không sao",
       "variants": [
-        { "text": "Không sao", "reviewed": false },
-        { "text": "Không có gì", "reviewed": false }
+        { "text": "Không sao" },
+        { "text": "Không có gì" }
       ]
     },
     "th": {
       "gloss": "ไม่เป็นไร",
       "variants": [
-        { "text": "ไม่เป็นไร", "rom": "mai pen rai", "reviewed": false }
+        { "text": "ไม่เป็นไร", "rom": "mai pen rai" }
       ]
     },
     "mizo": {
       "gloss": "a pawi lo",
       "variants": [
-        { "text": "A pawi lo", "note": "Lit. \"(it) doesn't matter.\"", "reviewed": false }
+        { "text": "A pawi lo", "note": "Lit. \"(it) doesn't matter.\"" }
       ]
     }
   }

@@ -6,165 +6,160 @@
     "zh": {
       "gloss": "告别",
       "variants": [
-        { "text": "再见", "rom": "zàijiàn", "reviewed": true },
-        { "text": "拜拜", "rom": "báibái", "tone": "casual", "reviewed": true },
-        { "text": "回头见", "rom": "huítóu jiàn", "tone": "casual", "note": "Lit. “see you later” — implies you’ll meet again soon.", "reviewed": true },
-        { "text": "先这样", "rom": "xiān zhèyàng", "tone": "casual", "note": "Lit. “let’s leave it here” — used when ending a chat.", "reviewed": true }
+        { "text": "再见", "rom": "zàijiàn" },
+        { "text": "拜拜", "rom": "báibái", "tone": "casual" },
+        { "text": "先这样", "rom": "xiān zhèyàng", "tone": "casual", "note": "Lit. “let’s leave it here” — used when ending a chat." }
       ]
     },
     "ja": {
       "gloss": "別れの挨拶",
       "variants": [
-        { "text": "またね", "rom": "mata ne", "note": "Lit. “again, yeah” — the everyday “see you.”", "reviewed": false },
-        { "text": "じゃあね", "rom": "jā ne", "tone": "casual", "reviewed": false }
+        { "text": "じゃあね", "rom": "jā ne", "tone": "casual" },
+        { "text": "バイバイ", "rom": "baibai", "tone": "casual" }
       ]
     },
     "ko": {
       "gloss": "작별",
       "variants": [
-        { "text": "잘 가", "rom": "jal ga", "tone": "casual", "note": "\"Go well\" — to someone leaving.", "reviewed": false },
-        { "text": "안녕히 가세요", "rom": "annyeonghi gaseyo", "tone": "polite", "reviewed": false }
+        { "text": "잘 가", "rom": "jal ga", "tone": "casual", "note": "\"Go well\" — to someone leaving." },
+        { "text": "안녕히 가세요", "rom": "annyeonghi gaseyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "a simple farewell",
       "variants": [
-        { "text": "Bye", "tone": "casual", "reviewed": true },
-        { "text": "Goodbye", "reviewed": true }
+        { "text": "Bye", "tone": "casual" },
+        { "text": "Goodbye" }
       ]
     },
     "de": {
       "gloss": "Abschied",
       "variants": [
-        { "text": "Tschüss", "tone": "casual", "reviewed": false },
-        { "text": "Auf Wiedersehen", "tone": "polite", "note": "Lit. “until we see again.”", "reviewed": false }
+        { "text": "Tschüss", "tone": "casual" },
+        { "text": "Auf Wiedersehen", "tone": "polite", "note": "Lit. “until we see again.”" }
       ]
     },
     "es": {
       "gloss": "despedida",
       "variants": [
-        { "text": "Adiós", "reviewed": false },
-        { "text": "Chao", "tone": "casual", "reviewed": false }
+        { "text": "Adiós" },
+        { "text": "Chao", "tone": "casual" }
       ]
     },
     "pt": {
       "gloss": "despedida",
       "variants": [
-        { "text": "Tchau", "reviewed": false }
+        { "text": "Tchau" }
       ]
     },
     "fr": {
       "gloss": "au revoir",
       "variants": [
-        { "text": "Salut", "tone": "casual", "reviewed": false },
-        { "text": "Au revoir", "tone": "neutral", "reviewed": false }
+        { "text": "Salut", "tone": "casual" },
+        { "text": "Au revoir", "tone": "neutral" }
       ]
     },
     "it": {
       "gloss": "congedo",
       "variants": [
-        { "text": "Ciao", "tone": "casual", "note": "Same word as \"hi\" — context decides.", "reviewed": false },
-        { "text": "Arrivederci", "tone": "neutral", "note": "Lit. \"until we see (each other) again.\"", "reviewed": false },
-        { "text": "A presto", "tone": "casual", "note": "Lit. \"see you soon.\"", "reviewed": false }
+        { "text": "Ciao", "tone": "casual", "note": "Same word as \"hi\" — context decides." },
+        { "text": "Arrivederci", "tone": "neutral", "note": "Lit. \"until we see (each other) again.\"" },
+        { "text": "A presto", "tone": "casual", "note": "Lit. \"see you soon.\"" }
       ]
     },
     "ru": {
       "gloss": "прощание",
       "variants": [
-        { "text": "Пока", "rom": "poka", "tone": "casual", "reviewed": true },
-        { "text": "До свидания", "rom": "do svidaniya", "tone": "polite", "note": "Lit. “until our meeting.”", "reviewed": true }
+        { "text": "Пока", "rom": "poka", "tone": "casual" },
+        { "text": "До свидания", "rom": "do svidaniya", "tone": "polite", "note": "Lit. “until our meeting.”" }
       ]
     },
     "uk": {
       "gloss": "прощання",
       "variants": [
-        { "text": "Бувай", "rom": "Buvai", "tone": "casual", "reviewed": false },
-        { "text": "До побачення", "rom": "Do pobachennia", "tone": "polite", "reviewed": false }
+        { "text": "Бувай", "rom": "Buvai", "tone": "casual" },
+        { "text": "До побачення", "rom": "Do pobachennia", "tone": "polite" }
       ]
     },
     "pl": {
       "gloss": "pożegnanie",
       "variants": [
-        { "text": "Cześć", "tone": "casual", "note": "Same word as “hi” — context decides.", "reviewed": true },
-        { "text": "Pa", "tone": "casual", "note": "Very casual “bye.”", "reviewed": true },
-        { "text": "Do widzenia", "tone": "polite", "reviewed": true }
+        { "text": "Cześć", "tone": "casual", "note": "Same word as “hi” — context decides." },
+        { "text": "Pa", "tone": "casual", "note": "Very casual “bye.”" },
+        { "text": "Do widzenia", "tone": "polite" }
       ]
     },
     "tr": {
       "gloss": "vedalaşma",
       "variants": [
-        { "text": "Hoşça kal", "note": "Said to the one staying; lit. \"stay well.\"", "reviewed": false },
-        { "text": "Güle güle", "note": "Said to the one leaving; lit. \"go laughing.\"", "reviewed": false },
-        { "text": "Görüşürüz", "tone": "casual", "note": "Lit. \"we'll see (each other).\"", "reviewed": false }
+        { "text": "Hoşça kal", "note": "Said to the one staying; lit. \"stay well.\"" },
+        { "text": "Güle güle", "note": "Said to the one leaving; lit. \"go laughing.\"" }
       ]
     },
     "kk": {
       "gloss": "қоштасу",
       "variants": [
-        { "text": "Сау бол", "rom": "Sau bol", "tone": "casual", "note": "Lit. \"be healthy.\"", "reviewed": false },
-        { "text": "Қош бол", "rom": "Qoş bol", "reviewed": false },
-        { "text": "Сау болыңыз", "rom": "Sau bolyňyz", "tone": "polite", "reviewed": false }
+        { "text": "Сау бол", "rom": "Sau bol", "tone": "casual", "note": "Lit. \"be healthy.\"" },
+        { "text": "Қош бол", "rom": "Qoş bol" },
+        { "text": "Сау болыңыз", "rom": "Sau bolyňyz", "tone": "polite" }
       ]
     },
     "hi": {
       "gloss": "विदाई",
       "variants": [
-        { "text": "अलविदा", "rom": "alvidā", "note": "Poetic, lingering — a “farewell” feel.", "reviewed": true },
-        { "text": "फिर मिलेंगे", "rom": "phir milenge", "note": "Lit. “we’ll meet again.”", "reviewed": true },
-        { "text": "बाय", "rom": "bāy", "tone": "casual", "note": "English-borrowed; everyday casual.", "reviewed": true }
+        { "text": "अलविदा", "rom": "alvidā", "note": "Poetic, lingering — a “farewell” feel." },
+        { "text": "फिर मिलेंगे", "rom": "phir milenge", "note": "Lit. “we’ll meet again.”" },
+        { "text": "बाय", "rom": "bāy", "tone": "casual", "note": "English-borrowed; everyday casual." }
       ]
     },
     "bn": {
       "gloss": "বিদায়",
       "variants": [
-        { "text": "বিদায়", "rom": "bidāy", "note": "Standard goodbye.", "reviewed": true },
-        { "text": "আবার দেখা হবে", "rom": "ābār dekhā hôbe", "note": "Lit. “we’ll meet again.”", "reviewed": true },
-        { "text": "টা টা", "rom": "ṭā ṭā", "tone": "casual", "note": "Casual “ta ta”; common.", "reviewed": true }
+        { "text": "বিদায়", "rom": "bidāy", "note": "Standard goodbye." },
+        { "text": "আবার দেখা হবে", "rom": "ābār dekhā hôbe", "note": "Lit. “we’ll meet again.”" },
+        { "text": "টা টা", "rom": "ṭā ṭā", "tone": "casual", "note": "Casual “ta ta”; common." }
       ]
     },
     "id": {
       "gloss": "perpisahan",
       "variants": [
-        { "text": "Sampai jumpa", "note": "Lit. \"until we meet.\"", "reviewed": false },
-        { "text": "Dadah", "tone": "casual", "note": "Casual \"bye-bye.\"", "reviewed": false }
+        { "text": "Dadah", "tone": "casual", "note": "Casual \"bye-bye.\"" },
+        { "text": "Bye", "tone": "casual", "note": "English-borrowed; everyday." }
       ]
     },
     "ms": {
       "gloss": "perpisahan",
       "variants": [
-        { "text": "Jumpa lagi", "note": "Lit. \"meet again.\"", "reviewed": false },
-        { "text": "Selamat tinggal", "tone": "polite", "note": "Said to one staying behind; lit. \"safely stay.\"", "reviewed": false },
-        { "text": "Bye", "tone": "casual", "note": "English-borrowed; common.", "reviewed": false }
+        { "text": "Selamat tinggal", "tone": "polite", "note": "Said to one staying behind; lit. \"safely stay.\"" },
+        { "text": "Bye", "tone": "casual", "note": "English-borrowed; common." }
       ]
     },
     "th": {
       "gloss": "การลา",
       "variants": [
-        { "text": "ลาก่อน", "rom": "la gon", "note": "Standard \"goodbye.\"", "reviewed": false },
-        { "text": "บาย", "rom": "bai", "tone": "casual", "note": "English-borrowed; very common.", "reviewed": false },
-        { "text": "ไว้เจอกันใหม่", "rom": "wai jer gan mai", "note": "Lit. \"see you next time.\"", "reviewed": false }
+        { "text": "ลาก่อน", "rom": "la gon", "note": "Standard \"goodbye.\"" },
+        { "text": "บาย", "rom": "bai", "tone": "casual", "note": "English-borrowed; very common." }
       ]
     },
     "vi": {
       "gloss": "lời tạm biệt",
       "variants": [
-        { "text": "Tạm biệt", "reviewed": false },
-        { "text": "Hẹn gặp lại", "note": "Lit. \"until we meet again.\"", "reviewed": false },
-        { "text": "Bye", "tone": "casual", "note": "English-borrowed; very common.", "reviewed": false }
+        { "text": "Tạm biệt" },
+        { "text": "Bye", "tone": "casual", "note": "English-borrowed; very common." }
       ]
     },
     "fil": {
       "gloss": "paalam",
       "variants": [
-        { "text": "Paalam", "note": "More poetic, lingering.", "reviewed": false },
-        { "text": "Sige", "tone": "casual", "note": "Lit. \"go ahead\" — casual \"see you.\"", "reviewed": false },
-        { "text": "Bye", "tone": "casual", "note": "English-borrowed; everyday.", "reviewed": false }
+        { "text": "Paalam", "note": "More poetic, lingering." },
+        { "text": "Sige", "tone": "casual", "note": "Lit. \"go ahead\" — casual \"see you.\"" },
+        { "text": "Bye", "tone": "casual", "note": "English-borrowed; everyday." }
       ]
     },
     "mizo": {
       "gloss": "inhmu leh ang",
       "variants": [
-        { "text": "Inhmu leh ang", "note": "Lit. “we’ll see (each other) again.”", "reviewed": false }
+        { "text": "Inhmu leh ang", "note": "Lit. “we’ll see (each other) again.”" }
       ]
     }
   }

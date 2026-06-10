@@ -6,138 +6,135 @@
     "zh": {
       "gloss": "节日快乐",
       "variants": [
-        { "text": "节日快乐", "rom": "jiérì kuàilè", "reviewed": false }
+        { "text": "节日快乐", "rom": "jiérì kuàilè" }
       ]
     },
     "ja": {
       "gloss": "良い休日を",
       "variants": [
-        { "text": "良い休日を", "rom": "yoi kyūjitsu o", "reviewed": false }
+        { "text": "良い休日を", "rom": "yoi kyūjitsu o" }
       ]
     },
     "ko": {
       "gloss": "즐거운 명절",
       "variants": [
-        { "text": "즐거운 명절 보내세요", "rom": "jeulgeoun myeongjeol bonaeseyo", "tone": "polite", "reviewed": false }
+        { "text": "즐거운 명절 보내세요", "rom": "jeulgeoun myeongjeol bonaeseyo", "tone": "polite" }
       ]
     },
     "en": {
       "gloss": "happy holidays",
       "variants": [
-        { "text": "Happy holidays", "reviewed": false }
+        { "text": "Happy holidays" }
       ]
     },
     "de": {
       "gloss": "frohe Feiertage",
       "variants": [
-        { "text": "Frohe Feiertage", "reviewed": false },
-        { "text": "Schöne Feiertage", "reviewed": false }
+        { "text": "Frohe Feiertage" }
       ]
     },
     "es": {
       "gloss": "felices fiestas",
       "variants": [
-        { "text": "Felices fiestas", "reviewed": false }
+        { "text": "Felices fiestas" }
       ]
     },
     "pt": {
       "gloss": "boas festas",
       "variants": [
-        { "text": "Boas festas", "reviewed": false }
+        { "text": "Boas festas" }
       ]
     },
     "fr": {
       "gloss": "bonnes fêtes",
       "variants": [
-        { "text": "Bonnes fêtes", "reviewed": false }
+        { "text": "Bonnes fêtes" }
       ]
     },
     "it": {
       "gloss": "buone feste",
       "variants": [
-        { "text": "Buone feste", "reviewed": false }
+        { "text": "Buone feste" }
       ]
     },
     "ru": {
       "gloss": "с праздником",
       "variants": [
-        { "text": "С праздником", "rom": "s prazdnikom", "reviewed": false },
-        { "text": "Счастливых праздников", "rom": "schastlivykh prazdnikov", "reviewed": false }
+        { "text": "С праздником", "rom": "s prazdnikom" }
       ]
     },
     "uk": {
       "gloss": "зі святами",
       "variants": [
-        { "text": "Зі святом", "rom": "Zi sviatom", "reviewed": false },
-        { "text": "Гарних свят", "rom": "Harnykh sviat", "note": "Lit. \"nice holidays.\"", "reviewed": false }
+        { "text": "Зі святом", "rom": "Zi sviatom" }
       ]
     },
     "pl": {
       "gloss": "wesołych świąt",
       "variants": [
-        { "text": "Wesołych świąt", "reviewed": false }
+        { "text": "Wesołych świąt" }
       ]
     },
     "tr": {
       "gloss": "iyi tatiller",
       "variants": [
-        { "text": "İyi tatiller", "reviewed": false },
-        { "text": "Bayramınız kutlu olsun", "tone": "polite", "note": "For religious holidays.", "reviewed": false }
+        { "text": "İyi tatiller" },
+        { "text": "Bayramınız kutlu olsun", "tone": "polite", "note": "For religious holidays." }
       ]
     },
     "kk": {
       "gloss": "мерекеңмен",
       "variants": [
-        { "text": "Мерекеңмен", "rom": "Merekeňmen", "tone": "casual", "reviewed": false },
-        { "text": "Мерекелеріңіз құтты болсын", "rom": "Merekeleriňiz qutty bolsyn", "tone": "polite", "reviewed": false }
+        { "text": "Мерекеңмен", "rom": "Merekeňmen", "tone": "casual" },
+        { "text": "Мерекелеріңіз құтты болсын", "rom": "Merekeleriňiz qutty bolsyn", "tone": "polite" }
       ]
     },
     "hi": {
       "gloss": "त्यौहार की शुभकामनाएँ",
       "variants": [
-        { "text": "त्यौहार की शुभकामनाएँ", "rom": "tyauhār kī śubhakāmnāen", "reviewed": false }
+        { "text": "त्यौहार की शुभकामनाएँ", "rom": "tyauhār kī śubhakāmnāen" }
       ]
     },
     "bn": {
       "gloss": "শুভ উৎসব",
       "variants": [
-        { "text": "শুভ উৎসব", "rom": "śubho utsôb", "reviewed": false }
+        { "text": "শুভ উৎসব", "rom": "śubho utsôb" }
       ]
     },
     "id": {
       "gloss": "selamat hari raya",
       "variants": [
-        { "text": "Selamat hari raya", "reviewed": false }
+        { "text": "Selamat hari raya" }
       ]
     },
     "ms": {
       "gloss": "selamat hari raya",
       "variants": [
-        { "text": "Selamat hari raya", "reviewed": false }
+        { "text": "Selamat hari raya" }
       ]
     },
     "fil": {
       "gloss": "maligayang pista",
       "variants": [
-        { "text": "Maligayang pista", "reviewed": false }
+        { "text": "Maligayang pista" }
       ]
     },
     "vi": {
       "gloss": "chúc lễ vui vẻ",
       "variants": [
-        { "text": "Chúc lễ vui vẻ", "reviewed": false }
+        { "text": "Chúc lễ vui vẻ" }
       ]
     },
     "th": {
       "gloss": "สุขสันต์วันหยุด",
       "variants": [
-        { "text": "สุขสันต์วันหยุด", "rom": "suksan wan yut", "reviewed": false }
+        { "text": "สุขสันต์วันหยุด", "rom": "suksan wan yut" }
       ]
     },
     "mizo": {
       "gloss": "kut chibai",
       "variants": [
-        { "text": "Kut chibai", "note": "Lit. \"festival greeting.\"", "reviewed": false }
+        { "text": "Kut chibai", "note": "Lit. \"festival greeting.\"" }
       ]
     }
   }
