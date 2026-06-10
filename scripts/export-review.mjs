@@ -3,18 +3,13 @@
  * Generate an HTML review table for translations.
  *
  *   pnpm review                                 # interactive
- *   pnpm review --langs de,ru --unreviewed --anchor zh
- *   pnpm review --all                           # every language, all variants
+ *   pnpm review --langs de,ru --anchor zh
+ *   pnpm review --all                           # every language
  *
  * Output: tmp/review.html (override with --out <path>). Open in any browser.
  *
- * Modes:
- *   - All variants (default): every selected language column lists every
- *     variant, reviewed or not.
- *   - Unreviewed only (--unreviewed): rows are filtered to phrases that
- *     have at least one reviewed=false variant in the selected target
- *     languages. The anchor language column shows full content for
- *     side-by-side reference; target columns hide already-reviewed cells.
+ * The optional anchor language is pinned as the first column for
+ * side-by-side reference.
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -46,16 +41,14 @@ function getFlag(name) {
 
 const argLangs = getFlag('langs');
 const argAll = getFlag('all') === true;
-const argUnreviewed = getFlag('unreviewed') === true;
 const argAnchor = typeof getFlag('anchor') === 'string' ? getFlag('anchor') : null;
 const argOut = typeof getFlag('out') === 'string' ? getFlag('out') : 'tmp/review.html';
 
 let targetCodes;
-let unreviewedOnly;
 let anchorCode = '';
 let outPath = argOut;
 
-const hasAnyArg = argLangs || argAll || argUnreviewed || argAnchor;
+const hasAnyArg = argLangs || argAll || argAnchor;
 
 if (hasAnyArg) {
   // Non-interactive
@@ -66,8 +59,7 @@ if (hasAnyArg) {
   } else {
     targetCodes = languages.map((l) => l.code);
   }
-  unreviewedOnly = argUnreviewed;
-  anchorCode = argAnchor ?? (unreviewedOnly ? 'zh' : '');
+  anchorCode = argAnchor ?? '';
 } else {
   // Interactive
   const rl = readline.createInterface({ input, output });
@@ -81,26 +73,21 @@ if (hasAnyArg) {
     targetCodes = languages.map((l) => l.code);
   } else {
     targetCodes = langInput.split(',').map((s) => s.trim()).filter(Boolean);
-  }
-  const unrAns = await ask('只导出未核对（reviewed=false）的变体？(y/N)', 'n');
-  unreviewedOnly = unrAns.toLowerCase().startsWith('y');
-  if (unreviewedOnly) {
-    anchorCode = await ask('锚点语言（用于对照）', 'zh');
+    anchorCode = await ask('锚点语言（用于对照，留空跳过）', 'zh');
   }
   rl.close();
 }
 
 // Build descriptive default filename if --out wasn't passed.
-// Pattern: review-<langs>-<unreviewed?>-<anchor?>-<timestamp>.html
+// Pattern: review-<langs>-<anchor?>-<timestamp>.html
 function buildAutoOutPath() {
   const langSeg =
     targetCodes.length === languages.length || (targetCodes.length === languages.length - 1 && anchorCode)
       ? 'all'
       : (anchorCode ? [anchorCode, ...targetCodes] : targetCodes).join('-');
-  const filterSeg = unreviewedOnly ? 'unreviewed' : '';
-  const anchorSeg = unreviewedOnly && anchorCode ? `anchor-${anchorCode}` : '';
+  const anchorSeg = anchorCode ? `anchor-${anchorCode}` : '';
   const date = new Date().toISOString().slice(0, 10); // 2026-04-28
-  return `tmp/${['review', langSeg, filterSeg, anchorSeg, date].filter(Boolean).join('-')}.html`;
+  return `tmp/${['review', langSeg, anchorSeg, date].filter(Boolean).join('-')}.html`;
 }
 
 if (outPath === 'tmp/review.html' && !getFlag('out')) {
@@ -117,8 +104,7 @@ function buildDocTitle() {
       : (anchorCode ? [anchorCode, ...targetCodes] : targetCodes).join(', ');
   const date = new Date().toISOString().slice(0, 10);
   const parts = ['Distant Friends · Review', langSeg];
-  if (unreviewedOnly) parts.push('unreviewed');
-  if (unreviewedOnly && anchorCode) parts.push(`anchor ${anchorCode}`);
+  if (anchorCode) parts.push(`anchor ${anchorCode}`);
   parts.push(date);
   return parts.join(' · ');
 }
@@ -139,15 +125,7 @@ if (anchorCode) {
   targetCodes = targetCodes.filter((c) => c !== anchorCode);
 }
 
-// —— Filtering ——
-let phrasesToRender = phrases;
-if (unreviewedOnly) {
-  phrasesToRender = phrases.filter((p) =>
-    targetCodes.some((code) =>
-      p.trans[code]?.variants?.some((v) => v.reviewed === false),
-    ),
-  );
-}
+const phrasesToRender = phrases;
 
 // Group by scene, preserving scenes.json order
 const sceneOrder = scenes.map((s) => s.id);
@@ -186,14 +164,12 @@ function tagText(v) {
 }
 
 function renderVariant(v) {
-  const isUnreviewed = v.reviewed === false;
   const tag = tagText(v);
-  return `<div class="variant${isUnreviewed ? ' unreviewed' : ''}">
+  return `<div class="variant">
     <div class="text" lang="${esc(v.langHint || '')}">${esc(v.text)}</div>
     ${v.rom ? `<div class="rom">${esc(v.rom)}</div>` : ''}
     ${tag ? `<div class="tag">— ${esc(tag)}</div>` : ''}
     ${v.note ? `<div class="note">${esc(v.note)}</div>` : ''}
-    ${isUnreviewed ? '<div class="status">unreviewed</div>' : ''}
   </div>`;
 }
 
@@ -201,17 +177,7 @@ function renderCell(trans, isAnchor, langCode) {
   if (!trans || !trans.variants?.length) {
     return `<td class="${isAnchor ? 'cell anchor empty' : 'cell empty'}">—</td>`;
   }
-  let variants = trans.variants;
-  // In unreviewed mode, hide already-reviewed cells in the *target* columns
-  // (the anchor column always shows full content for reference).
-  if (unreviewedOnly && !isAnchor) {
-    const filtered = variants.filter((v) => v.reviewed === false);
-    if (!filtered.length) {
-      return '<td class="cell empty">—</td>';
-    }
-    variants = filtered;
-  }
-  variants = variants.map((v) => ({ ...v, langHint: langCode }));
+  const variants = trans.variants.map((v) => ({ ...v, langHint: langCode }));
   const gloss = trans.gloss
     ? `<div class="gloss">${esc(trans.gloss)}</div>`
     : '';
@@ -225,23 +191,11 @@ const cols = [];
 if (anchorCode) cols.push(anchorCode);
 cols.push(...targetCodes);
 
-const totalUnreviewed = phrasesToRender.reduce(
-  (n, p) =>
-    n +
-    targetCodes.reduce((m, c) => {
-      const vs = p.trans[c]?.variants ?? [];
-      return m + vs.filter((v) => v.reviewed === false).length;
-    }, 0),
-  0,
-);
-
 const meta = [
   `Generated ${new Date().toISOString().slice(0, 19).replace('T', ' ')} UTC`,
-  unreviewedOnly ? 'unreviewed only' : 'all variants',
   anchorCode ? `anchor: ${langByCode.get(anchorCode).native} (${anchorCode})` : '',
   `${cols.length} column${cols.length > 1 ? 's' : ''}`,
-  `${phrasesToRender.length}/${phrases.length} phrases`,
-  unreviewedOnly ? `${totalUnreviewed} unreviewed variant${totalUnreviewed === 1 ? '' : 's'}` : '',
+  `${phrasesToRender.length} phrases`,
 ]
   .filter(Boolean)
   .join('  ·  ');
@@ -258,8 +212,6 @@ const html = `<!doctype html>
     --ink: #1F1A14; --ink-soft: #524838; --ink-mute: #8F8370;
     --accent: #B0522E; --gold: #A6824A;
     --line: #D4C6A8; --line-soft: #E2D6B8;
-    --warn-bg: rgba(176, 82, 46, 0.06);
-    --warn-border: rgba(176, 82, 46, 0.55);
   }
   *, *::before, *::after { box-sizing: border-box; }
   body {
@@ -322,14 +274,6 @@ const html = `<!doctype html>
     border-top: 1px dashed var(--line-soft);
     margin-top: 8px; padding-top: 10px;
   }
-  .variant.unreviewed {
-    background: var(--warn-bg);
-    border-left: 2px solid var(--warn-border);
-    margin-left: -10px;
-    padding: 6px 8px 6px 8px;
-    border-radius: 0 2px 2px 0;
-  }
-  .variant.unreviewed + .variant.unreviewed { margin-top: 6px; }
   .text { font-size: 16px; color: var(--ink); line-height: 1.3; }
   .rom { font-style: italic; color: var(--ink-mute); font-size: 12px; margin-top: 3px; letter-spacing: 0.02em; }
   .tag { font-style: italic; color: var(--ink-mute); font-size: 11.5px; margin-top: 5px; }
@@ -342,12 +286,6 @@ const html = `<!doctype html>
     font-style: italic; color: var(--ink-mute); font-size: 12px;
     margin-top: 10px; padding-top: 6px;
     border-top: 1px dotted var(--line-soft);
-  }
-  .status {
-    margin-top: 6px; font-size: 9.5px; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--accent);
-    font-family: "Helvetica Neue", system-ui, sans-serif;
-    font-style: normal;
   }
   @media print {
     /* @page size is set dynamically below by inline JS so the whole table
@@ -362,11 +300,11 @@ const html = `<!doctype html>
     body {
       padding: 0;
       background: white;
-      /* Force backgrounds (anchor tint, unreviewed warn-bg) into the PDF. */
+      /* Force backgrounds (anchor tint) into the PDF. */
       print-color-adjust: exact;
       -webkit-print-color-adjust: exact;
     }
-    th, th.anchor, td.cell.anchor, .variant.unreviewed {
+    th, th.anchor, td.cell.anchor {
       print-color-adjust: exact;
       -webkit-print-color-adjust: exact;
     }
@@ -460,7 +398,4 @@ await mkdir(dirname(absOut), { recursive: true });
 await writeFile(absOut, html, 'utf8');
 
 console.log(`\nWrote ${phrasesToRender.length} phrases × ${cols.length} languages → ${outPath}`);
-if (unreviewedOnly) {
-  console.log(`  ${totalUnreviewed} unreviewed variants in target languages.`);
-}
 console.log(`Open: file://${absOut}`);

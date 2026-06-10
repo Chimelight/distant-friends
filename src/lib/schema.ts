@@ -13,7 +13,6 @@ export const Variant = z.object({
   addresseeCount: Count.optional(),
   region: z.string().optional(),
   note: z.string().optional(),
-  reviewed: z.boolean().optional(),
 });
 
 export const LangTrans = z.object({
