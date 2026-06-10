@@ -20,7 +20,8 @@
     "ko": {
       "gloss": "또 봐",
       "variants": [
-        { "text": "또 봐", "rom": "tto bwa", "tone": "casual" }
+        { "text": "또 봐", "rom": "tto bwa", "tone": "casual" },
+        { "text": "또 봐요", "rom": "tto bwayo", "tone": "polite" }
       ]
     },
     "en": {
@@ -126,7 +127,7 @@
       "gloss": "kita-kita",
       "variants": [
         { "text": "Kita-kita", "tone": "casual" },
-        { "text": "See you", "tone": "casual" }
+        { "text": "See you" }
       ]
     },
     "vi": {

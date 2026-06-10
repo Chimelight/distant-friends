@@ -121,6 +121,7 @@
     "fil": {
       "gloss": "have fun",
       "variants": [
+        { "text": "Mag-enjoy ka", "note": "Everyday Taglish — \"enjoy yourself.\"" },
         { "text": "Have fun", "tone": "casual" }
       ]
     },

@@ -29,6 +29,7 @@
     "en": {
       "gloss": "doing well",
       "variants": [
+        { "text": "I'm fine" },
         { "text": "I'm good", "tone": "casual" },
         { "text": "Not bad", "tone": "casual" }
       ]
@@ -36,7 +37,7 @@
     "de": {
       "gloss": "es geht gut",
       "variants": [
-        { "text": "Mir geht's gut", "tone": "casual" },
+        { "text": "Mir geht's gut" },
         { "text": "Nicht schlecht", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
@@ -50,7 +51,7 @@
     "pt": {
       "gloss": "estar bem",
       "variants": [
-        { "text": "Tudo bem", "tone": "casual", "note": "Lit. \"all good.\"" },
+        { "text": "Tudo bem", "note": "Lit. \"all good.\"" },
         { "text": "Nada mal", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },

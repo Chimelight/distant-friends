@@ -45,7 +45,8 @@
     "pt": {
       "gloss": "saudade",
       "variants": [
-        { "text": "Tô com saudade", "tone": "casual", "note": "Warm, deeply Brazilian; no exact English equivalent." }
+        { "text": "Estou com saudade", "note": "Saudade — warm longing; no exact English equivalent." },
+        { "text": "Tô com saudade", "tone": "casual" }
       ]
     },
     "fr": {

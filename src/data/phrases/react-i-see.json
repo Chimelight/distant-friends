@@ -47,6 +47,7 @@
     "pt": {
       "gloss": "sei",
       "variants": [
+        { "text": "Entendi", "note": "Lit. \"understood.\"" },
         { "text": "Sei", "tone": "casual", "note": "Lit. \"I know\" — soft \"I see.\"" }
       ]
     },
@@ -128,7 +129,7 @@
     "fil": {
       "gloss": "ah ganun",
       "variants": [
-        { "text": "Ah ganun", "tone": "casual", "note": "Lit. \"ah, like that.\"" },
+        { "text": "Ganun pala", "note": "Lit. \"so that's how it is.\"" },
         { "text": "Ah ok", "tone": "casual" }
       ]
     },

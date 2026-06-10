@@ -20,7 +20,8 @@
     "ko": {
       "gloss": "긴장하지 마",
       "variants": [
-        { "text": "긴장하지 마", "rom": "ginjanghaji ma", "tone": "casual" }
+        { "text": "긴장하지 마", "rom": "ginjanghaji ma", "tone": "casual" },
+        { "text": "긴장하지 마세요", "rom": "ginjanghaji maseyo", "tone": "polite" }
       ]
     },
     "en": {
@@ -113,6 +114,7 @@
     "bn": {
       "gloss": "টেনশন কোরো না",
       "variants": [
+        { "text": "চিন্তা কোরো না", "rom": "chintā koro nā", "note": "Lit. \"don't worry.\"" },
         { "text": "টেনশন কোরো না", "rom": "ṭenshôn koro nā", "tone": "casual" }
       ]
     },
@@ -133,7 +135,7 @@
     "fil": {
       "gloss": "wag mag-stress",
       "variants": [
-        { "text": "Wag mag-stress", "tone": "casual" },
+        { "text": "Wag mag-stress" },
         { "text": "Relax lang", "tone": "casual" }
       ]
     },

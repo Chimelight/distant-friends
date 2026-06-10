@@ -19,7 +19,8 @@
     "ko": {
       "gloss": "나중에 얘기하자",
       "variants": [
-        { "text": "나중에 얘기하자", "rom": "najunge yaegihaja", "tone": "casual" }
+        { "text": "나중에 얘기하자", "rom": "najunge yaegihaja", "tone": "casual" },
+        { "text": "나중에 얘기해요", "rom": "najunge yaegihaeyo", "tone": "polite" }
       ]
     },
     "en": {
@@ -45,7 +46,7 @@
     "pt": {
       "gloss": "falo depois",
       "variants": [
-        { "text": "A gente fala depois", "tone": "casual" }
+        { "text": "A gente fala depois" }
       ]
     },
     "fr": {
@@ -78,7 +79,7 @@
       "gloss": "pogadamy później",
       "variants": [
         { "text": "Pogadamy później", "tone": "casual" },
-        { "text": "Do usłyszenia", "tone": "casual", "note": "Lit. \"until (we) hear each other.\"" }
+        { "text": "Do usłyszenia", "note": "Lit. \"until (we) hear each other.\"" }
       ]
     },
     "tr": {
@@ -115,7 +116,7 @@
     "ms": {
       "gloss": "borak nanti",
       "variants": [
-        { "text": "Borak nanti", "tone": "casual" }
+        { "text": "Borak nanti" }
       ]
     },
     "fil": {

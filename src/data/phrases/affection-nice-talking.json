@@ -117,7 +117,7 @@
     "id": {
       "gloss": "senang ngobrol",
       "variants": [
-        { "text": "Senang ngobrol sama kamu", "tone": "casual" },
+        { "text": "Senang ngobrol sama kamu" },
         { "text": "Asyik ngobrolnya", "tone": "casual" }
       ]
     },
@@ -130,7 +130,7 @@
     "fil": {
       "gloss": "sarap mag-usap",
       "variants": [
-        { "text": "Sarap mag-usap sa iyo", "tone": "casual" }
+        { "text": "Sarap mag-usap sa iyo" }
       ]
     },
     "vi": {

@@ -19,7 +19,8 @@
     "ko": {
       "gloss": "슬퍼하지 마",
       "variants": [
-        { "text": "슬퍼하지 마", "rom": "seulpeohaji ma", "tone": "casual" }
+        { "text": "슬퍼하지 마", "rom": "seulpeohaji ma", "tone": "casual" },
+        { "text": "슬퍼하지 마세요", "rom": "seulpeohaji maseyo", "tone": "polite" }
       ]
     },
     "en": {

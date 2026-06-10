@@ -13,7 +13,7 @@
     "ja": {
       "gloss": "称賛",
       "variants": [
-        { "text": "さすが", "rom": "sasuga", "tone": "casual", "note": "Lit. \"as expected (of you)\" — natural praise between peers." },
+        { "text": "さすが", "rom": "sasuga", "note": "Lit. \"as expected (of you)\" — natural praise between peers." },
         { "text": "よくやった", "rom": "yoku yatta", "tone": "casual", "note": "Can sound top-down; fine between close friends." }
       ]
     },

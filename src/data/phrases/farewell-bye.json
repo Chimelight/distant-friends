@@ -15,7 +15,8 @@
       "gloss": "別れの挨拶",
       "variants": [
         { "text": "じゃあね", "rom": "jā ne", "tone": "casual" },
-        { "text": "バイバイ", "rom": "baibai", "tone": "casual" }
+        { "text": "バイバイ", "rom": "baibai", "tone": "casual" },
+        { "text": "さようなら", "rom": "sayōnara", "tone": "polite", "note": "The textbook goodbye — formal and a bit final between friends." }
       ]
     },
     "ko": {
@@ -124,7 +125,8 @@
       "gloss": "perpisahan",
       "variants": [
         { "text": "Dadah", "tone": "casual", "note": "Casual \"bye-bye.\"" },
-        { "text": "Bye", "tone": "casual", "note": "English-borrowed; everyday." }
+        { "text": "Bye", "tone": "casual", "note": "English-borrowed; everyday." },
+        { "text": "Selamat tinggal", "tone": "polite", "note": "Formal; said to the one staying." }
       ]
     },
     "ms": {

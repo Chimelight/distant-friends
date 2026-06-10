@@ -124,6 +124,7 @@
     "fil": {
       "gloss": "manigong bagong taon",
       "variants": [
+        { "text": "Happy Chinese New Year" },
         { "text": "Kung Hei Fat Choi", "tone": "casual", "note": "Borrowed Cantonese greeting; common in PH." }
       ]
     },

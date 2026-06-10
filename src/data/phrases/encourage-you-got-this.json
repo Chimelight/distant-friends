@@ -21,7 +21,8 @@
       "gloss": "힘내",
       "variants": [
         { "text": "힘내", "rom": "himnae", "tone": "casual" },
-        { "text": "파이팅", "rom": "paiting", "tone": "casual" }
+        { "text": "파이팅", "rom": "paiting", "tone": "casual" },
+        { "text": "힘내세요", "rom": "himnaeseyo", "tone": "polite" }
       ]
     },
     "en": {

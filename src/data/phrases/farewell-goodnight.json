@@ -134,7 +134,7 @@
     "fil": {
       "gloss": "magandang gabi",
       "variants": [
-        { "text": "Good night", "tone": "casual", "note": "English-borrowed; the usual before-sleep farewell. \"Magandang gabi\" is a greeting, not a goodnight." },
+        { "text": "Good night", "note": "English-borrowed; the usual before-sleep farewell. \"Magandang gabi\" is a greeting, not a goodnight." },
         { "text": "Matulog ka nang mahimbing", "tone": "close", "note": "Lit. \"sleep deeply\" — warmer." }
       ]
     },

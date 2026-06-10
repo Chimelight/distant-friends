@@ -47,7 +47,8 @@
     "pt": {
       "gloss": "se cuida",
       "variants": [
-        { "text": "Se cuida", "tone": "casual" }
+        { "text": "Se cuida", "tone": "casual" },
+        { "text": "Cuide-se", "note": "Standard form." }
       ]
     },
     "fr": {
