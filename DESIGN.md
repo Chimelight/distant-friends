@@ -661,7 +661,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 
 ### M4 · 打磨（1–1.5 天）
 - [ ] Accessibility audit：axe DevTools 全绿 + 完整键盘穿行测试
-- [ ] Lighthouse ≥ 95 四项达标（Performance / Accessibility / Best Practices / SEO）
+- [x] Lighthouse 实测（slow-4G 模拟）：Accessibility / Best Practices / SEO 三项 100，Performance 88——LCP 3.6s 是自托管 Fraunces 的到达时间，再压需牺牲首访字体身份（font-display: optional）。≥95 目标是否修订待拍板
 - [x] 所有交互的 `prefers-reduced-motion` 处理（在 `global.css` 全局兜底）
 - [x] OG image 设计（1200×630）+ meta tags（v0.1.0 已就位 Open Graph + Twitter Card）
 - [x] `README.md`：项目说明 + 使用说明 + 数据扩展指南 + 翻译协作哲学
@@ -711,6 +711,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 - **2026-06-12** · 阿拉伯语（首个 RTL）：不做全局 RTL 布局，仅在短语文本元素加 `dir="auto"`——内容级 RTL，界面仍 LTR。
 - **2026-06-12** · 字体**不进** SW precache（反转 §6.12 原方案）：CJK Noto 按 unicode-range 拆 ~100 个子集，全量几十 MB；改运行时 CacheFirst。
 - **2026-06-12** · TTS：无可用 voice 时按钮不渲染（弃"禁用+tooltip"）；voice 按质量启发式排序（Natural/Enhanced/Google 加分）而非取第一个匹配；"Starred only" 状态会话级不持久化。
+- **2026-06-12** · **字体性能权衡**（M4 size pass）：Fraunces full 轴 → standard 轴（-120KB 关键路径，代价：放弃 SOFT/WONK——全站唯一用例是 TocSide 数字的软转角）；CJK 三套 @font-face 声明（112KB gz）移出阻塞 CSS 异步加载，字体栈补系统宋体/明朝体兜底；预加载两支拉丁 Fraunces 消除 swap 位移。Lighthouse：56/96/100/100 → 88/100/100/100（模拟慢速 4G）。剩余 LCP 3.6s 为自托管特色衬线的固有成本；是否修订 §2.5/§9 的"≥95 四项全优"红线待定。
 - **2026-06-12** · **性别控件恢复**（反转 v1.5 的撤除，按当时定下的阈值机制触发）：两轴各 60 个标注变体后，Stationery 第二句恢复 addressee 槽位并新增 speaker 槽位。筛选语义：排除显式相反性别，未标保留，空则回退——格子绝不因偏好清空。被动 tag line 在对应筛选激活时隐藏（信息已由槽位表达）。
 
 ---

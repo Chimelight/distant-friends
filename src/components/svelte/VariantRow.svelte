@@ -58,41 +58,49 @@
   }
 </script>
 
-<div
-  class="variant"
-  class:copied
-  role="button"
-  tabindex="0"
-  aria-label={`Copy ${variant.text}`}
-  onclick={onClick}
-  onkeydown={onKey}
->
-  <div class="variant-text" lang={langCode} dir="auto">{variant.text}</div>
-  {#if variant.rom}
-    <div class="variant-rom">{variant.rom}</div>
-  {/if}
-  {#if tagText}
-    <div class="variant-tag">{tagText}</div>
-  {/if}
-  {#if variant.note}
-    <div class="variant-note">{variant.note}</div>
-  {/if}
+<!-- The row is a plain wrapper; the copy control is a real <button> whose
+     box stops short of the right gutter where SpeakButton lives — two
+     targets, zero geometric overlap (WCAG target-size). -->
+<div class="variant" class:copied>
+  <button
+    class="copy"
+    type="button"
+    aria-label={`Copy ${variant.text}`}
+    onclick={onClick}
+    onkeydown={onKey}
+  >
+    <div class="variant-text" lang={langCode} dir="auto">{variant.text}</div>
+    {#if variant.rom}
+      <div class="variant-rom">{variant.rom}</div>
+    {/if}
+    {#if tagText}
+      <div class="variant-tag">{tagText}</div>
+    {/if}
+    {#if variant.note}
+      <div class="variant-note">{variant.note}</div>
+    {/if}
+  </button>
   <span class="copy-hint" aria-hidden="true"></span>
   <SpeakButton text={variant.text} langCode={langCode} />
 </div>
 
 <style>
   .variant {
-    padding: 18px 22px;
-    cursor: pointer;
     display: block;
     width: 100%;
     position: relative;
     transition: background 0.2s ease;
+  }
+  .copy {
+    display: block;
+    width: calc(100% - 48px);
+    padding: 18px 0 18px 22px;
+    cursor: pointer;
     font-family: inherit;
     text-align: left;
     background: transparent;
     border: none;
+    color: inherit;
   }
   .variant + :global(.variant) {
     border-top: 1px dashed var(--line-soft);
@@ -100,7 +108,7 @@
   .variant:hover {
     background: rgba(176, 82, 46, 0.05);
   }
-  .variant:focus-visible {
+  .copy:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: -2px;
   }
@@ -113,7 +121,6 @@
     color: var(--ink);
     line-height: 1.32;
     letter-spacing: 0.003em;
-    padding-right: 60px;
   }
   .variant-rom {
     font-family: var(--font-serif);

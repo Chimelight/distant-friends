@@ -93,6 +93,10 @@
 
 <style>
   .scene-block {
+    /* Skip layout/paint for below-fold scenes; the estimate only affects
+     * scrollbar length until the block is reached. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 2400px;
     margin-bottom: 48px;
     /* Clear the StickyBar (~44px tall) when scrollIntoView lands on a
      * section — without this margin the title hides under the bar. */

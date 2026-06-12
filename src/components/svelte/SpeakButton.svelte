@@ -51,13 +51,14 @@
 <style>
   .speak {
     position: absolute;
-    top: 38px;
-    right: 14px;
+    top: 34px;
+    right: 10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    /* 32px hit area (WCAG target-size); the icon stays 15px. */
+    width: 32px;
+    height: 32px;
     padding: 0;
     border: none;
     background: transparent;
