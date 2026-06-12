@@ -7,6 +7,18 @@
     "capHint": "up to 5 at a time",
     "anchoredIn": "Anchored in",
     "iWrite": "I write",
+    "to": "to",
+    "asWord": "as",
+    "speakers": {
+      "any": "myself",
+      "m": "a man",
+      "f": "a woman"
+    },
+    "addressees": {
+      "any": "a friend",
+      "m": "him",
+      "f": "her"
+    },
     "tones": {
       "any": "in any tone",
       "close": "tenderly",

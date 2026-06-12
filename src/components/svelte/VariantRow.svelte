@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { tone, showToast } from '../../lib/stores';
+  import { tone, speakerGender, addresseeGender, showToast } from '../../lib/stores';
   import { copyText } from '../../lib/clipboard';
   import SpeakButton from './SpeakButton.svelte';
   import type { TVariant } from '../../lib/schema';
@@ -29,10 +29,14 @@
     if ($tone === 'any' && variant.tone && TONE_LABELS[variant.tone]) {
       bits.push(TONE_LABELS[variant.tone]);
     }
-    if (variant.speakerGender === 'm') bits.push('he writes');
-    if (variant.speakerGender === 'f') bits.push('she writes');
-    if (variant.addresseeGender === 'f') bits.push('to a woman');
-    if (variant.addresseeGender === 'm') bits.push('to a man');
+    if ($speakerGender === 'any') {
+      if (variant.speakerGender === 'm') bits.push('he writes');
+      if (variant.speakerGender === 'f') bits.push('she writes');
+    }
+    if ($addresseeGender === 'any') {
+      if (variant.addresseeGender === 'f') bits.push('to a woman');
+      if (variant.addresseeGender === 'm') bits.push('to a man');
+    }
     if (variant.addresseeCount === 'many') bits.push('to everyone');
     return bits.join(' · ');
   });

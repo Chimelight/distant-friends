@@ -226,7 +226,7 @@ UI 状态有两个维度影响变体显示：`anchor`（哪种语言放锚点列
 
 **关键原则**：筛选失败时优雅降级，不返回空数组。这保证 UI 里永远有东西显示。
 
-**addressee 维度故意省略**。`speakerGender` / `addresseeGender` / `addresseeCount` 仍然在 schema 上保留，但只作为**被动描述标签**通过 VariantRow 的 tag line 渲染（"he writes" / "to a woman" / "to everyone"），不参与筛选。原因（v1 当时）：三个轴命中率太低（speakerGender 2/77、addresseeGender 0/77、addresseeCount 7/77），做成显眼的 UI 控件让用户拨了发现没变化反而更糟。`scripts/coverage.mjs` 持续打印三个轴的命中数；约定 speakerGender / addresseeGender 累积超过 ~10 个 cell 时再考虑加回 UI 控件（Stationery 第三句 *signed by [me · he · she]* + addressee 槽位）。**2026-06 现状：两轴各 60，阈值已超 6 倍——恢复控件已列入待决事项（见 §12.2）。**
+**addressee 维度故意省略**。`speakerGender` / `addresseeGender` / `addresseeCount` 仍然在 schema 上保留，但只作为**被动描述标签**通过 VariantRow 的 tag line 渲染（"he writes" / "to a woman" / "to everyone"），不参与筛选。原因（v1 当时）：三个轴命中率太低（speakerGender 2/77、addresseeGender 0/77、addresseeCount 7/77），做成显眼的 UI 控件让用户拨了发现没变化反而更糟。`scripts/coverage.mjs` 持续打印三个轴的命中数；约定 speakerGender / addresseeGender 累积超过 ~10 个 cell 时再考虑加回 UI 控件（Stationery 第三句 *signed by [me · he · she]* + addressee 槽位）。**2026-06-12：两轴各 60（阈值的 6 倍），控件已恢复——Stationery 第二句扩展为 *I write — [tone] — to [a friend·him·her], as [myself·a man·a woman]*，筛选规则：排除显式标了相反性别的变体，未标的保留，绝不清空格子。**
 
 ### 5.8 UI 字符串（`src/content/ui/en.json`）
 
@@ -294,9 +294,9 @@ UI 状态有两个维度影响变体显示：`anchor`（哪种语言放锚点列
 顶部两行斜体衬线句子，像信件开头题词：
 
 > *Anchored in* **Chinese**.
-> *I write* — **in any tone** — *to* **a friend**.
+> *I write* — **in any tone** — *to* **a friend**, *as* **myself**.
 
-加粗的两个词（anchor / tone）是 `<SlotPicker>` 实例：
+加粗的四个词（anchor / tone / addressee / speaker）是 `<SlotPicker>` 实例：
 
 - **视觉**：斜体 Fraunces，赤陶色文字，下方虚线（dashed underline）+ 小 `▾`
 - **交互**：点击展开一个 popover 菜单（斜体选项列表，当前值带赤陶色小圆点）
@@ -304,12 +304,14 @@ UI 状态有两个维度影响变体显示：`anchor`（哪种语言放锚点列
 - **状态变化反馈**：选中后 slot 文字更新 + 一个 `.pulse` 短动画（350ms）+ 主视图重渲染
 - **键盘可用**：Tab 聚焦，Enter/Space 展开，方向键移动选项，Enter 选定
 
-**两个 slot 的值域**
+**Slot 值域**
 
 | Slot | 值 |
 |---|---|
-| `anchor` | 所有语言 `languages.json` |
+| `anchor` | 当前已选语言（防绕过 5 种上限） |
 | `tone` | `any` / `close` / `casual` / `neutral` / `polite`（文案 "in any tone" / "tenderly" / "casually" / "evenly" / "politely"） |
+| `addressee` | `any` / `m` / `f`（"a friend" / "him" / "her"）— 2026-06-12 恢复 |
+| `speaker` | `any` / `m` / `f`（"myself" / "a man" / "a woman"）— 2026-06-12 新增 |
 
 **默认状态**：`anchor=en`（v0.2.0 起，原 zh）/ `tone=any`。所有文案从 `ui/en.json` 读。
 
@@ -682,15 +684,14 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 按优先级粗排，择机引入：
 
 1. **UI 中文化** — 结构已就绪（`ui/zh.json` + `$uiLocale` store + SlotPicker 切换器），只需补译文
-2. **Speaker gender 控件** — Stationery 加第三句 "signed by [me · ♂ · ♀]"，影响葡语等性别分化语言的变体选择。等内容里 speakerGender 变体足够多再加
-3. **搜索框** — 输入任一语言或拼音定位到短语行（fuse.js 模糊搜索）
-4. **多标签（tags）** — 短语可挂多个标签（`#morning` `#emotion-joy`），与 scene 正交
-5. **分享链接** — `?anchor=ja&langs=zh,en&tone=casual&addr=friend&phrase=greeting-hello` 一键复刻朋友看到的视图
-6. **导出为图片** — 一条短语做成可发到微博/IG 的卡片（html2canvas）
-7. **预生成音频** — Web Speech 的质量天花板取决于用户设备装了什么 voice。构建期用神经 TTS（如 Azure/Google 一次性批量）把全部变体烧成静态音频（~2200 条 × 10-20KB ≈ 30-40MB），懒加载 + 运行时缓存：所有浏览器一致的高质量发音，且仍符合离线原则。代价：构建管线复杂度 + 资产体积，引入前需单独评估
-8. **反向查找** — 朋友发来一句外语查意思（需要把数据索引反转，工程量大）
-9. **变体级收藏** — 目前收藏到 phrase 级，未来可深入到 variant
-10. **内容贡献渠道** — 如果开放，用 GitHub Issues 表单模板 + PR 流程（不做 CMS）
+2. **搜索框** — 输入任一语言或拼音定位到短语行（fuse.js 模糊搜索）
+3. **多标签（tags）** — 短语可挂多个标签（`#morning` `#emotion-joy`），与 scene 正交
+4. **分享链接** — `?anchor=ja&langs=zh,en&tone=casual&addr=friend&phrase=greeting-hello` 一键复刻朋友看到的视图
+5. **导出为图片** — 一条短语做成可发到微博/IG 的卡片（html2canvas）
+6. **预生成音频** — Web Speech 的质量天花板取决于用户设备装了什么 voice。构建期用神经 TTS（如 Azure/Google 一次性批量）把全部变体烧成静态音频（~2200 条 × 10-20KB ≈ 30-40MB），懒加载 + 运行时缓存：所有浏览器一致的高质量发音，且仍符合离线原则。代价：构建管线复杂度 + 资产体积，引入前需单独评估
+7. **反向查找** — 朋友发来一句外语查意思（需要把数据索引反转，工程量大）
+8. **变体级收藏** — 目前收藏到 phrase 级，未来可深入到 variant
+9. **内容贡献渠道** — 如果开放，用 GitHub Issues 表单模板 + PR 流程（不做 CMS）
 
 ---
 
@@ -710,6 +711,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 - **2026-06-12** · 阿拉伯语（首个 RTL）：不做全局 RTL 布局，仅在短语文本元素加 `dir="auto"`——内容级 RTL，界面仍 LTR。
 - **2026-06-12** · 字体**不进** SW precache（反转 §6.12 原方案）：CJK Noto 按 unicode-range 拆 ~100 个子集，全量几十 MB；改运行时 CacheFirst。
 - **2026-06-12** · TTS：无可用 voice 时按钮不渲染（弃"禁用+tooltip"）；voice 按质量启发式排序（Natural/Enhanced/Google 加分）而非取第一个匹配；"Starred only" 状态会话级不持久化。
+- **2026-06-12** · **性别控件恢复**（反转 v1.5 的撤除，按当时定下的阈值机制触发）：两轴各 60 个标注变体后，Stationery 第二句恢复 addressee 槽位并新增 speaker 槽位。筛选语义：排除显式相反性别，未标保留，空则回退——格子绝不因偏好清空。被动 tag line 在对应筛选激活时隐藏（信息已由槽位表达）。
 
 ---
 

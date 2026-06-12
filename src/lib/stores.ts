@@ -4,7 +4,7 @@
 import { atom } from 'nanostores';
 import { persistentAtom } from '@nanostores/persistent';
 import languages from '../data/languages.json';
-import type { ToneFilter } from './filter';
+import type { ToneFilter, GenderFilter } from './filter';
 
 /** Max languages visible at once, anchor included. */
 export const MAX_LANGS = 5;
@@ -23,6 +23,18 @@ export const selectedLangs = persistentAtom<string[] | null>(
 export const anchor = persistentAtom<string>('distant-friends:anchor:v1', 'zh');
 
 export const tone = persistentAtom<ToneFilter>('distant-friends:tone:v1', 'any');
+
+// Writer / recipient gender preferences. Restored 2026-06 after both axes
+// passed the coverage threshold (see filter.ts). Persisted: they describe
+// stable facts about the user and their friend, not a transient view state.
+export const speakerGender = persistentAtom<GenderFilter>(
+  'distant-friends:speakerGender:v1',
+  'any',
+);
+export const addresseeGender = persistentAtom<GenderFilter>(
+  'distant-friends:addresseeGender:v1',
+  'any',
+);
 
 export type ViewMode = 'auto' | 'table' | 'cards';
 export const view = persistentAtom<ViewMode>('distant-friends:view:v1', 'auto');
