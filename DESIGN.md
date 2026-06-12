@@ -392,7 +392,6 @@ export function visibleVariants(
     "capHint": "up to 5 at a time",
     "anchoredIn": "Anchored in",
     "iWrite": "I write",
-    "to": "to",
     "tones": {
       "any":     "in any tone",
       "close":   "tenderly",
@@ -412,7 +411,9 @@ export function visibleVariants(
   },
   "footer": {
     "line1": "Sent with care across rivers and oceans.",
-    "sig":   "made for friends, by a friend"
+    "sig":   "made for friends, by a friend",
+    "sourceLabel": "View source on GitHub",
+    "sourceUrl":   "https://github.com/Chimelight/distant-friends"
   }
 }
 ```
@@ -494,7 +495,7 @@ export function visibleVariants(
 | `anchor` | 所有语言 `languages.json` |
 | `tone` | `any` / `close` / `casual` / `neutral` / `polite`（文案 "in any tone" / "tenderly" / "casually" / "evenly" / "politely"） |
 
-**默认状态**：`anchor=zh` / `tone=any`。所有文案从 `ui/en.json` 读。
+**默认状态**：`anchor=en`（v0.2.0 起，原 zh）/ `tone=any`。所有文案从 `ui/en.json` 读。
 
 > v1.5 起 `addressee` slot（friend / woman / man / everyone）从 Stationery 撤掉。原因：当前数据下 addresseeGender 命中率 0、addresseeCount 仅 7/77，控件存在但拨动无变化，反而违反"美学优先"+"内容是主角"。schema 字段保留，相关 tag（"to a woman" / "to everyone"）改在 VariantRow tag line 被动展示。详见 §5.7。
 
@@ -506,7 +507,7 @@ export function visibleVariants(
 
 - 两种视图：`table` / `cards`
 - 用户主动切换会覆盖默认，存 `$view: 'table' | 'cards' | 'auto'` 持久化
-- `auto` 根据视口宽度（≥ 960px → table）自动切
+- `auto` 根据视口宽度（≥ 640px → table；v0.1.1 起从 960 下调）自动切
 - Toggle 按钮：Masthead 右上角，位于 `position: absolute; top: 24px; right: 24px`，药丸形状的 chip group，两个短 sans 小字按钮 `[Cards] [Table]`（字号 10px，letter-spacing .22em，大写）
 - **实现**：通过 `body[data-view]` 属性驱动。规则：
   - `body[data-view="table"] .view-desktop { display: block }` + `.view-mobile { display: none }`
@@ -524,7 +525,7 @@ TOC 在不同阅读阶段以两种形态出现，互不重叠。所有状态切�
 位置：文档流内，在 Stationery 之下、`<main>` 之上，shell 居中。
 
 ```
-No. I. Greetings · II. Catching Up · III. Gratitude · IV. Affection · V. Warm Wishes · VI. Farewells
+No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Reactions · … · XI. Holidays
 ```
 
 - **视觉**：Fraunces 斜体 14px，金色 Roman 编号（opacity 0.85）+ `--ink-mute` 场景名；场景之间用极小的 `•` 实心圆点（3px，`--line` 色）分隔
@@ -575,7 +576,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Affection · V. War
   - Fraunces 斜体，`font-weight: 350`（可变字体中间值），`font-size: 14px`，`color: --ink-soft`
   - 收起状态：`opacity: 0, transform: translateX(10px), pointer-events: none`（保留布局宽度但不可见不可点）
   - 展开状态：`opacity: 1, transform: translateX(0), pointer-events: auto`
-  - stagger：6 行依次显现，每行延迟 +40ms（0.04s、0.08s、0.12s、0.16s、0.20s、0.24s）
+  - stagger：场景行依次显现，每行延迟 +40ms（场景数从 6 涨到 11 后依然成立，总时长 ~0.44s）
 - Active（当前场景）：
   - `.num` 颜色 → `--accent`，opacity 1.0
   - `.ttl` 颜色 → `--ink`，`font-weight: 500`（比默认 350 明显加粗）
