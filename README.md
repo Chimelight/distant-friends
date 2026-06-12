@@ -8,7 +8,7 @@
 
 ## What it is
 
-A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, gratitude, affection, warm wishes, farewells — across thirteen languages at v0.1.1, extensible. Click any cell to copy. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`); gender and count distinctions surface as quiet tag-line labels next to each variant.
+A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, reactions, questions, gratitude, compliments, encouragement, affection, wishes, holidays, farewells — across twenty-three languages (63 phrases), extensible. Click any cell to copy. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`); gender and count distinctions surface as quiet tag-line labels next to each variant.
 
 What it isn't:
 
@@ -46,7 +46,8 @@ src/
 ├── data/
 │   ├── languages.json
 │   ├── scenes.json
-│   └── phrases.json  # 10 phrases × 13 languages at v0.1.1, ~30 by v2
+│   ├── phrases.ts    # aggregates phrases/ via import.meta.glob
+│   └── phrases/      # one JSON file per phrase — 63 phrases × 23 languages
 ├── lib/              # schema (Zod), filter, stores, scroll, clipboard, storage
 ├── pages/index.astro
 └── styles/           # tokens.css (light + dark), global.css, typography.css
@@ -54,16 +55,16 @@ src/
 
 ## Adding content
 
-All content lives in three flat JSON files. Schema is enforced at build time by Zod (`src/lib/schema.ts`); a malformed entry fails `pnpm build`.
+All content lives in `src/data/`: `languages.json`, `scenes.json`, and one JSON file per phrase under `phrases/`. Schema is enforced at build time by Zod (`src/lib/schema.ts`); a malformed entry fails `pnpm build`.
 
 ### Add a phrase
 
-Open `src/data/phrases.json` and append:
+Create `src/data/phrases/<id>.json`:
 
 ```jsonc
 {
   "id": "kebab-case-id",
-  "scene": "greetings | catching-up | gratitude | affection | well-wishes | farewells",
+  "scene": "one of the ids in scenes.json (greetings, reactions, questions, …)",
   "order": 1,
   "trans": {
     "zh": {
@@ -139,7 +140,7 @@ See [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单) for the full task li
 | --- | --- |
 | M0 — project skeleton | ✅ shipped in v0.1.0 |
 | M1 — visual + interactive parity with v3 demo | ✅ shipped in v0.1.0 |
-| M2 — dark mode + starring | partial — dark tokens + FOUC defense in place; `ThemeToggle` and `StarButton` UI not built yet |
+| M2 — dark mode + starring | partial — three-state `ThemeToggle` shipped in v0.2.0; `StarButton` not built yet |
 | M3 — TTS + PWA precache | not started |
 | M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README done |
-| M5 — content (ongoing) | 13 languages × 10 phrases at v0.1.1 |
+| M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |

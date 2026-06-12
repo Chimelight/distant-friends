@@ -9,7 +9,7 @@
 ## 1. 项目愿景
 
 **它是什么**
-一个温暖、精致、离线可用的日常问候短语对照站，覆盖约 20–40 条朋友间常用的问候 × 8 种语言（可扩展）。点击即复制、可听发音、可收藏、深色浅色切换。
+一个温暖、精致、离线可用的日常问候短语对照站，覆盖 60+ 条朋友间常用短语 × 23 种语言（可扩展）。点击即复制、可听发音、可收藏、深色浅色切换。
 
 **它不是什么**
 - 不是旅游短语手册（"去机场怎么走"）
@@ -100,12 +100,12 @@ distant-friends/                 # 项目根（建议名字，可换）
 │   │       ├── PhraseCards.svelte
 │   │       ├── TranslationCell.svelte
 │   │       ├── VariantRow.svelte   # 单个变体（text + rom + tag + note + copy）
-│   │       ├── SpeakButton.svelte
-│   │       ├── StarButton.svelte
+│   │       ├── SpeakButton.svelte  # （规划中，M3，未建）
+│   │       ├── StarButton.svelte   # （规划中，M2，未建）
 │   │       ├── ThemeToggle.svelte
 │   │       └── Toast.svelte
 │   ├── data/
-│   │   ├── phrases.json         # 所有短语 + 每语言 gloss + variants
+│   │   ├── phrases/             # 每条短语一个 JSON 文件（<id>.json）
 │   │   ├── languages.json       # 语言元信息（code/native/tts/...）
 │   │   └── scenes.json          # 场景有序列表
 │   ├── lib/
@@ -114,7 +114,7 @@ distant-friends/                 # 项目根（建议名字，可换）
 │   │   ├── filter.ts            # visibleVariants() 变体筛选逻辑
 │   │   ├── scroll.ts            # 全局滚动状态：scrolled / activeScene / tocExpanded（nanostores + RAF listener）
 │   │   ├── clipboard.ts         # 带 fallback 的复制工具
-│   │   ├── tts.ts               # Web Speech API 封装
+│   │   ├── tts.ts               # Web Speech API 封装（规划中，M3，未建）
 │   │   └── storage.ts           # localStorage 工具 + 版本迁移
 │   ├── content/
 │   │   └── ui/
@@ -138,7 +138,7 @@ distant-friends/                 # 项目根（建议名字，可换）
 └── DESIGN.md                    # 本文件
 ```
 
-**数据文件的位置说明**：`src/data/` 而不是 `src/content/collections/`。原因：AI 一次生成一大块 JSON，扁平结构便于整体替换；Content Collections 的嵌套扫描限制反而碍事。Zod 校验在 `src/lib/schema.ts` 显式跑，构建时校验，效果等同。
+**数据文件的位置说明**：`src/data/` 而不是 `src/content/collections/`。原因：内容数据由显式 Zod 校验把关（`src/lib/schema.ts`，构建时跑），不需要 Content Collections；短语按 per-phrase 文件组织（`phrases/<id>.json`，由 `scripts/_load-phrases.mjs` / `src/data/phrases.ts` 聚合），单条短语可独立生成、review、diff。
 
 ---
 
@@ -152,15 +152,16 @@ distant-friends/                 # 项目根（建议名字，可换）
 2. **锚点列是用户选择，不是数据属性**。任何一种语言都可以被用户拉到锚点列，切换不影响数据。
 3. **语境维度全局固定**。Tone 就是 `close / casual / neutral / polite` 四档，不扩展。每种语言只在它真实有区分的层级上填变体，没有就不填。
 4. **缺翻译不是错误**。构建时列出覆盖率报告，运行时该格显示占位纹样，不 hard fail。
-5. **扁平结构便于 AI 协作**。三个 JSON 文件装完所有内容数据，AI 一次性输出、整体替换友好。per-phrase 文件夹结构被抛弃。
+5. **结构便于 AI 协作**。`languages.json` + `scenes.json` 两个扁平文件，加 `phrases/` 下每条短语一个 JSON：单条短语可独立生成、review、diff，AI 一次改一个文件不殃及全库。（v0.1 曾用单一 `phrases.json`，随短语数量增长拆分为 per-phrase 文件。）
 
 ### 5.2 文件组织
 
-三个扁平 JSON + 一个 UI 文件：
+两个扁平 JSON + 一个短语目录 + 一个 UI 文件：
 
 ```
 src/data/
-├── phrases.json       # 所有短语的完整数据（含各语言 gloss + variants）
+├── phrases/           # 每条短语一个 JSON 文件（<id>.json，含各语言 gloss + variants）
+├── phrases.ts         # 聚合模块：import.meta.glob 读取 phrases/ 全部文件
 ├── languages.json     # 语言元信息（code/native/tts/rtl）
 └── scenes.json        # 有序场景列表
 
@@ -172,8 +173,8 @@ src/content/ui/
 
 ```json
 [
-  { "code": "zh", "native": "中文",      "tts": "zh-CN", "rtl": false, "defaultOn": true,  "defaultAnchor": true },
-  { "code": "en", "native": "English",   "tts": "en-US", "rtl": false, "defaultOn": true  },
+  { "code": "zh", "native": "中文",      "tts": "zh-CN", "rtl": false, "defaultOn": true  },
+  { "code": "en", "native": "English",   "tts": "en-US", "rtl": false, "defaultOn": true,  "defaultAnchor": true },
   { "code": "ja", "native": "日本語",    "tts": "ja-JP", "rtl": false, "defaultOn": true  },
   { "code": "ko", "native": "한국어",    "tts": "ko-KR", "rtl": false, "defaultOn": false },
   { "code": "es", "native": "Español",   "tts": "es-ES", "rtl": false, "defaultOn": false },
@@ -184,69 +185,72 @@ src/content/ui/
 ```
 
 - `defaultOn`：首次访问时默认勾选的语言（加上 anchor 后控制在 5 以内）
-- `defaultAnchor`：标记哪一种是首次访问的锚点（仅一个为 true；当前建议中文）
+- `defaultAnchor`：标记哪一种是首次访问的锚点（仅一个为 true；v0.2.0 起为英文）
 - 语言不声明 `dimensions`——tone 四档对所有语言统一；哪些变体有 tone 标签取决于该语言该短语下的实际内容
 
 ### 5.4 Schema — 场景（`scenes.json`）
 
 ```json
 [
-  { "id": "greetings",   "num": "No. I",    "title": "Greetings",   "em": "Greetings"   },
-  { "id": "catching-up", "num": "No. II",   "title": "Catching Up", "em": "Up"          },
-  { "id": "gratitude",   "num": "No. III",  "title": "Gratitude",   "em": "Gratitude"   },
-  { "id": "affection",   "num": "No. IV",   "title": "Affection",   "em": "Affection"   },
-  { "id": "well-wishes", "num": "No. V",    "title": "Warm Wishes", "em": "Wishes"      },
-  { "id": "farewells",   "num": "No. VI",   "title": "Farewells",   "em": "Farewells"   }
+  { "id": "greetings",     "num": "No. I",    "title": "Greetings",     "em": "Greetings"     },
+  { "id": "catching-up",   "num": "No. II",   "title": "Catching Up",   "em": "Up"            },
+  { "id": "gratitude",     "num": "No. III",  "title": "Gratitude",     "em": "Gratitude"     },
+  { "id": "farewells",     "num": "No. IV",   "title": "Farewells",     "em": "Farewells"     },
+  { "id": "reactions",     "num": "No. V",    "title": "Reactions",     "em": "Reactions"     },
+  { "id": "questions",     "num": "No. VI",   "title": "Questions",     "em": "Questions"     },
+  { "id": "compliments",   "num": "No. VII",  "title": "Compliments",   "em": "Compliments"   },
+  { "id": "encouragement", "num": "No. VIII", "title": "Encouragement", "em": "Encouragement" },
+  { "id": "affection",     "num": "No. IX",   "title": "Affection",     "em": "Affection"     },
+  { "id": "well-wishes",   "num": "No. X",    "title": "Warm Wishes",   "em": "Wishes"        },
+  { "id": "holidays",      "num": "No. XI",   "title": "Holidays",      "em": "Holidays"      }
 ]
 ```
 
 - `em` 字段：标题里要斜体强调的那个词（跟 demo 视觉一致，给"Warm **_Wishes_**"这种排印）
 - 顺序就是页面显示顺序（TOC 和内容都按数组顺序）
 
-### 5.5 Schema — 短语（`phrases.json`）
+### 5.5 Schema — 短语（`phrases/<id>.json`）
 
-核心数据在这里。数组，每条短语一个对象：
+核心数据在这里。每个文件一个短语对象（文件名 = 短语 id）：
 
 ```json
-[
-  {
-    "id": "greeting-hello",
-    "scene": "greetings",
-    "order": 1,
-    "trans": {
-      "zh": {
-        "gloss": "问候",
-        "variants": [
-          { "text": "你好",  "rom": "nǐ hǎo"  },
-          { "text": "嗨",    "rom": "hāi",     "tone": "casual" },
-          { "text": "您好",  "rom": "nín hǎo", "tone": "polite", "note": "Honorific; to elders or strangers." }
-        ]
-      },
-      "en": {
-        "gloss": "a greeting",
-        "variants": [
-          { "text": "Hello" },
-          { "text": "Hi", "tone": "casual" }
-        ]
-      },
-      "ja": {
-        "gloss": "挨拶",
-        "variants": [
-          { "text": "こんにちは", "rom": "konnichiwa", "tone": "neutral", "note": "Daytime standard; works with anyone." },
-          { "text": "やっほー",   "rom": "yahhō",      "tone": "close",   "note": "Playful; between close friends." }
-        ]
-      },
-      "pt": {
-        "gloss": "uma saudação",
-        "variants": [
-          { "text": "Olá" },
-          { "text": "Oi", "tone": "casual" }
-        ]
-      }
-      /* other languages... */
+{
+  "id": "greeting-hello",
+  "scene": "greetings",
+  "order": 1,
+  "trans": {
+    "zh": {
+      "gloss": "问候",
+      "variants": [
+        { "text": "你好",  "rom": "nǐ hǎo"  },
+        { "text": "嗨",    "rom": "hāi",     "tone": "casual" },
+        { "text": "您好",  "rom": "nín hǎo", "tone": "polite", "note": "Honorific; to elders or strangers." }
+      ]
+    },
+    "en": {
+      "gloss": "a greeting",
+      "variants": [
+        { "text": "Hello" },
+        { "text": "Hi", "tone": "casual" }
+      ]
+    },
+    "ja": {
+      "gloss": "挨拶",
+      "variants": [
+        { "text": "こんにちは", "rom": "konnichiwa", "tone": "neutral", "note": "Daytime standard; works with anyone." },
+        { "text": "やっほー",   "rom": "yahhō",      "tone": "close",   "note": "Playful; between close friends." }
+      ]
+    },
+    "pt": {
+      "gloss": "uma saudação",
+      "variants": [
+        { "text": "Olá" },
+        { "text": "Oi", "tone": "casual" }
+      ]
     }
+    /* other languages... */
   }
-]
+}
 ```
 
 **字段说明**
@@ -419,16 +423,16 @@ export function visibleVariants(
 
 1. 给 AI 一个 prompt：短语概念、所属场景、需要翻译的语言列表、参考其他条目结构
 2. AI 输出一个完整的短语对象
-3. 在 `phrases.json` 末尾 append（或用 `pnpm run new-phrase` 脚本）
+3. 存为 `src/data/phrases/<id>.json`（或用 `pnpm run new-phrase` 脚本生成骨架）
 4. `pnpm dev` 自动热更，Zod 报错能立刻看到
 
-建议的 AI prompt 模板放在 `README.md` 里，包含：schema 片段 + 几个高质量示例条目 + 语言列表 + 风格要求（朋友间温度、不要直译感、variant 只填有真实区分的维度）。
+风格要求见 `README.md` 的 Translation philosophy 四条规则（朋友间温度、只填真实区分、friendly-foreigner 语域、变体宁缺毋滥）。
 
 **加一种新语言**
 
 1. 在 `languages.json` 里追加一条（code/native/tts 等）
-2. 给 AI 一个大 prompt：`phrases.json` 当前全部内容 + "请给每条短语补上这种语言的 `trans[<new-code>]`"
-3. AI 一次返回整份翻译，你 review 后整体合入
+2. 给 AI 一个大 prompt：`phrases/` 当前全部内容 + "请给每条短语补上这种语言的 `trans[<new-code>]`"
+3. AI 返回逐文件的翻译，你 review 后合入
 
 **加一个新场景**
 
@@ -438,7 +442,7 @@ export function visibleVariants(
 
 **辅助脚本（`scripts/`）**
 
-- `new-phrase.mjs` — 交互式询问 id/scene，生成骨架对象并追加到 `phrases.json`，再打开编辑器等你填内容
+- `new-phrase.mjs` — 交互式询问 id/scene/order，生成 `phrases/<id>.json` 骨架文件（含全部语言的空占位）等你填内容
 - `coverage.mjs` — 打印覆盖率矩阵，例如：
 
   ```
@@ -1001,7 +1005,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 
 - [x] 暗色 tokens（已在 M1 写入 tokens.css 完整两套调色）
 - [ ] 暗色对比度验证（Leonardo 或浏览器扩展，保证 AA）
-- [ ] `ThemeToggle.svelte` — light / dark / system 三态
+- [x] `ThemeToggle.svelte` — light / dark / system 三态（v0.2.0 上线，含 View Transitions 平滑切换）
 - [x] 防 FOUC 已在 M0/M1 `Layout.astro` 的 head inline script 里就位
 - [ ] `StarButton.svelte` + `starred: Set<string>` 持久化
 - [ ] "Starred only" 开关 chip（Stationery 下方，有收藏时才出现）
