@@ -111,7 +111,7 @@ distant-friends/                 # 项目根（建议名字，可换）
 │   │   └── scenes.json          # 场景有序列表
 │   ├── lib/
 │   │   ├── schema.ts            # Zod schema + 类型导出
-│   │   ├── stores.ts            # nanostores: selectedLangs / anchor / tone / view / theme / starred
+│   │   ├── stores.ts            # nanostores: selectedLangs / anchor / tone / view / theme / starred / starredOnly
 │   │   ├── filter.ts            # visibleVariants() 变体筛选逻辑
 │   │   ├── scroll.ts            # 全局滚动状态：scrolled / activeScene / tocExpanded（nanostores + RAF listener）
 │   │   ├── clipboard.ts         # 带 fallback 的复制工具
@@ -125,7 +125,8 @@ distant-friends/                 # 项目根（建议名字，可换）
 │   │   ├── global.css           # reset + base
 │   │   └── typography.css
 │   ├── pages/
-│   │   └── index.astro          # 主页（目前唯一页面）
+│   │   ├── index.astro          # 主页
+│   │   └── 404.astro            # not-found（"This letter went astray."）
 │   └── types.ts                 # 导出的类型别名
 ├── scripts/
 │   ├── new-phrase.mjs           # 交互式新增短语骨架
@@ -609,7 +610,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Affection · V. War
 - 每个 variant 行右侧（copy hint 旁边）有一个 speaker 图标，hover/focus 显示
 - `window.speechSynthesis`，BCP 47 code 来自 `languages.json[lang].tts`
 - 点击播放 → 图标变活跃态；再点停止
-- 检测浏览器是否有对应语言的 voice；无则禁用按钮 + `title` tooltip 说明
+- 检测浏览器是否有对应语言的 voice（精确 BCP 47 → 同语种前缀回退）；无 voice 或语言无 tts code（mizo）时按钮**不渲染**——死图标是噪音不是功能（原方案"禁用+tooltip"已弃）
 - `rate = 0.9`, `pitch = 1`
 - **不把 TTS 做主交互**（很多用户静音浏览），但能用时有价值
 
@@ -695,7 +696,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Affection · V. War
 ### 6.12 PWA
 
 - `manifest.webmanifest`：name / short_name / start_url / display=standalone / theme_color
-- Service Worker（`@vite-pwa/astro`）：precache shell + 字体 + 三个数据 JSON
+- Service Worker（`@vite-pwa/astro`）：precache shell（html/css/js/svg——短语数据经 `import.meta.glob` 打包进 JS，无需单独缓存）；**字体不进 precache**——CJK Noto 按 unicode-range 拆成上百个子集文件（全量几十 MB），改为首次使用时 CacheFirst 运行时缓存
 - 更新策略：`autoUpdate`（后台下载、下次访问生效）
 - 离线：完整功能可用（TTS 依赖浏览器）
 - **不做**：自定义 install prompt（让浏览器原生 UI 来，不抢焦点）
@@ -823,16 +824,16 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Affection · V. War
 
 ## 8. 可访问性清单
 
-- [ ] 所有交互有可见 `:focus-visible` 状态（accent 色 outline）
-- [ ] icon-only 按钮必有 `aria-label`
-- [ ] Toast 用 `role="status"` + `aria-live="polite"`
-- [ ] 语言切换元素用 `aria-pressed`
-- [ ] 译文元素加 `lang="xx"`，辅助屏幕阅读器选对发音
-- [ ] 颜色对比度 AA 级（正文 4.5:1，大号 3:1）
-- [ ] 不用颜色作为唯一信息载体（例：复制成功也有 ✓ 符号和文字）
+- [x] 所有交互有可见 `:focus-visible` 状态（accent 色 outline）
+- [x] icon-only 按钮必有 `aria-label`
+- [x] Toast 用 `role="status"` + `aria-live="polite"`
+- [x] 语言切换元素用 `aria-pressed`
+- [x] 译文元素加 `lang="xx"`，辅助屏幕阅读器选对发音
+- [x] 颜色对比度 AA 级（正文 4.5:1，大号 3:1）
+- [x] 不用颜色作为唯一信息载体（例：复制成功也有 ✓ 符号和文字）
 - [ ] 键盘能完整操作：Tab 切换、Enter/Space 触发、Esc 关 toast
-- [ ] 尊重 `prefers-reduced-motion`
-- [ ] 文档语言 `<html lang="en">`（UI 主语言是英文）
+- [x] 尊重 `prefers-reduced-motion`
+- [x] 文档语言 `<html lang="en">`（UI 主语言是英文）
 - [ ] 标题层级合理：`h1` 只一个（masthead）
 
 ---

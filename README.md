@@ -8,7 +8,7 @@
 
 ## What it is
 
-A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, reactions, questions, gratitude, compliments, encouragement, affection, wishes, holidays, farewells — across twenty-three languages (63 phrases), extensible. Click any cell to copy. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`); gender and count distinctions surface as quiet tag-line labels next to each variant.
+A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, reactions, questions, gratitude, compliments, encouragement, affection, wishes, holidays, farewells — across twenty-three languages (63 phrases), extensible. Click any cell to copy, hover for a speak button (Web Speech API, when the browser has a matching voice), star the phrases you reach for and filter to them. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`); gender and count distinctions surface as quiet tag-line labels next to each variant. Installable as a PWA; the whole glossary works offline.
 
 What it isn't:
 
@@ -48,8 +48,8 @@ src/
 │   ├── scenes.json
 │   ├── phrases.ts    # aggregates phrases/ via import.meta.glob
 │   └── phrases/      # one JSON file per phrase — 63 phrases × 23 languages
-├── lib/              # schema (Zod), filter, stores, scroll, clipboard, storage
-├── pages/index.astro
+├── lib/              # schema (Zod), filter, stores, tts, scroll, clipboard, storage
+├── pages/            # index + 404
 └── styles/           # tokens.css (light + dark), global.css, typography.css
 ```
 
