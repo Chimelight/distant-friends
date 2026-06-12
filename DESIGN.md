@@ -44,13 +44,13 @@
 
 ## 2. 不可妥协的设计原则
 
-这五条是红线，后续所有决策以此为准绳：
+这五条是红线，后续所有决策以此为准绳。**方向性原则（1-4）不动摇；具体数字指标是初版估计（也是 AI 写的），以实测为准修订——修订记入 §13 决策日志。**
 
 1. **美学优先。** 编辑体/信笺感。绝不允许"AI 网页模板"的观感（Inter 字体、紫色渐变、通用圆角卡片）。
 2. **内容是主角。** UI 消隐让位给短语本身。装饰元素存在是为了衬托文字，不是秀技。
 3. **一次加载，永久可用。** PWA 离线优先，任何功能在无网环境下都能用（TTS 除外，取决于浏览器）。
 4. **键盘可达 + 屏幕阅读器友好。** 不能因为美学牺牲可访问性。AA 级对比度起步。
-5. **轻而快。** 首屏 < 150KB（含字体）、LCP < 1.5s、Lighthouse ≥ 95 四项全优。
+5. **轻而快。** 性能预算见 §9（按实测校准）。
 
 ---
 
@@ -590,19 +590,20 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 ## 9. 性能目标
 
-- **Lighthouse**: Performance / Accessibility / Best Practices / SEO 全部 ≥ 95
-- **LCP**: < 1.5s（3G fast 节流下）
-- **TBT**: < 100ms
-- **CLS**: 0
-- **首屏 JS bundle**: < 30KB gzipped
-- **首屏总下载**: < 150KB（含字体子集）
+2026-06-12 按实测校准（初版的"首屏 <150KB 含字体 / LCP <1.5s / 四项 ≥95"是建站前的估计，与自托管特色衬线 + 23 语言数据的现实不符）：
 
-**达成策略**
-- Fraunces 字体只加载 Latin + Cyrillic 子集，CJK 用 Noto Serif JP/KR 的 unicode-range 按需加载
-- `font-display: swap`
-- 短语数据与主 HTML 一起 SSG 输出，不走 client-side fetch
-- Service Worker 预缓存 critical assets
-- 没有第三方脚本、没有 analytics（除非后期确需要一个隐私友好的如 Plausible）
+- **Lighthouse**（slow-4G 模拟）：Accessibility / Best Practices / SEO = 100，Performance ≥ 85
+- **CLS** ≈ 0、**TBT** < 100ms
+- **阻塞 CSS** < 20KB（当前 12KB——CJK @font-face 声明必须保持异步加载）
+- **首屏关键传输**（HTML + 阻塞 CSS + 预载拉丁字体）< 250KB
+- LCP 受自托管 Fraunces 到达时间约束（模拟慢网 ~3.6s，真实网络显著更低）；不为分数牺牲首访字体身份（不用 `font-display: optional`）
+
+**达成策略（已落地）**
+- Fraunces standard 轴（wght+opsz），拉丁两支预载防 swap 位移
+- CJK @font-face 异步加载 + 系统宋体/明朝体兜底
+- 场景块 `content-visibility: auto`
+- 短语数据随 JS 打包 SSG 输出，不走 client fetch；SW 预缓存 shell
+- 无第三方脚本、无 analytics
 
 ---
 
@@ -661,7 +662,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 
 ### M4 · 打磨（1–1.5 天）
 - [ ] Accessibility audit：axe DevTools 全绿 + 完整键盘穿行测试
-- [x] Lighthouse 实测（slow-4G 模拟）：Accessibility / Best Practices / SEO 三项 100，Performance 88——LCP 3.6s 是自托管 Fraunces 的到达时间，再压需牺牲首访字体身份（font-display: optional）。≥95 目标是否修订待拍板
+- [x] Lighthouse 实测（slow-4G 模拟）：A11y / BP / SEO 三项 100，Performance 88——达成 §9 校准后预算
 - [x] 所有交互的 `prefers-reduced-motion` 处理（在 `global.css` 全局兜底）
 - [x] OG image 设计（1200×630）+ meta tags（v0.1.0 已就位 Open Graph + Twitter Card）
 - [x] `README.md`：项目说明 + 使用说明 + 数据扩展指南 + 翻译协作哲学
@@ -711,7 +712,8 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 - **2026-06-12** · 阿拉伯语（首个 RTL）：不做全局 RTL 布局，仅在短语文本元素加 `dir="auto"`——内容级 RTL，界面仍 LTR。
 - **2026-06-12** · 字体**不进** SW precache（反转 §6.12 原方案）：CJK Noto 按 unicode-range 拆 ~100 个子集，全量几十 MB；改运行时 CacheFirst。
 - **2026-06-12** · TTS：无可用 voice 时按钮不渲染（弃"禁用+tooltip"）；voice 按质量启发式排序（Natural/Enhanced/Google 加分）而非取第一个匹配；"Starred only" 状态会话级不持久化。
-- **2026-06-12** · **字体性能权衡**（M4 size pass）：Fraunces full 轴 → standard 轴（-120KB 关键路径，代价：放弃 SOFT/WONK——全站唯一用例是 TocSide 数字的软转角）；CJK 三套 @font-face 声明（112KB gz）移出阻塞 CSS 异步加载，字体栈补系统宋体/明朝体兜底；预加载两支拉丁 Fraunces 消除 swap 位移。Lighthouse：56/96/100/100 → 88/100/100/100（模拟慢速 4G）。剩余 LCP 3.6s 为自托管特色衬线的固有成本；是否修订 §2.5/§9 的"≥95 四项全优"红线待定。
+- **2026-06-12** · **字体性能权衡**（M4 size pass）：Fraunces full 轴 → standard 轴（-120KB 关键路径，代价：放弃 SOFT/WONK——全站唯一用例是 TocSide 数字的软转角）；CJK 三套 @font-face 声明（112KB gz）移出阻塞 CSS 异步加载，字体栈补系统宋体/明朝体兜底；预加载两支拉丁 Fraunces 消除 swap 位移。Lighthouse：56/96/100/100 → 88/100/100/100（模拟慢速 4G）。剩余 LCP 3.6s 为自托管特色衬线的固有成本。
+- **2026-06-12** · **性能指标按实测校准**（确立元原则：§2 数字指标非铁律——初版是建站前的 AI 估计；方向性原则 1-4 不动摇，数字以实测修订并记日志）：§9 改为 A11y/BP/SEO=100 + Perf≥85（slow-4G 模拟）、阻塞 CSS <20KB、首屏关键传输 <250KB；明确不用 `font-display: optional` 换分数。
 - **2026-06-12** · **性别控件恢复**（反转 v1.5 的撤除，按当时定下的阈值机制触发）：两轴各 60 个标注变体后，Stationery 第二句恢复 addressee 槽位并新增 speaker 槽位。筛选语义：排除显式相反性别，未标保留，空则回退——格子绝不因偏好清空。被动 tag line 在对应筛选激活时隐藏（信息已由槽位表达）。
 
 ---
