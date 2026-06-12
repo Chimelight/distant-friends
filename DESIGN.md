@@ -496,7 +496,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 - 左：`<button class="sb-mark">致 · 远 · 方</button>`——点击 smooth scroll 回顶
 - 细竖线分隔
-- 中：`<StickyBarProse>` 包含一句缩略版 stationery —— "I write — [tone]"。**不含 anchor slot**（锚点语言切换频率极低，留在 stationery）。**不含 addressee slot**（v1.5 起整体撤掉，详见 §5.7 / §6.2）。tone 是 `<SlotPicker>` 实例，跟主 stationery 共享同一个 store，任一处修改两处同步。
+- 中：缩略版 stationery —— "I write — [tone] — to [addressee], as [speaker]"。**不含 anchor slot**（锚点语言切换频率极低，留在 stationery）。addressee/speaker 槽位随 2026-06 性别控件恢复而加入（v1.5 曾整体撤掉）。所有 slot 是 `<SlotPicker>` 实例，跟主 stationery 共享同一个 store，任一处修改两处同步。
 
 **响应式**
 
