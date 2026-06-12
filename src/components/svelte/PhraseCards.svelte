@@ -12,6 +12,9 @@
   const allLangs = languages as TLanguage[];
   const allScenes = scenes as TScene[];
 
+  const anchorDir = $derived(
+    allLangs.find((L) => L.code === $anchor)?.rtl ? 'rtl' : 'ltr',
+  );
   const otherLangs = $derived(
     allLangs.filter(
       (L) => L.code !== $anchor && ($selectedLangs ?? []).includes(L.code),
@@ -54,7 +57,7 @@
             {@const anchorVs = tr ? visibleVariants(tr.variants, $tone, $speakerGender, $addresseeGender) : []}
             {@const primary = anchorVs[0] ?? tr?.variants[0]}
             <article class="card" style={`animation-delay:${i * 30}ms`}>
-              <div class="card-head">
+              <div class="card-head" dir={anchorDir}>
                 <span class="star-slot"><StarButton phraseId={p.id} /></span>
                 {#if primary}
                   <div class="card-word" lang={$anchor} dir="auto">{primary.text}</div>
@@ -148,14 +151,14 @@
   .card-head {
     position: relative;
     padding-bottom: 16px;
-    padding-right: 36px;
+    padding-inline-end: 36px;
     margin-bottom: 8px;
     border-bottom: 1px dashed var(--line);
   }
   .star-slot {
     position: absolute;
     top: 0;
-    right: 0;
+    inset-inline-end: 0;
   }
   .card-word {
     font-family: var(--font-serif);
