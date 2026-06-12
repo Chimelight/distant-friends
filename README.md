@@ -136,11 +136,13 @@ The release flow is wrapped in a `/release` slash command (Claude Code) that dra
 
 Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单). The table below is a summary and may lag.
 
+**v1.0.0 shipped 2026-06-12** — all core milestones done; remaining items are verification (offline test, axe sweep, cross-browser matrix — see DESIGN §11 / Appendix F).
+
 | Milestone | State |
 | --- | --- |
-| M0 — project skeleton | ✅ shipped in v0.1.0 |
-| M1 — visual + interactive parity with v3 demo | ✅ shipped in v0.1.0 |
-| M2 — dark mode + starring | ✅ theme toggle (v0.2.0), starring + starred-only filter, AA contrast verified |
-| M3 — TTS + PWA precache | done pending offline test — per-variant speak buttons with voice detection; SW precaches shell, fonts cached on use |
-| M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README, 404 done; axe/Lighthouse pass pending |
+| M0 — project skeleton | ✅ v0.1.0 |
+| M1 — visual + interactive parity with v3 demo | ✅ v0.1.0 |
+| M2 — dark mode + starring | ✅ v0.2.0 / v1.0.0 |
+| M3 — TTS + PWA | ✅ v1.0.0 (offline field test pending) |
+| M4 — polish (a11y, Lighthouse, 404) | Lighthouse 88/100/100/100 within budget; axe + manual browser matrix pending |
 | M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |

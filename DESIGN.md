@@ -641,26 +641,18 @@ export default defineConfig({
 
 7 语言 × 11 短语迁移、全部样式 token、Astro 静态四件 + Svelte 交互十二件、双视图集成。验收时的手测清单保留在附录 F（回归测试可复用）。过程中的方案修订（ViewToggle 阈值 960→640、TocSide 双视图显示等）已并入 §6 各节与决策日志。
 
-### M2 · 深色模式 + 收藏（1–2 天）
+### M2 · 深色模式 + 收藏 — ✅ v0.2.0 / v1.0.0
 
-_M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约束强绑定。_
+三态 ThemeToggle（v0.2.0）；收藏 + "Starred only" 过滤、AA 对比度脚本验证（v1.0.0）。会话级过滤、starred 持久化等设计取舍见 §6.7 与 §13。
 
-- [x] 暗色 tokens（已在 M1 写入 tokens.css 完整两套调色）
-- [x] 暗色对比度验证（脚本计算 WCAG 比率；ink-mute/accent 微调后双主题正文+次级文字全部 ≥4.5，装饰金色 ≥3）
-- [x] `ThemeToggle.svelte` — light / dark / system 三态（v0.2.0 上线，含 View Transitions 平滑切换）
-- [x] 防 FOUC 已在 M0/M1 `Layout.astro` 的 head inline script 里就位
-- [x] `StarButton.svelte` + `starred` 持久化（锚点列/卡片头右上角金色小星）
-- [x] "Starred only" 开关 chip（Stationery 下方，有收藏时才出现；会话级状态，不持久化——避免回访时误以为内容丢失）
-- [x] localStorage 版本化已在 M0 `storage.ts` 封装
-
-### M3 · 语音 + PWA（1 天）
+### M3 · 语音 + PWA — v1.0.0 上线（剩离线实测）
 - [x] `SpeakButton.svelte` + `src/lib/tts.ts` 封装（rate 0.9；行内 hover 显现，与 copy hint 同列）
 - [x] Voice 检测：`voiceschanged` 后按 tts code 匹配（精确 → 同语种前缀回退）；无 voice 或语言无 tts code（mizo）时按钮直接不渲染（比禁用+tooltip 更干净）
 - [x] `manifest.webmanifest` + 图标（192 / 512 / maskable 512，由 favicon.svg 栅格化生成）
 - [x] Service Worker precache：shell（html/css/js/svg，数据已打包进 JS）；字体改为运行时 CacheFirst——CJK Noto 拆分成上百个子集文件，全量 precache 会有几十 MB，按需缓存更合理
 - [ ] 离线测试（DevTools → Offline，确认完整功能可用）
 
-### M4 · 打磨（1–1.5 天）
+### M4 · 打磨（进行中）
 - [ ] Accessibility audit：axe DevTools 全绿 + 完整键盘穿行测试
 - [x] Lighthouse 实测（slow-4G 模拟）：A11y / BP / SEO 三项 100，Performance 88——达成 §9 校准后预算
 - [x] 所有交互的 `prefers-reduced-motion` 处理（在 `global.css` 全局兜底）
@@ -673,10 +665,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 按需追加短语、语言、场景。工作流见 §5.9。
 每次 push main → 自动部署。每次加新语言后跑一遍 `pnpm run coverage` 确认矩阵。
 
-**已落地**
-- [x] v0.1.1：新增 6 种语言（de / ru / pl / hi / bn / mizo），共 13 种
-- [x] v0.1.1：中文短语优化为更自然的口语（最近怎么样 / 不好意思 / 我想你 / 我很关心你 / 回头见 / 先这样）
-- [x] v0.1.1：删除 `farewell-everyone` 短语（仅有的 `addresseeCount: many` 用例，已无 UI 需要它撑场）
+内容演进史以 [GitHub Releases](https://github.com/Chimelight/distant-friends/releases) 为准（§0 规则 1）；方向性决策见 §13。当前规模：23 种语言 × 63 条短语（v1.0.0，2026-06-12 发布）。
 
 ---
 
@@ -780,4 +769,4 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 
 ---
 
-*文档版本 v2.0 · 最后更新 2026-06-12*
+*文档版本 v2.0 · 最后更新 2026-06-13（v1.0.0 发布后）*
