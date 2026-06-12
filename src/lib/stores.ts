@@ -36,6 +36,17 @@ export const starred = persistentAtom<string[]>(
   jsonCodec,
 );
 
+export function toggleStar(phraseId: string): void {
+  const cur = starred.get();
+  starred.set(
+    cur.includes(phraseId) ? cur.filter((id) => id !== phraseId) : [...cur, phraseId],
+  );
+}
+
+// Deliberately ephemeral (not persisted): reopening the site with a stale
+// "starred only" filter active would read as missing content.
+export const starredOnly = atom<boolean>(false);
+
 export const uiLocale = persistentAtom<string>('distant-friends:uiLocale:v1', 'en');
 
 export function ensureSelectedLangsInitialized(): void {

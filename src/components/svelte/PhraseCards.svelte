@@ -1,6 +1,7 @@
 <script lang="ts">
   import TranslationCell from './TranslationCell.svelte';
-  import { selectedLangs, anchor, tone } from '../../lib/stores';
+  import StarButton from './StarButton.svelte';
+  import { selectedLangs, anchor, tone, starred, starredOnly } from '../../lib/stores';
   import { visibleVariants } from '../../lib/filter';
   import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
@@ -28,8 +29,9 @@
   }
 
   function phrasesIn(sceneId: string): TPhrase[] {
+    const star = new Set($starred);
     return allPhrases
-      .filter((p) => p.scene === sceneId)
+      .filter((p) => p.scene === sceneId && (!$starredOnly || star.has(p.id)))
       .sort((a, b) => a.order - b.order);
   }
 </script>
@@ -53,6 +55,7 @@
             {@const primary = anchorVs[0] ?? tr?.variants[0]}
             <article class="card" style={`animation-delay:${i * 30}ms`}>
               <div class="card-head">
+                <span class="star-slot"><StarButton phraseId={p.id} /></span>
                 {#if primary}
                   <div class="card-word" lang={$anchor} dir="auto">{primary.text}</div>
                   {#if primary.rom}
@@ -139,9 +142,16 @@
     animation: rise var(--dur-entrance) ease forwards;
   }
   .card-head {
+    position: relative;
     padding-bottom: 16px;
+    padding-right: 36px;
     margin-bottom: 8px;
     border-bottom: 1px dashed var(--line);
+  }
+  .star-slot {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   .card-word {
     font-family: var(--font-serif);

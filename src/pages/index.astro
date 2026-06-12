@@ -4,6 +4,7 @@ import Masthead from '../components/astro/Masthead.astro';
 import Footer from '../components/astro/Footer.astro';
 
 import Stationery from '../components/svelte/Stationery.svelte';
+import StarFilter from '../components/svelte/StarFilter.svelte';
 import TocTop from '../components/svelte/TocTop.svelte';
 import TocSide from '../components/svelte/TocSide.svelte';
 import StickyBar from '../components/svelte/StickyBar.svelte';
@@ -29,6 +30,8 @@ PhrasesFile.parse(phrasesRaw);
     <Masthead />
 
     <Stationery client:load />
+
+    <StarFilter client:load />
 
     <TocTop client:load />
 

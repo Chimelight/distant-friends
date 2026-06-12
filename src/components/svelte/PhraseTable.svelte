@@ -1,6 +1,7 @@
 <script lang="ts">
   import TranslationCell from './TranslationCell.svelte';
-  import { selectedLangs, anchor, tone } from '../../lib/stores';
+  import StarButton from './StarButton.svelte';
+  import { selectedLangs, anchor, tone, starred, starredOnly } from '../../lib/stores';
   import { visibleVariants } from '../../lib/filter';
   import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
@@ -29,8 +30,9 @@
   }
 
   function phrasesIn(sceneId: string): TPhrase[] {
+    const star = new Set($starred);
     return allPhrases
-      .filter((p) => p.scene === sceneId)
+      .filter((p) => p.scene === sceneId && (!$starredOnly || star.has(p.id)))
       .sort((a, b) => a.order - b.order);
   }
 
@@ -79,6 +81,7 @@
                 {@const ac = anchorVariants(p)}
                 <tr class="phrase-row">
                   <td class="anchor-cell">
+                    <span class="star-slot"><StarButton phraseId={p.id} /></span>
                     {#if ac}
                       <div class="anchor-word" lang={$anchor} dir="auto">{ac.primary.text}</div>
                       {#if ac.primary.rom}
@@ -245,11 +248,17 @@
   }
 
   .anchor-cell {
+    position: relative;
     padding: 24px 22px;
     vertical-align: top;
     background: rgba(166, 130, 74, 0.06);
     border-right: 1px solid var(--line-soft);
     border-bottom: 1px solid var(--line-soft);
+  }
+  .star-slot {
+    position: absolute;
+    top: 7px;
+    right: 7px;
   }
   .phrase-row:last-child .anchor-cell,
   .phrase-row:last-child .trans-cell {
