@@ -96,6 +96,13 @@
         { "text": "Сен үшін мақтанамын", "rom": "Sen üşin maqtanamyn" }
       ]
     },
+    "ar": {
+      "gloss": "فخور بك",
+      "variants": [
+        { "text": "أنا فخور بك", "rom": "ana fakhūr bik", "speakerGender": "m" },
+        { "text": "أنا فخورة بك", "rom": "ana fakhūra bik", "speakerGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "मुझे तुम पर गर्व है",
       "variants": [

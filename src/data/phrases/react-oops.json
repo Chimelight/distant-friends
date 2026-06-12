@@ -100,6 +100,13 @@
         { "text": "Ойбай", "rom": "Oibai", "tone": "casual", "note": "The iconic Kazakh exclamation." }
       ]
     },
+    "ar": {
+      "gloss": "أوبس",
+      "variants": [
+        { "text": "أوبس", "rom": "ūbs", "tone": "casual", "note": "English-borrowed." },
+        { "text": "غلطتي", "rom": "ghalṭatī", "tone": "casual", "note": "Lit. \"my mistake.\"" }
+      ]
+    },
     "hi": {
       "gloss": "ग़लती हो गई",
       "variants": [

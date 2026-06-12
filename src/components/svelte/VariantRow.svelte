@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { tone, showToast } from '../../lib/stores';
+  import { tone, speakerGender, addresseeGender, showToast } from '../../lib/stores';
   import { copyText } from '../../lib/clipboard';
+  import SpeakButton from './SpeakButton.svelte';
   import type { TVariant } from '../../lib/schema';
 
   interface Props {
@@ -10,7 +11,6 @@
   let { variant, langCode }: Props = $props();
 
   const TONE_LABELS: Record<string, string> = {
-    close: 'tenderly',
     casual: 'casually',
     neutral: 'evenly',
     polite: 'politely',
@@ -28,10 +28,14 @@
     if ($tone === 'any' && variant.tone && TONE_LABELS[variant.tone]) {
       bits.push(TONE_LABELS[variant.tone]);
     }
-    if (variant.speakerGender === 'm') bits.push('he writes');
-    if (variant.speakerGender === 'f') bits.push('she writes');
-    if (variant.addresseeGender === 'f') bits.push('to a woman');
-    if (variant.addresseeGender === 'm') bits.push('to a man');
+    if ($speakerGender === 'any') {
+      if (variant.speakerGender === 'm') bits.push('he writes');
+      if (variant.speakerGender === 'f') bits.push('she writes');
+    }
+    if ($addresseeGender === 'any') {
+      if (variant.addresseeGender === 'f') bits.push('to a woman');
+      if (variant.addresseeGender === 'm') bits.push('to a man');
+    }
     if (variant.addresseeCount === 'many') bits.push('to everyone');
     return bits.join(' · ');
   });
@@ -53,39 +57,49 @@
   }
 </script>
 
-<button
-  class="variant"
-  class:copied
-  type="button"
-  aria-label={`Copy ${variant.text}`}
-  onclick={onClick}
-  onkeydown={onKey}
->
-  <div class="variant-text" lang={langCode}>{variant.text}</div>
-  {#if variant.rom}
-    <div class="variant-rom">{variant.rom}</div>
-  {/if}
-  {#if tagText}
-    <div class="variant-tag">{tagText}</div>
-  {/if}
-  {#if variant.note}
-    <div class="variant-note">{variant.note}</div>
-  {/if}
+<!-- The row is a plain wrapper; the copy control is a real <button> whose
+     box stops short of the right gutter where SpeakButton lives — two
+     targets, zero geometric overlap (WCAG target-size). -->
+<div class="variant" class:copied>
+  <button
+    class="copy"
+    type="button"
+    aria-label={`Copy ${variant.text}`}
+    onclick={onClick}
+    onkeydown={onKey}
+  >
+    <div class="variant-text" lang={langCode} dir="auto">{variant.text}</div>
+    {#if variant.rom}
+      <div class="variant-rom">{variant.rom}</div>
+    {/if}
+    {#if tagText}
+      <div class="variant-tag">{tagText}</div>
+    {/if}
+    {#if variant.note}
+      <div class="variant-note">{variant.note}</div>
+    {/if}
+  </button>
   <span class="copy-hint" aria-hidden="true"></span>
-</button>
+  <SpeakButton text={variant.text} langCode={langCode} />
+</div>
 
 <style>
   .variant {
-    padding: 18px 22px;
-    cursor: pointer;
     display: block;
     width: 100%;
     position: relative;
     transition: background 0.2s ease;
+  }
+  .copy {
+    display: block;
+    width: calc(100% - 48px);
+    padding: 18px 0 18px 22px;
+    cursor: pointer;
     font-family: inherit;
     text-align: left;
     background: transparent;
     border: none;
+    color: inherit;
   }
   .variant + :global(.variant) {
     border-top: 1px dashed var(--line-soft);
@@ -93,7 +107,7 @@
   .variant:hover {
     background: rgba(176, 82, 46, 0.05);
   }
-  .variant:focus-visible {
+  .copy:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: -2px;
   }
@@ -106,7 +120,6 @@
     color: var(--ink);
     line-height: 1.32;
     letter-spacing: 0.003em;
-    padding-right: 60px;
   }
   .variant-rom {
     font-family: var(--font-serif);
@@ -156,6 +169,10 @@
   }
   .variant:hover .copy-hint {
     opacity: 0.5;
+  }
+  .variant:hover :global(.speak),
+  .variant:focus-within :global(.speak) {
+    opacity: 0.55;
   }
   .variant.copied .copy-hint {
     opacity: 1;

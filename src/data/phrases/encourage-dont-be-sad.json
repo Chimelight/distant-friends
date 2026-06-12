@@ -93,6 +93,13 @@
         { "text": "Уайымдама", "rom": "Uaiymdama", "note": "Lit. \"don't grieve.\"" }
       ]
     },
+    "ar": {
+      "gloss": "لا تحزن",
+      "variants": [
+        { "text": "لا تحزن", "rom": "lā taḥzan", "addresseeGender": "m" },
+        { "text": "لا تحزني", "rom": "lā taḥzanī", "addresseeGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "उदास मत हो",
       "variants": [

@@ -7,7 +7,7 @@
       "gloss": "思念",
       "variants": [
         { "text": "我想你", "rom": "wǒ xiǎng nǐ" },
-        { "text": "好想你", "rom": "hǎo xiǎng nǐ", "tone": "close", "note": "Warmer; longer separation or stronger feeling." },
+        { "text": "好想你", "rom": "hǎo xiǎng nǐ", "tone": "casual", "note": "Warmer; longer separation or stronger feeling." },
         { "text": "想你了", "rom": "xiǎng nǐ le", "tone": "casual" }
       ]
     },
@@ -93,6 +93,13 @@
         { "text": "Сені сағындым", "rom": "Seni sağyndym" }
       ]
     },
+    "ar": {
+      "gloss": "اشتياق",
+      "variants": [
+        { "text": "اشتقت لك", "rom": "ishtaqt lak", "note": "Same spelling for both genders in everyday writing." },
+        { "text": "وحشتني", "rom": "waḥashtinī", "tone": "casual", "note": "Warm colloquial \"I have missed you.\"" }
+      ]
+    },
     "hi": {
       "gloss": "याद",
       "variants": [
@@ -110,7 +117,7 @@
       "gloss": "rindu",
       "variants": [
         { "text": "Aku rindu kamu", "note": "Standard \"I miss you.\"" },
-        { "text": "Kangen kamu", "tone": "close", "note": "Kangen — warmer, deeper longing." }
+        { "text": "Kangen kamu", "tone": "casual", "note": "Kangen — warmer, deeper longing." }
       ]
     },
     "ms": {
@@ -124,14 +131,14 @@
       "gloss": "ความคิดถึง",
       "variants": [
         { "text": "คิดถึง", "rom": "kit theung", "note": "Lit. \"think (of you)\" — the everyday \"miss you.\"" },
-        { "text": "คิดถึงนะ", "rom": "kit theung na", "tone": "close", "note": "With soft particle นะ — warmer." }
+        { "text": "คิดถึงนะ", "rom": "kit theung na", "tone": "casual", "note": "With soft particle นะ — warmer." }
       ]
     },
     "vi": {
       "gloss": "nỗi nhớ",
       "variants": [
         { "text": "Mình nhớ bạn", "note": "Standard \"I miss you\" between friends." },
-        { "text": "Nhớ bạn lắm", "tone": "close", "note": "Lit. \"miss you a lot.\"" }
+        { "text": "Nhớ bạn lắm", "tone": "casual", "note": "Lit. \"miss you a lot.\"" }
       ]
     },
     "fil": {

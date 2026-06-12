@@ -102,6 +102,12 @@
         { "text": "Жақсы әңгімелестік", "rom": "Jaqsy äňgimelestik", "tone": "casual" }
       ]
     },
+    "ar": {
+      "gloss": "سعدت بالحديث",
+      "variants": [
+        { "text": "سعدت بالحديث معك", "rom": "sa'idt bil-ḥadīth ma'ak" }
+      ]
+    },
     "hi": {
       "gloss": "बात करके अच्छा लगा",
       "variants": [

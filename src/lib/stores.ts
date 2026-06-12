@@ -4,7 +4,7 @@
 import { atom } from 'nanostores';
 import { persistentAtom } from '@nanostores/persistent';
 import languages from '../data/languages.json';
-import type { ToneFilter } from './filter';
+import type { ToneFilter, GenderFilter } from './filter';
 
 /** Max languages visible at once, anchor included. */
 export const MAX_LANGS = 5;
@@ -24,6 +24,18 @@ export const anchor = persistentAtom<string>('distant-friends:anchor:v1', 'zh');
 
 export const tone = persistentAtom<ToneFilter>('distant-friends:tone:v1', 'any');
 
+// Writer / recipient gender preferences. Restored 2026-06 after both axes
+// passed the coverage threshold (see filter.ts). Persisted: they describe
+// stable facts about the user and their friend, not a transient view state.
+export const speakerGender = persistentAtom<GenderFilter>(
+  'distant-friends:speakerGender:v1',
+  'any',
+);
+export const addresseeGender = persistentAtom<GenderFilter>(
+  'distant-friends:addresseeGender:v1',
+  'any',
+);
+
 export type ViewMode = 'auto' | 'table' | 'cards';
 export const view = persistentAtom<ViewMode>('distant-friends:view:v1', 'auto');
 
@@ -35,6 +47,17 @@ export const starred = persistentAtom<string[]>(
   [],
   jsonCodec,
 );
+
+export function toggleStar(phraseId: string): void {
+  const cur = starred.get();
+  starred.set(
+    cur.includes(phraseId) ? cur.filter((id) => id !== phraseId) : [...cur, phraseId],
+  );
+}
+
+// Deliberately ephemeral (not persisted): reopening the site with a stale
+// "starred only" filter active would read as missing content.
+export const starredOnly = atom<boolean>(false);
 
 export const uiLocale = persistentAtom<string>('distant-friends:uiLocale:v1', 'en');
 
@@ -58,6 +81,11 @@ export function ensureSelectedLangsInitialized(): void {
   const cleaned = current.filter((c) => validCodes.has(c));
   if (cleaned.length !== current.length) {
     selectedLangs.set(cleaned);
+  }
+
+  // Migrate retired tone tiers ('close' was merged into 'casual', 2026-06-13).
+  if (!['any', 'casual', 'neutral', 'polite'].includes(tone.get())) {
+    tone.set('casual');
   }
 
   // Same for anchor — if the persisted anchor is a code that no longer

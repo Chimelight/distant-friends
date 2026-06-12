@@ -107,6 +107,13 @@
         { "text": "Қалайсыз?", "rom": "Qalaisyz?", "tone": "polite" }
       ]
     },
+    "ar": {
+      "gloss": "سؤال عن الحال",
+      "variants": [
+        { "text": "كيف حالك؟", "rom": "kayf ḥālak?", "note": "Same spelling for both genders — said ḥālak to a man, ḥālik to a woman." },
+        { "text": "أخبارك؟", "rom": "akhbārak?", "tone": "casual", "note": "Lit. \"your news?\"" }
+      ]
+    },
     "hi": {
       "gloss": "कुशल पूछना",
       "variants": [

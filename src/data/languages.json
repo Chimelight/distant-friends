@@ -13,6 +13,7 @@
   { "code": "pl",      "native": "Polski",       "tts": "pl-PL", "rtl": false, "defaultOn": false, "defaultAnchor": false },
   { "code": "tr",      "native": "Türkçe",       "tts": "tr-TR", "rtl": false, "defaultOn": false, "defaultAnchor": false },
   { "code": "kk",      "native": "Қазақша",      "tts": "kk-KZ", "rtl": false, "defaultOn": false, "defaultAnchor": false },
+  { "code": "ar",      "native": "العربية",      "tts": "ar-SA", "rtl": true,  "defaultOn": false, "defaultAnchor": false },
   { "code": "hi",      "native": "हिन्दी",       "tts": "hi-IN", "rtl": false, "defaultOn": false, "defaultAnchor": false },
   { "code": "bn",      "native": "বাংলা",        "tts": "bn-IN", "rtl": false, "defaultOn": true,  "defaultAnchor": false },
   { "code": "id",      "native": "Indonesia",    "tts": "id-ID", "rtl": false, "defaultOn": false, "defaultAnchor": false },

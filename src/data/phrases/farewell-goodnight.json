@@ -19,7 +19,7 @@
     "ko": {
       "gloss": "잘 자라는 인사",
       "variants": [
-        { "text": "잘 자", "rom": "jal ja", "tone": "close", "note": "For close people only." },
+        { "text": "잘 자", "rom": "jal ja", "tone": "casual", "note": "For close people only." },
         { "text": "안녕히 주무세요", "rom": "annyeonghi jumuseyo", "tone": "polite" }
       ]
     },
@@ -33,7 +33,7 @@
       "gloss": "Gute Nacht",
       "variants": [
         { "text": "Gute Nacht" },
-        { "text": "Schlaf gut", "tone": "close", "note": "Lit. “sleep well” — warmer, friendly." }
+        { "text": "Schlaf gut", "tone": "casual", "note": "Lit. “sleep well” — warmer, friendly." }
       ]
     },
     "es": {
@@ -90,6 +90,13 @@
         { "text": "Қайырлы түн", "rom": "Qaiyrly tün" }
       ]
     },
+    "ar": {
+      "gloss": "تصبح على خير",
+      "variants": [
+        { "text": "تصبح على خير", "rom": "tuṣbiḥ 'alā khayr", "addresseeGender": "m", "note": "Lit. \"may you wake to goodness.\"" },
+        { "text": "تصبحي على خير", "rom": "tuṣbiḥī 'alā khayr", "addresseeGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "रात की शुभकामना",
       "variants": [
@@ -107,21 +114,21 @@
       "gloss": "selamat malam",
       "variants": [
         { "text": "Selamat malam", "note": "Standard \"good night.\"" },
-        { "text": "Selamat tidur", "tone": "close", "note": "Lit. \"good sleep\" — warmer to a friend." }
+        { "text": "Selamat tidur", "tone": "casual", "note": "Lit. \"good sleep\" — warmer to a friend." }
       ]
     },
     "ms": {
       "gloss": "selamat malam",
       "variants": [
         { "text": "Selamat malam" },
-        { "text": "Tidur lena", "tone": "close", "note": "Lit. \"sleep deeply\" — warm." }
+        { "text": "Tidur lena", "tone": "casual", "note": "Lit. \"sleep deeply\" — warm." }
       ]
     },
     "th": {
       "gloss": "ราตรีสวัสดิ์",
       "variants": [
         { "text": "ราตรีสวัสดิ์", "rom": "raatree sawat", "note": "Formal \"good night.\"" },
-        { "text": "ฝันดีนะ", "rom": "fan dee na", "tone": "close", "note": "Lit. \"sweet dreams\" — soft, warm." }
+        { "text": "ฝันดีนะ", "rom": "fan dee na", "tone": "casual", "note": "Lit. \"sweet dreams\" — soft, warm." }
       ]
     },
     "vi": {
@@ -135,7 +142,7 @@
       "gloss": "magandang gabi",
       "variants": [
         { "text": "Good night", "note": "English-borrowed; the usual before-sleep farewell. \"Magandang gabi\" is a greeting, not a goodnight." },
-        { "text": "Matulog ka nang mahimbing", "tone": "close", "note": "Lit. \"sleep deeply\" — warmer." }
+        { "text": "Matulog ka nang mahimbing", "tone": "casual", "note": "Lit. \"sleep deeply\" — warmer." }
       ]
     },
     "mizo": {

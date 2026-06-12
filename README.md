@@ -8,7 +8,7 @@
 
 ## What it is
 
-A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, gratitude, affection, warm wishes, farewells — across thirteen languages at v0.1.1, extensible. Click any cell to copy. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`); gender and count distinctions surface as quiet tag-line labels next to each variant.
+A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, reactions, questions, gratitude, compliments, encouragement, affection, wishes, holidays, farewells — across twenty-three languages (63 phrases), extensible. Click any cell to copy, hover for a speak button (Web Speech API, when the browser has a matching voice), star the phrases you reach for and filter to them. Switch the anchor language at any time. Tune the tone (`in any tone` / `casually` / `evenly` / `politely`) and set who is writing to whom (`as a man/a woman`, `to him/her`) — gendered languages then show only the forms that fit; remaining distinctions surface as quiet tag-line labels. Installable as a PWA; the whole glossary works offline.
 
 What it isn't:
 
@@ -46,24 +46,25 @@ src/
 ├── data/
 │   ├── languages.json
 │   ├── scenes.json
-│   └── phrases.json  # 10 phrases × 13 languages at v0.1.1, ~30 by v2
-├── lib/              # schema (Zod), filter, stores, scroll, clipboard, storage
-├── pages/index.astro
+│   ├── phrases.ts    # aggregates phrases/ via import.meta.glob
+│   └── phrases/      # one JSON file per phrase — 63 phrases × 23 languages
+├── lib/              # schema (Zod), filter, stores, tts, scroll, clipboard, storage
+├── pages/            # index + 404
 └── styles/           # tokens.css (light + dark), global.css, typography.css
 ```
 
 ## Adding content
 
-All content lives in three flat JSON files. Schema is enforced at build time by Zod (`src/lib/schema.ts`); a malformed entry fails `pnpm build`.
+All content lives in `src/data/`: `languages.json`, `scenes.json`, and one JSON file per phrase under `phrases/`. Schema is enforced at build time by Zod (`src/lib/schema.ts`); a malformed entry fails `pnpm build`.
 
 ### Add a phrase
 
-Open `src/data/phrases.json` and append:
+Create `src/data/phrases/<id>.json`:
 
 ```jsonc
 {
   "id": "kebab-case-id",
-  "scene": "greetings | catching-up | gratitude | affection | well-wishes | farewells",
+  "scene": "one of the ids in scenes.json (greetings, reactions, questions, …)",
   "order": 1,
   "trans": {
     "zh": {
@@ -85,7 +86,7 @@ Variant fields:
 | --- | --- | --- |
 | `text` | ✓ | the translation |
 | `rom` |   | romanization, only for non-Latin scripts |
-| `tone` |   | `close` / `casual` / `neutral` / `polite` — fill **only when the language draws a real distinction** at that level |
+| `tone` |   | `casual` / `neutral` / `polite` — fill **only when the language draws a real distinction** at that level |
 | `speakerGender` |   | `m` / `f` (e.g. Portuguese `Obrigado` / `Obrigada`) |
 | `addresseeGender` |   | `m` / `f` (e.g. Spanish `amigo` / `amiga`) |
 | `addresseeCount` |   | `one` / `many` (e.g. "Bye everyone" → `many`) |
@@ -133,13 +134,13 @@ The release flow is wrapped in a `/release` slash command (Claude Code) that dra
 
 ## Roadmap
 
-See [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单) for the full task list with checkboxes.
+Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单). The table below is a summary and may lag.
 
 | Milestone | State |
 | --- | --- |
 | M0 — project skeleton | ✅ shipped in v0.1.0 |
 | M1 — visual + interactive parity with v3 demo | ✅ shipped in v0.1.0 |
-| M2 — dark mode + starring | partial — dark tokens + FOUC defense in place; `ThemeToggle` and `StarButton` UI not built yet |
-| M3 — TTS + PWA precache | not started |
-| M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README done |
-| M5 — content (ongoing) | 13 languages × 10 phrases at v0.1.1 |
+| M2 — dark mode + starring | ✅ theme toggle (v0.2.0), starring + starred-only filter, AA contrast verified |
+| M3 — TTS + PWA precache | done pending offline test — per-variant speak buttons with voice detection; SW precaches shell, fonts cached on use |
+| M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README, 404 done; axe/Lighthouse pass pending |
+| M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |

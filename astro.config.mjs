@@ -25,12 +25,47 @@ export default defineConfig({
       manifest: {
         name: 'Distant Friends',
         short_name: 'Friends',
+        description:
+          'A warm glossary of friendly phrases across languages, tuned to who you write to and how you want to sound.',
+        lang: 'en',
         theme_color: '#EBE1CC',
         background_color: '#EBE1CC',
         display: 'standalone',
         start_url: base,
+        icons: [
+          { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+          { src: 'icons/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ],
       },
-      workbox: { globPatterns: [] },
+      workbox: {
+        // Phrase data is bundled into the JS (import.meta.glob), so caching
+        // the shell makes the whole glossary work offline. Fonts are NOT
+        // precached: the CJK Noto faces ship as ~100 unicode-range subset
+        // files (tens of MB) — they are cached at first use instead.
+        globPatterns: ['**/*.{html,css,js,svg,webmanifest}'],
+        globIgnores: ['**/og-image*'],
+        navigateFallback: `${base}index.html`,
+        runtimeCaching: [
+          {
+            urlPattern: /\.woff2?$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'fonts',
+              expiration: { maxEntries: 120, maxAgeSeconds: 60 * 60 * 24 * 365 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            urlPattern: /\/icons\/.*\.png$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'icons',
+              expiration: { maxEntries: 8, maxAgeSeconds: 60 * 60 * 24 * 365 },
+            },
+          },
+        ],
+      },
     }),
   ],
 });

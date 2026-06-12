@@ -94,6 +94,12 @@
         { "text": "Кейін сөйлесеміз", "rom": "Keiin söilesemiz" }
       ]
     },
+    "ar": {
+      "gloss": "نتكلم لاحقاً",
+      "variants": [
+        { "text": "نتكلم لاحقاً", "rom": "natakallam lāḥiqan" }
+      ]
+    },
     "hi": {
       "gloss": "बाद में बात करते हैं",
       "variants": [

@@ -3,21 +3,36 @@
   import SlotPicker from './SlotPicker.svelte';
   import ViewToggle from './ViewToggle.svelte';
   import ThemeToggle from './ThemeToggle.svelte';
-  import { tone } from '../../lib/stores';
+  import { tone, speakerGender, addresseeGender } from '../../lib/stores';
   import { scrolled, initScrollListener } from '../../lib/scroll';
-  import type { ToneFilter } from '../../lib/filter';
+  import type { ToneFilter, GenderFilter } from '../../lib/filter';
   import ui from '../../content/ui/en.json';
 
   const toneOptions: { key: ToneFilter; label: string }[] = [
     { key: 'any', label: ui.stationery.tones.any },
-    { key: 'close', label: ui.stationery.tones.close },
     { key: 'casual', label: ui.stationery.tones.casual },
     { key: 'neutral', label: ui.stationery.tones.neutral },
     { key: 'polite', label: ui.stationery.tones.polite },
   ];
+  const speakerOptions: { key: GenderFilter; label: string }[] = [
+    { key: 'any', label: ui.stationery.speakers.any },
+    { key: 'm', label: ui.stationery.speakers.m },
+    { key: 'f', label: ui.stationery.speakers.f },
+  ];
+  const addresseeOptions: { key: GenderFilter; label: string }[] = [
+    { key: 'any', label: ui.stationery.addressees.any },
+    { key: 'm', label: ui.stationery.addressees.m },
+    { key: 'f', label: ui.stationery.addressees.f },
+  ];
 
   function setTone(t: ToneFilter) {
     tone.set(t);
+  }
+  function setSpeaker(g: GenderFilter) {
+    speakerGender.set(g);
+  }
+  function setAddressee(g: GenderFilter) {
+    addresseeGender.set(g);
   }
   function backToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -40,6 +55,24 @@
       value={$tone}
       onChange={setTone}
     />
+    <span class="sb-ext">
+      <span class="punct">—</span>
+      <em>{ui.stationery.to}</em>
+      <SlotPicker
+        name="addressee"
+        options={addresseeOptions}
+        value={$addresseeGender}
+        onChange={setAddressee}
+      />
+      <span class="punct">,</span>
+      <em>{ui.stationery.asWord}</em>
+      <SlotPicker
+        name="speaker"
+        options={speakerOptions}
+        value={$speakerGender}
+        onChange={setSpeaker}
+      />
+    </span>
   </div>
   <div class="sb-controls">
     <ViewToggle />
@@ -131,6 +164,11 @@
   .sb-prose .punct {
     color: var(--ink-mute);
   }
+  /* display:contents keeps the children as direct flex items of the prose
+   * row; the media query below can then drop the whole extension at once. */
+  .sb-ext {
+    display: contents;
+  }
 
   /* Right-anchored controls cluster — Theme + View toggles. Absolute so
    * the centered mark + prose composition isn't pulled off-axis by their
@@ -165,6 +203,12 @@
   @media (max-width: 820px) {
     .sb-mark,
     .sb-sep {
+      display: none;
+    }
+    /* The full sentence collides with the right-side controls on narrow
+     * screens — fall back to "I write — [tone]"; the complete slots stay
+     * available in the Stationery. */
+    .sb-ext {
       display: none;
     }
     .sticky-bar {

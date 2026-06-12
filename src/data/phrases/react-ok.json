@@ -103,6 +103,13 @@
         { "text": "Мақұл", "rom": "Maqul" }
       ]
     },
+    "ar": {
+      "gloss": "موافقة",
+      "variants": [
+        { "text": "حسناً", "rom": "ḥasanan" },
+        { "text": "تمام", "rom": "tamām", "tone": "casual", "note": "Cross-dialect \"all good.\"" }
+      ]
+    },
     "hi": {
       "gloss": "सहमति",
       "variants": [

@@ -101,6 +101,12 @@
         { "text": "Ал сіз?", "rom": "Al siz?", "tone": "polite" }
       ]
     },
+    "ar": {
+      "gloss": "وأنت؟",
+      "variants": [
+        { "text": "وأنت؟", "rom": "wa-anta? / wa-anti?", "note": "Same spelling for both genders in everyday writing." }
+      ]
+    },
     "hi": {
       "gloss": "और तुम?",
       "variants": [

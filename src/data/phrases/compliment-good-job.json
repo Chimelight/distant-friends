@@ -104,6 +104,13 @@
         { "text": "Жақсы істедің", "rom": "Jaqsy istediň" }
       ]
     },
+    "ar": {
+      "gloss": "أحسنت",
+      "variants": [
+        { "text": "أحسنت", "rom": "aḥsant", "note": "Lit. \"you did well\"; spelling serves both genders." },
+        { "text": "برافو", "rom": "brāfō", "tone": "casual", "note": "Borrowed \"bravo.\"" }
+      ]
+    },
     "hi": {
       "gloss": "शाबाश",
       "variants": [

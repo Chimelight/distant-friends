@@ -63,7 +63,7 @@
       "gloss": "после долгой разлуки",
       "variants": [
         { "text": "Давно не виделись", "rom": "davno ne videlis'", "note": "Lit. “we haven’t seen each other for a long time.”" },
-        { "text": "Сколько лет, сколько зим!", "rom": "skol'ko let, skol'ko zim!", "tone": "close", "note": "Lit. “so many years, so many winters!” — warm reunion idiom." }
+        { "text": "Сколько лет, сколько зим!", "rom": "skol'ko let, skol'ko zim!", "tone": "casual", "note": "Lit. “so many years, so many winters!” — warm reunion idiom." }
       ]
     },
     "uk": {
@@ -92,6 +92,12 @@
       "variants": [
         { "text": "Көріспегелі көп болды", "rom": "Körispegeli köp boldy", "note": "Lit. \"it's been long since we met.\"" },
         { "text": "Қайдасың, жоғалып кеттің ғой", "rom": "Qaidasyň, joğalyp kettiň ğoi", "tone": "casual", "note": "Lit. \"where are you, you disappeared.\"" }
+      ]
+    },
+    "ar": {
+      "gloss": "بعد غياب طويل",
+      "variants": [
+        { "text": "مضى وقت طويل!", "rom": "maḍā waqt ṭawīl!", "note": "Lit. \"a long time has passed!\"" }
       ]
     },
     "hi": {

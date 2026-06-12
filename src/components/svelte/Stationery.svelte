@@ -1,8 +1,8 @@
 <script lang="ts">
   import LangChips from './LangChips.svelte';
   import SlotPicker from './SlotPicker.svelte';
-  import { anchor, tone, selectedLangs } from '../../lib/stores';
-  import type { ToneFilter } from '../../lib/filter';
+  import { anchor, tone, speakerGender, addresseeGender, selectedLangs } from '../../lib/stores';
+  import type { ToneFilter, GenderFilter } from '../../lib/filter';
   import languages from '../../data/languages.json';
   import ui from '../../content/ui/en.json';
 
@@ -17,10 +17,20 @@
   );
   const toneOptions: { key: ToneFilter; label: string }[] = [
     { key: 'any', label: ui.stationery.tones.any },
-    { key: 'close', label: ui.stationery.tones.close },
     { key: 'casual', label: ui.stationery.tones.casual },
     { key: 'neutral', label: ui.stationery.tones.neutral },
     { key: 'polite', label: ui.stationery.tones.polite },
+  ];
+
+  const speakerOptions: { key: GenderFilter; label: string }[] = [
+    { key: 'any', label: ui.stationery.speakers.any },
+    { key: 'm', label: ui.stationery.speakers.m },
+    { key: 'f', label: ui.stationery.speakers.f },
+  ];
+  const addresseeOptions: { key: GenderFilter; label: string }[] = [
+    { key: 'any', label: ui.stationery.addressees.any },
+    { key: 'm', label: ui.stationery.addressees.m },
+    { key: 'f', label: ui.stationery.addressees.f },
   ];
 
   function setAnchor(code: string) {
@@ -28,6 +38,12 @@
   }
   function setTone(t: ToneFilter) {
     tone.set(t);
+  }
+  function setSpeaker(g: GenderFilter) {
+    speakerGender.set(g);
+  }
+  function setAddressee(g: GenderFilter) {
+    addresseeGender.set(g);
   }
 </script>
 
@@ -52,6 +68,22 @@
       options={toneOptions}
       value={$tone}
       onChange={setTone}
+    />
+    <span class="punct">—</span>
+    <em>{ui.stationery.to}</em>
+    <SlotPicker
+      name="addressee"
+      options={addresseeOptions}
+      value={$addresseeGender}
+      onChange={setAddressee}
+    />
+    <span class="punct">,</span>
+    <em>{ui.stationery.asWord}</em>
+    <SlotPicker
+      name="speaker"
+      options={speakerOptions}
+      value={$speakerGender}
+      onChange={setSpeaker}
     />
     <span class="punct">.</span>
   </p>

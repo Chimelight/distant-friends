@@ -95,6 +95,12 @@
         { "text": "Таңың жақсы өтсін", "rom": "Taňyň jaqsy ötsin", "tone": "casual" }
       ]
     },
+    "ar": {
+      "gloss": "صباح الخير",
+      "variants": [
+        { "text": "صباح الخير", "rom": "ṣabāḥ al-khayr" }
+      ]
+    },
     "hi": {
       "gloss": "सुबह का अभिवादन",
       "variants": [
