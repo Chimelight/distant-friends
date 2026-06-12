@@ -1,6 +1,6 @@
 import type { TVariant } from './schema';
 
-export type ToneFilter = 'any' | 'close' | 'casual' | 'neutral' | 'polite';
+export type ToneFilter = 'any' | 'casual' | 'neutral' | 'polite';
 export type GenderFilter = 'any' | 'm' | 'f';
 
 /**

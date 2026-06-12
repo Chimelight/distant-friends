@@ -11,7 +11,6 @@
   let { variant, langCode }: Props = $props();
 
   const TONE_LABELS: Record<string, string> = {
-    close: 'tenderly',
     casual: 'casually',
     neutral: 'evenly',
     polite: 'politely',

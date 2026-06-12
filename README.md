@@ -8,7 +8,7 @@
 
 ## What it is
 
-A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, reactions, questions, gratitude, compliments, encouragement, affection, wishes, holidays, farewells — across twenty-three languages (63 phrases), extensible. Click any cell to copy, hover for a speak button (Web Speech API, when the browser has a matching voice), star the phrases you reach for and filter to them. Switch the anchor language at any time. Tune the tone (`in any tone` / `tenderly` / `casually` / `evenly` / `politely`) and set who is writing to whom (`as a man/a woman`, `to him/her`) — gendered languages then show only the forms that fit; remaining distinctions surface as quiet tag-line labels. Installable as a PWA; the whole glossary works offline.
+A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, reactions, questions, gratitude, compliments, encouragement, affection, wishes, holidays, farewells — across twenty-three languages (63 phrases), extensible. Click any cell to copy, hover for a speak button (Web Speech API, when the browser has a matching voice), star the phrases you reach for and filter to them. Switch the anchor language at any time. Tune the tone (`in any tone` / `casually` / `evenly` / `politely`) and set who is writing to whom (`as a man/a woman`, `to him/her`) — gendered languages then show only the forms that fit; remaining distinctions surface as quiet tag-line labels. Installable as a PWA; the whole glossary works offline.
 
 What it isn't:
 
@@ -86,7 +86,7 @@ Variant fields:
 | --- | --- | --- |
 | `text` | ✓ | the translation |
 | `rom` |   | romanization, only for non-Latin scripts |
-| `tone` |   | `close` / `casual` / `neutral` / `polite` — fill **only when the language draws a real distinction** at that level |
+| `tone` |   | `casual` / `neutral` / `polite` — fill **only when the language draws a real distinction** at that level |
 | `speakerGender` |   | `m` / `f` (e.g. Portuguese `Obrigado` / `Obrigada`) |
 | `addresseeGender` |   | `m` / `f` (e.g. Spanish `amigo` / `amiga`) |
 | `addresseeCount` |   | `one` / `many` (e.g. "Bye everyone" → `many`) |

@@ -83,6 +83,11 @@ export function ensureSelectedLangsInitialized(): void {
     selectedLangs.set(cleaned);
   }
 
+  // Migrate retired tone tiers ('close' was merged into 'casual', 2026-06-13).
+  if (!['any', 'casual', 'neutral', 'polite'].includes(tone.get())) {
+    tone.set('casual');
+  }
+
   // Same for anchor — if the persisted anchor is a code that no longer
   // exists, fall back to the dataset's defaultAnchor (or first language).
   const a = anchor.get();

@@ -115,7 +115,7 @@ distant-friends/
 
 1. **所有语言平等**。不存在"源语言"，每种语言都是同一概念的一个 realization。中文、英文、日文、泰文都是 `languages.json` 里并列的一员。
 2. **锚点列是用户选择，不是数据属性**。任何一种语言都可以被用户拉到锚点列，切换不影响数据。
-3. **语境维度全局固定**。Tone 就是 `close / casual / neutral / polite` 四档，不扩展。每种语言只在它真实有区分的层级上填变体，没有就不填。
+3. **语境维度全局固定**。Tone 就是 `casual / neutral / polite` 三档（2026-06-13 起，原四档），不扩展。每种语言只在它真实有区分的层级上填变体，没有就不填。
 4. **缺翻译不是错误**。构建时列出覆盖率报告，运行时该格显示占位纹样，不 hard fail。
 5. **结构便于 AI 协作**。`languages.json` + `scenes.json` 两个扁平文件，加 `phrases/` 下每条短语一个 JSON：单条短语可独立生成、review、diff，AI 一次改一个文件不殃及全库。（v0.1 曾用单一 `phrases.json`，随短语数量增长拆分为 per-phrase 文件。）
 
@@ -140,7 +140,7 @@ src/content/ui/
 
 - `defaultOn`：首次访问时默认勾选的语言（加上 anchor 后控制在 5 以内）
 - `defaultAnchor`：标记哪一种是首次访问的锚点（仅一个为 true；v0.2.0 起为英文）
-- 语言不声明 `dimensions`——tone 四档对所有语言统一；哪些变体有 tone 标签取决于该语言该短语下的实际内容
+- 语言不声明 `dimensions`——tone 三档对所有语言统一；哪些变体有 tone 标签取决于该语言该短语下的实际内容
 
 ### 5.4 Schema — 场景（`scenes.json`）
 
@@ -203,7 +203,7 @@ src/content/ui/
 |---|---|---|---|
 | `text` | string | ✓ | 翻译正文 |
 | `rom` | string? |  | 罗马音 / 拼音，仅非拉丁字母语言 |
-| `tone` | `close \| casual \| neutral \| polite`? |  | 语境档位。不填 = 通用/默认 |
+| `tone` | `casual \| neutral \| polite`? |  | 语境档位。不填 = 通用/默认 |
 | `speakerGender` | `m \| f`? |  | 说话者性别（葡语 Obrigado/Obrigada 等） |
 | `addresseeGender` | `m \| f`? |  | 听话者性别（西语 amigo/amiga 等） |
 | `addresseeCount` | `one \| many`? |  | 对几人说（"大家再见" 设 `many`） |
@@ -220,7 +220,7 @@ Schema 本体直接看源文件——它就是事实层真相（§0）。这里�
 
 ### 5.7 变体筛选逻辑（`src/lib/filter.ts`）
 
-UI 状态有两个维度影响变体显示：`anchor`（哪种语言放锚点列）、`tone`（`any` 或某一档）。
+UI 状态影响变体显示的维度：`anchor`（哪种语言放锚点列）、`tone`（`any` 或某一档）、speaker/addressee 性别。
 
 实现见 `src/lib/filter.ts`。规则：tone=`any` 返回全部；指定档位时优先精确命中，无命中则回退到未标 tone 的默认变体。
 
@@ -309,7 +309,7 @@ UI 状态有两个维度影响变体显示：`anchor`（哪种语言放锚点列
 | Slot | 值 |
 |---|---|
 | `anchor` | 当前已选语言（防绕过 5 种上限） |
-| `tone` | `any` / `close` / `casual` / `neutral` / `polite`（文案 "in any tone" / "tenderly" / "casually" / "evenly" / "politely"） |
+| `tone` | `any` / `casual` / `neutral` / `polite`（文案 "in any tone" / "casually" / "evenly" / "politely"） |
 | `addressee` | `any` / `m` / `f`（"a friend" / "him" / "her"）— 2026-06-12 恢复 |
 | `speaker` | `any` / `m` / `f`（"myself" / "a man" / "a woman"）— 2026-06-12 新增 |
 
@@ -713,6 +713,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 - **2026-06-12** · 字体**不进** SW precache（反转 §6.12 原方案）：CJK Noto 按 unicode-range 拆 ~100 个子集，全量几十 MB；改运行时 CacheFirst。
 - **2026-06-12** · TTS：无可用 voice 时按钮不渲染（弃"禁用+tooltip"）；voice 按质量启发式排序（Natural/Enhanced/Google 加分）而非取第一个匹配；"Starred only" 状态会话级不持久化。
 - **2026-06-12** · **字体性能权衡**（M4 size pass）：Fraunces full 轴 → standard 轴（-120KB 关键路径，代价：放弃 SOFT/WONK——全站唯一用例是 TocSide 数字的软转角）；CJK 三套 @font-face 声明（112KB gz）移出阻塞 CSS 异步加载，字体栈补系统宋体/明朝体兜底；预加载两支拉丁 Fraunces 消除 swap 位移。Lighthouse：56/96/100/100 → 88/100/100/100（模拟慢速 4G）。剩余 LCP 3.6s 为自托管特色衬线的固有成本。
+- **2026-06-13** · **tone 收为三档**（casual / neutral / polite，弃 close/"tenderly"）：close 档全库命中率 0.5%（14/2596），用户拨到 tenderly 几乎所有格子都走 fallback——会动但无效的选项是温柔的陷阱。14 个 close 变体并入 casual（亲昵语义由 note 承载）；持久化的旧值迁移为 casual。
 - **2026-06-12** · **性能指标按实测校准**（确立元原则：§2 数字指标非铁律——初版是建站前的 AI 估计；方向性原则 1-4 不动摇，数字以实测修订并记日志）：§9 改为 A11y/BP/SEO=100 + Perf≥85（slow-4G 模拟）、阻塞 CSS <20KB、首屏关键传输 <250KB；明确不用 `font-display: optional` 换分数。
 - **2026-06-12** · **性别控件恢复**（反转 v1.5 的撤除，按当时定下的阈值机制触发）：两轴各 60 个标注变体后，Stationery 第二句恢复 addressee 槽位并新增 speaker 槽位。筛选语义：排除显式相反性别，未标保留，空则回退——格子绝不因偏好清空。被动 tag line 在对应筛选激活时隐藏（信息已由槽位表达）。
 

@@ -137,7 +137,6 @@ for (const list of phrasesByScene.values()) list.sort((a, b) => a.order - b.orde
 
 // —— HTML rendering ——
 const TONE_LABELS = {
-  close: 'tenderly',
   casual: 'casually',
   neutral: 'evenly',
   polite: 'politely',

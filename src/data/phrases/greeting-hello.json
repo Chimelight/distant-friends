@@ -15,7 +15,7 @@
       "gloss": "挨拶",
       "variants": [
         { "text": "こんにちは", "rom": "konnichiwa", "tone": "neutral", "note": "Daytime standard; works with anyone." },
-        { "text": "やっほー", "rom": "yahhō", "tone": "close", "note": "Playful; between close friends." }
+        { "text": "やっほー", "rom": "yahhō", "tone": "casual", "note": "Playful; between close friends." }
       ]
     },
     "ko": {

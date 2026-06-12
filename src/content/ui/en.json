@@ -21,7 +21,6 @@
     },
     "tones": {
       "any": "in any tone",
-      "close": "tenderly",
       "casual": "casually",
       "neutral": "evenly",
       "polite": "politely"

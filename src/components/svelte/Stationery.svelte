@@ -17,7 +17,6 @@
   );
   const toneOptions: { key: ToneFilter; label: string }[] = [
     { key: 'any', label: ui.stationery.tones.any },
-    { key: 'close', label: ui.stationery.tones.close },
     { key: 'casual', label: ui.stationery.tones.casual },
     { key: 'neutral', label: ui.stationery.tones.neutral },
     { key: 'polite', label: ui.stationery.tones.polite },
