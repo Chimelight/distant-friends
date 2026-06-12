@@ -39,6 +39,34 @@ export function isAvailable(langs: ReadonlySet<string>, tts: string): boolean {
 }
 
 /**
+ * Voice quality varies wildly within one language: Chrome typically exposes
+ * a poor local "compact" voice AND a much better Google network voice for
+ * the same tag; macOS has plain vs Enhanced/Siri variants. Rank instead of
+ * taking the first match. Network voices are skipped while offline.
+ */
+function pickVoice(tts: string): SpeechSynthesisVoice | undefined {
+  const want = normalize(tts);
+  const base = want.split('-')[0];
+  const offline = typeof navigator !== 'undefined' && navigator.onLine === false;
+  const candidates = voices.filter(
+    (v) =>
+      normalize(v.lang).split('-')[0] === base &&
+      (!offline || v.localService),
+  );
+  const score = (v: SpeechSynthesisVoice): number => {
+    let s = 0;
+    if (normalize(v.lang) === want) s += 4; // exact region beats prefix
+    const n = v.name.toLowerCase();
+    if (/natural|neural|premium|enhanced|siri/.test(n)) s += 3;
+    if (n.includes('google')) s += 2; // Chrome's Google voices beat local compacts
+    if (!v.localService) s += 1; // network voices generally sound better
+    if (v.default) s += 0.5;
+    return s;
+  };
+  return candidates.sort((a, b) => score(b) - score(a))[0];
+}
+
+/**
  * Speak `text` with the best voice for `tts`. Cancels anything currently
  * speaking (one utterance at a time, app-wide). `onDone` fires on natural
  * end, on error, and when cancelled by a newer utterance.
@@ -47,11 +75,7 @@ export function speak(text: string, tts: string, onDone: () => void): boolean {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return false;
   const synth = window.speechSynthesis;
   synth.cancel();
-  const want = normalize(tts);
-  const base = want.split('-')[0];
-  const voice =
-    voices.find((v) => normalize(v.lang) === want) ??
-    voices.find((v) => normalize(v.lang).split('-')[0] === base);
+  const voice = pickVoice(tts);
   const u = new SpeechSynthesisUtterance(text);
   if (voice) u.voice = voice;
   u.lang = voice?.lang ?? tts;
