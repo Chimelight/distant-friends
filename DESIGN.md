@@ -100,8 +100,9 @@ distant-friends/                 # 项目根（建议名字，可换）
 │   │       ├── PhraseCards.svelte
 │   │       ├── TranslationCell.svelte
 │   │       ├── VariantRow.svelte   # 单个变体（text + rom + tag + note + copy）
-│   │       ├── SpeakButton.svelte  # （规划中，M3，未建）
-│   │       ├── StarButton.svelte   # （规划中，M2，未建）
+│   │       ├── SpeakButton.svelte
+│   │       ├── StarButton.svelte
+│   │       ├── StarFilter.svelte   # "Starred only" 开关 chip
 │   │       ├── ThemeToggle.svelte
 │   │       └── Toast.svelte
 │   ├── data/
@@ -114,7 +115,7 @@ distant-friends/                 # 项目根（建议名字，可换）
 │   │   ├── filter.ts            # visibleVariants() 变体筛选逻辑
 │   │   ├── scroll.ts            # 全局滚动状态：scrolled / activeScene / tocExpanded（nanostores + RAF listener）
 │   │   ├── clipboard.ts         # 带 fallback 的复制工具
-│   │   ├── tts.ts               # Web Speech API 封装（规划中，M3，未建）
+│   │   ├── tts.ts               # Web Speech API 封装 + voice 检测
 │   │   └── storage.ts           # localStorage 工具 + 版本迁移
 │   ├── content/
 │   │   └── ui/
@@ -811,8 +812,8 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Affection · V. War
 | PhraseCards | Svelte | ✓ | 卡片布局，`.card-list` max-width 720px 居中 |
 | TranslationCell | Svelte | ✓ | 单元格容器，根据筛选结果渲染 0-N 个 VariantRow |
 | VariantRow | Svelte | ✓ | 单个变体行：text + rom + tag line + note + copy + speak |
-| SpeakButton | Svelte | ✗ | 新增，Web Speech API + voice 检测 |
-| StarButton | Svelte | ✗ | 新增，锚点列右上角 |
+| SpeakButton | Svelte | ✓ | Web Speech API + voice 检测，行内 hover 显现 |
+| StarButton | Svelte | ✓ | 锚点列/卡片头右上角，phrase 级收藏 |
 | ThemeToggle | Svelte | ✗ | 新增，light/dark/system |
 | Toast | Svelte | ✓ | 全局，复制成功提示 |
 | Legend | Astro | ✓ | 场景小标题（Roman 编号 + 斜体场名 + 金色圆点细线） |
@@ -1004,18 +1005,18 @@ jobs:
 _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约束强绑定。_
 
 - [x] 暗色 tokens（已在 M1 写入 tokens.css 完整两套调色）
-- [ ] 暗色对比度验证（Leonardo 或浏览器扩展，保证 AA）
+- [x] 暗色对比度验证（脚本计算 WCAG 比率；ink-mute/accent 微调后双主题正文+次级文字全部 ≥4.5，装饰金色 ≥3）
 - [x] `ThemeToggle.svelte` — light / dark / system 三态（v0.2.0 上线，含 View Transitions 平滑切换）
 - [x] 防 FOUC 已在 M0/M1 `Layout.astro` 的 head inline script 里就位
-- [ ] `StarButton.svelte` + `starred: Set<string>` 持久化
-- [ ] "Starred only" 开关 chip（Stationery 下方，有收藏时才出现）
+- [x] `StarButton.svelte` + `starred` 持久化（锚点列/卡片头右上角金色小星）
+- [x] "Starred only" 开关 chip（Stationery 下方，有收藏时才出现；会话级状态，不持久化——避免回访时误以为内容丢失）
 - [x] localStorage 版本化已在 M0 `storage.ts` 封装
 
 ### M3 · 语音 + PWA（1 天）
-- [ ] `SpeakButton.svelte` + `src/lib/tts.ts` 封装
-- [ ] Voice 检测：页面加载后拿 `speechSynthesis.getVoices()`，按 tts code 匹配，找不到就禁用该语言的 speak 按钮
-- [ ] `manifest.webmanifest` + 图标（192 / 512 / maskable 512）
-- [ ] Service Worker precache 策略：shell + 字体子集 + `src/data/*.json`
+- [x] `SpeakButton.svelte` + `src/lib/tts.ts` 封装（rate 0.9；行内 hover 显现，与 copy hint 同列）
+- [x] Voice 检测：`voiceschanged` 后按 tts code 匹配（精确 → 同语种前缀回退）；无 voice 或语言无 tts code（mizo）时按钮直接不渲染（比禁用+tooltip 更干净）
+- [x] `manifest.webmanifest` + 图标（192 / 512 / maskable 512，由 favicon.svg 栅格化生成）
+- [x] Service Worker precache：shell（html/css/js/svg，数据已打包进 JS）；字体改为运行时 CacheFirst——CJK Noto 拆分成上百个子集文件，全量 precache 会有几十 MB，按需缓存更合理
 - [ ] 离线测试（DevTools → Offline，确认完整功能可用）
 
 ### M4 · 打磨（1–1.5 天）
@@ -1024,7 +1025,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 - [x] 所有交互的 `prefers-reduced-motion` 处理（在 `global.css` 全局兜底）
 - [x] OG image 设计（1200×630）+ meta tags（v0.1.0 已就位 Open Graph + Twitter Card）
 - [x] `README.md`：项目说明 + 使用说明 + 数据扩展指南 + 翻译协作哲学
-- [ ] `404.astro` 简短优雅的 not-found
+- [x] `404.astro` 简短优雅的 not-found（"This letter went astray."）
 - [ ] 手动测试矩阵：iOS Safari / Android Chrome / macOS Safari / Firefox / Edge
 
 ### M5 · 内容扩充（持续）

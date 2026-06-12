@@ -140,7 +140,7 @@ See [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单) for the full task li
 | --- | --- |
 | M0 — project skeleton | ✅ shipped in v0.1.0 |
 | M1 — visual + interactive parity with v3 demo | ✅ shipped in v0.1.0 |
-| M2 — dark mode + starring | partial — three-state `ThemeToggle` shipped in v0.2.0; `StarButton` not built yet |
-| M3 — TTS + PWA precache | not started |
-| M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README done |
+| M2 — dark mode + starring | ✅ theme toggle (v0.2.0), starring + starred-only filter, AA contrast verified |
+| M3 — TTS + PWA precache | done pending offline test — per-variant speak buttons with voice detection; SW precaches shell, fonts cached on use |
+| M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README, 404 done; axe/Lighthouse pass pending |
 | M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |
