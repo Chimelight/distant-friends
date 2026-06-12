@@ -54,7 +54,7 @@
             <article class="card" style={`animation-delay:${i * 30}ms`}>
               <div class="card-head">
                 {#if primary}
-                  <div class="card-word" lang={$anchor}>{primary.text}</div>
+                  <div class="card-word" lang={$anchor} dir="auto">{primary.text}</div>
                   {#if primary.rom}
                     <div class="card-rom">{primary.rom}</div>
                   {/if}

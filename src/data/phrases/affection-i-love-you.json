@@ -98,6 +98,12 @@
         { "text": "Мен сені жақсы көремін", "rom": "Men seni jaqsy köremin", "note": "Lit. \"I see you well\" — everyday \"I love you.\"" }
       ]
     },
+    "ar": {
+      "gloss": "أحبك",
+      "variants": [
+        { "text": "أحبك", "rom": "uḥibbuk", "note": "Same spelling to a man or a woman (uḥibbuka / uḥibbuki)." }
+      ]
+    },
     "hi": {
       "gloss": "मैं तुमसे प्यार करता हूँ",
       "variants": [

@@ -105,6 +105,13 @@
         { "text": "Кешіріңіз", "rom": "Keşiriňiz", "tone": "polite" }
       ]
     },
+    "ar": {
+      "gloss": "اعتذار",
+      "variants": [
+        { "text": "آسف", "rom": "āsif", "speakerGender": "m" },
+        { "text": "آسفة", "rom": "āsifa", "speakerGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "क्षमा",
       "variants": [

@@ -93,6 +93,13 @@
         { "text": "Туған күніңіз құтты болсын!", "rom": "Tuğan küniňiz qutty bolsyn!", "tone": "polite" }
       ]
     },
+    "ar": {
+      "gloss": "عيد ميلاد سعيد",
+      "variants": [
+        { "text": "عيد ميلاد سعيد", "rom": "'īd mīlād sa'īd" },
+        { "text": "كل سنة وأنت طيب", "rom": "kull sana w-anta ṭayyib", "note": "Lit. \"every year and you are well\" — the warm all-purpose wish." }
+      ]
+    },
     "hi": {
       "gloss": "जन्मदिन की शुभकामना",
       "variants": [

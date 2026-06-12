@@ -101,6 +101,13 @@
         { "text": "Жағдайың жақсы ма?", "rom": "Jağdaiyň jaqsy ma?", "tone": "casual", "note": "Lit. \"are you okay?\"" }
       ]
     },
+    "ar": {
+      "gloss": "ما بك؟",
+      "variants": [
+        { "text": "ما بك؟", "rom": "mā bik?", "note": "Same spelling for both genders in everyday writing." },
+        { "text": "هل أنت بخير؟", "rom": "hal anta bi-khayr?" }
+      ]
+    },
     "hi": {
       "gloss": "क्या हुआ",
       "variants": [

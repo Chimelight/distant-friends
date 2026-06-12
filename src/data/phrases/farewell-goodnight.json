@@ -90,6 +90,13 @@
         { "text": "Қайырлы түн", "rom": "Qaiyrly tün" }
       ]
     },
+    "ar": {
+      "gloss": "تصبح على خير",
+      "variants": [
+        { "text": "تصبح على خير", "rom": "tuṣbiḥ 'alā khayr", "addresseeGender": "m", "note": "Lit. \"may you wake to goodness.\"" },
+        { "text": "تصبحي على خير", "rom": "tuṣbiḥī 'alā khayr", "addresseeGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "रात की शुभकामना",
       "variants": [

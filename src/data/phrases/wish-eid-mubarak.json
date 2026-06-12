@@ -98,6 +98,13 @@
         { "text": "Айтыңыз құтты болсын", "rom": "Aityňyz qutty bolsyn", "tone": "polite", "note": "Lit. \"may your Eid be blessed.\"" }
       ]
     },
+    "ar": {
+      "gloss": "عيد مبارك",
+      "variants": [
+        { "text": "عيد مبارك", "rom": "'īd mubārak", "note": "The original Eid greeting." },
+        { "text": "كل عام وأنتم بخير", "rom": "kull 'ām wa-antum bi-khayr", "note": "All-purpose festive greeting (plural \"you\")." }
+      ]
+    },
     "hi": {
       "gloss": "ईद मुबारक",
       "variants": [

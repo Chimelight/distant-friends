@@ -100,6 +100,13 @@
         { "text": "Аа, солай ма", "rom": "Aa, solai ma", "tone": "casual", "note": "Lit. \"ah, is that so.\"" }
       ]
     },
+    "ar": {
+      "gloss": "فهمت",
+      "variants": [
+        { "text": "فهمت", "rom": "fahimt", "note": "Lit. \"I understood.\"" },
+        { "text": "آها", "rom": "āhā", "tone": "casual" }
+      ]
+    },
     "hi": {
       "gloss": "अच्छा",
       "variants": [

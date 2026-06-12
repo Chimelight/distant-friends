@@ -93,6 +93,13 @@
         { "text": "Сені сағындым", "rom": "Seni sağyndym" }
       ]
     },
+    "ar": {
+      "gloss": "اشتياق",
+      "variants": [
+        { "text": "اشتقت لك", "rom": "ishtaqt lak", "note": "Same spelling for both genders in everyday writing." },
+        { "text": "وحشتني", "rom": "waḥashtinī", "tone": "casual", "note": "Warm colloquial \"I have missed you.\"" }
+      ]
+    },
     "hi": {
       "gloss": "याद",
       "variants": [

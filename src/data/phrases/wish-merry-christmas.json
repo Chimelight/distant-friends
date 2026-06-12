@@ -88,6 +88,12 @@
         { "text": "Рождество құтты болсын", "rom": "Rojdestvo qutty bolsyn" }
       ]
     },
+    "ar": {
+      "gloss": "عيد ميلاد مجيد",
+      "variants": [
+        { "text": "عيد ميلاد مجيد", "rom": "'īd mīlād majīd", "note": "Lit. \"glorious Nativity feast.\"" }
+      ]
+    },
     "hi": {
       "gloss": "मेरी क्रिसमस",
       "variants": [

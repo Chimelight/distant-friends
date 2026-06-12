@@ -94,6 +94,12 @@
         { "text": "Қайдасың, жоғалып кеттің ғой", "rom": "Qaidasyň, joğalyp kettiň ğoi", "tone": "casual", "note": "Lit. \"where are you, you disappeared.\"" }
       ]
     },
+    "ar": {
+      "gloss": "بعد غياب طويل",
+      "variants": [
+        { "text": "مضى وقت طويل!", "rom": "maḍā waqt ṭawīl!", "note": "Lit. \"a long time has passed!\"" }
+      ]
+    },
     "hi": {
       "gloss": "बहुत दिनों बाद",
       "variants": [

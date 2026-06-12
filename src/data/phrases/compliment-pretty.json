@@ -103,6 +103,13 @@
         { "text": "Сондай сұлу", "rom": "Sondai sulu", "note": "Sulu — beautiful, often of people." }
       ]
     },
+    "ar": {
+      "gloss": "جميل",
+      "variants": [
+        { "text": "جميل", "rom": "jamīl", "addresseeGender": "m" },
+        { "text": "جميلة", "rom": "jamīla", "addresseeGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "बहुत सुंदर",
       "variants": [

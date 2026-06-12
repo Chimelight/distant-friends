@@ -95,6 +95,12 @@
         { "text": "Көктем мерекесі құтты болсын", "rom": "Köktem merekesi qutty bolsyn", "note": "Lit. \"happy Spring Festival.\"" }
       ]
     },
+    "ar": {
+      "gloss": "السنة الصينية الجديدة",
+      "variants": [
+        { "text": "سنة صينية جديدة سعيدة", "rom": "sana ṣīniyya jadīda sa'īda" }
+      ]
+    },
     "hi": {
       "gloss": "चीनी नववर्ष की शुभकामनाएँ",
       "variants": [

@@ -107,6 +107,13 @@
         { "text": "Бәрі жақсы", "rom": "Bäri jaqsy", "tone": "casual" }
       ]
     },
+    "ar": {
+      "gloss": "لا بأس",
+      "variants": [
+        { "text": "لا بأس", "rom": "lā ba's", "note": "Lit. \"no harm.\"" },
+        { "text": "ولا يهمك", "rom": "walā yhimmak", "tone": "casual", "note": "Lit. \"let it not concern you\" — warm, cross-dialect." }
+      ]
+    },
     "hi": {
       "gloss": "कोई बात नहीं",
       "variants": [

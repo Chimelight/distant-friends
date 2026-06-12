@@ -101,6 +101,13 @@
         { "text": "Мен әрқашан жаныңдамын", "rom": "Men ärqaşan janyňdamyn" }
       ]
     },
+    "ar": {
+      "gloss": "أنا هنا",
+      "variants": [
+        { "text": "أنا هنا", "rom": "ana hunā" },
+        { "text": "أنا معك دائماً", "rom": "ana ma'ak dā'iman", "note": "Lit. \"I am always with you.\"" }
+      ]
+    },
     "hi": {
       "gloss": "हमेशा हूँ",
       "variants": [

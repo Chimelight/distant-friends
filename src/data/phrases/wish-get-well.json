@@ -96,6 +96,13 @@
         { "text": "Сауығып кет", "rom": "Sauyğyp ket" }
       ]
     },
+    "ar": {
+      "gloss": "سلامتك",
+      "variants": [
+        { "text": "سلامتك", "rom": "salāmtak", "note": "Lit. \"your safety\" — the everyday get-well wish." },
+        { "text": "الشفاء العاجل", "rom": "ash-shifā' al-'ājil", "note": "Lit. \"speedy recovery\" — more formal." }
+      ]
+    },
     "hi": {
       "gloss": "जल्दी ठीक हो जाओ",
       "variants": [

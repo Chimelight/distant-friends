@@ -105,6 +105,14 @@
         { "text": "Ассалаумағалейкум", "rom": "Assalaumağaleikum", "tone": "polite", "note": "Traditional Muslim greeting." }
       ]
     },
+    "ar": {
+      "gloss": "تحية",
+      "variants": [
+        { "text": "مرحباً", "rom": "marḥaban" },
+        { "text": "أهلاً", "rom": "ahlan", "tone": "casual", "note": "Warm \"hey there.\"" },
+        { "text": "السلام عليكم", "rom": "as-salāmu 'alaykum", "tone": "polite", "note": "Traditional greeting — \"peace be upon you.\"" }
+      ]
+    },
     "hi": {
       "gloss": "अभिवादन",
       "variants": [

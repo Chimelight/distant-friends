@@ -89,6 +89,12 @@
         { "text": "Мерекелеріңіз құтты болсын", "rom": "Merekeleriňiz qutty bolsyn", "tone": "polite" }
       ]
     },
+    "ar": {
+      "gloss": "أعياد سعيدة",
+      "variants": [
+        { "text": "أعياد سعيدة", "rom": "a'yād sa'īda" }
+      ]
+    },
     "hi": {
       "gloss": "त्यौहार की शुभकामनाएँ",
       "variants": [

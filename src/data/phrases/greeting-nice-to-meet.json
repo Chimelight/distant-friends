@@ -108,6 +108,12 @@
         { "text": "Өте қуаныштымын", "rom": "Öte quanyştymyn", "tone": "casual", "note": "Lit. \"very glad.\"" }
       ]
     },
+    "ar": {
+      "gloss": "تشرفنا",
+      "variants": [
+        { "text": "تشرفت بمعرفتك", "rom": "tasharraft bi-ma'rifatak", "note": "Lit. \"honored to know you.\"" }
+      ]
+    },
     "hi": {
       "gloss": "पहली मुलाक़ात",
       "variants": [

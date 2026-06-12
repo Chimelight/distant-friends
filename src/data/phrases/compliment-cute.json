@@ -101,6 +101,14 @@
         { "text": "Қандай тәтті", "rom": "Qandai tätti", "tone": "casual", "note": "Lit. \"how sweet.\"" }
       ]
     },
+    "ar": {
+      "gloss": "لطيف",
+      "variants": [
+        { "text": "لطيف", "rom": "laṭīf", "addresseeGender": "m" },
+        { "text": "لطيفة", "rom": "laṭīfa", "addresseeGender": "f" },
+        { "text": "كيوت", "rom": "kyūt", "tone": "casual", "note": "English-borrowed; popular in chat." }
+      ]
+    },
     "hi": {
       "gloss": "बहुत प्यारा",
       "variants": [

@@ -61,7 +61,7 @@
   onclick={onClick}
   onkeydown={onKey}
 >
-  <div class="variant-text" lang={langCode}>{variant.text}</div>
+  <div class="variant-text" lang={langCode} dir="auto">{variant.text}</div>
   {#if variant.rom}
     <div class="variant-rom">{variant.rom}</div>
   {/if}

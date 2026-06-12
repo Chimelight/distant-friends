@@ -106,6 +106,13 @@
         { "text": "Жаман емес", "rom": "Jaman emes", "tone": "casual", "note": "Lit. \"not bad.\"" }
       ]
     },
+    "ar": {
+      "gloss": "بخير",
+      "variants": [
+        { "text": "أنا بخير", "rom": "ana bi-khayr" },
+        { "text": "الحمد لله", "rom": "al-ḥamdu lillāh", "note": "Lit. \"praise be to God\" — the most common answer." }
+      ]
+    },
     "hi": {
       "gloss": "ठीक हूँ",
       "variants": [

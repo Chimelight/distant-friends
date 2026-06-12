@@ -96,6 +96,12 @@
         { "text": "Сені түсінемін", "rom": "Seni tüsinemin" }
       ]
     },
+    "ar": {
+      "gloss": "أفهمك",
+      "variants": [
+        { "text": "أنا أفهمك", "rom": "ana afhamuk", "note": "Same spelling for both genders in everyday writing." }
+      ]
+    },
     "hi": {
       "gloss": "समझता हूँ",
       "variants": [

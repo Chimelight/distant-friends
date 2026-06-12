@@ -102,6 +102,12 @@
         { "text": "Арзымайды", "rom": "Arzymaidy", "note": "Lit. \"not worth (thanks).\"" }
       ]
     },
+    "ar": {
+      "gloss": "رد على الشكر",
+      "variants": [
+        { "text": "عفواً", "rom": "'afwan" }
+      ]
+    },
     "hi": {
       "gloss": "जवाब",
       "variants": [

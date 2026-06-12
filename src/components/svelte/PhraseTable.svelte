@@ -80,7 +80,7 @@
                 <tr class="phrase-row">
                   <td class="anchor-cell">
                     {#if ac}
-                      <div class="anchor-word" lang={$anchor}>{ac.primary.text}</div>
+                      <div class="anchor-word" lang={$anchor} dir="auto">{ac.primary.text}</div>
                       {#if ac.primary.rom}
                         <div class="anchor-rom">{ac.primary.rom}</div>
                       {/if}

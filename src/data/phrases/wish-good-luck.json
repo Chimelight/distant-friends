@@ -95,6 +95,13 @@
         { "text": "Жолың болсын", "rom": "Jolyň bolsyn", "tone": "casual", "note": "Lit. \"may your road go well.\"" }
       ]
     },
+    "ar": {
+      "gloss": "بالتوفيق",
+      "variants": [
+        { "text": "بالتوفيق", "rom": "bit-tawfīq", "note": "Lit. \"with success\" — the everyday good-luck." },
+        { "text": "حظاً موفقاً", "rom": "ḥaẓẓan muwaffaqan", "note": "More formal." }
+      ]
+    },
     "hi": {
       "gloss": "शुभकामनाएँ",
       "variants": [
