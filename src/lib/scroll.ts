@@ -1,5 +1,6 @@
 import { atom } from 'nanostores';
 
+/** Fallback only — see tick(): the real signal is <main> reaching the fold. */
 export const SCROLL_THRESHOLD = 420;
 
 export const scrolled = atom<boolean>(false);
@@ -22,7 +23,14 @@ export function initScrollListener(sceneSelector = '.scene-block'): () => void {
   let rafId = 0;
   const tick = () => {
     rafId = 0;
-    const next = window.scrollY > SCROLL_THRESHOLD;
+    // "Scrolled" means the reader has reached the content, not an absolute
+    // pixel count: on phones the masthead + chips + stationery + TocTop
+    // stack is far taller than any fixed threshold, and a fixed 420px made
+    // TocTop fade out while still on screen.
+    const main = document.querySelector('main');
+    const next = main
+      ? main.getBoundingClientRect().top <= 120
+      : window.scrollY > SCROLL_THRESHOLD;
     if (next !== scrolled.get()) {
       scrolled.set(next);
       document.body.classList.toggle('scrolled', next);

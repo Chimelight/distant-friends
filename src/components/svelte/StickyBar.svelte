@@ -55,22 +55,24 @@
       value={$tone}
       onChange={setTone}
     />
-    <span class="punct">—</span>
-    <em>{ui.stationery.to}</em>
-    <SlotPicker
-      name="addressee"
-      options={addresseeOptions}
-      value={$addresseeGender}
-      onChange={setAddressee}
-    />
-    <span class="punct">,</span>
-    <em>{ui.stationery.asWord}</em>
-    <SlotPicker
-      name="speaker"
-      options={speakerOptions}
-      value={$speakerGender}
-      onChange={setSpeaker}
-    />
+    <span class="sb-ext">
+      <span class="punct">—</span>
+      <em>{ui.stationery.to}</em>
+      <SlotPicker
+        name="addressee"
+        options={addresseeOptions}
+        value={$addresseeGender}
+        onChange={setAddressee}
+      />
+      <span class="punct">,</span>
+      <em>{ui.stationery.asWord}</em>
+      <SlotPicker
+        name="speaker"
+        options={speakerOptions}
+        value={$speakerGender}
+        onChange={setSpeaker}
+      />
+    </span>
   </div>
   <div class="sb-controls">
     <ViewToggle />
@@ -162,6 +164,11 @@
   .sb-prose .punct {
     color: var(--ink-mute);
   }
+  /* display:contents keeps the children as direct flex items of the prose
+   * row; the media query below can then drop the whole extension at once. */
+  .sb-ext {
+    display: contents;
+  }
 
   /* Right-anchored controls cluster — Theme + View toggles. Absolute so
    * the centered mark + prose composition isn't pulled off-axis by their
@@ -196,6 +203,12 @@
   @media (max-width: 820px) {
     .sb-mark,
     .sb-sep {
+      display: none;
+    }
+    /* The full sentence collides with the right-side controls on narrow
+     * screens — fall back to "I write — [tone]"; the complete slots stay
+     * available in the Stationery. */
+    .sb-ext {
       display: none;
     }
     .sticky-bar {
