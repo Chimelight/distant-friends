@@ -2,7 +2,22 @@
 
 > 一份多语言日常问候对照站。给与世界各地朋友保持联系的人。
 
-本文档是项目的真相源（source of truth）。交给 Claude Code 时，请它全文读完再动手。
+本文档是项目**意图层**的真相源。交给 Claude Code 时，请它全文读完再动手。
+
+---
+
+## 0. 本文档的维护规则
+
+真相分两层，不要混：
+
+1. **事实层以代码和数据为唯一真相**——目录结构、schema 字段、场景列表、token 数值、UI 文案，一律看源文件（`src/lib/schema.ts` / `src/data/scenes.json` / `src/styles/tokens.css` / `src/content/ui/en.json`…）。本文档不复制这些内容，只给路径。历史教训：曾经复制过的每一份事实都烂掉过（"8 种语言"、"6 个场景"、"960px 阈值"都在文档里多活了一个多月）。
+2. **意图层以本文档为唯一真相**——为什么这么做、红线、被否决的方案、踩过的坑。代码说不出"为什么"，这是本文档存在的理由。
+
+改动代码后的维护义务：
+
+- 推翻既有设计决策 → 在 §13 决策日志**追加**一条（永不改写旧条目，反转本身是信息）
+- 完成里程碑任务 → §11 打勾；里程碑整体完成后压缩成一行
+- 其余章节（尤其 §6 规格）**不要求**跟随实现细节更新——已实现功能以源码为准
 
 ---
 
@@ -73,72 +88,20 @@
 ## 4. 项目结构
 
 ```
-distant-friends/                 # 项目根（建议名字，可换）
-├── .github/
-│   └── workflows/
-│       └── deploy.yml           # 推 main 自动构建部署到 gh-pages
-├── public/
-│   ├── icons/                   # PWA 图标 192/512/maskable
-│   ├── og-image.png             # 社交分享图 1200×630
-│   └── favicon.svg
+distant-friends/
+├── public/            # favicon、og-image、PWA icons
 ├── src/
-│   ├── components/
-│   │   ├── astro/               # 纯静态组件，无 JS
-│   │   │   ├── Layout.astro
-│   │   │   ├── Masthead.astro
-│   │   │   ├── Footer.astro
-│   │   │   └── Legend.astro     # 场景标题组件（小圆点 + 细线）
-│   │   └── svelte/              # 交互 islands
-│   │       ├── LangChips.svelte
-│   │       ├── Stationery.svelte   # 手写体预设句容器
-│   │       ├── SlotPicker.svelte   # 可点击的斜体词（anchor/tone）
-│   │       ├── TocTop.svelte       # 首屏横向目录页（未滚动时显示）
-│   │       ├── TocSide.svelte      # 右侧 sidebar TOC（滚动后显现 + hover 展开）
-│   │       ├── StickyBar.svelte    # 顶部细 bar（mark + tone slot）
-│   │       ├── ViewToggle.svelte
-│   │       ├── PhraseTable.svelte
-│   │       ├── PhraseCards.svelte
-│   │       ├── TranslationCell.svelte
-│   │       ├── VariantRow.svelte   # 单个变体（text + rom + tag + note + copy）
-│   │       ├── SpeakButton.svelte
-│   │       ├── StarButton.svelte
-│   │       ├── StarFilter.svelte   # "Starred only" 开关 chip
-│   │       ├── ThemeToggle.svelte
-│   │       └── Toast.svelte
-│   ├── data/
-│   │   ├── phrases/             # 每条短语一个 JSON 文件（<id>.json）
-│   │   ├── languages.json       # 语言元信息（code/native/tts/...）
-│   │   └── scenes.json          # 场景有序列表
-│   ├── lib/
-│   │   ├── schema.ts            # Zod schema + 类型导出
-│   │   ├── stores.ts            # nanostores: selectedLangs / anchor / tone / view / theme / starred / starredOnly
-│   │   ├── filter.ts            # visibleVariants() 变体筛选逻辑
-│   │   ├── scroll.ts            # 全局滚动状态：scrolled / activeScene / tocExpanded（nanostores + RAF listener）
-│   │   ├── clipboard.ts         # 带 fallback 的复制工具
-│   │   ├── tts.ts               # Web Speech API 封装 + voice 检测
-│   │   └── storage.ts           # localStorage 工具 + 版本迁移
-│   ├── content/
-│   │   └── ui/
-│   │       └── en.json          # UI chrome 字符串（v1 只出英文）
-│   ├── styles/
-│   │   ├── tokens.css           # CSS 变量（light + dark）
-│   │   ├── global.css           # reset + base
-│   │   └── typography.css
-│   ├── pages/
-│   │   ├── index.astro          # 主页
-│   │   └── 404.astro            # not-found（"This letter went astray."）
-│   └── types.ts                 # 导出的类型别名
-├── scripts/
-│   ├── new-phrase.mjs           # 交互式新增短语骨架
-│   └── coverage.mjs             # 打印各语言覆盖率矩阵
-├── astro.config.mjs
-├── svelte.config.js
-├── tsconfig.json
-├── package.json
-├── pnpm-lock.yaml
-├── README.md
-└── DESIGN.md                    # 本文件
+│   ├── components/    # astro/（纯静态）+ svelte/（交互 islands）
+│   ├── data/          # phrases/（每短语一文件）+ phrases.ts 聚合 + languages.json + scenes.json
+│   ├── lib/           # schema / stores / filter / tts / scroll / clipboard / storage
+│   ├── content/ui/    # UI chrome 字符串（en.json）
+│   ├── styles/        # tokens / global / typography
+│   └── pages/         # index + 404
+├── scripts/           # new-phrase / coverage / export-review
+└── .github/workflows/ # Pages 部署
 ```
+
+完整文件清单以仓库为准（§0 规则 1）。
 
 **数据文件的位置说明**：`src/data/` 而不是 `src/content/collections/`。原因：内容数据由显式 Zod 校验把关（`src/lib/schema.ts`，构建时跑），不需要 Content Collections；短语按 per-phrase 文件组织（`phrases/<id>.json`，由 `scripts/_load-phrases.mjs` / `src/data/phrases.ts` 聚合），单条短语可独立生成、review、diff。
 
@@ -173,18 +136,7 @@ src/content/ui/
 
 ### 5.3 Schema — 语言（`languages.json`）
 
-```json
-[
-  { "code": "zh", "native": "中文",      "tts": "zh-CN", "rtl": false, "defaultOn": true  },
-  { "code": "en", "native": "English",   "tts": "en-US", "rtl": false, "defaultOn": true,  "defaultAnchor": true },
-  { "code": "ja", "native": "日本語",    "tts": "ja-JP", "rtl": false, "defaultOn": true  },
-  { "code": "ko", "native": "한국어",    "tts": "ko-KR", "rtl": false, "defaultOn": false },
-  { "code": "es", "native": "Español",   "tts": "es-ES", "rtl": false, "defaultOn": false },
-  { "code": "pt", "native": "Português", "tts": "pt-BR", "rtl": false, "defaultOn": true  },
-  { "code": "fr", "native": "Français",  "tts": "fr-FR", "rtl": false, "defaultOn": true  },
-  { "code": "de", "native": "Deutsch",   "tts": "de-DE", "rtl": false, "defaultOn": false }
-]
-```
+字段定义见 `src/lib/schema.ts` 的 `Language`。语义要点：
 
 - `defaultOn`：首次访问时默认勾选的语言（加上 anchor 后控制在 5 以内）
 - `defaultAnchor`：标记哪一种是首次访问的锚点（仅一个为 true；v0.2.0 起为英文）
@@ -192,21 +144,7 @@ src/content/ui/
 
 ### 5.4 Schema — 场景（`scenes.json`）
 
-```json
-[
-  { "id": "greetings",     "num": "No. I",    "title": "Greetings",     "em": "Greetings"     },
-  { "id": "catching-up",   "num": "No. II",   "title": "Catching Up",   "em": "Up"            },
-  { "id": "gratitude",     "num": "No. III",  "title": "Gratitude",     "em": "Gratitude"     },
-  { "id": "farewells",     "num": "No. IV",   "title": "Farewells",     "em": "Farewells"     },
-  { "id": "reactions",     "num": "No. V",    "title": "Reactions",     "em": "Reactions"     },
-  { "id": "questions",     "num": "No. VI",   "title": "Questions",     "em": "Questions"     },
-  { "id": "compliments",   "num": "No. VII",  "title": "Compliments",   "em": "Compliments"   },
-  { "id": "encouragement", "num": "No. VIII", "title": "Encouragement", "em": "Encouragement" },
-  { "id": "affection",     "num": "No. IX",   "title": "Affection",     "em": "Affection"     },
-  { "id": "well-wishes",   "num": "No. X",    "title": "Warm Wishes",   "em": "Wishes"        },
-  { "id": "holidays",      "num": "No. XI",   "title": "Holidays",      "em": "Holidays"      }
-]
-```
+当前场景列表以 `src/data/scenes.json` 为准（数组顺序 = 页面顺序）。字段语义：
 
 - `em` 字段：标题里要斜体强调的那个词（跟 demo 视觉一致，给"Warm **_Wishes_**"这种排印）
 - 顺序就是页面显示顺序（TOC 和内容都按数组顺序）
@@ -236,21 +174,7 @@ src/content/ui/
         { "text": "Hi", "tone": "casual" }
       ]
     },
-    "ja": {
-      "gloss": "挨拶",
-      "variants": [
-        { "text": "こんにちは", "rom": "konnichiwa", "tone": "neutral", "note": "Daytime standard; works with anyone." },
-        { "text": "やっほー",   "rom": "yahhō",      "tone": "close",   "note": "Playful; between close friends." }
-      ]
-    },
-    "pt": {
-      "gloss": "uma saudação",
-      "variants": [
-        { "text": "Olá" },
-        { "text": "Oi", "tone": "casual" }
-      ]
-    }
-    /* other languages... */
+    /* …one block per language, 23 in total */
   }
 }
 ```
@@ -290,61 +214,7 @@ src/content/ui/
 
 ### 5.6 Zod schema（`src/lib/schema.ts`）
 
-```ts
-import { z } from 'zod';
-
-export const Tone = z.enum(['close', 'casual', 'neutral', 'polite']);
-export const Gender = z.enum(['m', 'f']);
-export const Count = z.enum(['one', 'many']);
-
-export const Variant = z.object({
-  text: z.string().min(1),
-  rom: z.string().optional(),
-  tone: Tone.optional(),
-  speakerGender: Gender.optional(),
-  addresseeGender: Gender.optional(),
-  addresseeCount: Count.optional(),
-  region: z.string().optional(),
-  note: z.string().optional(),
-});
-
-export const LangTrans = z.object({
-  gloss: z.string(),
-  variants: z.array(Variant).min(1),
-});
-
-export const Phrase = z.object({
-  id: z.string(),
-  scene: z.string(),
-  order: z.number().int(),
-  trans: z.record(z.string(), LangTrans),   // key = lang code
-});
-
-export const Language = z.object({
-  code: z.string(),
-  native: z.string(),
-  tts: z.string(),
-  rtl: z.boolean().default(false),
-  defaultOn: z.boolean().default(false),
-  defaultAnchor: z.boolean().default(false),
-});
-
-export const Scene = z.object({
-  id: z.string(),
-  num: z.string(),
-  title: z.string(),
-  em: z.string(),
-});
-
-export const PhrasesFile   = z.array(Phrase);
-export const LanguagesFile = z.array(Language);
-export const ScenesFile    = z.array(Scene);
-
-export type TPhrase   = z.infer<typeof Phrase>;
-export type TVariant  = z.infer<typeof Variant>;
-export type TLanguage = z.infer<typeof Language>;
-export type TScene    = z.infer<typeof Scene>;
-```
+Schema 本体直接看源文件——它就是事实层真相（§0）。这里只记设计点：枚举集中定义（`Tone` / `Gender` / `Count`），variant 全部维度字段 optional（"只填真实区分"），`trans` 用 `z.record` 以便语言可增删。
 
 **运行时点**：在 Astro 构建开始时（`astro.config.mjs` 的 integration hook 或 `pages/index.astro` 顶部脚本）读三个文件、跑 Zod parse。任何 schema 错误立即 throw，构建失败——这保证线上数据永远合法。
 
@@ -352,71 +222,15 @@ export type TScene    = z.infer<typeof Scene>;
 
 UI 状态有两个维度影响变体显示：`anchor`（哪种语言放锚点列）、`tone`（`any` 或某一档）。
 
-```ts
-export function visibleVariants(
-  all: TVariant[],
-  tone: 'any' | 'close' | 'casual' | 'neutral' | 'polite',
-): TVariant[] {
-  if (!all?.length) return [];
-  let pool = all;
-
-  if (tone !== 'any') {
-    const toned = pool.filter(v => v.tone === tone);
-    if (toned.length) pool = toned;
-    else {
-      // no exact match: fall back to untoned (default) variants
-      const untoned = pool.filter(v => !v.tone);
-      if (untoned.length) pool = untoned;
-    }
-  }
-
-  return pool;
-}
-```
+实现见 `src/lib/filter.ts`。规则：tone=`any` 返回全部；指定档位时优先精确命中，无命中则回退到未标 tone 的默认变体。
 
 **关键原则**：筛选失败时优雅降级，不返回空数组。这保证 UI 里永远有东西显示。
 
-**addressee 维度故意省略**。`speakerGender` / `addresseeGender` / `addresseeCount` 仍然在 schema 上保留，但只作为**被动描述标签**通过 VariantRow 的 tag line 渲染（"he writes" / "to a woman" / "to everyone"），不参与筛选。原因：v1 数据下这三个轴的命中率太低（speakerGender 2/77、addresseeGender 0/77、addresseeCount 7/77），做成显眼的 UI 控件让用户拨了发现没变化反而更糟。`scripts/coverage.mjs` 会持续打印这三个轴的命中数 + 距阈值的差距；当 speakerGender 或 addresseeGender 累积超过 ~10 个 cell 时再考虑加回 UI 控件（届时 Stationery 大概是 *signed by [me · he · she]* 的第三句，或类似 addressee gender 的写法）。
+**addressee 维度故意省略**。`speakerGender` / `addresseeGender` / `addresseeCount` 仍然在 schema 上保留，但只作为**被动描述标签**通过 VariantRow 的 tag line 渲染（"he writes" / "to a woman" / "to everyone"），不参与筛选。原因（v1 当时）：三个轴命中率太低（speakerGender 2/77、addresseeGender 0/77、addresseeCount 7/77），做成显眼的 UI 控件让用户拨了发现没变化反而更糟。`scripts/coverage.mjs` 持续打印三个轴的命中数；约定 speakerGender / addresseeGender 累积超过 ~10 个 cell 时再考虑加回 UI 控件（Stationery 第三句 *signed by [me · he · she]* + addressee 槽位）。**2026-06 现状：两轴各 60，阈值已超 6 倍——恢复控件已列入待决事项（见 §12.2）。**
 
 ### 5.8 UI 字符串（`src/content/ui/en.json`）
 
-跟具体翻译无关的所有界面文本。v1 只有英文一份，未来可加 `zh.json` 做 UI 中文化。
-
-```json
-{
-  "masthead": {
-    "tagline": "A warm glossary — small enough to hold, tuned to <em>who</em> you're writing to and <em>how</em> you want to sound."
-  },
-  "stationery": {
-    "langsLabel": "Letters",
-    "capHint": "up to 5 at a time",
-    "anchoredIn": "Anchored in",
-    "iWrite": "I write",
-    "tones": {
-      "any":     "in any tone",
-      "close":   "tenderly",
-      "casual":  "casually",
-      "neutral": "evenly",
-      "polite":  "politely"
-    }
-  },
-  "actions": {
-    "copy":   "copy",
-    "copied": "✓ copied",
-    "listen": "listen",
-    "star":   "starred"
-  },
-  "filters": {
-    "starredOnly": "Starred only"
-  },
-  "footer": {
-    "line1": "Sent with care across rivers and oceans.",
-    "sig":   "made for friends, by a friend",
-    "sourceLabel": "View source on GitHub",
-    "sourceUrl":   "https://github.com/Chimelight/distant-friends"
-  }
-}
-```
+跟具体翻译无关的所有界面文本，内容以源文件为准。v1 只有英文一份，未来可加 `zh.json` 做 UI 中文化（store 已就绪）。设计点：tone 档位的展示文案（"tenderly" / "casually"…）属于 UI 字符串而非数据，因为它描述界面措辞而非翻译本身。
 
 ### 5.9 内容作者工作流
 
@@ -460,6 +274,8 @@ export function visibleVariants(
 ---
 
 ## 6. 功能规格
+
+> **本章地位**：已实现小节的交互细节与像素值以组件源码为准（§0 规则）；本章保留的是设计意图、约束和"实现注意 ⚠️"陷阱——这些读不出于代码。规格在实现后即视为"as-built 快照"，不随重构逐行维护。
 
 ### 6.1 语言选择（LangChips）
 
@@ -724,42 +540,11 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 ### 7.2 颜色 tokens
 
-**亮色（当前 demo 已定）**
-```css
---bg:         #EBE1CC;
---paper:      #F5EDD9;
---paper-up:   #FAF4E3;
---ink:        #1F1A14;
---ink-soft:   #524838;
---ink-mute:   #8F8370;
---accent:     #B0522E;
---accent-soft:#D89876;
---gold:       #A6824A;
---line:       #D4C6A8;
---line-soft:  #E2D6B8;
+全部数值以 `src/styles/tokens.css` 为准（light / dark / system-follow 三个块）。设计点：
 
-/* —— 语义 surface tokens（基于上面原色组合出来的叠加层）—— */
---surface-stickybar:    rgba(235, 225, 204, .86);   /* 顶部细 bar，需要 backdrop-blur */
---surface-toc-panel:    rgba(245, 237, 217, .22);   /* TocSide 展开态羊皮纸层，不 blur */
---surface-toc-border:   rgba(212, 198, 168, .22);   /* TocSide 展开态外框 */
---shadow-toc-panel:     0 12px 32px -24px rgba(138, 98, 67, .08);  /* TocSide 纸张透光 */
---shadow-stickybar:     0 1px 0 rgba(212, 198, 168, .5);          /* 细 bar 下缘 */
-```
-
-**暗色（需设计 + 测对比度）**
-```css
---bg:         #1B1813;
---paper:      #242018;
---paper-up:   #2D2820;
---ink:        #EDE1C8;
---ink-soft:   #BDB29A;
---ink-mute:   #877E6B;
---accent:     #D47649;   /* 赤陶提亮 */
---accent-soft:#A55E3A;
---gold:       #C9A668;
---line:       #3A3226;
---line-soft:  #2E2820;
-```
+- 命名分两层：原色（bg / paper / paper-up / ink / ink-soft / ink-mute / accent / gold / line）+ 语义 surface（`--surface-stickybar` 等基于原色组合的叠加层）
+- 暖纸色系：背景米色、墨色文字、赤陶 accent、金色装饰——"信笺"气质的来源
+- 暗色不是反色，是"夜里的同一张纸"：纸面压暗、墨色提亮、accent 提亮一档
 
 两套都需过 WCAG AA（正文 4.5:1，大字 3:1）。`npx @adobe/leonardo-contrast-colors` 或浏览器扩展验证。
 
@@ -768,58 +553,20 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 - 基础间距 4/8/12/16/20/24/32/48/72（px）
 - 圆角 3px（卡片/表格）、999px（chip）、50% 不用
 
-**动效时长 tokens**：
-
-```css
---dur-hover:   120ms;  /* hover 色变 */
---dur-switch:  240ms;  /* chip 切换、toggle */
---dur-feedback:350ms;  /* pulse / shake 反馈 */
---dur-reveal:  420ms;  /* stationery 滑入、sticky bar 淡入 */
---dur-entrance:800ms;  /* 卡片首屏入场 */
---toc-idle-ms: 1400;   /* TOC 滚动活动超时（JS 常量） */
---toc-hover-release-ms: 400;  /* hover 离开后 TOC 收起延迟（JS 常量） */
-```
-
-**Easing tokens**：
-
-```css
---ease-out:    cubic-bezier(.2, .9, .2, 1);       /* 主通用：弹出但不弹回 */
---ease-spring: cubic-bezier(.34, 1.56, .64, 1);   /* spring（TOC 容器 padding、transform）带轻微 overshoot */
---ease-linear: linear;                             /* 仅用于 backdrop-filter / opacity 这种机械感属性 */
-```
+**动效 tokens**（数值见 `tokens.css`）：时长按用途分档（hover / switch / feedback / reveal / entrance），easing 三种（`--ease-out` 主通用、`--ease-spring` 带轻微 overshoot、linear 仅用于机械感属性）。TOC 的两个 JS 时序常量（idle 1400ms / hover-release 400ms）在 `scroll.ts`。
 
 **关键动画命名 tokens**：
 
 - `@keyframes rise` — 卡片首屏入场（opacity 0→1 + translateY 8px→0，stagger 30ms）
 - `@keyframes pulse` — slot 被切换后的短暂高亮（背景赤陶色 0→22%→0，350ms）
 - `@keyframes shake` — chip 超上限时的摇头反馈（translateX 振荡，450ms）
-- **TOC 场景名 stagger**：6 行依次出现，每行延迟 +40ms（0.04s 起到 0.24s）
+- **TOC 场景名 stagger**：场景行依次出现，每行延迟 +40ms
 
 所有动画必须尊重 `prefers-reduced-motion: reduce`——统一做法是在 `global.css` 里用 `@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }`。
 
 ### 7.4 组件清单
 
-| 组件 | 类型 | 已有 demo 实现 | 备注 |
-|---|---|---|---|
-| Layout | Astro | ✓ | 根布局 + head inline script（theme FOUC 防御） |
-| Masthead | Astro | ✓ | 致·远·方 mark + 标题 + tagline + ViewToggle（右上角定位） |
-| ViewToggle | Svelte | ✓ | Masthead 右上角药丸形两档切换，驱动 `body[data-view]` |
-| Stationery | Svelte | ✓ | 手写体预设句容器（Anchored in / I write — to） |
-| SlotPicker | Svelte | ✓ | 斜体可点击词 + 下拉 popover，anchor/tone/addr 三处复用 |
-| LangChips | Svelte | ✓ | 本地名 chip toggle + 锚点高亮 + 5 种上限 shake 反馈 |
-| TocTop | Svelte | ✓ | 首屏横向目录页，fade-out on scroll |
-| TocSide | Svelte | ✓ | 右侧 sidebar，`$scrolled + $view==='cards'` 时出现，hover/scroll-activity 展开 |
-| StickyBar | Svelte | ✓ | 顶部浮动工具栏（mark + tone），滚动后淡入 |
-| PhraseTable | Svelte | ✓ | 桌面表格布局，按场景分 block |
-| PhraseCards | Svelte | ✓ | 卡片布局，`.card-list` max-width 720px 居中 |
-| TranslationCell | Svelte | ✓ | 单元格容器，根据筛选结果渲染 0-N 个 VariantRow |
-| VariantRow | Svelte | ✓ | 单个变体行：text + rom + tag line + note + copy + speak |
-| SpeakButton | Svelte | ✓ | Web Speech API + voice 检测，行内 hover 显现 |
-| StarButton | Svelte | ✓ | 锚点列/卡片头右上角，phrase 级收藏 |
-| ThemeToggle | Svelte | ✗ | 新增，light/dark/system |
-| Toast | Svelte | ✓ | 全局，复制成功提示 |
-| Legend | Astro | ✓ | 场景小标题（Roman 编号 + 斜体场名 + 金色圆点细线） |
-| Footer | Astro | ✓ | 静态 |
+以 `src/components/` 目录为准（astro/ 纯静态 4 个，svelte/ 交互 islands）。各组件的设计意图见 §6 对应小节。
 
 ---
 
@@ -871,50 +618,9 @@ export default defineConfig({
 });
 ```
 
-### 10.2 Actions workflow（`.github/workflows/deploy.yml` 骨架）
+### 10.2 Actions workflow
 
-```yaml
-name: Deploy
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with: { version: 9 }
-      - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: pnpm }
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm build
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: ./dist }
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-仓库 Settings → Pages → Source 选 **GitHub Actions**。
+见 `.github/workflows/`。要点：pnpm + Node 20、`upload-pages-artifact` → `deploy-pages`，仓库 Settings → Pages → Source 选 **GitHub Actions**。实际分支策略后来演化为 dev → main（Vercel preview）→ release（Pages），见 README Deploy 节。
 
 ### 10.3 自定义域名（可选）
 
@@ -924,83 +630,13 @@ jobs:
 
 ## 11. 里程碑与任务清单
 
-### M0 · 项目骨架（0.5–1 天）
+### M0 · 项目骨架 — ✅ v0.1.0（2026-04-25）
 
-**依赖与配置**
-- [x] `pnpm create astro@latest` → 空模板 + TypeScript strict
-- [x] 加 Svelte: `pnpm astro add svelte`
-- [x] 加 PWA: `pnpm add -D @vite-pwa/astro`
-- [x] 加 nanostores: `pnpm add nanostores @nanostores/persistent`（实际无 `@nanostores/svelte` —— 已废弃，atom 自身符合 Svelte store 契约）
-- [x] 加字体包: `pnpm add @fontsource-variable/fraunces @fontsource/instrument-sans @fontsource/noto-serif-jp @fontsource/noto-serif-kr @fontsource/noto-serif-sc`
-- [x] 加 Zod: `pnpm add zod`
-- [x] 配 `astro.config.mjs`（site / base / PWA / integrations）
+依赖配置、目录结构、lib 五件套（schema/filter/stores/scroll/clipboard/storage）、Actions 部署。明细见 v0.1.0 release 与当时的 git 历史。
 
-**骨架代码**
-- [x] 建目录结构（见 §4）
-- [x] `src/lib/schema.ts` — Zod schema（§5.6）
-- [x] `src/lib/filter.ts` — `visibleVariants()`（§5.7）
-- [x] `src/lib/stores.ts` — nanostores: `selectedLangs`, `anchor`, `tone`, `view`, `theme`, `starred`, `uiLocale`（导出名去掉 `$` 前缀适配 Svelte 5 runes）
-- [x] `src/lib/scroll.ts` — 全局滚动状态（`scrolled`, `activeScene`, `tocExpanded`），RAF 合流 window scroll listener + body.classList 镜像
-- [x] `src/lib/clipboard.ts` — 带 textarea fallback
-- [x] `src/lib/storage.ts` — localStorage 版本化封装
+### M1 · 对齐 v3 demo — ✅ v0.1.0 / v0.1.1
 
-**验收**
-- [x] `src/data/` 三个 JSON 各放一条占位数据，Zod 构建时校验通过
-- [x] 空页面渲染出 "Hello"
-- [x] GitHub Actions workflow 落地，空页面能部署到 GH Pages
-- [x] **完成后停下来让我检查**，再进 M1
-
-### M1 · 对齐 v3 demo 的视觉与功能（4–5 天）
-
-**数据**
-- [x] 从 v3 demo 迁移 11 条短语到 `src/data/phrases.json`（保留每语言 gloss + variants + tone / speakerGender / addresseeCount 标签）—— 后续 v0.1.1 删 `farewell-everyone`，剩 10 条
-- [x] `src/data/languages.json` 初版（7 种：zh / en / ja / ko / es / pt / fr + `defaultOn` + `defaultAnchor: true` 只在 zh 上）
-- [x] `src/data/scenes.json` 初版（6 个场景：greetings / catching-up / gratitude / affection / well-wishes / farewells）
-- [x] `src/content/ui/en.json` 初版（§5.8 结构）
-- [x] 辅助脚本 `scripts/new-phrase.mjs`（交互式追加新条目）
-- [x] 辅助脚本 `scripts/coverage.mjs`（打印语言覆盖率矩阵 + gender/count 维度成熟度指标）
-
-**样式**
-- [x] `src/styles/tokens.css` — 所有颜色 + surface + 时长 + easing tokens（§7.2 / §7.3，含暗色 token）
-- [x] `src/styles/global.css` — reset + base + `prefers-reduced-motion` 兜底
-- [x] `src/styles/typography.css` — Fraunces / Instrument Sans / CJK fallback + `font-display: swap`
-- [x] 纸纹 SVG noise filter + 暖色 vignette（body::before / ::after，从 v3 demo 复刻数值）
-- [x] 关键动画：`@keyframes rise`, `pulse`, `shake`
-
-**静态组件（Astro）**
-- [x] `Layout.astro` — 根模板 + head inline script（theme FOUC 防御 + 视图模式 FOUC 防御）
-- [x] `Masthead.astro` — 标题 + tagline（ViewToggle 槽位 v0.1.1 起改由 StickyBar 承载）
-- [x] `Footer.astro` — 静态页脚（v0.1.1 增加 GitHub source 链接）
-- [x] `Legend.astro` — 场景小标题（Roman 编号 + 斜体场名 + 金色圆点细线）
-
-**交互组件（Svelte）**
-- [x] `LangChips.svelte` — 锚点高亮 + 5 种上限 shake 反馈 + 锚点不可 toggle off
-- [x] `Stationery.svelte` — 两行手写体容器
-- [x] `SlotPicker.svelte` — popover 内部按钮 tabindex 规则就位，点击外部/Esc 关闭，pulse 反馈
-- [x] `TocTop.svelte` — 文档流内横向目录页，`scrolled` 订阅 → fade-out
-- [x] `TocSide.svelte` — 右侧 fixed，collapse/expand 按§6.4.2 全套；订阅 `activeScene`（v0.1.1 起 cards@≥640 + table@≥1024 双视图都显示，原仅 cards 限制取消）
-- [x] `StickyBar.svelte` — 顶部 fixed 浮条；mark + tone（v0.1.1 起 ViewToggle 内嵌右锚）
-- [x] `ViewToggle.svelte` — 药丸形两档切换；驱动 `body[data-view]` 切换（<640px 锁定 cards 并隐藏 toggle）
-- [x] `PhraseTable.svelte` — 表格视图；按场景分 block，`view-desktop` 在 ≥1024px 加 padding-right clamp 给 TocSide 让位
-- [x] `PhraseCards.svelte` — 卡片视图；`.card-list` max-width 720px 居中（始终生效，无 1100 突变）
-- [x] `TranslationCell.svelte` — 根据 `visibleVariants()` 结果渲染 0-N 个 VariantRow
-- [x] `VariantRow.svelte` — text + rom + tag line + note + copy hint 用空 span + ::before；tag line 被动展示 gender/count 描述
-- [x] `Toast.svelte` — 全局复制反馈
-
-**集成**
-- [x] `pages/index.astro` 组装所有组件
-- [x] ViewToggle 默认根据视口宽度（`matchMedia('(min-width: 640px)')`）选 table / cards —— v0.1.1 阈值从 960 降至 640
-- [x] 本地 `pnpm dev` 视觉上与 v3 demo 一致
-- [x] **验收清单**（对照 v3 demo 逐一确认）：
-  - [x] 首屏状态：TocTop 可见、TocSide 不可见、StickyBar 不可见
-  - [x] 滚动过 420px：TocTop 淡出、TocSide 淡入（cards@≥640 / table@≥1024）、StickyBar 淡入（含 ViewToggle）
-  - [x] Stationery 两个 slot（anchor / tone）都能展开选项并同步到数据
-  - [x] 复制任一 variant 行：行内 `✓ copied` + 全局 Toast
-  - [x] LangChips 选第 6 个：chip shake + 末尾小提示 "up to 5 at a time"
-  - [x] Tab 键穿行：不出现"按 Tab 莫名弹窗"
-  - [x] TocSide hover / 滚动活动都能触发展开；鼠标离开 400ms 后收起；滚动停止 1.4s 后收起
-  - [x] 切换视图：卡片宽度始终 720px max；TocSide 在 table 视图也显示（v0.1.1 行为变更）
-- [x] **完成后停下来让我检查**，再进 M2
+7 语言 × 11 短语迁移、全部样式 token、Astro 静态四件 + Svelte 交互十二件、双视图集成。验收时的手测清单保留在附录 F（回归测试可复用）。过程中的方案修订（ViewToggle 阈值 960→640、TocSide 双视图显示等）已并入 §6 各节与决策日志。
 
 ### M2 · 深色模式 + 收藏（1–2 天）
 
@@ -1058,27 +694,22 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 
 ---
 
-## 13. 给 Claude Code 的启动 Prompt 模板
+## 13. 决策日志（append-only）
 
-把本 `DESIGN.md` 和三个 demo 文件（`distant-friends-v3.html` 主要参考，v1/v2 作对照）放进项目根目录的 `reference/` 文件夹，然后给 Claude Code：
+> 记录"改变方向"的决策：被推翻的旧方案、确立的新规则。**只追加，不改写**——反转本身是信息。日常功能交付不记（git/release 已覆盖）。
 
-> 你要搭建 `distant-friends` 项目。先完整读 `DESIGN.md`，再打开 `reference/distant-friends-v3.html` 看视觉气质——这是 M1 结束时应该达到的视觉参考。v1 / v2 是过程参考，风格已被推翻，只作反面教材。
->
-> 然后按 §11 M0 里程碑的任务清单一个个完成，完成一个打一个勾。
->
-> 几条硬约束：
-> - 技术栈严格按 §3.1 来：Astro + Svelte 5 + TS + nanostores + Zod + Vanilla CSS。不要自作主张加 Tailwind、UI 库、CSS-in-JS、图标库。
-> - 数据结构按 §5 来：`src/data/` 下三个扁平 JSON 文件，不要用 Astro Content Collections。
-> - 组件放对位置：纯静态放 `src/components/astro/`，有状态交互放 `src/components/svelte/`。
-> - 所有跨组件状态用 nanostores + `@nanostores/persistent`，不要用 Svelte store。
-> - 所有颜色、字体、间距、动画时长用 `src/styles/tokens.css` 的 CSS 变量，不硬编码。
-> - UI 锁定英文一份，`src/content/ui/en.json`。v1 不做 locale 切换器，但组件内所有 UI 文案都要从 json 读，不写 hardcoded string。
-> - 变体筛选逻辑在 `src/lib/filter.ts`，严格按 §5.7 的 `visibleVariants()` 实现。
-> - **完成 M0 后停下来让我检查，再进 M1**。M1 完成后再停一次。
->
-> 有任何对 DESIGN.md 的疑问请先问，不要自己猜测。比如场景数量、变体字段、或者 AI 协作工作流的具体 prompt 格式。
->
-> 现在从 M0 开始。
+- **2026-04-22** · 大简化定调：所有语言平等（无源语言）、tone 四档全局固定、手写体 Stationery 替代 chips 墙/legend/pill 三件套、UI 锁英文。
+- **2026-04-26** · addressee slot 从 Stationery/StickyBar 撤除（命中率太低，控件拨动无效违反"内容是主角"）；确立**成熟度阈值机制**：coverage 脚本跟踪 gender 轴命中数，≥10 再考虑恢复控件。
+- **2026-04-28** · 默认锚点 zh → en：新增 7 种语言后，受众主体是不懂中文的国际朋友。
+- **2026-04-29** · **反转 v1.2 的"扁平三文件"**：phrases.json 拆为 per-phrase 文件（`phrases/<id>.json` + glob 聚合）。短语量增长后，单文件无法支撑独立生成/review/diff。
+- **2026-04-29** · 引入 `reviewed` 字段标记母语者审核状态。
+- **2026-06-10** · **移除 `reviewed` 字段**（反转上条）：审核提升流程始终未成形，字段沦为噪音；review 支持改由 `pnpm review` 对照表承担。
+- **2026-06-10** · 翻译四规则确立（README Translation philosophy）：温度优先 / 只填真实区分 / **friendly foreigner 不装母语者**（禁深度俚语，聊天惯例记号除外）/ **变体宁缺毋滥**（同义采样=滥）。当日依此完成全库审计，删 211 个变体。
+- **2026-06-11** · 场景体系重构：合并→拆分反复后定为"**小而多**"（11 个场景，最大 9 条）；排序原则修正为**逻辑分块优先、块内按频率、高频词不沉底**（非机械频率排序）；got-it 并入 i-see、"没关系"挪入 Gratitude 与"对不起"配对、节日单独成场景。
+- **2026-06-11** · 砍同义对时**标准形存活、casual 重复出局**（"I'm fine 事件"）：每格必须有中性默认，除非概念本身无正式语域（cool/oops/笑声）。
+- **2026-06-12** · 阿拉伯语（首个 RTL）：不做全局 RTL 布局，仅在短语文本元素加 `dir="auto"`——内容级 RTL，界面仍 LTR。
+- **2026-06-12** · 字体**不进** SW precache（反转 §6.12 原方案）：CJK Noto 按 unicode-range 拆 ~100 个子集，全量几十 MB；改运行时 CacheFirst。
+- **2026-06-12** · TTS：无可用 voice 时按钮不渲染（弃"禁用+tooltip"）；voice 按质量启发式排序（Natural/Enhanced/Google 加分）而非取第一个匹配；"Starred only" 状态会话级不持久化。
 
 ---
 
@@ -1116,7 +747,7 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 按 Conventional Commits 松散版本：`feat: …` / `fix: …` / `style: …` / `refactor: …` / `docs: …` / `chore: …`。不强制 body，但每条 commit 要能让三个月后的自己看懂。
 
 ### D. 决策记录
-未来重大技术决策（换框架、改数据结构、引入新依赖）建议开 `docs/decisions/` 下的 ADR 文件记录。当前项目规模暂不需要。
+见 §13 决策日志（in-doc append-only，2026-06-12 起取代原"将来开 ADR 目录"的设想——项目规模下单文件日志足够）。
 
 ### E. 本文档的演化
 
@@ -1125,7 +756,22 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 - **v1.2**（2026-04-22）— 大幅简化：所有语言平等、tone 四档固定、手写体 Stationery 替代所有 chips/pills、扁平三文件数据结构、UI 锁英文、每语言有自己的 gloss、语言数量上限 5 种
 - **v1.3**（2026-04-23）— 交互与视觉收尾：TOC 拆为 TocTop（首屏）+ TocSide（滚动后 sidebar，collapse/expand hover 展开）双形态；StickyBar 简化为 mark + tone + addressee；ViewToggle 提前到 M1（与卡片宽度约束 720px 强绑定）；`scroll.ts` 作为全局滚动状态中心；新增语义化 surface tokens；踩坑案例文档化（copy hint / SlotPicker tabindex）；shell 宽度 1180 → 1240px
 - **v1.5**（2026-04-26）— addressee slot（friend / woman / man / everyone）从 Stationery 和 StickyBar 整体撤掉：当前数据下 addresseeGender 命中率 0、addresseeCount 仅 9% 且只对单条短语有效，控件存在却拨动无效违反"内容是主角"原则。schema 字段（`speakerGender` / `addresseeGender` / `addresseeCount`）保留，VariantRow tag line 被动展示（"he writes" / "to a woman" / "to everyone"）。`scripts/coverage.mjs` 升级输出三个轴的命中数 + 距阈值（10）的差距，作为未来何时恢复 UI 控件的触发指标。`visibleVariants()` 简化为只接受 tone。
+- **v2.0**（2026-06-12）— 文档体例重构：确立"事实层=代码、意图层=本文档"的真相分层（§0 维护规则）；删除全部事实复制品（文件树细节、languages/scenes/en.json/Zod/token 数值快照、组件清单表、workflow YAML）约 -350 行；§6 规格声明为 as-built 快照；已完成里程碑压缩为单行（M1 验收清单移附录 F 作回归手测）；删除已完成使命的"启动 Prompt 模板"章；新设 §13 append-only 决策日志并回填 2026-04 以来的方向性决策。
+
+### F. 手测回归清单（源自 M1 验收）
+
+- [ ] 首屏状态：TocTop 可见、TocSide 不可见、StickyBar 不可见
+- [ ] 滚动过 420px：TocTop 淡出、TocSide 淡入（cards@≥640 / table@≥1024）、StickyBar 淡入（含 ViewToggle）
+- [ ] Stationery 两个 slot（anchor / tone）都能展开选项并同步到数据
+- [ ] 复制任一 variant 行：行内 `✓ copied` + 全局 Toast
+- [ ] LangChips 选第 6 个：chip shake + 末尾小提示 "up to 5 at a time"
+- [ ] Tab 键穿行：不出现"按 Tab 莫名弹窗"
+- [ ] TocSide hover / 滚动活动都能触发展开；鼠标离开 400ms 后收起；滚动停止 1.4s 后收起
+- [ ] 切换视图：卡片宽度始终 720px max；TocSide 在 table 视图也显示
+- [ ] 收藏一条短语 → "Starred only" chip 出现；过滤后无收藏的场景整块隐藏
+- [ ] hover 变体行 → 喇叭图标出现，点击朗读不触发复制
+- [ ] 阿拉伯语开启后文本右对齐（dir=auto），rom 仍左对齐
 
 ---
 
-*文档版本 v1.5 · 最后更新 2026-04-26*
+*文档版本 v2.0 · 最后更新 2026-06-12*

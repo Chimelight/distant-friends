@@ -134,7 +134,7 @@ The release flow is wrapped in a `/release` slash command (Claude Code) that dra
 
 ## Roadmap
 
-See [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单) for the full task list with checkboxes.
+Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单). The table below is a summary and may lag.
 
 | Milestone | State |
 | --- | --- |
