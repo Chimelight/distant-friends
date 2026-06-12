@@ -101,6 +101,13 @@
         { "text": "Күлкілі екен", "rom": "Külkili eken", "note": "Lit. \"that's funny.\"" }
       ]
     },
+    "ar": {
+      "gloss": "ضحك",
+      "variants": [
+        { "text": "ههههه", "rom": "hhhhh", "tone": "casual", "note": "Arabic chat laughter — the letter هـ repeated." },
+        { "text": "مضحك جداً", "rom": "muḍḥik jiddan", "note": "Lit. \"very funny.\"" }
+      ]
+    },
     "hi": {
       "gloss": "हँसी",
       "variants": [

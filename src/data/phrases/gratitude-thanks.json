@@ -102,6 +102,13 @@
         { "text": "Рахмет сізге", "rom": "Rahmet sizge", "tone": "polite" }
       ]
     },
+    "ar": {
+      "gloss": "شكر",
+      "variants": [
+        { "text": "شكراً", "rom": "shukran" },
+        { "text": "شكراً جزيلاً", "rom": "shukran jazīlan", "note": "Lit. \"thanks abundantly\" — warmer." }
+      ]
+    },
     "hi": {
       "gloss": "धन्यवाद",
       "variants": [

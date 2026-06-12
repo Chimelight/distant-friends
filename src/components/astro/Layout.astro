@@ -1,14 +1,22 @@
 ---
-// Variable Fraunces: full axis set (wght + opsz + SOFT + WONK) — design uses
-// opsz/SOFT for TocSide numerals. Size optimization is an M4 concern.
-import '@fontsource-variable/fraunces/full.css';
-import '@fontsource-variable/fraunces/full-italic.css';
+// Variable Fraunces: standard axes (wght + opsz). The full set added SOFT +
+// WONK for one TocSide flourish at +120KB on the critical latin subsets —
+// dropped in the M4 size pass (decision log 2026-06-12).
+import '@fontsource-variable/fraunces/standard.css';
+import '@fontsource-variable/fraunces/standard-italic.css';
 import '@fontsource/instrument-sans/400.css';
 import '@fontsource/instrument-sans/400-italic.css';
 import '@fontsource/instrument-sans/500.css';
-import '@fontsource/noto-serif-sc/400.css';
-import '@fontsource/noto-serif-jp/400.css';
-import '@fontsource/noto-serif-kr/400.css';
+
+// CJK font-face boilerplate is huge (~112KB gzipped) and render-blocking if
+// bundled with the page CSS. It ships as its own stylesheet, loaded without
+// blocking paint; system CJK serifs cover the gap (stack in tokens.css).
+import cjkFontsHref from '../../styles/fonts-cjk.css?url';
+
+// Preload the two latin Fraunces faces: nearly all first-paint text uses
+// them, and letting them race the render caused visible swap-shift (CLS).
+import frauncesNormalHref from '@fontsource-variable/fraunces/files/fraunces-latin-standard-normal.woff2?url';
+import frauncesItalicHref from '@fontsource-variable/fraunces/files/fraunces-latin-standard-italic.woff2?url';
 
 import '../../styles/tokens.css';
 import '../../styles/typography.css';
@@ -37,6 +45,10 @@ const ogImage = `${canonical.replace(/\/$/, '')}/og-image.png`;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesNormalHref} />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesItalicHref} />
+    <link rel="stylesheet" href={cjkFontsHref} media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href={cjkFontsHref} /></noscript>
     <title>{title}</title>
 
     <!-- Open Graph -->

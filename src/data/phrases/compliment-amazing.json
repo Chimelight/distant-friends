@@ -103,6 +103,14 @@
         { "text": "Таңғажайып", "rom": "Taňğajaiyp", "note": "Lit. \"astonishing.\"" }
       ]
     },
+    "ar": {
+      "gloss": "مذهل",
+      "variants": [
+        { "text": "مذهل", "rom": "mudh-hil", "note": "Of a thing." },
+        { "text": "أنت رائع", "rom": "anta rā'i'", "addresseeGender": "m" },
+        { "text": "أنتِ رائعة", "rom": "anti rā'i'a", "addresseeGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "ज़बरदस्त",
       "variants": [

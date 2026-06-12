@@ -102,6 +102,13 @@
         { "text": "Зор", "rom": "Zor", "tone": "casual", "note": "Lit. \"great / huge.\"" }
       ]
     },
+    "ar": {
+      "gloss": "كول",
+      "variants": [
+        { "text": "كول", "rom": "kūl", "tone": "casual", "note": "English-borrowed." },
+        { "text": "روعة", "rom": "raw'a", "tone": "casual", "note": "Lit. \"splendor\" — \"so cool.\"" }
+      ]
+    },
     "hi": {
       "gloss": "कूल",
       "variants": [

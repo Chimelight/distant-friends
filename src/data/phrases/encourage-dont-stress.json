@@ -104,6 +104,13 @@
         { "text": "Сабыр сақта", "rom": "Sabyr saqta", "note": "Lit. \"keep calm.\"" }
       ]
     },
+    "ar": {
+      "gloss": "لا تقلق",
+      "variants": [
+        { "text": "لا تقلق", "rom": "lā taqlaq", "addresseeGender": "m" },
+        { "text": "لا تقلقي", "rom": "lā taqlaqī", "addresseeGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "चिंता मत करो",
       "variants": [

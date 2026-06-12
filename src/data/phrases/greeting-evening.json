@@ -90,6 +90,12 @@
         { "text": "Қайырлы кеш", "rom": "Qaiyrly keş" }
       ]
     },
+    "ar": {
+      "gloss": "مساء الخير",
+      "variants": [
+        { "text": "مساء الخير", "rom": "masā' al-khayr" }
+      ]
+    },
     "hi": {
       "gloss": "शाम का अभिवादन",
       "variants": [

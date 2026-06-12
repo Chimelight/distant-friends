@@ -99,6 +99,13 @@
         { "text": "Көріскенше", "rom": "Köriskenşe" }
       ]
     },
+    "ar": {
+      "gloss": "إلى اللقاء",
+      "variants": [
+        { "text": "أراك لاحقاً", "rom": "arāk lāḥiqan", "note": "Same spelling for both genders in everyday writing." },
+        { "text": "إلى اللقاء", "rom": "ilā al-liqā'", "note": "Lit. \"until the meeting.\"" }
+      ]
+    },
     "hi": {
       "gloss": "फिर मिलते हैं",
       "variants": [

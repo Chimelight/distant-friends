@@ -103,6 +103,14 @@
         { "text": "Сәл күте тұр", "rom": "Säl küte tur", "note": "Lit. \"wait a bit.\"" }
       ]
     },
+    "ar": {
+      "gloss": "لحظة",
+      "variants": [
+        { "text": "لحظة", "rom": "laḥẓa", "note": "Lit. \"a moment.\"" },
+        { "text": "انتظر", "rom": "intaẓir", "addresseeGender": "m" },
+        { "text": "انتظري", "rom": "intaẓirī", "addresseeGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "रुको",
       "variants": [

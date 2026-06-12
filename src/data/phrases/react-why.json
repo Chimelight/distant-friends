@@ -99,6 +99,13 @@
         { "text": "Қалай олай?", "rom": "Qalai olai?", "tone": "casual", "note": "Lit. \"how come?\"" }
       ]
     },
+    "ar": {
+      "gloss": "لماذا؟",
+      "variants": [
+        { "text": "لماذا؟", "rom": "limādhā?" },
+        { "text": "ليش؟", "rom": "lēsh?", "tone": "casual", "note": "Colloquial; understood across dialects." }
+      ]
+    },
     "hi": {
       "gloss": "क्यों",
       "variants": [

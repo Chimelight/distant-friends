@@ -101,6 +101,12 @@
         { "text": "Қолыңнан келеді", "rom": "Qolyňnan keledi", "note": "Lit. \"it's within your hands.\"" }
       ]
     },
+    "ar": {
+      "gloss": "تستطيع",
+      "variants": [
+        { "text": "يمكنك فعلها", "rom": "yumkinuk fi'lahā", "note": "Lit. \"you can do it\"; spelling serves both genders." }
+      ]
+    },
     "hi": {
       "gloss": "तुम कर सकते हो",
       "variants": [

@@ -93,6 +93,12 @@
         { "text": "Тәтті түс көр", "rom": "Tätti tüs kör" }
       ]
     },
+    "ar": {
+      "gloss": "أحلام سعيدة",
+      "variants": [
+        { "text": "أحلام سعيدة", "rom": "aḥlām sa'īda" }
+      ]
+    },
     "hi": {
       "gloss": "मीठे सपने",
       "variants": [

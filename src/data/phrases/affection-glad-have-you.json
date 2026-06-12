@@ -104,6 +104,13 @@
         { "text": "Сені танығаныма қуаныштымын", "rom": "Seni tanyğanyma quanyştymyn", "note": "Lit. \"glad I met you.\"" }
       ]
     },
+    "ar": {
+      "gloss": "سعيد بوجودك",
+      "variants": [
+        { "text": "سعيد بوجودك", "rom": "sa'īd bi-wujūdak", "speakerGender": "m" },
+        { "text": "سعيدة بوجودك", "rom": "sa'īda bi-wujūdak", "speakerGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "तुम्हारा साथ अच्छा है",
       "variants": [

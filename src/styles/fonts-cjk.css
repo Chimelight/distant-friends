@@ -1,0 +1,7 @@
+/* CJK @font-face declarations (Noto Serif SC/JP/KR) — ~300KB of
+ * unicode-range boilerplate that must NOT block first paint. Loaded
+ * async from Layout.astro via the media="print" swap; the serif stack
+ * in tokens.css falls back to system CJK serifs until these arrive. */
+@import '@fontsource/noto-serif-sc/400.css';
+@import '@fontsource/noto-serif-jp/400.css';
+@import '@fontsource/noto-serif-kr/400.css';

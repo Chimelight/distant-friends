@@ -95,6 +95,13 @@
         { "text": "Жақсы екен", "rom": "Jaqsy eken", "note": "Lit. \"that's good (then).\"" }
       ]
     },
+    "ar": {
+      "gloss": "الحمد لله",
+      "variants": [
+        { "text": "الحمد لله", "rom": "al-ḥamdu lillāh", "note": "Lit. \"praise be to God\" — the natural reply to good news." },
+        { "text": "يسعدني سماع ذلك", "rom": "yus'idunī samā' dhālik", "note": "Lit. \"it gladdens me to hear that.\"" }
+      ]
+    },
     "hi": {
       "gloss": "सुनकर अच्छा लगा",
       "variants": [

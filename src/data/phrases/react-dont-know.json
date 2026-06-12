@@ -101,6 +101,12 @@
         { "text": "Түк білмеймін", "rom": "Tük bilmeimin", "tone": "casual", "note": "Lit. \"I know nothing.\"" }
       ]
     },
+    "ar": {
+      "gloss": "لا أعرف",
+      "variants": [
+        { "text": "لا أعرف", "rom": "lā a'rif" }
+      ]
+    },
     "hi": {
       "gloss": "पता नहीं",
       "variants": [

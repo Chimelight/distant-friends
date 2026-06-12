@@ -110,6 +110,13 @@
         { "text": "Кешіріңіз?", "rom": "Keşiriňiz?", "tone": "polite", "note": "Polite \"sorry?\"" }
       ]
     },
+    "ar": {
+      "gloss": "ماذا؟",
+      "variants": [
+        { "text": "ماذا؟", "rom": "mādhā?" },
+        { "text": "هاه؟", "rom": "hāh?", "tone": "casual" }
+      ]
+    },
     "hi": {
       "gloss": "क्या?",
       "variants": [

@@ -101,6 +101,13 @@
         { "text": "Бәрі ретке келеді", "rom": "Bäri retke keledi", "note": "Lit. \"all will fall into place.\"" }
       ]
     },
+    "ar": {
+      "gloss": "ستتحسن الأمور",
+      "variants": [
+        { "text": "ستتحسن الأمور", "rom": "satataḥassan al-umūr", "note": "Lit. \"things will improve.\"" },
+        { "text": "إن شاء الله خير", "rom": "in shā' Allāh khayr", "note": "Lit. \"God willing, good\" — the everyday reassurance." }
+      ]
+    },
     "hi": {
       "gloss": "सब ठीक हो जाएगा",
       "variants": [

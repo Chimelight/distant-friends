@@ -91,6 +91,13 @@
         { "text": "Жаңа жылыңыз құтты болсын", "rom": "Jaňa jylyňyz qutty bolsyn", "tone": "polite" }
       ]
     },
+    "ar": {
+      "gloss": "كل عام وأنت بخير",
+      "variants": [
+        { "text": "كل عام وأنت بخير", "rom": "kull 'ām wa-anta bi-khayr", "note": "Lit. \"every year and you are well.\"" },
+        { "text": "سنة سعيدة", "rom": "sana sa'īda", "tone": "casual" }
+      ]
+    },
     "hi": {
       "gloss": "नववर्ष की शुभकामनाएँ",
       "variants": [

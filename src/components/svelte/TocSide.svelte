@@ -234,7 +234,7 @@
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    font-variation-settings: "opsz" 48, "SOFT" 100;
+    font-variation-settings: "opsz" 48;
     color: var(--gold);
     font-size: 14px;
     letter-spacing: 0.08em;

@@ -94,6 +94,13 @@
         { "text": "Жақсы уақыт өткіз", "rom": "Jaqsy uaqyt ötkiz", "note": "Lit. \"spend a good time.\"" }
       ]
     },
+    "ar": {
+      "gloss": "استمتع",
+      "variants": [
+        { "text": "استمتع", "rom": "istamti'", "addresseeGender": "m" },
+        { "text": "استمتعي", "rom": "istamti'ī", "addresseeGender": "f" }
+      ]
+    },
     "hi": {
       "gloss": "मज़े करो",
       "variants": [

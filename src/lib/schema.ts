@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const Tone = z.enum(['close', 'casual', 'neutral', 'polite']);
+export const Tone = z.enum(['casual', 'neutral', 'polite']);
 export const Gender = z.enum(['m', 'f']);
 export const Count = z.enum(['one', 'many']);
 

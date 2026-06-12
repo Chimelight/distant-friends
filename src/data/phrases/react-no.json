@@ -101,6 +101,12 @@
         { "text": "Жоқ", "rom": "Joq" }
       ]
     },
+    "ar": {
+      "gloss": "لا",
+      "variants": [
+        { "text": "لا", "rom": "lā" }
+      ]
+    },
     "hi": {
       "gloss": "नहीं",
       "variants": [

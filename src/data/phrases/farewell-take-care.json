@@ -97,6 +97,12 @@
         { "text": "Аман бол", "rom": "Aman bol", "tone": "casual", "note": "Lit. \"be safe.\"" }
       ]
     },
+    "ar": {
+      "gloss": "اعتنِ بنفسك",
+      "variants": [
+        { "text": "اعتني بنفسك", "rom": "i'tani bi-nafsak", "note": "Everyday written form serves both genders." }
+      ]
+    },
     "hi": {
       "gloss": "ख्याल रखना",
       "variants": [

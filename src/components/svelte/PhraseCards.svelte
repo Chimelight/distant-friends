@@ -1,6 +1,7 @@
 <script lang="ts">
   import TranslationCell from './TranslationCell.svelte';
-  import { selectedLangs, anchor, tone } from '../../lib/stores';
+  import StarButton from './StarButton.svelte';
+  import { selectedLangs, anchor, tone, speakerGender, addresseeGender, starred, starredOnly } from '../../lib/stores';
   import { visibleVariants } from '../../lib/filter';
   import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
@@ -28,8 +29,9 @@
   }
 
   function phrasesIn(sceneId: string): TPhrase[] {
+    const star = new Set($starred);
     return allPhrases
-      .filter((p) => p.scene === sceneId)
+      .filter((p) => p.scene === sceneId && (!$starredOnly || star.has(p.id)))
       .sort((a, b) => a.order - b.order);
   }
 </script>
@@ -49,12 +51,13 @@
         <div class="card-list">
           {#each items as p, i (p.id)}
             {@const tr = p.trans[$anchor]}
-            {@const anchorVs = tr ? visibleVariants(tr.variants, $tone) : []}
+            {@const anchorVs = tr ? visibleVariants(tr.variants, $tone, $speakerGender, $addresseeGender) : []}
             {@const primary = anchorVs[0] ?? tr?.variants[0]}
             <article class="card" style={`animation-delay:${i * 30}ms`}>
               <div class="card-head">
+                <span class="star-slot"><StarButton phraseId={p.id} /></span>
                 {#if primary}
-                  <div class="card-word" lang={$anchor}>{primary.text}</div>
+                  <div class="card-word" lang={$anchor} dir="auto">{primary.text}</div>
                   {#if primary.rom}
                     <div class="card-rom">{primary.rom}</div>
                   {/if}
@@ -67,7 +70,7 @@
               </div>
               {#each otherLangs as L (L.code)}
                 {@const t = p.trans[L.code]}
-                {@const vs = t ? visibleVariants(t.variants, $tone) : []}
+                {@const vs = t ? visibleVariants(t.variants, $tone, $speakerGender, $addresseeGender) : []}
                 {#if t && vs.length}
                   <div class="lang-block">
                     <div class="lang-label">
@@ -90,6 +93,10 @@
 
 <style>
   .scene-block {
+    /* Skip layout/paint for below-fold scenes; the estimate only affects
+     * scrollbar length until the block is reached. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 2400px;
     margin-bottom: 48px;
     /* Clear the StickyBar (~44px tall) when scrollIntoView lands on a
      * section — without this margin the title hides under the bar. */
@@ -139,9 +146,16 @@
     animation: rise var(--dur-entrance) ease forwards;
   }
   .card-head {
+    position: relative;
     padding-bottom: 16px;
+    padding-right: 36px;
     margin-bottom: 8px;
     border-bottom: 1px dashed var(--line);
+  }
+  .star-slot {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   .card-word {
     font-family: var(--font-serif);

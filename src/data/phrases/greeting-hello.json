@@ -15,7 +15,7 @@
       "gloss": "挨拶",
       "variants": [
         { "text": "こんにちは", "rom": "konnichiwa", "tone": "neutral", "note": "Daytime standard; works with anyone." },
-        { "text": "やっほー", "rom": "yahhō", "tone": "close", "note": "Playful; between close friends." }
+        { "text": "やっほー", "rom": "yahhō", "tone": "casual", "note": "Playful; between close friends." }
       ]
     },
     "ko": {
@@ -103,6 +103,14 @@
         { "text": "Сәлем", "rom": "Sälem", "tone": "casual" },
         { "text": "Сәлеметсіз бе", "rom": "Sälemetsiz be", "tone": "polite", "note": "Polite; to elders or strangers." },
         { "text": "Ассалаумағалейкум", "rom": "Assalaumağaleikum", "tone": "polite", "note": "Traditional Muslim greeting." }
+      ]
+    },
+    "ar": {
+      "gloss": "تحية",
+      "variants": [
+        { "text": "مرحباً", "rom": "marḥaban" },
+        { "text": "أهلاً", "rom": "ahlan", "tone": "casual", "note": "Warm \"hey there.\"" },
+        { "text": "السلام عليكم", "rom": "as-salāmu 'alaykum", "tone": "polite", "note": "Traditional greeting — \"peace be upon you.\"" }
       ]
     },
     "hi": {

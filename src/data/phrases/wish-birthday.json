@@ -76,14 +76,14 @@
       "gloss": "życzenia urodzinowe",
       "variants": [
         { "text": "Wszystkiego najlepszego!", "note": "Lit. “(I wish you) all the best!” — the everyday birthday phrase." },
-        { "text": "Sto lat!", "tone": "close", "note": "Lit. “a hundred years!” — sung as a traditional birthday wish." }
+        { "text": "Sto lat!", "tone": "casual", "note": "Lit. “a hundred years!” — sung as a traditional birthday wish." }
       ]
     },
     "tr": {
       "gloss": "doğum günü kutlaması",
       "variants": [
         { "text": "Doğum günün kutlu olsun", "note": "Lit. \"may your birthday be blessed.\"" },
-        { "text": "İyi ki doğdun", "tone": "close", "note": "Lit. \"good thing you were born\" — warmer, very common." }
+        { "text": "İyi ki doğdun", "tone": "casual", "note": "Lit. \"good thing you were born\" — warmer, very common." }
       ]
     },
     "kk": {
@@ -91,6 +91,13 @@
       "variants": [
         { "text": "Туған күніңмен!", "rom": "Tuğan küniňmen!", "tone": "casual" },
         { "text": "Туған күніңіз құтты болсын!", "rom": "Tuğan küniňiz qutty bolsyn!", "tone": "polite" }
+      ]
+    },
+    "ar": {
+      "gloss": "عيد ميلاد سعيد",
+      "variants": [
+        { "text": "عيد ميلاد سعيد", "rom": "'īd mīlād sa'īd" },
+        { "text": "كل سنة وأنت طيب", "rom": "kull sana w-anta ṭayyib", "note": "Lit. \"every year and you are well\" — the warm all-purpose wish." }
       ]
     },
     "hi": {

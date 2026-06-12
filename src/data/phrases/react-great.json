@@ -102,6 +102,12 @@
         { "text": "Өте жақсы", "rom": "Öte jaqsy", "note": "Lit. \"very good.\"" }
       ]
     },
+    "ar": {
+      "gloss": "رائع",
+      "variants": [
+        { "text": "رائع", "rom": "rā'i'" }
+      ]
+    },
     "hi": {
       "gloss": "बहुत बढ़िया",
       "variants": [

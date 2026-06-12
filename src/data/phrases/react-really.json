@@ -104,6 +104,13 @@
         { "text": "Рас па?", "rom": "Ras pa?", "tone": "casual", "note": "Lit. \"is it true?\"" }
       ]
     },
+    "ar": {
+      "gloss": "حقاً؟",
+      "variants": [
+        { "text": "حقاً؟", "rom": "ḥaqqan?" },
+        { "text": "بجد؟", "rom": "bi-jadd?", "tone": "casual", "note": "Lit. \"in seriousness?\"" }
+      ]
+    },
     "hi": {
       "gloss": "सच में",
       "variants": [

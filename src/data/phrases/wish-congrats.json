@@ -95,6 +95,13 @@
         { "text": "Құтты болсын", "rom": "Qutty bolsyn", "note": "Lit. \"may it be blessed.\"" }
       ]
     },
+    "ar": {
+      "gloss": "مبروك",
+      "variants": [
+        { "text": "مبروك", "rom": "mabrūk", "note": "The universal congrats." },
+        { "text": "ألف مبروك", "rom": "alf mabrūk", "note": "Lit. \"a thousand congrats\" — warmer." }
+      ]
+    },
     "hi": {
       "gloss": "बधाई हो",
       "variants": [

@@ -105,6 +105,13 @@
         { "text": "Сау болыңыз", "rom": "Sau bolyňyz", "tone": "polite" }
       ]
     },
+    "ar": {
+      "gloss": "وداع",
+      "variants": [
+        { "text": "مع السلامة", "rom": "ma'a as-salāma", "note": "Lit. \"with safety.\"" },
+        { "text": "باي", "rom": "bāy", "tone": "casual", "note": "English-borrowed; everyday chat." }
+      ]
+    },
     "hi": {
       "gloss": "विदाई",
       "variants": [

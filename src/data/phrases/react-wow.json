@@ -106,6 +106,13 @@
         { "text": "Қарай гөр", "rom": "Qarai gör", "tone": "casual", "note": "Lit. \"look at that.\"" }
       ]
     },
+    "ar": {
+      "gloss": "واو",
+      "variants": [
+        { "text": "واو", "rom": "wāw" },
+        { "text": "ما شاء الله", "rom": "mā shā' Allāh", "note": "Traditional admiring exclamation." }
+      ]
+    },
     "hi": {
       "gloss": "वाह",
       "variants": [
