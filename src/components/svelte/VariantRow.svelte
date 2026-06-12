@@ -1,6 +1,7 @@
 <script lang="ts">
   import { tone, showToast } from '../../lib/stores';
   import { copyText } from '../../lib/clipboard';
+  import SpeakButton from './SpeakButton.svelte';
   import type { TVariant } from '../../lib/schema';
 
   interface Props {
@@ -53,10 +54,11 @@
   }
 </script>
 
-<button
+<div
   class="variant"
   class:copied
-  type="button"
+  role="button"
+  tabindex="0"
   aria-label={`Copy ${variant.text}`}
   onclick={onClick}
   onkeydown={onKey}
@@ -72,7 +74,8 @@
     <div class="variant-note">{variant.note}</div>
   {/if}
   <span class="copy-hint" aria-hidden="true"></span>
-</button>
+  <SpeakButton text={variant.text} langCode={langCode} />
+</div>
 
 <style>
   .variant {
@@ -156,6 +159,10 @@
   }
   .variant:hover .copy-hint {
     opacity: 0.5;
+  }
+  .variant:hover :global(.speak),
+  .variant:focus-within :global(.speak) {
+    opacity: 0.55;
   }
   .variant.copied .copy-hint {
     opacity: 1;
