@@ -629,6 +629,10 @@ export default defineConfig({
 
 `public/CNAME` 文件写入域名，DNS 配 CNAME 到 `<user>.github.io`。配了自定义域后 `base` 要去掉。
 
+### 10.4 依赖自动更新（Dependabot）
+
+`.github/dependabot.yml` + `.github/workflows/dependabot-auto-merge.yml`：每周一扫描 npm 依赖与 workflow 引用的 Actions，对 **`dev`** 开 PR（非默认分支——让升级走正常 dev→main→release 管线，经两道人工 PR 再到部署，且 dev 不落后于 main）。minor+patch 合成单个 PR；自动合并门禁为 `pnpm build` + `pnpm check`（后者抓 build 漏掉的类型破坏），绿灯才 squash 合并；major 单独开 PR、永不自动合，构建失败则 PR 留红叉等人工。两点约束：dependabot.yml 从默认分支 main 读取，故首次 dev→main 提升后才激活；auto-merge workflow 须位于 PR 的 base 分支（dev）才会触发。仓库 `allow_auto_merge` 关闭，故用直接 squash 合并而非队列式 auto-merge，门禁内置于 workflow 步骤、不依赖分支保护的 required checks。
+
 ---
 
 ## 11. 里程碑与任务清单
@@ -705,6 +709,7 @@ export default defineConfig({
 - **2026-06-13** · **tone 收为三档**（casual / neutral / polite，弃 close/"tenderly"）：close 档全库命中率 0.5%（14/2596），用户拨到 tenderly 几乎所有格子都走 fallback——会动但无效的选项是温柔的陷阱。14 个 close 变体并入 casual（亲昵语义由 note 承载）；持久化的旧值迁移为 casual。
 - **2026-06-12** · **性能指标按实测校准**（确立元原则：§2 数字指标非铁律——初版是建站前的 AI 估计；方向性原则 1-4 不动摇，数字以实测修订并记日志）：§9 改为 A11y/BP/SEO=100 + Perf≥85（slow-4G 模拟）、阻塞 CSS <20KB、首屏关键传输 <250KB；明确不用 `font-display: optional` 换分数。
 - **2026-06-12** · **性别控件恢复**（反转 v1.5 的撤除，按当时定下的阈值机制触发）：两轴各 60 个标注变体后，Stationery 第二句恢复 addressee 槽位并新增 speaker 槽位。筛选语义：排除显式相反性别，未标保留，空则回退——格子绝不因偏好清空。被动 tag line 在对应筛选激活时隐藏（信息已由槽位表达）。
+- **2026-06-27** · **依赖更新自动化**：引入 Dependabot（每周）对 `dev` 开 PR——minor+patch 合为单 PR，`pnpm build`+`pnpm check` 绿灯后自动 squash 合并；major 单独 PR 手动审。落点选 dev 而非默认分支 main：升级照走 dev→main→release 两道人工 PR 再到部署，dev 不落后于 main。仓库 `allow_auto_merge` 关闭，故用直接 squash 合并而非队列式 auto-merge，门禁内置于 workflow 步骤、不依赖分支保护 required checks。详见 §10.4。
 
 ---
 

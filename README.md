@@ -132,6 +132,16 @@ main → PR → release      (Pages rebuilds + GitHub Release + Discord notify)
 
 The release flow is wrapped in a `/release` slash command (Claude Code) that drafts notes, creates a tagged GitHub Release, and posts a Discord embed.
 
+### Dependency updates
+
+Automated — no hand-polling for new versions. Dependabot opens PRs against `dev` weekly (`.github/dependabot.yml`):
+
+- **minor + patch** bumps are bundled into a single PR; a workflow (`.github/workflows/dependabot-auto-merge.yml`) runs `pnpm build` + `pnpm check` and, if green, squash-merges it automatically — no clicks.
+- **major** bumps arrive as separate PRs and are **never** auto-merged — review by hand.
+- a failing build/check leaves the PR open (red mark) instead of merging.
+
+Updates enter at `dev`, so they still ride the `main` and `release` PRs above before reaching either deploy. The config is read from the default branch (`main`), so it goes live after the first `dev → main` promotion.
+
 ## Roadmap
 
 Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单). The table below is a summary and may lag.
