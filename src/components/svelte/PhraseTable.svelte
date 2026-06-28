@@ -18,6 +18,7 @@
     ),
   );
   const anchorL = $derived(allLangs.find((L) => L.code === $anchor));
+  const anchorDir = $derived(anchorL?.rtl ? 'rtl' : 'ltr');
 
   function emWrap(title: string, em: string): { before: string; em: string; after: string } {
     const idx = title.indexOf(em);
@@ -70,7 +71,7 @@
             </colgroup>
             <thead>
               <tr>
-                <th class="th-anchor">{anchorL?.native ?? ''}</th>
+                <th class="th-anchor" dir={anchorDir}>{anchorL?.native ?? ''}</th>
                 {#each otherLangs as L (L.code)}
                   <th class="th-lang">{L.native}</th>
                 {/each}
@@ -80,7 +81,7 @@
               {#each items as p (p.id)}
                 {@const ac = anchorVariants(p)}
                 <tr class="phrase-row">
-                  <td class="anchor-cell">
+                  <td class="anchor-cell" dir={anchorDir}>
                     <span class="star-slot"><StarButton phraseId={p.id} /></span>
                     {#if ac}
                       <div class="anchor-word" lang={$anchor} dir="auto">{ac.primary.text}</div>
@@ -220,7 +221,7 @@
     table-layout: fixed;
   }
   .phrase-table thead th {
-    text-align: left;
+    text-align: start;
     padding: 16px 22px;
     border-bottom: 1px solid var(--line);
     font-family: var(--font-sans);
@@ -262,7 +263,9 @@
   .star-slot {
     position: absolute;
     top: 7px;
-    right: 7px;
+    /* Logical: lands on the left in an RTL anchor column, clear of the
+     * headword's starting edge. */
+    inset-inline-end: 7px;
   }
   .phrase-row:last-child .anchor-cell,
   .phrase-row:last-child .trans-cell {
