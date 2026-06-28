@@ -20,6 +20,9 @@
   const anchorL = $derived(allLangs.find((L) => L.code === $anchor));
   const anchorDir = $derived(anchorL?.rtl ? 'rtl' : 'ltr');
 
+  // Mizo's `code` is not a valid BCP-47 subtag; tag it ISO 639-3 "lus".
+  const bcp47 = (code: string | undefined) => (code === 'mizo' ? 'lus' : code);
+
   function emWrap(title: string, em: string): { before: string; em: string; after: string } {
     const idx = title.indexOf(em);
     if (idx < 0) return { before: title, em: '', after: '' };
@@ -71,9 +74,19 @@
             </colgroup>
             <thead>
               <tr>
-                <th class="th-anchor" dir={anchorDir}>{anchorL?.native ?? ''}</th>
+                <th class="th-anchor" dir={anchorDir} lang={bcp47(anchorL?.code)}>
+                  <span class="th-native">{anchorL?.native ?? ''}</span>
+                  {#if anchorL && anchorL.name !== anchorL.native}
+                    <span class="th-name">{anchorL.name}</span>
+                  {/if}
+                </th>
                 {#each otherLangs as L (L.code)}
-                  <th class="th-lang">{L.native}</th>
+                  <th class="th-lang" dir={L.rtl ? 'rtl' : 'ltr'} lang={bcp47(L.code)}>
+                    <span class="th-native">{L.native}</span>
+                    {#if L.name !== L.native}
+                      <span class="th-name">{L.name}</span>
+                    {/if}
+                  </th>
                 {/each}
               </tr>
             </thead>
@@ -99,9 +112,9 @@
                     {@const tr = p.trans[L.code]}
                     {@const vs = tr ? visibleVariants(tr.variants, $tone, $speakerGender, $addresseeGender) : []}
                     {#if !tr || !vs.length}
-                      <td class="trans-cell empty"></td>
+                      <td class="trans-cell empty" dir={L.rtl ? 'rtl' : 'ltr'}></td>
                     {:else}
-                      <td class="trans-cell">
+                      <td class="trans-cell" dir={L.rtl ? 'rtl' : 'ltr'} lang={bcp47(L.code)}>
                         <TranslationCell {vs} langCode={L.code} />
                       </td>
                     {/if}
@@ -132,7 +145,8 @@
     border: 1px solid var(--line);
     background: var(--paper);
     border-radius: 3px;
-    overflow: hidden;
+    /* not `hidden`: an overflow container would break the sticky header */
+    overflow: visible;
     position: relative;
   }
   .table-wrap::before,
@@ -222,34 +236,42 @@
   }
   .phrase-table thead th {
     text-align: start;
-    padding: 16px 22px;
+    padding: 13px 22px;
     border-bottom: 1px solid var(--line);
-    font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: 10.5px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
+    /* Sticky just below the StickyBar so the column languages stay visible
+       while reading a scene's table. */
+    position: sticky;
+    top: 44px;
+    z-index: 5;
+    background: var(--paper);
   }
   .phrase-table thead th.th-anchor {
-    background: rgba(166, 130, 74, 0.1);
-    color: var(--accent);
+    /* opaque (sticky can't show transparent — content would bleed through),
+       theme-aware: a gold tint layered over the paper-up surface. */
+    background: linear-gradient(rgba(166, 130, 74, 0.14), rgba(166, 130, 74, 0.14)), var(--bg);
     border-right: 1px solid var(--line-soft);
-    font-style: italic;
-    font-family: var(--font-serif);
-    font-size: 14px;
-    text-transform: none;
-    letter-spacing: 0.01em;
-    font-weight: 400;
   }
-  .phrase-table thead th.th-lang {
+  .th-native {
+    display: block;
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
     font-size: 14px;
-    text-transform: none;
     letter-spacing: 0.005em;
     color: var(--ink-soft);
+  }
+  .th-anchor .th-native {
+    color: var(--accent);
+  }
+  .th-name {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
   }
 
   .anchor-cell {
