@@ -1,0 +1,25 @@
+name: CI
+
+# Type-check + build + Playwright (smoke / a11y / offline) on every human PR
+# and on pushes to the long-lived branches. Dependabot PRs are gated by the
+# dependabot-auto-merge workflow instead, so skip them here to avoid double runs.
+on:
+  pull_request:
+  push:
+    branches: [dev, main]
+
+jobs:
+  test:
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6   # pnpm version comes from package.json "packageManager"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test

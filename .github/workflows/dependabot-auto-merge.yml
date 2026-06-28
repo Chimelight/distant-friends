@@ -1,8 +1,9 @@
 name: Dependabot auto-merge
 
-# Builds + type-checks every Dependabot PR. If it passes AND the bump is
-# patch/minor, the PR is squash-merged automatically. Major bumps (and any
-# failing build) are left open for you to review by hand.
+# Builds + type-checks every Dependabot PR; if both pass, it is squash-merged
+# automatically — patch, minor, AND major alike. The build + type-check is the
+# ONLY gate (no manual review), so anything that fails to compile or type-check
+# stays open instead of merging.
 on: pull_request
 
 permissions:
@@ -14,29 +15,22 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
-      - id: meta
-        uses: dependabot/fetch-metadata@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      # --- Gate: same checks that matter for deploy, plus type-check ---
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 9
-      - uses: actions/setup-node@v4
+      # --- Gate: the checks that matter for deploy, plus a type-check ---
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6   # pnpm version comes from package.json "packageManager"
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build
       - run: pnpm check
+      # Playwright builds + previews the site itself (see playwright.config.ts),
+      # so `pnpm test` also covers the production build. Smoke + a11y + offline.
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test
 
-      # --- Merge only patch/minor (a group containing a major reports major) ---
-      - name: Auto-merge patch & minor updates
-        if: |
-          steps.meta.outputs.update-type == 'version-update:semver-patch' ||
-          steps.meta.outputs.update-type == 'version-update:semver-minor'
+      # --- Green check + tests → merge, regardless of bump size ---
+      - name: Auto-merge
         run: gh pr merge --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
