@@ -134,13 +134,13 @@ The release flow is wrapped in a `/release` slash command (Claude Code) that dra
 
 ### Dependency updates
 
-Automated — no hand-polling for new versions. Dependabot opens PRs against `dev` weekly (`.github/dependabot.yml`):
+Fully automated — no hand-polling, no manual review. Dependabot opens PRs against `dev` weekly (`.github/dependabot.yml`); a workflow (`.github/workflows/dependabot-auto-merge.yml`) runs `pnpm build` + `pnpm check` and squash-merges any PR that passes — **patch, minor, and major alike**.
 
-- **minor + patch** bumps are bundled into a single PR; a workflow (`.github/workflows/dependabot-auto-merge.yml`) runs `pnpm build` + `pnpm check` and, if green, squash-merges it automatically — no clicks.
-- **major** bumps arrive as separate PRs and are **never** auto-merged — review by hand.
-- a failing build/check leaves the PR open (red mark) instead of merging.
+- **minor + patch** bumps are bundled into one PR.
+- **major** bumps arrive as separate PRs (so one breaking major can't block the rest) but auto-merge the same way once green.
+- the build + type-check is the **only** gate: anything that fails to compile or type-check stays open instead of merging.
 
-Updates enter at `dev`, so they still ride the `main` and `release` PRs above before reaching either deploy. The config is read from the default branch (`main`), so it goes live after the first `dev → main` promotion.
+Updates enter at `dev`, so they still ride the `dev → main → release` pipeline (and its Vercel/Pages preview builds) before reaching production. The config is read from the default branch (`main`).
 
 ## Roadmap
 
