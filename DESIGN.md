@@ -546,11 +546,12 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 全部数值以 `src/styles/tokens.css` 为准（light / dark / system-follow 三个块）。设计点：
 
-- 命名分两层：原色（bg / paper / paper-up / ink / ink-soft / ink-mute / accent / gold / line）+ 语义 surface（`--surface-stickybar` 等基于原色组合的叠加层）
+- 命名分两层：原色（bg / paper / paper-up / ink / ink-soft / ink-mute / accent / gold / `gold-ink` / `on-accent` / line）+ 语义 surface（`--surface-stickybar` 等基于原色组合的叠加层）
 - 暖纸色系：背景米色、墨色文字、赤陶 accent、金色装饰——"信笺"气质的来源
+- `--gold` 是**装饰色**（图标 / 描边 / 填充），当文字读不过 AA（在最暗的 `--bg` 上仅 2.7）；文字金用更深的 `--gold-ink`。`--on-accent` 是落在 accent 填充上的文字色（如 anchored chip），随主题反向（浅色near-white / 深色near-black）
 - 暗色不是反色，是"夜里的同一张纸"：纸面压暗、墨色提亮、accent 提亮一档
 
-两套都需过 WCAG AA（正文 4.5:1，大字 3:1）。`npx @adobe/leonardo-contrast-colors` 或浏览器扩展验证。
+两套都需过 WCAG AA（正文 4.5:1，大字 3:1），且**对比度已纳入 CI 门禁**——axe 在 light + dark 两个主题各扫一遍（§10.5）。注意基准背景是最暗的 `--bg #EBE1CC`（比 `--paper` 还深），文字落在它上面对比度最低，早期只对 paper-up 验证时漏掉了这一档。
 
 ### 7.3 间距与动效
 
@@ -641,7 +642,7 @@ export default defineConfig({
 
 两处接入：`ci.yml` 在人工 PR 与 dev/main push 上跑；`dependabot-auto-merge.yml` 把 `pnpm test` 加进自动合并门禁，让 major 自动合并能挡住运行时/渲染回归（不只编译错误）。引入当天即抓到两个真实回归：Astro 7 升级打破了 PWA 的 SW 注册（离线实际失效）、SlotPicker 按钮嵌套（nested-interactive + 非法 HTML）——均已修。
 
-axe 的 `color-contrast` 规则在门禁中**排除**：约十余处次要小字（gold 计数、muted rom·tag·note）落在 4.5:1 之下，是否为严格 AA 而调暖色调色板属设计决定（§7.2 / §13），非自动阻断项；其余结构性检查照常 gating。
+axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一遍。引入当天先把 color-contrast 暂排除（十余处次要小字 < 4.5:1，留作调色板设计决定），随后判定其确为可读性失误并补齐到 AA（§7.2 / §13 2026-06-28 第三条）：ink-mute/accent 微调、`--gold-ink`（装饰金 `--gold` 不变、文字金加深）、`--on-accent`（accent 填充上的文字）。现对比度也在门禁内。
 
 ---
 
@@ -667,7 +668,7 @@ axe 的 `color-contrast` 规则在门禁中**排除**：约十余处次要小字
 - [x] 离线测试 — 自动化（`tests/offline.spec.ts`，§10.5）。修复了 Astro 7 升级打破的 SW 注册（registerSW 不再自动注入，改由 Layout 在 PROD 手动挂载）
 
 ### M4 · 打磨（进行中）
-- [~] Accessibility audit：axe-core 自动化（结构性全绿；抓到并修复 SlotPicker nested-interactive）。剩余：~十余处次要小字 color-contrast < 4.5:1（已记为设计决定，§10.5/§13）+ 完整键盘穿行手测
+- [x] Accessibility audit：axe-core 自动化（**全 WCAG 2.1 A/AA 含对比度**，light+dark 双主题、CI 门禁）。修复 SlotPicker nested-interactive，并把次要小字 / gold 文字 / anchored chip 的对比度补齐到 AA（§7.2）。剩：完整键盘穿行手测
 - [x] Lighthouse 实测（slow-4G 模拟）：A11y / BP / SEO 三项 100，Performance 88——达成 §9 校准后预算
 - [x] 所有交互的 `prefers-reduced-motion` 处理（在 `global.css` 全局兜底）
 - [x] OG image 设计（1200×630）+ meta tags（v0.1.0 已就位 Open Graph + Twitter Card）
@@ -722,6 +723,7 @@ axe 的 `color-contrast` 规则在门禁中**排除**：约十余处次要小字
 - **2026-06-27** · **依赖更新自动化**：引入 Dependabot（每周）对 `dev` 开 PR——minor+patch 合为单 PR，`pnpm build`+`pnpm check` 绿灯后自动 squash 合并；major 单独 PR 手动审。落点选 dev 而非默认分支 main：升级照走 dev→main→release 两道人工 PR 再到部署，dev 不落后于 main。仓库 `allow_auto_merge` 关闭，故用直接 squash 合并而非队列式 auto-merge，门禁内置于 workflow 步骤、不依赖分支保护 required checks。详见 §10.4。
 - **2026-06-28** · **major 也自动合并**（反转上条的"major 手动审"）：维护者不审 PR diff，"手动审"实际等于永不合、依赖烂在 PR 里。改为 build+check 绿灯即 squash 合并，patch/minor/major 一视同仁；构建/类型检查是唯一关卡，编译或类型不过的留红叉。major 仍单独成 PR（不并入分组），故单个破坏性 major 只挡自己、不拖累整批。残余风险：能构建但有运行时回归的 major 会漏网（项目无测试套件）——靠 dev→main（Vercel preview）→release（Pages）两道预览兜底。
 - **2026-06-28** · **引入测试**（反转 §3.3"不引入测试框架"）：上条放开 major 自动合并后，"肉眼验"形同虚设——补上 Playwright + axe-core（冒烟 / 无障碍 / 离线），接入 `ci.yml` 与自动合并门禁（§10.5），把上条的"残余风险"收口。当天即抓到两个真实运行时回归并修复：①Astro 7 升级后 `@vite-pwa/astro`（peer 仅到 Astro 5）不再注入 `registerSW`，PWA 离线**静默失效**——改由 Layout 在 PROD 手动挂载 `registerSW.js`；②SlotPicker 外层 `<button>` 套内层 `<button>`（nested-interactive + 非法 HTML）——拆为 wrapper + 兄弟 popover。axe `color-contrast` 暂排除出门禁：十余处次要小字 < 4.5:1，是否为严格 AA 调暖色调色板属设计决定，待定。
+- **2026-06-28** · **对比度补齐 AA**（落实上条"待定"）：判定低对比确为可读性失误而非有意——最暗背景是页面底色 `--bg #EBE1CC`（比 `--paper` 深），早期 AA 脚本只对 paper-up 验证故漏掉这一档；gold 当文字仅 2.7，根本不可读。改法保留暖色身份：ink-mute `#786E5E→#6B6254`、accent（light `#AC4F2B→#A04928` / dark `#D47649→#DA7A4B`）微调；新增 `--gold-ink`（装饰金 `--gold` 不动、17 处文字金改用更深的 gold-ink）；新增 `--on-accent`（accent 填充上的文字，随主题反向）修好 anchored chip。axe `color-contrast` 重新纳入门禁，light+dark 全 A/AA 绿。
 
 ---
 

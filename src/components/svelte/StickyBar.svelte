@@ -125,7 +125,7 @@
     font-weight: 400;
     font-size: 11px;
     letter-spacing: 0.52em;
-    color: var(--gold);
+    color: var(--gold-ink);
     text-transform: uppercase;
     background: transparent;
     border: none;

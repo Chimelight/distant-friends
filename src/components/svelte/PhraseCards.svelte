@@ -117,7 +117,7 @@
     font-style: italic;
     font-weight: 300;
     font-size: 14px;
-    color: var(--gold);
+    color: var(--gold-ink);
     letter-spacing: 0.16em;
     flex-shrink: 0;
   }

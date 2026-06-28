@@ -184,7 +184,7 @@
     transform: translateX(50%);
     font-family: var(--font-serif);
     font-size: 10px;
-    color: var(--gold);
+    color: var(--gold-ink);
     opacity: 0;
     transition: opacity 0.4s ease 0.1s;
     line-height: 1;
@@ -200,7 +200,7 @@
     transform: translateX(50%);
     font-family: var(--font-serif);
     font-size: 10px;
-    color: var(--gold);
+    color: var(--gold-ink);
     opacity: 0;
     transition: opacity 0.4s ease 0.1s;
     line-height: 1;
@@ -235,7 +235,7 @@
     font-style: italic;
     font-weight: 400;
     font-variation-settings: "opsz" 48;
-    color: var(--gold);
+    color: var(--gold-ink);
     font-size: 14px;
     letter-spacing: 0.08em;
     line-height: 1;
