@@ -15,10 +15,22 @@ test('no WCAG 2.1 A/AA violations on first load (light)', async ({ page }) => {
   expect(violations, JSON.stringify(violations, null, 2)).toEqual([]);
 });
 
-test('no WCAG 2.1 A/AA violations with the language picker open', async ({ page }) => {
+test('no WCAG 2.1 A/AA violations with a column language menu open', async ({ page }) => {
   await page.goto('./');
-  await page.locator('.lang-line .trigger').click();
-  await expect(page.locator('.lang-line .trigger')).toHaveAttribute('aria-expanded', 'true');
+  const btn = page.locator('.scene-block').first().locator('th.th-lang .th-btn').first();
+  await btn.click();
+  await expect(btn).toHaveAttribute('aria-expanded', 'true');
+
+  const { violations } = await scan(page);
+  expect(violations, JSON.stringify(violations, null, 2)).toEqual([]);
+});
+
+test('no WCAG 2.1 A/AA violations for the Stationery picker (cards view)', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.goto('./');
+  const trigger = page.locator('.lang-line .trigger');
+  await trigger.click();
+  await expect(trigger).toHaveAttribute('aria-expanded', 'true');
 
   const { violations } = await scan(page);
   expect(violations, JSON.stringify(violations, null, 2)).toEqual([]);

@@ -115,8 +115,9 @@
     font-style: normal;
     vertical-align: middle;
   }
+  /* Lighter highlight, not a darkening tint, so the accent text keeps AA. */
   .slot:hover {
-    background: rgba(176, 82, 46, 0.08);
+    background: var(--paper-up);
     border-bottom-color: var(--accent);
   }
   .slot:hover::after {
@@ -126,7 +127,7 @@
   }
   .slot:focus-visible {
     outline: none;
-    background: rgba(176, 82, 46, 0.1);
+    background: var(--paper-up);
     border-bottom-style: solid;
   }
   .slot.pulse {
