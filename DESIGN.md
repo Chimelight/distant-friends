@@ -81,7 +81,9 @@
 
 ### 3.3 不引入的依赖
 
-**不用**：图标库（图标自己写 SVG，总共五六个）、UI 库（组件自己写）、动画库（Svelte transition 够了）、状态管理大件（nanostores 就够）、测试框架（项目太小，肉眼验 + 手动清单）。
+**不用**：图标库（图标自己写 SVG，总共五六个）、UI 库（组件自己写）、动画库（Svelte transition 够了）、状态管理大件（nanostores 就够）。
+
+测试框架原本也在"不用"之列（"项目太小，肉眼验 + 手动清单"）——但在放开依赖 major 自动合并后，"肉眼验"等于不验。已反转：引入 Playwright + axe-core 做冒烟 / 无障碍 / 离线回归，见 §10.5 与 §13（2026-06-28）。
 
 ---
 
@@ -633,6 +635,14 @@ export default defineConfig({
 
 `.github/dependabot.yml` + `.github/workflows/dependabot-auto-merge.yml`：每周一扫描 npm 依赖与 workflow 引用的 Actions，对 **`dev`** 开 PR（非默认分支——让升级走正常 dev→main→release 管线再到部署，且 dev 不落后于 main）。自动合并的**唯一门禁**是 `pnpm build` + `pnpm check`（后者抓 build 漏掉的类型破坏），绿灯就 squash 合并——**patch / minor / major 一视同仁**（无人工审）；构建或类型检查失败则 PR 留红叉、不合并。minor+patch 合成单个 PR，major 单独成 PR（一个破坏性 major 只挡自己、不拖累整批）。两点约束：dependabot.yml 从默认分支 main 读取，故首次 dev→main 提升后才激活；auto-merge workflow 须位于 PR 的 base 分支（dev）才会触发。仓库 `allow_auto_merge` 关闭，故用直接 squash 合并而非队列式 auto-merge，门禁内置于 workflow 步骤、不依赖分支保护的 required checks。
 
+### 10.5 测试与 CI
+
+`tests/`（Playwright）+ `playwright.config.ts`：对 `astro preview` 的**生产构建**跑端到端测试——冒烟（渲染、复制+toast、SlotPicker、主题切换、星标过滤）、axe-core 无障碍扫描（WCAG 2.1 A/AA 结构性）、离线（Service Worker 缓存 shell 后断网仍可用）。`pnpm test` 跑 chromium（门禁用）；`pnpm test:all` 跑 chromium/firefox/webkit 跨浏览器矩阵（需先 `pnpm exec playwright install firefox webkit`）。
+
+两处接入：`ci.yml` 在人工 PR 与 dev/main push 上跑；`dependabot-auto-merge.yml` 把 `pnpm test` 加进自动合并门禁，让 major 自动合并能挡住运行时/渲染回归（不只编译错误）。引入当天即抓到两个真实回归：Astro 7 升级打破了 PWA 的 SW 注册（离线实际失效）、SlotPicker 按钮嵌套（nested-interactive + 非法 HTML）——均已修。
+
+axe 的 `color-contrast` 规则在门禁中**排除**：约十余处次要小字（gold 计数、muted rom·tag·note）落在 4.5:1 之下，是否为严格 AA 而调暖色调色板属设计决定（§7.2 / §13），非自动阻断项；其余结构性检查照常 gating。
+
 ---
 
 ## 11. 里程碑与任务清单
@@ -654,16 +664,16 @@ export default defineConfig({
 - [x] Voice 检测：`voiceschanged` 后按 tts code 匹配（精确 → 同语种前缀回退）；无 voice 或语言无 tts code（mizo）时按钮直接不渲染（比禁用+tooltip 更干净）
 - [x] `manifest.webmanifest` + 图标（192 / 512 / maskable 512，由 favicon.svg 栅格化生成）
 - [x] Service Worker precache：shell（html/css/js/svg，数据已打包进 JS）；字体改为运行时 CacheFirst——CJK Noto 拆分成上百个子集文件，全量 precache 会有几十 MB，按需缓存更合理
-- [ ] 离线测试（DevTools → Offline，确认完整功能可用）
+- [x] 离线测试 — 自动化（`tests/offline.spec.ts`，§10.5）。修复了 Astro 7 升级打破的 SW 注册（registerSW 不再自动注入，改由 Layout 在 PROD 手动挂载）
 
 ### M4 · 打磨（进行中）
-- [ ] Accessibility audit：axe DevTools 全绿 + 完整键盘穿行测试
+- [~] Accessibility audit：axe-core 自动化（结构性全绿；抓到并修复 SlotPicker nested-interactive）。剩余：~十余处次要小字 color-contrast < 4.5:1（已记为设计决定，§10.5/§13）+ 完整键盘穿行手测
 - [x] Lighthouse 实测（slow-4G 模拟）：A11y / BP / SEO 三项 100，Performance 88——达成 §9 校准后预算
 - [x] 所有交互的 `prefers-reduced-motion` 处理（在 `global.css` 全局兜底）
 - [x] OG image 设计（1200×630）+ meta tags（v0.1.0 已就位 Open Graph + Twitter Card）
 - [x] `README.md`：项目说明 + 使用说明 + 数据扩展指南 + 翻译协作哲学
 - [x] `404.astro` 简短优雅的 not-found（"This letter went astray."）
-- [ ] 手动测试矩阵：iOS Safari / Android Chrome / macOS Safari / Firefox / Edge
+- [~] 测试矩阵：Playwright 跨浏览器工程已就绪（chromium/firefox/webkit，`pnpm test:all`，§10.5）。剩真机手测 iOS Safari / Android Chrome
 
 ### M5 · 内容扩充（持续）
 按需追加短语、语言、场景。工作流见 §5.9。
@@ -711,6 +721,7 @@ export default defineConfig({
 - **2026-06-12** · **性别控件恢复**（反转 v1.5 的撤除，按当时定下的阈值机制触发）：两轴各 60 个标注变体后，Stationery 第二句恢复 addressee 槽位并新增 speaker 槽位。筛选语义：排除显式相反性别，未标保留，空则回退——格子绝不因偏好清空。被动 tag line 在对应筛选激活时隐藏（信息已由槽位表达）。
 - **2026-06-27** · **依赖更新自动化**：引入 Dependabot（每周）对 `dev` 开 PR——minor+patch 合为单 PR，`pnpm build`+`pnpm check` 绿灯后自动 squash 合并；major 单独 PR 手动审。落点选 dev 而非默认分支 main：升级照走 dev→main→release 两道人工 PR 再到部署，dev 不落后于 main。仓库 `allow_auto_merge` 关闭，故用直接 squash 合并而非队列式 auto-merge，门禁内置于 workflow 步骤、不依赖分支保护 required checks。详见 §10.4。
 - **2026-06-28** · **major 也自动合并**（反转上条的"major 手动审"）：维护者不审 PR diff，"手动审"实际等于永不合、依赖烂在 PR 里。改为 build+check 绿灯即 squash 合并，patch/minor/major 一视同仁；构建/类型检查是唯一关卡，编译或类型不过的留红叉。major 仍单独成 PR（不并入分组），故单个破坏性 major 只挡自己、不拖累整批。残余风险：能构建但有运行时回归的 major 会漏网（项目无测试套件）——靠 dev→main（Vercel preview）→release（Pages）两道预览兜底。
+- **2026-06-28** · **引入测试**（反转 §3.3"不引入测试框架"）：上条放开 major 自动合并后，"肉眼验"形同虚设——补上 Playwright + axe-core（冒烟 / 无障碍 / 离线），接入 `ci.yml` 与自动合并门禁（§10.5），把上条的"残余风险"收口。当天即抓到两个真实运行时回归并修复：①Astro 7 升级后 `@vite-pwa/astro`（peer 仅到 Astro 5）不再注入 `registerSW`，PWA 离线**静默失效**——改由 Layout 在 PROD 手动挂载 `registerSW.js`；②SlotPicker 外层 `<button>` 套内层 `<button>`（nested-interactive + 非法 HTML）——拆为 wrapper + 兄弟 popover。axe `color-contrast` 暂排除出门禁：十余处次要小字 < 4.5:1，是否为严格 AA 调暖色调色板属设计决定，待定。
 
 ---
 

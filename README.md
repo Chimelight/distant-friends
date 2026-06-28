@@ -29,11 +29,15 @@ pnpm install
 pnpm dev          # http://localhost:4321/distant-friends/
 pnpm build        # static output → dist/
 pnpm check        # type + svelte check
+pnpm test         # Playwright e2e — smoke / a11y (axe) / offline, on chromium
+pnpm test:all     # …across chromium, firefox & webkit
 pnpm coverage     # phrase × language coverage matrix
 pnpm new-phrase   # interactive scaffolder for a new phrase
 ```
 
 Requires Node 22+ and pnpm 9 (pinned via `packageManager`; corepack picks it up automatically).
+
+`pnpm test` builds the site and runs Playwright against the `astro preview` output (so it exercises the real bundle + service worker): a handful of smoke checks, an axe-core WCAG 2.1 A/AA scan, and an offline check. It runs in CI on every PR and is part of the Dependabot auto-merge gate — see [DESIGN §10.5](DESIGN.md). First run locally needs the browser: `pnpm exec playwright install chromium`.
 
 ## Project structure
 

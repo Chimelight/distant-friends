@@ -28,3 +28,8 @@ pnpm-debug.log*
 # local-only references
 reference/
 tmp/
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/

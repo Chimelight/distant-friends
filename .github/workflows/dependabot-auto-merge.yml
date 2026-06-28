@@ -23,10 +23,13 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm build
       - run: pnpm check
+      # Playwright builds + previews the site itself (see playwright.config.ts),
+      # so `pnpm test` also covers the production build. Smoke + a11y + offline.
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test
 
-      # --- Green build + check → merge, regardless of bump size ---
+      # --- Green check + tests → merge, regardless of bump size ---
       - name: Auto-merge
         run: gh pr merge --squash "$PR_URL"
         env:
