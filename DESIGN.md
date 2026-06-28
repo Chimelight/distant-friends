@@ -688,10 +688,10 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 按优先级粗排，择机引入：
 
-1. **UI 中文化** — 结构已就绪（`ui/zh.json` + `$uiLocale` store + SlotPicker 切换器），只需补译文
+1. ~~**UI 中文化**~~ — ✗ **不做**（2026-06-28）：受众主体是不懂中文的国际朋友（§1，默认锚点 zh→en 即此故），UI 锁英文是自洽的。切换结构（`ui/zh.json` + `$uiLocale` store + SlotPicker）保留但不补译文
 2. **搜索框** — 输入任一语言或拼音定位到短语行（fuse.js 模糊搜索）
 3. **多标签（tags）** — 短语可挂多个标签（`#morning` `#emotion-joy`），与 scene 正交
-4. **分享链接** — `?anchor=ja&langs=zh,en&tone=casual&addr=friend&phrase=greeting-hello` 一键复刻朋友看到的视图
+4. ~~**分享链接**~~ — ✗ **不做**（2026-06-28，ROI 偏低）：`?anchor=ja&langs=zh,en&tone=casual&addr=friend&phrase=greeting-hello` 一键复刻朋友看到的视图
 5. **导出为图片** — 一条短语做成可发到微博/IG 的卡片（html2canvas）
 6. **预生成音频** — Web Speech 的质量天花板取决于用户设备装了什么 voice。构建期用神经 TTS（如 Azure/Google 一次性批量）把全部变体烧成静态音频（~2200 条 × 10-20KB ≈ 30-40MB），懒加载 + 运行时缓存：所有浏览器一致的高质量发音，且仍符合离线原则。代价：构建管线复杂度 + 资产体积，引入前需单独评估
 7. **反向查找** — 朋友发来一句外语查意思（需要把数据索引反转，工程量大）
