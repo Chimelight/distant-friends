@@ -1,0 +1,37 @@
+name: Dependabot auto-merge
+
+# Builds + type-checks every Dependabot PR; if both pass, it is squash-merged
+# automatically — patch, minor, AND major alike. The build + type-check is the
+# ONLY gate (no manual review), so anything that fails to compile or type-check
+# stays open instead of merging.
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      # --- Gate: the checks that matter for deploy, plus a type-check ---
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6   # pnpm version comes from package.json "packageManager"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      # Playwright builds + previews the site itself (see playwright.config.ts),
+      # so `pnpm test` also covers the production build. Smoke + a11y + offline.
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test
+
+      # --- Green check + tests → merge, regardless of bump size ---
+      - name: Auto-merge
+        run: gh pr merge --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

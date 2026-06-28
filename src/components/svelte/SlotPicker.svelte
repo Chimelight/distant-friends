@@ -17,7 +17,7 @@
 
   let open = $state(false);
   let pulsing = $state(false);
-  let slotEl: HTMLButtonElement | undefined = $state();
+  let slotEl: HTMLElement | undefined = $state();
   let pulseTimer: number | undefined;
 
   const currentLabel = $derived(
@@ -58,17 +58,20 @@
   });
 </script>
 
-<button
-  class="slot"
-  class:pulse={pulsing}
-  data-slot={name}
-  aria-haspopup="true"
-  aria-expanded={open}
-  onclick={toggle}
-  bind:this={slotEl}
-  type="button"
->
-  <span class="slot-label">{currentLabel}</span>
+<!-- Wrapper (not a button) so the trigger and the menu items are siblings,
+     never nested interactive controls (WCAG / valid HTML). -->
+<span class="slot-wrap" bind:this={slotEl}>
+  <button
+    class="slot"
+    class:pulse={pulsing}
+    data-slot={name}
+    aria-haspopup="true"
+    aria-expanded={open}
+    onclick={toggle}
+    type="button"
+  >
+    <span class="slot-label">{currentLabel}</span>
+  </button>
   <span class="popover" role="menu">
     {#each options as opt (opt.key)}
       <button
@@ -83,9 +86,14 @@
       </button>
     {/each}
   </span>
-</button>
+</span>
 
 <style>
+  .slot-wrap {
+    position: relative;
+    display: inline-block;
+    margin: 0 2px;
+  }
   .slot {
     font: inherit;
     background: transparent;
@@ -96,8 +104,6 @@
     cursor: pointer;
     transition: all var(--dur-switch) ease;
     font-style: italic;
-    position: relative;
-    margin: 0 2px;
   }
   .slot::after {
     content: "▾";
@@ -157,7 +163,7 @@
     border-left: 1px solid var(--line);
     border-top: 1px solid var(--line);
   }
-  .slot[aria-expanded="true"] .popover {
+  .slot[aria-expanded="true"] + .popover {
     opacity: 1;
     pointer-events: auto;
     transform: translateX(-50%) translateY(0);

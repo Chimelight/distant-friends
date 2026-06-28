@@ -18,7 +18,7 @@ What it isn't:
 
 ## Stack
 
-Astro 6 + Svelte 5 + TypeScript (strict) + nanostores (with `@nanostores/persistent`) + Zod + vanilla CSS. PWA via `@vite-pwa/astro`. Self-hosted Fraunces + Instrument Sans + Noto Serif CJK. No Tailwind, no UI library, no CSS-in-JS.
+Astro 7 + Svelte 5 + TypeScript (strict) + nanostores (with `@nanostores/persistent`) + Zod + vanilla CSS. PWA via `@vite-pwa/astro`. Self-hosted Fraunces + Instrument Sans + Noto Serif CJK. No Tailwind, no UI library, no CSS-in-JS.
 
 Design source of truth: [DESIGN.md](DESIGN.md).
 
@@ -29,11 +29,15 @@ pnpm install
 pnpm dev          # http://localhost:4321/distant-friends/
 pnpm build        # static output → dist/
 pnpm check        # type + svelte check
+pnpm test         # Playwright e2e — smoke / a11y (axe) / offline, on chromium
+pnpm test:all     # …across chromium, firefox & webkit
 pnpm coverage     # phrase × language coverage matrix
 pnpm new-phrase   # interactive scaffolder for a new phrase
 ```
 
-Requires Node 20+ and pnpm 9 (pinned via `packageManager`; corepack picks it up automatically).
+Requires Node 22+ and pnpm 9 (pinned via `packageManager`; corepack picks it up automatically).
+
+`pnpm test` builds the site and runs Playwright against the `astro preview` output (so it exercises the real bundle + service worker): a handful of smoke checks, an axe-core WCAG 2.1 A/AA scan, and an offline check. It runs in CI on every PR and is part of the Dependabot auto-merge gate — see [DESIGN §10.5](DESIGN.md). First run locally needs the browser: `pnpm exec playwright install chromium`.
 
 ## Project structure
 
@@ -132,15 +136,27 @@ main → PR → release      (Pages rebuilds + GitHub Release + Discord notify)
 
 The release flow is wrapped in a `/release` slash command (Claude Code) that drafts notes, creates a tagged GitHub Release, and posts a Discord embed.
 
+### Dependency updates
+
+Fully automated — no hand-polling, no manual review. Dependabot opens PRs against `dev` weekly (`.github/dependabot.yml`); a workflow (`.github/workflows/dependabot-auto-merge.yml`) runs `pnpm build` + `pnpm check` and squash-merges any PR that passes — **patch, minor, and major alike**.
+
+- **minor + patch** bumps are bundled into one PR.
+- **major** bumps arrive as separate PRs (so one breaking major can't block the rest) but auto-merge the same way once green.
+- the build + type-check is the **only** gate: anything that fails to compile or type-check stays open instead of merging.
+
+Updates enter at `dev`, so they still ride the `dev → main → release` pipeline (and its Vercel/Pages preview builds) before reaching production. The config is read from the default branch (`main`).
+
 ## Roadmap
 
 Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单). The table below is a summary and may lag.
 
+**v1.0.0 shipped 2026-06-12** — all core milestones done; remaining items are verification (offline test, axe sweep, cross-browser matrix — see DESIGN §11 / Appendix F).
+
 | Milestone | State |
 | --- | --- |
-| M0 — project skeleton | ✅ shipped in v0.1.0 |
-| M1 — visual + interactive parity with v3 demo | ✅ shipped in v0.1.0 |
-| M2 — dark mode + starring | ✅ theme toggle (v0.2.0), starring + starred-only filter, AA contrast verified |
-| M3 — TTS + PWA precache | done pending offline test — per-variant speak buttons with voice detection; SW precaches shell, fonts cached on use |
-| M4 — polish (a11y, Lighthouse, 404) | partial — `prefers-reduced-motion`, OG image, README, 404 done; axe/Lighthouse pass pending |
+| M0 — project skeleton | ✅ v0.1.0 |
+| M1 — visual + interactive parity with v3 demo | ✅ v0.1.0 |
+| M2 — dark mode + starring | ✅ v0.2.0 / v1.0.0 |
+| M3 — TTS + PWA | ✅ v1.0.0 (offline field test pending) |
+| M4 — polish (a11y, Lighthouse, 404) | Lighthouse 88/100/100/100 within budget; axe + manual browser matrix pending |
 | M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |

@@ -1,0 +1,39 @@
+version: 2
+updates:
+  # npm / pnpm dependencies
+  - package-ecosystem: npm
+    directory: "/"
+    # Open PRs against the working branch, not the default branch — updates then
+    # ride the normal dev → main → release pipeline (two human-reviewed PRs)
+    # before reaching either deploy, and dev never falls behind main.
+    target-branch: dev
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Shanghai
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+    # Bundle all minor + patch bumps into a single PR (auto-merged when green).
+    # Major bumps are excluded from the group, so they arrive as separate PRs
+    # for manual review and are never auto-merged.
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  # Keep the GitHub Actions used in workflows up to date too
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: dev
+    schedule:
+      interval: weekly
+      day: monday
+    labels:
+      - dependencies
+    groups:
+      github-actions:
+        patterns:
+          - "*"

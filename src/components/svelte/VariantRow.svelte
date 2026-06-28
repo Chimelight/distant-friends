@@ -139,7 +139,7 @@
   }
   .variant-tag::before {
     content: "— ";
-    color: var(--gold);
+    color: var(--gold-ink);
   }
   .variant-note {
     font-family: var(--font-sans);

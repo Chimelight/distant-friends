@@ -60,9 +60,9 @@
 
 | 层 | 选择 | 版本 | 备注 |
 |---|---|---|---|
-| 静态生成器 | **Astro** | 4.x | Islands 架构、零 JS 默认、GH Pages 兼容 |
+| 静态生成器 | **Astro** | 7.x | Islands 架构、零 JS 默认、GH Pages 兼容 |
 | 交互组件 | **Svelte** | 5.x | 只用于有状态 islands，bundle 极小 |
-| 语言 | **TypeScript** | 5.x | strict 开 |
+| 语言 | **TypeScript** | 6.x | strict 开 |
 | Schema | **Zod** | via Astro Content Collections |
 | 跨组件状态 | **nanostores** | 持久化状态用 `@nanostores/persistent` |
 | 样式 | **Vanilla CSS + CSS Variables** | 不用 Tailwind/CSS-in-JS |
@@ -81,7 +81,9 @@
 
 ### 3.3 不引入的依赖
 
-**不用**：图标库（图标自己写 SVG，总共五六个）、UI 库（组件自己写）、动画库（Svelte transition 够了）、状态管理大件（nanostores 就够）、测试框架（项目太小，肉眼验 + 手动清单）。
+**不用**：图标库（图标自己写 SVG，总共五六个）、UI 库（组件自己写）、动画库（Svelte transition 够了）、状态管理大件（nanostores 就够）。
+
+测试框架原本也在"不用"之列（"项目太小，肉眼验 + 手动清单"）——但在放开依赖 major 自动合并后，"肉眼验"等于不验。已反转：引入 Playwright + axe-core 做冒烟 / 无障碍 / 离线回归，见 §10.5 与 §13（2026-06-28）。
 
 ---
 
@@ -544,11 +546,12 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 全部数值以 `src/styles/tokens.css` 为准（light / dark / system-follow 三个块）。设计点：
 
-- 命名分两层：原色（bg / paper / paper-up / ink / ink-soft / ink-mute / accent / gold / line）+ 语义 surface（`--surface-stickybar` 等基于原色组合的叠加层）
+- 命名分两层：原色（bg / paper / paper-up / ink / ink-soft / ink-mute / accent / gold / `gold-ink` / `on-accent` / line）+ 语义 surface（`--surface-stickybar` 等基于原色组合的叠加层）
 - 暖纸色系：背景米色、墨色文字、赤陶 accent、金色装饰——"信笺"气质的来源
+- `--gold` 是**装饰色**（图标 / 描边 / 填充），当文字读不过 AA（在最暗的 `--bg` 上仅 2.7）；文字金用更深的 `--gold-ink`。`--on-accent` 是落在 accent 填充上的文字色（如 anchored chip），随主题反向（浅色near-white / 深色near-black）
 - 暗色不是反色，是"夜里的同一张纸"：纸面压暗、墨色提亮、accent 提亮一档
 
-两套都需过 WCAG AA（正文 4.5:1，大字 3:1）。`npx @adobe/leonardo-contrast-colors` 或浏览器扩展验证。
+两套都需过 WCAG AA（正文 4.5:1，大字 3:1），且**对比度已纳入 CI 门禁**——axe 在 light + dark 两个主题各扫一遍（§10.5）。注意基准背景是最暗的 `--bg #EBE1CC`（比 `--paper` 还深），文字落在它上面对比度最低，早期只对 paper-up 验证时漏掉了这一档。
 
 ### 7.3 间距与动效
 
@@ -623,11 +626,23 @@ export default defineConfig({
 
 ### 10.2 Actions workflow
 
-见 `.github/workflows/`。要点：pnpm + Node 20、`upload-pages-artifact` → `deploy-pages`，仓库 Settings → Pages → Source 选 **GitHub Actions**。实际分支策略后来演化为 dev → main（Vercel preview）→ release（Pages），见 README Deploy 节。
+见 `.github/workflows/`。要点：pnpm + Node 22、`upload-pages-artifact` → `deploy-pages`，仓库 Settings → Pages → Source 选 **GitHub Actions**。实际分支策略后来演化为 dev → main（Vercel preview）→ release（Pages），见 README Deploy 节。
 
 ### 10.3 自定义域名（可选）
 
 `public/CNAME` 文件写入域名，DNS 配 CNAME 到 `<user>.github.io`。配了自定义域后 `base` 要去掉。
+
+### 10.4 依赖自动更新（Dependabot）
+
+`.github/dependabot.yml` + `.github/workflows/dependabot-auto-merge.yml`：每周一扫描 npm 依赖与 workflow 引用的 Actions，对 **`dev`** 开 PR（非默认分支——让升级走正常 dev→main→release 管线再到部署，且 dev 不落后于 main）。自动合并的**唯一门禁**是 `pnpm build` + `pnpm check`（后者抓 build 漏掉的类型破坏），绿灯就 squash 合并——**patch / minor / major 一视同仁**（无人工审）；构建或类型检查失败则 PR 留红叉、不合并。minor+patch 合成单个 PR，major 单独成 PR（一个破坏性 major 只挡自己、不拖累整批）。两点约束：dependabot.yml 从默认分支 main 读取，故首次 dev→main 提升后才激活；auto-merge workflow 须位于 PR 的 base 分支（dev）才会触发。仓库 `allow_auto_merge` 关闭，故用直接 squash 合并而非队列式 auto-merge，门禁内置于 workflow 步骤、不依赖分支保护的 required checks。
+
+### 10.5 测试与 CI
+
+`tests/`（Playwright）+ `playwright.config.ts`：对 `astro preview` 的**生产构建**跑端到端测试——冒烟（渲染、复制+toast、SlotPicker、主题切换、星标过滤）、axe-core 无障碍扫描（WCAG 2.1 A/AA 结构性）、离线（Service Worker 缓存 shell 后断网仍可用）。`pnpm test` 跑 chromium（门禁用）；`pnpm test:all` 跑 chromium/firefox/webkit 跨浏览器矩阵（需先 `pnpm exec playwright install firefox webkit`）。
+
+两处接入：`ci.yml` 在人工 PR 与 dev/main push 上跑；`dependabot-auto-merge.yml` 把 `pnpm test` 加进自动合并门禁，让 major 自动合并能挡住运行时/渲染回归（不只编译错误）。引入当天即抓到两个真实回归：Astro 7 升级打破了 PWA 的 SW 注册（离线实际失效）、SlotPicker 按钮嵌套（nested-interactive + 非法 HTML）——均已修。
+
+axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一遍。引入当天先把 color-contrast 暂排除（十余处次要小字 < 4.5:1，留作调色板设计决定），随后判定其确为可读性失误并补齐到 AA（§7.2 / §13 2026-06-28 第三条）：ink-mute/accent 微调、`--gold-ink`（装饰金 `--gold` 不变、文字金加深）、`--on-accent`（accent 填充上的文字）。现对比度也在门禁内。
 
 ---
 
@@ -641,42 +656,31 @@ export default defineConfig({
 
 7 语言 × 11 短语迁移、全部样式 token、Astro 静态四件 + Svelte 交互十二件、双视图集成。验收时的手测清单保留在附录 F（回归测试可复用）。过程中的方案修订（ViewToggle 阈值 960→640、TocSide 双视图显示等）已并入 §6 各节与决策日志。
 
-### M2 · 深色模式 + 收藏（1–2 天）
+### M2 · 深色模式 + 收藏 — ✅ v0.2.0 / v1.0.0
 
-_M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约束强绑定。_
+三态 ThemeToggle（v0.2.0）；收藏 + "Starred only" 过滤、AA 对比度脚本验证（v1.0.0）。会话级过滤、starred 持久化等设计取舍见 §6.7 与 §13。
 
-- [x] 暗色 tokens（已在 M1 写入 tokens.css 完整两套调色）
-- [x] 暗色对比度验证（脚本计算 WCAG 比率；ink-mute/accent 微调后双主题正文+次级文字全部 ≥4.5，装饰金色 ≥3）
-- [x] `ThemeToggle.svelte` — light / dark / system 三态（v0.2.0 上线，含 View Transitions 平滑切换）
-- [x] 防 FOUC 已在 M0/M1 `Layout.astro` 的 head inline script 里就位
-- [x] `StarButton.svelte` + `starred` 持久化（锚点列/卡片头右上角金色小星）
-- [x] "Starred only" 开关 chip（Stationery 下方，有收藏时才出现；会话级状态，不持久化——避免回访时误以为内容丢失）
-- [x] localStorage 版本化已在 M0 `storage.ts` 封装
-
-### M3 · 语音 + PWA（1 天）
+### M3 · 语音 + PWA — v1.0.0 上线（剩离线实测）
 - [x] `SpeakButton.svelte` + `src/lib/tts.ts` 封装（rate 0.9；行内 hover 显现，与 copy hint 同列）
 - [x] Voice 检测：`voiceschanged` 后按 tts code 匹配（精确 → 同语种前缀回退）；无 voice 或语言无 tts code（mizo）时按钮直接不渲染（比禁用+tooltip 更干净）
 - [x] `manifest.webmanifest` + 图标（192 / 512 / maskable 512，由 favicon.svg 栅格化生成）
 - [x] Service Worker precache：shell（html/css/js/svg，数据已打包进 JS）；字体改为运行时 CacheFirst——CJK Noto 拆分成上百个子集文件，全量 precache 会有几十 MB，按需缓存更合理
-- [ ] 离线测试（DevTools → Offline，确认完整功能可用）
+- [x] 离线测试 — 自动化（`tests/offline.spec.ts`，§10.5）。修复了 Astro 7 升级打破的 SW 注册（registerSW 不再自动注入，改由 Layout 在 PROD 手动挂载）
 
-### M4 · 打磨（1–1.5 天）
-- [ ] Accessibility audit：axe DevTools 全绿 + 完整键盘穿行测试
+### M4 · 打磨（进行中）
+- [x] Accessibility audit：axe-core 自动化（**全 WCAG 2.1 A/AA 含对比度**，light+dark 双主题、CI 门禁）。修复 SlotPicker nested-interactive，并把次要小字 / gold 文字 / anchored chip 的对比度补齐到 AA（§7.2）。剩：完整键盘穿行手测
 - [x] Lighthouse 实测（slow-4G 模拟）：A11y / BP / SEO 三项 100，Performance 88——达成 §9 校准后预算
 - [x] 所有交互的 `prefers-reduced-motion` 处理（在 `global.css` 全局兜底）
 - [x] OG image 设计（1200×630）+ meta tags（v0.1.0 已就位 Open Graph + Twitter Card）
 - [x] `README.md`：项目说明 + 使用说明 + 数据扩展指南 + 翻译协作哲学
 - [x] `404.astro` 简短优雅的 not-found（"This letter went astray."）
-- [ ] 手动测试矩阵：iOS Safari / Android Chrome / macOS Safari / Firefox / Edge
+- [~] 测试矩阵：Playwright 跨浏览器工程已就绪（chromium/firefox/webkit，`pnpm test:all`，§10.5）。剩真机手测 iOS Safari / Android Chrome
 
 ### M5 · 内容扩充（持续）
 按需追加短语、语言、场景。工作流见 §5.9。
 每次 push main → 自动部署。每次加新语言后跑一遍 `pnpm run coverage` 确认矩阵。
 
-**已落地**
-- [x] v0.1.1：新增 6 种语言（de / ru / pl / hi / bn / mizo），共 13 种
-- [x] v0.1.1：中文短语优化为更自然的口语（最近怎么样 / 不好意思 / 我想你 / 我很关心你 / 回头见 / 先这样）
-- [x] v0.1.1：删除 `farewell-everyone` 短语（仅有的 `addresseeCount: many` 用例，已无 UI 需要它撑场）
+内容演进史以 [GitHub Releases](https://github.com/Chimelight/distant-friends/releases) 为准（§0 规则 1）；方向性决策见 §13。当前规模：23 种语言 × 63 条短语（v1.0.0，2026-06-12 发布）。
 
 ---
 
@@ -716,6 +720,10 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 - **2026-06-13** · **tone 收为三档**（casual / neutral / polite，弃 close/"tenderly"）：close 档全库命中率 0.5%（14/2596），用户拨到 tenderly 几乎所有格子都走 fallback——会动但无效的选项是温柔的陷阱。14 个 close 变体并入 casual（亲昵语义由 note 承载）；持久化的旧值迁移为 casual。
 - **2026-06-12** · **性能指标按实测校准**（确立元原则：§2 数字指标非铁律——初版是建站前的 AI 估计；方向性原则 1-4 不动摇，数字以实测修订并记日志）：§9 改为 A11y/BP/SEO=100 + Perf≥85（slow-4G 模拟）、阻塞 CSS <20KB、首屏关键传输 <250KB；明确不用 `font-display: optional` 换分数。
 - **2026-06-12** · **性别控件恢复**（反转 v1.5 的撤除，按当时定下的阈值机制触发）：两轴各 60 个标注变体后，Stationery 第二句恢复 addressee 槽位并新增 speaker 槽位。筛选语义：排除显式相反性别，未标保留，空则回退——格子绝不因偏好清空。被动 tag line 在对应筛选激活时隐藏（信息已由槽位表达）。
+- **2026-06-27** · **依赖更新自动化**：引入 Dependabot（每周）对 `dev` 开 PR——minor+patch 合为单 PR，`pnpm build`+`pnpm check` 绿灯后自动 squash 合并；major 单独 PR 手动审。落点选 dev 而非默认分支 main：升级照走 dev→main→release 两道人工 PR 再到部署，dev 不落后于 main。仓库 `allow_auto_merge` 关闭，故用直接 squash 合并而非队列式 auto-merge，门禁内置于 workflow 步骤、不依赖分支保护 required checks。详见 §10.4。
+- **2026-06-28** · **major 也自动合并**（反转上条的"major 手动审"）：维护者不审 PR diff，"手动审"实际等于永不合、依赖烂在 PR 里。改为 build+check 绿灯即 squash 合并，patch/minor/major 一视同仁；构建/类型检查是唯一关卡，编译或类型不过的留红叉。major 仍单独成 PR（不并入分组），故单个破坏性 major 只挡自己、不拖累整批。残余风险：能构建但有运行时回归的 major 会漏网（项目无测试套件）——靠 dev→main（Vercel preview）→release（Pages）两道预览兜底。
+- **2026-06-28** · **引入测试**（反转 §3.3"不引入测试框架"）：上条放开 major 自动合并后，"肉眼验"形同虚设——补上 Playwright + axe-core（冒烟 / 无障碍 / 离线），接入 `ci.yml` 与自动合并门禁（§10.5），把上条的"残余风险"收口。当天即抓到两个真实运行时回归并修复：①Astro 7 升级后 `@vite-pwa/astro`（peer 仅到 Astro 5）不再注入 `registerSW`，PWA 离线**静默失效**——改由 Layout 在 PROD 手动挂载 `registerSW.js`；②SlotPicker 外层 `<button>` 套内层 `<button>`（nested-interactive + 非法 HTML）——拆为 wrapper + 兄弟 popover。axe `color-contrast` 暂排除出门禁：十余处次要小字 < 4.5:1，是否为严格 AA 调暖色调色板属设计决定，待定。
+- **2026-06-28** · **对比度补齐 AA**（落实上条"待定"）：判定低对比确为可读性失误而非有意——最暗背景是页面底色 `--bg #EBE1CC`（比 `--paper` 深），早期 AA 脚本只对 paper-up 验证故漏掉这一档；gold 当文字仅 2.7，根本不可读。改法保留暖色身份：ink-mute `#786E5E→#6B6254`、accent（light `#AC4F2B→#A04928` / dark `#D47649→#DA7A4B`）微调；新增 `--gold-ink`（装饰金 `--gold` 不动、17 处文字金改用更深的 gold-ink）；新增 `--on-accent`（accent 填充上的文字，随主题反向）修好 anchored chip。axe `color-contrast` 重新纳入门禁，light+dark 全 A/AA 绿。
 
 ---
 
@@ -780,4 +788,4 @@ _M2 不再包含 ViewToggle——已在 M1 完成，因为它跟卡片宽度约�
 
 ---
 
-*文档版本 v2.0 · 最后更新 2026-06-12*
+*文档版本 v2.0 · 最后更新 2026-06-13（v1.0.0 发布后）*

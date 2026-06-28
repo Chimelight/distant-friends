@@ -75,7 +75,7 @@
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    color: var(--gold);
+    color: var(--gold-ink);
     letter-spacing: 0.1em;
     font-size: 12px;
     opacity: 0.85;

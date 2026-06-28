@@ -115,7 +115,7 @@
   .chip.anchored {
     background: var(--accent);
     border-color: var(--accent);
-    color: var(--paper-up);
+    color: var(--on-accent);
     font-style: italic;
   }
   .chip:active {
