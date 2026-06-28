@@ -93,10 +93,11 @@
   .copy {
     display: block;
     width: calc(100% - 48px);
-    padding: 18px 0 18px 22px;
+    padding-block: 18px;
+    padding-inline: 22px 0;
     cursor: pointer;
     font-family: inherit;
-    text-align: left;
+    text-align: start;
     background: transparent;
     border: none;
     color: inherit;
@@ -148,14 +149,14 @@
     color: var(--ink-mute);
     margin-top: 6px;
     line-height: 1.55;
-    padding-left: 8px;
-    border-left: 1px solid var(--line);
+    padding-inline-start: 8px;
+    border-inline-start: 1px solid var(--line);
   }
   /* copy-hint is an empty span; ::before swaps content based on .copied. */
   .copy-hint {
     position: absolute;
     top: 16px;
-    right: 18px;
+    inset-inline-end: 18px;
     font-family: var(--font-sans);
     font-size: 9px;
     letter-spacing: 0.26em;

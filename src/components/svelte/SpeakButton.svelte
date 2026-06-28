@@ -52,7 +52,7 @@
   .speak {
     position: absolute;
     top: 34px;
-    right: 10px;
+    inset-inline-end: 10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;

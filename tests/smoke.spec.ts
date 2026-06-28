@@ -55,19 +55,30 @@ test('a Stationery slot picker opens and applies the chosen option', async ({ pa
   await expect(toneSlot).toContainText('politely');
 });
 
-test('language picker adds & removes a language and updates the letter', async ({ page }) => {
-  const names = page.locator('.lang-line .names');
-  await expect(names).toContainText('Deutsch'); // German is on by default
+test('a table column header switches its language', async ({ page }) => {
+  // zh (中文) is the first non-anchor column by default.
+  const firstCol = page.locator('.scene-block').first().locator('th.th-lang').first();
+  await expect(firstCol.locator('.th-native')).toHaveText('中文');
 
-  await page.locator('.lang-line .trigger').click();
+  await firstCol.locator('.th-btn').click();
+  // Korean isn't shown yet → picking it swaps this column to Korean.
+  await page.getByRole('button', { name: 'Korean' }).click();
 
-  // remove German (selected, and not the anchor) → frees a slot
-  await page.getByRole('button', { name: /^German/ }).click();
-  await expect(names).not.toContainText('Deutsch');
+  await expect(firstCol.locator('.th-native')).toHaveText('한국어');
+});
 
-  // add Japanese into the freed slot → it joins the letter
-  await page.getByRole('button', { name: /^Japanese/ }).click();
-  await expect(names).toContainText('日本語');
+test('the Stationery language picker (cards view) filters by search', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 }); // narrow → cards view
+  await page.reload();
+
+  const trigger = page.locator('.lang-line .trigger');
+  await expect(trigger).toBeVisible();
+  await trigger.click();
+
+  const panel = page.locator('.lang-line .panel');
+  await panel.getByPlaceholder(/Search languages/).fill('kor');
+  await expect(panel.getByRole('button', { name: 'Korean' })).toBeVisible();
+  await expect(panel.getByRole('button', { name: 'German' })).toHaveCount(0);
 });
 
 test('starring a phrase reveals the "Starred only" filter and narrows the grid', async ({ page }) => {

@@ -9,24 +9,10 @@
   import languages from '../../data/languages.json';
   import ui from '../../content/ui/en.json';
   import type { TLanguage } from '../../lib/schema';
+  import LangMenu from './LangMenu.svelte';
 
   const allLangs = languages as TLanguage[];
-
-  // Mizo's `code` ("mizo") is not a valid BCP-47 subtag; tag it ISO 639-3 "lus".
   const bcp47 = (code: string) => (code === 'mizo' ? 'lus' : code);
-
-  // Region buckets, in display order. Each language carries its `group`.
-  const GROUP_ORDER = [
-    'East Asia',
-    'Europe',
-    'West & Central Asia',
-    'South Asia',
-    'Southeast Asia',
-  ];
-  const grouped = GROUP_ORDER.map((group) => ({
-    group,
-    langs: allLangs.filter((l) => l.group === group),
-  }));
 
   let open = $state(false);
   let wrapEl = $state<HTMLElement>();
@@ -73,11 +59,16 @@
       selectedLangs.set([...set]);
     }
   }
+
+  // Clear everything except the anchor (which must remain a column).
+  function clearToAnchor() {
+    selectedLangs.set([anchor.get()]);
+  }
 </script>
 
 <div class="lang-line">
   <em>{ui.stationery.langsLead}</em>
-  <!-- Wrapper (not a button) keeps the trigger and the option buttons as
+  <!-- Wrapper (not a button) keeps the trigger and the menu buttons as
        siblings — no nested interactive controls. -->
   <span class="picker" bind:this={wrapEl}>
     <button
@@ -96,9 +87,7 @@
             class="n"
             lang={bcp47(L.code)}
             dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span
-          >{#if i < restingLangs.length - 1}<span class="dot" aria-hidden="true"
-            > · </span
-          >{/if}{/each}
+          >{#if i < restingLangs.length - 1}<span class="dot" aria-hidden="true"> · </span>{/if}{/each}
       </span>
     </button>
 
@@ -108,42 +97,30 @@
         <span class="ph-count">{count} / {MAX_LANGS}</span>
         <span class="ph-hint">{isFull ? ui.stationery.langsFull : ui.stationery.capHint}</span>
       </div>
-      {#each grouped as g (g.group)}
-        <div class="grp">
-          <div class="grp-h">{g.group}</div>
-          <div class="grp-opts">
-            {#each g.langs as L (L.code)}
-              {@const on = selected.has(L.code)}
-              {@const isAnchor = L.code === $anchor}
-              <button
-                type="button"
-                class="opt"
-                class:on
-                class:is-anchor={isAnchor}
-                aria-pressed={on}
-                tabindex={open ? 0 : -1}
-                aria-label={`${L.name}${on ? ', showing' : ''}${isAnchor ? ', anchor' : ''}`}
-                onclick={(e) => {
-                  e.stopPropagation();
-                  toggle(L.code);
-                }}
-              >
-                <span class="mark" aria-hidden="true"></span>
-                <span class="opt-native" lang={bcp47(L.code)} dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span>
-                {#if L.name !== L.native}
-                  <span class="opt-en">{L.name}</span>
-                {/if}
-              </button>
-            {/each}
-          </div>
-        </div>
-      {/each}
+
+      <LangMenu langs={allLangs} marked={selected} anchorCode={$anchor} {open} onPick={toggle} />
+
+      <div class="panel-foot">
+        <button
+          type="button"
+          class="clear"
+          tabindex={open ? 0 : -1}
+          disabled={count <= 1}
+          onclick={(e) => {
+            e.stopPropagation();
+            clearToAnchor();
+          }}
+        >
+          {ui.stationery.langsClear}
+        </button>
+      </div>
     </div>
   </span>
 </div>
 
 <style>
-  /* Reads as the first line of the letter — matches Stationery .prose. */
+  /* Reads as the first line of the letter — matches Stationery .prose.
+     Hidden in table view, where the column headers manage languages. */
   .lang-line {
     font-family: var(--font-serif);
     font-style: italic;
@@ -153,6 +130,9 @@
     margin: 0 0 6px;
     color: var(--ink-soft);
     letter-spacing: 0.005em;
+  }
+  :global(body[data-view='table']) .lang-line {
+    display: none;
   }
 
   .picker {
@@ -184,8 +164,10 @@
     vertical-align: middle;
     transition: all var(--dur-switch) ease;
   }
+  /* A lighter (paper-up) highlight, not a darkening tint — accent text stays
+     above 4.5:1 (any darkening of the page bg drops it under AA). */
   .trigger:hover {
-    background: rgba(176, 82, 46, 0.08);
+    background: var(--paper-up);
     border-bottom-color: var(--accent);
   }
   .trigger:hover::after {
@@ -194,7 +176,7 @@
   }
   .trigger:focus-visible {
     outline: none;
-    background: rgba(176, 82, 46, 0.1);
+    background: var(--paper-up);
     border-bottom-style: solid;
   }
   .names .dot {
@@ -208,13 +190,13 @@
     left: 50%;
     transform: translateX(-50%) translateY(-4px);
     width: max-content;
-    max-width: min(420px, calc(100vw - 32px));
-    max-height: min(60vh, 460px);
+    max-width: min(440px, calc(100vw - 28px));
+    max-height: min(64vh, 480px);
     overflow-y: auto;
     background: var(--paper-up);
     border: 1px solid var(--line);
     border-radius: 4px;
-    padding: 14px 16px 16px;
+    padding: 14px 16px 14px;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -252,7 +234,7 @@
     align-items: baseline;
     gap: 8px;
     padding-bottom: 10px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     border-bottom: 1px solid var(--line-soft);
   }
   .ph-label {
@@ -281,77 +263,37 @@
     animation: nudge 0.4s ease;
   }
 
-  .grp + .grp {
-    margin-top: 10px;
+  .panel-foot {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line-soft);
+    display: flex;
+    justify-content: flex-end;
   }
-  .grp-h {
+  .clear {
     font-family: var(--font-sans);
-    font-size: 9px;
-    letter-spacing: 0.2em;
+    font-size: 10px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--ink-mute);
-    margin-bottom: 5px;
-  }
-  .grp-opts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 6px;
-  }
-
-  .opt {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 6px;
-    padding: 5px 10px 5px 8px;
-    border: 1px solid transparent;
-    border-radius: 999px;
     background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 14px;
     cursor: pointer;
-    font-family: var(--font-serif);
-    color: var(--ink-soft);
     transition: all 0.15s ease;
   }
-  .opt .mark {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    border: 1px solid var(--ink-mute);
-    flex-shrink: 0;
-    align-self: center;
-    transition: all 0.15s ease;
+  .clear:hover:not(:disabled) {
+    color: var(--accent);
+    border-color: var(--accent);
   }
-  .opt-native {
-    font-size: 15px;
-    font-style: italic;
-  }
-  .opt-en {
-    font-family: var(--font-sans);
-    font-size: 10.5px;
-    color: var(--ink-mute);
-    letter-spacing: 0.01em;
-  }
-  .opt:hover {
-    background: rgba(176, 82, 46, 0.07);
-    color: var(--ink);
-  }
-  .opt:focus-visible {
+  .clear:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 1px;
   }
-  .opt.on {
-    border-color: var(--line);
-    color: var(--ink);
-  }
-  .opt.on .mark {
-    background: var(--gold);
-    border-color: var(--gold);
-  }
-  .opt.is-anchor .mark {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-  .opt.is-anchor .opt-native {
-    color: var(--accent);
+  .clear:disabled {
+    opacity: 0.4;
+    cursor: default;
   }
 
   @keyframes nudge {

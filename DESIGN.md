@@ -279,17 +279,15 @@ UI 状态影响变体显示的维度：`anchor`（哪种语言放锚点列）、
 
 > **本章地位**：已实现小节的交互细节与像素值以组件源码为准（§0 规则）；本章保留的是设计意图、约束和"实现注意 ⚠️"陷阱——这些读不出于代码。规格在实现后即视为"as-built 快照"，不随重构逐行维护。
 
-### 6.1 语言选择（LanguagePicker）
+### 6.1 语言选择（双轨：表头 + Stationery 面板）
 
-2026-06-28 重写：23 个母语名的 chip 墙 → 信笺句行 + 分组弹层（清算 §13 2026-04-22「Stationery 替代 chips 墙」遗留的最后一块）。
+经多轮迭代（2026-06-28~29）定为**双轨**——先把 23 个母语名的 chip 墙换成信笺句行 + 分组弹层（清算 §13 2026-04-22 遗留），用户反馈"弹层多一步、不够顺手"后，再把桌面的语言操作搬到**表格列头**本身，Stationery 句行只留给移动端。`body[data-view]` 决定显示哪一轨。
 
-- **静止态**：作为信笺第一句出现——`for friends who read 中文 · English · Deutsch · Русский · বাংলা ▾`。当前选中的语言以**母语名**成句（保留中文/日本語的暖意），trigger 借 SlotPicker 的 slot 外观（accent 字、虚线下划线、▾）。
-- **点开 ▾ → 分组面板**：5 个区域组（East Asia / Europe / West & Central Asia / South Asia / Southeast Asia，来自 `languages.json` 的 `group` 字段，顺序由组件 `GROUP_ORDER` 定）；每门语言 = 母语名 + 安静的英文 exonym（`name` 字段，解决"认不出母语文字"——`name === native` 时不重复显示）。`●` 标记正在显示，anchor 用赤陶色点 + 字标出。
-- **上限 5 种**（含锚点）。满 5 时点未选项：**不加入**，面板 header 提示由 "up to 5 at a time" 变 "remove one to add another" 并 pulse（替代旧的 chip shake）。面板不关，便于先移除再加。
-- 不可取消 anchor（它是一列），不可取消最后一门。anchor 的**切换**仍走单独的「Anchored in ___」SlotPicker（本组件只管"选哪些"）。
-- 默认勾选来自 `defaultOn`；默认 anchor 从 `defaultAnchor`（en）**派生**（stores 不再硬编码 `'zh'`，与 §13 2026-04-28 一致）。
-- 状态：`$selectedLangs` 持久化。
-- **无障碍**：trigger `aria-haspopup`/`aria-expanded`；面板 `role="group"`，选项是 `aria-pressed` 的 toggle 按钮、`aria-label` 带英文名 + showing/anchor；母语名 span 带 `lang`（mizo 用合法 BCP-47 `lus`）+ `dir`；关闭态用 `visibility:hidden`（移出 a11y 树 + 不可聚焦）。trigger 与 panel 是**兄弟**不嵌套（同 SlotPicker 的 nested-interactive 教训）。键盘：Tab 穿行选项、Enter/Space 切换、Esc 关。axe 全 A/AA 绿（面板开/关、light/dark）。
+- **桌面（表格视图）— 列头即控件**：每个 `<th>` 是按钮（母语名 + 安静的英文 exonym 注释 + hover 显 ▾），点开列头弹层（`LangMenu`）。点非锚点列里某门**未显示**的语言 = **把该列换成它**（`switchColumn`：删旧列、加新列；旧列是 anchor 则 anchor 跟随）；弹层底部「remove this column」删列；表头行末「+」（<5 时显示）开「add a language」弹层添列；锚点列头弹层用来切换 anchor 语言。表头 `sticky`（StickyBar 下方），滚动时列语言常驻。Stationery 的语言句行在表格视图 `display:none`。
+- **移动端（卡片视图）— 信笺句行**：`for friends who read 中文 · English … ▾`（母语名成句、保留暖意），点开 `LangMenu` 多选面板：搜索 + 分组 + 英文名 + `●` 标记 + 「Clear」一键清空（除 anchor）。满 5 时 header 提示 + pulse（不再 shake）。
+- **共享组件 `LangMenu`**：搜索（匹配 native/name/code）+ 5 区域分组（`group` 字段，`GROUP_ORDER` 定序）+ 母语名/英文 exonym（`name`，`name===native` 不重复）+ `marked`/`disabledCodes`/`anchorCode` 标记。Stationery 面板与三种表头弹层（switch / add / anchor）共用。选中态是**实心 pill**（旧版只一个小点，太弱）。
+- 不可删 anchor（它是一列）/ 最后一门。默认勾选 `defaultOn`；默认 anchor 从 `defaultAnchor`（en）**派生**（stores 不再硬编码 `'zh'`，与 §13 2026-04-28 一致）。状态 `$selectedLangs` 持久化。
+- **无障碍**：触发器 `aria-haspopup`/`aria-expanded`，选项 `aria-pressed` toggle + `aria-label`（英文名 + showing/anchor）；母语名 `lang`（mizo→BCP-47 `lus`）+ `dir`；关闭弹层 `visibility:hidden`（移出 a11y 树 + 不可聚焦）；trigger 与 popover 是**兄弟不嵌套**；trigger hover/focus 用更亮的 `--paper-up` 高亮——**不能用变暗染色**，否则 accent 文字在其上掉破 4.5（任何比 `--bg` 暗的背景都会）。axe 全 A/AA 绿（面板开 / 列菜单开 / light / dark / 卡片视图）。
 
 ### 6.2 Stationery · 手写体预设句（Stationery + SlotPicker）
 
@@ -725,6 +723,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - **2026-06-28** · **引入测试**（反转 §3.3"不引入测试框架"）：上条放开 major 自动合并后，"肉眼验"形同虚设——补上 Playwright + axe-core（冒烟 / 无障碍 / 离线），接入 `ci.yml` 与自动合并门禁（§10.5），把上条的"残余风险"收口。当天即抓到两个真实运行时回归并修复：①Astro 7 升级后 `@vite-pwa/astro`（peer 仅到 Astro 5）不再注入 `registerSW`，PWA 离线**静默失效**——改由 Layout 在 PROD 手动挂载 `registerSW.js`；②SlotPicker 外层 `<button>` 套内层 `<button>`（nested-interactive + 非法 HTML）——拆为 wrapper + 兄弟 popover。axe `color-contrast` 暂排除出门禁：十余处次要小字 < 4.5:1，是否为严格 AA 调暖色调色板属设计决定，待定。
 - **2026-06-28** · **对比度补齐 AA**（落实上条"待定"）：判定低对比确为可读性失误而非有意——最暗背景是页面底色 `--bg #EBE1CC`（比 `--paper` 深），早期 AA 脚本只对 paper-up 验证故漏掉这一档；gold 当文字仅 2.7，根本不可读。改法保留暖色身份：ink-mute `#786E5E→#6B6254`、accent（light `#AC4F2B→#A04928` / dark `#D47649→#DA7A4B`）微调；新增 `--gold-ink`（装饰金 `--gold` 不动、17 处文字金改用更深的 gold-ink）；新增 `--on-accent`（accent 填充上的文字，随主题反向）修好 anchored chip。axe `color-contrast` 重新纳入门禁，light+dark 全 A/AA 绿。
 - **2026-06-28** · **语言选择改造**（清算 2026-04-22「Stationery 替代 chips 墙」遗留的最后一块）：23 个母语名 chip 墙 → 信笺句行「for friends who read 中文 · English … ▾」+ 点开的分组弹层（5 区域组、母语名 + 英文 exonym、`●` 选中、anchor 赤陶标记、满 5 时 header 提示替代 shake）。一并解决识别（认不出母语文字）、可扫（分组）、违和（chip 墙 vs 信笺三句）。数据加 `name`/`group` 字段（Zod 同步），组件 `LangChips`→`LanguagePicker`（trigger 与 panel 兄弟不嵌套、关闭态 `visibility:hidden`、mizo 用合法 BCP-47 `lus`）。详见 §6.1。顺带修一个先存 bug：`stores.ts` 默认 anchor 硬编码 `'zh'`，与数据 `defaultAnchor=en` 及 §13(04-28) 决策矛盾——改为从 `defaultAnchor` 派生，首访锚点回到 en。
+- **2026-06-29** · **语言选择双轨化 + 表格交互**（迭代上条）：用户反馈信笺弹层"好看但操作麻烦、多一步、不能一眼看全"。遂把桌面的语言操作搬进**表格列头**——点列头切换该列语言 / 删列 / "+"添列，表头加英文注释 + sticky；Stationery 语言句行收为**移动端（卡片视图）专用**（`body[data-view]` 切换）。新增共享 `LangMenu`（搜索 + 分组 + 英文名），Stationery 面板补搜索 / 一键清空 / 实心选中态。同轮修三处：①阿拉伯语**非锚点列**真正 RTL（之前只有锚点列有 `dir`；th/cell 补 `dir` + VariantRow/SpeakButton 改逻辑属性）；②亮模式发淡——次要文字 ink-soft/ink-mute 提对比一档（6.9→8.4 / 4.6→5.8，AA 是地板不是"醒目"）；③trigger hover/focus 的变暗染色让 accent 文字掉破 4.5（任何比 `--bg` 暗的背景都会）——改用更亮的 `--paper-up` 高亮。详见 §6.1。
 
 ---
 

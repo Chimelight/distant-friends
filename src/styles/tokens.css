@@ -17,8 +17,8 @@
   --paper:       #F5EDD9;
   --paper-up:    #FAF4E3;
   --ink:         #1F1A14;
-  --ink-soft:    #524838;
-  --ink-mute:    #6B6254; /* AA: 4.6 on --bg #EBE1CC, the darkest cream (was #786E5E @ 3.85) */
+  --ink-soft:    #453B2D; /* contrast lift: 9.0 on --bg (was #524838 @ 6.9) — more presence in light mode */
+  --ink-mute:    #5B5346; /* contrast lift: 5.7 on --bg (was #6B6254 @ 4.6, sat right on the AA floor) */
   --accent:      #A04928; /* AA: 4.6 on --bg as small text (was #AC4F2B @ 4.1) */
   --accent-soft: #D89876;
   --gold:        #A6824A; /* decorative only (icons/borders/fills) — NOT AA as text */
