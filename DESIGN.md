@@ -60,9 +60,9 @@
 
 | 层 | 选择 | 版本 | 备注 |
 |---|---|---|---|
-| 静态生成器 | **Astro** | 4.x | Islands 架构、零 JS 默认、GH Pages 兼容 |
+| 静态生成器 | **Astro** | 7.x | Islands 架构、零 JS 默认、GH Pages 兼容 |
 | 交互组件 | **Svelte** | 5.x | 只用于有状态 islands，bundle 极小 |
-| 语言 | **TypeScript** | 5.x | strict 开 |
+| 语言 | **TypeScript** | 6.x | strict 开 |
 | Schema | **Zod** | via Astro Content Collections |
 | 跨组件状态 | **nanostores** | 持久化状态用 `@nanostores/persistent` |
 | 样式 | **Vanilla CSS + CSS Variables** | 不用 Tailwind/CSS-in-JS |
@@ -623,7 +623,7 @@ export default defineConfig({
 
 ### 10.2 Actions workflow
 
-见 `.github/workflows/`。要点：pnpm + Node 20、`upload-pages-artifact` → `deploy-pages`，仓库 Settings → Pages → Source 选 **GitHub Actions**。实际分支策略后来演化为 dev → main（Vercel preview）→ release（Pages），见 README Deploy 节。
+见 `.github/workflows/`。要点：pnpm + Node 22、`upload-pages-artifact` → `deploy-pages`，仓库 Settings → Pages → Source 选 **GitHub Actions**。实际分支策略后来演化为 dev → main（Vercel preview）→ release（Pages），见 README Deploy 节。
 
 ### 10.3 自定义域名（可选）
 

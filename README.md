@@ -18,7 +18,7 @@ What it isn't:
 
 ## Stack
 
-Astro 6 + Svelte 5 + TypeScript (strict) + nanostores (with `@nanostores/persistent`) + Zod + vanilla CSS. PWA via `@vite-pwa/astro`. Self-hosted Fraunces + Instrument Sans + Noto Serif CJK. No Tailwind, no UI library, no CSS-in-JS.
+Astro 7 + Svelte 5 + TypeScript (strict) + nanostores (with `@nanostores/persistent`) + Zod + vanilla CSS. PWA via `@vite-pwa/astro`. Self-hosted Fraunces + Instrument Sans + Noto Serif CJK. No Tailwind, no UI library, no CSS-in-JS.
 
 Design source of truth: [DESIGN.md](DESIGN.md).
 
@@ -33,7 +33,7 @@ pnpm coverage     # phrase × language coverage matrix
 pnpm new-phrase   # interactive scaffolder for a new phrase
 ```
 
-Requires Node 20+ and pnpm 9 (pinned via `packageManager`; corepack picks it up automatically).
+Requires Node 22+ and pnpm 9 (pinned via `packageManager`; corepack picks it up automatically).
 
 ## Project structure
 
