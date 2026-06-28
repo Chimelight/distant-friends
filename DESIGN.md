@@ -279,17 +279,17 @@ UI 状态影响变体显示的维度：`anchor`（哪种语言放锚点列）、
 
 > **本章地位**：已实现小节的交互细节与像素值以组件源码为准（§0 规则）；本章保留的是设计意图、约束和"实现注意 ⚠️"陷阱——这些读不出于代码。规格在实现后即视为"as-built 快照"，不随重构逐行维护。
 
-### 6.1 语言选择（LangChips）
+### 6.1 语言选择（LanguagePicker）
 
-- 展示全部语言的本地名作为 chip
-- 锚点语言用赤陶色 `.anchored` 状态，不可通过 chip 取消（只能通过 Stationery 切换）
-- 非锚点的选中语言用深色 `.pressed` 状态
-- 未选中 chip 无底色
-- 默认勾选来自 `languages.json` 的 `defaultOn` 字段
-- **上限 5 种**（含锚点）。点击第 6 个 chip 时：chip 摇头动画（`@keyframes shake`）+ chip 行末尾出现小斜体提示 "up to 5 at a time"（1.8s 后淡出）。不加入选中，不 toast，不 modal
-- 至少保留一个语言选中（最后一个取消无效）
-- 状态：`$selectedLangs: Set<string>` 持久化
-- 键盘：Tab 切换 chip，Enter/Space 切换选中
+2026-06-28 重写：23 个母语名的 chip 墙 → 信笺句行 + 分组弹层（清算 §13 2026-04-22「Stationery 替代 chips 墙」遗留的最后一块）。
+
+- **静止态**：作为信笺第一句出现——`for friends who read 中文 · English · Deutsch · Русский · বাংলা ▾`。当前选中的语言以**母语名**成句（保留中文/日本語的暖意），trigger 借 SlotPicker 的 slot 外观（accent 字、虚线下划线、▾）。
+- **点开 ▾ → 分组面板**：5 个区域组（East Asia / Europe / West & Central Asia / South Asia / Southeast Asia，来自 `languages.json` 的 `group` 字段，顺序由组件 `GROUP_ORDER` 定）；每门语言 = 母语名 + 安静的英文 exonym（`name` 字段，解决"认不出母语文字"——`name === native` 时不重复显示）。`●` 标记正在显示，anchor 用赤陶色点 + 字标出。
+- **上限 5 种**（含锚点）。满 5 时点未选项：**不加入**，面板 header 提示由 "up to 5 at a time" 变 "remove one to add another" 并 pulse（替代旧的 chip shake）。面板不关，便于先移除再加。
+- 不可取消 anchor（它是一列），不可取消最后一门。anchor 的**切换**仍走单独的「Anchored in ___」SlotPicker（本组件只管"选哪些"）。
+- 默认勾选来自 `defaultOn`；默认 anchor 从 `defaultAnchor`（en）**派生**（stores 不再硬编码 `'zh'`，与 §13 2026-04-28 一致）。
+- 状态：`$selectedLangs` 持久化。
+- **无障碍**：trigger `aria-haspopup`/`aria-expanded`；面板 `role="group"`，选项是 `aria-pressed` 的 toggle 按钮、`aria-label` 带英文名 + showing/anchor；母语名 span 带 `lang`（mizo 用合法 BCP-47 `lus`）+ `dir`；关闭态用 `visibility:hidden`（移出 a11y 树 + 不可聚焦）。trigger 与 panel 是**兄弟**不嵌套（同 SlotPicker 的 nested-interactive 教训）。键盘：Tab 穿行选项、Enter/Space 切换、Esc 关。axe 全 A/AA 绿（面板开/关、light/dark）。
 
 ### 6.2 Stationery · 手写体预设句（Stationery + SlotPicker）
 
@@ -688,10 +688,10 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 按优先级粗排，择机引入：
 
-1. **UI 中文化** — 结构已就绪（`ui/zh.json` + `$uiLocale` store + SlotPicker 切换器），只需补译文
+1. ~~**UI 中文化**~~ — ✗ **不做**（2026-06-28）：受众主体是不懂中文的国际朋友（§1，默认锚点 zh→en 即此故），UI 锁英文是自洽的。切换结构（`ui/zh.json` + `$uiLocale` store + SlotPicker）保留但不补译文
 2. **搜索框** — 输入任一语言或拼音定位到短语行（fuse.js 模糊搜索）
 3. **多标签（tags）** — 短语可挂多个标签（`#morning` `#emotion-joy`），与 scene 正交
-4. **分享链接** — `?anchor=ja&langs=zh,en&tone=casual&addr=friend&phrase=greeting-hello` 一键复刻朋友看到的视图
+4. ~~**分享链接**~~ — ✗ **不做**（2026-06-28，ROI 偏低）：`?anchor=ja&langs=zh,en&tone=casual&addr=friend&phrase=greeting-hello` 一键复刻朋友看到的视图
 5. **导出为图片** — 一条短语做成可发到微博/IG 的卡片（html2canvas）
 6. **预生成音频** — Web Speech 的质量天花板取决于用户设备装了什么 voice。构建期用神经 TTS（如 Azure/Google 一次性批量）把全部变体烧成静态音频（~2200 条 × 10-20KB ≈ 30-40MB），懒加载 + 运行时缓存：所有浏览器一致的高质量发音，且仍符合离线原则。代价：构建管线复杂度 + 资产体积，引入前需单独评估
 7. **反向查找** — 朋友发来一句外语查意思（需要把数据索引反转，工程量大）
@@ -724,6 +724,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - **2026-06-28** · **major 也自动合并**（反转上条的"major 手动审"）：维护者不审 PR diff，"手动审"实际等于永不合、依赖烂在 PR 里。改为 build+check 绿灯即 squash 合并，patch/minor/major 一视同仁；构建/类型检查是唯一关卡，编译或类型不过的留红叉。major 仍单独成 PR（不并入分组），故单个破坏性 major 只挡自己、不拖累整批。残余风险：能构建但有运行时回归的 major 会漏网（项目无测试套件）——靠 dev→main（Vercel preview）→release（Pages）两道预览兜底。
 - **2026-06-28** · **引入测试**（反转 §3.3"不引入测试框架"）：上条放开 major 自动合并后，"肉眼验"形同虚设——补上 Playwright + axe-core（冒烟 / 无障碍 / 离线），接入 `ci.yml` 与自动合并门禁（§10.5），把上条的"残余风险"收口。当天即抓到两个真实运行时回归并修复：①Astro 7 升级后 `@vite-pwa/astro`（peer 仅到 Astro 5）不再注入 `registerSW`，PWA 离线**静默失效**——改由 Layout 在 PROD 手动挂载 `registerSW.js`；②SlotPicker 外层 `<button>` 套内层 `<button>`（nested-interactive + 非法 HTML）——拆为 wrapper + 兄弟 popover。axe `color-contrast` 暂排除出门禁：十余处次要小字 < 4.5:1，是否为严格 AA 调暖色调色板属设计决定，待定。
 - **2026-06-28** · **对比度补齐 AA**（落实上条"待定"）：判定低对比确为可读性失误而非有意——最暗背景是页面底色 `--bg #EBE1CC`（比 `--paper` 深），早期 AA 脚本只对 paper-up 验证故漏掉这一档；gold 当文字仅 2.7，根本不可读。改法保留暖色身份：ink-mute `#786E5E→#6B6254`、accent（light `#AC4F2B→#A04928` / dark `#D47649→#DA7A4B`）微调；新增 `--gold-ink`（装饰金 `--gold` 不动、17 处文字金改用更深的 gold-ink）；新增 `--on-accent`（accent 填充上的文字，随主题反向）修好 anchored chip。axe `color-contrast` 重新纳入门禁，light+dark 全 A/AA 绿。
+- **2026-06-28** · **语言选择改造**（清算 2026-04-22「Stationery 替代 chips 墙」遗留的最后一块）：23 个母语名 chip 墙 → 信笺句行「for friends who read 中文 · English … ▾」+ 点开的分组弹层（5 区域组、母语名 + 英文 exonym、`●` 选中、anchor 赤陶标记、满 5 时 header 提示替代 shake）。一并解决识别（认不出母语文字）、可扫（分组）、违和（chip 墙 vs 信笺三句）。数据加 `name`/`group` 字段（Zod 同步），组件 `LangChips`→`LanguagePicker`（trigger 与 panel 兄弟不嵌套、关闭态 `visibility:hidden`、mizo 用合法 BCP-47 `lus`）。详见 §6.1。顺带修一个先存 bug：`stores.ts` 默认 anchor 硬编码 `'zh'`，与数据 `defaultAnchor=en` 及 §13(04-28) 决策矛盾——改为从 `defaultAnchor` 派生，首访锚点回到 en。
 
 ---
 
@@ -778,7 +779,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - [ ] 滚动过 420px：TocTop 淡出、TocSide 淡入（cards@≥640 / table@≥1024）、StickyBar 淡入（含 ViewToggle）
 - [ ] Stationery 两个 slot（anchor / tone）都能展开选项并同步到数据
 - [ ] 复制任一 variant 行：行内 `✓ copied` + 全局 Toast
-- [ ] LangChips 选第 6 个：chip shake + 末尾小提示 "up to 5 at a time"
+- [ ] LanguagePicker 满 5 时点第 6 个：header 提示变 "remove one to add another"（不再 shake；面板不关）；母语名 + 英文副标分组显示
 - [ ] Tab 键穿行：不出现"按 Tab 莫名弹窗"
 - [ ] TocSide hover / 滚动活动都能触发展开；鼠标离开 400ms 后收起；滚动停止 1.4s 后收起
 - [ ] 切换视图：卡片宽度始终 720px max；TocSide 在 table 视图也显示

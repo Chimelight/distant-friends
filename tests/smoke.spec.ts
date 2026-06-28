@@ -55,6 +55,21 @@ test('a Stationery slot picker opens and applies the chosen option', async ({ pa
   await expect(toneSlot).toContainText('politely');
 });
 
+test('language picker adds & removes a language and updates the letter', async ({ page }) => {
+  const names = page.locator('.lang-line .names');
+  await expect(names).toContainText('Deutsch'); // German is on by default
+
+  await page.locator('.lang-line .trigger').click();
+
+  // remove German (selected, and not the anchor) → frees a slot
+  await page.getByRole('button', { name: /^German/ }).click();
+  await expect(names).not.toContainText('Deutsch');
+
+  // add Japanese into the freed slot → it joins the letter
+  await page.getByRole('button', { name: /^Japanese/ }).click();
+  await expect(names).toContainText('日本語');
+});
+
 test('starring a phrase reveals the "Starred only" filter and narrows the grid', async ({ page }) => {
   const before = await copyButtons(page).count();
 

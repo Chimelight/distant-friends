@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LangChips from './LangChips.svelte';
+  import LanguagePicker from './LanguagePicker.svelte';
   import SlotPicker from './SlotPicker.svelte';
   import { anchor, tone, speakerGender, addresseeGender, selectedLangs } from '../../lib/stores';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
@@ -7,8 +7,8 @@
   import ui from '../../content/ui/en.json';
 
   // Anchor options restricted to currently-selected languages — adding a new
-  // language goes through LangChips, switching focus among them goes through
-  // here. This sidesteps the cap-bypass that would happen if "Anchored in"
+  // language goes through LanguagePicker, switching focus among them goes
+  // through here. This sidesteps the cap-bypass that would happen if "Anchored in"
   // could pull in a 6th language through the back door.
   const anchorOptions = $derived(
     languages
@@ -48,7 +48,7 @@
 </script>
 
 <section class="stationery">
-  <LangChips />
+  <LanguagePicker />
 
   <p class="prose">
     <em>{ui.stationery.anchoredIn}</em>

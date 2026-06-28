@@ -4,7 +4,10 @@
   },
   "stationery": {
     "langsLabel": "Letters",
+    "langsLead": "for friends who read",
+    "langsChoose": "Choose languages",
     "capHint": "up to 5 at a time",
+    "langsFull": "remove one to add another",
     "anchoredIn": "Anchored in",
     "iWrite": "I write",
     "to": "to",

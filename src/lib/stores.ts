@@ -20,7 +20,11 @@ export const selectedLangs = persistentAtom<string[] | null>(
   jsonCodec,
 );
 
-export const anchor = persistentAtom<string>('distant-friends:anchor:v1', 'zh');
+// Derive the first-visit anchor from the dataset (defaultAnchor = en) rather
+// than hardcoding — keeps it in sync with languages.json and the §13 decision
+// to anchor in English for the international audience.
+const DEFAULT_ANCHOR = languages.find((l) => l.defaultAnchor)?.code ?? languages[0]?.code ?? 'en';
+export const anchor = persistentAtom<string>('distant-friends:anchor:v1', DEFAULT_ANCHOR);
 
 export const tone = persistentAtom<ToneFilter>('distant-friends:tone:v1', 'any');
 
