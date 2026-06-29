@@ -90,7 +90,9 @@
             aria-label={`${L.name}${on ? ', showing' : ''}${isAnchor ? ', anchor' : ''}`}
             onclick={(e) => {
               e.stopPropagation();
-              if (!disabled) onPick(L.code);
+              if (disabled) return;
+              onPick(L.code);
+              query = ''; // reset the filter so the full list is back next time
             }}
           >
             <span class="lm-mark" aria-hidden="true"></span>
@@ -106,97 +108,103 @@
 </div>
 
 <style>
+  /* underlined, letter-like search — not a boxed input */
   .lm-search {
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 10px;
-    padding: 7px 12px;
+    margin-bottom: 13px;
+    padding: 4px 2px 6px;
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ink);
-    background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 999px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
   }
   .lm-search::placeholder {
     color: var(--ink-mute);
   }
   .lm-search:focus-visible {
     outline: none;
-    border-color: var(--accent);
+    border-bottom-color: var(--accent);
   }
 
   .lm-grp + .lm-grp {
-    margin-top: 10px;
+    margin-top: 14px;
   }
   .lm-grp-h {
     font-family: var(--font-sans);
-    font-size: 9px;
-    letter-spacing: 0.2em;
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-bottom: 5px;
+    color: var(--gold-ink);
+    margin-bottom: 6px;
   }
+  /* a tidy 2-column index, not wrapping chips */
   .lm-opts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 6px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 1px 6px;
   }
 
   .lm-opt {
-    display: inline-flex;
+    display: flex;
     align-items: baseline;
-    gap: 6px;
-    padding: 5px 11px 5px 9px;
-    border: 1px solid transparent;
-    border-radius: 999px;
+    gap: 9px;
+    padding: 6px 9px;
+    border: none;
+    border-radius: 5px;
     background: transparent;
     cursor: pointer;
-    font-family: var(--font-serif);
-    color: var(--ink-soft);
-    transition: all 0.15s ease;
+    text-align: left;
+    transition: background 0.15s ease;
   }
   .lm-mark {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    border: 1.5px solid var(--ink-mute);
+    border: 1px solid var(--ink-mute);
     flex-shrink: 0;
     align-self: center;
     transition: all 0.15s ease;
   }
+  /* native name upright (italic faked CJK badly) — serif, the protagonist */
   .lm-native {
-    font-size: 15px;
-    font-style: italic;
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.15;
+    color: var(--ink-soft);
+    transition: color 0.15s ease;
   }
+  /* English exonym: a quiet serif-italic aside, same voice as the tag lines */
   .lm-en {
-    font-family: var(--font-sans);
-    font-size: 10.5px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 11.5px;
     color: var(--ink-mute);
-    letter-spacing: 0.01em;
   }
   .lm-opt:hover {
-    background: rgba(176, 82, 46, 0.07);
+    background: rgba(166, 130, 74, 0.08);
+  }
+  .lm-opt:hover .lm-native {
     color: var(--ink);
   }
   .lm-opt:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 1px;
   }
-  /* Selected: a clear filled pill, not just a dot (was too subtle). */
   .lm-opt.on {
-    background: rgba(166, 130, 74, 0.14);
-    border-color: var(--gold);
+    background: rgba(166, 130, 74, 0.13);
+  }
+  .lm-opt.on .lm-native {
     color: var(--ink);
   }
   .lm-opt.on .lm-mark {
     background: var(--gold);
     border-color: var(--gold);
-  }
-  .lm-opt.is-anchor.on {
-    background: rgba(176, 82, 46, 0.14);
-    border-color: var(--accent);
   }
   .lm-opt.is-anchor .lm-mark {
     background: var(--accent);
@@ -205,13 +213,15 @@
   .lm-opt.is-anchor .lm-native {
     color: var(--accent);
   }
+  /* already-shown (in a column switch): marked but not re-pickable */
   .lm-opt.disabled {
-    opacity: 0.42;
     cursor: default;
   }
   .lm-opt.disabled:hover {
-    background: transparent;
-    color: var(--ink-soft);
+    background: rgba(166, 130, 74, 0.13);
+  }
+  .lm-opt.disabled:hover .lm-native {
+    color: var(--ink);
   }
 
   .lm-empty {

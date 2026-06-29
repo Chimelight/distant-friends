@@ -85,6 +85,7 @@
       <span class="names">
         {#each restingLangs as L, i (L.code)}<span
             class="n"
+            class:anchor={L.code === $anchor}
             lang={bcp47(L.code)}
             dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span
           >{#if i < restingLangs.length - 1}<span class="dot" aria-hidden="true"> · </span>{/if}{/each}
@@ -120,7 +121,8 @@
 
 <style>
   /* Reads as the first line of the letter — matches Stationery .prose.
-     Hidden in table view, where the column headers manage languages. */
+     Shown in both views: the resting line is the primary manager; table
+     headers offer a quick per-column switch on top of it. */
   .lang-line {
     font-family: var(--font-serif);
     font-style: italic;
@@ -130,9 +132,6 @@
     margin: 0 0 6px;
     color: var(--ink-soft);
     letter-spacing: 0.005em;
-  }
-  :global(body[data-view='table']) .lang-line {
-    display: none;
   }
 
   .picker {
@@ -178,6 +177,14 @@
     outline: none;
     background: var(--paper-up);
     border-bottom-style: solid;
+  }
+  /* native names upright inside the italic line — synthetic italic mangles CJK */
+  .names .n {
+    font-style: normal;
+  }
+  /* the anchor, highlighted in the list rather than read as a redundant repeat */
+  .names .n.anchor {
+    color: var(--accent);
   }
   .names .dot {
     color: var(--ink-mute);

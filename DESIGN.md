@@ -281,13 +281,13 @@ UI 状态影响变体显示的维度：`anchor`（哪种语言放锚点列）、
 
 ### 6.1 语言选择（双轨：表头 + Stationery 面板）
 
-经多轮迭代（2026-06-28~29）定为**双轨**——先把 23 个母语名的 chip 墙换成信笺句行 + 分组弹层（清算 §13 2026-04-22 遗留），用户反馈"弹层多一步、不够顺手"后，再把桌面的语言操作搬到**表格列头**本身，Stationery 句行只留给移动端。`body[data-view]` 决定显示哪一轨。
+经多轮迭代（2026-06-28~29）：chip 墙 → 信笺句行 + 弹层（清算 §13 04-22 遗留）→ 用户嫌"弹层多一步"，把桌面操作搬进表格列头 → 再反馈"表头加/删不便、列表没风格、句行别藏"，**收敛为：Stationery 句行面板是主控件（两视图都在），桌面表格列头额外提供「快速换列」**。
 
-- **桌面（表格视图）— 列头即控件**：每个 `<th>` 是按钮（母语名 + 安静的英文 exonym 注释 + hover 显 ▾），点开列头弹层（`LangMenu`）。点非锚点列里某门**未显示**的语言 = **把该列换成它**（`switchColumn`：删旧列、加新列；旧列是 anchor 则 anchor 跟随）；弹层底部「remove this column」删列；表头行末「+」（<5 时显示）开「add a language」弹层添列；锚点列头弹层用来切换 anchor 语言。表头 `sticky`（StickyBar 下方），滚动时列语言常驻。Stationery 的语言句行在表格视图 `display:none`。
-- **移动端（卡片视图）— 信笺句行**：`for friends who read 中文 · English … ▾`（母语名成句、保留暖意），点开 `LangMenu` 多选面板：搜索 + 分组 + 英文名 + `●` 标记 + 「Clear」一键清空（除 anchor）。满 5 时 header 提示 + pulse（不再 shake）。
-- **共享组件 `LangMenu`**：搜索（匹配 native/name/code）+ 5 区域分组（`group` 字段，`GROUP_ORDER` 定序）+ 母语名/英文 exonym（`name`，`name===native` 不重复）+ `marked`/`disabledCodes`/`anchorCode` 标记。Stationery 面板与三种表头弹层（switch / add / anchor）共用。选中态是**实心 pill**（旧版只一个小点，太弱）。
+- **Stationery 句行（主控件，两视图都在）**：信笺第一句 `for friends who read 中文 · 日本語 · English … ▾`——母语名**直立** serif（CJK 在 italic 下是丑的伪斜体），anchor 标 accent 色（避免与下一句"Anchored in"读着冗余）。点开 `LangMenu` 多选面板：搜索 + 分组 + 英文名 + 实心 gold 点标记 + 「Clear」一键清空（除 anchor）。满 5 时 header 提示 + pulse（不再 shake）。
+- **桌面表格列头（快速换列）**：每个 `<th>` 是按钮（母语名 + 英文 exonym 注释 + hover ▾），点开同一个 `LangMenu`；点一门**未显示**的语言 = **把该列换成它**（`switchColumn`，是 anchor 列则 anchor 跟随）。**只换列**——加/删/搜索都回到上面的面板（用户反馈表头加删不顺手）。表头 `sticky`（StickyBar 下方留一档呼吸空间，不贴顶），滚动时列语言常驻。
+- **共享组件 `LangMenu`**：搜索（match native/name/code，**选完自动清空**回全列表）+ 5 区域分组（`group`，gold 小标题）+ 母语名（直立 serif）+ 英文 exonym（serif italic 小字，同 tag line 口吻；`name===native` 不重复）+ `marked`/`disabledCodes`/`anchorCode` 标记。**2 列网格、无边框、暖色 hover/选中**——区别于早期"通用 chip"（用户嫌没风格）。Stationery 面板与列头/锚点弹层共用。
 - 不可删 anchor（它是一列）/ 最后一门。默认勾选 `defaultOn`；默认 anchor 从 `defaultAnchor`（en）**派生**（stores 不再硬编码 `'zh'`，与 §13 2026-04-28 一致）。状态 `$selectedLangs` 持久化。
-- **无障碍**：触发器 `aria-haspopup`/`aria-expanded`，选项 `aria-pressed` toggle + `aria-label`（英文名 + showing/anchor）；母语名 `lang`（mizo→BCP-47 `lus`）+ `dir`；关闭弹层 `visibility:hidden`（移出 a11y 树 + 不可聚焦）；trigger 与 popover 是**兄弟不嵌套**；trigger hover/focus 用更亮的 `--paper-up` 高亮——**不能用变暗染色**，否则 accent 文字在其上掉破 4.5（任何比 `--bg` 暗的背景都会）。axe 全 A/AA 绿（面板开 / 列菜单开 / light / dark / 卡片视图）。
+- **无障碍**：触发器 `aria-haspopup`/`aria-expanded`，选项 `aria-pressed` toggle + `aria-label`（英文名 + showing/anchor）；母语名 `lang`（mizo→BCP-47 `lus`）+ `dir`；关闭弹层 `visibility:hidden`（移出 a11y 树 + 不可聚焦）；trigger 与 popover **兄弟不嵌套**；trigger hover/focus 用更亮的 `--paper-up` 高亮——**不能用变暗染色**，否则 accent 文字在其上掉破 4.5（任何比 `--bg` 暗的背景都会）。axe 全 A/AA 绿（面板开 / 列菜单开 / light / dark / 卡片视图）。
 
 ### 6.2 Stationery · 手写体预设句（Stationery + SlotPicker）
 
@@ -724,6 +724,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - **2026-06-28** · **对比度补齐 AA**（落实上条"待定"）：判定低对比确为可读性失误而非有意——最暗背景是页面底色 `--bg #EBE1CC`（比 `--paper` 深），早期 AA 脚本只对 paper-up 验证故漏掉这一档；gold 当文字仅 2.7，根本不可读。改法保留暖色身份：ink-mute `#786E5E→#6B6254`、accent（light `#AC4F2B→#A04928` / dark `#D47649→#DA7A4B`）微调；新增 `--gold-ink`（装饰金 `--gold` 不动、17 处文字金改用更深的 gold-ink）；新增 `--on-accent`（accent 填充上的文字，随主题反向）修好 anchored chip。axe `color-contrast` 重新纳入门禁，light+dark 全 A/AA 绿。
 - **2026-06-28** · **语言选择改造**（清算 2026-04-22「Stationery 替代 chips 墙」遗留的最后一块）：23 个母语名 chip 墙 → 信笺句行「for friends who read 中文 · English … ▾」+ 点开的分组弹层（5 区域组、母语名 + 英文 exonym、`●` 选中、anchor 赤陶标记、满 5 时 header 提示替代 shake）。一并解决识别（认不出母语文字）、可扫（分组）、违和（chip 墙 vs 信笺三句）。数据加 `name`/`group` 字段（Zod 同步），组件 `LangChips`→`LanguagePicker`（trigger 与 panel 兄弟不嵌套、关闭态 `visibility:hidden`、mizo 用合法 BCP-47 `lus`）。详见 §6.1。顺带修一个先存 bug：`stores.ts` 默认 anchor 硬编码 `'zh'`，与数据 `defaultAnchor=en` 及 §13(04-28) 决策矛盾——改为从 `defaultAnchor` 派生，首访锚点回到 en。
 - **2026-06-29** · **语言选择双轨化 + 表格交互**（迭代上条）：用户反馈信笺弹层"好看但操作麻烦、多一步、不能一眼看全"。遂把桌面的语言操作搬进**表格列头**——点列头切换该列语言 / 删列 / "+"添列，表头加英文注释 + sticky；Stationery 语言句行收为**移动端（卡片视图）专用**（`body[data-view]` 切换）。新增共享 `LangMenu`（搜索 + 分组 + 英文名），Stationery 面板补搜索 / 一键清空 / 实心选中态。同轮修三处：①阿拉伯语**非锚点列**真正 RTL（之前只有锚点列有 `dir`；th/cell 补 `dir` + VariantRow/SpeakButton 改逻辑属性）；②亮模式发淡——次要文字 ink-soft/ink-mute 提对比一档（6.9→8.4 / 4.6→5.8，AA 是地板不是"醒目"）；③trigger hover/focus 的变暗染色让 accent 文字掉破 4.5（任何比 `--bg` 暗的背景都会）——改用更亮的 `--paper-up` 高亮。详见 §6.1。
+- **2026-06-29（续）** · **语言选择再收敛 + LangMenu 重做视觉**（看预览后的第二轮反馈）：①**桌面句行别藏**——撤销"表格视图 `display:none`"，句行面板两视图都在、作**主控件**；②**sticky 表头别贴顶**——`top` 44→58 + padding 加大，留呼吸；③**搜索选完自动清空**回全列表（不用手删词）；④**表头加/删不便**——表头收为**只快速换列**，加 / 删 / 搜索都回面板；⑤**"UI 没风格、字体怪"**——母语名 italic 在 CJK 上是伪斜体，遂 LangMenu 重做：母语名**直立** serif、英文 exonym serif italic 小字、2 列网格、gold 分组标题、暖色 hover/选中、去掉通用 chip 边框。anchor 在句行标 accent 色化解与"Anchored in"的重复。
 
 ---
 

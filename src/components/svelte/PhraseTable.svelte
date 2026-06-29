@@ -11,7 +11,6 @@
     addresseeGender,
     starred,
     starredOnly,
-    MAX_LANGS,
   } from '../../lib/stores';
   import { visibleVariants } from '../../lib/filter';
   import languages from '../../data/languages.json';
@@ -35,9 +34,9 @@
   // Mizo's `code` is not a valid BCP-47 subtag; tag it ISO 639-3 "lus".
   const bcp47 = (code: string | undefined) => (code === 'mizo' ? 'lus' : code);
 
-  // —— column language controls (headers double as switchers) ——
+  // —— headers double as a quick per-column language switch ——
+  // (add / remove / search live in the Stationery panel; headers only swap)
   const selected = $derived(new Set($selectedLangs ?? []));
-  const canAdd = $derived(selected.size < MAX_LANGS);
   // Open popover keyed by `${sceneId}|${code}` so only the clicked scene's
   // header opens (the same column repeats in every scene's table).
   let openKey = $state<string | null>(null);
@@ -49,21 +48,6 @@
     set.add(newCode);
     selectedLangs.set([...set]);
     if (anchor.get() === oldCode) anchor.set(newCode); // anchor follows its column
-    openKey = null;
-  }
-  function removeColumn(code: string) {
-    if (code === anchor.get()) return;
-    const set = new Set(selectedLangs.get() ?? []);
-    if (set.size <= 1) return;
-    set.delete(code);
-    selectedLangs.set([...set]);
-    openKey = null;
-  }
-  function addColumn(code: string) {
-    const set = new Set(selectedLangs.get() ?? []);
-    if (set.size >= MAX_LANGS || set.has(code)) return;
-    set.add(code);
-    selectedLangs.set([...set]);
     openKey = null;
   }
 
@@ -132,7 +116,6 @@
                   style={`width:${(100 - (100 / (otherLangs.length + 1)) * 1.2) / Math.max(otherLangs.length, 1)}%`}
                 />
               {/each}
-              {#if canAdd}<col class="col-add" />{/if}
             </colgroup>
             <thead>
               <tr>
@@ -194,50 +177,9 @@
                         open={openKey === key}
                         onPick={(c) => switchColumn(L.code, c)}
                       />
-                      <div class="thp-foot">
-                        <button
-                          type="button"
-                          class="thp-remove"
-                          tabindex={openKey === key ? 0 : -1}
-                          onclick={(e) => {
-                            e.stopPropagation();
-                            removeColumn(L.code);
-                          }}
-                        >
-                          {ui.stationery.langsRemove}
-                        </button>
-                      </div>
                     </div>
                   </th>
                 {/each}
-                {#if canAdd}
-                  {@const addKey = `${S.id}|add`}
-                  <th class="th-add th-cell" data-thkey={addKey}>
-                    <button
-                      class="th-addbtn"
-                      type="button"
-                      aria-haspopup="true"
-                      aria-expanded={openKey === addKey}
-                      aria-label={ui.stationery.langsAdd}
-                      onclick={(e) => {
-                        e.stopPropagation();
-                        openKey = openKey === addKey ? null : addKey;
-                      }}
-                    >
-                      <span aria-hidden="true">+</span>
-                    </button>
-                    <div class="th-pop pop-end" class:open={openKey === addKey}>
-                      <div class="thp-head">{ui.stationery.langsAdd}</div>
-                      <LangMenu
-                        langs={allLangs}
-                        marked={selected}
-                        disabledCodes={selected}
-                        open={openKey === addKey}
-                        onPick={addColumn}
-                      />
-                    </div>
-                  </th>
-                {/if}
               </tr>
             </thead>
             <tbody>
@@ -269,7 +211,6 @@
                       </td>
                     {/if}
                   {/each}
-                  {#if canAdd}<td class="add-cell"></td>{/if}
                 </tr>
               {/each}
             </tbody>
@@ -387,12 +328,12 @@
   }
   .phrase-table thead th {
     text-align: start;
-    padding: 13px 22px;
+    padding: 17px 22px;
     border-bottom: 1px solid var(--line);
-    /* Sticky just below the StickyBar so the column languages stay visible
-       while reading a scene's table. */
+    /* Sticky a comfortable gap below the StickyBar (~44px) so the column
+       languages stay visible while reading — with breathing room, not flush. */
     position: sticky;
-    top: 44px;
+    top: 58px;
     z-index: 5;
     background: var(--paper);
   }
@@ -490,7 +431,9 @@
     pointer-events: auto;
     transform: translateY(0);
   }
-  .th-pop.pop-end {
+  /* right-align the popover for the last couple of columns so it doesn't
+     overflow the viewport edge */
+  .th-lang:nth-last-child(-n + 2) .th-pop {
     left: auto;
     right: 0;
   }
@@ -503,68 +446,6 @@
     margin-bottom: 8px;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--line-soft);
-  }
-  .thp-foot {
-    margin-top: 10px;
-    padding-top: 9px;
-    border-top: 1px solid var(--line-soft);
-  }
-  .thp-remove {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    background: transparent;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 5px 12px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-  .thp-remove:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-  .thp-remove:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 1px;
-  }
-
-  /* add-a-language column */
-  .col-add {
-    width: 46px;
-  }
-  .th-add {
-    text-align: center;
-    vertical-align: middle;
-  }
-  .th-addbtn {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1px dashed var(--line);
-    background: transparent;
-    color: var(--ink-mute);
-    font-size: 15px;
-    line-height: 1;
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-  .th-addbtn:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    border-style: solid;
-  }
-  .th-addbtn:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-  .add-cell {
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .phrase-row:last-child .add-cell {
-    border-bottom: none;
   }
 
   .anchor-cell {

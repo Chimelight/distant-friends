@@ -76,9 +76,15 @@ test('the Stationery language picker (cards view) filters by search', async ({ p
   await trigger.click();
 
   const panel = page.locator('.lang-line .panel');
-  await panel.getByPlaceholder(/Search languages/).fill('kor');
+  const search = panel.getByPlaceholder(/Search languages/);
+  await search.fill('kor');
   await expect(panel.getByRole('button', { name: 'Korean' })).toBeVisible();
   await expect(panel.getByRole('button', { name: 'German' })).toHaveCount(0);
+
+  // picking resets the filter so the full list is back (no manual clearing)
+  await panel.getByRole('button', { name: 'Korean' }).click();
+  await expect(search).toHaveValue('');
+  await expect(panel.getByRole('button', { name: 'German' })).toBeVisible();
 });
 
 test('starring a phrase reveals the "Starred only" filter and narrows the grid', async ({ page }) => {
