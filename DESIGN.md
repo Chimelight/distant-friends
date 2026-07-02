@@ -815,8 +815,8 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - [x] **首次星标的布局跳动**（R3）：StarFilter 改 `transition:slide`（320ms，`prefersReducedMotion` 时 0）——首星时内容区不再瞬间下顶 40px，随绽放动画从容展开；末星取消同样滑出。
 - [x] **发音的可感反馈**（R3，账本原文有两处与现状不符）：经查 SpeakButton **本就有**播放反馈（accent 变色 + 双声波脉冲、点击停止、aria-label 切换），tts.ts 的 **voice 优选也早已实现**（natural/neural/premium/siri 加分、Google 网络声加分、离线只留 local）——审计时想当然了。本轮实际补的：墨晕涟漪（`::before` 呼吸环，播放中持续外扩）增强可感性 + `aria-pressed` 切换语义；reduced-motion 全套豁免。
 - [x] **TOC 阅读进度**（R3）：rail 上叠一道金→赤陶渐变的进度线，`animation-timeline: scroll(root)` 纯 CSS 驱动，`@supports` 门控（不支持的浏览器完全不见）；静息 rail 低调可见（0.45），展开加深（0.85）。位置随用户自己的滚动映射，无 vestibular 顾虑。
-- [ ] **语言面板的键盘/搜索手感**：搜索框 ↓ 直接进入结果网格、方向键在 2 列网格游走、Enter 选中；键盘打开面板时搜索框自动聚焦；空态给建议项而非只说"没有"。
-- [ ] **复制的笔触反馈**：copied 状态在原文下画一道手写金线（SVG `stroke-dashoffset`），比换文案更"信笺"；toast 保留。
+- [x] **语言面板的键盘/搜索手感**（R4）：键盘打开（Enter/Space，`click.detail===0` 判定）焦点直落搜索框——面板与列头两个入口一致；搜索框 ↓ 落列表首项；方向键按阅读序游走（↑ 越过首项回搜索、Home/End）；空态给**最近似建议**（Levenshtein ≤3 取前 3，"koraen"→Korean），选项渲染抽成 snippet 复用。几何 2D 游走（跨分组按列对齐）弃：组间列数不连续，阅读序更可预测。
+- [x] **复制的笔触反馈**（R4）：copied 时一道金线在原文正下方左→右画出（RTL 文本从右画，`:dir()`），copied 消退时回收。落地为 inline span 的 background-size 过渡而非账本原设想的 SVG stroke——SVG 定位在多行文本上会断、repeat-x 波浪随 size 动画变形；渐变金（gold→gold-ink→gold）保留一点墨色不匀。
 
 其余（既有登记）：
 
@@ -832,6 +832,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ### 轮次日志
 
+- **R4 · 2026-07-03** — 高频块收尾：语言面板键盘手感（键盘开→搜索聚焦、↓ 入列表、阅读序游走、typo 建议）+ 复制金线（画出/回收）。冒烟 +2（键盘流、typo 建议）。**高频功能细节强化块至此全部完成。**
 - **R3 · 2026-07-03** — 首星布局跳动（slide 过渡）、发音墨晕涟漪 + `aria-pressed`、TOC 阅读进度线（scroll-driven CSS）。教训两则：①账本条目写自审计推测，动手前先读现状——发音的反馈与 voice 优选本就存在，实际工作量是条目描述的三分之一；②**实现注意 ⚠️**：lightningcss 会把独立的 `animation-timeline` 合并进 `animation` 简写——规范禁止 timeline 出现在简写里，浏览器随之丢弃整条声明（症状：动画完全不生效且无报错）。解法：`animation-timeline: var(--xx)` 经自定义属性间接引用，压缩器即无法折叠。
 - **R2 · 2026-07-03** — 高频功能细节第一对：**换列的"新墨写入"**（`$freshLang` 瞬态居 stores，换列/加列/换 anchor 三个入口标记；表格列头先行、逐行级联，卡片视图 lang-block 同语汇）+ **收藏仪式感**（星标 spring pop + 金屑绽放、场景星数微标、空态确认已有兜底）。冒烟测试加星数微标断言。
 - **R1 · 2026-07-02** — 全面审计（桌面/移动 × 明/暗 × 表格/卡片 × 悬停/弹层/Toast/404，11 张全状态截图）+ 建账。落地三项：
