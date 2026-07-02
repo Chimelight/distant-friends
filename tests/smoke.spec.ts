@@ -160,6 +160,19 @@ test('the Stationery language picker (cards view) filters by search', async ({ p
   await expect(panel.getByRole('button', { name: 'French' })).toBeVisible();
 });
 
+test('mobile grows a back-to-top button once scrolled', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.reload();
+  await page.evaluate(() => window.scrollTo(0, 2400));
+
+  const btn = page.getByRole('button', { name: 'Back to top' });
+  await expect(btn).toBeVisible();
+  await btn.click();
+  await expect
+    .poll(() => page.evaluate(() => window.scrollY))
+    .toBeLessThan(10);
+});
+
 test('starring a phrase reveals the "Starred only" filter and narrows the grid', async ({ page }) => {
   const before = await copyButtons(page).count();
 
