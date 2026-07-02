@@ -49,11 +49,9 @@
   }
 
   function jumpTo(id: string) {
-    // Both PhraseTable and PhraseCards render scene blocks with the same ID
-    // but only the active view is visible (the other has display:none).
-    // Pick the visible one via offsetParent — null when any ancestor is
-    // hidden — and use the data-scene attribute to avoid the duplicate-ID
-    // collision that getElementById would hit.
+    // Both views render a block per scene (ids are view-prefixed; the
+    // shared key is data-scene). Only the active view is visible, so pick
+    // the element whose offsetParent isn't null.
     const all = document.querySelectorAll<HTMLElement>(`[data-scene="${id}"]`);
     for (const el of all) {
       if (el.offsetParent !== null) {

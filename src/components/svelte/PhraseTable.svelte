@@ -104,7 +104,7 @@
     {#if items.length}
       {@const titleParts = emWrap(S.title, S.em)}
       {@const anchorKey = `${S.id}|anchor`}
-      <section class="scene-block" id={`scene-${S.id}`} data-scene={S.id}>
+      <section class="scene-block" id={`scene-table-${S.id}`} data-scene={S.id}>
         <div class="scene-header">
           <span class="scene-num">{S.num}</span>
           <h2 class="scene-ttl">
