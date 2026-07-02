@@ -78,11 +78,14 @@
     {#if variant.rom}
       <div class="variant-rom">{variant.rom}</div>
     {/if}
-    {#if tagText}
-      <div class="variant-tag">{tagText}</div>
-    {/if}
-    {#if variant.note}
-      <div class="variant-note">{variant.note}</div>
+    <!-- one annotation voice: tag and note share a line and a register,
+         instead of stacking two differently-styled rows -->
+    {#if tagText || variant.note}
+      <div class="variant-meta">
+        {#if tagText}<span>{tagText}</span>{/if}
+        {#if tagText && variant.note}<span class="meta-sep" aria-hidden="true"> · </span>{/if}
+        {#if variant.note}<span>{variant.note}</span>{/if}
+      </div>
     {/if}
   </button>
   <span class="copy-hint" aria-hidden="true"></span>
@@ -121,7 +124,7 @@
   .copy {
     display: block;
     width: calc(100% - 48px);
-    padding-block: 18px;
+    padding-block: 15px;
     padding-inline: 22px 0;
     cursor: pointer;
     font-family: inherit;
@@ -130,8 +133,16 @@
     border: none;
     color: inherit;
   }
-  .variant + :global(.variant) {
-    border-top: 1px dashed var(--line-soft);
+  /* a short tick between variants, not a full-width dashed rule — the
+     stacked variants read as one cell with light punctuation, less grid */
+  .variant + :global(.variant)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    inset-inline-start: 22px;
+    width: 26px;
+    height: 1px;
+    background: var(--line);
   }
   .variant:hover {
     background: rgba(176, 82, 46, 0.05);
@@ -158,27 +169,21 @@
     margin-top: 4px;
     letter-spacing: 0.02em;
   }
-  .variant-tag {
+  .variant-meta {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 12px;
     color: var(--ink-mute);
-    margin-top: 8px;
+    margin-top: 6px;
+    line-height: 1.55;
     letter-spacing: 0.015em;
   }
-  .variant-tag::before {
+  .variant-meta::before {
     content: "— ";
     color: var(--gold-ink);
   }
-  .variant-note {
-    font-family: var(--font-sans);
-    font-style: italic;
-    font-size: 11.5px;
-    color: var(--ink-mute);
-    margin-top: 6px;
-    line-height: 1.55;
-    padding-inline-start: 8px;
-    border-inline-start: 1px solid var(--line);
+  .meta-sep {
+    color: var(--gold-ink);
   }
   /* copy-hint is an empty span; ::before swaps content based on .copied. */
   .copy-hint {
