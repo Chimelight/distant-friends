@@ -1,5 +1,6 @@
 <script lang="ts">
   import { tone, speakerGender, addresseeGender, showToast } from '../../lib/stores';
+  import { langTagOf } from '../../lib/lang';
   import { copyText } from '../../lib/clipboard';
   import SpeakButton from './SpeakButton.svelte';
   import type { TVariant } from '../../lib/schema';
@@ -68,15 +69,23 @@
     onclick={onClick}
     onkeydown={onKey}
   >
-    <div class="variant-text" lang={langCode} dir="auto">{variant.text}</div>
+    <!-- langCode stays the dataset code (SpeakButton matches TTS voices on
+         it); the lang attribute needs the valid BCP-47 tag. -->
+    <div class="variant-text" lang={langTagOf(langCode)} dir="auto">
+      <!-- inline span so the copied underline hugs the ink, not the cell -->
+      <span class="ink-u">{variant.text}</span>
+    </div>
     {#if variant.rom}
       <div class="variant-rom">{variant.rom}</div>
     {/if}
-    {#if tagText}
-      <div class="variant-tag">{tagText}</div>
-    {/if}
-    {#if variant.note}
-      <div class="variant-note">{variant.note}</div>
+    <!-- one annotation voice: tag and note share a line and a register,
+         instead of stacking two differently-styled rows -->
+    {#if tagText || variant.note}
+      <div class="variant-meta">
+        {#if tagText}<span>{tagText}</span>{/if}
+        {#if tagText && variant.note}<span class="meta-sep" aria-hidden="true"> · </span>{/if}
+        {#if variant.note}<span>{variant.note}</span>{/if}
+      </div>
     {/if}
   </button>
   <span class="copy-hint" aria-hidden="true"></span>
@@ -90,19 +99,50 @@
     position: relative;
     transition: background 0.2s ease;
   }
+  /* copied: a gold line draws itself under the ink, left to right (from the
+     right in RTL text), then retracts when the copied state lapses */
+  .ink-u {
+    background-image: linear-gradient(
+      90deg,
+      var(--gold) 0%,
+      var(--gold-ink) 55%,
+      var(--gold) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    background-position: bottom left;
+    padding-bottom: 2px;
+    transition: background-size 0.5s var(--ease-out);
+  }
+  .variant.copied .ink-u {
+    background-size: 100% 1px;
+  }
+  .variant-text:dir(rtl) .ink-u {
+    background-position: bottom right;
+  }
+
   .copy {
     display: block;
     width: calc(100% - 48px);
-    padding: 18px 0 18px 22px;
+    padding-block: 15px;
+    padding-inline: 22px 0;
     cursor: pointer;
     font-family: inherit;
-    text-align: left;
+    text-align: start;
     background: transparent;
     border: none;
     color: inherit;
   }
-  .variant + :global(.variant) {
-    border-top: 1px dashed var(--line-soft);
+  /* a short tick between variants, not a full-width dashed rule — the
+     stacked variants read as one cell with light punctuation, less grid */
+  .variant + :global(.variant)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    inset-inline-start: 22px;
+    width: 26px;
+    height: 1px;
+    background: var(--line);
   }
   .variant:hover {
     background: rgba(176, 82, 46, 0.05);
@@ -129,33 +169,27 @@
     margin-top: 4px;
     letter-spacing: 0.02em;
   }
-  .variant-tag {
+  .variant-meta {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 12px;
     color: var(--ink-mute);
-    margin-top: 8px;
+    margin-top: 6px;
+    line-height: 1.55;
     letter-spacing: 0.015em;
   }
-  .variant-tag::before {
+  .variant-meta::before {
     content: "— ";
     color: var(--gold-ink);
   }
-  .variant-note {
-    font-family: var(--font-sans);
-    font-style: italic;
-    font-size: 11.5px;
-    color: var(--ink-mute);
-    margin-top: 6px;
-    line-height: 1.55;
-    padding-left: 8px;
-    border-left: 1px solid var(--line);
+  .meta-sep {
+    color: var(--gold-ink);
   }
   /* copy-hint is an empty span; ::before swaps content based on .copied. */
   .copy-hint {
     position: absolute;
     top: 16px;
-    right: 18px;
+    inset-inline-end: 18px;
     font-family: var(--font-sans);
     font-size: 9px;
     letter-spacing: 0.26em;
@@ -185,5 +219,12 @@
   }
   .variant.copied .copy-hint::before {
     content: '✓ copied';
+  }
+  /* Touch has no hover: keep a quiet "copy" affordance always visible,
+     matching SpeakButton's hover-none treatment. */
+  @media (hover: none) {
+    .copy-hint {
+      opacity: 0.4;
+    }
   }
 </style>

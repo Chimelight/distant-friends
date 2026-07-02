@@ -55,10 +55,131 @@ test('a Stationery slot picker opens and applies the chosen option', async ({ pa
   await expect(toneSlot).toContainText('politely');
 });
 
+test('a table column header switches its language in place', async ({ page }) => {
+  const scene = page.locator('.scene-block').first();
+  // zh (中文) is the first non-anchor column by default.
+  const firstCol = scene.locator('th.th-lang').first();
+  const colsBefore = await scene.locator('th.th-lang').count();
+  await expect(firstCol.locator('.th-native')).toHaveText('中文');
+
+  await firstCol.locator('.th-btn').click();
+  // Thai sits last in the dataset — a set-based (dataset-ordered) selection
+  // would send the new column to the far end instead of replacing this one.
+  await page.getByRole('button', { name: 'Thai' }).click();
+
+  await expect(firstCol.locator('.th-native')).toHaveText('ไทย');
+  await expect(scene.locator('th.th-lang')).toHaveCount(colsBefore);
+});
+
+test('popovers are exclusive — opening one closes the other', async ({ page }) => {
+  const stationery = page.locator('.stationery');
+  await stationery.locator('[data-slot="tone"]').click();
+  await expect(stationery.getByRole('menuitemradio', { name: 'politely' })).toBeVisible();
+
+  await page.locator('.lang-line .trigger').click();
+  await expect(page.locator('.lang-line .panel')).toBeVisible();
+  // the tone menu is unmounted, not just visually hidden
+  await expect(stationery.getByRole('menuitemradio', { name: 'politely' })).toHaveCount(0);
+});
+
+test('Escape closes the language panel and hands focus back to the trigger', async ({ page }) => {
+  const trigger = page.locator('.lang-line .trigger');
+  await trigger.click();
+  const search = page.locator('.lang-line .panel').getByPlaceholder(/Search languages/);
+  await search.click();
+
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.lang-line .panel')).toHaveCount(0);
+  await expect(trigger).toBeFocused();
+});
+
+test('a slot picker menu is keyboard-navigable', async ({ page }) => {
+  const stationery = page.locator('.stationery');
+  const toneSlot = stationery.locator('[data-slot="tone"]');
+
+  await toneSlot.focus();
+  await page.keyboard.press('Enter'); // opens; focus moves to the checked item
+  await expect(stationery.getByRole('menuitemradio', { name: 'in any tone' })).toBeFocused();
+
+  await page.keyboard.press('ArrowDown');
+  await expect(stationery.getByRole('menuitemradio', { name: 'casually' })).toBeFocused();
+
+  await page.keyboard.press('Enter'); // picks, closes, returns focus
+  await expect(toneSlot).toContainText('casually');
+  await expect(toneSlot).toBeFocused();
+});
+
+test('the language panel is keyboard-first: Enter lands in search, arrows walk the list', async ({ page }) => {
+  const trigger = page.locator('.lang-line .trigger');
+  await trigger.focus();
+  await page.keyboard.press('Enter');
+
+  const panel = page.locator('.lang-line .panel');
+  const search = panel.getByPlaceholder(/Search languages/);
+  await expect(search).toBeFocused();
+
+  await page.keyboard.press('ArrowDown');
+  await expect(panel.locator('.lm-opt').first()).toBeFocused();
+  await page.keyboard.press('ArrowRight');
+  await expect(panel.locator('.lm-opt').nth(1)).toBeFocused();
+  await page.keyboard.press('ArrowUp');
+  await expect(panel.locator('.lm-opt').first()).toBeFocused();
+  await page.keyboard.press('ArrowUp'); // past the first option → back to search
+  await expect(search).toBeFocused();
+});
+
+test('an unmatched search suggests the closest language', async ({ page }) => {
+  await page.locator('.lang-line .trigger').click();
+  const panel = page.locator('.lang-line .panel');
+  await panel.getByPlaceholder(/Search languages/).fill('koraen'); // typo
+  await expect(panel.getByText(/No language matches/)).toBeVisible();
+  await expect(panel.getByRole('button', { name: 'Korean' })).toBeVisible();
+});
+
+test('the Stationery language picker (cards view) filters by search', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 }); // narrow → cards view
+  await page.reload();
+
+  const trigger = page.locator('.lang-line .trigger');
+  await expect(trigger).toBeVisible();
+  await trigger.click();
+
+  const panel = page.locator('.lang-line .panel');
+  const search = panel.getByPlaceholder(/Search languages/);
+  await search.fill('kor');
+  await expect(panel.getByRole('button', { name: 'Korean' })).toBeVisible();
+  await expect(panel.getByRole('button', { name: 'German' })).toHaveCount(0);
+
+  // picking resets the filter so the full list is back (no manual clearing)
+  await panel.getByRole('button', { name: 'Korean' }).click();
+  await expect(search).toHaveValue('');
+  await expect(panel.getByRole('button', { name: 'German' })).toBeVisible();
+
+  // diacritic-folded: "francais" matches Français
+  await search.fill('francais');
+  await expect(panel.getByRole('button', { name: 'French' })).toBeVisible();
+});
+
+test('mobile grows a back-to-top button once scrolled', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.reload();
+  await page.evaluate(() => window.scrollTo(0, 2400));
+
+  const btn = page.getByRole('button', { name: 'Back to top' });
+  await expect(btn).toBeVisible();
+  await btn.click();
+  await expect
+    .poll(() => page.evaluate(() => window.scrollY))
+    .toBeLessThan(10);
+});
+
 test('starring a phrase reveals the "Starred only" filter and narrows the grid', async ({ page }) => {
   const before = await copyButtons(page).count();
 
   await page.getByRole('button', { name: 'Star this phrase' }).first().click();
+
+  // the scene header grows a small gold tally of starred phrases
+  await expect(page.locator('.view-desktop .scene-kept').first()).toHaveText(/1/);
 
   const filter = page.getByRole('button', { name: /Starred only/i });
   await expect(filter).toBeVisible();

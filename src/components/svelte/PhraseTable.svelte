@@ -1,24 +1,76 @@
 <script lang="ts">
+  import { tick } from 'svelte';
   import TranslationCell from './TranslationCell.svelte';
   import StarButton from './StarButton.svelte';
-  import { selectedLangs, anchor, tone, speakerGender, addresseeGender, starred, starredOnly } from '../../lib/stores';
+  import LangMenu from './LangMenu.svelte';
+  import {
+    selectedLangs,
+    anchor,
+    tone,
+    speakerGender,
+    addresseeGender,
+    starred,
+    starredOnly,
+    freshLang,
+    markFreshLang,
+  } from '../../lib/stores';
+  import { openPopover, togglePopover, closePopover, popover } from '../../lib/popover';
+  import { LANG_BY_CODE, langsByCodes, langTag } from '../../lib/lang';
   import { visibleVariants } from '../../lib/filter';
-  import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
   import phrases from '../../data/phrases';
-  import type { TPhrase, TLanguage, TScene } from '../../lib/schema';
+  import ui from '../../content/ui/en.json';
+  import type { TPhrase, TScene } from '../../lib/schema';
 
   const allPhrases = phrases as unknown as TPhrase[];
-  const allLangs = languages as TLanguage[];
   const allScenes = scenes as TScene[];
 
+  // Column order IS the selection order ($selectedLangs is an ordered
+  // array); the anchor renders as its own first column.
   const otherLangs = $derived(
-    allLangs.filter(
-      (L) => L.code !== $anchor && ($selectedLangs ?? []).includes(L.code),
-    ),
+    langsByCodes(($selectedLangs ?? []).filter((c) => c !== $anchor)),
   );
-  const anchorL = $derived(allLangs.find((L) => L.code === $anchor));
+  const anchorL = $derived(LANG_BY_CODE.get($anchor));
   const anchorDir = $derived(anchorL?.rtl ? 'rtl' : 'ltr');
+
+  // Anchor column slightly wider than an even split; guard the degenerate
+  // anchor-only table (otherwise the formula yields 120%).
+  const anchorColPct = $derived(
+    otherLangs.length ? (100 / (otherLangs.length + 1)) * 1.2 : 100,
+  );
+  const otherColPct = $derived(
+    otherLangs.length ? (100 - anchorColPct) / otherLangs.length : 0,
+  );
+
+  // —— headers double as a quick per-column language switch ——
+  // (add / remove / search live in the Stationery panel; headers only swap)
+  const selected = $derived(new Set($selectedLangs ?? []));
+
+  function switchColumn(oldCode: string, newCode: string) {
+    const cur = selectedLangs.get() ?? [];
+    if (!cur.includes(oldCode) || cur.includes(newCode)) return;
+    // In place: the clicked column becomes the new language, right where
+    // it stands — selection order (= column order) is preserved.
+    selectedLangs.set(cur.map((c) => (c === oldCode ? newCode : c)));
+    if (anchor.get() === oldCode) anchor.set(newCode); // anchor follows its column
+    markFreshLang(newCode);
+    closePopover();
+  }
+
+  // Keyboard activation (click detail 0) drops focus into the menu's search.
+  async function toggleTh(e: MouseEvent, key: string) {
+    const th = (e.currentTarget as HTMLElement).closest('th');
+    togglePopover(key);
+    if (openPopover.get() === key && e.detail === 0) {
+      await tick();
+      th?.querySelector<HTMLElement>('.lm-search')?.focus();
+    }
+  }
+
+  function starsIn(sceneId: string): number {
+    const star = new Set($starred);
+    return allPhrases.filter((p) => p.scene === sceneId && star.has(p.id)).length;
+  }
 
   function emWrap(title: string, em: string): { before: string; em: string; after: string } {
     const idx = title.indexOf(em);
@@ -51,40 +103,112 @@
     {@const items = phrasesIn(S.id)}
     {#if items.length}
       {@const titleParts = emWrap(S.title, S.em)}
-      <section class="scene-block" id={`scene-${S.id}`} data-scene={S.id}>
+      {@const anchorKey = `${S.id}|anchor`}
+      <section class="scene-block" id={`scene-table-${S.id}`} data-scene={S.id}>
         <div class="scene-header">
           <span class="scene-num">{S.num}</span>
           <h2 class="scene-ttl">
             {titleParts.before}{#if titleParts.em}<em>{titleParts.em}</em>{/if}{titleParts.after}
           </h2>
+          {#if starsIn(S.id) > 0}
+            <span class="scene-kept" aria-label={`${starsIn(S.id)} starred in this scene`}>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8l1.86 3.92 4.14.55-3.04 2.98.76 4.27L8 11.46l-3.72 2.04.76-4.27L2 6.27l4.14-.55z" fill="currentColor" /></svg>
+              {starsIn(S.id)}
+            </span>
+          {/if}
           <span class="scene-rule"></span>
         </div>
         <div class="table-wrap">
           <table class="phrase-table">
             <colgroup>
-              <col style={`width:${(100 / (otherLangs.length + 1)) * 1.2}%`} />
+              <col style={`width:${anchorColPct}%`} />
               {#each otherLangs as _ (_.code)}
-                <col
-                  style={`width:${(100 - (100 / (otherLangs.length + 1)) * 1.2) / Math.max(otherLangs.length, 1)}%`}
-                />
+                <col style={`width:${otherColPct}%`} />
               {/each}
             </colgroup>
             <thead>
               <tr>
-                <th class="th-anchor" dir={anchorDir}>{anchorL?.native ?? ''}</th>
+                <th
+                  class="th-anchor th-cell"
+                  class:fresh={$anchor === $freshLang}
+                  dir={anchorDir}
+                  lang={anchorL ? langTag(anchorL) : undefined}
+                  use:popover={anchorKey}
+                >
+                  <button
+                    class="th-btn"
+                    type="button"
+                    aria-expanded={$openPopover === anchorKey}
+                    aria-label={`${anchorL?.name ?? ''} — ${ui.stationery.langsSwitch}`}
+                    onclick={(e) => toggleTh(e, anchorKey)}
+                  >
+                    <span class="th-native">{anchorL?.native ?? ''}</span>
+                    {#if anchorL && anchorL.name !== anchorL.native}
+                      <span class="th-name">{anchorL.name}</span>
+                    {/if}
+                  </button>
+                  {#if $openPopover === anchorKey}
+                    <div class="th-pop">
+                      <div class="thp-head">{ui.stationery.langsSwitch}</div>
+                      <LangMenu
+                        marked={selected}
+                        anchorCode={$anchor}
+                        disabledCodes={selected}
+                        onPick={(c) => switchColumn($anchor, c)}
+                      />
+                    </div>
+                  {/if}
+                </th>
                 {#each otherLangs as L (L.code)}
-                  <th class="th-lang">{L.native}</th>
+                  {@const key = `${S.id}|${L.code}`}
+                  <th
+                    class="th-lang th-cell"
+                    class:fresh={L.code === $freshLang}
+                    dir={L.rtl ? 'rtl' : 'ltr'}
+                    lang={langTag(L)}
+                    use:popover={key}
+                  >
+                    <button
+                      class="th-btn"
+                      type="button"
+                      aria-expanded={$openPopover === key}
+                      aria-label={`${L.name} — ${ui.stationery.langsSwitch}`}
+                      onclick={(e) => toggleTh(e, key)}
+                    >
+                      <span class="th-native">{L.native}</span>
+                      {#if L.name !== L.native}
+                        <span class="th-name">{L.name}</span>
+                      {/if}
+                    </button>
+                    {#if $openPopover === key}
+                      <div class="th-pop">
+                        <div class="thp-head">{ui.stationery.langsSwitch}</div>
+                        <LangMenu
+                          marked={selected}
+                          anchorCode={$anchor}
+                          disabledCodes={selected}
+                          onPick={(c) => switchColumn(L.code, c)}
+                        />
+                      </div>
+                    {/if}
+                  </th>
                 {/each}
               </tr>
             </thead>
             <tbody>
-              {#each items as p (p.id)}
+              {#each items as p, ri (p.id)}
                 {@const ac = anchorVariants(p)}
-                <tr class="phrase-row">
-                  <td class="anchor-cell" dir={anchorDir}>
+                <tr class="phrase-row" style={`--ri:${Math.min(ri, 8)}`}>
+                  <td class="anchor-cell" class:fresh={$anchor === $freshLang} dir={anchorDir}>
                     <span class="star-slot"><StarButton phraseId={p.id} /></span>
                     {#if ac}
-                      <div class="anchor-word" lang={$anchor} dir="auto">{ac.primary.text}</div>
+                      <div
+                        class="anchor-word"
+                        lang={anchorL ? langTag(anchorL) : undefined}
+                        dir="auto"
+                      >
+                        {ac.primary.text}
+                      </div>
                       {#if ac.primary.rom}
                         <div class="anchor-rom">{ac.primary.rom}</div>
                       {/if}
@@ -99,9 +223,14 @@
                     {@const tr = p.trans[L.code]}
                     {@const vs = tr ? visibleVariants(tr.variants, $tone, $speakerGender, $addresseeGender) : []}
                     {#if !tr || !vs.length}
-                      <td class="trans-cell empty"></td>
+                      <td class="trans-cell empty" class:fresh={L.code === $freshLang} dir={L.rtl ? 'rtl' : 'ltr'}></td>
                     {:else}
-                      <td class="trans-cell">
+                      <td
+                        class="trans-cell"
+                        class:fresh={L.code === $freshLang}
+                        dir={L.rtl ? 'rtl' : 'ltr'}
+                        lang={langTag(L)}
+                      >
                         <TranslationCell {vs} langCode={L.code} />
                       </td>
                     {/if}
@@ -132,7 +261,8 @@
     border: 1px solid var(--line);
     background: var(--paper);
     border-radius: 3px;
-    overflow: hidden;
+    /* not `hidden`: an overflow container would break the sticky header */
+    overflow: visible;
     position: relative;
   }
   .table-wrap::before,
@@ -196,6 +326,31 @@
     font-style: italic;
     color: var(--accent);
   }
+  /* small gold tally of starred phrases in this scene */
+  .scene-kept {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--gold-ink);
+    flex-shrink: 0;
+    animation: kept-in 0.4s var(--ease-out) backwards;
+  }
+  .scene-kept svg {
+    width: 10px;
+    height: 10px;
+    color: var(--gold);
+    align-self: center;
+  }
+  @keyframes kept-in {
+    from {
+      opacity: 0;
+      transform: translateY(3px);
+    }
+  }
+
   .scene-rule {
     flex: 1;
     height: 1px;
@@ -222,34 +377,118 @@
   }
   .phrase-table thead th {
     text-align: start;
-    padding: 16px 22px;
+    padding: 17px 22px;
     border-bottom: 1px solid var(--line);
+    /* Sticky a comfortable gap below the StickyBar (~44px) so the column
+       languages stay visible while reading — with breathing room, not flush. */
+    position: sticky;
+    top: 58px;
+    z-index: 5;
+    background: var(--paper);
+  }
+  .phrase-table thead th.th-anchor {
+    /* opaque (sticky can't show transparent — content would bleed through),
+       theme-aware: a gold tint layered over the paper-up surface. */
+    background: linear-gradient(rgba(166, 130, 74, 0.14), rgba(166, 130, 74, 0.14)), var(--bg);
+    border-right: 1px solid var(--line-soft);
+  }
+  .th-native {
+    display: block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.005em;
+    color: var(--ink-soft);
+  }
+  .th-anchor .th-native {
+    color: var(--accent);
+  }
+  .th-name {
+    display: block;
+    margin-top: 3px;
     font-family: var(--font-sans);
     font-weight: 500;
-    font-size: 10.5px;
-    letter-spacing: 0.24em;
+    font-size: 9px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-mute);
   }
-  .phrase-table thead th.th-anchor {
-    background: rgba(166, 130, 74, 0.1);
-    color: var(--accent);
-    border-right: 1px solid var(--line-soft);
-    font-style: italic;
-    font-family: var(--font-serif);
-    font-size: 14px;
-    text-transform: none;
-    letter-spacing: 0.01em;
-    font-weight: 400;
+
+  /* —— headers double as language switchers —— */
+  .th-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    cursor: pointer;
   }
-  .phrase-table thead th.th-lang {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    text-transform: none;
-    letter-spacing: 0.005em;
-    color: var(--ink-soft);
+  .th-btn::after {
+    content: '▾';
+    font-size: 9px;
+    margin-inline-start: 5px;
+    color: var(--ink-mute);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    vertical-align: middle;
+  }
+  .th-cell:hover .th-btn::after,
+  .th-btn[aria-expanded='true']::after {
+    opacity: 0.55;
+  }
+  .th-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* mounted only while open */
+  .th-pop {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    direction: ltr;
+    text-align: left;
+    width: max-content;
+    max-width: min(380px, calc(100vw - 28px));
+    max-height: min(60vh, 440px);
+    overflow-y: auto;
+    background: var(--paper-up);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px 14px;
+    z-index: 40;
+    box-shadow:
+      0 20px 48px -24px rgba(31, 26, 20, 0.45),
+      0 0 0 1px var(--line-soft);
+    letter-spacing: normal;
+    animation: th-pop-in 0.18s ease;
+  }
+  @keyframes th-pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+  /* right-align the popover for the last couple of columns so it doesn't
+     overflow the viewport edge */
+  .th-lang:nth-last-child(-n + 2) .th-pop {
+    left: auto;
+    right: 0;
+  }
+  .thp-head {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line-soft);
   }
 
   .anchor-cell {
@@ -305,6 +544,22 @@
     vertical-align: top;
     border-bottom: 1px solid var(--line-soft);
   }
+  /* "fresh ink": a switched-in / newly-added column writes itself in,
+     header first, then row by row down the page. */
+  th.fresh {
+    animation: ink-in 0.42s var(--ease-out) backwards;
+  }
+  td.fresh {
+    animation: ink-in 0.42s var(--ease-out) backwards;
+    animation-delay: calc((var(--ri, 0) + 1) * 38ms);
+  }
+  @keyframes ink-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  }
+
   .trans-cell.empty {
     background: repeating-linear-gradient(
       135deg,

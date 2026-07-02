@@ -30,6 +30,9 @@ export const Phrase = z.object({
 export const Language = z.object({
   code: z.string(),
   native: z.string(),
+  name: z.string(), // English exonym — shown beside the native name in the picker
+  group: z.string(), // region bucket for grouping the picker
+  bcp47: z.string().optional(), // only when `code` isn't a valid BCP-47 tag (mizo → lus)
   tts: z.string(),
   rtl: z.boolean().default(false),
   defaultOn: z.boolean().default(false),

@@ -36,6 +36,7 @@
     class="speak"
     class:speaking
     type="button"
+    aria-pressed={speaking}
     aria-label={speaking ? `Stop reading` : `Listen to ${text}`}
     onclick={onClick}
     onkeydown={(e) => e.stopPropagation()}
@@ -52,7 +53,7 @@
   .speak {
     position: absolute;
     top: 34px;
-    right: 10px;
+    inset-inline-end: 10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -94,6 +95,29 @@
   .speak.speaking .wave-2 {
     animation-delay: 0.2s;
   }
+  /* ink halo: a soft ring breathing out while the voice reads */
+  .speak::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .speak.speaking::before {
+    animation: inkRipple 1.4s ease-out infinite;
+  }
+  @keyframes inkRipple {
+    0% {
+      transform: scale(0.55);
+      opacity: 0.55;
+    }
+    100% {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+  }
   @keyframes ttsPulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.25; }
@@ -105,7 +129,8 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .speak.speaking .wave-1,
-    .speak.speaking .wave-2 {
+    .speak.speaking .wave-2,
+    .speak.speaking::before {
       animation: none;
     }
   }
