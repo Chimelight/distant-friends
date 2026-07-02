@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { slide } from 'svelte/transition';
+  import { prefersReducedMotion } from 'svelte/motion';
   import { starred, starredOnly } from '../../lib/stores';
   import ui from '../../content/ui/en.json';
 
@@ -10,7 +12,12 @@
 </script>
 
 {#if $starred.length > 0}
-  <div class="star-filter">
+  <!-- slide, don't pop: the first star used to shove the whole page down
+       ~40px in the same instant as the star's celebration animation. -->
+  <div
+    class="star-filter"
+    transition:slide={{ duration: prefersReducedMotion.current ? 0 : 320 }}
+  >
     <button
       class="chip"
       type="button"
