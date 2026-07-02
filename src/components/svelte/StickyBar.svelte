@@ -210,10 +210,12 @@
     .sticky-bar {
       padding: 10px 14px;
     }
+    /* one line, always: only "I write — [tone]" + the theme toggle remain
+       at this width (ViewToggle hides <640), and a two-line bar ate a
+       quarter of a phone screen */
     .sb-prose {
       font-size: 13px;
       gap: 4px;
-      flex-wrap: wrap;
     }
   }
 </style>
