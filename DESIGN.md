@@ -812,9 +812,9 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 - [x] **换列/加删列的连续性动画**（R2）：落地为**「新墨写入」**而非 FLIP/View Transitions——换列/加列/换 anchor 时，该列（两视图皆然）以列头先行、逐行 38ms 级联的墨迹节奏写入（`$freshLang` 瞬态 + CSS `ink-in`）。技术判断记 §13：table 列宽不可过渡、单元格分散于行使 FLIP 不可行，55 个命名元素让 View Transitions 快照成本过高；"内容写入"比"几何滑动"更信笺。
 - [x] **收藏的仪式感**（R2）：星标 pop（spring 缩放）+ 六点金屑绽放（box-shadow 粒子，CSS-only，reduced-motion 全局降级为瞬时填充）；场景标题旁星数微标（两视图，金星 + 计数）。空态经查**已有处理**——StarFilter 在星数归零时自动解除过滤（先存 $effect），无需文案；"金角记号"弃——anchor 格角上的实心金星本身就是行标记，再加一枚是冗余。
-- [ ] **首次星标的布局跳动**（R2 验证中发现）：第一颗星让 StarFilter chip 突然占位出现，整个内容区被向下顶 ~40px——恰好发生在"仪式感"动画的同一瞬间，抵消了它。方向：为 filter 行恒常预留高度 / chip 以 max-height 过渡展开 / 移至不占正文流的位置。
-- [ ] **发音的可感反馈**：SpeakButton 播放中墨晕/声波微动画 + `aria-pressed`，结束自然收束——现状点了没反馈，像没点上。顺带 voice 优选（natural/localService 启发式）。
-- [ ] **TOC 阅读进度**：TocSide 竖线用 scroll-driven animations（`animation-timeline: scroll()`，纯 CSS，Chromium 生效、他处静默降级）随阅读进度填充金色；当前场景数字随进度点亮——侧栏从"目录"升级为"读到哪儿了"。
+- [x] **首次星标的布局跳动**（R3）：StarFilter 改 `transition:slide`（320ms，`prefersReducedMotion` 时 0）——首星时内容区不再瞬间下顶 40px，随绽放动画从容展开；末星取消同样滑出。
+- [x] **发音的可感反馈**（R3，账本原文有两处与现状不符）：经查 SpeakButton **本就有**播放反馈（accent 变色 + 双声波脉冲、点击停止、aria-label 切换），tts.ts 的 **voice 优选也早已实现**（natural/neural/premium/siri 加分、Google 网络声加分、离线只留 local）——审计时想当然了。本轮实际补的：墨晕涟漪（`::before` 呼吸环，播放中持续外扩）增强可感性 + `aria-pressed` 切换语义；reduced-motion 全套豁免。
+- [x] **TOC 阅读进度**（R3）：rail 上叠一道金→赤陶渐变的进度线，`animation-timeline: scroll(root)` 纯 CSS 驱动，`@supports` 门控（不支持的浏览器完全不见）；静息 rail 低调可见（0.45），展开加深（0.85）。位置随用户自己的滚动映射，无 vestibular 顾虑。
 - [ ] **语言面板的键盘/搜索手感**：搜索框 ↓ 直接进入结果网格、方向键在 2 列网格游走、Enter 选中；键盘打开面板时搜索框自动聚焦；空态给建议项而非只说"没有"。
 - [ ] **复制的笔触反馈**：copied 状态在原文下画一道手写金线（SVG `stroke-dashoffset`），比换文案更"信笺"；toast 保留。
 
@@ -832,6 +832,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ### 轮次日志
 
+- **R3 · 2026-07-03** — 首星布局跳动（slide 过渡）、发音墨晕涟漪 + `aria-pressed`、TOC 阅读进度线（scroll-driven CSS）。教训两则：①账本条目写自审计推测，动手前先读现状——发音的反馈与 voice 优选本就存在，实际工作量是条目描述的三分之一；②**实现注意 ⚠️**：lightningcss 会把独立的 `animation-timeline` 合并进 `animation` 简写——规范禁止 timeline 出现在简写里，浏览器随之丢弃整条声明（症状：动画完全不生效且无报错）。解法：`animation-timeline: var(--xx)` 经自定义属性间接引用，压缩器即无法折叠。
 - **R2 · 2026-07-03** — 高频功能细节第一对：**换列的"新墨写入"**（`$freshLang` 瞬态居 stores，换列/加列/换 anchor 三个入口标记；表格列头先行、逐行级联，卡片视图 lang-block 同语汇）+ **收藏仪式感**（星标 spring pop + 金屑绽放、场景星数微标、空态确认已有兜底）。冒烟测试加星数微标断言。
 - **R1 · 2026-07-02** — 全面审计（桌面/移动 × 明/暗 × 表格/卡片 × 悬停/弹层/Toast/404，11 张全状态截图）+ 建账。落地三项：
   - **浮层表面可读性**：TocSide 展开面板原是 22%/40% α 的"羊皮纸低语"，但它在 <1440 视口叠在表格末列上——文字叠文字不可读；改近实纸（light 0.93 / dark 0.94）+ 边框投影提一档，读作"搁在纸上的便签"。StickyBar α 0.86→0.94——backdrop-filter 只是增强，可读性不能依赖它。
