@@ -109,6 +109,33 @@ test('a slot picker menu is keyboard-navigable', async ({ page }) => {
   await expect(toneSlot).toBeFocused();
 });
 
+test('the language panel is keyboard-first: Enter lands in search, arrows walk the list', async ({ page }) => {
+  const trigger = page.locator('.lang-line .trigger');
+  await trigger.focus();
+  await page.keyboard.press('Enter');
+
+  const panel = page.locator('.lang-line .panel');
+  const search = panel.getByPlaceholder(/Search languages/);
+  await expect(search).toBeFocused();
+
+  await page.keyboard.press('ArrowDown');
+  await expect(panel.locator('.lm-opt').first()).toBeFocused();
+  await page.keyboard.press('ArrowRight');
+  await expect(panel.locator('.lm-opt').nth(1)).toBeFocused();
+  await page.keyboard.press('ArrowUp');
+  await expect(panel.locator('.lm-opt').first()).toBeFocused();
+  await page.keyboard.press('ArrowUp'); // past the first option → back to search
+  await expect(search).toBeFocused();
+});
+
+test('an unmatched search suggests the closest language', async ({ page }) => {
+  await page.locator('.lang-line .trigger').click();
+  const panel = page.locator('.lang-line .panel');
+  await panel.getByPlaceholder(/Search languages/).fill('koraen'); // typo
+  await expect(panel.getByText(/No language matches/)).toBeVisible();
+  await expect(panel.getByRole('button', { name: 'Korean' })).toBeVisible();
+});
+
 test('the Stationery language picker (cards view) filters by search', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 800 }); // narrow → cards view
   await page.reload();

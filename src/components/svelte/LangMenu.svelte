@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { LANGS, LANG_GROUPS, langTag, fold } from '../../lib/lang';
+  import { LANGS, LANG_GROUPS, langTag, fold, editDistance } from '../../lib/lang';
   import ui from '../../content/ui/en.json';
   import type { TLanguage } from '../../lib/schema';
 
@@ -14,6 +14,7 @@
   }
   let { marked = new Set(), anchorCode, disabledCodes = new Set(), onPick }: Props = $props();
 
+  let rootEl = $state<HTMLElement>();
   let query = $state('');
   const q = $derived(fold(query.trim()));
   const matches = (l: TLanguage) =>
@@ -27,50 +28,107 @@
       items: LANGS.filter((l) => l.group === group && matches(l)),
     })).filter((g) => g.items.length),
   );
+
+  // Typo rescue: when nothing matches, offer the closest names instead of a
+  // dead end ("koraen" → Korean).
+  const suggestions = $derived.by(() => {
+    if (!q || grouped.length) return [];
+    return LANGS.map((l) => ({
+      l,
+      d: Math.min(editDistance(q, fold(l.name)), editDistance(q, fold(l.native))),
+    }))
+      .filter((x) => x.d <= 3)
+      .sort((a, b) => a.d - b.d)
+      .slice(0, 3)
+      .map((x) => x.l);
+  });
+
+  function pick(code: string) {
+    onPick(code);
+    query = ''; // reset the filter so the full list is back next time
+  }
+
+  // Keyboard: ↓ from the search drops into the list; arrows walk the
+  // options in reading order; ↑ past the first option returns to search.
+  function onKeydown(e: KeyboardEvent) {
+    if (!['ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
+    const t = e.target as HTMLElement;
+    const opts = () => [...rootEl!.querySelectorAll<HTMLElement>('.lm-opt:not(:disabled)')];
+    if (t.matches('.lm-search')) {
+      if (e.key !== 'ArrowDown') return; // caret keys stay in the input
+      e.preventDefault();
+      opts()[0]?.focus();
+      return;
+    }
+    if (!t.matches('.lm-opt')) return;
+    const list = opts();
+    const i = list.indexOf(t);
+    if (i === -1) return;
+    e.preventDefault();
+    if (e.key === 'Home') return list[0]?.focus();
+    if (e.key === 'End') return list.at(-1)?.focus();
+    const next = i + (e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : -1);
+    if (next < 0) {
+      rootEl!.querySelector<HTMLElement>('.lm-search')?.focus();
+      return;
+    }
+    list[Math.min(next, list.length - 1)]?.focus();
+  }
 </script>
 
-<input
-  class="lm-search"
-  type="text"
-  placeholder={ui.stationery.langsSearch}
-  bind:value={query}
-  aria-label={ui.stationery.langsSearch}
-/>
+{#snippet opt(L: TLanguage)}
+  {@const on = marked.has(L.code)}
+  {@const isAnchor = L.code === anchorCode}
+  {@const disabled = disabledCodes.has(L.code)}
+  <button
+    type="button"
+    class="lm-opt"
+    class:on
+    class:is-anchor={isAnchor}
+    class:disabled
+    aria-pressed={on}
+    {disabled}
+    aria-label={`${L.name}${on ? ', showing' : ''}${isAnchor ? ', anchor' : ''}`}
+    onclick={() => {
+      if (disabled) return;
+      pick(L.code);
+    }}
+  >
+    <span class="lm-mark" aria-hidden="true"></span>
+    <span class="lm-native" lang={langTag(L)} dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span>
+    {#if L.name !== L.native}<span class="lm-en">{L.name}</span>{/if}
+  </button>
+{/snippet}
 
-<div class="lm-list">
-  {#each grouped as g (g.group)}
-    <div class="lm-grp">
-      <div class="lm-grp-h">{g.group}</div>
-      <div class="lm-opts">
-        {#each g.items as L (L.code)}
-          {@const on = marked.has(L.code)}
-          {@const isAnchor = L.code === anchorCode}
-          {@const disabled = disabledCodes.has(L.code)}
-          <button
-            type="button"
-            class="lm-opt"
-            class:on
-            class:is-anchor={isAnchor}
-            class:disabled
-            aria-pressed={on}
-            {disabled}
-            aria-label={`${L.name}${on ? ', showing' : ''}${isAnchor ? ', anchor' : ''}`}
-            onclick={() => {
-              if (disabled) return;
-              onPick(L.code);
-              query = ''; // reset the filter so the full list is back next time
-            }}
-          >
-            <span class="lm-mark" aria-hidden="true"></span>
-            <span class="lm-native" lang={langTag(L)} dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span>
-            {#if L.name !== L.native}<span class="lm-en">{L.name}</span>{/if}
-          </button>
-        {/each}
+<div class="lm" bind:this={rootEl} onkeydown={onKeydown}>
+  <input
+    class="lm-search"
+    type="text"
+    placeholder={ui.stationery.langsSearch}
+    bind:value={query}
+    aria-label={ui.stationery.langsSearch}
+  />
+
+  <div class="lm-list">
+    {#each grouped as g (g.group)}
+      <div class="lm-grp">
+        <div class="lm-grp-h">{g.group}</div>
+        <div class="lm-opts">
+          {#each g.items as L (L.code)}{@render opt(L)}{/each}
+        </div>
       </div>
-    </div>
-  {:else}
-    <div class="lm-empty">{ui.stationery.langsNoMatch} “{query}”.</div>
-  {/each}
+    {:else}
+      <div class="lm-empty">{ui.stationery.langsNoMatch} “{query}”.</div>
+      {#if suggestions.length}
+        <div class="lm-grp">
+          <div class="lm-grp-h">{ui.stationery.langsClosest}</div>
+          <div class="lm-opts">
+            {#each suggestions as L (L.code)}{@render opt(L)}{/each}
+          </div>
+        </div>
+      {/if}
+    {/each}
+  </div>
 </div>
 
 <style>
@@ -195,6 +253,6 @@
     font-style: italic;
     font-size: 13px;
     color: var(--ink-mute);
-    padding: 6px 2px;
+    padding: 6px 2px 10px;
   }
 </style>

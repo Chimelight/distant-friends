@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { tick } from 'svelte';
   import TranslationCell from './TranslationCell.svelte';
   import StarButton from './StarButton.svelte';
   import LangMenu from './LangMenu.svelte';
@@ -54,6 +55,16 @@
     if (anchor.get() === oldCode) anchor.set(newCode); // anchor follows its column
     markFreshLang(newCode);
     closePopover();
+  }
+
+  // Keyboard activation (click detail 0) drops focus into the menu's search.
+  async function toggleTh(e: MouseEvent, key: string) {
+    const th = (e.currentTarget as HTMLElement).closest('th');
+    togglePopover(key);
+    if (openPopover.get() === key && e.detail === 0) {
+      await tick();
+      th?.querySelector<HTMLElement>('.lm-search')?.focus();
+    }
   }
 
   function starsIn(sceneId: string): number {
@@ -129,7 +140,7 @@
                     type="button"
                     aria-expanded={$openPopover === anchorKey}
                     aria-label={`${anchorL?.name ?? ''} — ${ui.stationery.langsSwitch}`}
-                    onclick={() => togglePopover(anchorKey)}
+                    onclick={(e) => toggleTh(e, anchorKey)}
                   >
                     <span class="th-native">{anchorL?.native ?? ''}</span>
                     {#if anchorL && anchorL.name !== anchorL.native}
@@ -162,7 +173,7 @@
                       type="button"
                       aria-expanded={$openPopover === key}
                       aria-label={`${L.name} — ${ui.stationery.langsSwitch}`}
-                      onclick={() => togglePopover(key)}
+                      onclick={(e) => toggleTh(e, key)}
                     >
                       <span class="th-native">{L.native}</span>
                       {#if L.name !== L.native}
