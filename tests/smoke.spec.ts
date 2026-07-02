@@ -55,16 +55,58 @@ test('a Stationery slot picker opens and applies the chosen option', async ({ pa
   await expect(toneSlot).toContainText('politely');
 });
 
-test('a table column header switches its language', async ({ page }) => {
+test('a table column header switches its language in place', async ({ page }) => {
+  const scene = page.locator('.scene-block').first();
   // zh (中文) is the first non-anchor column by default.
-  const firstCol = page.locator('.scene-block').first().locator('th.th-lang').first();
+  const firstCol = scene.locator('th.th-lang').first();
+  const colsBefore = await scene.locator('th.th-lang').count();
   await expect(firstCol.locator('.th-native')).toHaveText('中文');
 
   await firstCol.locator('.th-btn').click();
-  // Korean isn't shown yet → picking it swaps this column to Korean.
-  await page.getByRole('button', { name: 'Korean' }).click();
+  // Thai sits last in the dataset — a set-based (dataset-ordered) selection
+  // would send the new column to the far end instead of replacing this one.
+  await page.getByRole('button', { name: 'Thai' }).click();
 
-  await expect(firstCol.locator('.th-native')).toHaveText('한국어');
+  await expect(firstCol.locator('.th-native')).toHaveText('ไทย');
+  await expect(scene.locator('th.th-lang')).toHaveCount(colsBefore);
+});
+
+test('popovers are exclusive — opening one closes the other', async ({ page }) => {
+  const stationery = page.locator('.stationery');
+  await stationery.locator('[data-slot="tone"]').click();
+  await expect(stationery.getByRole('menuitemradio', { name: 'politely' })).toBeVisible();
+
+  await page.locator('.lang-line .trigger').click();
+  await expect(page.locator('.lang-line .panel')).toBeVisible();
+  // the tone menu is unmounted, not just visually hidden
+  await expect(stationery.getByRole('menuitemradio', { name: 'politely' })).toHaveCount(0);
+});
+
+test('Escape closes the language panel and hands focus back to the trigger', async ({ page }) => {
+  const trigger = page.locator('.lang-line .trigger');
+  await trigger.click();
+  const search = page.locator('.lang-line .panel').getByPlaceholder(/Search languages/);
+  await search.click();
+
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.lang-line .panel')).toHaveCount(0);
+  await expect(trigger).toBeFocused();
+});
+
+test('a slot picker menu is keyboard-navigable', async ({ page }) => {
+  const stationery = page.locator('.stationery');
+  const toneSlot = stationery.locator('[data-slot="tone"]');
+
+  await toneSlot.focus();
+  await page.keyboard.press('Enter'); // opens; focus moves to the checked item
+  await expect(stationery.getByRole('menuitemradio', { name: 'in any tone' })).toBeFocused();
+
+  await page.keyboard.press('ArrowDown');
+  await expect(stationery.getByRole('menuitemradio', { name: 'casually' })).toBeFocused();
+
+  await page.keyboard.press('Enter'); // picks, closes, returns focus
+  await expect(toneSlot).toContainText('casually');
+  await expect(toneSlot).toBeFocused();
 });
 
 test('the Stationery language picker (cards view) filters by search', async ({ page }) => {
@@ -85,6 +127,10 @@ test('the Stationery language picker (cards view) filters by search', async ({ p
   await panel.getByRole('button', { name: 'Korean' }).click();
   await expect(search).toHaveValue('');
   await expect(panel.getByRole('button', { name: 'German' })).toBeVisible();
+
+  // diacritic-folded: "francais" matches Français
+  await search.fill('francais');
+  await expect(panel.getByRole('button', { name: 'French' })).toBeVisible();
 });
 
 test('starring a phrase reveals the "Starred only" filter and narrows the grid', async ({ page }) => {

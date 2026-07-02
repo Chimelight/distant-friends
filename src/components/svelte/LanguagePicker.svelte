@@ -1,62 +1,56 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import {
-    selectedLangs,
-    anchor,
-    ensureSelectedLangsInitialized,
-    MAX_LANGS,
-  } from '../../lib/stores';
-  import languages from '../../data/languages.json';
+  import { selectedLangs, anchor, MAX_LANGS } from '../../lib/stores';
+  import { openPopover, togglePopover, popover } from '../../lib/popover';
+  import { LANG_BY_CODE, langsByCodes, langTag } from '../../lib/lang';
   import ui from '../../content/ui/en.json';
-  import type { TLanguage } from '../../lib/schema';
   import LangMenu from './LangMenu.svelte';
 
-  const allLangs = languages as TLanguage[];
-  const bcp47 = (code: string) => (code === 'mizo' ? 'lus' : code);
+  const PICKER_ID = 'stationery-langs';
 
-  let open = $state(false);
-  let wrapEl = $state<HTMLElement>();
   let fullPulse = $state(false);
   let pulseTimer: number | undefined;
+  onMount(() => () => clearTimeout(pulseTimer));
 
-  onMount(() => {
-    ensureSelectedLangsInitialized();
-    const onDoc = (e: MouseEvent) => {
-      if (wrapEl && !wrapEl.contains(e.target as Node)) open = false;
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') open = false;
-    };
-    document.addEventListener('click', onDoc);
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('click', onDoc);
-      document.removeEventListener('keydown', onKey);
-      clearTimeout(pulseTimer);
-    };
-  });
-
+  const open = $derived($openPopover === PICKER_ID);
   const selected = $derived(new Set($selectedLangs ?? []));
   const count = $derived(selected.size);
   const isFull = $derived(count >= MAX_LANGS);
-  const restingLangs = $derived(allLangs.filter((l) => selected.has(l.code)));
+  // Anchor first, then the selection in its own order — the resting line
+  // mirrors the table's column order exactly.
+  const restingLangs = $derived(
+    langsByCodes([$anchor, ...($selectedLangs ?? []).filter((c) => c !== $anchor)]),
+  );
+
+  // Screen-reader announcements for outcomes the panel only shows visually
+  // (cap reached, anchor not removable). Alternates a trailing NBSP so the
+  // same message re-announces on a repeated attempt.
+  let announce = $state('');
+  let nbsp = false;
+  function say(msg: string) {
+    nbsp = !nbsp;
+    announce = msg + (nbsp ? '\u00A0' : '');
+  }
 
   function toggle(code: string) {
-    const set = new Set(selectedLangs.get() ?? []);
-    if (set.has(code)) {
+    const cur = selectedLangs.get() ?? [];
+    const name = LANG_BY_CODE.get(code)?.name ?? code;
+    if (cur.includes(code)) {
       // The anchor must stay (it's a column); never drop the last language.
-      if (code === anchor.get() || set.size <= 1) return;
-      set.delete(code);
-      selectedLangs.set([...set]);
+      if (code === anchor.get() || cur.length <= 1) {
+        say(`${name} ${ui.stationery.langsAnchorLocked}`);
+        return;
+      }
+      selectedLangs.set(cur.filter((c) => c !== code));
     } else {
-      if (set.size >= MAX_LANGS) {
+      if (cur.length >= MAX_LANGS) {
         fullPulse = true;
         clearTimeout(pulseTimer);
         pulseTimer = window.setTimeout(() => (fullPulse = false), 1400);
+        say(`${name}: ${ui.stationery.capHint} — ${ui.stationery.langsFull}`);
         return;
       }
-      set.add(code);
-      selectedLangs.set([...set]);
+      selectedLangs.set([...cur, code]); // append: new column lands last
     }
   }
 
@@ -70,53 +64,44 @@
   <em>{ui.stationery.langsLead}</em>
   <!-- Wrapper (not a button) keeps the trigger and the menu buttons as
        siblings — no nested interactive controls. -->
-  <span class="picker" bind:this={wrapEl}>
+  <span class="picker" use:popover={PICKER_ID}>
     <button
       class="trigger"
       type="button"
-      aria-haspopup="true"
       aria-expanded={open}
       aria-label={`${ui.stationery.langsChoose} (${count} of ${MAX_LANGS})`}
-      onclick={(e) => {
-        e.stopPropagation();
-        open = !open;
-      }}
+      onclick={() => togglePopover(PICKER_ID)}
     >
       <span class="names">
         {#each restingLangs as L, i (L.code)}<span
             class="n"
             class:anchor={L.code === $anchor}
-            lang={bcp47(L.code)}
+            lang={langTag(L)}
             dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span
           >{#if i < restingLangs.length - 1}<span class="dot" aria-hidden="true"> · </span>{/if}{/each}
       </span>
     </button>
 
-    <div class="panel" class:open role="group" aria-label={ui.stationery.langsChoose}>
-      <div class="panel-head" class:pulse={fullPulse}>
-        <span class="ph-label">{ui.stationery.langsLabel}</span>
-        <span class="ph-count">{count} / {MAX_LANGS}</span>
-        <span class="ph-hint">{isFull ? ui.stationery.langsFull : ui.stationery.capHint}</span>
-      </div>
+    {#if open}
+      <div class="panel" role="group" aria-label={ui.stationery.langsChoose}>
+        <div class="panel-head" class:pulse={fullPulse}>
+          <span class="ph-label">{ui.stationery.langsLabel}</span>
+          <span class="ph-count">{count} / {MAX_LANGS}</span>
+          <span class="ph-hint">{isFull ? ui.stationery.langsFull : ui.stationery.capHint}</span>
+        </div>
 
-      <LangMenu langs={allLangs} marked={selected} anchorCode={$anchor} {open} onPick={toggle} />
+        <LangMenu marked={selected} anchorCode={$anchor} onPick={toggle} />
 
-      <div class="panel-foot">
-        <button
-          type="button"
-          class="clear"
-          tabindex={open ? 0 : -1}
-          disabled={count <= 1}
-          onclick={(e) => {
-            e.stopPropagation();
-            clearToAnchor();
-          }}
-        >
-          {ui.stationery.langsClear}
-        </button>
+        <div class="panel-foot">
+          <button type="button" class="clear" disabled={count <= 1} onclick={clearToAnchor}>
+            {ui.stationery.langsClear}
+          </button>
+        </div>
       </div>
-    </div>
+    {/if}
   </span>
+  <!-- bare aria-live (not role="status"): the global Toast owns that role -->
+  <span class="sr-only" aria-live="polite">{announce}</span>
 </div>
 
 <style>
@@ -190,12 +175,21 @@
     color: var(--ink-mute);
   }
 
-  /* —— popover panel —— */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* —— popover panel (mounted only while open) —— */
   .panel {
     position: absolute;
     top: calc(100% + 12px);
     left: 50%;
-    transform: translateX(-50%) translateY(-4px);
+    transform: translateX(-50%);
     width: max-content;
     max-width: min(440px, calc(100vw - 28px));
     max-height: min(64vh, 480px);
@@ -203,25 +197,19 @@
     background: var(--paper-up);
     border: 1px solid var(--line);
     border-radius: 4px;
-    padding: 14px 16px 14px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease,
-      visibility 0.2s ease;
+    padding: 0 16px 14px;
     z-index: 60;
     box-shadow:
       0 20px 48px -24px rgba(31, 26, 20, 0.4),
       0 0 0 1px var(--line-soft);
     text-align: left;
+    animation: panel-in 0.2s ease;
   }
-  .panel.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-4px);
+    }
   }
   .panel::before {
     content: '';
@@ -236,10 +224,18 @@
     border-top: 1px solid var(--line);
   }
 
+  /* Sticky within the scrollable panel, so the count + "remove one to add
+     another" hint stay visible (and the pulse lands in view) however far
+     the list is scrolled. */
   .panel-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--paper-up);
     display: flex;
     align-items: baseline;
     gap: 8px;
+    padding-top: 14px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid var(--line-soft);

@@ -2,18 +2,19 @@
   import LanguagePicker from './LanguagePicker.svelte';
   import SlotPicker from './SlotPicker.svelte';
   import { anchor, tone, speakerGender, addresseeGender, selectedLangs } from '../../lib/stores';
+  import { langsByCodes } from '../../lib/lang';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
-  import languages from '../../data/languages.json';
   import ui from '../../content/ui/en.json';
 
   // Anchor options restricted to currently-selected languages — adding a new
   // language goes through LanguagePicker, switching focus among them goes
   // through here. This sidesteps the cap-bypass that would happen if "Anchored in"
-  // could pull in a 6th language through the back door.
+  // could pull in a 6th language through the back door. Listed in column
+  // order: anchor first, then the selection in its own order.
   const anchorOptions = $derived(
-    languages
-      .filter((l) => ($selectedLangs ?? []).includes(l.code))
-      .map((l) => ({ key: l.code, label: l.native })),
+    langsByCodes([$anchor, ...($selectedLangs ?? []).filter((c) => c !== $anchor)]).map(
+      (l) => ({ key: l.code, label: l.native }),
+    ),
   );
   const toneOptions: { key: ToneFilter; label: string }[] = [
     { key: 'any', label: ui.stationery.tones.any },

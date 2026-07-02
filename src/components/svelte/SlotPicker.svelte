@@ -1,5 +1,6 @@
 <script lang="ts" generics="T extends string">
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
+  import { openPopover, togglePopover, closePopover, popover, menuKeys } from '../../lib/popover';
 
   interface Option {
     key: T;
@@ -15,77 +16,83 @@
 
   let { name, options, value, onChange }: Props = $props();
 
-  let open = $state(false);
+  // Unique per instance: the same slot (e.g. "tone") renders in both the
+  // Stationery and the StickyBar, and popover ids must not collide.
+  const uid = $props.id();
+  const id = `slot-${name}-${uid}`;
+  const open = $derived($openPopover === id);
+
   let pulsing = $state(false);
-  let slotEl: HTMLElement | undefined = $state();
+  let triggerEl = $state<HTMLElement>();
+  let popEl = $state<HTMLElement>();
   let pulseTimer: number | undefined;
+  onMount(() => () => clearTimeout(pulseTimer));
 
   const currentLabel = $derived(
     options.find((o) => o.key === value)?.label ?? value,
   );
 
-  function toggle(e: MouseEvent) {
-    e.stopPropagation();
-    open = !open;
+  // Menu-button keyboard contract: opening with the keyboard moves focus to
+  // the checked item (mouse opens leave focus on the trigger).
+  async function focusChecked() {
+    await tick();
+    popEl?.querySelector<HTMLElement>('[aria-checked="true"]')?.focus();
   }
 
-  async function pick(opt: Option, e: Event) {
-    e.stopPropagation();
+  function onTriggerClick(e: MouseEvent) {
+    togglePopover(id);
+    // detail === 0 → the click came from Enter/Space, not a pointer.
+    if (openPopover.get() === id && e.detail === 0) focusChecked();
+  }
+
+  function onTriggerKeydown(e: KeyboardEvent) {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    openPopover.set(id);
+    focusChecked();
+  }
+
+  function pick(opt: Option) {
     onChange(opt.key);
-    open = false;
+    closePopover();
+    triggerEl?.focus();
     pulsing = true;
     clearTimeout(pulseTimer);
     pulseTimer = window.setTimeout(() => (pulsing = false), 400);
   }
-
-  function onDocClick(e: MouseEvent) {
-    if (!slotEl) return;
-    if (slotEl.contains(e.target as Node)) return;
-    open = false;
-  }
-  function onKey(e: KeyboardEvent) {
-    if (e.key === 'Escape') open = false;
-  }
-
-  onMount(() => {
-    document.addEventListener('click', onDocClick);
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('click', onDocClick);
-      document.removeEventListener('keydown', onKey);
-      clearTimeout(pulseTimer);
-    };
-  });
 </script>
 
 <!-- Wrapper (not a button) so the trigger and the menu items are siblings,
      never nested interactive controls (WCAG / valid HTML). -->
-<span class="slot-wrap" bind:this={slotEl}>
+<span class="slot-wrap" use:popover={id}>
   <button
     class="slot"
     class:pulse={pulsing}
     data-slot={name}
-    aria-haspopup="true"
+    aria-haspopup="menu"
     aria-expanded={open}
-    onclick={toggle}
+    bind:this={triggerEl}
+    onclick={onTriggerClick}
+    onkeydown={onTriggerKeydown}
     type="button"
   >
     <span class="slot-label">{currentLabel}</span>
   </button>
-  <span class="popover" role="menu">
-    {#each options as opt (opt.key)}
-      <button
-        type="button"
-        class="popover-item"
-        role="menuitemradio"
-        aria-checked={opt.key === value}
-        tabindex={open ? 0 : -1}
-        onclick={(e) => pick(opt, e)}
-      >
-        {opt.label}
-      </button>
-    {/each}
-  </span>
+  {#if open}
+    <span class="popover" role="menu" use:menuKeys bind:this={popEl}>
+      {#each options as opt (opt.key)}
+        <button
+          type="button"
+          class="popover-item"
+          role="menuitemradio"
+          aria-checked={opt.key === value}
+          onclick={() => pick(opt)}
+        >
+          {opt.label}
+        </button>
+      {/each}
+    </span>
+  {/if}
 </span>
 
 <style>
@@ -134,23 +141,28 @@
     animation: pulse var(--dur-feedback) ease;
   }
 
+  /* mounted only while open */
   .popover {
     position: absolute;
     top: calc(100% + 10px);
     left: 50%;
-    transform: translateX(-50%) translateY(-4px);
+    transform: translateX(-50%);
     background: var(--paper-up);
     border: 1px solid var(--line);
     border-radius: 3px;
     padding: 6px 0;
     min-width: 160px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.2s ease;
     z-index: 50;
     box-shadow:
       0 18px 40px -20px rgba(31, 26, 20, 0.35),
       0 0 0 1px var(--line-soft);
+    animation: popover-in 0.2s ease;
+  }
+  @keyframes popover-in {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-4px);
+    }
   }
   .popover::before {
     content: "";
@@ -163,11 +175,6 @@
     transform: translateX(-50%) rotate(45deg);
     border-left: 1px solid var(--line);
     border-top: 1px solid var(--line);
-  }
-  .slot[aria-expanded="true"] + .popover {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
   }
 
   .popover-item {

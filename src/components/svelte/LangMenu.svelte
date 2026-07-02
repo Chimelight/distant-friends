@@ -1,73 +1,41 @@
 <script lang="ts">
+  import { LANGS, LANG_GROUPS, langTag, fold } from '../../lib/lang';
+  import ui from '../../content/ui/en.json';
   import type { TLanguage } from '../../lib/schema';
 
   interface Props {
-    /** Languages to render (already scoped by the parent). */
-    langs: TLanguage[];
     /** Codes shown with a filled mark. */
     marked?: Set<string>;
     /** Code shown with the anchor (terracotta) mark. */
     anchorCode?: string;
     /** Codes rendered dimmed + non-interactive (e.g. already shown elsewhere). */
     disabledCodes?: Set<string>;
-    /** Whether the containing popover is open — drives tabindex + search reset. */
-    open: boolean;
     onPick: (code: string) => void;
-    searchable?: boolean;
   }
-  let {
-    langs,
-    marked = new Set(),
-    anchorCode,
-    disabledCodes = new Set(),
-    open,
-    onPick,
-    searchable = true,
-  }: Props = $props();
-
-  // Mizo's `code` is not a valid BCP-47 subtag; tag it ISO 639-3 "lus".
-  const bcp47 = (code: string) => (code === 'mizo' ? 'lus' : code);
-
-  const GROUP_ORDER = [
-    'East Asia',
-    'Europe',
-    'West & Central Asia',
-    'South Asia',
-    'Southeast Asia',
-  ];
+  let { marked = new Set(), anchorCode, disabledCodes = new Set(), onPick }: Props = $props();
 
   let query = $state('');
-  const q = $derived(query.trim().toLowerCase());
+  const q = $derived(fold(query.trim()));
   const matches = (l: TLanguage) =>
-    !q ||
-    l.native.toLowerCase().includes(q) ||
-    l.name.toLowerCase().includes(q) ||
-    l.code.includes(q);
+    !q || fold(l.native).includes(q) || fold(l.name).includes(q) || l.code.includes(q);
 
+  // Group order comes from the dataset (first occurrence), so a language
+  // added under a new region shows up without touching this component.
   const grouped = $derived(
-    GROUP_ORDER.map((group) => ({
+    LANG_GROUPS.map((group) => ({
       group,
-      items: langs.filter((l) => l.group === group && matches(l)),
+      items: LANGS.filter((l) => l.group === group && matches(l)),
     })).filter((g) => g.items.length),
   );
-
-  // Clear the query whenever the popover closes, so it reopens fresh.
-  $effect(() => {
-    if (!open) query = '';
-  });
 </script>
 
-{#if searchable}
-  <input
-    class="lm-search"
-    type="text"
-    placeholder="Search languages…"
-    bind:value={query}
-    tabindex={open ? 0 : -1}
-    aria-label="Search languages"
-    onclick={(e) => e.stopPropagation()}
-  />
-{/if}
+<input
+  class="lm-search"
+  type="text"
+  placeholder={ui.stationery.langsSearch}
+  bind:value={query}
+  aria-label={ui.stationery.langsSearch}
+/>
 
 <div class="lm-list">
   {#each grouped as g (g.group)}
@@ -86,24 +54,22 @@
             class:disabled
             aria-pressed={on}
             {disabled}
-            tabindex={open && !disabled ? 0 : -1}
             aria-label={`${L.name}${on ? ', showing' : ''}${isAnchor ? ', anchor' : ''}`}
-            onclick={(e) => {
-              e.stopPropagation();
+            onclick={() => {
               if (disabled) return;
               onPick(L.code);
               query = ''; // reset the filter so the full list is back next time
             }}
           >
             <span class="lm-mark" aria-hidden="true"></span>
-            <span class="lm-native" lang={bcp47(L.code)} dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span>
+            <span class="lm-native" lang={langTag(L)} dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span>
             {#if L.name !== L.native}<span class="lm-en">{L.name}</span>{/if}
           </button>
         {/each}
       </div>
     </div>
   {:else}
-    <div class="lm-empty">No language matches “{query}”.</div>
+    <div class="lm-empty">{ui.stationery.langsNoMatch} “{query}”.</div>
   {/each}
 </div>
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import TranslationCell from './TranslationCell.svelte';
   import StarButton from './StarButton.svelte';
   import LangMenu from './LangMenu.svelte';
@@ -12,60 +11,47 @@
     starred,
     starredOnly,
   } from '../../lib/stores';
+  import { openPopover, togglePopover, closePopover, popover } from '../../lib/popover';
+  import { LANG_BY_CODE, langsByCodes, langTag } from '../../lib/lang';
   import { visibleVariants } from '../../lib/filter';
-  import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
   import phrases from '../../data/phrases';
   import ui from '../../content/ui/en.json';
-  import type { TPhrase, TLanguage, TScene } from '../../lib/schema';
+  import type { TPhrase, TScene } from '../../lib/schema';
 
   const allPhrases = phrases as unknown as TPhrase[];
-  const allLangs = languages as TLanguage[];
   const allScenes = scenes as TScene[];
 
+  // Column order IS the selection order ($selectedLangs is an ordered
+  // array); the anchor renders as its own first column.
   const otherLangs = $derived(
-    allLangs.filter(
-      (L) => L.code !== $anchor && ($selectedLangs ?? []).includes(L.code),
-    ),
+    langsByCodes(($selectedLangs ?? []).filter((c) => c !== $anchor)),
   );
-  const anchorL = $derived(allLangs.find((L) => L.code === $anchor));
+  const anchorL = $derived(LANG_BY_CODE.get($anchor));
   const anchorDir = $derived(anchorL?.rtl ? 'rtl' : 'ltr');
 
-  // Mizo's `code` is not a valid BCP-47 subtag; tag it ISO 639-3 "lus".
-  const bcp47 = (code: string | undefined) => (code === 'mizo' ? 'lus' : code);
+  // Anchor column slightly wider than an even split; guard the degenerate
+  // anchor-only table (otherwise the formula yields 120%).
+  const anchorColPct = $derived(
+    otherLangs.length ? (100 / (otherLangs.length + 1)) * 1.2 : 100,
+  );
+  const otherColPct = $derived(
+    otherLangs.length ? (100 - anchorColPct) / otherLangs.length : 0,
+  );
 
   // —— headers double as a quick per-column language switch ——
   // (add / remove / search live in the Stationery panel; headers only swap)
   const selected = $derived(new Set($selectedLangs ?? []));
-  // Open popover keyed by `${sceneId}|${code}` so only the clicked scene's
-  // header opens (the same column repeats in every scene's table).
-  let openKey = $state<string | null>(null);
 
   function switchColumn(oldCode: string, newCode: string) {
-    const set = new Set(selectedLangs.get() ?? []);
-    if (!set.has(oldCode) || set.has(newCode)) return;
-    set.delete(oldCode);
-    set.add(newCode);
-    selectedLangs.set([...set]);
+    const cur = selectedLangs.get() ?? [];
+    if (!cur.includes(oldCode) || cur.includes(newCode)) return;
+    // In place: the clicked column becomes the new language, right where
+    // it stands — selection order (= column order) is preserved.
+    selectedLangs.set(cur.map((c) => (c === oldCode ? newCode : c)));
     if (anchor.get() === oldCode) anchor.set(newCode); // anchor follows its column
-    openKey = null;
+    closePopover();
   }
-
-  onMount(() => {
-    const onDoc = (e: MouseEvent) => {
-      const el = (e.target as HTMLElement).closest('[data-thkey]');
-      if (el?.getAttribute('data-thkey') !== openKey) openKey = null;
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') openKey = null;
-    };
-    document.addEventListener('click', onDoc);
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('click', onDoc);
-      document.removeEventListener('keydown', onKey);
-    };
-  });
 
   function emWrap(title: string, em: string): { before: string; em: string; after: string } {
     const idx = title.indexOf(em);
@@ -110,74 +96,74 @@
         <div class="table-wrap">
           <table class="phrase-table">
             <colgroup>
-              <col style={`width:${(100 / (otherLangs.length + 1)) * 1.2}%`} />
+              <col style={`width:${anchorColPct}%`} />
               {#each otherLangs as _ (_.code)}
-                <col
-                  style={`width:${(100 - (100 / (otherLangs.length + 1)) * 1.2) / Math.max(otherLangs.length, 1)}%`}
-                />
+                <col style={`width:${otherColPct}%`} />
               {/each}
             </colgroup>
             <thead>
               <tr>
-                <th class="th-anchor th-cell" dir={anchorDir} lang={bcp47(anchorL?.code)} data-thkey={anchorKey}>
+                <th
+                  class="th-anchor th-cell"
+                  dir={anchorDir}
+                  lang={anchorL ? langTag(anchorL) : undefined}
+                  use:popover={anchorKey}
+                >
                   <button
                     class="th-btn"
                     type="button"
-                    aria-haspopup="true"
-                    aria-expanded={openKey === anchorKey}
+                    aria-expanded={$openPopover === anchorKey}
                     aria-label={`${anchorL?.name ?? ''} — ${ui.stationery.langsSwitch}`}
-                    onclick={(e) => {
-                      e.stopPropagation();
-                      openKey = openKey === anchorKey ? null : anchorKey;
-                    }}
+                    onclick={() => togglePopover(anchorKey)}
                   >
                     <span class="th-native">{anchorL?.native ?? ''}</span>
                     {#if anchorL && anchorL.name !== anchorL.native}
                       <span class="th-name">{anchorL.name}</span>
                     {/if}
                   </button>
-                  <div class="th-pop" class:open={openKey === anchorKey}>
-                    <div class="thp-head">{ui.stationery.langsSwitch}</div>
-                    <LangMenu
-                      langs={allLangs}
-                      marked={selected}
-                      anchorCode={$anchor}
-                      disabledCodes={selected}
-                      open={openKey === anchorKey}
-                      onPick={(c) => switchColumn($anchor, c)}
-                    />
-                  </div>
+                  {#if $openPopover === anchorKey}
+                    <div class="th-pop">
+                      <div class="thp-head">{ui.stationery.langsSwitch}</div>
+                      <LangMenu
+                        marked={selected}
+                        anchorCode={$anchor}
+                        disabledCodes={selected}
+                        onPick={(c) => switchColumn($anchor, c)}
+                      />
+                    </div>
+                  {/if}
                 </th>
                 {#each otherLangs as L (L.code)}
                   {@const key = `${S.id}|${L.code}`}
-                  <th class="th-lang th-cell" dir={L.rtl ? 'rtl' : 'ltr'} lang={bcp47(L.code)} data-thkey={key}>
+                  <th
+                    class="th-lang th-cell"
+                    dir={L.rtl ? 'rtl' : 'ltr'}
+                    lang={langTag(L)}
+                    use:popover={key}
+                  >
                     <button
                       class="th-btn"
                       type="button"
-                      aria-haspopup="true"
-                      aria-expanded={openKey === key}
+                      aria-expanded={$openPopover === key}
                       aria-label={`${L.name} — ${ui.stationery.langsSwitch}`}
-                      onclick={(e) => {
-                        e.stopPropagation();
-                        openKey = openKey === key ? null : key;
-                      }}
+                      onclick={() => togglePopover(key)}
                     >
                       <span class="th-native">{L.native}</span>
                       {#if L.name !== L.native}
                         <span class="th-name">{L.name}</span>
                       {/if}
                     </button>
-                    <div class="th-pop" class:open={openKey === key}>
-                      <div class="thp-head">{ui.stationery.langsSwitch}</div>
-                      <LangMenu
-                        langs={allLangs}
-                        marked={selected}
-                        anchorCode={$anchor}
-                        disabledCodes={selected}
-                        open={openKey === key}
-                        onPick={(c) => switchColumn(L.code, c)}
-                      />
-                    </div>
+                    {#if $openPopover === key}
+                      <div class="th-pop">
+                        <div class="thp-head">{ui.stationery.langsSwitch}</div>
+                        <LangMenu
+                          marked={selected}
+                          anchorCode={$anchor}
+                          disabledCodes={selected}
+                          onPick={(c) => switchColumn(L.code, c)}
+                        />
+                      </div>
+                    {/if}
                   </th>
                 {/each}
               </tr>
@@ -189,7 +175,13 @@
                   <td class="anchor-cell" dir={anchorDir}>
                     <span class="star-slot"><StarButton phraseId={p.id} /></span>
                     {#if ac}
-                      <div class="anchor-word" lang={$anchor} dir="auto">{ac.primary.text}</div>
+                      <div
+                        class="anchor-word"
+                        lang={anchorL ? langTag(anchorL) : undefined}
+                        dir="auto"
+                      >
+                        {ac.primary.text}
+                      </div>
                       {#if ac.primary.rom}
                         <div class="anchor-rom">{ac.primary.rom}</div>
                       {/if}
@@ -206,7 +198,7 @@
                     {#if !tr || !vs.length}
                       <td class="trans-cell empty" dir={L.rtl ? 'rtl' : 'ltr'}></td>
                     {:else}
-                      <td class="trans-cell" dir={L.rtl ? 'rtl' : 'ltr'} lang={bcp47(L.code)}>
+                      <td class="trans-cell" dir={L.rtl ? 'rtl' : 'ltr'} lang={langTag(L)}>
                         <TranslationCell {vs} langCode={L.code} />
                       </td>
                     {/if}
@@ -397,6 +389,7 @@
     border-radius: 2px;
   }
 
+  /* mounted only while open */
   .th-pop {
     position: absolute;
     top: calc(100% + 6px);
@@ -411,25 +404,18 @@
     border: 1px solid var(--line);
     border-radius: 4px;
     padding: 12px 14px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-4px);
-    transition:
-      opacity 0.18s ease,
-      visibility 0.18s ease,
-      transform 0.18s ease;
     z-index: 40;
     box-shadow:
       0 20px 48px -24px rgba(31, 26, 20, 0.45),
       0 0 0 1px var(--line-soft);
     letter-spacing: normal;
+    animation: th-pop-in 0.18s ease;
   }
-  .th-pop.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
+  @keyframes th-pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
   }
   /* right-align the popover for the last couple of columns so it doesn't
      overflow the viewport edge */

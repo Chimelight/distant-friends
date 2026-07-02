@@ -2,23 +2,20 @@
   import TranslationCell from './TranslationCell.svelte';
   import StarButton from './StarButton.svelte';
   import { selectedLangs, anchor, tone, speakerGender, addresseeGender, starred, starredOnly } from '../../lib/stores';
+  import { LANG_BY_CODE, langsByCodes, langTag } from '../../lib/lang';
   import { visibleVariants } from '../../lib/filter';
-  import languages from '../../data/languages.json';
   import scenes from '../../data/scenes.json';
   import phrases from '../../data/phrases';
-  import type { TPhrase, TLanguage, TScene } from '../../lib/schema';
+  import type { TPhrase, TScene } from '../../lib/schema';
 
   const allPhrases = phrases as unknown as TPhrase[];
-  const allLangs = languages as TLanguage[];
   const allScenes = scenes as TScene[];
 
-  const anchorDir = $derived(
-    allLangs.find((L) => L.code === $anchor)?.rtl ? 'rtl' : 'ltr',
-  );
+  const anchorL = $derived(LANG_BY_CODE.get($anchor));
+  const anchorDir = $derived(anchorL?.rtl ? 'rtl' : 'ltr');
+  // Blocks follow the selection's own order, same as the table's columns.
   const otherLangs = $derived(
-    allLangs.filter(
-      (L) => L.code !== $anchor && ($selectedLangs ?? []).includes(L.code),
-    ),
+    langsByCodes(($selectedLangs ?? []).filter((c) => c !== $anchor)),
   );
 
   function emWrap(title: string, em: string) {
@@ -60,7 +57,7 @@
               <div class="card-head" dir={anchorDir}>
                 <span class="star-slot"><StarButton phraseId={p.id} /></span>
                 {#if primary}
-                  <div class="card-word" lang={$anchor} dir="auto">{primary.text}</div>
+                  <div class="card-word" lang={anchorL ? langTag(anchorL) : undefined} dir="auto">{primary.text}</div>
                   {#if primary.rom}
                     <div class="card-rom">{primary.rom}</div>
                   {/if}
@@ -77,7 +74,7 @@
                 {#if t && vs.length}
                   <div class="lang-block">
                     <div class="lang-label">
-                      {L.native}
+                      <span lang={langTag(L)}>{L.native}</span>
                       {#if t.gloss}
                         <span class="lang-gloss"> · {t.gloss}</span>
                       {/if}

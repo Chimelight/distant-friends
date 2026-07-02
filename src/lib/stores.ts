@@ -65,7 +65,7 @@ export const starredOnly = atom<boolean>(false);
 
 export const uiLocale = persistentAtom<string>('distant-friends:uiLocale:v1', 'en');
 
-export function ensureSelectedLangsInitialized(): void {
+function ensureSelectedLangsInitialized(): void {
   const validCodes = new Set(languages.map((l) => l.code));
   const current = selectedLangs.get();
 
@@ -100,6 +100,12 @@ export function ensureSelectedLangsInitialized(): void {
     if (fallback) anchor.set(fallback);
   }
 }
+
+// Initialize/migrate persisted state once per client session — at module
+// scope, so no particular island has to mount for defaults to exist. (This
+// used to run in LanguagePicker's onMount, which made every other consumer
+// of $selectedLangs depend on that one component hydrating first.)
+if (typeof window !== 'undefined') ensureSelectedLangsInitialized();
 
 // Ephemeral toast — non-persistent. `key` lets the Toast component re-trigger
 // the show animation even when the same text is copied twice in a row.

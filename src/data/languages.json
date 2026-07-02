@@ -16,7 +16,7 @@
   { "code": "ar",      "native": "العربية",      "name": "Arabic",     "group": "West & Central Asia",  "tts": "ar-SA", "rtl": true,  "defaultOn": false, "defaultAnchor": false },
   { "code": "hi",      "native": "हिन्दी",       "name": "Hindi",      "group": "South Asia",           "tts": "hi-IN", "rtl": false, "defaultOn": false, "defaultAnchor": false },
   { "code": "bn",      "native": "বাংলা",        "name": "Bengali",    "group": "South Asia",           "tts": "bn-IN", "rtl": false, "defaultOn": true,  "defaultAnchor": false },
-  { "code": "mizo",    "native": "Mizo ţawng",   "name": "Mizo",       "group": "South Asia",           "tts": "",      "rtl": false, "defaultOn": false, "defaultAnchor": false },
+  { "code": "mizo",    "native": "Mizo ţawng",   "name": "Mizo",       "group": "South Asia",           "bcp47": "lus", "tts": "",      "rtl": false, "defaultOn": false, "defaultAnchor": false },
   { "code": "id",      "native": "Indonesia",    "name": "Indonesian", "group": "Southeast Asia",       "tts": "id-ID", "rtl": false, "defaultOn": false, "defaultAnchor": false },
   { "code": "ms",      "native": "Melayu",       "name": "Malay",      "group": "Southeast Asia",       "tts": "ms-MY", "rtl": false, "defaultOn": false, "defaultAnchor": false },
   { "code": "fil",     "native": "Filipino",     "name": "Filipino",   "group": "Southeast Asia",       "tts": "fil-PH", "rtl": false, "defaultOn": false, "defaultAnchor": false },
