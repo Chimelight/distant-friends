@@ -17,6 +17,12 @@ export const LANG_GROUPS: readonly string[] = [...new Set(LANGS.map((l) => l.gro
  */
 export const langTag = (l: TLanguage): string => l.bcp47 ?? l.code;
 
+/** `langTag` by code, for call sites that only hold the code (falls through). */
+export const langTagOf = (code: string): string => {
+  const l = LANG_BY_CODE.get(code);
+  return l ? langTag(l) : code;
+};
+
 /** Map selection codes to language entries, preserving the selection's order. */
 export function langsByCodes(codes: string[]): TLanguage[] {
   return codes

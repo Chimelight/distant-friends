@@ -51,42 +51,52 @@
 <section class="stationery">
   <LanguagePicker />
 
+  <!-- .tie groups keep a slot with its surrounding word/punctuation, so a
+       mobile wrap can never strand ", as myself" or a bare "—" at a line
+       start — lines break only between whole phrase groups. -->
   <p class="prose">
-    <em>{ui.stationery.anchoredIn}</em>
-    <SlotPicker
-      name="anchor"
-      options={anchorOptions}
-      value={$anchor}
-      onChange={setAnchor}
-    />
-    <span class="punct">.</span>
+    <span class="tie">
+      <em>{ui.stationery.anchoredIn}</em>
+      <SlotPicker
+        name="anchor"
+        options={anchorOptions}
+        value={$anchor}
+        onChange={setAnchor}
+      /><span class="punct">.</span>
+    </span>
   </p>
   <p class="prose">
-    <em>{ui.stationery.iWrite}</em>
-    <span class="punct">—</span>
-    <SlotPicker
-      name="tone"
-      options={toneOptions}
-      value={$tone}
-      onChange={setTone}
-    />
-    <span class="punct">—</span>
-    <em>{ui.stationery.to}</em>
-    <SlotPicker
-      name="addressee"
-      options={addresseeOptions}
-      value={$addresseeGender}
-      onChange={setAddressee}
-    />
-    <span class="punct">,</span>
-    <em>{ui.stationery.asWord}</em>
-    <SlotPicker
-      name="speaker"
-      options={speakerOptions}
-      value={$speakerGender}
-      onChange={setSpeaker}
-    />
-    <span class="punct">.</span>
+    <span class="tie">
+      <em>{ui.stationery.iWrite}</em>
+      <span class="punct">—</span>
+    </span>
+    <span class="tie">
+      <SlotPicker
+        name="tone"
+        options={toneOptions}
+        value={$tone}
+        onChange={setTone}
+      />
+      <span class="punct">—</span>
+    </span>
+    <span class="tie">
+      <em>{ui.stationery.to}</em>
+      <SlotPicker
+        name="addressee"
+        options={addresseeOptions}
+        value={$addresseeGender}
+        onChange={setAddressee}
+      /><span class="punct">,</span>
+    </span>
+    <span class="tie">
+      <em>{ui.stationery.asWord}</em>
+      <SlotPicker
+        name="speaker"
+        options={speakerOptions}
+        value={$speakerGender}
+        onChange={setSpeaker}
+      /><span class="punct">.</span>
+    </span>
   </p>
 </section>
 
@@ -112,6 +122,9 @@
   }
   .prose em {
     font-style: italic;
+  }
+  .prose .tie {
+    white-space: nowrap;
   }
   .prose .punct {
     color: var(--ink-mute);

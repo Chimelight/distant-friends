@@ -73,12 +73,16 @@
       onclick={() => togglePopover(PICKER_ID)}
     >
       <span class="names">
-        {#each restingLangs as L, i (L.code)}<span
-            class="n"
-            class:anchor={L.code === $anchor}
-            lang={langTag(L)}
-            dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span
-          >{#if i < restingLangs.length - 1}<span class="dot" aria-hidden="true"> · </span>{/if}{/each}
+        <!-- name+dot are one unbreakable unit and units are joined by
+             zero-width spaces: lines may end with a separator dot but can
+             never start with one (mobile used to wrap as "·Deutsch"). -->
+        {#each restingLangs as L, i (L.code)}<span class="unit"><span
+              class="n"
+              class:anchor={L.code === $anchor}
+              lang={langTag(L)}
+              dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span
+            >{#if i < restingLangs.length - 1}<span class="dot" aria-hidden="true"> · </span>{/if}</span
+          >{'\u200B'}{/each}
       </span>
     </button>
 
@@ -162,6 +166,9 @@
     outline: none;
     background: var(--paper-up);
     border-bottom-style: solid;
+  }
+  .names .unit {
+    white-space: nowrap;
   }
   /* native names upright inside the italic line — synthetic italic mangles CJK */
   .names .n {
