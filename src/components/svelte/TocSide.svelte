@@ -142,7 +142,9 @@
     }
   }
 
-  /* Expanded — barely-there parchment whisper, no glass. */
+  /* Expanded — a solid parchment sheet (no glass). It overlays the table's
+   * last column below ~1440px viewports, so translucency here means text
+   * colliding with text; the sheet reads as a lifted popover instead. */
   .toc.on {
     background: var(--surface-toc-panel);
     box-shadow:

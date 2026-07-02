@@ -27,11 +27,16 @@
   --line:        #D4C6A8;
   --line-soft:   #E2D6B8;
 
-  /* —— semantic surfaces —— */
-  --surface-stickybar:  rgba(235, 225, 204, 0.86);
-  --surface-toc-panel:  rgba(245, 237, 217, 0.22);
-  --surface-toc-border: rgba(212, 198, 168, 0.22);
-  --shadow-toc-panel:   0 12px 32px -24px rgba(138, 98, 67, 0.08);
+  /* —— semantic surfaces ——
+   * Floating layers must be near-opaque: the TocSide panel overlays the
+   * table's last column below ~1440px and the StickyBar slides over text —
+   * at low alpha the letters underneath bleed through (and the StickyBar's
+   * backdrop-filter is only an enhancement, not something legibility may
+   * depend on). */
+  --surface-stickybar:  rgba(235, 225, 204, 0.94);
+  --surface-toc-panel:  rgba(250, 244, 227, 0.93);
+  --surface-toc-border: rgba(212, 198, 168, 0.55);
+  --shadow-toc-panel:   0 24px 60px -32px rgba(138, 98, 67, 0.3);
   --shadow-stickybar:   0 1px 0 rgba(212, 198, 168, 0.5);
 
   /* —— typography —— */
@@ -65,10 +70,10 @@
   --line:        #3A3226;
   --line-soft:   #2E2820;
 
-  --surface-stickybar:  rgba(36, 32, 24, 0.86);
-  --surface-toc-panel:  rgba(45, 40, 32, 0.4);
-  --surface-toc-border: rgba(58, 50, 38, 0.6);
-  --shadow-toc-panel:   0 12px 32px -24px rgba(0, 0, 0, 0.4);
+  --surface-stickybar:  rgba(36, 32, 24, 0.94);
+  --surface-toc-panel:  rgba(45, 40, 32, 0.94);
+  --surface-toc-border: rgba(58, 50, 38, 0.9);
+  --shadow-toc-panel:   0 24px 60px -32px rgba(0, 0, 0, 0.6);
   --shadow-stickybar:   0 1px 0 rgba(58, 50, 38, 0.6);
 }
 
@@ -89,10 +94,10 @@
     --line:        #3A3226;
     --line-soft:   #2E2820;
 
-    --surface-stickybar:  rgba(36, 32, 24, 0.86);
-    --surface-toc-panel:  rgba(45, 40, 32, 0.4);
-    --surface-toc-border: rgba(58, 50, 38, 0.6);
-    --shadow-toc-panel:   0 12px 32px -24px rgba(0, 0, 0, 0.4);
+    --surface-stickybar:  rgba(36, 32, 24, 0.94);
+    --surface-toc-panel:  rgba(45, 40, 32, 0.94);
+    --surface-toc-border: rgba(58, 50, 38, 0.9);
+    --shadow-toc-panel:   0 24px 60px -32px rgba(0, 0, 0, 0.6);
     --shadow-stickybar:   0 1px 0 rgba(58, 50, 38, 0.6);
   }
 }

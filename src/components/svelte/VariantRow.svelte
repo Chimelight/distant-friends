@@ -1,5 +1,6 @@
 <script lang="ts">
   import { tone, speakerGender, addresseeGender, showToast } from '../../lib/stores';
+  import { langTagOf } from '../../lib/lang';
   import { copyText } from '../../lib/clipboard';
   import SpeakButton from './SpeakButton.svelte';
   import type { TVariant } from '../../lib/schema';
@@ -68,7 +69,9 @@
     onclick={onClick}
     onkeydown={onKey}
   >
-    <div class="variant-text" lang={langCode} dir="auto">{variant.text}</div>
+    <!-- langCode stays the dataset code (SpeakButton matches TTS voices on
+         it); the lang attribute needs the valid BCP-47 tag. -->
+    <div class="variant-text" lang={langTagOf(langCode)} dir="auto">{variant.text}</div>
     {#if variant.rom}
       <div class="variant-rom">{variant.rom}</div>
     {/if}
