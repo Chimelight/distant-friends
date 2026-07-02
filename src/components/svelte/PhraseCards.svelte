@@ -46,7 +46,7 @@
     {@const items = phrasesIn(S.id)}
     {#if items.length}
       {@const titleParts = emWrap(S.title, S.em)}
-      <section class="scene-block" id={`scene-${S.id}`} data-scene={S.id}>
+      <section class="scene-block" id={`scene-cards-${S.id}`} data-scene={S.id}>
         <div class="scene-header">
           <span class="scene-num">{S.num}</span>
           <h2 class="scene-ttl">

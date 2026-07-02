@@ -215,4 +215,11 @@
   .variant.copied .copy-hint::before {
     content: '✓ copied';
   }
+  /* Touch has no hover: keep a quiet "copy" affordance always visible,
+     matching SpeakButton's hover-none treatment. */
+  @media (hover: none) {
+    .copy-hint {
+      opacity: 0.4;
+    }
+  }
 </style>

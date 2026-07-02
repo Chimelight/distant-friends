@@ -821,17 +821,18 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 其余（既有登记）：
 
 - [ ] **表格行解剖与密度**（大项，值得专门一轮）：列间密度差悬殊（俄语 3 变体 + 注释 vs 孟加拉 1 变体），anchor 列大片留白而译文列拥挤；变体内部 text/rom/tag/note 四层小字堆叠偏碎。方向：注释层的减法与合并、rom/text 字号比、变体间分隔的轻量化、anchor 列宽比重新校准。
-- [ ] **触屏可供性**：copy 提示是 hover-only，触屏用户发现不了"格子可点复制"，SpeakButton 同理。方向：`@media (hover: none)` 下常显轻量提示，或首次触碰的一次性引导；不引入 tooltip 库。
+- [x] **触屏可供性**（R5）：copy 提示在 `@media (hover: none)` 下常显（opacity 0.4），与 SpeakButton 的既有 hover-none 处理（0.45）同一语汇。SpeakButton 经查本就处理了——账本原文又写重了一半。
 - [ ] **TocSide 与表格的空间关系**：1024–1440 宽度下展开面板叠在表格末列上（R1 已把表面改实解决可读性，但"叠"本身仍在）。方向：展开时左移出内容区 / 按展开宽度预留 / 窄屏降级。
 - [ ] **StickyBar 移动端**：≤640 允许 prose 换行、两行拥挤。方向：单行收纳（seal + tone slot + 控件）或只留控件。
 - [ ] **导航一致性**：TocTop（顶部平铺、点击即跳）与 TocSide（右缘、悬停展开）的视觉/交互词汇不完全一致（活动态、字体层级）。统一罗马数字 + 斜体 serif 词汇。
-- [ ] **404 品牌连续性**：无 seal、无回到信笺的视觉记忆点；加 致·远·方 小印章 + footer 同款落款语气。
-- [ ] **重复 scene id**（代码质量）：PhraseTable 与 PhraseCards 各渲染一套 `id="scene-*"`（非法重复 id），TocSide/TocTop 靠 `data-scene` + `offsetParent` 绕开。改唯一 id、简化 jumpTo。
-- [ ] **SlotPicker options 复制**（代码质量）：tone/speaker/addressee 选项数组 + setter 在 Stationery 与 StickyBar 各一份，抽共享模块。
+- [x] **404 品牌连续性**（R5）：致·远·方 印章落到 404 顶部，参数与 Masthead chip 对齐（13px / 0.6em 字距 / 同 padding，`text-indent` 抵消字距尾隙）；"footer 同款落款"评估后弃——404 文案已自足，再加落款反而堆砌。
+- [x] **重复 scene id**（R5）：两视图 id 改为 `scene-table-*` / `scene-cards-*`（文档级唯一，验证 0 重复）；`data-scene` 仍是跨视图共享键，jumpTo 的 offsetParent 挑可见视图机制保留（这是它的本职，不是 workaround）。
+- [x] **SlotPicker options 复制**（R5）：tone/speaker/addressee 选项数组抽到 `lib/slot-options.ts`，Stationery 与 StickyBar 共用。
 - [ ] **打印样式**（⚠️ 边界项，默认不做）：信纸气质适合打印，但接近新功能——待用户拍板再动。
 
 ### 轮次日志
 
+- **R5 · 2026-07-03** — 清尾轮：触屏 copy 常显提示、404 印章、scene id 唯一化、slot options 去重。四项皆小，合并一轮。
 - **R4 · 2026-07-03** — 高频块收尾：语言面板键盘手感（键盘开→搜索聚焦、↓ 入列表、阅读序游走、typo 建议）+ 复制金线（画出/回收）。冒烟 +2（键盘流、typo 建议）。**高频功能细节强化块至此全部完成。**
 - **R3 · 2026-07-03** — 首星布局跳动（slide 过渡）、发音墨晕涟漪 + `aria-pressed`、TOC 阅读进度线（scroll-driven CSS）。教训两则：①账本条目写自审计推测，动手前先读现状——发音的反馈与 voice 优选本就存在，实际工作量是条目描述的三分之一；②**实现注意 ⚠️**：lightningcss 会把独立的 `animation-timeline` 合并进 `animation` 简写——规范禁止 timeline 出现在简写里，浏览器随之丢弃整条声明（症状：动画完全不生效且无报错）。解法：`animation-timeline: var(--xx)` 经自定义属性间接引用，压缩器即无法折叠。
 - **R2 · 2026-07-03** — 高频功能细节第一对：**换列的"新墨写入"**（`$freshLang` 瞬态居 stores，换列/加列/换 anchor 三个入口标记；表格列头先行、逐行级联，卡片视图 lang-block 同语汇）+ **收藏仪式感**（星标 spring pop + 金屑绽放、场景星数微标、空态确认已有兜底）。冒烟测试加星数微标断言。

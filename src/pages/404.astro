@@ -6,6 +6,7 @@ const home = import.meta.env.BASE_URL;
 
 <Layout title="Lost in the post — Distant Friends">
   <div class="lost">
+    <p class="seal" lang="zh">致 · 远 · 方</p>
     <p class="num">404</p>
     <h1>This letter went astray.</h1>
     <p class="line">
@@ -23,6 +24,21 @@ const home = import.meta.env.BASE_URL;
     margin: 0 auto;
     padding: 18vh 24px 0;
     text-align: center;
+  }
+  /* the site's seal, so even a lost letter is recognizably ours —
+     mirrors the Masthead chip */
+  .seal {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.6em;
+    text-indent: 0.6em; /* recentre: tracking adds a trailing gap */
+    color: var(--gold-ink);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin: 0 0 26px;
   }
   .num {
     font-family: var(--font-serif);

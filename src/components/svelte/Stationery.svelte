@@ -3,6 +3,7 @@
   import SlotPicker from './SlotPicker.svelte';
   import { anchor, tone, speakerGender, addresseeGender, selectedLangs, markFreshLang } from '../../lib/stores';
   import { langsByCodes } from '../../lib/lang';
+  import { toneOptions, speakerOptions, addresseeOptions } from '../../lib/slot-options';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
   import ui from '../../content/ui/en.json';
 
@@ -16,24 +17,6 @@
       (l) => ({ key: l.code, label: l.native }),
     ),
   );
-  const toneOptions: { key: ToneFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.tones.any },
-    { key: 'casual', label: ui.stationery.tones.casual },
-    { key: 'neutral', label: ui.stationery.tones.neutral },
-    { key: 'polite', label: ui.stationery.tones.polite },
-  ];
-
-  const speakerOptions: { key: GenderFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.speakers.any },
-    { key: 'm', label: ui.stationery.speakers.m },
-    { key: 'f', label: ui.stationery.speakers.f },
-  ];
-  const addresseeOptions: { key: GenderFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.addressees.any },
-    { key: 'm', label: ui.stationery.addressees.m },
-    { key: 'f', label: ui.stationery.addressees.f },
-  ];
-
   function setAnchor(code: string) {
     if (code !== anchor.get()) markFreshLang(code); // promoted column writes in
     anchor.set(code);
