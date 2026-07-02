@@ -1,39 +1,24 @@
 <script lang="ts">
   import LanguagePicker from './LanguagePicker.svelte';
   import SlotPicker from './SlotPicker.svelte';
-  import { anchor, tone, speakerGender, addresseeGender, selectedLangs } from '../../lib/stores';
+  import { anchor, tone, speakerGender, addresseeGender, selectedLangs, markFreshLang } from '../../lib/stores';
+  import { langsByCodes } from '../../lib/lang';
+  import { toneOptions, speakerOptions, addresseeOptions } from '../../lib/slot-options';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
-  import languages from '../../data/languages.json';
   import ui from '../../content/ui/en.json';
 
   // Anchor options restricted to currently-selected languages — adding a new
   // language goes through LanguagePicker, switching focus among them goes
   // through here. This sidesteps the cap-bypass that would happen if "Anchored in"
-  // could pull in a 6th language through the back door.
+  // could pull in a 6th language through the back door. Listed in column
+  // order: anchor first, then the selection in its own order.
   const anchorOptions = $derived(
-    languages
-      .filter((l) => ($selectedLangs ?? []).includes(l.code))
-      .map((l) => ({ key: l.code, label: l.native })),
+    langsByCodes([$anchor, ...($selectedLangs ?? []).filter((c) => c !== $anchor)]).map(
+      (l) => ({ key: l.code, label: l.native }),
+    ),
   );
-  const toneOptions: { key: ToneFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.tones.any },
-    { key: 'casual', label: ui.stationery.tones.casual },
-    { key: 'neutral', label: ui.stationery.tones.neutral },
-    { key: 'polite', label: ui.stationery.tones.polite },
-  ];
-
-  const speakerOptions: { key: GenderFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.speakers.any },
-    { key: 'm', label: ui.stationery.speakers.m },
-    { key: 'f', label: ui.stationery.speakers.f },
-  ];
-  const addresseeOptions: { key: GenderFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.addressees.any },
-    { key: 'm', label: ui.stationery.addressees.m },
-    { key: 'f', label: ui.stationery.addressees.f },
-  ];
-
   function setAnchor(code: string) {
+    if (code !== anchor.get()) markFreshLang(code); // promoted column writes in
     anchor.set(code);
   }
   function setTone(t: ToneFilter) {
@@ -50,42 +35,52 @@
 <section class="stationery">
   <LanguagePicker />
 
+  <!-- .tie groups keep a slot with its surrounding word/punctuation, so a
+       mobile wrap can never strand ", as myself" or a bare "—" at a line
+       start — lines break only between whole phrase groups. -->
   <p class="prose">
-    <em>{ui.stationery.anchoredIn}</em>
-    <SlotPicker
-      name="anchor"
-      options={anchorOptions}
-      value={$anchor}
-      onChange={setAnchor}
-    />
-    <span class="punct">.</span>
+    <span class="tie">
+      <em>{ui.stationery.anchoredIn}</em>
+      <SlotPicker
+        name="anchor"
+        options={anchorOptions}
+        value={$anchor}
+        onChange={setAnchor}
+      /><span class="punct">.</span>
+    </span>
   </p>
   <p class="prose">
-    <em>{ui.stationery.iWrite}</em>
-    <span class="punct">—</span>
-    <SlotPicker
-      name="tone"
-      options={toneOptions}
-      value={$tone}
-      onChange={setTone}
-    />
-    <span class="punct">—</span>
-    <em>{ui.stationery.to}</em>
-    <SlotPicker
-      name="addressee"
-      options={addresseeOptions}
-      value={$addresseeGender}
-      onChange={setAddressee}
-    />
-    <span class="punct">,</span>
-    <em>{ui.stationery.asWord}</em>
-    <SlotPicker
-      name="speaker"
-      options={speakerOptions}
-      value={$speakerGender}
-      onChange={setSpeaker}
-    />
-    <span class="punct">.</span>
+    <span class="tie">
+      <em>{ui.stationery.iWrite}</em>
+      <span class="punct">—</span>
+    </span>
+    <span class="tie">
+      <SlotPicker
+        name="tone"
+        options={toneOptions}
+        value={$tone}
+        onChange={setTone}
+      />
+      <span class="punct">—</span>
+    </span>
+    <span class="tie">
+      <em>{ui.stationery.to}</em>
+      <SlotPicker
+        name="addressee"
+        options={addresseeOptions}
+        value={$addresseeGender}
+        onChange={setAddressee}
+      /><span class="punct">,</span>
+    </span>
+    <span class="tie">
+      <em>{ui.stationery.asWord}</em>
+      <SlotPicker
+        name="speaker"
+        options={speakerOptions}
+        value={$speakerGender}
+        onChange={setSpeaker}
+      /><span class="punct">.</span>
+    </span>
   </p>
 </section>
 
@@ -111,6 +106,9 @@
   }
   .prose em {
     font-style: italic;
+  }
+  .prose .tie {
+    white-space: nowrap;
   }
   .prose .punct {
     color: var(--ink-mute);

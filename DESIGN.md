@@ -283,11 +283,13 @@ UI 状态影响变体显示的维度：`anchor`（哪种语言放锚点列）、
 
 经多轮迭代（2026-06-28~29）：chip 墙 → 信笺句行 + 弹层（清算 §13 04-22 遗留）→ 用户嫌"弹层多一步"，把桌面操作搬进表格列头 → 再反馈"表头加/删不便、列表没风格、句行别藏"，**收敛为：Stationery 句行面板是主控件（两视图都在），桌面表格列头额外提供「快速换列」**。
 
-- **Stationery 句行（主控件，两视图都在）**：信笺第一句 `for friends who read 中文 · 日本語 · English … ▾`——母语名**直立** serif（CJK 在 italic 下是丑的伪斜体），anchor 标 accent 色（避免与下一句"Anchored in"读着冗余）。点开 `LangMenu` 多选面板：搜索 + 分组 + 英文名 + 实心 gold 点标记 + 「Clear」一键清空（除 anchor）。满 5 时 header 提示 + pulse（不再 shake）。
-- **桌面表格列头（快速换列）**：每个 `<th>` 是按钮（母语名 + 英文 exonym 注释 + hover ▾），点开同一个 `LangMenu`；点一门**未显示**的语言 = **把该列换成它**（`switchColumn`，是 anchor 列则 anchor 跟随）。**只换列**——加/删/搜索都回到上面的面板（用户反馈表头加删不顺手）。表头 `sticky`（StickyBar 下方留一档呼吸空间，不贴顶），滚动时列语言常驻。
-- **共享组件 `LangMenu`**：搜索（match native/name/code，**选完自动清空**回全列表）+ 5 区域分组（`group`，gold 小标题）+ 母语名（直立 serif）+ 英文 exonym（serif italic 小字，同 tag line 口吻；`name===native` 不重复）+ `marked`/`disabledCodes`/`anchorCode` 标记。**2 列网格、无边框、暖色 hover/选中**——区别于早期"通用 chip"（用户嫌没风格）。Stationery 面板与列头/锚点弹层共用。
-- 不可删 anchor（它是一列）/ 最后一门。默认勾选 `defaultOn`；默认 anchor 从 `defaultAnchor`（en）**派生**（stores 不再硬编码 `'zh'`，与 §13 2026-04-28 一致）。状态 `$selectedLangs` 持久化。
-- **无障碍**：触发器 `aria-haspopup`/`aria-expanded`，选项 `aria-pressed` toggle + `aria-label`（英文名 + showing/anchor）；母语名 `lang`（mizo→BCP-47 `lus`）+ `dir`；关闭弹层 `visibility:hidden`（移出 a11y 树 + 不可聚焦）；trigger 与 popover **兄弟不嵌套**；trigger hover/focus 用更亮的 `--paper-up` 高亮——**不能用变暗染色**，否则 accent 文字在其上掉破 4.5（任何比 `--bg` 暗的背景都会）。axe 全 A/AA 绿（面板开 / 列菜单开 / light / dark / 卡片视图）。
+- **列序 = 选择顺序（2026-07-02）**：`$selectedLangs` 的**数组顺序就是列顺序**（anchor 恒为首列；句行、"Anchored in"选项、卡片语言块全部镜像列序）。添加追加到末尾；**换列是数组原位替换**——点哪列换哪列，用户对列的空间记忆不被打断。⚠️ 消费端不得把它当无序集合再按 languages.json 顺序重排（最初实现如此，换到数据集尾部的语言会"跳列"）。
+- **Stationery 句行（主控件，两视图都在）**：信笺第一句 `for friends who read English · 中文 … ▾`——母语名**直立** serif（CJK 在 italic 下是丑的伪斜体），anchor 标 accent 色（避免与下一句"Anchored in"读着冗余）。点开 `LangMenu` 多选面板：搜索 + 分组 + 英文名 + 实心 gold 点标记 + 「Clear」一键清空（除 anchor）。满 5 时 header 提示 + pulse（不再 shake）；header 在可滚动面板内 **sticky**，滚到底也看得见。
+- **桌面表格列头（快速换列）**：每个 `<th>` 是按钮（母语名 + 英文 exonym 注释 + hover ▾），点开同一个 `LangMenu`；点一门**未显示**的语言 = **把该列原位换成它**（`switchColumn`，是 anchor 列则 anchor 跟随）。**只换列**——加/删/搜索都回到上面的面板（用户反馈表头加删不顺手）。表头 `sticky`（StickyBar 下方留一档呼吸空间，不贴顶），滚动时列语言常驻。
+- **共享组件 `LangMenu`**：搜索（match native/name/code，**大小写 + 变音符折叠**——"francais"命中 Français；**选完自动清空**回全列表）+ 区域分组（**组名与顺序从数据首现顺序派生**，⚠️ 不得硬编码组清单——新组的语言会静默消失在所有菜单里）+ 母语名（直立 serif）+ 英文 exonym（serif italic 小字；`name===native` 不重复）+ `marked`/`disabledCodes`/`anchorCode` 标记。**2 列网格、无边框、暖色 hover/选中**。Stationery 面板与列头/锚点弹层共用。
+- **Popover 原语（`lib/popover.ts`，2026-07-02）**：所有浮层（SlotPicker × Stationery/StickyBar、语言面板、列头弹层）共享单一 `openPopover` store + `use:popover` action——**同刻只开一层**（开新层自动关旧层）、点外关闭、**Esc 关闭并把焦点还给触发器**。⚠️ 撤销了此前"每组件各挂 document 监听 + trigger stopPropagation"的协调（会让两层同开、Esc 后焦点掉到 body）；popover id 须**实例唯一**（同名 slot 在 Stationery 与 StickyBar 各有一份，用 `$props.id()` 后缀）。弹层**条件挂载**（`{#if}`），不再 `visibility:hidden` 常驻——11 场景 × 5 列的隐藏菜单曾在 DOM 里驻留 ~1200 个按钮，也免了整套 `tabindex` 杂技。
+- 不可删 anchor（它是一列）/ 最后一门。默认勾选 `defaultOn`；默认 anchor 从 `defaultAnchor`（en）**派生**（stores 不再硬编码 `'zh'`，与 §13 2026-04-28 一致）。状态 `$selectedLangs` 持久化，**初始化在 stores 模块层**（不再依赖 LanguagePicker 恰好先挂载）。
+- **无障碍**：触发器 `aria-expanded`（`aria-haspopup` 只留给真菜单 SlotPicker），选项 `aria-pressed` toggle + `aria-label`（英文名 + showing/anchor）；母语名 `lang` + `dir`——**BCP-47 tag 从数据取**（`langTag`，mizo 在 languages.json 里带 `bcp47: lus`）；SlotPicker 菜单**方向键巡航**（↑↓ 环绕 + Home/End，键盘打开聚焦当前选中项，选毕焦点回触发器）；满 5 / 删 anchor 被拒时 **`aria-live` 播报**（纯视觉 pulse 读屏听不见）；trigger 与 popover **兄弟不嵌套**；trigger hover/focus 用更亮的 `--paper-up` 高亮——**不能用变暗染色**，否则 accent 文字在其上掉破 4.5。axe 全 A/AA 绿（面板开 / 列菜单开 / light / dark / 卡片视图）。
 
 ### 6.2 Stationery · 手写体预设句（Stationery + SlotPicker）
 
@@ -725,6 +727,9 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - **2026-06-28** · **语言选择改造**（清算 2026-04-22「Stationery 替代 chips 墙」遗留的最后一块）：23 个母语名 chip 墙 → 信笺句行「for friends who read 中文 · English … ▾」+ 点开的分组弹层（5 区域组、母语名 + 英文 exonym、`●` 选中、anchor 赤陶标记、满 5 时 header 提示替代 shake）。一并解决识别（认不出母语文字）、可扫（分组）、违和（chip 墙 vs 信笺三句）。数据加 `name`/`group` 字段（Zod 同步），组件 `LangChips`→`LanguagePicker`（trigger 与 panel 兄弟不嵌套、关闭态 `visibility:hidden`、mizo 用合法 BCP-47 `lus`）。详见 §6.1。顺带修一个先存 bug：`stores.ts` 默认 anchor 硬编码 `'zh'`，与数据 `defaultAnchor=en` 及 §13(04-28) 决策矛盾——改为从 `defaultAnchor` 派生，首访锚点回到 en。
 - **2026-06-29** · **语言选择双轨化 + 表格交互**（迭代上条）：用户反馈信笺弹层"好看但操作麻烦、多一步、不能一眼看全"。遂把桌面的语言操作搬进**表格列头**——点列头切换该列语言 / 删列 / "+"添列，表头加英文注释 + sticky；Stationery 语言句行收为**移动端（卡片视图）专用**（`body[data-view]` 切换）。新增共享 `LangMenu`（搜索 + 分组 + 英文名），Stationery 面板补搜索 / 一键清空 / 实心选中态。同轮修三处：①阿拉伯语**非锚点列**真正 RTL（之前只有锚点列有 `dir`；th/cell 补 `dir` + VariantRow/SpeakButton 改逻辑属性）；②亮模式发淡——次要文字 ink-soft/ink-mute 提对比一档（6.9→8.4 / 4.6→5.8，AA 是地板不是"醒目"）；③trigger hover/focus 的变暗染色让 accent 文字掉破 4.5（任何比 `--bg` 暗的背景都会）——改用更亮的 `--paper-up` 高亮。详见 §6.1。
 - **2026-06-29（续）** · **语言选择再收敛 + LangMenu 重做视觉**（看预览后的第二轮反馈）：①**桌面句行别藏**——撤销"表格视图 `display:none`"，句行面板两视图都在、作**主控件**；②**sticky 表头别贴顶**——`top` 44→58 + padding 加大，留呼吸；③**搜索选完自动清空**回全列表（不用手删词）；④**表头加/删不便**——表头收为**只快速换列**，加 / 删 / 搜索都回面板；⑤**"UI 没风格、字体怪"**——母语名 italic 在 CJK 上是伪斜体，遂 LangMenu 重做：母语名**直立** serif、英文 exonym serif italic 小字、2 列网格、gold 分组标题、暖色 hover/选中、去掉通用 chip 边框。anchor 在句行标 accent 色化解与"Anchored in"的重复。
+- **2026-07-03** · **换列动画取"新墨写入"，弃 FLIP / View Transitions**：表格列的几何过渡在工程上不成立——`<col>` 宽度不可过渡、"一列"是散布在各行的单元格集合、View Transitions 需给 11 表 × 5 列命名快照，成本与收益倒挂。改为内容层面的连续性：换入的语言以列头先行、逐行 38ms 级联的墨迹写入（`$freshLang` 瞬态 + CSS 动画，reduced-motion 全局兜底），语义也更贴信笺——"换一门语言"是重写一栏字，不是挪家具。收藏同轮补仪式感（pop + 金屑绽放 + 场景星数微标），见 §15 R2。
+- **2026-07-02（二）** · **进入存量设计迭代期，立账本（§15）**：功能冻结后转入对现有页面/UI/交互/体验的持续多轮打磨，明确跨会话进行——工作账本立于 §15（每轮从账本继续、完成勾销、新发现登记）。R1 审计后落地三项：浮层表面近实纸化（TocSide 面板 22%→93%、StickyBar 0.86→0.94——半透明曾让面板下的表格文字透叠不可读，且可读性不得依赖 backdrop-filter）、移动端 Stationery 断行修辞（标点/分隔点不再孤悬行首）、VariantRow 的 `lang` 裸码残留。
+- **2026-07-02** · **语言交互工程收口**（对 06-27~29 批次的代码 review 后重构，行为修正 + 结构清理一次做完）：①**列序 = 选择顺序**——`$selectedLangs` 数组顺序即列序，**换列原位替换**（此前消费端按 languages.json 顺序重排，把首列换成泰语会让新列跳到最右、原列位被后邻顶上，与"switch column to"的心智模型矛盾；冒烟测试恰好选了数据集顺序靠前的 Korean 而漏测）；②**Popover 原语**（`lib/popover.ts`）——单一 `openPopover` store 替代三套"document 监听 + stopPropagation"（旧方案两层可同开、Esc 后焦点掉 body）；同刻一层、Esc 归还焦点、SlotPicker 菜单方向键、满 5/删 anchor 被拒的 `aria-live` 播报——这些是 axe 静态扫描的盲区，靠键盘穿行冒烟测试守；③**弹层条件挂载**——撤销 55 份常驻隐藏菜单（~1200 个 DOM 按钮）与整套 `tabindex` 杂技；④**数据驱动收尾**——分组顺序从数据首现派生（原硬编码组清单会让新组语言静默消失）、BCP-47 进 languages.json（`bcp47` 字段 + `langTag`，替代三份复制的 mizo 特例，并修掉 `lang="mizo"` 漏网两处）、搜索折叠变音符、LangMenu 文案入 `ui/en.json`、store 初始化上移模块层。§6.1 同步改写。
 
 ---
 
@@ -789,4 +794,57 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ---
 
-*文档版本 v2.0 · 最后更新 2026-06-13（v1.0.0 发布后）*
+## 15. 设计迭代账本（跨会话，进行中）
+
+> **本节地位**：功能已冻结（§12 基本全部「不做」），2026-07-02 起进入**存量设计迭代期**——对页面 / UI / 交互 / 体验做持续多轮打磨，跨会话进行。这里是**工作账本**：每轮从最高优先的未勾项继续，新发现随时登记，完成即勾掉并在 §13 记决策因果。排序按 影响 × 确定性；动手前先重截当前状态（视觉问题以截图证据为准，不凭记忆）。
+
+### 迭代原则
+
+- 打磨的是**已有**功能的设计——不新增功能（§12 红线不动）
+- 信笺气质是底色：暖纸、衬线、极简。改动要让它更像一封信，而不是更像一个 app
+- 浮层语言已统一为 popover 原语（§6.1）——新浮层复用它，不再发明第四种协调机制
+- AA 是地板（§7.2 门禁）；键盘/读屏行为 axe 扫不到，靠冒烟测试钉 + 手测
+- 每轮闭环：审计（截图）→ 设计 → 实现 → 真实浏览器驱动验证 → 测试全绿 → 提交
+
+### 待办（按优先级粗排）
+
+**高频功能细节强化（用户指定的最高优先方向，2026-07-02）**——语言选择、TOC、收藏、发音、复制这些每次访问都会碰的小功能，不止样式：交互手感、状态反馈、以及适度"炫技"（现代 CSS / 平台能力的漂亮运用，优雅降级），让常用之处给人"这项目不一般"的印象：
+
+- [x] **换列/加删列的连续性动画**（R2）：落地为**「新墨写入」**而非 FLIP/View Transitions——换列/加列/换 anchor 时，该列（两视图皆然）以列头先行、逐行 38ms 级联的墨迹节奏写入（`$freshLang` 瞬态 + CSS `ink-in`）。技术判断记 §13：table 列宽不可过渡、单元格分散于行使 FLIP 不可行，55 个命名元素让 View Transitions 快照成本过高；"内容写入"比"几何滑动"更信笺。
+- [x] **收藏的仪式感**（R2）：星标 pop（spring 缩放）+ 六点金屑绽放（box-shadow 粒子，CSS-only，reduced-motion 全局降级为瞬时填充）；场景标题旁星数微标（两视图，金星 + 计数）。空态经查**已有处理**——StarFilter 在星数归零时自动解除过滤（先存 $effect），无需文案；"金角记号"弃——anchor 格角上的实心金星本身就是行标记，再加一枚是冗余。
+- [x] **首次星标的布局跳动**（R3）：StarFilter 改 `transition:slide`（320ms，`prefersReducedMotion` 时 0）——首星时内容区不再瞬间下顶 40px，随绽放动画从容展开；末星取消同样滑出。
+- [x] **发音的可感反馈**（R3，账本原文有两处与现状不符）：经查 SpeakButton **本就有**播放反馈（accent 变色 + 双声波脉冲、点击停止、aria-label 切换），tts.ts 的 **voice 优选也早已实现**（natural/neural/premium/siri 加分、Google 网络声加分、离线只留 local）——审计时想当然了。本轮实际补的：墨晕涟漪（`::before` 呼吸环，播放中持续外扩）增强可感性 + `aria-pressed` 切换语义；reduced-motion 全套豁免。
+- [x] **TOC 阅读进度**（R3）：rail 上叠一道金→赤陶渐变的进度线，`animation-timeline: scroll(root)` 纯 CSS 驱动，`@supports` 门控（不支持的浏览器完全不见）；静息 rail 低调可见（0.45），展开加深（0.85）。位置随用户自己的滚动映射，无 vestibular 顾虑。
+- [x] **语言面板的键盘/搜索手感**（R4）：键盘打开（Enter/Space，`click.detail===0` 判定）焦点直落搜索框——面板与列头两个入口一致；搜索框 ↓ 落列表首项；方向键按阅读序游走（↑ 越过首项回搜索、Home/End）；空态给**最近似建议**（Levenshtein ≤3 取前 3，"koraen"→Korean），选项渲染抽成 snippet 复用。几何 2D 游走（跨分组按列对齐）弃：组间列数不连续，阅读序更可预测。
+- [x] **复制的笔触反馈**（R4）：copied 时一道金线在原文正下方左→右画出（RTL 文本从右画，`:dir()`），copied 消退时回收。落地为 inline span 的 background-size 过渡而非账本原设想的 SVG stroke——SVG 定位在多行文本上会断、repeat-x 波浪随 size 动画变形；渐变金（gold→gold-ink→gold）保留一点墨色不匀。
+
+其余（既有登记）：
+
+- [x] **表格行解剖与密度**（R8）：变体内部四声部收成两声部——tag 与 note 合到**一行一个语域**（serif italic 12px、金色 "—" 起笔、两者共存时 "·" 相连），note 原本的 sans+左边框"第三种声音"撤销；变体间整宽虚线改 26px 短刻线（inline-start 对齐文字起笔）；内距 18→15。最密行高 348→302px（-13%），密度差随行高压缩而缓和。rom/text 字号比（12.5/19）复核后不动；anchor 列宽 R7 已证伪。
+- [x] **触屏可供性**（R5）：copy 提示在 `@media (hover: none)` 下常显（opacity 0.4），与 SpeakButton 的既有 hover-none 处理（0.45）同一语汇。SpeakButton 经查本就处理了——账本原文又写重了一半。
+- [x] **TocSide 与表格的空间关系**（R6）：算清了几何——展开面板不撞表格需要视口 ≥1816px，"滚动自动展开"在真实屏幕上必然把面板滑过末列。**行为改判**：滚动只点亮静息 rail（数字 + 活动 accent + 进度线即滚动反馈），展开只由 hover/focus 触发（用户主动、短暂、不透明覆盖可接受）。顺带删掉整套 idle 计时器。
+- [x] **StickyBar 移动端**（R6）：≤640 只剩 "I write — [tone]" + 主题切换（ViewToggle 本就 <640 隐藏），去掉 flex-wrap——单行成立，两行吃掉四分之一屏的情况不再出现。遗留小项：≤820 seal 隐藏后移动端没有回顶部入口（记于下一条）。
+- [x] **导航一致性**（R6，评估后不动）：TocTop 与 TocSide 已共享词汇（serif 斜体 + 罗马数字 + gold/accent 活动态），且是同一导航的先后两段（顶部索引 420px 后淡出、侧栏接棒）——差异是功能性分工，不是失调。为改而改违背 §2。
+- [x] **移动端回顶部**（R7）：独立纸质圆钮（40px、paper 面、gold-ink ↑、拇指位右下），≤820 且已滚动时出现——塞回窄条的方案几何算不过（320px 视口必然与居中 prose 挤压），独立按钮反而干净。冒烟 +1。
+- [x] **404 品牌连续性**（R5）：致·远·方 印章落到 404 顶部，参数与 Masthead chip 对齐（13px / 0.6em 字距 / 同 padding，`text-indent` 抵消字距尾隙）；"footer 同款落款"评估后弃——404 文案已自足，再加落款反而堆砌。
+- [x] **重复 scene id**（R5）：两视图 id 改为 `scene-table-*` / `scene-cards-*`（文档级唯一，验证 0 重复）；`data-scene` 仍是跨视图共享键，jumpTo 的 offsetParent 挑可见视图机制保留（这是它的本职，不是 workaround）。
+- [x] **SlotPicker options 复制**（R5）：tone/speaker/addressee 选项数组抽到 `lib/slot-options.ts`，Stationery 与 StickyBar 共用。
+- [ ] **打印样式**（⚠️ 边界项，默认不做）：信纸气质适合打印，但接近新功能——待用户拍板再动。
+
+### 轮次日志
+
+- **R8 · 2026-07-03** — 表格行解剖落地（基线 348px → 302px，截图对比法：改前后同区域同参数）。**账本至此只剩「打印样式」一项，属边界项、待用户拍板；设计迭代第一大周期收官。**
+- **R7 · 2026-07-03** — 移动端回顶部圆钮落地；表格解剖做了数值勘察（列宽比是死胡同，方向修正进条目）。**账本至此仅剩两项：表格行解剖（大项）与打印样式（边界项，待用户拍板）。**
+- **R6 · 2026-07-03** — TocSide 交互改判（滚动亮 rail、悬停展开，几何论证记条目内）、StickyBar 移动端单行、导航一致性以克制结案。新发现：移动端回顶部缺口。
+- **R5 · 2026-07-03** — 清尾轮：触屏 copy 常显提示、404 印章、scene id 唯一化、slot options 去重。四项皆小，合并一轮。
+- **R4 · 2026-07-03** — 高频块收尾：语言面板键盘手感（键盘开→搜索聚焦、↓ 入列表、阅读序游走、typo 建议）+ 复制金线（画出/回收）。冒烟 +2（键盘流、typo 建议）。**高频功能细节强化块至此全部完成。**
+- **R3 · 2026-07-03** — 首星布局跳动（slide 过渡）、发音墨晕涟漪 + `aria-pressed`、TOC 阅读进度线（scroll-driven CSS）。教训两则：①账本条目写自审计推测，动手前先读现状——发音的反馈与 voice 优选本就存在，实际工作量是条目描述的三分之一；②**实现注意 ⚠️**：lightningcss 会把独立的 `animation-timeline` 合并进 `animation` 简写——规范禁止 timeline 出现在简写里，浏览器随之丢弃整条声明（症状：动画完全不生效且无报错）。解法：`animation-timeline: var(--xx)` 经自定义属性间接引用，压缩器即无法折叠。
+- **R2 · 2026-07-03** — 高频功能细节第一对：**换列的"新墨写入"**（`$freshLang` 瞬态居 stores，换列/加列/换 anchor 三个入口标记；表格列头先行、逐行级联，卡片视图 lang-block 同语汇）+ **收藏仪式感**（星标 spring pop + 金屑绽放、场景星数微标、空态确认已有兜底）。冒烟测试加星数微标断言。
+- **R1 · 2026-07-02** — 全面审计（桌面/移动 × 明/暗 × 表格/卡片 × 悬停/弹层/Toast/404，11 张全状态截图）+ 建账。落地三项：
+  - **浮层表面可读性**：TocSide 展开面板原是 22%/40% α 的"羊皮纸低语"，但它在 <1440 视口叠在表格末列上——文字叠文字不可读；改近实纸（light 0.93 / dark 0.94）+ 边框投影提一档，读作"搁在纸上的便签"。StickyBar α 0.86→0.94——backdrop-filter 只是增强，可读性不能依赖它。
+  - **移动端断行**：句行分隔点曾折成行首「·Deutsch」、逗号孤悬「, as myself」——名字+点收为不可断单元（零宽空格连接），slot 与前后词/标点收为 `.tie` nowrap 词组，断行只发生在词组之间。
+  - **`lang` 残留**：VariantRow `lang={langCode}` 是裸数据码（mizo→非法 tag），补 `langTagOf`；prop 本身保留数据码（SpeakButton 的 TTS voice 匹配用）。
+
+---
+
+*文档版本 v2.1 · 最后更新 2026-07-02（设计迭代期开启）*

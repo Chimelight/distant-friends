@@ -5,25 +5,9 @@
   import ThemeToggle from './ThemeToggle.svelte';
   import { tone, speakerGender, addresseeGender } from '../../lib/stores';
   import { scrolled, initScrollListener } from '../../lib/scroll';
+  import { toneOptions, speakerOptions, addresseeOptions } from '../../lib/slot-options';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
   import ui from '../../content/ui/en.json';
-
-  const toneOptions: { key: ToneFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.tones.any },
-    { key: 'casual', label: ui.stationery.tones.casual },
-    { key: 'neutral', label: ui.stationery.tones.neutral },
-    { key: 'polite', label: ui.stationery.tones.polite },
-  ];
-  const speakerOptions: { key: GenderFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.speakers.any },
-    { key: 'm', label: ui.stationery.speakers.m },
-    { key: 'f', label: ui.stationery.speakers.f },
-  ];
-  const addresseeOptions: { key: GenderFilter; label: string }[] = [
-    { key: 'any', label: ui.stationery.addressees.any },
-    { key: 'm', label: ui.stationery.addressees.m },
-    { key: 'f', label: ui.stationery.addressees.f },
-  ];
 
   function setTone(t: ToneFilter) {
     tone.set(t);
@@ -79,6 +63,12 @@
     <ThemeToggle />
   </div>
 </div>
+
+<!-- Mobile's route back to the seal: ≤820 hides the bar's mark (the desktop
+     back-to-top), so a quiet paper button takes over, thumb-side. -->
+<button class="back-top" class:on={$scrolled} onclick={backToTop} aria-label="Back to top">
+  ↑
+</button>
 
 <style>
   .sticky-bar {
@@ -200,6 +190,49 @@
     color: var(--paper-up);
   }
 
+  .back-top {
+    display: none;
+    position: fixed;
+    bottom: 18px;
+    inset-inline-end: 16px;
+    z-index: 70;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--surface-stickybar);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--gold-ink);
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s var(--ease-out);
+    box-shadow: 0 10px 24px -14px rgba(31, 26, 20, 0.4);
+  }
+  .back-top:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  @media (max-width: 820px) {
+    .back-top {
+      display: flex;
+    }
+    .back-top.on {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+  }
+
   @media (max-width: 820px) {
     .sb-mark,
     .sb-sep {
@@ -226,10 +259,12 @@
     .sticky-bar {
       padding: 10px 14px;
     }
+    /* one line, always: only "I write — [tone]" + the theme toggle remain
+       at this width (ViewToggle hides <640), and a two-line bar ate a
+       quarter of a phone screen */
     .sb-prose {
       font-size: 13px;
       gap: 4px;
-      flex-wrap: wrap;
     }
   }
 </style>

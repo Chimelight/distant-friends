@@ -3,57 +3,38 @@
   import scenes from '../../data/scenes.json';
   import { activeScene, initScrollListener } from '../../lib/scroll';
 
-  const TOC_IDLE_MS = 1400;
+  // Expansion is hover/focus-only. It used to auto-expand on scroll, but the
+  // expanded sheet needs ~1816px of viewport before it clears the table —
+  // i.e. on real screens the scroll-poke always slid an overlay across the
+  // last column mid-read. The resting rail (numerals, active accent,
+  // progress fill) is the scroll feedback; the sheet is for intent.
   const TOC_HOVER_RELEASE_MS = 400;
 
   let expanded = $state(false);
-  let hovered = $state(false);
   let tocEl: HTMLElement | undefined = $state();
-
-  let idleTimer: number | undefined;
   let releaseTimer: number | undefined;
 
-  function clearAll() {
-    clearTimeout(idleTimer);
-    clearTimeout(releaseTimer);
-  }
-
-  function poke() {
-    expanded = true;
-    clearTimeout(idleTimer);
-    idleTimer = window.setTimeout(() => {
-      if (!hovered) expanded = false;
-    }, TOC_IDLE_MS);
-  }
-
   function onEnter() {
-    hovered = true;
-    clearAll();
+    clearTimeout(releaseTimer);
     expanded = true;
   }
   function onLeave() {
-    hovered = false;
-    clearAll();
+    clearTimeout(releaseTimer);
     releaseTimer = window.setTimeout(() => (expanded = false), TOC_HOVER_RELEASE_MS);
   }
   function onFocusIn() {
-    hovered = true;
-    clearAll();
+    clearTimeout(releaseTimer);
     expanded = true;
   }
   function onFocusOut(e: FocusEvent) {
     if (tocEl && tocEl.contains(e.relatedTarget as Node)) return;
-    hovered = false;
-    clearAll();
-    releaseTimer = window.setTimeout(() => (expanded = false), TOC_HOVER_RELEASE_MS);
+    onLeave();
   }
 
   function jumpTo(id: string) {
-    // Both PhraseTable and PhraseCards render scene blocks with the same ID
-    // but only the active view is visible (the other has display:none).
-    // Pick the visible one via offsetParent — null when any ancestor is
-    // hidden — and use the data-scene attribute to avoid the duplicate-ID
-    // collision that getElementById would hit.
+    // Both views render a block per scene (ids are view-prefixed; the
+    // shared key is data-scene). Only the active view is visible, so pick
+    // the element whose offsetParent isn't null.
     const all = document.querySelectorAll<HTMLElement>(`[data-scene="${id}"]`);
     for (const el of all) {
       if (el.offsetParent !== null) {
@@ -65,12 +46,9 @@
 
   onMount(() => {
     const stopScroll = initScrollListener('.scene-block');
-    const onWindowScroll = () => poke();
-    window.addEventListener('scroll', onWindowScroll, { passive: true });
     return () => {
       stopScroll();
-      window.removeEventListener('scroll', onWindowScroll);
-      clearAll();
+      clearTimeout(releaseTimer);
     };
   });
 </script>
@@ -98,6 +76,9 @@
     </button>
   {/each}
   <span class="toc-fleuron-bottom" aria-hidden="true">❋</span>
+  <!-- gold reading-progress fill over the rail; scroll-driven CSS,
+       hidden where animation-timeline is unsupported -->
+  <span class="toc-progress" aria-hidden="true"></span>
 </nav>
 
 <style>
@@ -142,7 +123,9 @@
     }
   }
 
-  /* Expanded — barely-there parchment whisper, no glass. */
+  /* Expanded — a solid parchment sheet (no glass). It overlays the table's
+   * last column below ~1440px viewports, so translucency here means text
+   * colliding with text; the sheet reads as a lifted popover instead. */
   .toc.on {
     background: var(--surface-toc-panel);
     box-shadow:
@@ -208,6 +191,44 @@
   }
   .toc.on .toc-fleuron-bottom {
     opacity: 0.75;
+  }
+
+  /* Reading progress: a gold fill drawn down the rail as the page is read
+   * (position-linked to the user's own scrolling, so it's exempt from the
+   * reduced-motion concern). Browsers without scroll-driven animations
+   * simply never see it. */
+  .toc-progress {
+    display: none;
+  }
+  @supports (animation-timeline: scroll()) {
+    .toc-progress {
+      display: block;
+      position: absolute;
+      right: 58px;
+      top: 44px;
+      bottom: 44px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), var(--accent));
+      transform-origin: top;
+      transform: scaleY(0);
+      /* quietly present on the resting rail, firmer when expanded */
+      opacity: 0.45;
+      animation: toc-progress linear both;
+      /* via var(): lightningcss otherwise folds animation-timeline into the
+         `animation` shorthand — invalid CSS (timeline may not appear there),
+         and the browser drops the whole declaration. */
+      --toc-timeline: scroll(root);
+      animation-timeline: var(--toc-timeline);
+      transition: opacity 0.4s ease;
+    }
+    .toc.on .toc-progress {
+      opacity: 0.85;
+    }
+    @keyframes toc-progress {
+      to {
+        transform: scaleY(1);
+      }
+    }
   }
 
   .toc-item {

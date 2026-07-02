@@ -8,8 +8,8 @@
   });
 
   function jumpTo(id: string) {
-    // See TocSide.jumpTo for why this uses data-scene + offsetParent rather
-    // than getElementById — both views render scene blocks with the same ID.
+    // See TocSide.jumpTo: data-scene is the shared key across both views'
+    // blocks; offsetParent picks whichever view is currently visible.
     const all = document.querySelectorAll<HTMLElement>(`[data-scene="${id}"]`);
     for (const el of all) {
       if (el.offsetParent !== null) {
