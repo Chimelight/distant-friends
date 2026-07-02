@@ -71,7 +71,10 @@
   >
     <!-- langCode stays the dataset code (SpeakButton matches TTS voices on
          it); the lang attribute needs the valid BCP-47 tag. -->
-    <div class="variant-text" lang={langTagOf(langCode)} dir="auto">{variant.text}</div>
+    <div class="variant-text" lang={langTagOf(langCode)} dir="auto">
+      <!-- inline span so the copied underline hugs the ink, not the cell -->
+      <span class="ink-u">{variant.text}</span>
+    </div>
     {#if variant.rom}
       <div class="variant-rom">{variant.rom}</div>
     {/if}
@@ -93,6 +96,28 @@
     position: relative;
     transition: background 0.2s ease;
   }
+  /* copied: a gold line draws itself under the ink, left to right (from the
+     right in RTL text), then retracts when the copied state lapses */
+  .ink-u {
+    background-image: linear-gradient(
+      90deg,
+      var(--gold) 0%,
+      var(--gold-ink) 55%,
+      var(--gold) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    background-position: bottom left;
+    padding-bottom: 2px;
+    transition: background-size 0.5s var(--ease-out);
+  }
+  .variant.copied .ink-u {
+    background-size: 100% 1px;
+  }
+  .variant-text:dir(rtl) .ink-u {
+    background-position: bottom right;
+  }
+
   .copy {
     display: block;
     width: calc(100% - 48px);

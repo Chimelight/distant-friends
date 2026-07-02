@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { selectedLangs, anchor, MAX_LANGS, markFreshLang } from '../../lib/stores';
   import { openPopover, togglePopover, popover } from '../../lib/popover';
   import { LANG_BY_CODE, langsByCodes, langTag } from '../../lib/lang';
@@ -13,6 +13,16 @@
   onMount(() => () => clearTimeout(pulseTimer));
 
   const open = $derived($openPopover === PICKER_ID);
+  let pickerEl = $state<HTMLElement>();
+
+  // Keyboard activation (click detail 0) drops focus straight into search.
+  async function onTriggerClick(e: MouseEvent) {
+    togglePopover(PICKER_ID);
+    if (openPopover.get() === PICKER_ID && e.detail === 0) {
+      await tick();
+      pickerEl?.querySelector<HTMLElement>('.lm-search')?.focus();
+    }
+  }
   const selected = $derived(new Set($selectedLangs ?? []));
   const count = $derived(selected.size);
   const isFull = $derived(count >= MAX_LANGS);
@@ -65,13 +75,13 @@
   <em>{ui.stationery.langsLead}</em>
   <!-- Wrapper (not a button) keeps the trigger and the menu buttons as
        siblings — no nested interactive controls. -->
-  <span class="picker" use:popover={PICKER_ID}>
+  <span class="picker" use:popover={PICKER_ID} bind:this={pickerEl}>
     <button
       class="trigger"
       type="button"
       aria-expanded={open}
       aria-label={`${ui.stationery.langsChoose} (${count} of ${MAX_LANGS})`}
-      onclick={() => togglePopover(PICKER_ID)}
+      onclick={onTriggerClick}
     >
       <span class="names">
         <!-- name+dot are one unbreakable unit and units are joined by

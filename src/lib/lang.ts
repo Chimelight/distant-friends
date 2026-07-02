@@ -33,3 +33,23 @@ export function langsByCodes(codes: string[]): TLanguage[] {
 /** Case- and diacritic-insensitive fold, so "francais" matches "Français". */
 export const fold = (s: string): string =>
   s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+/** Plain Levenshtein \u2014 small strings only (typo suggestions in the picker). */
+export function editDistance(a: string, b: string): number {
+  const m = a.length;
+  const n = b.length;
+  if (!m || !n) return Math.max(m, n);
+  let prev = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) {
+      cur[j] = Math.min(
+        prev[j] + 1,
+        cur[j - 1] + 1,
+        prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
+      );
+    }
+    prev = cur;
+  }
+  return prev[n];
+}

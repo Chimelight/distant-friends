@@ -8,6 +8,7 @@
     "langsChoose": "Choose languages",
     "langsSearch": "Search languages…",
     "langsNoMatch": "No language matches",
+    "langsClosest": "closest —",
     "capHint": "up to 5 at a time",
     "langsFull": "remove one to add another",
     "langsAnchorLocked": "is the anchor column and can't be removed",
