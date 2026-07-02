@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { selectedLangs, anchor, MAX_LANGS } from '../../lib/stores';
+  import { selectedLangs, anchor, MAX_LANGS, markFreshLang } from '../../lib/stores';
   import { openPopover, togglePopover, popover } from '../../lib/popover';
   import { LANG_BY_CODE, langsByCodes, langTag } from '../../lib/lang';
   import ui from '../../content/ui/en.json';
@@ -51,6 +51,7 @@
         return;
       }
       selectedLangs.set([...cur, code]); // append: new column lands last
+      markFreshLang(code);
     }
   }
 

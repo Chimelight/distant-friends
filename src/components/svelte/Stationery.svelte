@@ -1,7 +1,7 @@
 <script lang="ts">
   import LanguagePicker from './LanguagePicker.svelte';
   import SlotPicker from './SlotPicker.svelte';
-  import { anchor, tone, speakerGender, addresseeGender, selectedLangs } from '../../lib/stores';
+  import { anchor, tone, speakerGender, addresseeGender, selectedLangs, markFreshLang } from '../../lib/stores';
   import { langsByCodes } from '../../lib/lang';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
   import ui from '../../content/ui/en.json';
@@ -35,6 +35,7 @@
   ];
 
   function setAnchor(code: string) {
+    if (code !== anchor.get()) markFreshLang(code); // promoted column writes in
     anchor.set(code);
   }
   function setTone(t: ToneFilter) {

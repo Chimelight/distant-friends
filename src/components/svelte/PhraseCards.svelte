@@ -1,7 +1,7 @@
 <script lang="ts">
   import TranslationCell from './TranslationCell.svelte';
   import StarButton from './StarButton.svelte';
-  import { selectedLangs, anchor, tone, speakerGender, addresseeGender, starred, starredOnly } from '../../lib/stores';
+  import { selectedLangs, anchor, tone, speakerGender, addresseeGender, starred, starredOnly, freshLang } from '../../lib/stores';
   import { LANG_BY_CODE, langsByCodes, langTag } from '../../lib/lang';
   import { visibleVariants } from '../../lib/filter';
   import scenes from '../../data/scenes.json';
@@ -34,6 +34,11 @@
       .filter((p) => p.scene === sceneId && (!$starredOnly || star.has(p.id)))
       .sort((a, b) => a.order - b.order);
   }
+
+  function starsIn(sceneId: string): number {
+    const star = new Set($starred);
+    return allPhrases.filter((p) => p.scene === sceneId && star.has(p.id)).length;
+  }
 </script>
 
 <div class="view-mobile">
@@ -47,6 +52,12 @@
           <h2 class="scene-ttl">
             {titleParts.before}{#if titleParts.em}<em>{titleParts.em}</em>{/if}{titleParts.after}
           </h2>
+          {#if starsIn(S.id) > 0}
+            <span class="scene-kept" aria-label={`${starsIn(S.id)} starred in this scene`}>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8l1.86 3.92 4.14.55-3.04 2.98.76 4.27L8 11.46l-3.72 2.04.76-4.27L2 6.27l4.14-.55z" fill="currentColor" /></svg>
+              {starsIn(S.id)}
+            </span>
+          {/if}
         </div>
         <div class="card-list">
           {#each items as p, i (p.id)}
@@ -72,7 +83,7 @@
                 {@const t = p.trans[L.code]}
                 {@const vs = t ? visibleVariants(t.variants, $tone, $speakerGender, $addresseeGender) : []}
                 {#if t && vs.length}
-                  <div class="lang-block">
+                  <div class="lang-block" class:fresh={L.code === $freshLang}>
                     <div class="lang-label">
                       <span lang={langTag(L)}>{L.native}</span>
                       {#if t.gloss}
@@ -130,6 +141,30 @@
     font-style: italic;
     color: var(--accent);
   }
+  /* small gold tally of starred phrases in this scene */
+  .scene-kept {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--gold-ink);
+    flex-shrink: 0;
+    animation: kept-in 0.4s var(--ease-out) backwards;
+  }
+  .scene-kept svg {
+    width: 10px;
+    height: 10px;
+    color: var(--gold);
+    align-self: center;
+  }
+  @keyframes kept-in {
+    from {
+      opacity: 0;
+      transform: translateY(3px);
+    }
+  }
 
   .card-list {
     display: flex;
@@ -186,6 +221,16 @@
   }
   .lang-block {
     padding: 12px 0 4px;
+  }
+  /* "fresh ink": a just-added language writes itself into every card */
+  .lang-block.fresh {
+    animation: ink-in 0.42s var(--ease-out) backwards;
+  }
+  @keyframes ink-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
   }
   .lang-block + .lang-block {
     border-top: 1px solid var(--line-soft);

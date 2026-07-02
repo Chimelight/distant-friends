@@ -29,6 +29,9 @@ test('no WCAG 2.1 A/AA violations for the Stationery picker (cards view)', async
   await page.setViewportSize({ width: 390, height: 800 });
   await page.goto('./');
   const trigger = page.locator('.lang-line .trigger');
+  // SSR renders "(0 of 5)" — the hydrated island rewrites it to the real
+  // count. Clicking before hydration lands on inert HTML (flake).
+  await expect(trigger).toHaveAttribute('aria-label', /5 of 5/);
   await trigger.click();
   await expect(trigger).toHaveAttribute('aria-expanded', 'true');
 

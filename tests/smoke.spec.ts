@@ -138,6 +138,9 @@ test('starring a phrase reveals the "Starred only" filter and narrows the grid',
 
   await page.getByRole('button', { name: 'Star this phrase' }).first().click();
 
+  // the scene header grows a small gold tally of starred phrases
+  await expect(page.locator('.view-desktop .scene-kept').first()).toHaveText(/1/);
+
   const filter = page.getByRole('button', { name: /Starred only/i });
   await expect(filter).toBeVisible();
 

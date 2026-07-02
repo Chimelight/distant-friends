@@ -107,6 +107,19 @@ function ensureSelectedLangsInitialized(): void {
 // of $selectedLangs depend on that one component hydrating first.)
 if (typeof window !== 'undefined') ensureSelectedLangsInitialized();
 
+// Transient: the language whose column/blocks were just switched in, added,
+// or made anchor — drives the "fresh ink" write-in animation in both views.
+export const freshLang = atom<string | null>(null);
+let freshTimer: ReturnType<typeof setTimeout> | undefined;
+
+export function markFreshLang(code: string): void {
+  freshLang.set(code);
+  clearTimeout(freshTimer);
+  // Past the longest write-in cascade; keeping it set would replay the
+  // animation on unrelated re-renders.
+  freshTimer = setTimeout(() => freshLang.set(null), 900);
+}
+
 // Ephemeral toast — non-persistent. `key` lets the Toast component re-trigger
 // the show animation even when the same text is copied twice in a row.
 export type ToastMessage = { text: string; key: number };
