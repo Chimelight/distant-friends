@@ -98,6 +98,9 @@
     </button>
   {/each}
   <span class="toc-fleuron-bottom" aria-hidden="true">❋</span>
+  <!-- gold reading-progress fill over the rail; scroll-driven CSS,
+       hidden where animation-timeline is unsupported -->
+  <span class="toc-progress" aria-hidden="true"></span>
 </nav>
 
 <style>
@@ -210,6 +213,44 @@
   }
   .toc.on .toc-fleuron-bottom {
     opacity: 0.75;
+  }
+
+  /* Reading progress: a gold fill drawn down the rail as the page is read
+   * (position-linked to the user's own scrolling, so it's exempt from the
+   * reduced-motion concern). Browsers without scroll-driven animations
+   * simply never see it. */
+  .toc-progress {
+    display: none;
+  }
+  @supports (animation-timeline: scroll()) {
+    .toc-progress {
+      display: block;
+      position: absolute;
+      right: 58px;
+      top: 44px;
+      bottom: 44px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), var(--accent));
+      transform-origin: top;
+      transform: scaleY(0);
+      /* quietly present on the resting rail, firmer when expanded */
+      opacity: 0.45;
+      animation: toc-progress linear both;
+      /* via var(): lightningcss otherwise folds animation-timeline into the
+         `animation` shorthand — invalid CSS (timeline may not appear there),
+         and the browser drops the whole declaration. */
+      --toc-timeline: scroll(root);
+      animation-timeline: var(--toc-timeline);
+      transition: opacity 0.4s ease;
+    }
+    .toc.on .toc-progress {
+      opacity: 0.85;
+    }
+    @keyframes toc-progress {
+      to {
+        transform: scaleY(1);
+      }
+    }
   }
 
   .toc-item {
