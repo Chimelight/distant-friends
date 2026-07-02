@@ -822,9 +822,10 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 - [ ] **表格行解剖与密度**（大项，值得专门一轮）：列间密度差悬殊（俄语 3 变体 + 注释 vs 孟加拉 1 变体），anchor 列大片留白而译文列拥挤；变体内部 text/rom/tag/note 四层小字堆叠偏碎。方向：注释层的减法与合并、rom/text 字号比、变体间分隔的轻量化、anchor 列宽比重新校准。
 - [x] **触屏可供性**（R5）：copy 提示在 `@media (hover: none)` 下常显（opacity 0.4），与 SpeakButton 的既有 hover-none 处理（0.45）同一语汇。SpeakButton 经查本就处理了——账本原文又写重了一半。
-- [ ] **TocSide 与表格的空间关系**：1024–1440 宽度下展开面板叠在表格末列上（R1 已把表面改实解决可读性，但"叠"本身仍在）。方向：展开时左移出内容区 / 按展开宽度预留 / 窄屏降级。
-- [ ] **StickyBar 移动端**：≤640 允许 prose 换行、两行拥挤。方向：单行收纳（seal + tone slot + 控件）或只留控件。
-- [ ] **导航一致性**：TocTop（顶部平铺、点击即跳）与 TocSide（右缘、悬停展开）的视觉/交互词汇不完全一致（活动态、字体层级）。统一罗马数字 + 斜体 serif 词汇。
+- [x] **TocSide 与表格的空间关系**（R6）：算清了几何——展开面板不撞表格需要视口 ≥1816px，"滚动自动展开"在真实屏幕上必然把面板滑过末列。**行为改判**：滚动只点亮静息 rail（数字 + 活动 accent + 进度线即滚动反馈），展开只由 hover/focus 触发（用户主动、短暂、不透明覆盖可接受）。顺带删掉整套 idle 计时器。
+- [x] **StickyBar 移动端**（R6）：≤640 只剩 "I write — [tone]" + 主题切换（ViewToggle 本就 <640 隐藏），去掉 flex-wrap——单行成立，两行吃掉四分之一屏的情况不再出现。遗留小项：≤820 seal 隐藏后移动端没有回顶部入口（记于下一条）。
+- [x] **导航一致性**（R6，评估后不动）：TocTop 与 TocSide 已共享词汇（serif 斜体 + 罗马数字 + gold/accent 活动态），且是同一导航的先后两段（顶部索引 420px 后淡出、侧栏接棒）——差异是功能性分工，不是失调。为改而改违背 §2。
+- [ ] **移动端回顶部**（R6 发现）：≤820 时 StickyBar 的 seal（回顶按钮）隐藏，移动端长页面无回顶入口。方向：≤820 显示紧凑 seal，或 TocSide 缺席的视口给 StickyBar 补一个极简 ↑。
 - [x] **404 品牌连续性**（R5）：致·远·方 印章落到 404 顶部，参数与 Masthead chip 对齐（13px / 0.6em 字距 / 同 padding，`text-indent` 抵消字距尾隙）；"footer 同款落款"评估后弃——404 文案已自足，再加落款反而堆砌。
 - [x] **重复 scene id**（R5）：两视图 id 改为 `scene-table-*` / `scene-cards-*`（文档级唯一，验证 0 重复）；`data-scene` 仍是跨视图共享键，jumpTo 的 offsetParent 挑可见视图机制保留（这是它的本职，不是 workaround）。
 - [x] **SlotPicker options 复制**（R5）：tone/speaker/addressee 选项数组抽到 `lib/slot-options.ts`，Stationery 与 StickyBar 共用。
@@ -832,6 +833,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ### 轮次日志
 
+- **R6 · 2026-07-03** — TocSide 交互改判（滚动亮 rail、悬停展开，几何论证记条目内）、StickyBar 移动端单行、导航一致性以克制结案。新发现：移动端回顶部缺口。
 - **R5 · 2026-07-03** — 清尾轮：触屏 copy 常显提示、404 印章、scene id 唯一化、slot options 去重。四项皆小，合并一轮。
 - **R4 · 2026-07-03** — 高频块收尾：语言面板键盘手感（键盘开→搜索聚焦、↓ 入列表、阅读序游走、typo 建议）+ 复制金线（画出/回收）。冒烟 +2（键盘流、typo 建议）。**高频功能细节强化块至此全部完成。**
 - **R3 · 2026-07-03** — 首星布局跳动（slide 过渡）、发音墨晕涟漪 + `aria-pressed`、TOC 阅读进度线（scroll-driven CSS）。教训两则：①账本条目写自审计推测，动手前先读现状——发音的反馈与 voice 优选本就存在，实际工作量是条目描述的三分之一；②**实现注意 ⚠️**：lightningcss 会把独立的 `animation-timeline` 合并进 `animation` 简写——规范禁止 timeline 出现在简写里，浏览器随之丢弃整条声明（症状：动画完全不生效且无报错）。解法：`animation-timeline: var(--xx)` 经自定义属性间接引用，压缩器即无法折叠。

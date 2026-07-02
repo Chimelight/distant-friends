@@ -3,49 +3,32 @@
   import scenes from '../../data/scenes.json';
   import { activeScene, initScrollListener } from '../../lib/scroll';
 
-  const TOC_IDLE_MS = 1400;
+  // Expansion is hover/focus-only. It used to auto-expand on scroll, but the
+  // expanded sheet needs ~1816px of viewport before it clears the table —
+  // i.e. on real screens the scroll-poke always slid an overlay across the
+  // last column mid-read. The resting rail (numerals, active accent,
+  // progress fill) is the scroll feedback; the sheet is for intent.
   const TOC_HOVER_RELEASE_MS = 400;
 
   let expanded = $state(false);
-  let hovered = $state(false);
   let tocEl: HTMLElement | undefined = $state();
-
-  let idleTimer: number | undefined;
   let releaseTimer: number | undefined;
 
-  function clearAll() {
-    clearTimeout(idleTimer);
-    clearTimeout(releaseTimer);
-  }
-
-  function poke() {
-    expanded = true;
-    clearTimeout(idleTimer);
-    idleTimer = window.setTimeout(() => {
-      if (!hovered) expanded = false;
-    }, TOC_IDLE_MS);
-  }
-
   function onEnter() {
-    hovered = true;
-    clearAll();
+    clearTimeout(releaseTimer);
     expanded = true;
   }
   function onLeave() {
-    hovered = false;
-    clearAll();
+    clearTimeout(releaseTimer);
     releaseTimer = window.setTimeout(() => (expanded = false), TOC_HOVER_RELEASE_MS);
   }
   function onFocusIn() {
-    hovered = true;
-    clearAll();
+    clearTimeout(releaseTimer);
     expanded = true;
   }
   function onFocusOut(e: FocusEvent) {
     if (tocEl && tocEl.contains(e.relatedTarget as Node)) return;
-    hovered = false;
-    clearAll();
-    releaseTimer = window.setTimeout(() => (expanded = false), TOC_HOVER_RELEASE_MS);
+    onLeave();
   }
 
   function jumpTo(id: string) {
@@ -63,12 +46,9 @@
 
   onMount(() => {
     const stopScroll = initScrollListener('.scene-block');
-    const onWindowScroll = () => poke();
-    window.addEventListener('scroll', onWindowScroll, { passive: true });
     return () => {
       stopScroll();
-      window.removeEventListener('scroll', onWindowScroll);
-      clearAll();
+      clearTimeout(releaseTimer);
     };
   });
 </script>
