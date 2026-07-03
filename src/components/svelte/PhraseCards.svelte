@@ -221,10 +221,12 @@
   }
   .card-word {
     font-family: var(--font-serif);
-    font-weight: 500;
+    /* headword role — same cut as the table's anchor column */
+    font-weight: 440;
+    font-variation-settings: var(--opsz-headword);
     font-size: 26px;
     color: var(--ink);
-    letter-spacing: -0.005em;
+    letter-spacing: -0.008em;
     line-height: 1.15;
   }
   .card-word.card-missing {
@@ -264,8 +266,9 @@
   }
   .lang-label {
     font-family: var(--font-sans);
-    font-size: 10.5px;
-    letter-spacing: 0.22em;
+    font-weight: var(--label-weight);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
     text-transform: uppercase;
     color: var(--ink-mute);
     margin: 4px 0 6px;

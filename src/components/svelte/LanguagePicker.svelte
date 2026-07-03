@@ -270,8 +270,9 @@
   }
   .ph-label {
     font-family: var(--font-sans);
-    font-size: 10px;
-    letter-spacing: 0.22em;
+    font-weight: var(--label-weight);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
     text-transform: uppercase;
     color: var(--ink-mute);
   }

@@ -412,9 +412,9 @@
     display: block;
     margin-top: 3px;
     font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: 9px;
-    letter-spacing: 0.14em;
+    font-weight: var(--label-weight);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
     text-transform: uppercase;
     color: var(--ink-mute);
   }
@@ -487,8 +487,9 @@
   }
   .thp-head {
     font-family: var(--font-sans);
-    font-size: 9px;
-    letter-spacing: 0.2em;
+    font-weight: var(--label-weight);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
     text-transform: uppercase;
     color: var(--ink-mute);
     margin-bottom: 8px;
@@ -517,11 +518,14 @@
   }
   .anchor-word {
     font-family: var(--font-serif);
-    font-weight: 500;
+    /* headword role: the masthead's display cut at moderated strength —
+       lighter weight + raised optical size instead of a bolder face */
+    font-weight: 440;
+    font-variation-settings: var(--opsz-headword);
     font-size: 22px;
     color: var(--ink);
     line-height: 1.2;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.008em;
   }
   .anchor-word.anchor-missing {
     color: var(--ink-mute);
