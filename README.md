@@ -8,7 +8,7 @@
 
 ## What it is
 
-A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, reactions, questions, gratitude, compliments, encouragement, affection, wishes, holidays, farewells — across twenty-three languages (63 phrases), extensible. Click any cell to copy, hover for a speak button (Web Speech API, when the browser has a matching voice), star the phrases you reach for and filter to them. Switch the anchor language at any time. Tune the tone (`in any tone` / `casually` / `evenly` / `politely`) and set who is writing to whom (`as a man/a woman`, `to him/her`) — gendered languages then show only the forms that fit; remaining distinctions surface as quiet tag-line labels. Installable as a PWA; the whole glossary works offline.
+A small, hand-curated phrase glossary covering everyday friendly turns — greetings, catching up, reactions, questions, gratitude, compliments, encouragement, affection, wishes, holidays, farewells — across twenty-three languages (63 phrases), extensible. Pick up to five languages from the letter's opening line (searchable, grouped by region, keyboard-first); on desktop a column header switches that column's language in place. Click any cell to copy — a gold line marks what you copied — and a speak button reads it aloud (Web Speech API, when the browser has a matching voice). Star the phrases you reach for and filter to them. Switch the anchor language at any time. Tune the tone (`in any tone` / `casually` / `evenly` / `politely`) and set who is writing to whom (`as a man/a woman`, `to him/her`) — gendered languages then show only the forms that fit; remaining distinctions surface as quiet tag-line labels. Installable as a PWA; the whole glossary works offline.
 
 What it isn't:
 
@@ -99,7 +99,7 @@ Variant fields:
 
 ### Add a language
 
-1. Append a row to `src/data/languages.json` (`code`, `native`, `tts`, `rtl`, `defaultOn`, `defaultAnchor`).
+1. Append a row to `src/data/languages.json` (`code`, `native`, `name` — the English exonym, `group` — the region bucket the picker groups by, `tts`, `rtl`, `defaultOn`, `defaultAnchor`, plus `bcp47` only when `code` isn't a valid BCP-47 tag).
 2. Translate every phrase's `trans` block to add the new code.
 3. Run `pnpm coverage` to verify fill rate.
 
@@ -150,13 +150,14 @@ Updates enter at `dev`, so they still ride the `dev → main → release` pipeli
 
 Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单). The table below is a summary and may lag.
 
-**v1.0.0 shipped 2026-06-12** — all core milestones done; remaining items are verification (offline test, axe sweep, cross-browser matrix — see DESIGN §11 / Appendix F).
+**v1.2.0 shipped 2026-07-03.** Features are intentionally frozen (DESIGN §12); current work is design iteration on existing features — the cross-session ledger lives in [DESIGN §15](DESIGN.md#15-设计迭代账本跨会话进行中).
 
 | Milestone | State |
 | --- | --- |
 | M0 — project skeleton | ✅ v0.1.0 |
 | M1 — visual + interactive parity with v3 demo | ✅ v0.1.0 |
 | M2 — dark mode + starring | ✅ v0.2.0 / v1.0.0 |
-| M3 — TTS + PWA | ✅ v1.0.0 (offline field test pending) |
-| M4 — polish (a11y, Lighthouse, 404) | Lighthouse 88/100/100/100 within budget; axe + manual browser matrix pending |
+| M3 — TTS + PWA | ✅ v1.0.0; offline behaviour guarded by an automated Playwright check |
+| M4 — polish (a11y, Lighthouse, 404) | ✅ Lighthouse 88/100/100/100; axe WCAG 2.1 A/AA (incl. contrast) gated in CI; real-device matrix pending |
 | M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |
+| Design iteration (post-freeze) | R1–R8 done (v1.2.0); ledger in DESIGN §15 |

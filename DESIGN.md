@@ -407,8 +407,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 - **Hover on TOC**：展开并保持，鼠标离开 400ms 后收起
 - **Focus 进入任一 `.toc-item`**：展开；`focusout` 后 400ms 收起（用 `relatedTarget` 判断是否仍在 TOC 内）
-- **滚动时**：自动短暂展开（"有用户在滚动，给他看看在哪一章"），停止滚动 1.4s 后若无 hover/focus 则收起
-- **Idle timer 共用**：同一个 `tocIdleTimer`，被任何触发重置
+- **滚动不展开**（R6 改判，2026-07-03）：展开面板需 ~1816px 视口才不叠到表格末列，"滚动自动展开"在真实屏幕上必然盖住内容。静息 rail（数字 + 活动 accent + 阅读进度线）即滚动反馈；展开只表达用户意图（hover/focus）
 
 **点击**：任一 `.toc-item` → `scrollIntoView({ behavior: 'smooth', block: 'start' })` 到对应场景
 
@@ -491,7 +490,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 - `position: fixed; top: 0; left: 0; right: 0`，跨全宽
 - 高度约 44px，padding `10px 24px`
-- 背景：`rgba(235, 225, 204, 0.86)` + `backdrop-filter: blur(14px) saturate(1.2)`（毛玻璃在**这里**是对的——浮动工具栏跟内容是"不同层级"，玻璃感合理；TocSide 不是工具栏，那里才不用 blur）
+- 背景：`rgba(235, 225, 204, 0.94)` + `backdrop-filter: blur(14px) saturate(1.2)`（毛玻璃在**这里**是对的——浮动工具栏跟内容是"不同层级"，玻璃感合理；TocSide 不是工具栏，那里才不用 blur。α 自 R1 提到 0.94：blur 只是增强，可读性不得依赖 backdrop-filter 支持）
 - 上边缘下方一层极淡的暖色渐变作"透出阴影"
 
 **内部元素**
@@ -564,7 +563,7 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 - `@keyframes rise` — 卡片首屏入场（opacity 0→1 + translateY 8px→0，stagger 30ms）
 - `@keyframes pulse` — slot 被切换后的短暂高亮（背景赤陶色 0→22%→0，350ms）
-- `@keyframes shake` — chip 超上限时的摇头反馈（translateX 振荡，450ms）
+- `@keyframes nudge` — 语言面板满 5 时 header 提示的轻微横移（±2px，400ms；chip 时代的 shake 已随 chip 墙移除）
 - **TOC 场景名 stagger**：场景行依次出现，每行延迟 +40ms
 
 所有动画必须尊重 `prefers-reduced-motion: reduce`——统一做法是在 `global.css` 里用 `@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }`。
@@ -786,7 +785,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - [ ] 复制任一 variant 行：行内 `✓ copied` + 全局 Toast
 - [ ] LanguagePicker 满 5 时点第 6 个：header 提示变 "remove one to add another"（不再 shake；面板不关）；母语名 + 英文副标分组显示
 - [ ] Tab 键穿行：不出现"按 Tab 莫名弹窗"
-- [ ] TocSide hover / 滚动活动都能触发展开；鼠标离开 400ms 后收起；滚动停止 1.4s 后收起
+- [ ] TocSide 静息 rail 随滚动出现（数字 + 进度线可见），hover/focus 才展开；鼠标离开 400ms 后收起；滚动本身不展开
 - [ ] 切换视图：卡片宽度始终 720px max；TocSide 在 table 视图也显示
 - [ ] 收藏一条短语 → "Starred only" chip 出现；过滤后无收藏的场景整块隐藏
 - [ ] hover 变体行 → 喇叭图标出现，点击朗读不触发复制
@@ -847,4 +846,4 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ---
 
-*文档版本 v2.1 · 最后更新 2026-07-02（设计迭代期开启）*
+*文档版本 v2.1 · 最后更新 2026-07-03（v1.2.0 发布；设计迭代 R1–R8 落地）*
