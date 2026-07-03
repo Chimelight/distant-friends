@@ -30,15 +30,19 @@
 </div>
 
 <style>
+  /* A slip of paper laid on the desk — not an inverted ink bubble. Same
+     surface idiom as the sheets and popovers (paper-up, hairline, lit top
+     edge, warm lift). */
   .toast {
     position: fixed;
     bottom: 32px;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background: var(--ink);
-    color: var(--paper-up);
-    padding: 12px 22px;
-    border-radius: 999px;
+    background: var(--paper-up);
+    color: var(--ink-soft);
+    padding: 12px 24px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 15px;
@@ -47,7 +51,10 @@
     pointer-events: none;
     transition: all 0.4s var(--ease-out);
     z-index: 100;
-    box-shadow: 0 20px 40px -20px rgba(31, 26, 20, 0.5);
+    box-shadow:
+      var(--paper-edge),
+      0 20px 40px -20px rgba(31, 26, 20, 0.5),
+      0 0 0 1px var(--line-soft);
     white-space: nowrap;
     max-width: calc(100vw - 48px);
     overflow: hidden;
@@ -58,7 +65,7 @@
     transform: translateX(-50%) translateY(0);
   }
   .toast .tx {
-    color: var(--accent-soft);
+    color: var(--accent);
     font-style: normal;
     font-weight: 500;
   }

@@ -295,7 +295,8 @@
      * scrollbar length until the block is reached. */
     content-visibility: auto;
     contain-intrinsic-size: auto 1200px;
-    margin-bottom: 48px;
+    /* chapter air: scenes part like chapters, not list items */
+    margin-bottom: 72px;
     /* Clear the StickyBar (~44px tall) when scrollIntoView lands on a
      * section — without this margin the title hides under the bar. */
     scroll-margin-top: 80px;
@@ -356,7 +357,8 @@
   .scene-rule {
     flex: 1;
     height: 1px;
-    background: var(--line);
+    /* eases in from the title instead of butting against it */
+    background: linear-gradient(to right, transparent, var(--line) 32px);
     align-self: center;
     position: relative;
   }
@@ -465,6 +467,7 @@
     padding: 12px 14px;
     z-index: 40;
     box-shadow:
+      var(--paper-edge),
       0 20px 48px -24px rgba(31, 26, 20, 0.45),
       0 0 0 1px var(--line-soft);
     letter-spacing: normal;

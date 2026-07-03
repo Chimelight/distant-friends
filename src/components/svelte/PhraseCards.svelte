@@ -108,7 +108,8 @@
      * scrollbar length until the block is reached. */
     content-visibility: auto;
     contain-intrinsic-size: auto 2400px;
-    margin-bottom: 48px;
+    /* chapter air, mirrors the table view */
+    margin-bottom: 72px;
     /* Clear the StickyBar (~44px tall) when scrollIntoView lands on a
      * section — without this margin the title hides under the bar. */
     scroll-margin-top: 80px;
@@ -178,9 +179,33 @@
     /* sheet-on-desk, same idiom as the table view */
     box-shadow: var(--paper-edge), var(--shadow-paper);
     padding: 22px 22px 6px;
+    position: relative;
     opacity: 0;
     transform: translateY(6px);
     animation: rise var(--dur-entrance) ease forwards;
+  }
+  /* registration corners — the table sheet's gold marks, scaled down */
+  .card::before,
+  .card::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--gold);
+    background: var(--bg);
+    z-index: 1;
+  }
+  .card::before {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+  }
+  .card::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
   }
   .card-head {
     position: relative;

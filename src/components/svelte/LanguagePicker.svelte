@@ -145,18 +145,14 @@
     font: inherit;
     background: transparent;
     border: none;
-    padding: 1px 6px 3px;
+    /* dashed underline, deliberately — wavy tried and reverted, see .slot */
+    border-bottom: 1px dashed var(--ink-mute);
+    padding: 1px 6px 2px;
     margin: 0 2px;
     color: var(--accent);
     cursor: pointer;
     font-style: italic;
     transition: all var(--dur-switch) ease;
-    /* hand-inked underline, same idiom as SlotPicker's slot */
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: var(--ink-mute);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 5px;
   }
   .trigger::after {
     /* WORD JOINER glues the caret to the last language name — an atomic
@@ -175,7 +171,7 @@
      above 4.5:1 (any darkening of the page bg drops it under AA). */
   .trigger:hover {
     background: var(--paper-up);
-    text-decoration-color: var(--accent);
+    border-bottom-color: var(--accent);
   }
   .trigger:hover::after {
     opacity: 1;
@@ -184,7 +180,7 @@
   .trigger:focus-visible {
     outline: none;
     background: var(--paper-up);
-    text-decoration-style: solid;
+    border-bottom-style: solid;
   }
   .names .unit {
     white-space: nowrap;
@@ -231,6 +227,7 @@
     padding: 0 16px 14px;
     z-index: 60;
     box-shadow:
+      var(--paper-edge),
       0 20px 48px -24px rgba(31, 26, 20, 0.4),
       0 0 0 1px var(--line-soft);
     text-align: left;

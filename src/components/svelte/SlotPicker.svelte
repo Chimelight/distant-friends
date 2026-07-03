@@ -105,18 +105,15 @@
     font: inherit;
     background: transparent;
     border: none;
-    padding: 1px 6px 3px;
+    /* dashed underline, deliberately: wavy text-decoration was tried (R9)
+       and reverted on user feedback — the tight squiggle reads as a
+       spellcheck mark, not a pen stroke */
+    border-bottom: 1px dashed var(--ink-mute);
+    padding: 1px 6px 2px;
     color: var(--accent);
     cursor: pointer;
     transition: all var(--dur-switch) ease;
     font-style: italic;
-    /* hand-inked underline — a pen squiggle, not a mechanical dash row;
-       native decoration so it wraps and skips descenders correctly */
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: var(--ink-mute);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 5px;
   }
   .slot::after {
     content: "▾";
@@ -127,13 +124,11 @@
     transition: all var(--dur-switch) ease;
     font-style: normal;
     vertical-align: middle;
-    /* atomic inline: the caret is UI, keep it clear of the written line */
-    display: inline-block;
   }
   /* Lighter highlight, not a darkening tint, so the accent text keeps AA. */
   .slot:hover {
     background: var(--paper-up);
-    text-decoration-color: var(--accent);
+    border-bottom-color: var(--accent);
   }
   .slot:hover::after {
     opacity: 1;
@@ -143,7 +138,7 @@
   .slot:focus-visible {
     outline: none;
     background: var(--paper-up);
-    text-decoration-style: solid;
+    border-bottom-style: solid;
   }
   .slot.pulse {
     animation: pulse var(--dur-feedback) ease;
@@ -162,6 +157,7 @@
     min-width: 160px;
     z-index: 50;
     box-shadow:
+      var(--paper-edge),
       0 18px 40px -20px rgba(31, 26, 20, 0.35),
       0 0 0 1px var(--line-soft);
     animation: popover-in 0.2s ease;
