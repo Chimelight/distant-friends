@@ -21,6 +21,7 @@
   --ink-mute:    #5B5346; /* contrast lift: 5.7 on --bg (was #6B6254 @ 4.6, sat right on the AA floor) */
   --accent:      #A04928; /* AA: 4.6 on --bg as small text (was #AC4F2B @ 4.1) */
   --accent-soft: #D89876;
+  --selection:   #D89876; /* text-selection swatch; --ink on it must clear AA */
   --gold:        #A6824A; /* decorative only (icons/borders/fills) — NOT AA as text */
   --gold-ink:    #795F36; /* gold for TEXT — AA: 4.6 on --bg (decorative --gold is 2.7) */
   --on-accent:   #FAF4E3; /* text sitting on an --accent fill (e.g. anchored chip) */
@@ -92,6 +93,7 @@
   --ink-mute:    #978E7C; /* AA: 4.5+ on paper-up (was #877E6B @ 4.0) */
   --accent:      #DA7A4B; /* AA: 4.6 as text on --paper-up (was #D47649 @ 4.4) */
   --accent-soft: #A55E3A;
+  --selection:   #5C3E28; /* darker than accent-soft: --ink (cream) on it clears AA */
   --gold:        #C9A668;
   --gold-ink:    #C9A668; /* dark-mode gold text already clears AA — same as --gold */
   --on-accent:   #1C1915; /* near-black text on the (light) --accent fill */
@@ -122,6 +124,7 @@
     --ink-mute:    #978E7C; /* AA: 4.5+ on paper-up (was #877E6B @ 4.0) */
     --accent:      #DA7A4B; /* AA: 4.6 as text on --paper-up (was #D47649 @ 4.4) */
     --accent-soft: #A55E3A;
+    --selection:   #5C3E28; /* darker than accent-soft: --ink (cream) on it clears AA */
     --gold:        #C9A668;
     --gold-ink:    #C9A668; /* dark-mode gold text already clears AA — same as --gold */
     --on-accent:   #1C1915; /* near-black text on the (light) --accent fill */

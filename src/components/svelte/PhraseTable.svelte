@@ -106,7 +106,8 @@
       {@const anchorKey = `${S.id}|anchor`}
       <section class="scene-block" id={`scene-table-${S.id}`} data-scene={S.id}>
         <div class="scene-header">
-          <span class="scene-num">{S.num}</span>
+          <!-- Nº: the letterpress numero mark (presentation only, data keeps "No.") -->
+          <span class="scene-num">{S.num.replace('No. ', 'Nº ')}</span>
           <h2 class="scene-ttl">
             {titleParts.before}{#if titleParts.em}<em>{titleParts.em}</em>{/if}{titleParts.after}
           </h2>

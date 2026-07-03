@@ -55,6 +55,20 @@ body::after {
   padding: 56px 32px 96px;
 }
 
+/* —— selection: warm ink pull, not system blue ——
+ * Copying is the site's core gesture; the selection highlight should
+ * belong to the paper (accent-soft swatch, real ink on top). */
+::selection {
+  background: var(--selection);
+  color: var(--ink);
+}
+
+/* Standard property only — ::-webkit-scrollbar styling would force
+ * always-visible scrollbars on macOS overlay mode. */
+html {
+  scrollbar-color: var(--line) transparent;
+}
+
 /* —— focus ring base (components can override) —— */
 :focus-visible {
   outline: 2px solid var(--accent);
