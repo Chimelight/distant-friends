@@ -93,7 +93,7 @@
               lang={langTag(L)}
               dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span
             >{#if i < restingLangs.length - 1}<span class="dot" aria-hidden="true"> · </span>{/if}</span
-          >{'\u200B'}{/each}
+          >{#if i < restingLangs.length - 1}{'\u200B'}{/if}{/each}
       </span>
     </button>
 
@@ -145,16 +145,24 @@
     font: inherit;
     background: transparent;
     border: none;
-    border-bottom: 1px dashed var(--ink-mute);
-    padding: 1px 6px 2px;
+    padding: 1px 6px 3px;
     margin: 0 2px;
     color: var(--accent);
     cursor: pointer;
     font-style: italic;
     transition: all var(--dur-switch) ease;
+    /* hand-inked underline, same idiom as SlotPicker's slot */
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--ink-mute);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
   }
   .trigger::after {
-    content: '▾';
+    /* WORD JOINER glues the caret to the last language name — an atomic
+       inline (inline-block) would reopen the break and let ▾ orphan onto
+       its own line on mobile. */
+    content: '\2060▾';
     font-size: 0.55em;
     margin-left: 6px;
     color: var(--ink-mute);
@@ -167,7 +175,7 @@
      above 4.5:1 (any darkening of the page bg drops it under AA). */
   .trigger:hover {
     background: var(--paper-up);
-    border-bottom-color: var(--accent);
+    text-decoration-color: var(--accent);
   }
   .trigger:hover::after {
     opacity: 1;
@@ -176,14 +184,19 @@
   .trigger:focus-visible {
     outline: none;
     background: var(--paper-up);
-    border-bottom-style: solid;
+    text-decoration-style: solid;
   }
   .names .unit {
     white-space: nowrap;
   }
-  /* native names upright inside the italic line — synthetic italic mangles CJK */
+  /* native names upright inside the italic line — synthetic italic mangles CJK.
+     Local serifs only: these sit above the fold on first paint, and a late
+     Noto/Cyrillic subset arrival used to rewrap the line and shove everything
+     below it (the page's whole CLS). They are control labels, not phrase
+     content — the system serif is the same songti/mincho genre. */
   .names .n {
     font-style: normal;
+    font-family: var(--font-serif-local);
   }
   /* the anchor, highlighted in the list rather than read as a redundant repeat */
   .names .n.anchor {

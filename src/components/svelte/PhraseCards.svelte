@@ -175,6 +175,8 @@
     background: var(--paper);
     border: 1px solid var(--line);
     border-radius: 3px;
+    /* sheet-on-desk, same idiom as the table view */
+    box-shadow: var(--paper-edge), var(--shadow-paper);
     padding: 22px 22px 6px;
     opacity: 0;
     transform: translateY(6px);

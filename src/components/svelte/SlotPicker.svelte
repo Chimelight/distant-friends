@@ -105,12 +105,18 @@
     font: inherit;
     background: transparent;
     border: none;
-    border-bottom: 1px dashed var(--ink-mute);
-    padding: 1px 6px 2px;
+    padding: 1px 6px 3px;
     color: var(--accent);
     cursor: pointer;
     transition: all var(--dur-switch) ease;
     font-style: italic;
+    /* hand-inked underline — a pen squiggle, not a mechanical dash row;
+       native decoration so it wraps and skips descenders correctly */
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--ink-mute);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
   }
   .slot::after {
     content: "▾";
@@ -121,11 +127,13 @@
     transition: all var(--dur-switch) ease;
     font-style: normal;
     vertical-align: middle;
+    /* atomic inline: the caret is UI, keep it clear of the written line */
+    display: inline-block;
   }
   /* Lighter highlight, not a darkening tint, so the accent text keeps AA. */
   .slot:hover {
     background: var(--paper-up);
-    border-bottom-color: var(--accent);
+    text-decoration-color: var(--accent);
   }
   .slot:hover::after {
     opacity: 1;
@@ -135,7 +143,7 @@
   .slot:focus-visible {
     outline: none;
     background: var(--paper-up);
-    border-bottom-style: solid;
+    text-decoration-style: solid;
   }
   .slot.pulse {
     animation: pulse var(--dur-feedback) ease;

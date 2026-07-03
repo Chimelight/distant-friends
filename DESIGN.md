@@ -592,17 +592,18 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 ## 9. 性能目标
 
-2026-06-12 按实测校准（初版的"首屏 <150KB 含字体 / LCP <1.5s / 四项 ≥95"是建站前的估计，与自托管特色衬线 + 23 语言数据的现实不符）：
+2026-06-12 按实测校准（初版的"首屏 <150KB 含字体 / LCP <1.5s / 四项 ≥95"是建站前的估计，与自托管特色衬线 + 23 语言数据的现实不符）；**2026-07-03（R9）再校准**——修复 06-28 语言改造引入的 CLS 回归并做水合分级后，实测（本机 headless、同法前后对比）59→96，预算相应收紧：
 
-- **Lighthouse**（slow-4G 模拟）：Accessibility / Best Practices / SEO = 100，Performance ≥ 85
-- **CLS** ≈ 0、**TBT** < 100ms
-- **阻塞 CSS** < 20KB（当前 12KB——CJK @font-face 声明必须保持异步加载）
-- **首屏关键传输**（HTML + 阻塞 CSS + 预载拉丁字体）< 250KB
-- LCP 受自托管 Fraunces 到达时间约束（模拟慢网 ~3.6s，真实网络显著更低）；不为分数牺牲首访字体身份（不用 `font-display: optional`）
+- **Lighthouse**（slow-4G 模拟）：Accessibility / Best Practices / SEO = 100，**Performance ≥ 90**（R9 实测 96）
+- **CLS** ≈ 0（字面意义的 0——首屏不允许任何字体 swap 重排）、**TBT** < 100ms
+- **阻塞 CSS** < 20KB（CJK @font-face 声明必须保持异步加载）
+- **首屏关键传输**（HTML + 阻塞 CSS + 预载字体）< 250KB
+- 不为分数牺牲首访字体身份：Fraunces 不用 `font-display: optional`；**CJK 也不用**——R9 实测 optional 触发 Chrome 预取全部 unicode-range 相交子集（48→97 请求），模拟慢网 FCP 翻倍（§13）
 
 **达成策略（已落地）**
-- Fraunces standard 轴（wght+opsz），拉丁两支预载防 swap 位移
-- CJK @font-face 异步加载 + 系统宋体/明朝体兜底
+- Fraunces standard 轴（wght+opsz），拉丁两支 + Instrument Sans latin 预载防 swap 位移
+- CJK @font-face 异步加载 + 系统宋体/明朝体兜底；**首屏 UI 标签（印章、语言句行母语名）用 `--font-serif-local`**——栈里没有晚到的 webfont，就没有重排（短语内容保持 Noto 身份）
+- 岛屿水合分级：滚动后才可见/操作后才出现的岛（StickyBar/TocSide/Toast/StarFilter）`client:idle`，首屏可点的保持 `client:load`
 - 场景块 `content-visibility: auto`
 - 短语数据随 JS 打包 SSG 输出，不走 client fetch；SW 预缓存 shell
 - 无第三方脚本、无 analytics
@@ -728,6 +729,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - **2026-06-29（续）** · **语言选择再收敛 + LangMenu 重做视觉**（看预览后的第二轮反馈）：①**桌面句行别藏**——撤销"表格视图 `display:none`"，句行面板两视图都在、作**主控件**；②**sticky 表头别贴顶**——`top` 44→58 + padding 加大，留呼吸；③**搜索选完自动清空**回全列表（不用手删词）；④**表头加/删不便**——表头收为**只快速换列**，加 / 删 / 搜索都回面板；⑤**"UI 没风格、字体怪"**——母语名 italic 在 CJK 上是伪斜体，遂 LangMenu 重做：母语名**直立** serif、英文 exonym serif italic 小字、2 列网格、gold 分组标题、暖色 hover/选中、去掉通用 chip 边框。anchor 在句行标 accent 色化解与"Anchored in"的重复。
 - **2026-07-03** · **换列动画取"新墨写入"，弃 FLIP / View Transitions**：表格列的几何过渡在工程上不成立——`<col>` 宽度不可过渡、"一列"是散布在各行的单元格集合、View Transitions 需给 11 表 × 5 列命名快照，成本与收益倒挂。改为内容层面的连续性：换入的语言以列头先行、逐行 38ms 级联的墨迹写入（`$freshLang` 瞬态 + CSS 动画，reduced-motion 全局兜底），语义也更贴信笺——"换一门语言"是重写一栏字，不是挪家具。收藏同轮补仪式感（pop + 金屑绽放 + 场景星数微标），见 §15 R2。
 - **2026-07-02（二）** · **进入存量设计迭代期，立账本（§15）**：功能冻结后转入对现有页面/UI/交互/体验的持续多轮打磨，明确跨会话进行——工作账本立于 §15（每轮从账本继续、完成勾销、新发现登记）。R1 审计后落地三项：浮层表面近实纸化（TocSide 面板 22%→93%、StickyBar 0.86→0.94——半透明曾让面板下的表格文字透叠不可读，且可读性不得依赖 backdrop-filter）、移动端 Stationery 断行修辞（标点/分隔点不再孤悬行首）、VariantRow 的 `lang` 裸码残留。
+- **2026-07-03（二）** · **性能预算按 R9 实测再校准 + 首屏字体政策**（用户指令开启第二设计周期，性能重测发现 06-28 语言改造把 CJK/西里尔母语名放上首屏后 CLS 涨到 0.115、从未重测）：①CLS 修复**否决了 `font-display: optional` 方案**——实测 Chrome 对 optional 字体预取全部 unicode-range 相交子集（48→97 请求），模拟慢网 FCP 5.6s→12.8s，比病本身更糟；改立**首屏 swap-safe 栈**规则：首屏 UI 标签（印章、语言句行母语名）用 `--font-serif-local`（Fraunces 预载安全 + 本地宋体/明朝体，无晚到 webfont），短语内容保持 Noto。②Instrument Sans latin 入预载。③岛屿水合分级：滚动后才可见/操作后才出现的岛降 `client:idle`，首屏可点的（TocTop）保持 `client:load` 防死点击。同法前后对比 Perf 59→96、FCP 5.6→1.1s、LCP 6.8→2.7s、CLS 0.115→0；§9 预算收紧至 Perf ≥ 90、CLS = 0。
 - **2026-07-02** · **语言交互工程收口**（对 06-27~29 批次的代码 review 后重构，行为修正 + 结构清理一次做完）：①**列序 = 选择顺序**——`$selectedLangs` 数组顺序即列序，**换列原位替换**（此前消费端按 languages.json 顺序重排，把首列换成泰语会让新列跳到最右、原列位被后邻顶上，与"switch column to"的心智模型矛盾；冒烟测试恰好选了数据集顺序靠前的 Korean 而漏测）；②**Popover 原语**（`lib/popover.ts`）——单一 `openPopover` store 替代三套"document 监听 + stopPropagation"（旧方案两层可同开、Esc 后焦点掉 body）；同刻一层、Esc 归还焦点、SlotPicker 菜单方向键、满 5/删 anchor 被拒的 `aria-live` 播报——这些是 axe 静态扫描的盲区，靠键盘穿行冒烟测试守；③**弹层条件挂载**——撤销 55 份常驻隐藏菜单（~1200 个 DOM 按钮）与整套 `tabindex` 杂技；④**数据驱动收尾**——分组顺序从数据首现派生（原硬编码组清单会让新组语言静默消失）、BCP-47 进 languages.json（`bcp47` 字段 + `langTag`，替代三份复制的 mizo 特例，并修掉 `lang="mizo"` 漏网两处）、搜索折叠变音符、LangMenu 文案入 `ui/en.json`、store 初始化上移模块层。§6.1 同步改写。
 
 ---
@@ -830,8 +832,25 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - [x] **SlotPicker options 复制**（R5）：tone/speaker/addressee 选项数组抽到 `lib/slot-options.ts`，Stationery 与 StickyBar 共用。
 - [ ] **打印样式**（⚠️ 边界项，默认不做）：信纸气质适合打印，但接近新功能——待用户拍板再动。
 
+### 第二周期 · 整体审美升级（2026-07-03 起，用户指令）
+
+用户指令：**完全升级现有设计样式——更精致、更艺术品、更惊艳，同时性能优化也非常好。** 方向判读：不是换气质（§2 信笺红线不动），而是把「好的排印」推进到「印刷艺术品」——雕版工艺、纸张物性、手写墨性、光线氛围四个层次。性能约束贯穿全周期：零新依赖、零新网络资源（只用 CSS 渐变/阴影/原生排印能力），每轮收尾 Lighthouse 同法对比，不降反升。
+
+R9 开轮审计（重截 11 张全状态截图 + Lighthouse 重测）发现**性能真实回归**：CLS 0.115（预算 ≈0）——06-28 语言改造把 CJK/孟加拉母语名放上首屏（信笺句行、印章），CJK 字体异步到达后重排推移 TocTop 整块；改造后从未重测。修复项与工艺项并列入本轮。
+
+工艺待办（按 影响 × 确定性）：
+
+- [x] **雕版扉页**（R9，Masthead + 404 印章同步）：印章药丸去通用化（999px 圆角是"AI 模板"语汇残留 → 双线方章 + text-indent 光学居中）；标题下分隔从「单线 + 小方块」升级为「让位中央的双 hairline + 金菱」（扉页 rule 语汇）
+- [x] **纸张物性**（R9，表格 + 卡片）：table-wrap/card 从「平贴在背景上」到「搁在桌面的纸」——暖影抬升 + 顶缘内衬光（`--shadow-paper`/`--paper-edge` tokens，明暗各一套）
+- [x] **手写墨线**（R9，SlotPicker + LanguagePicker 触发器）：机械等距 dashed 下划线 → 原生 wavy text-decoration 墨线（逐行断行正确、零资源）。⚠️ 两处断行陷阱：slot 的 caret 用 `display:inline-block` 隔离出下划线（.tie nowrap 罩住不会孤悬）；语言触发器的 caret **不能** inline-block（原子内联重开断行机会、▾ 孤悬行首）——用 `\2060` WORD JOINER 粘住 + 末位 unit 不发零宽空格
+- [x] **首屏入场编排**（R9）：mark → tagline → stationery → TocTop 依次 rise（delay 0.05/0.16/0.27/0.38s，一次性）；**title 不参与**——LCP 元素做 opacity 入场会推迟 LCP 记录点
+- [x] **暗色烛光**（R9）：vignette 暖光入 tokens（`--vignette-top/bottom`），暗色提到 0.17/0.13（暗底上的暖 radial 读作"光"而非"色"）；金饰微光评估后弃——vignette 已够，再加即堆砌
+- [x] **性能修复**（R9，方案中途反转，详 §13 2026-07-03（二））：CLS 0.115→0 靠**首屏 swap-safe 字体栈**（`--font-serif-local`：印章 + 句行母语名），原计划的 `font-display: optional` 实测触发子集预取风暴（48→97 请求、FCP 翻倍）被否；Instrument Sans latin 入预载；StickyBar/TocSide/Toast/StarFilter 降 `client:idle`（TocTop 保持 load 防死点击）。同法对比 Perf 59→96、FCP 5.6→1.1s、LCP 6.8→2.7s、CLS 0.115→0、测试 18/18 绿
+- [ ] 后续轮候选：场景标题章节页化（rule 工艺、num 字法）、Toast/浮层工艺统一、noise 混合层合成成本实测（fixed + `mix-blend-mode: multiply` 全屏层滚动重合成开销）、卡片视图 registration 角线呼应、真实移动设备的入场编排手感复核
+
 ### 轮次日志
 
+- **R9 · 2026-07-03（第二周期开轮）** — 五个工艺层一次落地（雕版扉页、纸张物性、手写墨线、入场编排、暗色烛光）+ 性能修复（Perf 59→96、CLS 归零）。教训两则：①**性能回归会躲在功能迭代后面**——06-28 语言改造把 CJK 放上首屏引入 CLS 0.115，五轮设计打磨都没碰性能测量，开新周期首件事重测基线才暴露；②**`font-display: optional` 对多子集 CJK 是陷阱**——Chrome 会把所有 unicode-range 相交子集预取回来"备下次"，48→97 请求，比 swap 位移本身伤害更大；修 CLS 的正解是让首屏栈里没有晚到的字体，而不是改晚到字体的显示策略。
 - **R8 · 2026-07-03** — 表格行解剖落地（基线 348px → 302px，截图对比法：改前后同区域同参数）。**账本至此只剩「打印样式」一项，属边界项、待用户拍板；设计迭代第一大周期收官。**
 - **R7 · 2026-07-03** — 移动端回顶部圆钮落地；表格解剖做了数值勘察（列宽比是死胡同，方向修正进条目）。**账本至此仅剩两项：表格行解剖（大项）与打印样式（边界项，待用户拍板）。**
 - **R6 · 2026-07-03** — TocSide 交互改判（滚动亮 rail、悬停展开，几何论证记条目内）、StickyBar 移动端单行、导航一致性以克制结案。新发现：移动端回顶部缺口。
@@ -846,4 +865,4 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ---
 
-*文档版本 v2.1 · 最后更新 2026-07-03（v1.2.0 发布；设计迭代 R1–R8 落地）*
+*文档版本 v2.1 · 最后更新 2026-07-03（v1.2.0 发布；设计迭代第一周期 R1–R8 收官，第二周期 R9 落地）*

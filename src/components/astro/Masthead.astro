@@ -15,32 +15,68 @@ import ui from '../../content/ui/en.json';
     align-items: center;
     text-align: center;
     padding-bottom: 44px;
-    border-bottom: 1px solid var(--line);
     position: relative;
   }
+  /* Title-page rule: a double hairline that yields at the centre… */
+  .masthead::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 6px;
+    background:
+      linear-gradient(
+          to right,
+          var(--line) 0 calc(50% - 28px),
+          transparent calc(50% - 28px) calc(50% + 28px),
+          var(--line) calc(50% + 28px)
+        )
+        top / 100% 1px no-repeat,
+      linear-gradient(
+          to right,
+          var(--line-soft) 0 calc(50% - 28px),
+          transparent calc(50% - 28px) calc(50% + 28px),
+          var(--line-soft) calc(50% + 28px)
+        )
+        bottom / 100% 1px no-repeat;
+  }
+  /* …to a small gold lozenge. */
   .masthead::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -4px;
-    transform: translateX(-50%);
-    width: 48px;
+    bottom: -6.5px;
+    transform: translateX(-50%) rotate(45deg);
+    width: 7px;
     height: 7px;
-    background: var(--bg);
-    border-left: 1px solid var(--line);
-    border-right: 1px solid var(--line);
+    border: 1px solid var(--gold);
   }
   .mark {
-    font-family: var(--font-serif);
+    /* local serifs only: a first-paint CJK label must not swap-shift (CLS) */
+    font-family: var(--font-serif-local);
     font-weight: 400;
     font-size: 13px;
     letter-spacing: 0.6em;
+    /* one letter-space of indent balances the trailing letter-space gap */
+    text-indent: 0.6em;
     color: var(--gold-ink);
     text-transform: uppercase;
     margin-bottom: 24px;
-    padding: 6px 14px;
+    padding: 7px 14px;
     border: 1px solid var(--line);
-    border-radius: 999px;
+    border-radius: 2px;
+    position: relative;
+    animation: rise 0.6s var(--ease-out) backwards 0.05s;
+  }
+  /* inner hairline: the double frame of a seal, not a UI chip */
+  .mark::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border: 1px solid var(--line-soft);
+    border-radius: 1px;
+    pointer-events: none;
   }
   .title {
     font-family: var(--font-serif);
@@ -64,6 +100,10 @@ import ui from '../../content/ui/en.json';
     color: var(--ink-soft);
     line-height: 1.6;
     margin: 0;
+    /* Entrance choreography: mark → tagline → stationery → toc. The title
+     * stays out of it — animating the LCP element's opacity would push the
+     * LCP timestamp to the animation's end. */
+    animation: rise 0.6s var(--ease-out) backwards 0.16s;
   }
   .tagline :global(em) {
     font-style: italic;

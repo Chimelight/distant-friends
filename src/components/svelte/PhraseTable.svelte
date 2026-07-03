@@ -261,6 +261,8 @@
     border: 1px solid var(--line);
     background: var(--paper);
     border-radius: 3px;
+    /* sheet-on-desk: lit top edge + warm lift (tokens, themed) */
+    box-shadow: var(--paper-edge), var(--shadow-paper);
     /* not `hidden`: an overflow container would break the sticky header */
     overflow: visible;
     position: relative;

@@ -39,8 +39,25 @@
   --shadow-toc-panel:   0 24px 60px -32px rgba(138, 98, 67, 0.3);
   --shadow-stickybar:   0 1px 0 rgba(212, 198, 168, 0.5);
 
+  /* Sheet-on-desk: a warm lift + a lit top edge so the table/cards read as
+   * paper laid on the desk rather than a region painted on it. */
+  --shadow-paper: 0 1px 2px rgba(31, 26, 20, 0.05), 0 22px 48px -30px rgba(138, 98, 67, 0.32);
+  --paper-edge:   inset 0 1px 0 rgba(250, 244, 227, 0.85);
+
+  /* Warm vignette; in dark mode these brighten into candlelight (a warm
+   * radial on a dark ground reads as light, not tint). */
+  --vignette-top:    rgba(176, 82, 46, 0.08);
+  --vignette-bottom: rgba(166, 130, 74, 0.10);
+
   /* —— typography —— */
   --font-serif: "Fraunces Variable", "Fraunces", "Noto Serif SC", "Noto Serif JP", "Noto Serif KR", "Songti SC", "Hiragino Mincho ProN", "Yu Mincho", "Nanum Myeongjo", ui-serif, Georgia, serif;
+  /* Swap-safe serif for above-the-fold UI labels (masthead seal, language
+   * line native names): the full stack minus the late-arriving Noto faces.
+   * Fraunces stays (it is preloaded, so it cannot swap-shift); CJK and
+   * Cyrillic resolve to local serifs of the same songti/mincho genre, so a
+   * subset landing later can never rewrap the first screen. Phrase content
+   * keeps the Noto identity above. */
+  --font-serif-local: "Fraunces Variable", "Fraunces", "Songti SC", "Hiragino Mincho ProN", "Yu Mincho", "Nanum Myeongjo", ui-serif, Georgia, serif;
   --font-sans:  "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
   /* —— motion —— */
@@ -75,6 +92,12 @@
   --surface-toc-border: rgba(58, 50, 38, 0.9);
   --shadow-toc-panel:   0 24px 60px -32px rgba(0, 0, 0, 0.6);
   --shadow-stickybar:   0 1px 0 rgba(58, 50, 38, 0.6);
+
+  --shadow-paper: 0 1px 2px rgba(0, 0, 0, 0.35), 0 22px 48px -30px rgba(0, 0, 0, 0.6);
+  --paper-edge:   inset 0 1px 0 rgba(237, 225, 200, 0.07);
+
+  --vignette-top:    rgba(196, 92, 50, 0.17);
+  --vignette-bottom: rgba(201, 166, 104, 0.13);
 }
 
 /* —— dark, system follow (only when not explicitly forced light) —— */
@@ -99,5 +122,11 @@
     --surface-toc-border: rgba(58, 50, 38, 0.9);
     --shadow-toc-panel:   0 24px 60px -32px rgba(0, 0, 0, 0.6);
     --shadow-stickybar:   0 1px 0 rgba(58, 50, 38, 0.6);
+
+    --shadow-paper: 0 1px 2px rgba(0, 0, 0, 0.35), 0 22px 48px -30px rgba(0, 0, 0, 0.6);
+    --paper-edge:   inset 0 1px 0 rgba(237, 225, 200, 0.07);
+
+    --vignette-top:    rgba(196, 92, 50, 0.17);
+    --vignette-bottom: rgba(201, 166, 104, 0.13);
   }
 }
