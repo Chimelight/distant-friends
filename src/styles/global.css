@@ -183,3 +183,73 @@ body[data-view="table"] .view-mobile  { display: none !important; }
     padding: 32px 20px 64px;
   }
 }
+
+/* —— print: the glossary as a clean reference sheet ——
+ * The stationery look was made for paper. Screen chrome (controls,
+ * floating bars, hover affordances) disappears; the phrase table prints
+ * with hairlines only, scene by scene, headers repeating per page.
+ * Zero effect on screen rendering. */
+@media print {
+  /* interactive chrome off */
+  .sticky-bar,
+  .toc,
+  .back-top,
+  .star-filter,
+  .star,
+  .scene-kept,
+  .speak,
+  .copy-hint,
+  .view-toggle {
+    display: none !important;
+  }
+
+  /* affordance marks mean nothing on paper; the filled-in words and their
+   * rules read as a completed form line. (!important: these fight
+   * higher-specificity svelte-scoped component rules) */
+  .slot::after,
+  .trigger::after {
+    display: none !important;
+  }
+
+  /* the browser repeats <thead> per printed page natively — sticky would
+   * ride over row content instead */
+  .phrase-table thead th {
+    position: static !important;
+  }
+
+  /* paper is the printer's job: no simulated grain, glow, or lift */
+  body::before,
+  body::after {
+    display: none;
+  }
+  .table-wrap,
+  .card {
+    box-shadow: none !important;
+  }
+
+  .shell {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* content-visibility skips below-fold layout on screen; a printout
+   * has no fold — force every scene to lay out */
+  .scene-block {
+    content-visibility: visible;
+    contain-intrinsic-size: none;
+  }
+
+  /* page flow: a scene title stays with its table; rows don't split */
+  .scene-header {
+    break-after: avoid;
+  }
+  tr,
+  .card,
+  .variant {
+    break-inside: avoid;
+  }
+
+  @page {
+    margin: 16mm;
+  }
+}

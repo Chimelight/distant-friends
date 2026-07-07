@@ -840,7 +840,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 - [x] **404 品牌连续性**（R5）：致·远·方 印章落到 404 顶部，参数与 Masthead chip 对齐（13px / 0.6em 字距 / 同 padding，`text-indent` 抵消字距尾隙）；"footer 同款落款"评估后弃——404 文案已自足，再加落款反而堆砌。
 - [x] **重复 scene id**（R5）：两视图 id 改为 `scene-table-*` / `scene-cards-*`（文档级唯一，验证 0 重复）；`data-scene` 仍是跨视图共享键，jumpTo 的 offsetParent 挑可见视图机制保留（这是它的本职，不是 workaround）。
 - [x] **SlotPicker options 复制**（R5）：tone/speaker/addressee 选项数组抽到 `lib/slot-options.ts`，Stationery 与 StickyBar 共用。
-- [ ] **打印样式**（⚠️ 边界项，默认不做）：信纸气质适合打印，但接近新功能——待用户拍板再动。
+- [x] **打印样式**（2026-07-08 落地，作为"一轮一验"新规下的提案轮——打印预览截图交用户裁决，不合意即撤）：`global.css` 尾部单个 `@media print` 块，屏幕零影响。交互 chrome 全隐（StickyBar/TocSide/回顶钮/星标/喇叭/copy 提示/视图切换/slot ▾）；纸面效果让位打印机（noise/vignette/抬升阴影关）；`content-visibility` 打印强制 visible（否则折叠线下场景不排版）；sticky 表头打印改 static（原生 thead 每页重复，sticky 会盖行）；场景标题 `break-after: avoid`、行/卡片 `break-inside: avoid`；`@page margin 16mm`。⚠️ 对抗 svelte 作用域优先级的覆盖需 `!important`。
 
 ### 第二周期 · 整体审美升级（2026-07-03 起，用户指令）
 
