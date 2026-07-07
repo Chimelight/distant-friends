@@ -137,10 +137,10 @@
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 13px;
-    padding: 4px 2px 7px;
+    padding: 4px 2px 6px;
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 14.5px;
+    font-size: 14px;
     color: var(--ink);
     background: transparent;
     border: none;
@@ -160,18 +160,18 @@
   }
   .lm-grp-h {
     font-family: var(--font-sans);
-    font-size: var(--label-size);
-    font-weight: var(--label-weight);
-    letter-spacing: var(--label-track);
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold-ink);
-    margin-bottom: 7px;
+    margin-bottom: 6px;
   }
   /* a tidy 2-column index, not wrapping chips */
   .lm-opts {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-    gap: 2px 8px;
+    gap: 1px 6px;
   }
 
   .lm-opt {
@@ -198,9 +198,8 @@
   /* native name upright (italic faked CJK badly) — serif, the protagonist */
   .lm-native {
     font-family: var(--font-serif);
-    font-size: 15.5px;
-    line-height: 1.2;
-    letter-spacing: 0.005em;
+    font-size: 16px;
+    line-height: 1.15;
     color: var(--ink-soft);
     transition: color 0.15s ease;
   }
@@ -208,7 +207,7 @@
   .lm-en {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--ink-mute);
   }
   .lm-opt:hover {

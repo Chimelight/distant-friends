@@ -90,8 +90,6 @@
     padding: 0 12px;
     text-align: center;
     max-width: 760px;
-    /* entrance choreography, third beat (mark → tagline → here → toc) */
-    animation: rise 0.6s var(--ease-out) backwards 0.27s;
   }
   .prose {
     font-family: var(--font-serif);

@@ -15,11 +15,8 @@ import cjkFontsHref from '../../styles/fonts-cjk.css?url';
 
 // Preload the two latin Fraunces faces: nearly all first-paint text uses
 // them, and letting them race the render caused visible swap-shift (CLS).
-// Instrument Sans latin joined the list in the R9 perf pass — its late swap
-// reflowed every small-caps UI label above the fold (17KB well spent).
 import frauncesNormalHref from '@fontsource-variable/fraunces/files/fraunces-latin-standard-normal.woff2?url';
 import frauncesItalicHref from '@fontsource-variable/fraunces/files/fraunces-latin-standard-italic.woff2?url';
-import instrumentSansHref from '@fontsource/instrument-sans/files/instrument-sans-latin-400-normal.woff2?url';
 
 import '../../styles/tokens.css';
 import '../../styles/typography.css';
@@ -50,7 +47,6 @@ const ogImage = `${canonical.replace(/\/$/, '')}/og-image.png`;
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesNormalHref} />
     <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesItalicHref} />
-    <link rel="preload" as="font" type="font/woff2" crossorigin href={instrumentSansHref} />
     <link rel="stylesheet" href={cjkFontsHref} media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href={cjkFontsHref} /></noscript>
     <title>{title}</title>

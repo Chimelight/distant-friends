@@ -79,9 +79,8 @@
   }
   .view-toggle button {
     font-family: var(--font-sans);
-    font-weight: var(--label-weight);
-    font-size: var(--label-size);
-    letter-spacing: var(--label-track);
+    font-size: 10px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--ink-mute);
     background: transparent;

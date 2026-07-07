@@ -30,49 +30,14 @@ import ui from '../../content/ui/en.json';
 <style>
   .end {
     margin-top: 96px;
-    padding-top: 36px;
-    position: relative;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
     text-align: center;
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 14px;
     color: var(--ink-mute);
     line-height: 1.7;
-  }
-  /* Closing rule — the masthead's title-page rule, mirrored at the foot
-     of the letter (double hairline yielding to a gold lozenge). */
-  .end::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 6px;
-    background:
-      linear-gradient(
-          to right,
-          var(--line) 0 calc(50% - 28px),
-          transparent calc(50% - 28px) calc(50% + 28px),
-          var(--line) calc(50% + 28px)
-        )
-        top / 100% 1px no-repeat,
-      linear-gradient(
-          to right,
-          var(--line-soft) 0 calc(50% - 28px),
-          transparent calc(50% - 28px) calc(50% + 28px),
-          var(--line-soft) calc(50% + 28px)
-        )
-        bottom / 100% 1px no-repeat;
-  }
-  .end::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: -0.5px;
-    transform: translateX(-50%) rotate(45deg);
-    width: 7px;
-    height: 7px;
-    border: 1px solid var(--gold);
   }
   .end .sig {
     display: block;

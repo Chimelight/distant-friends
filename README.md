@@ -158,6 +158,6 @@ Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与�
 | M1 — visual + interactive parity with v3 demo | ✅ v0.1.0 |
 | M2 — dark mode + starring | ✅ v0.2.0 / v1.0.0 |
 | M3 — TTS + PWA | ✅ v1.0.0; offline behaviour guarded by an automated Playwright check |
-| M4 — polish (a11y, Lighthouse, 404) | ✅ Lighthouse 96/100/100/100 (recalibrated in R9, CLS 0); axe WCAG 2.1 A/AA (incl. contrast) gated in CI; real-device matrix pending |
+| M4 — polish (a11y, Lighthouse, 404) | ✅ Lighthouse 88/100/100/100; axe WCAG 2.1 A/AA (incl. contrast) gated in CI; real-device matrix pending |
 | M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |
-| Design iteration (post-freeze) | Cycle 1 R1–R8 done (v1.2.0); cycle 2 (craft upgrade) opened, R9 done; ledger in DESIGN §15 |
+| Design iteration (post-freeze) | R1–R8 done (v1.2.0); ledger in DESIGN §15 |

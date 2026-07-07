@@ -34,7 +34,7 @@ body::before {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-/* —— warm vignette top + bottom (candlelight in dark mode) —— */
+/* —— warm vignette top + bottom —— */
 body::after {
   content: "";
   position: fixed;
@@ -42,8 +42,8 @@ body::after {
   pointer-events: none;
   z-index: 1;
   background:
-    radial-gradient(120% 80% at 50% -10%, var(--vignette-top), transparent 60%),
-    radial-gradient(100% 70% at 50% 110%, var(--vignette-bottom), transparent 60%);
+    radial-gradient(120% 80% at 50% -10%, rgba(176, 82, 46, 0.08), transparent 60%),
+    radial-gradient(100% 70% at 50% 110%, rgba(166, 130, 74, 0.10), transparent 60%);
 }
 
 /* page content sits above the noise/vignette layers */
@@ -53,20 +53,6 @@ body::after {
   max-width: 1240px;
   margin: 0 auto;
   padding: 56px 32px 96px;
-}
-
-/* —— selection: warm ink pull, not system blue ——
- * Copying is the site's core gesture; the selection highlight should
- * belong to the paper (accent-soft swatch, real ink on top). */
-::selection {
-  background: var(--selection);
-  color: var(--ink);
-}
-
-/* Standard property only — ::-webkit-scrollbar styling would force
- * always-visible scrollbars on macOS overlay mode. */
-html {
-  scrollbar-color: var(--line) transparent;
 }
 
 /* —— focus ring base (components can override) —— */

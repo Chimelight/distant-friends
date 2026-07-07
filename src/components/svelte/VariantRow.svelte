@@ -156,9 +156,6 @@
   }
   .variant-text {
     font-family: var(--font-serif);
-    /* entry role: a touch above auto optical size — more stroke contrast
-       without display-cut fragility at reading size */
-    font-variation-settings: var(--opsz-entry);
     font-size: 19px;
     color: var(--ink);
     line-height: 1.32;
@@ -194,9 +191,8 @@
     top: 16px;
     inset-inline-end: 18px;
     font-family: var(--font-sans);
-    font-weight: var(--label-weight);
-    font-size: var(--label-size);
-    letter-spacing: var(--label-track);
+    font-size: 9px;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
     color: var(--ink-mute);
     opacity: 0;

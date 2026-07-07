@@ -48,8 +48,6 @@
     row-gap: 12px;
     justify-content: center;
     transition: opacity 0.4s ease;
-    /* entrance choreography, final beat (mark → tagline → stationery → here) */
-    animation: rise 0.6s var(--ease-out) backwards 0.38s;
   }
   .toc-top.fade-out {
     opacity: 0;

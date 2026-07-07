@@ -93,7 +93,7 @@
               lang={langTag(L)}
               dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span
             >{#if i < restingLangs.length - 1}<span class="dot" aria-hidden="true"> · </span>{/if}</span
-          >{#if i < restingLangs.length - 1}{'\u200B'}{/if}{/each}
+          >{'\u200B'}{/each}
       </span>
     </button>
 
@@ -145,7 +145,6 @@
     font: inherit;
     background: transparent;
     border: none;
-    /* dashed underline, deliberately — wavy tried and reverted, see .slot */
     border-bottom: 1px dashed var(--ink-mute);
     padding: 1px 6px 2px;
     margin: 0 2px;
@@ -155,10 +154,7 @@
     transition: all var(--dur-switch) ease;
   }
   .trigger::after {
-    /* WORD JOINER glues the caret to the last language name — an atomic
-       inline (inline-block) would reopen the break and let ▾ orphan onto
-       its own line on mobile. */
-    content: '\2060▾';
+    content: '▾';
     font-size: 0.55em;
     margin-left: 6px;
     color: var(--ink-mute);
@@ -185,14 +181,9 @@
   .names .unit {
     white-space: nowrap;
   }
-  /* native names upright inside the italic line — synthetic italic mangles CJK.
-     Local serifs only: these sit above the fold on first paint, and a late
-     Noto/Cyrillic subset arrival used to rewrap the line and shove everything
-     below it (the page's whole CLS). They are control labels, not phrase
-     content — the system serif is the same songti/mincho genre. */
+  /* native names upright inside the italic line — synthetic italic mangles CJK */
   .names .n {
     font-style: normal;
-    font-family: var(--font-serif-local);
   }
   /* the anchor, highlighted in the list rather than read as a redundant repeat */
   .names .n.anchor {
@@ -227,7 +218,6 @@
     padding: 0 16px 14px;
     z-index: 60;
     box-shadow:
-      var(--paper-edge),
       0 20px 48px -24px rgba(31, 26, 20, 0.4),
       0 0 0 1px var(--line-soft);
     text-align: left;
@@ -270,9 +260,8 @@
   }
   .ph-label {
     font-family: var(--font-sans);
-    font-weight: var(--label-weight);
-    font-size: var(--label-size);
-    letter-spacing: var(--label-track);
+    font-size: 10px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--ink-mute);
   }
