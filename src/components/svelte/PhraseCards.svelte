@@ -48,7 +48,8 @@
       {@const titleParts = emWrap(S.title, S.em)}
       <section class="scene-block" id={`scene-cards-${S.id}`} data-scene={S.id}>
         <div class="scene-header">
-          <span class="scene-num">{S.num}</span>
+          <!-- Nº: the letterpress numero mark (presentation only, data keeps "No.") -->
+          <span class="scene-num">{S.num.replace('No. ', 'Nº ')}</span>
           <h2 class="scene-ttl">
             {titleParts.before}{#if titleParts.em}<em>{titleParts.em}</em>{/if}{titleParts.after}
           </h2>
@@ -108,7 +109,8 @@
      * scrollbar length until the block is reached. */
     content-visibility: auto;
     contain-intrinsic-size: auto 2400px;
-    margin-bottom: 48px;
+    /* chapter air, mirrors the table view */
+    margin-bottom: 72px;
     /* Clear the StickyBar (~44px tall) when scrollIntoView lands on a
      * section — without this margin the title hides under the bar. */
     scroll-margin-top: 80px;
@@ -175,10 +177,36 @@
     background: var(--paper);
     border: 1px solid var(--line);
     border-radius: 3px;
+    /* sheet-on-desk, same idiom as the table view */
+    box-shadow: var(--paper-edge), var(--shadow-paper);
     padding: 22px 22px 6px;
+    position: relative;
     opacity: 0;
     transform: translateY(6px);
     animation: rise var(--dur-entrance) ease forwards;
+  }
+  /* registration corners — the table sheet's gold marks, scaled down */
+  .card::before,
+  .card::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--gold);
+    background: var(--bg);
+    z-index: 1;
+  }
+  .card::before {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+  }
+  .card::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
   }
   .card-head {
     position: relative;
@@ -194,10 +222,12 @@
   }
   .card-word {
     font-family: var(--font-serif);
-    font-weight: 500;
+    /* headword role — same cut as the table's anchor column */
+    font-weight: 440;
+    font-variation-settings: var(--opsz-headword);
     font-size: 26px;
     color: var(--ink);
-    letter-spacing: -0.005em;
+    letter-spacing: -0.008em;
     line-height: 1.15;
   }
   .card-word.card-missing {
@@ -237,8 +267,9 @@
   }
   .lang-label {
     font-family: var(--font-sans);
-    font-size: 10.5px;
-    letter-spacing: 0.22em;
+    font-weight: var(--label-weight);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
     text-transform: uppercase;
     color: var(--ink-mute);
     margin: 4px 0 6px;

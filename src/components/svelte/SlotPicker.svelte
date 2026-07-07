@@ -105,6 +105,9 @@
     font: inherit;
     background: transparent;
     border: none;
+    /* dashed underline, deliberately: wavy text-decoration was tried (R9)
+       and reverted on user feedback — the tight squiggle reads as a
+       spellcheck mark, not a pen stroke */
     border-bottom: 1px dashed var(--ink-mute);
     padding: 1px 6px 2px;
     color: var(--accent);
@@ -154,6 +157,7 @@
     min-width: 160px;
     z-index: 50;
     box-shadow:
+      var(--paper-edge),
       0 18px 40px -20px rgba(31, 26, 20, 0.35),
       0 0 0 1px var(--line-soft);
     animation: popover-in 0.2s ease;

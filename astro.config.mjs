@@ -5,6 +5,10 @@ import AstroPWA from '@vite-pwa/astro';
 
 // Vercel deploys at the domain root; GitHub Pages serves the project under
 // /distant-friends/. Vercel injects VERCEL=1 in its build env.
+// (R9 note: rewriting the CJK faces to font-display:optional was tried here
+// and measured — Chrome then prefetches every unicode-range-intersecting
+// subset "for next time" (48 → 97 requests) and simulated slow-4G FCP
+// doubled. Reverted; the first-screen CJK is pinned to local serifs instead.)
 const isVercel = !!process.env.VERCEL;
 const site = isVercel
   ? 'https://distant-friends.vercel.app'

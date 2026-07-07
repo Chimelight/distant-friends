@@ -24,14 +24,19 @@ PhrasesFile.parse(phrasesRaw);
 ---
 
 <Layout>
-  <StickyBar client:load />
+  {/* client:idle islands only matter after a scroll or an action (StickyBar/
+      TocSide appear past 420px; Toast/StarFilter follow a copy/star) — their
+      hydration can wait so first-paint bandwidth goes to fonts and content.
+      TocTop stays client:load: it is visible and clickable on the first
+      screen, and a dead first click costs more than its few KB. */}
+  <StickyBar client:idle />
 
   <div class="shell">
     <Masthead />
 
     <Stationery client:load />
 
-    <StarFilter client:load />
+    <StarFilter client:idle />
 
     <TocTop client:load />
 
@@ -43,6 +48,6 @@ PhrasesFile.parse(phrasesRaw);
     <Footer />
   </div>
 
-  <TocSide client:load />
-  <Toast client:load />
+  <TocSide client:idle />
+  <Toast client:idle />
 </Layout>

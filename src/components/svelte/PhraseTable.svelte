@@ -106,7 +106,8 @@
       {@const anchorKey = `${S.id}|anchor`}
       <section class="scene-block" id={`scene-table-${S.id}`} data-scene={S.id}>
         <div class="scene-header">
-          <span class="scene-num">{S.num}</span>
+          <!-- Nº: the letterpress numero mark (presentation only, data keeps "No.") -->
+          <span class="scene-num">{S.num.replace('No. ', 'Nº ')}</span>
           <h2 class="scene-ttl">
             {titleParts.before}{#if titleParts.em}<em>{titleParts.em}</em>{/if}{titleParts.after}
           </h2>
@@ -261,6 +262,8 @@
     border: 1px solid var(--line);
     background: var(--paper);
     border-radius: 3px;
+    /* sheet-on-desk: lit top edge + warm lift (tokens, themed) */
+    box-shadow: var(--paper-edge), var(--shadow-paper);
     /* not `hidden`: an overflow container would break the sticky header */
     overflow: visible;
     position: relative;
@@ -293,7 +296,8 @@
      * scrollbar length until the block is reached. */
     content-visibility: auto;
     contain-intrinsic-size: auto 1200px;
-    margin-bottom: 48px;
+    /* chapter air: scenes part like chapters, not list items */
+    margin-bottom: 72px;
     /* Clear the StickyBar (~44px tall) when scrollIntoView lands on a
      * section — without this margin the title hides under the bar. */
     scroll-margin-top: 80px;
@@ -354,7 +358,8 @@
   .scene-rule {
     flex: 1;
     height: 1px;
-    background: var(--line);
+    /* eases in from the title instead of butting against it */
+    background: linear-gradient(to right, transparent, var(--line) 32px);
     align-self: center;
     position: relative;
   }
@@ -408,9 +413,9 @@
     display: block;
     margin-top: 3px;
     font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: 9px;
-    letter-spacing: 0.14em;
+    font-weight: var(--label-weight);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
     text-transform: uppercase;
     color: var(--ink-mute);
   }
@@ -463,6 +468,7 @@
     padding: 12px 14px;
     z-index: 40;
     box-shadow:
+      var(--paper-edge),
       0 20px 48px -24px rgba(31, 26, 20, 0.45),
       0 0 0 1px var(--line-soft);
     letter-spacing: normal;
@@ -482,8 +488,9 @@
   }
   .thp-head {
     font-family: var(--font-sans);
-    font-size: 9px;
-    letter-spacing: 0.2em;
+    font-weight: var(--label-weight);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
     text-transform: uppercase;
     color: var(--ink-mute);
     margin-bottom: 8px;
@@ -512,11 +519,14 @@
   }
   .anchor-word {
     font-family: var(--font-serif);
-    font-weight: 500;
+    /* headword role: the masthead's display cut at moderated strength —
+       lighter weight + raised optical size instead of a bolder face */
+    font-weight: 440;
+    font-variation-settings: var(--opsz-headword);
     font-size: 22px;
     color: var(--ink);
     line-height: 1.2;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.008em;
   }
   .anchor-word.anchor-missing {
     color: var(--ink-mute);
