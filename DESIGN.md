@@ -15,10 +15,10 @@
 
 改动代码后的维护义务：
 
-- 推翻既有设计决策 → 在 §13 决策日志**追加**一条（永不改写旧条目，反转本身是信息）。**追加 = 接在列表末尾**，全表严格时间升序，同日多条以（二）（三）标次序——插入中段会毁掉日志的先后语义（v2.3 曾为此返工重排）
+- 推翻既有设计决策 → 在 §13 决策日志**追加**一条（永不改写旧条目，反转本身是信息）。**追加 = 接在列表末尾**，全表严格时间升序，同日多条以（二）（三）标次序——插入中段会毁掉日志的先后语义（v2.3 曾为此返工重排）。**新条目 ≤3 行**：方向 + 原因，机制细节归 §6/§15，条目只给指针（v2.4 起；旧长条目不追改）
 - 完成一轮设计迭代 → §15 轮次日志**一行**收束该轮（含该轮独有教训）；开放项勾销；周期闭环后压缩进「周期存档」一段。**同一事实不三处记账**：细节归轮次日志，方向性因果归 §13，条目正文不复述
 - 完成里程碑任务 → §11 打勾；里程碑整体完成后压缩成一行
-- 其余章节（尤其 §6 规格）**不要求**跟随实现细节更新——已实现功能以源码为准
+- 其余章节（尤其 §6）**不承载**实现细节：只写意图、约束、⚠️陷阱与源码指针，像素/数值规格一律不入册（v2.4 起废除"as-built 快照"体例——快照必烂，且以权威口吻误导）
 
 ---
 
@@ -59,18 +59,20 @@
 
 ### 3.1 核心栈
 
-| 层 | 选择 | 版本 | 备注 |
-|---|---|---|---|
-| 静态生成器 | **Astro** | 7.x | Islands 架构、零 JS 默认、GH Pages 兼容 |
-| 交互组件 | **Svelte** | 5.x | 只用于有状态 islands，bundle 极小 |
-| 语言 | **TypeScript** | 6.x | strict 开 |
-| Schema | **Zod** | via Astro Content Collections |
+| 层 | 选择 | 备注 |
+|---|---|---|
+| 静态生成器 | **Astro** | Islands 架构、零 JS 默认、GH Pages 兼容 |
+| 交互组件 | **Svelte** | 只用于有状态 islands，bundle 极小 |
+| 语言 | **TypeScript** | strict 开 |
+| Schema | **Zod** | 构建时显式校验（§4 / §5.6，不走 Content Collections） |
 | 跨组件状态 | **nanostores** | 持久化状态用 `@nanostores/persistent` |
 | 样式 | **Vanilla CSS + CSS Variables** | 不用 Tailwind/CSS-in-JS |
 | PWA | **@vite-pwa/astro** | Workbox 内核 |
 | 字体 | **@fontsource-variable/fraunces** + **@fontsource/instrument-sans** | 自托管，离线可用 |
 | 包管理 | **pnpm** | 比 npm 快且磁盘省 |
 | 部署 | **GitHub Pages** | 通过 GitHub Actions |
+
+版本号以 `package.json` 为准——每周 Dependabot 自动升级（§10.4），写死必烂。
 
 ### 3.2 不选的方案及理由
 
@@ -182,36 +184,7 @@ src/content/ui/
 }
 ```
 
-**字段说明**
-
-短语级：
-
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| `id` | string | 稳定短语 ID，kebab-case |
-| `scene` | string | 场景 id，必须存在于 `scenes.json` |
-| `order` | number | 场景内排序 |
-| `trans` | object | key = 语言 code |
-
-每个 `trans[lang]` 对象：
-
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| `gloss` | string | 该语言对这个概念的小标签（"问候" / "une salutation"）。显示在锚点列大字下方作小字注脚 |
-| `variants` | array | 该语言的所有说法，至少一条 |
-
-每个 variant 对象：
-
-| 字段 | 类型 | 必需 | 说明 |
-|---|---|---|---|
-| `text` | string | ✓ | 翻译正文 |
-| `rom` | string? |  | 罗马音 / 拼音，仅非拉丁字母语言 |
-| `tone` | `casual \| neutral \| polite`? |  | 语境档位。不填 = 通用/默认 |
-| `speakerGender` | `m \| f`? |  | 说话者性别（葡语 Obrigado/Obrigada 等） |
-| `addresseeGender` | `m \| f`? |  | 听话者性别（西语 amigo/amiga 等） |
-| `addresseeCount` | `one \| many`? |  | 对几人说（"大家再见" 设 `many`） |
-| `region` | string? |  | 区域变体（`BR` / `PT` / `MX` 等），仅少数场景用 |
-| `note` | string? |  | 自由文案，跟 UI locale 同步（v1 写英文） |
+字段定义、类型与约束以 `src/lib/schema.ts` 为准（§0 规则 1）。语义要点：`gloss` 是该语言对这个概念的小标签（"问候" / "une salutation"），显示在锚点列大字下方作注脚；`variants` 至少一条；变体的全部维度字段（`tone` / `speakerGender` / `addresseeGender` / `addresseeCount` / `region` / `rom` / `note`）可选——只填真实区分（§5.1 原则 3）。
 
 **rom / tone / note 都跟 variant 绑定**（不属于 UI 文案），原因是它们是在描述"这个翻译"，不是在描述"界面"。判断标准：如果删掉所有翻译，这段文字还有意义吗？没有 → 跟 variant 走。
 
@@ -237,48 +210,13 @@ UI 状态影响变体显示的维度：`anchor`（哪种语言放锚点列）、
 
 ### 5.9 内容作者工作流
 
-**加一条新短语**
-
-实际流程基本都是"让 AI 给一份 JSON 贴进去"：
-
-1. 给 AI 一个 prompt：短语概念、所属场景、需要翻译的语言列表、参考其他条目结构
-2. AI 输出一个完整的短语对象
-3. 存为 `src/data/phrases/<id>.json`（或用 `pnpm run new-phrase` 脚本生成骨架）
-4. `pnpm dev` 自动热更，Zod 报错能立刻看到
-
-风格要求见 `README.md` 的 Translation philosophy 四条规则（朋友间温度、只填真实区分、friendly-foreigner 语域、变体宁缺毋滥）。
-
-**加一种新语言**
-
-1. 在 `languages.json` 里追加一条（code/native/tts 等）
-2. 给 AI 一个大 prompt：`phrases/` 当前全部内容 + "请给每条短语补上这种语言的 `trans[<new-code>]`"
-3. AI 返回逐文件的翻译，你 review 后合入
-
-**加一个新场景**
-
-1. `scenes.json` append 一项
-2. 新短语的 `scene` 字段指向它
-3. 若要重排，调整数组顺序即可
-
-**辅助脚本（`scripts/`）**
-
-- `new-phrase.mjs` — 交互式询问 id/scene/order，生成 `phrases/<id>.json` 骨架文件（含全部语言的空占位）等你填内容
-- `coverage.mjs` — 打印覆盖率矩阵，例如：
-
-  ```
-  phrase                  zh  en  ja  ko  es  pt  fr  de
-  greeting-hello          ✓   ✓   ✓   ✓   ✓   ✓   ✓   ✓
-  catch-miss-seeing       ✓   ✓   ✓   ✓   ✓   ✓   ✓   ·
-  affection-care          ✓   ✓   ✓   ✓   ·   ·   ·   ·
-  ```
-
-这两个脚本非常简单，Claude Code 在 M0/M1 顺手加。
+加短语 / 加语言 / 加场景的操作步骤与风格四规则见 `README.md`（Add a phrase / language / scene + Translation philosophy）——那里是唯一维护的版本，此处不复述。本文档只记意图：实际流程都是"让 AI 生成 JSON、review 后合入"，per-phrase 文件保证 AI 一次改一个文件不殃及全库（§5.1 原则 5）。辅助脚本：`pnpm new-phrase`（骨架生成）、`pnpm coverage`（覆盖率矩阵，含 gender 轴命中数——§5.7 阈值机制的数据源）。
 
 ---
 
 ## 6. 功能规格
 
-> **本章地位**：已实现小节的交互细节与像素值以组件源码为准（§0 规则）；本章保留的是设计意图、约束和"实现注意 ⚠️"陷阱——这些读不出于代码。规格在实现后即视为"as-built 快照"，不随重构逐行维护。
+> **本章地位**：只记设计意图、约束与"实现注意 ⚠️"陷阱——这些读不出于代码；交互细节与一切像素/数值规格以组件源码为准（§0 规则）。**v2.4 起废除"as-built 快照"体例**——快照必烂，且以权威口吻误导（TocSide 面板不透明度曾以过期值在此存活一周）。
 
 ### 6.1 语言选择（双轨：表头 + Stationery 面板）
 
@@ -318,7 +256,7 @@ UI 状态影响变体显示的维度：`anchor`（哪种语言放锚点列）、
 
 **默认状态**：`anchor=en`（v0.2.0 起，原 zh）/ `tone=any`。所有文案从 `ui/en.json` 读。
 
-> v1.5 起 `addressee` slot（friend / woman / man / everyone）从 Stationery 撤掉。原因：当前数据下 addresseeGender 命中率 0、addresseeCount 仅 7/77，控件存在但拨动无变化，反而违反"美学优先"+"内容是主角"。schema 字段保留，相关 tag（"to a woman" / "to everyone"）改在 VariantRow tag line 被动展示。详见 §5.7。
+性别/对象控件的撤除与恢复史见 §5.7 与 §13（04-26 / 06-12），此处不复述。
 
 **实现注意 ⚠️**：popover 内的选项 button 关闭态必须 `tabindex="-1"`，展开时才改为 `tabindex="0"`。否则即使视觉上 opacity:0，Tab 键焦点也会进入隐藏选项，浏览器自动滚动把它带进视口，造成"按 Tab 莫名弹窗"的 bug（demo 早期踩过）。`closeAllSlots()` 函数里要把所有 popover 子按钮 tabindex 重置为 -1。
 
@@ -326,16 +264,12 @@ UI 状态影响变体显示的维度：`anchor`（哪种语言放锚点列）、
 
 ### 6.3 视图切换（ViewToggle）
 
-- 两种视图：`table` / `cards`
-- 用户主动切换会覆盖默认，存 `$view: 'table' | 'cards' | 'auto'` 持久化
-- `auto` 根据视口宽度（≥ 640px → table；v0.1.1 起从 960 下调）自动切
-- Toggle 按钮：Masthead 右上角，位于 `position: absolute; top: 24px; right: 24px`，药丸形状的 chip group，两个短 sans 小字按钮 `[Cards] [Table]`（字号 10px，letter-spacing .22em，大写）
-- **实现**：通过 `body[data-view]` 属性驱动。规则：
-  - `body[data-view="table"] .view-desktop { display: block }` + `.view-mobile { display: none }`
-  - `body[data-view="cards"] .view-desktop { display: none }` + `.view-mobile { display: block }`
-- **卡片视图的宽度约束（关键）**：`body[data-view="cards"] .card-list { max-width: 720px; margin: 0 auto }` + 场景标题也 `max-width: 720px` 居中。shell 本身仍然 1240px（Masthead / Stationery / Footer 保持原居中），只是卡片容器收窄到 720px，自然在右侧留出 ~260px 空间给 TocSide 落座
-- 切换用 Svelte transition 淡入淡出（160ms）
-- 响应 `prefers-reduced-motion: reduce` 时关闭过渡
+- 两种视图：`table` / `cards`；用户主动切换覆盖默认，存 `$view: 'table' | 'cards' | 'auto'` 持久化
+- `auto` 按视口宽度自动切（≥640 → table；v0.1.1 起从 960 下调，阈值在 `ViewToggle.svelte`）
+- Toggle 按钮：Masthead 右上角药丸 chip group（Label 角色，§7.1）
+- **实现**：`body[data-view]` 属性驱动 `.view-desktop` / `.view-mobile` 互斥显隐
+- **卡片视图的宽度约束（关键意图）**：卡片容器与场景标题收窄到 720px 居中，shell 本身保持 1240px——右侧自然留出 ~260px 给 TocSide 落座
+- 切换淡入淡出；尊重 `prefers-reduced-motion`
 
 ### 6.4 场景目录导航（TocTop + TocSide）
 
@@ -349,72 +283,35 @@ TOC 在不同阅读阶段以两种形态出现，互不重叠。所有状态切�
 No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Reactions · … · XI. Holidays
 ```
 
-- **视觉**：Fraunces 斜体 14px，金色 Roman 编号（opacity 0.85）+ `--ink-mute` 场景名；场景之间用极小的 `•` 实心圆点（3px，`--line` 色）分隔
-- **布局**：flex-wrap, justify-content: center, gap 24px
-- **交互**：点击 smooth scroll 到对应场景；hover 时数字和场景名都变 accent
-- **显隐**：`$scrolled === false` 时可见；`true` 时 `opacity: 0 + pointer-events: none` 淡出（400ms），但保留文档流位置（不跳动）
-- **移动端**：font-size 保持 14px；如果溢出就换行（已在 flex-wrap 处理）
+- **视觉**：Fraunces 斜体（Index 角色，§7.1），金色 Roman 编号 + `--ink-mute` 场景名，极小实心圆点分隔
+- **交互**：点击 smooth scroll 到对应场景；hover 变 accent
+- **显隐**：`$scrolled === false` 时可见；`true` 时淡出但保留文档流位置（不跳动）
+- **移动端**：flex-wrap 换行兜底
 
 #### 6.4.2 TocSide — 滚动后右侧 sidebar
 
-位置：`position: fixed`，垂直居中，右侧锚定在 shell 右内缘（shell max-width 1240px，公式 `right: max(14px, calc((100vw - 1240px) / 2 + 32px))`）。
+位置：`position: fixed`，垂直居中，右侧锚定在 shell 右内缘（窄视口有保底边距）。
 
-**显隐规则**：
+**显隐规则**（阈值以 `TocSide.svelte` 的媒体查询为准）：
 
-- 表格视图下：**始终隐藏**（table 已有场景小标题 + 短语密度高，不需要额外导航）
-- 卡片视图 + `$scrolled === true` 时才显示
-- 卡片视图 + 视口 <640px（真移动）：隐藏，滚动导航由其他机制兜底
-- CSS 选择器：`body[data-view="cards"].scrolled .toc { display: flex }`，其他情况 `.toc { display: none }`
+- 卡片视图：`scrolled` 且视口 ≥640 显示——卡片列 720px 居中，右侧留白天然容得下 rail
+- 表格视图：`scrolled` 且视口 ≥1024 显示——再窄 rail 会挤压最右译文列（本节旧文"表格视图始终隐藏"有误，v2.4 按源码勘正）
+- 更窄（真移动）：隐藏，导航由回顶钮兜底
 
-**容器**：
+**形态意图**：
 
-- `width: fit-content` + `max-width: 240px`——跟最长场景名自适应，不留大块空白
-- `padding: 32px 28px 32px 30px`
-- 默认无背景、无边框、无投影——只是几列罗马数字浮在右侧留白里
-- 展开态（`.on`）才加 barely-there 羊皮纸层：
-  - `background: rgba(245, 237, 217, 0.22)`
-  - `box-shadow: 0 0 0 1px rgba(212,198,168,.22), 0 12px 32px -24px rgba(138, 98, 67, .08)`
-  - **无 backdrop-filter**（不要毛玻璃，跟纸质气质冲突）
-- 过渡：`transition: background .42s ease, box-shadow .5s ease`
+- 静息态是"几列罗马数字浮在留白里"——无背景、无边框、无投影；数字站在一条竖向 rail 侧（金色渐变细线 + 上下两枚 ❋ fleuron，fleuron 只在展开时现身）
+- 展开态铺一层**实纸**面板（`--surface-toc-panel`；R1 起近实纸——半透明会让面板下的表格文字透叠不可读）；**无 backdrop-filter**（毛玻璃与纸质气质冲突，对照 §6.11）
+- 场景名收起时保留布局宽度（展开不引起横向跳动），展开时逐行 stagger 显现
+- Active 场景三重线索同时标出：编号变 accent、场景名加重、右侧赤陶短横线
 
-**装饰骨架**：
+**扩展/收起（R6 改判，2026-07-03）**：hover / focus 展开，离开 400ms 后收起（`focusout` 用 `relatedTarget` 判断是否仍在 TOC 内）；**滚动不展开**——展开面板需 ~1816px 视口才不叠到表格末列，"滚动自动展开"在真实屏幕上必然盖住内容。静息 rail（数字 + 活动 accent + 阅读进度线）即滚动反馈；展开只表达用户意图。
 
-- 竖向 rail：`::before`，`right: 48px`（即在容器右内侧 48px 处）、`top: 44px / bottom: 44px`、`width: 1px`
-  - 背景用三段式渐变：`transparent → --gold(16%) → --line(50%) → --gold(84%) → transparent`
-  - 默认 opacity 0.35；展开时 0.6
-- 上下两端各一个金色 `❋` fleuron 装饰：`::after` 在顶端、`.toc-fleuron-bottom` 元素在底端，都位于 rail 右端延长线上（`right: 48px, transform: translateX(50%)`）
-  - 只在展开状态 opacity 0.75，收起时完全隐形
-
-**每个场景项（`.toc-item`）**：
-
-- `display: flex; flex-direction: row-reverse; text-align: right`——数字在右，场景名在左
-- 数字（`.num`）：
-  - Fraunces 斜体 14px，`font-variation-settings: "opsz" 48, "SOFT" 100`（小字号下用大光轴 + 软转角，更手写）
-  - 颜色 `--gold`，默认 opacity 0.8
-  - width 22px，text-align center
-  - **无背景**——数字"站在" rail 的右侧，不穿过它
-- 场景名（`.ttl`）：
-  - Fraunces 斜体，`font-weight: 350`（可变字体中间值），`font-size: 14px`，`color: --ink-soft`
-  - 收起状态：`opacity: 0, transform: translateX(10px), pointer-events: none`（保留布局宽度但不可见不可点）
-  - 展开状态：`opacity: 1, transform: translateX(0), pointer-events: auto`
-  - stagger：场景行依次显现，每行延迟 +40ms（场景数从 6 涨到 11 后依然成立，总时长 ~0.44s）
-- Active（当前场景）：
-  - `.num` 颜色 → `--accent`，opacity 1.0
-  - `.ttl` 颜色 → `--ink`，`font-weight: 500`（比默认 350 明显加粗）
-  - `.toc-item.active::before` 绝对定位小横线：`right: -10px, width: 0 → 8px`，赤陶色，展开时才出现（.1s delay）
-  - 三处视觉线索同时标出当前位置：颜色、字重、短线
-
-**扩展/收起触发**：
-
-- **Hover on TOC**：展开并保持，鼠标离开 400ms 后收起
-- **Focus 进入任一 `.toc-item`**：展开；`focusout` 后 400ms 收起（用 `relatedTarget` 判断是否仍在 TOC 内）
-- **滚动不展开**（R6 改判，2026-07-03）：展开面板需 ~1816px 视口才不叠到表格末列，"滚动自动展开"在真实屏幕上必然盖住内容。静息 rail（数字 + 活动 accent + 阅读进度线）即滚动反馈；展开只表达用户意图（hover/focus）
-
-**点击**：任一 `.toc-item` → `scrollIntoView({ behavior: 'smooth', block: 'start' })` 到对应场景
+**点击**：任一条目 smooth scroll 到对应场景。
 
 #### 6.4.3 Active 场景追踪
 
-在 `src/lib/scroll.ts` 里维护 `$activeScene: string` nanostore。在滚动 RAF 回调里遍历所有 `.scene-block`，取 `boundingClientRect.top <= 120px` 的最后一个作为当前 active。所有 TOC 组件订阅这个 store 并更新 `.active` 类。
+`src/lib/scroll.ts` 维护 `$activeScene` nanostore（滚动 RAF 里按场景块位置判定），TOC 组件订阅并更新 `.active` 类。
 
 ### 6.5 复制（VariantRow）
 
@@ -455,12 +352,9 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 **表格视图**
 
-- 固定第一列，金棕色底（`rgba(166,130,74,.06)`）+ 右侧浅色 border
+- 固定第一列，淡金棕底 + 右侧浅色 border
 - 表头显示当前锚点语言的本地名（如 "中文" / "Français"）
-- 每行内容三层：
-  1. 大字 Fraunces 22px，该短语在锚点语言下筛选后的**第一条变体**
-  2. 小斜体 rom（如果有）
-  3. 小斜体 gloss（该语言对这个概念的小标签，如 "问候" / "une salutation"）
+- 每行内容三层：大字（Headword 角色，§7.1）取该短语在锚点语言下筛选后的**第一条变体**；小斜体 rom（如有）；小斜体 gloss
 
 **卡片视图**
 
@@ -470,49 +364,21 @@ No. I. Greetings · II. Catching Up · III. Gratitude · IV. Farewells · V. Rea
 
 ### 6.10 译文列（TranslationCell + VariantRow）
 
-- 每格竖向堆叠 1-N 个 variant 行，行之间用虚线 `border-top: 1px dashed` 分隔
-- 每行结构：
-  - 大字 Fraunces 19px，variant.text
-  - 小斜体 rom
-  - 小斜体 tag line（仅在 `tone=any` 时显示，把 variant 的 tone/gender 渲染成 "— casually" / "he writes"）
-  - 小 sans 斜体 note（深衬线左竖线分隔）
-  - 右上角 copy hint（hover 时出现 50% 透明）
-- 无变体（被筛选干净）时单元格显示斜纹纹样 `repeating-linear-gradient` 占位
+- 每格竖向堆叠 1-N 个 variant 行，行间虚线分隔
+- 每行结构：大字（Entry 角色，§7.1）variant.text；小斜体 rom；tag line（仅 `tone=any` 时显示，把 tone/gender 渲染成 "— casually" / "he writes"）；note（Aside 角色）；右上角 copy hint（hover 显现）
+- 无变体（被筛选干净）时单元格显示斜纹纹样占位
 
 ### 6.11 顶部细 bar（StickyBar）
 
-当 `$scrolled === true`（滚动超 420px）时，视口顶部淡入一条浮动控制条。目的：在阅读深处能继续调整语气 / 对象偏好，不用滚回顶。
+当 `$scrolled === true` 时，视口顶部淡入一条浮动控制条。目的：在阅读深处能继续调整语气 / 对象偏好，不用滚回顶。
 
-**布局**
+**布局**：`[致·远·方] │ I write — [in any tone] — to [a friend], as [myself]`。左侧 mark 点击回顶；中间是缩略版 Stationery——**不含 anchor slot**（锚点切换频率极低，留在 Stationery）。所有 slot 是 `<SlotPicker>` 实例，与主 Stationery 共享 store，任一处修改两处同步。
 
-```
-[致·远·方]   │   I write — [in any tone] — to [a friend]
-```
+**表面**：近实纸底 + `backdrop-filter` 毛玻璃——浮动工具栏与内容是"不同层级"，玻璃感在**这里**是对的（TocSide 不是工具栏，那里才不用 blur）；α 自 R1 提高到近实纸，可读性不得依赖 backdrop-filter 支持。
 
-- `position: fixed; top: 0; left: 0; right: 0`，跨全宽
-- 高度约 44px，padding `10px 24px`
-- 背景：`rgba(235, 225, 204, 0.94)` + `backdrop-filter: blur(14px) saturate(1.2)`（毛玻璃在**这里**是对的——浮动工具栏跟内容是"不同层级"，玻璃感合理；TocSide 不是工具栏，那里才不用 blur。α 自 R1 提到 0.94：blur 只是增强，可读性不得依赖 backdrop-filter 支持）
-- 上边缘下方一层极淡的暖色渐变作"透出阴影"
+**响应式**：窄屏隐藏 mark 只留句子，更窄允许换行。淡出时顺手关闭所有 SlotPicker popover（`closeAllSlots()`）。
 
-**内部元素**
-
-- 左：`<button class="sb-mark">致 · 远 · 方</button>`——点击 smooth scroll 回顶
-- 细竖线分隔
-- 中：缩略版 stationery —— "I write — [tone] — to [addressee], as [speaker]"。**不含 anchor slot**（锚点语言切换频率极低，留在 stationery）。addressee/speaker 槽位随 2026-06 性别控件恢复而加入（v1.5 曾整体撤掉）。所有 slot 是 `<SlotPicker>` 实例，跟主 stationery 共享同一个 store，任一处修改两处同步。
-
-**响应式**
-
-- ≤820px：隐藏 mark 和左分隔，只保留句子
-- ≤640px：更小字号（13px），允许 flex-wrap
-
-**隐现动画**
-
-- 默认 `opacity: 0; transform: translateY(-100%); pointer-events: none`
-- `.on` 状态：`opacity: 1; transform: translateY(0); pointer-events: auto`
-- `transition: opacity .32s ease, transform .32s cubic-bezier(.2, .9, .2, 1)`
-- 淡出时顺手关闭所有 SlotPicker popover（`closeAllSlots()`）
-
-**不做**：TOC 圆点快捷跳转（之前 demo 有过，后删除——TocSide 已经覆盖导航需求，重复）
+**不做**：TOC 圆点快捷跳转（TocSide 已覆盖导航需求，重复）。
 
 ### 6.12 PWA
 
@@ -668,21 +534,13 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 三态 ThemeToggle（v0.2.0）；收藏 + "Starred only" 过滤、AA 对比度脚本验证（v1.0.0）。会话级过滤、starred 持久化等设计取舍见 §6.7 与 §13。
 
-### M3 · 语音 + PWA — v1.0.0 上线（剩离线实测）
-- [x] `SpeakButton.svelte` + `src/lib/tts.ts` 封装（rate 0.9；行内 hover 显现，与 copy hint 同列）
-- [x] Voice 检测：`voiceschanged` 后按 tts code 匹配（精确 → 同语种前缀回退）；无 voice 或语言无 tts code（mizo）时按钮直接不渲染（比禁用+tooltip 更干净）
-- [x] `manifest.webmanifest` + 图标（192 / 512 / maskable 512，由 favicon.svg 栅格化生成）
-- [x] Service Worker precache：shell（html/css/js/svg，数据已打包进 JS）；字体改为运行时 CacheFirst——CJK Noto 拆分成上百个子集文件，全量 precache 会有几十 MB，按需缓存更合理
-- [x] 离线测试 — 自动化（`tests/offline.spec.ts`，§10.5）。修复了 Astro 7 升级打破的 SW 注册（registerSW 不再自动注入，改由 Layout 在 PROD 手动挂载）
+### M3 · 语音 + PWA — ✅ v1.0.0
 
-### M4 · 打磨（进行中）
-- [x] Accessibility audit：axe-core 自动化（**全 WCAG 2.1 A/AA 含对比度**，light+dark 双主题、CI 门禁）。修复 SlotPicker nested-interactive，并把次要小字 / gold 文字 / anchored chip 的对比度补齐到 AA（§7.2）。剩：完整键盘穿行手测
-- [x] Lighthouse 实测（slow-4G 模拟）：A11y / BP / SEO 三项 100，Performance 88——达成 §9 校准后预算
-- [x] 所有交互的 `prefers-reduced-motion` 处理（在 `global.css` 全局兜底）
-- [x] OG image 设计（1200×630）+ meta tags（v0.1.0 已就位 Open Graph + Twitter Card）
-- [x] `README.md`：项目说明 + 使用说明 + 数据扩展指南 + 翻译协作哲学
-- [x] `404.astro` 简短优雅的 not-found（"This letter went astray."）
-- [~] 测试矩阵：Playwright 跨浏览器工程已就绪（chromium/firefox/webkit，`pnpm test:all`，§10.5）。剩真机手测 iOS Safari / Android Chrome
+TTS（无 voice 不渲染）、manifest + 图标、SW precache shell、离线自动化测试。取舍与踩坑见 §6.6 / §6.12 / §13（06-12、06-28）。
+
+### M4 · 打磨 — 基本完成
+
+axe 全 A/AA 含对比度双主题入 CI 门禁、Lighthouse 达 §9 校准预算、reduced-motion 全局兜底、OG image、README、404、跨浏览器测试工程就绪（§10.5）。**剩**：完整键盘穿行手测；真机手测 iOS Safari / Android Chrome（与 §15 开放项合并执行）。
 
 ### M5 · 内容扩充（持续）
 按需追加短语、语言、场景。工作流见 §5.9。
@@ -749,24 +607,7 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ### A. Demo 参考文件
 
-按重要性排序：
-
-- **`distant-friends-v3.html`** — 视觉与交互的最终参考。**这是 M1 验收的视觉基准**。包含：
-  - 7 种语言 × 11 条短语的完整数据（覆盖 tone 四档 / speakerGender / addresseeCount 所有维度）
-  - Masthead + Stationery（手写体两行预设句，三个 SlotPicker）
-  - LangChips（5 种上限 + shake 反馈 + 锚点赤陶色高亮）
-  - ViewToggle（Masthead 右上角药丸）
-  - TocTop（首屏横向目录页）
-  - TocSide（滚动后右侧 sidebar，collapse/expand，hover + 滚动活动触发，4 档 stagger）
-  - StickyBar（顶部浮条，mark + 缩略 stationery，无 anchor）
-  - PhraseTable（桌面表格，按场景分 block，锚点列 + 变体列）
-  - PhraseCards（卡片视图，`.card-list` max-width 720px 居中）
-  - VariantRow（含 rom / tag line / note / copy hint）
-  - 完整的 `visibleVariants()` 过滤逻辑
-  - Toast 复制反馈
-  - 纸纹 SVG 滤镜、暖色 vignette、`@keyframes rise/pulse/shake`、全部色板
-- `distant-friends-v2.html` — 过程版。展示场景 chips + 单元格 pill 标签的方案。**已被推翻**（视觉过于数据面板化），保留作为"避免变成这样"的反面教材。
-- `distant-friends.html`（v1）— 最初版。展示基础表格/卡片视图 + 单变体结构，没有场景导航、变体系统、锚点切换。作为"最小干净版"的视觉起点。
+三个演进版 demo（v1 最小起点 → v2 数据面板化反面教材 → v3 M1 验收视觉基准）**已不在仓库中**，仅作历史坐标：站点视觉早被 R1–R12 迭代大幅超越，v3 里的 LangChips、shake、tone 四档等元素后来均被推翻（§13）。它们不再是任何验收基准。
 
 ### B. 命名约定
 - 文件名：kebab-case（`phrase-table.svelte`、`slot-picker.svelte`）
@@ -783,17 +624,17 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ### E. 本文档的演化
 
-- **v1.0**（2026-04-21）— 初版：5 场景、单变体结构、per-phrase 文件夹、中文 source + 英文 gloss
-- **v1.1**（2026-04-22）— 加入变体系统（register / gender / count 维度）、UI i18n 结构、per-phrase 文件夹 + per-language trans 文件
-- **v1.2**（2026-04-22）— 大幅简化：所有语言平等、tone 四档固定、手写体 Stationery 替代所有 chips/pills、扁平三文件数据结构、UI 锁英文、每语言有自己的 gloss、语言数量上限 5 种
-- **v1.3**（2026-04-23）— 交互与视觉收尾：TOC 拆为 TocTop（首屏）+ TocSide（滚动后 sidebar，collapse/expand hover 展开）双形态；StickyBar 简化为 mark + tone + addressee；ViewToggle 提前到 M1（与卡片宽度约束 720px 强绑定）；`scroll.ts` 作为全局滚动状态中心；新增语义化 surface tokens；踩坑案例文档化（copy hint / SlotPicker tabindex）；shell 宽度 1180 → 1240px
-- **v1.5**（2026-04-26）— addressee slot（friend / woman / man / everyone）从 Stationery 和 StickyBar 整体撤掉：当前数据下 addresseeGender 命中率 0、addresseeCount 仅 9% 且只对单条短语有效，控件存在却拨动无效违反"内容是主角"原则。schema 字段（`speakerGender` / `addresseeGender` / `addresseeCount`）保留，VariantRow tag line 被动展示（"he writes" / "to a woman" / "to everyone"）。`scripts/coverage.mjs` 升级输出三个轴的命中数 + 距阈值（10）的差距，作为未来何时恢复 UI 控件的触发指标。`visibleVariants()` 简化为只接受 tone。
+- **v1.0–v1.3**（2026-04-21~23）— 初版到交互收尾：变体系统、所有语言平等、tone 全局固定、Stationery 替代 chips/pills、TOC 双形态、shell 1240px
+- **v1.5**（2026-04-26）— addressee slot 撤除 + 成熟度阈值机制（06-12 按阈值恢复；全史见 §5.7 / §13，此处不复述）
 - **v2.0**（2026-06-12）— 文档体例重构：确立"事实层=代码、意图层=本文档"的真相分层（§0 维护规则）；删除全部事实复制品（文件树细节、languages/scenes/en.json/Zod/token 数值快照、组件清单表、workflow YAML）约 -350 行；§6 规格声明为 as-built 快照；已完成里程碑压缩为单行（M1 验收清单移附录 F 作回归手测）；删除已完成使命的"启动 Prompt 模板"章；新设 §13 append-only 决策日志并回填 2026-04 以来的方向性决策。
 - **v2.1**（2026-07-02）— 新设 §15 设计迭代账本（功能冻结后的跨会话工作账本）；§6.1 按语言交互收口重写。（追记：此版本升级当时未入本册——版本史断链正是 v2.3 要修的病。）
 - **v2.2**（2026-07-03）— 第二周期 R9–R12 as-built：§7.1 改写为字体角色制规范、§9 按 R9 实测再校准、§15 周期账本扩充。（追记，同上。）
 - **v2.3**（2026-07-08）— 编排重构（R13–R18 实验回退后的文档对账）：§13 恢复严格时间序（只重排不改字——此前后期条目为"插入"而非"追加"，同日序号错乱、07-07 夹在 07-03 之间）；§15 按 §0 压缩规则重构为「原则 + 开放项 + 周期存档 + 轮次日志」，删去与 §13/轮次日志三重记账的 60 余行已勾条目（独有教训并入轮次日志）；第二周期序言从进行时改为存档（消除与 §13 07-07 定界的矛盾指令）；迭代原则补入「一轮一验」；§8/§11 清单对账；本附录补 v2.1/v2.2 断链。
+- **v2.4**（2026-07-10）— 体检手术：**修过期事实** 5 处（§6.4.2 TocSide 显隐规则与面板不透明度按源码勘正、§11 M3/M4 状态、§3.1 Zod 备注）；**去多重记账**（§6.2 v1.5 引用块、§5.9 归口 README、§14A/E 压缩）；**清除事实层复制**（§5.5 字段表、§6 各节像素规格、§3.1 版本列）约 -220 行；**§6 体例改判**——废除"as-built 快照"，只留意图 + 陷阱 + 指针；**§0 新增 §13 条目限长**（≤3 行）。
 
 ### F. 手测回归清单（源自 M1 验收）
+
+> 大半项目已由 Playwright 冒烟自动覆盖（§10.5）；本清单供真机 / 视觉手测复用（§15 开放项）。
 
 - [ ] 首屏状态：TocTop 可见、TocSide 不可见、StickyBar 不可见
 - [ ] 滚动过 420px：TocTop 淡出、TocSide 淡入（cards@≥640 / table@≥1024）、StickyBar 淡入（含 ViewToggle）
@@ -850,4 +691,4 @@ axe 跑**全量 WCAG 2.1 A/AA（含 `color-contrast`）**，light + dark 各一�
 
 ---
 
-*文档版本 v2.3 · 最后更新 2026-07-08（编排重构：§13 恢复严格时序、§15 压缩为 原则+开放项+周期存档+轮次日志、附录 E 补全版本史、§8/§11 清单对账）*
+*文档版本 v2.4 · 最后更新 2026-07-10（体检手术：修 5 处过期事实、去多重记账、清除事实层复制约 -220 行、§6 体例改判为「意图+陷阱+指针」、§13 新条目限长——明细见附录 E）*
