@@ -458,7 +458,7 @@ pnpm + Node 22、`upload-pages-artifact` → `deploy-pages`，Pages Source 选 G
 ### A. 命名与提交约定
 
 - 文件 kebab-case；组件 PascalCase；store camelCase（用时加 `$`）；CSS 类 kebab-case 松散 BEM；类型 PascalCase 无 `I` 前缀，Zod 导出类型加 `T` 前缀
-- Commit 按 Conventional Commits 松散版（feat / fix / style / refactor / docs / chore），每条要能让三个月后的自己看懂
+- Commit 按 Conventional Commits 松散版（feat / fix / style / refactor / docs / chore），**英文书写**，每条要能让三个月后的自己看懂
 - 决策记录在 §10（单文件日志足够，不开 ADR 目录）
 
 ### B. 手测回归清单
