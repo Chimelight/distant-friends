@@ -138,6 +138,8 @@
     letter-spacing: -0.01em;
     color: var(--ink);
     margin: 0;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
   }
   .scene-ttl :global(em) {
     font-style: italic;
@@ -248,6 +250,7 @@
     font-size: 12.5px;
     color: var(--ink-mute);
     margin-top: 8px;
+    text-wrap: pretty;
   }
   .lang-block {
     padding: 12px 0 4px;

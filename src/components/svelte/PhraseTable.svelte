@@ -325,6 +325,8 @@
     letter-spacing: -0.01em;
     color: var(--ink);
     margin: 0;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
   }
   .scene-ttl :global(em) {
     font-style: italic;
@@ -547,6 +549,7 @@
     color: var(--ink-mute);
     margin-top: 8px;
     letter-spacing: 0.015em;
+    text-wrap: pretty;
   }
 
   .trans-cell {

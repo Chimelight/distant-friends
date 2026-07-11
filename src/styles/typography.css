@@ -18,3 +18,8 @@ body {
 :lang(zh), :lang(ja), :lang(ko) {
   font-feature-settings: normal;
 }
+
+/* Headings break in balanced lines instead of leaving a lone last word. */
+h1, h2 {
+  text-wrap: balance;
+}

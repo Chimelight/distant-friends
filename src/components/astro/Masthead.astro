@@ -87,6 +87,10 @@ import ui from '../../content/ui/en.json';
     letter-spacing: -0.02em;
     margin: 0 0 20px;
     color: var(--ink);
+    /* trim the leading above the caps / below the baseline so the margins
+       measure from the ink itself, like set metal type */
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
   }
   .title :global(.amp) {
     color: var(--accent);
@@ -100,6 +104,7 @@ import ui from '../../content/ui/en.json';
     color: var(--ink-soft);
     line-height: 1.6;
     margin: 0;
+    text-wrap: pretty;
     /* Entrance choreography: mark → tagline → stationery → toc. The title
      * stays out of it — animating the LCP element's opacity would push the
      * LCP timestamp to the animation's end. */

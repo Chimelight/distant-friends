@@ -180,6 +180,7 @@
     margin-top: 6px;
     line-height: 1.55;
     letter-spacing: 0.015em;
+    text-wrap: pretty;
   }
   .variant-meta::before {
     content: "— ";
