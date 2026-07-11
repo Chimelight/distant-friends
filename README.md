@@ -37,7 +37,7 @@ pnpm new-phrase   # interactive scaffolder for a new phrase
 
 Requires Node 22+ and pnpm 9 (pinned via `packageManager`; corepack picks it up automatically).
 
-`pnpm test` builds the site and runs Playwright against the `astro preview` output (so it exercises the real bundle + service worker): a handful of smoke checks, an axe-core WCAG 2.1 A/AA scan, and an offline check. It runs in CI on every PR and is part of the Dependabot auto-merge gate — see [DESIGN §10.5](DESIGN.md). First run locally needs the browser: `pnpm exec playwright install chromium`.
+`pnpm test` builds the site and runs Playwright against the `astro preview` output (so it exercises the real bundle + service worker): a handful of smoke checks, an axe-core WCAG 2.1 A/AA scan, and an offline check. It runs in CI on every PR and is part of the Dependabot auto-merge gate — see [DESIGN §7.3](DESIGN.md). First run locally needs the browser: `pnpm exec playwright install chromium`.
 
 ## Project structure
 
@@ -148,7 +148,7 @@ Updates enter at `dev`, so they still ride the `dev → main → release` pipeli
 
 ## Roadmap
 
-**v1.2.0 shipped 2026-07-03.** Features are intentionally frozen (DESIGN §8/§9); current work is design iteration on existing features — the ledger lives in [DESIGN §10](DESIGN.md#10-设计迭代账本).
+**v1.2.0 shipped 2026-07-03.** Features are intentionally frozen (DESIGN §1); current work is design iteration on existing features, one user-approved round at a time (DESIGN §2 rule 7).
 
 | Milestone | State |
 | --- | --- |
@@ -158,4 +158,4 @@ Updates enter at `dev`, so they still ride the `dev → main → release` pipeli
 | M3 — TTS + PWA | ✅ v1.0.0; offline behaviour guarded by an automated Playwright check |
 | M4 — polish (a11y, Lighthouse, 404) | ✅ Lighthouse 96/100/100/100 (recalibrated in R9, CLS 0); axe WCAG 2.1 A/AA (incl. contrast) gated in CI |
 | M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |
-| Design iteration (post-freeze) | Cycle 1 R1–R8 and cycle 2 R9–R12 done (R13–R18 withdrawn); ledger in DESIGN §10 |
+| Design iteration (post-freeze) | Ongoing, one user-approved round at a time; history in git log |
