@@ -502,8 +502,11 @@
 
   .anchor-cell {
     position: relative;
-    padding: 24px 22px;
-    vertical-align: top;
+    /* baseline row: the headword and every column's first entry sit on one
+       shared rule (native table baseline alignment). Top padding matches the
+       variants' 15px so the shared baseline doesn't lift the row height. */
+    padding: 15px 22px 24px;
+    vertical-align: baseline;
     background: rgba(166, 130, 74, 0.06);
     border-right: 1px solid var(--line-soft);
     border-bottom: 1px solid var(--line-soft);
@@ -554,7 +557,7 @@
 
   .trans-cell {
     padding: 0;
-    vertical-align: top;
+    vertical-align: baseline;
     border-bottom: 1px solid var(--line-soft);
   }
   /* "fresh ink": a switched-in / newly-added column writes itself in,
@@ -574,6 +577,9 @@
   }
 
   .trans-cell.empty {
+    /* an empty cell has no text baseline — aligning it would snap its
+       bottom edge to the row baseline and distort the row */
+    vertical-align: top;
     background: repeating-linear-gradient(
       135deg,
       transparent 0,
