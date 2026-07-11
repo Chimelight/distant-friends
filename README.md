@@ -148,9 +148,7 @@ Updates enter at `dev`, so they still ride the `dev → main → release` pipeli
 
 ## Roadmap
 
-Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与任务清单). The table below is a summary and may lag.
-
-**v1.2.0 shipped 2026-07-03.** Features are intentionally frozen (DESIGN §12); current work is design iteration on existing features — the cross-session ledger lives in [DESIGN §15](DESIGN.md#15-设计迭代账本跨会话进行中).
+**v1.2.0 shipped 2026-07-03.** Features are intentionally frozen (DESIGN §8/§9); current work is design iteration on existing features — the ledger lives in [DESIGN §10](DESIGN.md#10-设计迭代账本).
 
 | Milestone | State |
 | --- | --- |
@@ -158,6 +156,6 @@ Canonical task list with checkboxes: [DESIGN.md §11](DESIGN.md#11-里程碑与�
 | M1 — visual + interactive parity with v3 demo | ✅ v0.1.0 |
 | M2 — dark mode + starring | ✅ v0.2.0 / v1.0.0 |
 | M3 — TTS + PWA | ✅ v1.0.0; offline behaviour guarded by an automated Playwright check |
-| M4 — polish (a11y, Lighthouse, 404) | ✅ Lighthouse 96/100/100/100 (recalibrated in R9, CLS 0); axe WCAG 2.1 A/AA (incl. contrast) gated in CI; real-device matrix pending |
+| M4 — polish (a11y, Lighthouse, 404) | ✅ Lighthouse 96/100/100/100 (recalibrated in R9, CLS 0); axe WCAG 2.1 A/AA (incl. contrast) gated in CI |
 | M5 — content (ongoing) | 23 languages × 63 phrases, fully audited (see Translation philosophy) |
-| Design iteration (post-freeze) | Cycle 1 R1–R8 done (v1.2.0); cycle 2 (craft upgrade) opened, R9 done; ledger in DESIGN §15 |
+| Design iteration (post-freeze) | Cycle 1 R1–R8 and cycle 2 R9–R12 done (R13–R18 withdrawn); ledger in DESIGN §10 |

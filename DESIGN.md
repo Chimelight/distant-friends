@@ -2,7 +2,7 @@
 
 多语言日常问候短语对照站。本文档是意图层真相源：只记设计决策、约束与原因；一切实现细节以代码为准。
 
-**维护规则**：正文写无时间戳的当下事实，不打日期补丁，同一事实只在一处记录；日期只出现在账本（§9 决策日志 / §10 迭代账本 / 附录 D 版本史）。推翻决策 → §9 末尾追加 ≤2 行，不改写旧条目。完成迭代轮 → §10 记一行。选读路径：改内容 → §3 + README；打磨轮 → §10 + §9 末尾 + 相关 §4 节；性能 / 无障碍 → §7；部署 / CI → §7。
+**维护规则**：正文写无时间戳的当下事实，不打日期补丁，同一事实只在一处记录；日期只出现在账本（§9 决策日志 / §10 迭代账本 / 附录 C 版本史）。推翻决策 → §9 末尾追加 ≤2 行，不改写旧条目。完成迭代轮 → §10 记一行。选读路径：改内容 → §3 + README；打磨轮 → §10 + §9 末尾 + 相关 §4 节；性能 / 无障碍 → §7；部署 / CI → §7。
 
 ---
 
@@ -357,11 +357,6 @@ dev → main（Vercel preview）→ release（GitHub Pages），细节见 README
 - 动手前重截当前状态，不凭记忆
 - 浮层一律走 popover 原语（§4.8）；AA 是底线
 
-### 开放项
-
-- [~] **打印样式**（已落地，待用户裁决，revert 即撤）：`global.css` 尾部单个 `@media print` 块，屏幕零影响；交互 chrome 全隐、`content-visibility` 打印强制 visible、sticky 表头改 static（原生 thead 分页重复）、场景标题不跨页。⚠️ 覆盖 svelte 作用域样式需 `!important`
-- [ ] **真机手测**：iOS Safari / Android Chrome
-
 ### 周期存档
 
 - **R1–R8（2026-07-02～03）**：换列级联、收藏反馈、发音墨晕、TOC 进度线、面板键盘手感、复制金线；触屏可供性、404 印章、表格行高 348→302px、回顶钮。
@@ -369,6 +364,7 @@ dev → main（Vercel preview）→ release（GitHub Pages），细节见 README
 
 ### 轮次日志
 
+- **打印样式 · 2026-07-08** — `global.css` 尾部单个 `@media print` 块，屏幕零影响：交互 chrome 全隐、`content-visibility` 打印强制 visible、sticky 表头改 static（原生 thead 分页重复）、场景标题不跨页。⚠️ 覆盖 svelte 作用域样式需 `!important`。
 - **R12 · 2026-07-03** — 版面家具：Nº 编号、Footer 收笔线、暖色 `::selection`（暗色需专用 token）、`scrollbar-color`（不用 `::-webkit-scrollbar`，会强制 macOS 常显滚动条）。
 - **R11 · 2026-07-03** — 字体角色制落地（§5.1）：tokens、八组件归口、死代码清除；截图对比验证。
 - **R10 · 2026-07-03** — 浮层内衬光、章节留白、Toast 纸条化、卡片角线；noise 层实测结案；wavy 下划线回退。
@@ -390,23 +386,11 @@ dev → main（Vercel preview）→ release（GitHub Pages），细节见 README
 - Commit：Conventional Commits 松散版，**英文**，三个月后可读
 - 决策记录在 §9，不开 ADR 目录
 
-### B. 手测回归清单
+### B. 构建史
 
-> 大半已由 Playwright 覆盖（§7.3）；本清单供真机 / 视觉手测。
+M0 骨架（v0.1.0）→ M1 对齐 demo（v0.1.1）→ M2 深色 + 收藏（v1.0.0）→ M3 语音 + PWA（v1.0.0）→ M4 打磨 → M5 内容扩充（持续；规模以 `pnpm coverage` 为准，演进史见 [GitHub Releases](https://github.com/Chimelight/distant-friends/releases)）。早期三版 demo 已不在仓库，不是任何基准。
 
-- [ ] 首屏：TocTop 可见，TocSide / StickyBar 不可见
-- [ ] 滚动过阈值：TocTop 淡出，TocSide 淡入（cards@≥640 / table@≥1024），StickyBar 淡入
-- [ ] 各 slot 展开选择并同步；复制出 `✓ copied` + Toast
-- [ ] 语言面板满 5 点第 6 个：header 提示、面板不关；分组 + 英文注名正常
-- [ ] Tab 穿行无"莫名弹窗"；TocSide 仅 hover/focus 展开
-- [ ] 卡片恒 720px max；收藏后 "Starred only" 出现，过滤后空场景隐藏
-- [ ] hover 出喇叭，朗读不触发复制；阿拉伯语右对齐、rom 左对齐
-
-### C. 构建史
-
-M0 骨架（v0.1.0）→ M1 对齐 demo（v0.1.1）→ M2 深色 + 收藏（v1.0.0）→ M3 语音 + PWA（v1.0.0）→ M4 打磨（剩键盘穿行与真机手测，见 §10）→ M5 内容扩充（持续；规模以 `pnpm coverage` 为准，演进史见 [GitHub Releases](https://github.com/Chimelight/distant-friends/releases)）。早期三版 demo 已不在仓库，不是任何基准。
-
-### D. 文档版本史
+### C. 文档版本史
 
 - **v1.0–v1.5**（2026-04）— 初版；变体系统；addressee 撤除 + 阈值机制
 - **v2.0**（2026-06-12）— 确立事实层 / 意图层分层，删事实复制品 -350 行，设决策日志
