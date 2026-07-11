@@ -1,133 +1,75 @@
-# 致 · 远 · 方 — 设计与开发文档
+# distant-friends 设计与开发文档
 
-> 一份多语言日常问候对照站。给与世界各地朋友保持联系的人。
+多语言日常问候短语对照站。本文档是意图层真相源：只记设计决策、约束与原因；一切实现细节以代码为准。
 
-**这是一封写给远方朋友的信，不是一个应用。**全部设计从这句话推导；本文档是推导过程的真相源，按任务选读（地图见 §0）。
-
----
-
-## 0. 本文档的维护规则
-
-真相分两层，不要混：
-
-1. **事实层住在代码里**——目录结构、schema 字段、token 数值、UI 文案，一律看源文件。本文档不复制事实：复制品必烂，且以权威口吻误导。
-2. **意图层住在本文档里**——为什么这么做、红线、被否决的方案、踩过的坑。代码说不出"为什么"，这是本文档存在的全部理由。
-
-写法三律：
-
-- 正文只写**无时间戳的当下真相**：新认识改写进句子的自然位置，不打"（某日澄清）"式补丁——补丁会沉积成地层。日期与来历归 git 和账本（§10 / §11 / 附录 D）
-- **同一事实只在主场出现一次**（主场划分见文档地图）；其他位置至多一个替代整段复述的指针，指针不作来历装饰
-- 像素与数值不入册，一律看源码
-
-维护义务：
-
-- 推翻既有设计决策 → §10 末尾**追加**一条（≤2 行：方向 + 原因）。永不改写旧条目——反转本身是信息；全表严格时间升序，同日多条以（二）（三）标次序
-- 完成一轮设计迭代 → §11 轮次日志一行收束，开放项勾销，周期闭环后压缩进存档
-- 其余章节在主场改写正文，不留补丁
-
-**文档地图**——每节一个职责：
-
-| § | 唯一职责 |
-|---|---|
-| 1 / 2 | 愿景与用户 / 设计哲学与红线 |
-| 3 | 数据模型：原则、schema 语义、筛选语义、内容工作流 |
-| 4 | 功能与交互：意图、约束、⚠️ 陷阱 |
-| 5 | 设计系统：字体角色、颜色语义、间距动效 |
-| 6 / 7 | 技术选型 / 结构、部署与 CI |
-| 8 | 质量门禁：性能预算 + 可访问性承诺 |
-| 9 | 未来可能与已否决 |
-| 10 / 11 / 附录 D | 三本账：决策、设计迭代、文档版本——日期只住这里 |
-| 12 | 附录：约定、手测清单、构建史、版本史 |
-
-按任务选读：改内容 → §3 + README；设计打磨轮 → §11 + §10 末尾 + 相关 §4 节 + §2；性能 / 无障碍 → §8；部署与 CI → §7；动文档自身 → 本节。
+**维护规则**：正文写无时间戳的当下事实，不打日期补丁，同一事实只在一处记录；日期只出现在账本（§9 决策日志 / §10 迭代账本 / 附录 D 版本史）。推翻决策 → §9 末尾追加 ≤2 行，不改写旧条目。完成迭代轮 → §10 记一行。选读路径：改内容 → §3 + README；打磨轮 → §10 + §9 末尾 + 相关 §4 节；性能 / 无障碍 → §7；部署 / CI → §7。
 
 ---
 
-## 1. 项目愿景
+## 1. 项目定义
 
-**它是什么**：一个温暖、精致、离线可用的日常问候短语对照站，60+ 条朋友间常用短语 × 23 种语言（可扩展）。点击即复制、可听发音、可收藏、深浅色切换。
+- **产品**：60+ 条朋友间常用短语 × 23 种语言的对照站。点击复制、TTS 朗读、收藏、深浅色、PWA 离线。
+- **非目标**：旅游短语手册、语言学习（无练习 / 测验）、翻译 API、社交 / UGC（仅作者编辑内容）。
+- **用户**：① 作者（在光遇等社区结识外国朋友）；② 朋友们——同时来自多个国家、多数不懂中文（因此 UI 锁英文）；③ 未来公开用户。
+- **主形态**：多列对照表。朋友多国并存，一条短语横向对照多语言是核心操作；5 列上限是版面约束，非需求上限。
+- **价值排序**：语气温度 > 语法正确；少而精 > 多而全。
 
-**它不是什么**：不是旅游短语手册（"去机场怎么走"），不是语言学习工具（无练习测验），不是翻译器（不接翻译 API），不是社交 / UGC 平台（只作者编辑内容）。
+## 2. 设计原则
 
-**核心用户**：① 作者本人（日常在光遇等社区结识外国朋友）；② 作者的朋友们——**同时来自多个国家**，可能不懂中文（UI 主语言是英文的由来）；③ 未来任何想用它的人。
+**隐喻**：信笺。新决策的判断标准一句话——更像一封信，还是更像一个 app。该隐喻是约束而非主题：禁止后台感（chips 墙 / legend / pill 标签）与炫技装饰。
 
-国别多样决定了主形态：一条短语横向对照几位朋友的语言就是核心任务，多列对照表是面向朋友的日常工具，不是作者的策展视图；5 列上限只是版面约束。
+**红线**（方向不可变；数字指标按实测修订并记 §9）：
 
-**核心价值**：在跨语言友情里，**准确的温度比准确的语法更重要**。宁可少而精，不要多而滥。
+1. 编辑体 / 信笺观感；禁止 AI 模板感（Inter、紫渐变、通用圆角卡片）
+2. UI 让位内容
+3. PWA 离线优先，全功能可离线（TTS 依赖浏览器）
+4. 键盘 + 读屏完整可用，AA 起步
+5. 轻而快，预算见 §7.4
 
----
+**决策规则**（全文按名引用；案例见 §9）：
 
-## 2. 设计哲学与红线
-
-### 2.1 统摄隐喻
-
-**一封信。**界面的每一层都从这个隐喻取形：纸是暖的，墨是手写的，控制面是一句正在落笔的话，导航是页边的章节码。遇到没有先例的设计决定，问一个问题就够了：
-
-> **这个改动让它更像一封信，还是更像一个 app？**
-
-隐喻不是装饰主题，是约束系统——它同时禁止了"后台感"（chips 墙、legend、pill 标签都因此出局）和"炫技感"（装饰为衬托文字存在，不是秀技）。
-
-### 2.2 五条红线
-
-方向性原则不动摇；数字指标以实测为准修订，修订记入 §10。
-
-1. **美学优先。** 编辑体 / 信笺感。绝不允许"AI 网页模板"观感（Inter 字体、紫色渐变、通用圆角卡片）。
-2. **内容是主角。** UI 消隐让位给短语本身。
-3. **一次加载，永久可用。** PWA 离线优先，任何功能无网可用（TTS 取决于浏览器）。
-4. **键盘可达 + 屏幕阅读器友好。** 不因美学牺牲可访问性，AA 起步。
-5. **轻而快。** 性能预算见 §8——快不是分数，是对慢网络另一端那位朋友的尊重。
-
-### 2.3 判断法则
-
-反复被验证的决策模式，提炼成可按名引用的法则；全文以名字调用，案例归 §10：
-
-1. **绝不空格子**——任何筛选、任何缺数据，UI 永远有东西可读；降级是设计的一部分，不是错误处理。
-2. **控件要挣席位**——拨了没变化的控件比没有控件更糟；一个控件的存在资格由数据命中率决定，不由功能完备性决定。
-3. **阈值胜过重议**——依赖数据的决策定一个可测的触发器（"某轴 ≥10 cell 再恢复控件"），到点自动重启评估，不反复辩论。
-4. **借形先问旧义**——借用任何形状 / 纹样前，先问它在通用 UI 里已经意味着什么（wavy 下划线 = 拼写检查，故出局）。
-5. **增强不承重**——可读性与可用性不得依赖增强层（backdrop-filter、JS 动画、webfont）；增强失效时信仍然可读。
-6. **事实住在代码里**——文档只保存代码说不出的"为什么"（§0 的全域版本）。
-7. **一轮一验**——视觉改动一次一轮：截图为证、用户裁决、认可再继续；禁止无人验收的批量交付。
-
----
+| # | 规则 | 内容 |
+|---|---|---|
+| 1 | 绝不空格子 | 筛选 / 缺数据时 UI 必须有回退显示，不出现空单元格 |
+| 2 | 控件要挣席位 | 数据命中率不足的控件删除；拨动无效果的控件比没有更差 |
+| 3 | 阈值胜过重议 | 依赖数据的决策设可测触发器，到阈值自动重评，不重复辩论 |
+| 4 | 借形先问旧义 | 引入形状 / 纹样前先检查它在通用 UI 中的既有语义 |
+| 5 | 增强不承重 | backdrop-filter / JS 动画 / webfont 失效时，功能与可读性不受损 |
+| 6 | 事实住代码 | 文档只记代码表达不了的决策与原因 |
+| 7 | 一轮一验 | 视觉改动逐轮交付：截图 → 用户裁决 → 通过才继续 |
 
 ## 3. 数据模型
 
-Schema 编码世界观：**没有"源语言"**——中文不是原文，其他语言不是译文，每种语言都是同一个概念的平等 realization。这不是技术选择，是产品伦理，它决定了下面的一切。
+### 3.1 原则
 
-### 3.1 五条硬原则
+1. **语言平等**：无"源语言"概念，每种语言是同一概念的并列 realization；锚点列是用户视角选择，不是数据属性
+2. **语境维度全局固定**：tone 仅 `casual / neutral / polite` 三档，不扩展；各语言只在真实有区分处填变体
+3. **缺翻译不是错误**：构建时出覆盖率报告，运行时显示占位纹样，不 hard fail
+4. **面向 AI 协作**：每短语一个文件，可独立生成 / review / diff
 
-1. **所有语言平等**：不存在源语言（见上）。
-2. **锚点列是用户选择，不是数据属性**：锚点是读者的视角，任何语言都能拉到锚点列，切换不影响数据。
-3. **语境维度全局固定**：tone 只有 `casual / neutral / polite` 三档，不扩展；每种语言只在真实有区分的层级填变体。
-4. **缺翻译不是错误**：构建时出覆盖率报告，运行时该格显示占位纹样——缺席是诚实的，不假装完整（绝不空格子的另一面）。
-5. **结构便于 AI 协作**：两个扁平 JSON + 每短语一个文件，单条短语可独立生成、review、diff，AI 一次改一个文件不殃及全库。
-
-### 3.2 文件组织
+### 3.2 文件与校验
 
 ```
 src/data/
-├── phrases/           # 每条短语一个 JSON（<id>.json）
+├── phrases/           # 每短语一个 JSON（<id>.json）
 ├── phrases.ts         # import.meta.glob 聚合
-├── languages.json     # 语言元信息（code / native / name / group / tts / rtl / bcp47）
+├── languages.json     # code / native / name / group / tts / rtl / bcp47
 └── scenes.json        # 有序场景列表（数组顺序 = 页面顺序）
 
-src/content/ui/en.json # UI chrome 字符串（只出英文）
+src/content/ui/en.json # UI 字符串（仅英文）
 ```
 
-放在 `src/data/` 而非 Content Collections：内容由显式 Zod 校验把关（`src/lib/schema.ts`），Astro 构建开始时 parse，任何 schema 错误立即失败——线上数据永远合法。
+不用 Content Collections。校验：`src/lib/schema.ts`（Zod）在构建开始时 parse 全部数据，schema 错误即构建失败。
 
 ### 3.3 Schema 语义
 
-字段定义与约束看 `src/lib/schema.ts`，这里只记语义：
+字段定义见 `src/lib/schema.ts`。语义约定：
 
-- 语言：`defaultOn` 首访默认勾选（加 anchor 控制在 5 内）；`defaultAnchor` 首访锚点（仅一个为 true，当前为英文）——stores 从它派生默认值，不硬编码语言
-- 场景：`em` 是标题里要斜体强调的词（"Warm **_Wishes_**"式排印）
-- 短语：`id`（kebab-case，即文件名）+ `scene` + `order` + `trans`（key = 语言 code）；每个 `trans[lang]` = `gloss`（该语言对概念的小标签，锚点列大字下的注脚）+ `variants`（至少一条）
-- 变体的维度字段全部可选（`tone` / `speakerGender` / `addresseeGender` / `addresseeCount` / `region` / `rom` / `note`）——只填真实区分
-- **rom / tone / note 跟变体绑定**，不属 UI 文案。判断标准：删掉所有翻译，这段文字还有意义吗？没有 → 跟变体走
-
-最小示例：
+- 语言：`defaultOn` = 首访默认勾选（含 anchor ≤5）；`defaultAnchor` 唯一，当前 en；stores 从数据派生默认值，禁止硬编码语言 code
+- 场景：`em` = 标题中斜体强调的词
+- 短语：`id`（kebab-case = 文件名）、`scene`、`order`、`trans{lang: {gloss, variants[]}}`；`gloss` = 该语言对概念的标签，显示为锚点列注脚；`variants` ≥1
+- 变体维度字段全部可选：`tone / speakerGender / addresseeGender / addresseeCount / region / rom / note`，只填真实区分
+- rom / tone / note 属变体不属 UI。判据：删掉翻译后该文本是否仍有意义；否 → 归变体
 
 ```json
 {
@@ -144,402 +86,334 @@ src/content/ui/en.json # UI chrome 字符串（只出英文）
 }
 ```
 
-### 3.4 筛选语义（`src/lib/filter.ts`）
+### 3.4 筛选逻辑（`src/lib/filter.ts`）
 
-- tone=`any` 返回全部；指定档位优先精确命中，无命中回退到未标 tone 的默认变体——**绝不空格子**。
-- 性别维度：`speakerGender` / `addresseeGender` 参与筛选（Stationery 第二句的槽位）；规则是排除显式标了相反性别的变体，未标的保留。`addresseeCount` 只作被动标签。
-- 这两轴的存废是**控件要挣席位 + 阈值胜过重议**的原型案例：命中率过低时撤出 UI，`pnpm coverage` 持续打印各轴命中数，累积 ~10 cell 以上自动重启评估——如今已恢复。
-- tone 档位的展示文案（"casually"…）属 UI 字符串，不属数据——它描述界面措辞，不描述翻译。
+- tone=`any` → 全部变体；指定档位 → 精确命中优先，无命中回退未标 tone 的变体（规则 1）
+- 性别轴：排除显式标相反性别的变体，未标保留；`addresseeCount` 仅作被动标签不筛选
+- 性别控件的存废由阈值机制管理（规则 2、3）：`pnpm coverage` 输出各轴命中数，≥10 cell 才允许控件存在；当前已恢复
+- tone 展示文案（"casually" 等）属 UI 字符串不属数据
 
 ### 3.5 内容工作流
 
-操作步骤与风格四规则见 `README.md`（Add a phrase / language / scene + Translation philosophy，唯一维护版本）。意图一句话：让 AI 生成 JSON、review 后合入。辅助脚本 `pnpm new-phrase`（骨架生成）、`pnpm coverage`（覆盖率矩阵）。
+流程与翻译四规则见 README（唯一维护处）。模式：AI 生成 JSON → review → 合入。脚本：`pnpm new-phrase`（骨架）、`pnpm coverage`（覆盖率矩阵）。
 
----
+## 4. 交互规格
 
-## 4. 功能与交互
+> 只记意图、约束、⚠️ 陷阱；数值与细节以组件源码为准。
 
-> 本章只记设计意图、约束与"实现注意 ⚠️"陷阱——这些读不出于代码；交互细节与一切像素 / 数值以组件源码为准。
+### 4.1 Masthead 控件（ThemeToggle / ViewToggle）
 
-### 4.1 语言选择（双轨）
+- ThemeToggle：`light / dark / system` 三态持久化；`<html data-theme>` + 两套 CSS 变量。防 FOUC：`<head>` inline script 阻塞式读 localStorage 设 `data-theme`，先于样式表
+- ViewToggle：`table / cards / auto`（auto 按视口宽度，阈值在 `ViewToggle.svelte`）；`$view` 持久化；`body[data-view]` 驱动两套视图互斥显隐
+- 卡片视图约束：卡片与场景标题 720px 居中，shell 1240px 不变 → 右侧留 ~260px 供 TocSide 使用
 
-**选语言就是决定这封信写给谁。**主控件（Stationery 句行面板，两视图都在）表达完整意图——增、删、搜索；表格列头只做最高频的一个动作——换列。频率决定一个操作住在哪一层。
+### 4.2 语言选择（LanguagePicker / LangMenu / 列头）
 
-- **列序 = 选择顺序**：`$selectedLangs` 的数组顺序就是列序（anchor 恒为首列；句行、"Anchored in"选项、卡片语言块全部镜像列序）。添加追加到末尾；**换列是数组原位替换**——点哪列换哪列，用户对列的空间记忆不被打断。⚠️ 消费端不得把它当无序集合按 languages.json 顺序重排——换到数据集尾部的语言会"跳列"。
-- **句行**：信笺第一句 `for friends who read English · 中文 … ▾`。母语名直立 serif，anchor 标 accent 色（化解与"Anchored in"的重复）。点开 `LangMenu` 多选面板：搜索 + 分组 + 英文名 + 「Clear」一键清空（除 anchor）；满 5 时 header 提示 + pulse，header 在可滚动面板内 sticky。
-- **列头**：每个 `<th>` 是按钮（母语名 + 英文注名 + hover ▾），点开同一个 `LangMenu`；点一门未显示的语言 = **原位换列**（`switchColumn`，anchor 列则 anchor 跟随）。**只换列**——加 / 删 / 搜索都回面板。表头 sticky，与 StickyBar 之间留呼吸空间。
-- **LangMenu（共享组件）**：搜索折叠大小写与变音符（"francais" 命中 Français），选完自动清空回全列表；区域分组——⚠️ **组名与顺序从数据首现顺序派生，不得硬编码组清单**，否则新组的语言会静默消失；母语名直立 serif + 英文 exonym 斜体小字（`name===native` 不重复）；2 列网格、暖色 hover、无通用边框。
-- **Popover 原语（`lib/popover.ts`）**：所有浮层共享单一 `openPopover` store + `use:popover` action——同刻只开一层、点外关闭、Esc 关闭并把焦点还给触发器。⚠️ 不得退回"每组件各挂 document 监听 + stopPropagation"——两层会同开、Esc 后焦点掉 body。popover id 须实例唯一（同名 slot 在 Stationery 与 StickyBar 各一份）。弹层**条件挂载**（`{#if}`），不作 `visibility:hidden` 常驻——常驻隐藏菜单曾在 DOM 驻留 ~1200 个按钮，还要整套 tabindex 杂技。
-- 不可删 anchor（它是一列）/ 最后一门。`$selectedLangs` 持久化，初始化在 stores 模块层——不依赖某个组件恰好先挂载。
-- **无障碍**：触发器 `aria-expanded`（`aria-haspopup` 只给真菜单）；选项 `aria-pressed` + `aria-label`；母语名 `lang` + `dir`，BCP-47 从数据取（`langTag`）；菜单方向键巡航（↑↓ 环绕 + Home/End，键盘打开聚焦当前项）；满 5 / 删 anchor 被拒时 `aria-live` 播报（纯视觉 pulse 读屏听不见）；trigger 与 popover 兄弟不嵌套。⚠️ trigger 高亮用更亮的 `--paper-up`——任何比 `--bg` 暗的染色都会让 accent 文字掉破 4.5。
+双轨：Stationery 句行面板为主控件（两视图均在），负责增 / 删 / 搜索；桌面表格列头仅提供换列（最高频操作就近放置）。
 
-### 4.2 Stationery · 手写体预设句
+- **列序 = 选择顺序**：`$selectedLangs` 数组序即列序（anchor 恒首列；句行、选项、卡片语言块均镜像）。添加追加到末尾；换列为数组原位替换。⚠️ 消费端禁止按 languages.json 顺序重排——会导致换入语言跳列
+- 句行：母语名直立 serif，anchor 标 accent 色。LangMenu 面板：搜索 + 分组 + 英文名 + Clear（保留 anchor）；满 5 时 header 提示 + pulse，header 在面板内 sticky
+- 列头：`<th>` 即按钮，点开同一 LangMenu；点未显示语言 = 原位换列（anchor 列则 anchor 跟随）；仅换列，增删搜索回面板。表头 sticky
+- LangMenu：搜索折叠大小写与变音符；选后清空搜索词。⚠️ 分组名与顺序从数据首现顺序派生，禁止硬编码组清单——新组语言会静默消失。母语名直立 serif + 英文 exonym 斜体小字（`name===native` 不重复）
+- 约束：anchor 不可删（它是一列）；最后一门语言不可删；`$selectedLangs` 持久化，初始化在 stores 模块层，不依赖组件挂载顺序
+- 无障碍：触发器 `aria-expanded`；选项 `aria-pressed` + `aria-label`；母语名 `lang` + `dir`（BCP-47 取数据 `langTag`）；菜单方向键巡航（↑↓ 环绕 + Home/End）；满 5 / 删 anchor 被拒时 `aria-live` 播报；trigger 与 popover 为兄弟节点不嵌套。⚠️ trigger hover/focus 高亮必须用比背景亮的 `--paper-up`——变暗染色会使 accent 文字对比跌破 4.5
 
-**控制面被改写成一句正在落笔的话——状态即文案，改状态就是改写这句话。**
+### 4.3 Stationery（SlotPicker）
 
-> *Anchored in* **Chinese**.
-> *I write* — **in any tone** — *to* **a friend**, *as* **myself**.
+两行句式控制面，slot 即状态：
 
-加粗词是 `<SlotPicker>` 实例：斜体 Fraunces、赤陶色、虚线下划线 + 小 ▾；点开斜体选项 popover，选中后 pulse 反馈；Tab / Enter / 方向键完整可用。
+```
+for friends who read [English · 中文 … ▾]
+I write — [in any tone] — to [a friend], as [myself].
+```
 
-| Slot | 值域 |
-|---|---|
-| `anchor` | 当前已选语言（防绕过 5 上限） |
-| `tone` | `any` / `casual` / `neutral` / `polite` |
-| `addressee` | `any` / `m` / `f`（"a friend" / "him" / "her"） |
-| `speaker` | `any` / `m` / `f`（"myself" / "a man" / "a woman"） |
+- Slot 值域：`anchor`（已选语言内）、`tone`（any/casual/neutral/polite）、`addressee`（any/m/f）、`speaker`（any/m/f）；默认 `anchor=en, tone=any`；文案取 `ui/en.json`
+- 视觉：斜体 Fraunces + accent 色 + 虚线下划线 + ▾；选中 pulse 反馈；键盘完整可用
+- 此控制面替代了 chips 墙 / legend / 单元格 pill 三者
+- ⚠️ popover 选项按钮关闭态必须 `tabindex="-1"`，展开时改 0——否则 Tab 焦点进入隐藏选项，浏览器自动滚动将其带入视口；`closeAllSlots()` 须重置全部子按钮
 
-默认 `anchor=en` / `tone=any`；文案从 `ui/en.json` 读。这句话替代了 chips 墙、legend 说明条、单元格 pill 三件东西——界面从"有很多控件的后台"降维成"一封写了一半的信"。
+### 4.4 表格与卡片（PhraseTable / PhraseCards / VariantRow）
 
-**⚠️** popover 选项 button 关闭态必须 `tabindex="-1"`，展开才改 0——否则视觉上 opacity:0 时 Tab 焦点仍会进入隐藏选项，浏览器自动滚动把它带进视口（"按 Tab 莫名弹窗"）。`closeAllSlots()` 须重置全部子按钮。
+- 锚点列：固定首列，淡金棕底 + 右侧浅 border；表头显示锚点语言本地名。行结构三层：Headword 大字（筛选后第一条变体）、rom、gloss。缺翻译显示淡斜体 `—`，不阻断整行（规则 1）
+- 译文格：变体行堆叠，行间虚线。行结构：Entry 大字、rom、tag line（仅 `tone=any` 时渲染 tone/gender 标签）、note、copy hint（hover 显现）。被筛空的格显示斜纹占位。卡片头复用锚点列三层结构，语言块顺序镜像列序
+- 复制：主操作，整行可点。复制纯 `text`（不含 rom / tag / note）；成功 = 行内 `✓ copied` + Toast；失败 fallback `execCommand`。`role="button"` + `aria-label`，键盘可触发。⚠️ `.copy-hint` 必须为空 span，文字经 `::before content` 切换——innerText 与 ::before 并存会重叠
+- TTS（SpeakButton）：非主交互。`speechSynthesis`，BCP-47 取 `languages.json[lang].tts`；voice 匹配：精确 → 同语种前缀回退，按质量启发式排序；无可用 voice 或无 tts code → 按钮不渲染（规则 2）
+- 收藏（StarButton）：锚点列右上，两视图同位；`$starred: Set<phraseId>` 持久化；有收藏时显示 "Starred only" 过滤 chip（chip 状态会话级）；收藏粒度为短语级
 
-### 4.3 视图切换（ViewToggle）
+### 4.5 TOC（TocTop / TocSide）
 
-**同一封信的两种展开：桌面是摊开的对照表，掌上是一叠卡片。**
+两形态互斥，共享 `$scrolled` 阈值（`src/lib/scroll.ts`）。
 
-- `table` / `cards` + `auto`（按视口宽度自动切，阈值在 `ViewToggle.svelte`）；用户主动切换覆盖默认，`$view` 持久化
-- `body[data-view]` 驱动 `.view-desktop` / `.view-mobile` 互斥显隐；Toggle 按钮在 Masthead 右上角（Label 角色）
-- **卡片视图宽度约束（关键意图）**：卡片容器与场景标题收窄 720px 居中，shell 保持 1240px——右侧自然留出 ~260px 给 TocSide 落座
-- 切换淡入淡出，尊重 `prefers-reduced-motion`
+- TocTop：首屏横向目录，文档流内；Roman 编号 + 场景名（Index 角色）；点击平滑滚动；scrolled 后淡出但保留占位（防跳动）；移动端 flex-wrap
+- TocSide：fixed 右侧垂直居中，锚定 shell 右内缘。显隐（阈值以 `TocSide.svelte` 为准）：cards 视图 scrolled 且 ≥640；table 视图 scrolled 且 ≥1024（更窄会挤压末列）；再窄隐藏，由回顶钮兜底
+- 静息态：无背景无边框，Roman 数字 + 竖向 rail + 阅读进度线；展开态：实纸面板 `--surface-toc-panel`（半透明会与下层表格文字透叠）；禁用 backdrop-filter
+- 展开仅由 hover / focus 触发，滚动不展开——展开面板与表格末列在常见视口必然重叠；active 场景三重标识：编号 accent、场景名加重、短横线
+- 场景名收起时保留布局宽度（展开无横向位移）；`$activeScene` 在 scroll RAF 中按场景块位置判定
 
-### 4.4 场景目录（TocTop + TocSide）
+### 4.6 StickyBar
 
-**静息时是页边的章节码，被需要时才成为目录。**两形态互不重叠，共享全局 `$scrolled` 阈值（`src/lib/scroll.ts`）。
+- scrolled 后顶部淡入：mark（点击回顶）+ 缩略 Stationery（tone / addressee / speaker）
+- 不含 anchor slot：锚点切换频率极低，留在 Stationery
+- slot 与 Stationery 共享 store，双向同步；淡出时 `closeAllSlots()`
+- 表面：近实纸底 + backdrop-filter。blur 仅在浮动工具栏成立（与内容分层）；TocSide 非工具栏故禁用。可读性不依赖 blur（规则 5）
+- 窄屏隐藏 mark 仅留句子。不做 TOC 快捷跳转（TocSide 已覆盖）
 
-**TocTop**（首屏横向目录，文档流内、Stationery 之下）：Fraunces 斜体（Index 角色），金色 Roman 编号 + `--ink-mute` 场景名，极小圆点分隔；点击平滑滚动；scrolled 后淡出但保留文档流位置（不跳动）；移动端 flex-wrap 换行。
+### 4.7 PWA
 
-**TocSide**（滚动后右侧 sidebar，fixed 垂直居中，锚定 shell 右内缘）：
+- manifest + SW（`@vite-pwa/astro`，`autoUpdate`）；precache 仅 shell（短语数据打包进 JS）
+- 字体不 precache：CJK Noto 按 unicode-range 拆分上百子集（全量数十 MB），改运行时 CacheFirst；离线时系统衬线兜底（规则 5）
+- 不做自定义 install prompt
+- ⚠️ Astro 7 下 `@vite-pwa/astro` 不自动注入 `registerSW`——Layout 在 PROD 手动挂载，否则离线静默失效；由离线测试守护
 
-- **显隐**（阈值以 `TocSide.svelte` 为准）：卡片视图 scrolled 且 ≥640 显示——卡片列 720px 居中，右侧留白容得下 rail；表格视图 scrolled 且 ≥1024——再窄 rail 会挤压最右译文列；更窄隐藏，导航由回顶钮兜底
-- **形态**：静息态是"几列罗马数字浮在留白里"——无背景、无边框；数字站在竖向 rail 侧（金色渐变细线 + 上下两枚 ❋ fleuron，仅展开时现身）。展开态铺**实纸**面板（`--surface-toc-panel`）——半透明会让面板下的表格文字透叠不可读；**无 backdrop-filter**，毛玻璃与纸质气质冲突
-- 场景名收起时保留布局宽度（展开不横向跳动），展开逐行 stagger；active 三重线索同时标出：编号变 accent、场景名加重、右侧赤陶短线
-- **hover / focus 展开，离开片刻收起；滚动不展开**——展开面板需极宽视口才不叠到表格末列，"滚动自动展开"在真实屏幕必然盖住内容。静息 rail（数字 + 活动 accent + 阅读进度线）即滚动反馈；展开只表达用户意图
-- **Active 追踪**：`scroll.ts` 维护 `$activeScene`（滚动 RAF 里按场景块位置判定），TOC 组件订阅
+### 4.8 Popover 原语（`lib/popover.ts`）
 
-### 4.5 复制（VariantRow）
+全站浮层（SlotPicker、语言面板、列头弹层）统一走单一 `openPopover` store + `use:popover` action：同刻只开一层、点外关闭、Esc 关闭并归还焦点到触发器。
 
-**复制是本站的主动作——整行即按钮，不设小图标关卡。**
-
-- 点击复制**纯 `text`**（不带 rom / tag / note）；成功行内 `✓ copied` + 全局 Toast；失败 fallback 到 `execCommand` + 隐藏 textarea
-- `role="button"` + `aria-label="Copy [text]"`，键盘 Enter/Space 可触发
-
-**⚠️** `.copy-hint` 须是空 span，"copy" / "✓ copied" 都走 `::before content` 切换——innerText 与 ::before 并存会文字堆叠。
-
-### 4.6 语音朗读（SpeakButton）
-
-**能听，但不吵。**很多用户静音浏览，TTS 不做主交互；能用时有价值。
-
-- `speechSynthesis`，BCP-47 code 取自 `languages.json[lang].tts`；voice 检测精确匹配 → 同语种前缀回退，按质量启发式排序（Natural / Enhanced / Google 加分）
-- **无 voice 或语言无 tts code 时按钮不渲染**——死图标是噪音不是功能（控件要挣席位）
-
-### 4.7 星标收藏（StarButton）
-
-**把常用的句子折个角。**锚点列右上角星标（两视图同位），`$starred: Set<phraseId>` 持久化；有收藏时 Stationery 下出现 "Starred only" 开关 chip（开关状态会话级），无收藏不显示。收藏是短语级，不细化到变体——保持简单。
-
-### 4.8 深浅色（ThemeToggle）
-
-**夜里换一盏灯，不换一张纸**（色彩语义见 §5.2）。`light / dark / system` 三态持久化；`<html data-theme>` + 两套 CSS 变量。**防 FOUC**：`<head>` 里 inline script 阻塞式读 localStorage 设置 `data-theme`，早于样式表应用。按钮在 Masthead 右上。
-
-### 4.9 锚点列与译文列
-
-**锚点列是读者的母语视角，译文列是朋友们的声音。**
-
-**锚点列**：固定首列，淡金棕底 + 右侧浅 border；表头显示锚点语言本地名。每行三层：大字（Headword 角色）取该短语筛选后的**第一条变体**、小斜体 rom、小斜体 gloss。缺锚点翻译显示淡斜体 `—`，不阻断整行（绝不空格子）。
-
-**译文列**：每格竖向堆叠变体行，行间虚线分隔。行 = 大字（Entry 角色）+ rom + tag line（仅 `tone=any` 时显示，渲染成 "— casually" / "he writes"）+ note（Aside 角色）+ 右上角 copy hint（hover 显现）。被筛空的格子显示斜纹纹样占位。
-
-卡片视图的卡片头复用锚点列三层结构，下接其他语言块（顺序镜像列序）。
-
-### 4.10 StickyBar
-
-**读到深处，笔仍在手边。**scrolled 后视口顶部淡入：`[致·远·方] │ I write — [tone] — to [addressee], as [speaker]`。左侧 mark 点击回顶；**不含 anchor slot**——锚点切换频率极低，留在 Stationery。slot 与主 Stationery 共享 store，双向同步。
-
-**表面**：近实纸底 + `backdrop-filter` 毛玻璃——浮动工具栏与内容是"不同层级"，玻璃感只在这里成立（TocSide 不是工具栏，那里不用）；blur 只是增强，可读性不得依赖它（增强不承重）。
-
-窄屏隐藏 mark 只留句子；淡出时顺手 `closeAllSlots()`。不做 TOC 圆点跳转——TocSide 已覆盖导航。
-
-### 4.11 PWA
-
-**离线是承诺，不是特性**——红线 3 的工程形态。
-
-- manifest + SW（`@vite-pwa/astro`，`autoUpdate` 后台更新下次生效）；precache 只含 shell（短语数据经 `import.meta.glob` 打包进 JS）
-- **字体不 precache**——CJK Noto 按 unicode-range 拆上百个子集（全量几十 MB），改运行时 CacheFirst；离线时系统衬线兜底，信仍然可读（增强不承重）
-- 不做自定义 install prompt，交给浏览器原生 UI
-
-**⚠️** Astro 7 下 `@vite-pwa/astro` 不再自动注入 `registerSW`——由 Layout 在 PROD 手动挂载，否则离线**静默失效**；离线测试守着这条。
-
----
+- ⚠️ 禁止回退到各组件自挂 document 监听 + stopPropagation——会出现双层同开、Esc 后焦点落 body
+- popover id 须实例唯一（同名 slot 在 Stationery 与 StickyBar 各一份）
+- 弹层条件挂载（`{#if}`），禁止 `visibility:hidden` 常驻——曾致 ~1200 个隐藏按钮驻留 DOM 且需全套 tabindex 管理
 
 ## 5. 设计系统
 
+数值全部在 `src/styles/tokens.css`，本节只记语义。
+
 ### 5.1 字体（角色制）
 
-**同一张脸，不同的音量。**Masthead 的辨识度来自 Fraunces 的大光轴刻（高笔画对比）+ 克制字重 + 斜体点缀；角色制让这个基因以递减强度渗透正文层级。字族栈与角色 token 数值以 `src/styles/tokens.css` 为准。
+来源：Masthead 用 Fraunces 大光轴（高笔画对比）+ 字重 400 + 斜体点缀；正文层级按角色递减复用该特征。全站字体经角色 token 取值，**组件禁止自设 `font-variation-settings` 裸值**。
 
-全站字体按角色归口 tokens，**组件不得自设 `font-variation-settings` 裸值**——各自配字必然散成杂拼。
-
-| 角色 | 用途 | 意图 |
+| 角色 | 用途 | 规格意图 |
 |---|---|---|
-| Display | Masthead、场景标题、404 | 大字号天然高对比，负字距 |
-| Headword 头词 | 锚点列大字、卡片头字 | 以光轴替代加粗取得分量 |
-| Entry 词条 | 变体正文 | 比 auto 高一档的笔画对比 |
-| Aside 旁注 | rom / gloss / 语域行 / 注名 / 空态 | 一个注音声部：serif italic 小字 `--ink-mute` |
-| Index 索引 | 语言菜单母语名、TOC 条目 | 母语名直立——CJK 在 italic 下是丑的伪斜体 |
-| Label 标签 | 全部 sans 小帽标签 | 统一一档；登记例外仅 Footer 署名与 StickyBar 紧凑变体 |
+| Display | Masthead、场景标题、404 | 大字号自然高对比，负字距 |
+| Headword | 锚点列大字、卡片头字 | 用 opsz 而非字重取得分量 |
+| Entry | 变体正文 | opsz 高于 auto 一档 |
+| Aside | rom / gloss / 语域行 / 注名 / 空态 | serif italic 小字 `--ink-mute`，全站统一一个声部 |
+| Index | 语言菜单母语名、TOC 条目 | 母语名直立（CJK 无真斜体，italic 是劣质伪斜体） |
+| Label | 全部 sans 小帽标签 | 统一一档；登记例外：Footer 署名、StickyBar 紧凑变体 |
 
-- **Fraunces** 只自带 Latin（西里尔由 Noto Serif SC 的 cyrillic 子集承担）；CJK 回退 Noto Serif SC/JP/KR；首屏 UI 标签用 `--font-serif-local`（swap-safe 栈，§8.1）
-- **Instrument Sans** 做 UI 小字标签，只用 400/500
-- **opsz 是唯一的表现轴**（无 SOFT/WONK）；CJK 回退字体无 opsz 轴、自动忽略，安全
+- Fraunces 仅含 Latin（西里尔由 Noto Serif SC cyrillic 子集承担）；CJK 回退 Noto Serif SC/JP/KR；首屏 UI 标签用 `--font-serif-local`（无晚到 webfont，见 §7.4）
+- Instrument Sans 仅 400/500；opsz 是唯一表现轴（无 SOFT/WONK；CJK 回退字体无 opsz 轴，自动忽略）
 
-### 5.2 颜色 tokens
+### 5.2 颜色
 
-**暗色不是反色，是夜里的同一张纸**：纸面压暗、墨色提亮、accent 提亮一档。数值以 `tokens.css` 为准（light / dark / system 三块）。
+- 两层命名：原色（bg / paper / paper-up / ink / ink-soft / ink-mute / accent / gold / gold-ink / on-accent / line）+ 语义 surface（`--surface-*`）
+- 暖纸色系：米色底、墨字、赤陶 accent、金色装饰
+- 暗色主题 = 同一色相体系整体压暗提亮，非反色
+- `--gold` 仅装饰（文字不达 AA）；文字金用 `--gold-ink`；`--on-accent` 为 accent 填充上的文字色，随主题反向
+- 双主题均须过 AA（正文 4.5:1，大字 3:1），在 CI 门禁内。⚠️ 对比度基准背景是最暗的 `--bg`（比 `--paper` 深）——仅对 paper-up 验证会漏检
 
-- 命名两层：原色（bg / paper / paper-up / ink / ink-soft / ink-mute / accent / gold / gold-ink / on-accent / line）+ 语义 surface（`--surface-*` 叠加层）
-- 暖纸色系——背景米色、墨色文字、赤陶 accent、金色装饰，"信笺"气质的来源
-- `--gold` 是**装饰色**，当文字远不过 AA——文字金用更深的 `--gold-ink`；`--on-accent` 是 accent 填充上的文字色，随主题反向
-- 两套均过 WCAG AA（正文 4.5:1，大字 3:1），对比度在 CI 门禁内（light + dark 各扫一遍）。⚠️ 基准背景是页面底色 `--bg`（比 `--paper` 还深），文字落其上对比度最低——只对 paper-up 验证会漏掉这档
+### 5.3 动效
 
-### 5.3 间距与动效
+约束：动画必须对应一个可解释的状态变化（换列 = 逐行写入新内容、收藏 = 星标确认、slot 切换 = 高亮一次）；纯装饰动画不做。
 
-**动效解释因果，不做装饰**：换列是"新墨写入"一栏字，收藏是星星落页，slot 切换是墨迹一闪——每个动画都对应信纸上的一个物理事件；解释不了因果的动画不做。
-
-- 间距与圆角数值见 `tokens.css`；圆角只有两档语义（微圆卡片 / 药丸 chip），正圆不用
-- **动效 tokens**：时长按用途分档（hover / switch / feedback / reveal / entrance），easing 三种（`--ease-out` 主通用、`--ease-spring` 轻微 overshoot、linear 仅机械感属性）；TOC 的 JS 时序常量在 `scroll.ts`
-- **命名动画**：`rise`（卡片入场）、`pulse`（slot 切换高亮）、`nudge`（满 5 提示横移）、TOC 场景名 stagger、`$freshLang` 新墨写入（列头先行、逐行级联）
-- 所有动画尊重 `prefers-reduced-motion`——`global.css` 一条全局兜底覆盖全部动画与过渡
-- ⚠️ **首屏大文本块的入场动画只用位移、不用透明度**——LCP 元素做 opacity 入场会把绘制记录点推迟到动画之后
-- ⚠️ **lightningcss 会把独立的 `animation-timeline` 合并进 `animation` 简写**——规范禁止 timeline 入简写，浏览器随之丢弃整条声明（动画不生效且无报错）。解法：经自定义属性间接引用（`animation-timeline: var(--xx)`），压缩器即无法折叠
-
----
+- 时长按用途分档（hover / switch / feedback / reveal / entrance）；easing 三种（`--ease-out` 通用、`--ease-spring` 轻 overshoot、linear 仅机械属性）；TOC 的 JS 时序常量在 `scroll.ts`
+- 命名动画：`rise`（卡片入场）、`pulse`（slot 反馈）、`nudge`（满 5 提示）、TOC stagger、`$freshLang` 换列级联
+- 圆角两档：微圆（卡片）、药丸（chip）；不用正圆
+- reduced-motion：`global.css` 一条全局兜底覆盖全部动画与过渡
+- ⚠️ 首屏大文本块入场只用位移不用透明度——LCP 元素做 opacity 入场会推迟绘制记录点
+- ⚠️ lightningcss 会把独立 `animation-timeline` 折叠进 `animation` 简写导致整条声明被浏览器丢弃（静默失效）；写法：`animation-timeline: var(--xx)` 经自定义属性间接引用，压缩器无法折叠
 
 ## 6. 技术选型
 
-选型的四条判据：bundle 极小、手工雕琢可能、离线可用、AI 可协作。凡与四条判据冲突的流行方案一律不选。
+判据：bundle 小、可手工雕琢、可离线、AI 可协作。
 
-| 层 | 选择 | 备注 |
+| 层 | 选择 | 理由 / 约束 |
 |---|---|---|
-| 静态生成器 | **Astro** | Islands 架构、零 JS 默认、GH Pages 兼容 |
-| 交互组件 | **Svelte** | 只用于有状态 islands，bundle 极小 |
-| 语言 | **TypeScript** | strict 开 |
-| Schema | **Zod** | 构建时显式校验（§3.2），不走 Content Collections |
-| 跨组件状态 | **nanostores** | 持久化用 `@nanostores/persistent` |
-| 样式 | **Vanilla CSS + CSS Variables** | 不用 Tailwind / CSS-in-JS |
-| PWA | **@vite-pwa/astro** | Workbox 内核 |
-| 字体 | **@fontsource-variable/fraunces** + **@fontsource/instrument-sans** | 自托管，离线可用 |
-| 包管理 | **pnpm** | 快且省磁盘 |
-| 部署 | **GitHub Pages** | 经 GitHub Actions |
+| 静态生成 | Astro | Islands、零 JS 默认、GH Pages 兼容 |
+| 交互 | Svelte | 仅有状态 islands |
+| 语言 | TypeScript | strict |
+| Schema | Zod | 构建时显式校验（§3.2） |
+| 状态 | nanostores | 持久化 `@nanostores/persistent` |
+| 样式 | Vanilla CSS + 变量 | 禁 Tailwind / CSS-in-JS |
+| PWA | @vite-pwa/astro | Workbox |
+| 字体 | fontsource（fraunces / instrument-sans） | 自托管离线可用 |
+| 包管理 / 部署 | pnpm / GitHub Pages | 经 Actions |
 
-版本号以 `package.json` 为准——每周 Dependabot 自动升级（§7.4），写死必烂。
+- 版本以 `package.json` 为准（每周自动升级，§7.2）
+- 不选：Next.js / Nuxt（重、路径复杂、SSR 无用）；SvelteKit static（可行但 Astro 更合适）；纯 HTML（无类型安全）；React（bundle / hydration 成本）；Tailwind（与红线 1 冲突，**不随流行度重议**）
+- 不引入：图标库（手写 SVG ×6）、UI 库、动画库、大型状态管理。唯一例外：测试（§7.2 的必要条件）
+- 重选条件：Astro 停止维护或 Islands 有更轻替代 → 按判据重评；引入预生成音频（§8）→ 构建管线复杂度整体重议
 
-**不选的方案**：Next.js / Nuxt（重，static export 路径复杂，SSR 用不上）；SvelteKit adapter-static（可行，但 Astro 在内容站上更顺手）；纯 HTML/CSS/JS（无类型安全，规模化会乱）；React（bundle 大、hydration 重）；Tailwind（**永不**——它诱导通用型样式思维，与红线 1 直接冲突，不随生态流行度重议）。
-
-**不引入的依赖**：图标库（自己写 SVG，总共五六个）、UI 库、动画库（Svelte transition 够了）、状态管理大件。测试是唯一的例外：Playwright + axe-core 做冒烟 / 无障碍 / 离线回归（§7.5）——它原本也在"不用"之列，放开依赖 major 自动合并后"肉眼验"等于不验，遂反转。
-
-**何时重选**：静态生成器与组件框架的存在理由是四条判据，不是品牌——若 Astro 停止维护或 Islands 模型被更轻方案取代，按判据重评；预生成音频（§9）若引入，构建管线的复杂度预算需整体重议。
-
----
-
-## 7. 结构、部署与 CI
-
-### 7.1 目录骨架
+目录：
 
 ```
 distant-friends/
 ├── public/            # favicon、og-image、PWA icons
 ├── src/
-│   ├── components/    # astro/（纯静态）+ svelte/（交互 islands）
-│   ├── data/          # 数据文件（§3.2）
+│   ├── components/    # astro/（静态）+ svelte/（islands）
+│   ├── data/          # §3.2
 │   ├── lib/           # schema / stores / filter / tts / scroll / clipboard / storage / popover / slot-options
-│   ├── content/ui/    # UI chrome 字符串
+│   ├── content/ui/    # UI 字符串
 │   ├── styles/        # tokens / global / typography
 │   └── pages/         # index + 404
 ├── scripts/           # new-phrase / coverage / export-review
-├── tests/             # Playwright（冒烟 / axe / 离线）
-└── .github/workflows/ # 部署 + CI + dependabot 自动合并
+├── tests/             # Playwright
+└── .github/workflows/ # 部署 + CI + 自动合并
 ```
 
-### 7.2 GitHub Pages
+## 7. CI 与质量门禁
 
-仓库名非 `<user>.github.io` 时在 `astro.config.mjs` 配 `site` + `base`；配自定义域（`public/CNAME` + DNS CNAME）后 `base` 去掉。
+前提：无人工审阅。所有质量保障必须由门禁自动执行。
 
-### 7.3 Actions 与分支
+### 7.1 部署
 
-pnpm + Node 22、`upload-pages-artifact` → `deploy-pages`，Pages Source 选 GitHub Actions。分支策略 dev → main（Vercel preview）→ release（Pages），细节见 README。
+dev → main（Vercel preview）→ release（GitHub Pages），细节见 README。Actions：pnpm + Node 22、`upload-pages-artifact` → `deploy-pages`。仓库名非 `<user>.github.io` 时配 `site` + `base`；自定义域后去掉 `base`。
 
-### 7.4 依赖自动更新（Dependabot）
+### 7.2 依赖自动合并（Dependabot）
 
-**信任模型：门禁即审阅。**维护者不读依赖 PR 的 diff，所以门禁必须有能力说"不"——这是引入测试套件的直接原因，也是它唯一需要达到的标准。
+- 每周一扫描依赖与 Actions 引用，对 dev 开 PR（升级走完整管线，dev 不落后 main）
+- 门禁：`pnpm build` + `pnpm check` + `pnpm test`，绿灯 squash 合并；patch / minor / major 一视同仁，无人工审
+- minor+patch 合并单 PR；major 单独 PR（破坏性升级只挡自己）
+- `allow_auto_merge` 关闭，门禁内置 workflow 步骤，不依赖分支保护
+- ⚠️ `dependabot.yml` 从默认分支读取；auto-merge workflow 须在 PR base 分支（dev）上才触发
 
-每周一扫描 npm 依赖与 Actions 引用，对 **dev** 开 PR（升级走 dev → main → release 管线，dev 不落后于 main）。自动合并的唯一门禁是 `pnpm build` + `pnpm check` + `pnpm test`，绿灯即 squash 合并——**patch / minor / major 一视同仁，无人工审**；不过则留红叉。minor+patch 合成单 PR，major 单独成 PR——一个破坏性 major 只挡自己。仓库 `allow_auto_merge` 关闭，故门禁内置于 workflow 步骤，不依赖分支保护。
+### 7.3 测试（Playwright + axe）
 
-⚠️ `dependabot.yml` 从默认分支读取；auto-merge workflow 须位于 PR 的 base 分支（dev）才会触发。
+对 `astro preview` 生产构建执行：
 
-### 7.5 测试与 CI
+- 冒烟：渲染、复制 + toast、SlotPicker、主题、星标过滤、键盘穿行
+- axe：WCAG 2.1 A/AA 全量含 `color-contrast`，light + dark 双主题
+- 离线：SW 缓存后断网可用
+- `pnpm test` = chromium（门禁）；`pnpm test:all` = chromium / firefox / webkit
+- 接入 `ci.yml`（PR 与 dev/main push）与 §7.2 门禁。键盘 / 读屏行为是 axe 盲区，由冒烟测试覆盖
 
-`tests/`（Playwright）对 `astro preview` 的**生产构建**跑：冒烟（渲染、复制 + toast、SlotPicker、主题、星标过滤、键盘穿行）、axe 全量 WCAG 2.1 A/AA 含 `color-contrast`（light + dark 各一遍）、离线（SW 缓存后断网仍可用）。`pnpm test` 跑 chromium（门禁）；`pnpm test:all` 跑三浏览器矩阵。接入 `ci.yml`（人工 PR 与 dev/main push）与 dependabot 门禁——键盘 / 读屏行为是 axe 静态扫描的盲区，靠冒烟测试钉住。
+### 7.4 性能预算
 
----
+按实测校准（校准记录在 §9）：
 
-## 8. 质量门禁
+- Lighthouse（slow-4G）：A11y / BP / SEO = 100；Performance ≥ 90
+- CLS = 0（首屏禁止任何字体 swap 重排）；TBT < 100ms
+- 阻塞 CSS < 20KB（CJK @font-face 保持异步）；首屏关键传输 < 250KB
+- 禁用 `font-display: optional`：⚠️ 实测触发 Chrome 预取全部 unicode-range 相交子集，慢网 FCP 翻倍
 
-### 8.1 性能预算
+策略：Fraunces standard 轴；拉丁两支 + Instrument Sans latin 预载（防 swap 位移）；CJK 异步 + 系统衬线兜底；首屏 UI 标签用 `--font-serif-local`（栈内无晚到 webfont → 无重排；短语内容保持 Noto）；水合分级（滚动后可见的岛 `client:idle`，首屏可点 `client:load`）；`content-visibility: auto`；数据打包进 JS 不走 fetch；零第三方脚本、零 analytics。
 
-快是对慢网络另一端那位朋友的尊重（红线 5）。预算按实测校准——初版数字是建站前的估计，与自托管特色衬线 + 23 语言数据的现实不符；校准史在 §10：
+### 7.5 无障碍
 
-- **Lighthouse**（slow-4G 模拟）：A11y / BP / SEO = 100，**Performance ≥ 90**
-- **CLS** ≈ 0（字面意义的 0——首屏不允许任何字体 swap 重排）、**TBT** < 100ms
-- **阻塞 CSS** < 20KB（CJK @font-face 声明保持异步加载）、**首屏关键传输** < 250KB
-- 不为分数牺牲首访字体身份：任何字体都不用 `font-display: optional`——⚠️ 实测它触发 Chrome 预取全部 unicode-range 相交子集，模拟慢网 FCP 反而翻倍
+- 全部交互有 `:focus-visible`；icon 按钮必有 `aria-label`
+- Toast `role="status"` + `aria-live="polite"`；语言切换 `aria-pressed`；译文带 `lang`
+- 对比度 AA 双主题入门禁；不以颜色为唯一信息载体
+- 键盘完整可操作；Esc 关浮层并归还焦点（Toast 为瞬态非交互件，无 Esc 要求）
+- `prefers-reduced-motion` 全局兜底；`<html lang="en">`；`h1` 唯一
+- RTL（阿拉伯语）：内容级 `dir="auto"`，界面保持 LTR
 
-**达成策略**：Fraunces standard 轴，拉丁两支 + Instrument Sans latin 预载防 swap 位移；CJK @font-face 异步 + 系统宋体 / 明朝体兜底；**首屏 UI 标签用 `--font-serif-local`**——栈里没有晚到的 webfont 就没有重排（短语内容保持 Noto 身份）；岛屿水合分级（滚动后才可见的岛 `client:idle`，首屏可点的保持 `client:load` 防死点击）；场景块 `content-visibility: auto`；数据随 JS 打包不走 client fetch；无第三方脚本、无 analytics。
+## 8. 未来项（不承诺）
 
-### 8.2 可访问性承诺
+| # | 项 | 状态 / 条件 |
+|---|---|---|
+| 1 | UI 中文化 | ✗ 不做：受众不懂中文，UI 锁英文；切换结构保留不补译文 |
+| 2 | 搜索框 | 候选（fuse.js，任一语言 / 拼音定位） |
+| 3 | 多标签 tags | 候选（与 scene 正交） |
+| 4 | 分享链接 | ✗ 不做（ROI 低） |
+| 5 | 导出图片 | 候选 |
+| 6 | 预生成音频 | 候选：构建期神经 TTS，~30-40MB 懒加载；引入前评估构建复杂度与体积 |
+| 7 | 反向查找 | 候选（需索引反转，工程量大） |
+| 8 | 变体级收藏 | 候选 |
+| 9 | 内容贡献渠道 | 候选：GitHub Issues 表单 + PR，不做 CMS |
+| 10 | 快捷键 | 候选（Tab 流已完整，非必需） |
 
-- 所有交互有可见 `:focus-visible`；icon-only 按钮必有 `aria-label`
-- Toast `role="status"` + `aria-live="polite"`；语言切换 `aria-pressed`；译文元素带 `lang`
-- 对比度 AA（正文 4.5:1，大字 3:1，双主题门禁）；不用颜色作唯一信息载体
-- 键盘完整可操作：Tab / Enter / Space / Esc 关浮层并归还焦点（Toast 是瞬态非交互件，无 Esc 要求）
-- 尊重 `prefers-reduced-motion`；`<html lang="en">`；`h1` 只一个
-- 阿拉伯语（RTL）：内容级 `dir="auto"`，界面仍 LTR
+## 9. 决策日志（append-only）
 
----
+> 仅记方向变更：日期 + 方向 + 原因，≤2 行。机制归 §3-§7；日常交付不记。
 
-## 9. 未来可能（不承诺）
+- **2026-04-22** · 大简化定调：所有语言平等、tone 全局固定、Stationery 替代 chips 墙 / legend / pill、UI 锁英文。
+- **2026-04-26** · addressee slot 撤除（命中率过低，拨动无效）；确立阈值机制（≥10 cell 再考虑恢复）。
+- **2026-04-28** · 默认锚点 zh → en：受众主体不懂中文。
+- **2026-04-29** · phrases.json 拆 per-phrase 文件：单文件无法支撑独立生成 / review / diff。
+- **2026-04-29** · 引入 `reviewed` 字段。
+- **2026-06-10** · 移除 `reviewed`（反转上条）：审核流程未成形，字段成噪音。
+- **2026-06-10** · 翻译四规则入 README；全库审计删 211 变体。
+- **2026-06-11** · 场景体系"小而多"（11 场景）；排序 = 逻辑分块 > 频率，高频不沉底。
+- **2026-06-11** · 同义对保留标准形，删 casual 重复；每格保证中性默认（无正式语域的概念除外）。
+- **2026-06-12** · RTL 仅内容级 `dir="auto"`，不做全局 RTL 布局。
+- **2026-06-12** · 字体退出 SW precache（反转）：CJK 子集全量数十 MB，改运行时 CacheFirst。
+- **2026-06-12** · TTS 无 voice 不渲染（弃禁用 + tooltip）；voice 质量启发式排序；Starred only 会话级。
+- **2026-06-12** · Fraunces full → standard 轴（-120KB，弃 SOFT/WONK）；CJK 声明移出阻塞 CSS。Lighthouse 56→88。
+- **2026-06-12** · 元原则：性能数字非铁律，按实测校准并记日志。
+- **2026-06-12** · 性别控件恢复（阈值触发：两轴各 60）。
+- **2026-06-13** · tone 四档 → 三档：close 命中 0.5%，并入 casual，旧持久化值迁移。
+- **2026-06-27** · 引入 Dependabot 自动合并（dev 落点；minor+patch 单 PR；major 手动审）。
+- **2026-06-28** · major 也自动合并（反转）：维护者不审 diff，"手动审" = 永不合。
+- **2026-06-28** · 引入测试（反转"不用测试框架"）：major 自动合并使肉眼验失效；当天捕获 SW 注册失效、按钮嵌套两回归。
+- **2026-06-28** · 对比度补齐 AA：新增 `--gold-ink` / `--on-accent`；color-contrast 入门禁。
+- **2026-06-28** · 语言选择改造：chip 墙 → 句行 + 分组弹层；修 anchor 硬编码 bug。
+- **2026-06-29** · 双轨化：语言操作入表格列头；亮模式次要文字提对比；trigger 高亮改亮色。
+- **2026-06-29（二）** · 收敛：句行面板两视图常驻为主控件；表头仅换列；LangMenu 重做视觉。
+- **2026-07-02** · 工程收口：列序 = 选择顺序；popover 原语；弹层条件挂载；分组从数据派生。
+- **2026-07-02（二）** · 功能冻结，进入设计迭代期，立 §10 账本。
+- **2026-07-03** · 换列动画用内容级联（"新墨写入"），弃 FLIP / View Transitions：表格列几何过渡工程不成立。
+- **2026-07-03（二）** · 性能再校准：修 CLS 回归（0.115→0）+ 水合分级，Perf 59→96；确立首屏 swap-safe 栈；否决 `font-display: optional`。
+- **2026-07-03（三）** · wavy 下划线当日回退（用户否决）：与拼写检查语义冲突（规则 4 由此确立）。
+- **2026-07-03（四）** · 字体角色制（用户反馈触发）：角色 token 唯一入口，opsz 替代字重。
+- **2026-07-07** · R13–R18 实验整体撤销，定格 R12（用户裁决）；确立一轮一验（规则 7）。
 
-1. ~~**UI 中文化**~~ — ✗ 不做：受众主体是不懂中文的国际朋友，UI 锁英文自洽。切换结构保留但不补译文
-2. **搜索框** — 输入任一语言或拼音定位短语（fuse.js）
-3. **多标签（tags）** — 与 scene 正交的标签系统
-4. ~~**分享链接**~~ — ✗ 不做（ROI 偏低）：URL 参数复刻朋友看到的视图
-5. **导出为图片** — 短语做成可分享卡片
-6. **预生成音频** — 构建期神经 TTS 烧静态音频（~30-40MB，懒加载），所有浏览器一致高质量发音且合离线原则；代价是构建复杂度 + 资产体积，引入前单独评估
-7. **反向查找** — 朋友发来一句外语查意思（索引反转，工程量大）
-8. **变体级收藏**
-9. **内容贡献渠道** — GitHub Issues 表单 + PR 流程（不做 CMS）
-10. **快捷键** — 表内导航 / 复制的键盘加速（Tab 流已完整可用，非必需）
+## 10. 设计迭代账本
 
----
+> 功能冻结后的打磨账本。两周期已闭环；现行规则一轮一验（§2 规则 7）。
 
-## 10. 决策日志（append-only）
+### 原则
 
-> 只记"改变方向"的决策：日期 + 方向 + 原因，≤2 行。机制细节在 §3-§8 主场；日常交付不记（git / release 已覆盖）。
-
-- **2026-04-22** · 大简化定调：所有语言平等、tone 全局固定、手写体 Stationery 替代 chips 墙 / legend / pill、UI 锁英文。
-- **2026-04-26** · addressee slot 撤除（命中率过低，拨动无效违反"内容是主角"）；确立成熟度阈值机制（≥10 cell 再考虑恢复）。
-- **2026-04-28** · 默认锚点 zh → en：新增语言后受众主体是不懂中文的国际朋友。
-- **2026-04-29** · 单一 phrases.json 拆为 per-phrase 文件——短语量增长后单文件无法支撑独立生成 / review / diff。
-- **2026-04-29** · 引入 `reviewed` 字段标记母语者审核。
-- **2026-06-10** · 移除 `reviewed` 字段（反转上条）：审核流程始终未成形，字段沦为噪音。
-- **2026-06-10** · 翻译四规则确立（README）；当日全库审计删 211 个变体。
-- **2026-06-11** · 场景体系定为"小而多"（11 场景）；排序 = 逻辑分块优先、块内按频率、高频不沉底。
-- **2026-06-11** · 砍同义对时标准形存活、casual 重复出局；每格必须有中性默认（除非概念本身无正式语域）。
-- **2026-06-12** · 阿拉伯语不做全局 RTL，只做内容级 `dir="auto"`。
-- **2026-06-12** · 字体不进 SW precache（反转原方案）：CJK 子集全量几十 MB，改运行时 CacheFirst。
-- **2026-06-12** · TTS 无 voice 不渲染（弃"禁用 + tooltip"）；voice 按质量启发式排序；Starred only 会话级。
-- **2026-06-12** · Fraunces full 轴 → standard 轴（-120KB，弃 SOFT/WONK）；CJK 声明移出阻塞 CSS。Lighthouse 56→88。
-- **2026-06-12** · 确立元原则：性能数字非铁律，以实测校准并记日志；方向性原则不动摇。
-- **2026-06-12** · 性别控件恢复（阈值机制触发：两轴各 60）：Stationery 第二句加 addressee + speaker 槽位。
-- **2026-06-13** · tone 四档收三档：close 档全库命中 0.5%，"会动但无效的选项是温柔的陷阱"；close 并入 casual，旧持久化值迁移。
-- **2026-06-27** · 引入 Dependabot 自动合并（对 dev 开 PR，minor+patch 合并单 PR、major 单独手动审）。
-- **2026-06-28** · major 也自动合并（反转上条）：维护者不审 PR diff，"手动审"等于永不合；build + check 绿灯即合。
-- **2026-06-28** · 引入测试（反转"不用测试框架"）：major 自动合并后肉眼验形同虚设；当天抓到 SW 注册失效与按钮嵌套两个真实回归。
-- **2026-06-28** · 对比度补齐 AA：低对比判定为可读性失误而非风格；新增 `--gold-ink` / `--on-accent`，color-contrast 入门禁。
-- **2026-06-28** · 语言选择改造：23 门 chip 墙 → 信笺句行 + 分组弹层；顺修默认 anchor 硬编码 bug。
-- **2026-06-29** · 双轨化：桌面语言操作搬进表格列头；亮模式次要文字提对比；trigger 高亮改亮色方案。
-- **2026-06-29（二）** · 再收敛：句行面板两视图常驻为主控件、表头只换列、LangMenu 重做视觉（直立母语名 + exonym）。
-- **2026-07-02** · 语言交互工程收口：列序 = 选择顺序（原位换列）、popover 原语统一浮层、弹层条件挂载、分组从数据派生。
-- **2026-07-02（二）** · 进入存量设计迭代期，立 §11 账本：功能冻结，转入跨会话持续打磨。
-- **2026-07-03** · 换列动画取"新墨写入"（列头先行、逐行级联），弃 FLIP / View Transitions——表格列几何过渡工程不成立，且"换语言是重写一栏字，不是挪家具"。
-- **2026-07-03（二）** · 性能再校准：修复语言改造引入的 CLS 回归（0.115→0）+ 水合分级，Perf 59→96；确立首屏 swap-safe 栈规则，否决 `font-display: optional`。
-- **2026-07-03（三）** · wavy 墨线当日反转（用户否决）：tight 波浪是拼写检查的既有语义——装饰借形，先问该形状在通用 UI 里已有什么含义。
-- **2026-07-03（四）** · 字体走角色制（用户反馈"Masthead 精致、其他中下水平"触发）：角色 token 是唯一入口，基因用 opsz 而非字重下沉。
-- **2026-07-07** · R13–R18 实验整体撤销，站点定格 R12（用户裁决）：工艺打磨可持续；"突破式"重造不再自行发起——视觉大改先出截图拿认可，禁止无人验收的批量交付。
-
----
-
-## 11. 设计迭代账本
-
-> 功能冻结后的打磨工作账本。两个迭代周期均已闭环；现行规则**一轮一验**（§2.3 法则 7）。
-
-### 迭代原则
-
-- 打磨**已有**功能的设计——不新增功能（§9 红线不动）、不改首屏形态、不造新交互物件
-- 信笺气质是底色：改动要让它更像一封信，而不是更像一个 app（§2.1）
-- **一轮一验**：每轮 = 审计（截图）→ 设计 → 实现 → 真实浏览器验证 → 测试全绿 → 提交 → 交用户裁决，认可后才开下一轮
-- 动手前先重截当前状态——视觉问题以截图证据为准，不凭记忆
-- 浮层复用 popover 原语（§4.1），不发明第四种协调机制；AA 是地板
+- 仅打磨已有功能：不新增功能（§8）、不改首屏形态、不造新交互物件
+- 每轮流程：审计截图 → 设计 → 实现 → 浏览器验证 → 测试全绿 → 提交 → 用户裁决 → 通过才开下一轮
+- 动手前重截当前状态，不凭记忆
+- 浮层一律走 popover 原语（§4.8）；AA 是底线
 
 ### 开放项
 
-- [~] **打印样式**（已落地，**待用户裁决**，不合意一个 revert 即撤）：`global.css` 尾部单个 `@media print` 块，屏幕零影响——交互 chrome 全隐、纸面模拟让位真实纸张、`content-visibility` 打印强制 visible（否则折叠线下场景不排版）、sticky 表头改 static（原生 thead 分页重复）、场景标题不跨页断开。⚠️ 覆盖 svelte 作用域样式需 `!important`
-- [ ] **真实设备手测**：iOS Safari / Android Chrome 真机复核
+- [~] **打印样式**（已落地，待用户裁决，revert 即撤）：`global.css` 尾部单个 `@media print` 块，屏幕零影响；交互 chrome 全隐、`content-visibility` 打印强制 visible、sticky 表头改 static（原生 thead 分页重复）、场景标题不跨页。⚠️ 覆盖 svelte 作用域样式需 `!important`
+- [ ] **真机手测**：iOS Safari / Android Chrome
 
 ### 周期存档
 
-- **第一周期 R1–R8（2026-07-02 ～ 07-03）**——高频功能细节强化：换列「新墨写入」、收藏仪式感、发音墨晕、TOC 阅读进度线、语言面板键盘手感、复制金线；清尾：触屏可供性、404 印章、表格行解剖（348→302px）、移动端回顶钮。
-- **第二周期 R9–R12（2026-07-03）**——「更精致、更艺术品、更惊艳，同时保证性能」。存活四轮：雕版工艺 + 暗色烛光（R9，并修复 CLS 回归、Perf 59→96）、浮层 / Toast / 卡片工艺统一（R10）、字体角色制（R11）、版面家具（R12）。其后 R13–R18 六轮"突破式"实验于 07-07 被整体否决回退（§10）；提交留存于 git 历史 / reflog。
+- **R1–R8（2026-07-02～03）**：换列级联、收藏反馈、发音墨晕、TOC 进度线、面板键盘手感、复制金线；触屏可供性、404 印章、表格行高 348→302px、回顶钮。
+- **R9–R12（2026-07-03）**：雕版工艺 + 暗色（R9，同时修 CLS 回归、Perf 59→96）、浮层 / Toast / 卡片统一（R10）、字体角色制（R11）、版面家具（R12）。R13–R18 六轮实验于 07-07 整体否决回退（§9），提交存于 git 历史。
 
 ### 轮次日志
 
-- **R12 · 2026-07-03** — 版面家具收笔：Nº 编号字法、Footer 镜像收笔线、暖色 `::selection`（暗色 AA 需专用 token）、标准 `scrollbar-color`（`::-webkit-scrollbar` 会强制 macOS 常显滚动条，不用）。
-- **R11 · 2026-07-03** — 字体角色制落地（§5.1）：角色 tokens、八组件归口、死代码清除；截图对比验证光轴对比肉眼可辨。
-- **R10 · 2026-07-03** — 清尾四件（浮层内衬光、章节留白、Toast 纸条化、卡片角线）+ noise 混合层实测结案 + wavy 墨线按用户反馈当日回退。
-- **R9 · 2026-07-03** — 五个工艺层落地（雕版扉页、纸张物性、手写墨线、入场编排、暗色烛光）+ 性能修复。教训：性能回归会躲在功能迭代后面——开新周期首件事重测基线。
-- **R8 · 2026-07-03** — 表格行解剖 348→302px（截图对比法）。第一周期收官。
-- **R7 · 2026-07-03** — 移动端回顶钮；表格解剖勘察（列宽比是死胡同）。
-- **R6 · 2026-07-03** — TocSide 交互改判（滚动只点亮静息 rail，展开只由 hover/focus）；StickyBar 移动端单行。
-- **R5 · 2026-07-03** — 清尾：触屏 copy 常显、404 印章、scene id 唯一化、slot options 去重。
-- **R4 · 2026-07-03** — 语言面板键盘手感（键盘开 → 搜索聚焦、Levenshtein typo 建议）+ 复制金线（inline background-size 而非 SVG stroke——SVG 在多行文本上会断）。
-- **R3 · 2026-07-03** — 首星布局跳动修复、发音墨晕、TOC 阅读进度线（scroll-driven CSS）。教训：账本条目写自审计推测，动手前先读现状。
-- **R2 · 2026-07-03** — 换列「新墨写入」（`$freshLang` 瞬态 + 逐行级联）+ 收藏仪式感（星标 pop + 金屑 + 场景星数微标）。
-- **R1 · 2026-07-02** — 全面审计（11 张全状态截图）+ 建账。落地：浮层近实纸化、移动端断行修辞（标点不孤悬行首）、`lang` 裸码残留修复。
+- **R12 · 2026-07-03** — 版面家具：Nº 编号、Footer 收笔线、暖色 `::selection`（暗色需专用 token）、`scrollbar-color`（不用 `::-webkit-scrollbar`，会强制 macOS 常显滚动条）。
+- **R11 · 2026-07-03** — 字体角色制落地（§5.1）：tokens、八组件归口、死代码清除；截图对比验证。
+- **R10 · 2026-07-03** — 浮层内衬光、章节留白、Toast 纸条化、卡片角线；noise 层实测结案；wavy 下划线回退。
+- **R9 · 2026-07-03** — 五个工艺层 + 性能修复。教训：性能回归藏在功能迭代后，开新周期先重测基线。
+- **R8 · 2026-07-03** — 表格行高 348→302px（截图对比法）。
+- **R7 · 2026-07-03** — 回顶钮；列宽比方案排除。
+- **R6 · 2026-07-03** — TocSide 改判（滚动只点亮 rail，hover/focus 才展开）；StickyBar 移动端单行。
+- **R5 · 2026-07-03** — 触屏 copy 常显、404 印章、scene id 唯一化、slot-options 去重。
+- **R4 · 2026-07-03** — 面板键盘手感（键盘开 → 搜索聚焦、typo 建议）+ 复制金线（background-size 而非 SVG stroke，SVG 多行会断）。
+- **R3 · 2026-07-03** — 首星跳动修复、发音墨晕、TOC 进度线。教训：条目写自推测，动手前先读现状。
+- **R2 · 2026-07-03** — 换列级联（`$freshLang`）+ 收藏反馈（pop + 金屑 + 星数微标）。
+- **R1 · 2026-07-02** — 全状态审计（11 截图）建账；浮层近实纸化、断行修辞、`lang` 裸码修复。
 
----
+## 11. 附录
 
-## 12. 附录
+### A. 约定
 
-### A. 命名与提交约定
-
-- 文件 kebab-case；组件 PascalCase；store camelCase（用时加 `$`）；CSS 类 kebab-case 松散 BEM；类型 PascalCase 无 `I` 前缀，Zod 导出类型加 `T` 前缀
-- Commit 按 Conventional Commits 松散版（feat / fix / style / refactor / docs / chore），**英文书写**，每条要能让三个月后的自己看懂
-- 决策记录在 §10（单文件日志足够，不开 ADR 目录）
+- 命名：文件 kebab-case；组件 PascalCase；store camelCase（用时加 `$`）；CSS 类 kebab-case 松散 BEM；类型 PascalCase，Zod 导出类型加 `T` 前缀
+- Commit：Conventional Commits 松散版，**英文**，三个月后可读
+- 决策记录在 §9，不开 ADR 目录
 
 ### B. 手测回归清单
 
-> 大半已由 Playwright 冒烟自动覆盖（§7.5）；本清单供真机 / 视觉手测复用（§11 开放项）。
+> 大半已由 Playwright 覆盖（§7.3）；本清单供真机 / 视觉手测。
 
-- [ ] 首屏：TocTop 可见、TocSide / StickyBar 不可见
-- [ ] 滚动过阈值：TocTop 淡出、TocSide 淡入（cards@≥640 / table@≥1024）、StickyBar 淡入
-- [ ] Stationery 各 slot 展开选择并同步数据；复制任一行出 `✓ copied` + Toast
-- [ ] 语言面板满 5 时点第 6 个：header 提示、面板不关；母语名 + 英文注名分组显示
-- [ ] Tab 穿行不出现"莫名弹窗"；TocSide hover/focus 才展开、滚动只点亮 rail
-- [ ] 切换视图：卡片恒 720px max；收藏后 "Starred only" 出现、过滤后空场景整块隐藏
-- [ ] hover 变体行出喇叭，点击朗读不触发复制；阿拉伯语文本右对齐、rom 仍左对齐
+- [ ] 首屏：TocTop 可见，TocSide / StickyBar 不可见
+- [ ] 滚动过阈值：TocTop 淡出，TocSide 淡入（cards@≥640 / table@≥1024），StickyBar 淡入
+- [ ] 各 slot 展开选择并同步；复制出 `✓ copied` + Toast
+- [ ] 语言面板满 5 点第 6 个：header 提示、面板不关；分组 + 英文注名正常
+- [ ] Tab 穿行无"莫名弹窗"；TocSide 仅 hover/focus 展开
+- [ ] 卡片恒 720px max；收藏后 "Starred only" 出现，过滤后空场景隐藏
+- [ ] hover 出喇叭，朗读不触发复制；阿拉伯语右对齐、rom 左对齐
 
 ### C. 构建史
 
-- **M0 骨架**（v0.1.0）：依赖、目录、lib 五件套、Actions 部署
-- **M1 对齐 demo**（v0.1.0/0.1.1）：7 语言 × 11 短语迁移、全部 token、双视图
-- **M2 深色 + 收藏**（v0.2.0/v1.0.0）：三态主题、星标过滤、AA 验证
-- **M3 语音 + PWA**（v1.0.0）：TTS、manifest、SW precache、离线测试
-- **M4 打磨**：axe 双主题门禁、Lighthouse 达预算、README、404。剩：键盘穿行手测、真机手测（§11 开放项）
-- **M5 内容扩充**（持续）：规模以 `pnpm coverage` 为准，演进史见 [GitHub Releases](https://github.com/Chimelight/distant-friends/releases)
-- 三个演进版 demo（v1 起点 → v2 反面教材 → v3 M1 视觉基准）已不在仓库，站点视觉早被迭代超越，不再是任何基准
+M0 骨架（v0.1.0）→ M1 对齐 demo（v0.1.1）→ M2 深色 + 收藏（v1.0.0）→ M3 语音 + PWA（v1.0.0）→ M4 打磨（剩键盘穿行与真机手测，见 §10）→ M5 内容扩充（持续；规模以 `pnpm coverage` 为准，演进史见 [GitHub Releases](https://github.com/Chimelight/distant-friends/releases)）。早期三版 demo 已不在仓库，不是任何基准。
 
 ### D. 文档版本史
 
-- **v1.0–v1.3**（2026-04-21~23）— 初版到交互收尾：变体系统、所有语言平等、Stationery 替代 chips/pills、TOC 双形态
-- **v1.5**（2026-04-26）— addressee slot 撤除 + 成熟度阈值机制
-- **v2.0**（2026-06-12）— 体例重构：确立"事实层=代码、意图层=本文档"分层，删全部事实复制品约 -350 行，新设决策日志
-- **v2.1**（2026-07-02）— 新设设计迭代账本；语言交互章重写
-- **v2.2**（2026-07-03）— 第二周期 as-built：字体角色制、性能再校准
-- **v2.3**（2026-07-08）— 编排重构：决策日志恢复严格时序、账本压缩、一轮一验入原则
-- **v2.4**（2026-07-10）— 体检手术：修 5 处过期事实、去多重记账、清除事实层复制约 -220 行、废除 as-built 快照体例
-- **v2.5**（2026-07-10）— 入口层：阅读地图替代"全文读完"，新增仓库 CLAUDE.md 指针层；评估后不拆分本文档
-- **v2.6**（2026-07-10）— 立正文写法规则：无时间戳当下真相，补丁注记禁入正文
-- **v3.0**（2026-07-11）— **全文重写**：按顶层设计重排大纲并重新编号，决策日志压缩为紧凑年表，⚠️ 陷阱归位。**新旧编号对照**：数据模型 §5→§3、功能 §6→§4、设计系统 §7→§5、技术选型 §3→§6、结构/部署 §4+§10→§7、性能/无障碍 §9+§8→§8、未来 §12→§9、决策日志 §13→§10、迭代账本 §15→§11、里程碑 §11→附录C、附录 §14→§12
-- **v3.1**（2026-07-11）— **提升视角重写**（结构与编号不变）：§2 升格为设计哲学——统摄隐喻（一封信）+ 七条按名引用的判断法则，全文从案例法改为模式语言；各功能节以一句意图开篇；§6 补选型判据与"何时重选"；§7.4 补自动合并的信任模型；§10/§11 账本原文未动
+- **v1.0–v1.5**（2026-04）— 初版；变体系统；addressee 撤除 + 阈值机制
+- **v2.0**（2026-06-12）— 确立事实层 / 意图层分层，删事实复制品 -350 行，设决策日志
+- **v2.1–v2.3**（2026-07-02~08）— 设迭代账本；决策日志严格时序；一轮一验入册
+- **v2.4–v2.6**（2026-07-10）— 修 5 处过期事实；清事实层复制 -220 行；废 as-built 快照；设阅读地图 + CLAUDE.md；立无时间戳写法规则
+- **v3.0–v3.1**（2026-07-11）— 全文重写：新大纲 + 紧凑年表 + 陷阱归位；§2 设计哲学与七规则
+- **v4.0**（2026-07-11）— 重写为"设计文献"：交互章按信笺解剖组织，文学化语体
+- **v4.1**（2026-07-11）— **工程化改写**（结构与编号同 v4.0）：删除全部文学化表达与隐喻式标题，恢复组件名标题，§1 改定义清单，§2 决策规则入表，§8 未来项入表；信笺隐喻保留为一行判断标准
 
----
-
-*文档版本 v3.1 · 最后更新 2026-07-11（提升视角：统摄隐喻 + 判断法则 + 意图开篇——明细见附录 D）*
+*文档版本 v4.1 · 2026-07-11*
