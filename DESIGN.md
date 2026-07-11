@@ -194,6 +194,7 @@ I write — [in any tone] — to [a friend], as [myself].
 
 - Fraunces 仅含 Latin（西里尔由 Noto Serif SC cyrillic 子集承担）；CJK 回退 Noto Serif SC/JP/KR；首屏 UI 标签用 `--font-serif-local`（无晚到 webfont，见 §7.4）
 - Instrument Sans 仅 400/500；opsz 是唯一表现轴（无 SOFT/WONK；CJK 回退字体无 opsz 轴，自动忽略）
+- 文字体量补偿：同一名义字号下各文字视觉体量不同，凡多文字同框处经 `--script-scale` 系数取齐灰度（实测依据与系数见 `tokens.css`）；表格行内锚点词与各列首条词条共享行基线（原生 `vertical-align: baseline`，空格例外）
 
 ### 5.2 颜色
 
