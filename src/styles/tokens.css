@@ -90,9 +90,12 @@
   --ease-linear: linear;
 }
 
-/* —— dark, forced —— */
+/* —— dark, forced ——
+ * The desk (--bg) sits deeper than in the naive same-hue dimming so the
+ * sheets keep the paper-on-desk separation they have in light mode; text on
+ * --bg only gains contrast from this, and text on paper is untouched. */
 [data-theme="dark"] {
-  --bg:          #1B1813;
+  --bg:          #141109;
   --paper:       #242018;
   --paper-up:    #2D2820;
   --ink:         #EDE1C8;
@@ -113,8 +116,8 @@
   --shadow-toc-panel:   0 24px 60px -32px rgba(0, 0, 0, 0.6);
   --shadow-stickybar:   0 1px 0 rgba(58, 50, 38, 0.6);
 
-  --shadow-paper: 0 1px 2px rgba(0, 0, 0, 0.35), 0 22px 48px -30px rgba(0, 0, 0, 0.6);
-  --paper-edge:   inset 0 1px 0 rgba(237, 225, 200, 0.07);
+  --shadow-paper: 0 1px 2px rgba(0, 0, 0, 0.5), 0 22px 48px -30px rgba(0, 0, 0, 0.75);
+  --paper-edge:   inset 0 1px 0 rgba(237, 225, 200, 0.12);
 
   --vignette-top:    rgba(196, 92, 50, 0.17);
   --vignette-bottom: rgba(201, 166, 104, 0.13);
@@ -123,7 +126,7 @@
 /* —— dark, system follow (only when not explicitly forced light) —— */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --bg:          #1B1813;
+    --bg:          #141109;
     --paper:       #242018;
     --paper-up:    #2D2820;
     --ink:         #EDE1C8;
@@ -144,8 +147,8 @@
     --shadow-toc-panel:   0 24px 60px -32px rgba(0, 0, 0, 0.6);
     --shadow-stickybar:   0 1px 0 rgba(58, 50, 38, 0.6);
 
-    --shadow-paper: 0 1px 2px rgba(0, 0, 0, 0.35), 0 22px 48px -30px rgba(0, 0, 0, 0.6);
-    --paper-edge:   inset 0 1px 0 rgba(237, 225, 200, 0.07);
+    --shadow-paper: 0 1px 2px rgba(0, 0, 0, 0.5), 0 22px 48px -30px rgba(0, 0, 0, 0.75);
+    --paper-edge:   inset 0 1px 0 rgba(237, 225, 200, 0.12);
 
     --vignette-top:    rgba(196, 92, 50, 0.17);
     --vignette-bottom: rgba(201, 166, 104, 0.13);
