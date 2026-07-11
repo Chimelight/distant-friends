@@ -404,7 +404,7 @@
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    font-size: 14px;
+    font-size: calc(14px * var(--script-scale, 1));
     letter-spacing: 0.005em;
     color: var(--ink-soft);
   }
@@ -525,7 +525,7 @@
        lighter weight + raised optical size instead of a bolder face */
     font-weight: 440;
     font-variation-settings: var(--opsz-headword);
-    font-size: 22px;
+    font-size: calc(22px * var(--script-scale, 1));
     color: var(--ink);
     line-height: 1.2;
     letter-spacing: -0.008em;

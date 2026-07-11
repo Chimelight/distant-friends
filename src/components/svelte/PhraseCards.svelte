@@ -227,7 +227,7 @@
     /* headword role — same cut as the table's anchor column */
     font-weight: 440;
     font-variation-settings: var(--opsz-headword);
-    font-size: 26px;
+    font-size: calc(26px * var(--script-scale, 1));
     color: var(--ink);
     letter-spacing: -0.008em;
     line-height: 1.15;
@@ -306,7 +306,7 @@
       margin-bottom: 20px;
     }
     .card-word {
-      font-size: 24px;
+      font-size: calc(24px * var(--script-scale, 1));
     }
   }
 </style>

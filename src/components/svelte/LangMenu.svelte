@@ -198,7 +198,7 @@
   /* native name upright (italic faked CJK badly) — serif, the protagonist */
   .lm-native {
     font-family: var(--font-serif);
-    font-size: 15.5px;
+    font-size: calc(15.5px * var(--script-scale, 1));
     line-height: 1.2;
     letter-spacing: 0.005em;
     color: var(--ink-soft);

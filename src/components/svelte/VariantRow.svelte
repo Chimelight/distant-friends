@@ -159,7 +159,7 @@
     /* entry role: a touch above auto optical size — more stroke contrast
        without display-cut fragility at reading size */
     font-variation-settings: var(--opsz-entry);
-    font-size: 19px;
+    font-size: calc(19px * var(--script-scale, 1));
     color: var(--ink);
     line-height: 1.32;
     letter-spacing: 0.003em;

@@ -23,3 +23,16 @@ body {
 h1, h2 {
   text-wrap: balance;
 }
+
+/* Script-size factors (see --script-scale in tokens.css). The property
+ * inherits, so it lands on the element carrying the lang attribute and
+ * every descendant. */
+:lang(ru), :lang(uk), :lang(kk) {
+  --script-scale: 0.96;
+}
+:lang(hi), :lang(bn) {
+  --script-scale: 0.92;
+}
+:lang(th) {
+  --script-scale: 0.93;
+}

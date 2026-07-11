@@ -193,6 +193,7 @@
   .names .n {
     font-style: normal;
     font-family: var(--font-serif-local);
+    font-size: calc(1em * var(--script-scale, 1));
   }
   /* the anchor, highlighted in the list rather than read as a redundant repeat */
   .names .n.anchor {

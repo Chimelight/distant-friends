@@ -68,6 +68,13 @@
    * Small sans caps-labels use ONE spec everywhere. */
   --opsz-headword: "opsz" 34;
   --opsz-entry:    "opsz" 24;
+  /* Script-size compensation: the same nominal size renders different
+   * optical volume per script (measured against the live font stack:
+   * Bengali/Devanagari letter bodies run ~+50% vs the Fraunces lowercase,
+   * Thai ~+30%, Cyrillic ~+18%). Per-script factors live in typography.css
+   * (:lang rules); consumers opt in via calc(size * var(--script-scale, 1)).
+   * Factors stay within ±8% so no script drops below its legibility floor. */
+  --script-scale: 1;
   --label-size:    10px;
   --label-weight:  500;
   --label-track:   0.2em;
