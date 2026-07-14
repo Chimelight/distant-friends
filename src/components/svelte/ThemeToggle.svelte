@@ -46,7 +46,9 @@
     onclick={() => set('dark')}
   >
     <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-      <path d="M11 2.5a5.5 5.5 0 1 0 4.5 8.4 4.5 4.5 0 0 1-4.5-8.4z" />
+      <!-- ink centered: the crescent's bounding box sits 2.4 right of the
+           viewBox centre (measured), so pull it back -->
+      <path d="M11 2.5a5.5 5.5 0 1 0 4.5 8.4 4.5 4.5 0 0 1-4.5-8.4z" transform="translate(-2.4 0)" />
     </svg>
   </button>
 </div>
