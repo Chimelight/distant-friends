@@ -137,8 +137,8 @@ I write — [in any tone] — to [a friend], as [myself].
 ### 4.4 表格与卡片（PhraseTable / PhraseCards / VariantRow）
 
 - 锚点列：固定首列，淡金棕底 + 右侧浅 border；表头显示锚点语言本地名。行结构三层：Headword 大字（筛选后第一条变体）、rom、gloss。缺翻译显示淡斜体 `—`，不阻断整行（规则 1）
-- 译文格：变体行堆叠，行间虚线。行结构：Entry 大字、rom、tag line（仅 `tone=any` 时渲染 tone/gender 标签）、note、copy hint（hover 显现）。被筛空的格显示斜纹占位。卡片头复用锚点列三层结构，语言块顺序镜像列序
-- 复制：主操作，整行可点。复制纯 `text`（不含 rom / tag / note）；成功 = 行内 `✓ copied` + Toast；失败 fallback `execCommand`。`role="button"` + `aria-label`，键盘可触发。⚠️ `.copy-hint` 必须为空 span，文字经 `::before content` 切换——innerText 与 ::before 并存会重叠
+- 译文格：变体行堆叠，行间虚线。行结构：Entry 大字、rom、tag line（仅 `tone=any` 时渲染 tone/gender 标签）、note；行首行右侧是控件簇（拷贝图标 + 喇叭，锚定在词条首行、hover 显现）。被筛空的格显示斜纹占位。卡片头复用锚点列三层结构，语言块顺序镜像列序
+- 复制：主操作，整行可点（复制按钮占满整行，控件簇点击穿透、仅喇叭自接事件）。affordance 是图标不是文字——文字标签会被误读为独立按钮，且与长词条相撞。复制纯 `text`（不含 rom / tag / note）；成功 = 图标换 accent 对勾 + Toast；失败 fallback `execCommand`。真 `<button>` + `aria-label`，键盘可触发
 - TTS（SpeakButton）：非主交互。`speechSynthesis`，BCP-47 取 `languages.json[lang].tts`；voice 匹配：精确 → 同语种前缀回退，按质量启发式排序；无可用 voice 或无 tts code → 按钮不渲染（规则 2）
 - 收藏（StarButton）：锚点列右上，两视图同位；`$starred: Set<phraseId>` 持久化；收藏粒度为短语级。"只看收藏"过滤的唯一入口随工具栏就位——收藏动作发生在滚动途中：≥640 是 StickyBar 内的 ★+计数开关，≤640 移入书签胶囊（见 §4.6）；页面正文不放过滤控件。过滤状态会话级；最后一颗星被取消时自动解除过滤（守护在 stores 模块层，不依赖组件挂载）
 

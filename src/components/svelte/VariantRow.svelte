@@ -58,9 +58,10 @@
   }
 </script>
 
-<!-- The row is a plain wrapper; the copy control is a real <button> whose
-     box stops short of the right gutter where SpeakButton lives — two
-     targets, zero geometric overlap (WCAG target-size). -->
+<!-- Two plain grid columns: the copy button (text stack + copy mark) and
+     the speaker. Nothing overlays anything — text wraps in its own column,
+     the icons ride the entry's first line by ordinary flow. The copy mark
+     lives inside the button (decorative span), so pressing it copies. -->
 <div class="variant" class:copied>
   <button
     class="copy"
@@ -69,48 +70,62 @@
     onclick={onClick}
     onkeydown={onKey}
   >
-    <!-- langCode stays the dataset code (SpeakButton matches TTS voices on
-         it); the lang attribute needs the valid BCP-47 tag. -->
-    <div class="variant-text" lang={langTagOf(langCode)} dir="auto">
-      <!-- inline span so the copied underline hugs the ink, not the cell -->
-      <span class="ink-u">{variant.text}</span>
-    </div>
-    {#if variant.rom}
-      <div class="variant-rom">{variant.rom}</div>
-    {/if}
-    <!-- one annotation voice: tag and note share a line and a register,
-         instead of stacking two differently-styled rows -->
-    {#if tagText || variant.note}
-      <div class="variant-meta">
-        {#if tagText}<span>{tagText}</span>{/if}
-        {#if tagText && variant.note}<span class="meta-sep" aria-hidden="true"> · </span>{/if}
-        {#if variant.note}<span>{variant.note}</span>{/if}
-      </div>
-    {/if}
+    <span class="stack">
+      <!-- langCode stays the dataset code (SpeakButton matches TTS voices on
+           it); the lang attribute needs the valid BCP-47 tag. -->
+      <span class="variant-text" lang={langTagOf(langCode)} dir="auto">
+        <!-- inline span so the copied underline hugs the ink, not the cell -->
+        <span class="ink-u">{variant.text}</span>
+      </span>
+      {#if variant.rom}
+        <span class="variant-rom">{variant.rom}</span>
+      {/if}
+      <!-- one annotation voice: tag and note share a line and a register,
+           instead of stacking two differently-styled rows -->
+      {#if tagText || variant.note}
+        <span class="variant-meta">
+          {#if tagText}<span>{tagText}</span>{/if}
+          {#if tagText && variant.note}<span class="meta-sep" aria-hidden="true"> · </span>{/if}
+          {#if variant.note}<span>{variant.note}</span>{/if}
+        </span>
+      {/if}
+    </span>
+    <!-- copy affordance: an icon in the speaker's stroke language, not a
+         text label (a label reads as its own button). Copied state swaps
+         it for an accent check. -->
+    <span class="copy-mark" aria-hidden="true">
+      {#if copied}
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3.2 8.6l3.2 3.2 6.4-7" />
+        </svg>
+      {:else}
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+          <rect x="5.7" y="5.7" width="7.6" height="7.6" rx="1" />
+          <path d="M10.4 2.8H4.1a1.3 1.3 0 0 0-1.3 1.3v6.3" stroke-linecap="round" />
+        </svg>
+      {/if}
+    </span>
   </button>
-  <!-- one control cluster, centered on the entry's first line: the copy
-       hint and the speaker belong to the entry, not to the cell's box —
-       stacking them against fixed offsets left the speaker pinned to the
-       bottom rule whenever a variant had no rom/meta below. -->
-  <span class="controls">
-    <span class="copy-hint" aria-hidden="true"></span>
+  <span class="speak-slot">
     <SpeakButton text={variant.text} langCode={langCode} />
   </span>
 </div>
 
 <style>
   .variant {
-    display: block;
+    /* two ordinary columns: [copy button] [speaker]; the icons ride the
+       entry's first line through flow alone (each icon box is exactly one
+       entry line tall, contents centered) — no overlays, no reserves */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
     width: 100%;
     position: relative;
     transition: background 0.2s ease;
-    /* geometry tokens — the copy block, the entry type and the control
-       cluster all derive from these; the cards view contributes its extra
-       wrapper padding through --v-lead */
     --v-pad-block: 15px;
-    --v-lead: 0px;
     --entry-size: calc(19px * var(--script-scale, 1));
     --entry-leading: 1.32;
+    --entry-line: calc(var(--entry-size) * var(--entry-leading));
   }
   /* copied: a gold line draws itself under the ink, left to right (from the
      right in RTL text), then retracts when the copied state lapses */
@@ -135,8 +150,10 @@
   }
 
   .copy {
-    display: block;
-    width: calc(100% - 48px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 0 10px;
     padding-block: var(--v-pad-block);
     padding-inline: 22px 0;
     cursor: pointer;
@@ -145,6 +162,10 @@
     background: transparent;
     border: none;
     color: inherit;
+  }
+  .stack {
+    display: block;
+    min-width: 0;
   }
   /* a short tick between variants, not a full-width dashed rule — the
      stacked variants read as one cell with light punctuation, less grid */
@@ -168,6 +189,7 @@
     background: rgba(176, 82, 46, 0.12);
   }
   .variant-text {
+    display: block;
     font-family: var(--font-serif);
     /* entry role: a touch above auto optical size — more stroke contrast
        without display-cut fragility at reading size */
@@ -178,6 +200,7 @@
     letter-spacing: 0.003em;
   }
   .variant-rom {
+    display: block;
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 12.5px;
@@ -186,6 +209,7 @@
     letter-spacing: 0.02em;
   }
   .variant-meta {
+    display: block;
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 12px;
@@ -202,56 +226,47 @@
   .meta-sep {
     color: var(--gold-ink);
   }
-  /* rides the entry's first line: as tall as one entry line box, contents
-     vertically centered on it — the same geometry whatever the variant
-     stacks below (rom, meta, or nothing) */
-  .controls {
-    position: absolute;
-    top: calc(var(--v-lead) + var(--v-pad-block));
-    inset-inline-end: calc(10px + var(--v-lead));
-    height: calc(var(--entry-size) * var(--entry-leading));
+  /* each icon sits in a box exactly one entry line tall, contents centered
+     — flow alignment with the first line, no offsets */
+  .copy-mark {
     display: inline-flex;
     align-items: center;
-    gap: 2px;
-  }
-  /* copy-hint is an empty span; ::before swaps content based on .copied. */
-  .copy-hint {
-    font-family: var(--font-sans);
-    font-weight: var(--label-weight);
-    font-size: var(--label-size);
-    letter-spacing: var(--label-track);
-    text-transform: uppercase;
+    justify-content: center;
+    width: 24px;
+    height: var(--entry-line);
     color: var(--ink-mute);
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition:
+      opacity 0.2s ease,
+      color 0.2s ease;
   }
-  .copy-hint::before {
-    content: 'copy';
+  .speak-slot {
+    display: inline-flex;
+    align-items: center;
+    height: var(--entry-line);
+    margin-block-start: var(--v-pad-block);
+    margin-inline-end: 10px;
   }
-  .variant:hover .copy-hint {
-    opacity: 0.5;
+  .copy-mark svg {
+    width: 15px;
+    height: 15px;
+  }
+  .variant:hover .copy-mark {
+    opacity: 0.55;
   }
   .variant:hover :global(.speak),
   .variant:focus-within :global(.speak) {
     opacity: 0.55;
   }
-  .variant.copied .copy-hint {
+  .variant.copied .copy-mark {
     opacity: 1;
     color: var(--accent);
-    font-family: var(--font-serif);
-    font-style: italic;
-    text-transform: none;
-    letter-spacing: 0.01em;
-    font-size: 12.5px;
   }
-  .variant.copied .copy-hint::before {
-    content: '✓ copied';
-  }
-  /* Touch has no hover: keep a quiet "copy" affordance always visible,
+  /* Touch has no hover: keep a quiet copy affordance always visible,
      matching SpeakButton's hover-none treatment. */
   @media (hover: none) {
-    .copy-hint {
-      opacity: 0.4;
+    .copy-mark {
+      opacity: 0.45;
     }
   }
 </style>
