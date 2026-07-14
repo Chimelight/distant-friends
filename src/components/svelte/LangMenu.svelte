@@ -95,7 +95,7 @@
     }}
   >
     <span class="lm-mark" aria-hidden="true"></span>
-    <span class="lm-native" lang={langTag(L)} dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span>
+    <span class="lm-native index-native" lang={langTag(L)} dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span>
     {#if L.name !== L.native}<span class="lm-en">{L.name}</span>{/if}
   </button>
 {/snippet}

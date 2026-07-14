@@ -36,3 +36,13 @@ h1, h2 {
 :lang(th) {
   --script-scale: 0.93;
 }
+
+/* CJK stays at 1 in phrase content (reading sizes sit near the legibility
+ * floor), but as an index label inline with italic Latin — the stationery
+ * language line, the anchor slot, the language menu — the full-width body
+ * reads oversized (measured +110% vs the Fraunces lowercase, same canvas
+ * method as above), so those labels opt in via .index-native and take the
+ * ±8% cap. */
+.index-native:lang(zh), .index-native:lang(ja), .index-native:lang(ko) {
+  --script-scale: 0.92;
+}

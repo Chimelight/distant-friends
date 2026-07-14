@@ -88,7 +88,7 @@
              zero-width spaces: lines may end with a separator dot but can
              never start with one (mobile used to wrap as "·Deutsch"). -->
         {#each restingLangs as L, i (L.code)}<span class="unit"><span
-              class="n"
+              class="n index-native"
               class:anchor={L.code === $anchor}
               lang={langTag(L)}
               dir={L.rtl ? 'rtl' : 'ltr'}>{L.native}</span

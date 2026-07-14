@@ -2,7 +2,7 @@
   import LanguagePicker from './LanguagePicker.svelte';
   import SlotPicker from './SlotPicker.svelte';
   import { anchor, tone, speakerGender, addresseeGender, selectedLangs, markFreshLang } from '../../lib/stores';
-  import { langsByCodes } from '../../lib/lang';
+  import { langsByCodes, langTag } from '../../lib/lang';
   import { toneOptions, speakerOptions, addresseeOptions } from '../../lib/slot-options';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
   import ui from '../../content/ui/en.json';
@@ -14,7 +14,12 @@
   // order: anchor first, then the selection in its own order.
   const anchorOptions = $derived(
     langsByCodes([$anchor, ...($selectedLangs ?? []).filter((c) => c !== $anchor)]).map(
-      (l) => ({ key: l.code, label: l.native }),
+      (l) => ({
+        key: l.code,
+        label: l.native,
+        lang: langTag(l),
+        dir: l.rtl ? ('rtl' as const) : ('ltr' as const),
+      }),
     ),
   );
   function setAnchor(code: string) {

@@ -5,6 +5,11 @@
   interface Option {
     key: T;
     label: string;
+    /* Native-name labels (anchor slot) carry a BCP-47 tag and render
+       upright — CJK has no true italic, and the Index role keeps native
+       names unslanted (§5.1). */
+    lang?: string;
+    dir?: 'ltr' | 'rtl';
   }
 
   interface Props {
@@ -28,9 +33,8 @@
   let pulseTimer: number | undefined;
   onMount(() => () => clearTimeout(pulseTimer));
 
-  const currentLabel = $derived(
-    options.find((o) => o.key === value)?.label ?? value,
-  );
+  const current = $derived(options.find((o) => o.key === value));
+  const currentLabel = $derived(current?.label ?? value);
 
   // Menu-button keyboard contract: opening with the keyboard moves focus to
   // the checked item (mouse opens leave focus on the trigger).
@@ -76,7 +80,12 @@
     onkeydown={onTriggerKeydown}
     type="button"
   >
-    <span class="slot-label">{currentLabel}</span>
+    <span
+      class="slot-label"
+      class:index-native={!!current?.lang}
+      lang={current?.lang}
+      dir={current?.dir}>{currentLabel}</span
+    >
   </button>
   {#if open}
     <span class="popover" role="menu" use:menuKeys bind:this={popEl}>
@@ -84,6 +93,9 @@
         <button
           type="button"
           class="popover-item"
+          class:index-native={!!opt.lang}
+          lang={opt.lang}
+          dir={opt.dir}
           role="menuitemradio"
           aria-checked={opt.key === value}
           onclick={() => pick(opt)}
@@ -143,6 +155,13 @@
   .slot.pulse {
     animation: pulse var(--dur-feedback) ease;
   }
+  /* native names upright (Index role): no synthetic oblique, local serif
+     above the fold, script-size compensation via .index-native */
+  .slot-label.index-native {
+    font-style: normal;
+    font-family: var(--font-serif-local);
+    font-size: calc(1em * var(--script-scale, 1));
+  }
 
   /* mounted only while open */
   .popover {
@@ -195,6 +214,10 @@
     cursor: pointer;
     transition: all 0.15s ease;
     letter-spacing: 0.005em;
+  }
+  .popover-item.index-native {
+    font-style: normal;
+    font-size: calc(15px * var(--script-scale, 1));
   }
   .popover-item:hover {
     background: rgba(176, 82, 46, 0.08);
