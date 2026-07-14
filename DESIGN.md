@@ -140,14 +140,14 @@ I write — [in any tone] — to [a friend], as [myself].
 - 译文格：变体行堆叠，行间虚线。行结构：Entry 大字、rom、tag line（仅 `tone=any` 时渲染 tone/gender 标签）、note、copy hint（hover 显现）。被筛空的格显示斜纹占位。卡片头复用锚点列三层结构，语言块顺序镜像列序
 - 复制：主操作，整行可点。复制纯 `text`（不含 rom / tag / note）；成功 = 行内 `✓ copied` + Toast；失败 fallback `execCommand`。`role="button"` + `aria-label`，键盘可触发。⚠️ `.copy-hint` 必须为空 span，文字经 `::before content` 切换——innerText 与 ::before 并存会重叠
 - TTS（SpeakButton）：非主交互。`speechSynthesis`，BCP-47 取 `languages.json[lang].tts`；voice 匹配：精确 → 同语种前缀回退，按质量启发式排序；无可用 voice 或无 tts code → 按钮不渲染（规则 2）
-- 收藏（StarButton）：锚点列右上，两视图同位；`$starred: Set<phraseId>` 持久化；收藏粒度为短语级。"只看收藏"过滤的唯一入口在 StickyBar（★+计数开关，有收藏时渲染）——收藏动作发生在滚动途中，入口随工具栏就位；页面正文不再放过滤控件。过滤状态会话级；最后一颗星被取消时自动解除过滤（守护在 stores 模块层，不依赖组件挂载）
+- 收藏（StarButton）：锚点列右上，两视图同位；`$starred: Set<phraseId>` 持久化；收藏粒度为短语级。"只看收藏"过滤的唯一入口随工具栏就位——收藏动作发生在滚动途中：≥640 是 StickyBar 内的 ★+计数开关，≤640 移入书签胶囊（见 §4.6）；页面正文不放过滤控件。过滤状态会话级；最后一颗星被取消时自动解除过滤（守护在 stores 模块层，不依赖组件挂载）
 
 ### 4.5 TOC（TocTop / TocSide）
 
 两形态互斥，共享 `$scrolled` 阈值（`src/lib/scroll.ts`）。
 
 - TocTop：首屏横向目录，文档流内；Roman 编号 + 场景名（Index 角色）；点击平滑滚动；scrolled 后淡出但保留占位（防跳动）；移动端不折行——与桌面同一条索引行，单行横滑，两端渐隐提示溢出（任何折行排布都会把条目打散成噪音；渐隐是 mask 增强，不承重）
-- TocSide：fixed 右侧垂直居中，锚定 shell 右内缘。显隐（阈值以 `TocSide.svelte` 为准）：cards 视图 scrolled 且 ≥640；table 视图 scrolled 且 ≥1024（更窄会挤压末列）；再窄隐藏，由回顶钮兜底
+- TocSide：fixed 右侧垂直居中，锚定 shell 右内缘。显隐（阈值以 `TocSide.svelte` 为准）：cards 视图 scrolled 且 ≥640；table 视图 scrolled 且 ≥1024（更窄会挤压末列）；≤640 由 StickyBar 的 Nº 场景菜单接替读中跳转（§4.6）
 - 静息态：无背景无边框，Roman 数字 + 竖向 rail + 阅读进度线；展开态：实纸面板 `--surface-toc-panel`（半透明会与下层表格文字透叠）；禁用 backdrop-filter
 - 展开仅由 hover / focus 触发，滚动不展开——展开面板与表格末列在常见视口必然重叠；active 场景三重标识：编号 accent、场景名加重、短横线
 - 场景名收起时保留布局宽度（展开无横向位移）；`$activeScene` 在 scroll RAF 中按场景块位置判定
@@ -155,11 +155,12 @@ I write — [in any tone] — to [a friend], as [myself].
 ### 4.6 StickyBar
 
 - scrolled 后顶部淡入：mark（点击回顶）+ 缩略 Stationery（tone / addressee / speaker）+ 星标过滤开关（见 §4.4）
-- 移动端布局对称三段：星标开关钉左缘、句子居中、主题切换钉右缘（居中句子挨着右锚控件簇会挤成一团）；窄屏句中破折号隐去，与 Stationery 同规则
+- 移动端（≤640）条内只剩句子与场景指示：完整句子居中（星标、主题移入书签胶囊，见下），右端 Nº 实时报告当前场景（接 `$activeScene`），点开下拉场景菜单——TocSide 在此宽度不可用，这是移动端读中跳转的唯一入口。641–820 平板带保留缩略句 "I write — [tone]" + 右侧控件簇（完整句子与控件在该带宽下相撞）
+- 书签胶囊（BookmarkDock，≤640）：右下 ⋮ 圆钮接替回顶按钮，原地向上展开一节竖向胶囊——★ 只看收藏（计数角标）、主题循环（明→暗→跟随）、↑ 回顶；开合走 popover 原语，无遮罩；随 `$scrolled` 淡入，淡出作用在整个容器上（展开中的胶囊必须随之隐没）。641–820 仍是纯 ↑ 回顶钮
 - 不含 anchor slot：锚点切换频率极低，留在 Stationery
-- slot 与 Stationery 共享 store，双向同步；淡出时 `closeAllSlots()`
+- slot 与 Stationery 共享 store，双向同步；条淡出仅是 opacity，条内弹层随条一同隐没
 - 表面：近实纸底 + backdrop-filter。blur 仅在浮动工具栏成立（与内容分层）；TocSide 非工具栏故禁用。可读性不依赖 blur（规则 5）
-- 窄屏隐藏 mark 仅留句子。不做 TOC 快捷跳转（TocSide 已覆盖）
+- 窄屏隐藏 mark 仅留句子
 
 ### 4.7 PWA
 

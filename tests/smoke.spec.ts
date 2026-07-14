@@ -160,10 +160,17 @@ test('the Stationery language picker (cards view) filters by search', async ({ p
   await expect(panel.getByRole('button', { name: 'French' })).toBeVisible();
 });
 
-test('mobile grows a back-to-top button once scrolled', async ({ page }) => {
+test('mobile grows a bookmark capsule once scrolled — back to top inside', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 800 });
   await page.reload();
   await page.evaluate(() => window.scrollTo(0, 2400));
+
+  // ≤640 the BookmarkDock capsule replaces the bare back-to-top button;
+  // opening it also guards the popover detached-target regression (the
+  // trigger's icon swaps on toggle).
+  const trigger = page.getByRole('button', { name: 'Quick actions' });
+  await expect(trigger).toBeVisible();
+  await trigger.click();
 
   const btn = page.getByRole('button', { name: 'Back to top' });
   await expect(btn).toBeVisible();

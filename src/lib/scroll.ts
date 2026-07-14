@@ -15,6 +15,21 @@ let initialized = false;
  * Mirrors `scrolled` to body.classList so global CSS selectors can react
  * without each component subscribing.
  */
+/**
+ * Scroll the visible view's block for a scene into view. Both views carry
+ * data-scene on their blocks; offsetParent is null inside the hidden view,
+ * which picks the displayed one without view-aware logic.
+ */
+export function jumpToScene(id: string): void {
+  const all = document.querySelectorAll<HTMLElement>(`[data-scene="${id}"]`);
+  for (const el of all) {
+    if (el.offsetParent !== null) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+  }
+}
+
 export function initScrollListener(sceneSelector = '.scene-block'): () => void {
   if (typeof window === 'undefined') return () => {};
   if (initialized) return () => {};

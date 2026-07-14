@@ -1,13 +1,37 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import SlotPicker from './SlotPicker.svelte';
   import ViewToggle from './ViewToggle.svelte';
   import ThemeToggle from './ThemeToggle.svelte';
+  import BookmarkDock from './BookmarkDock.svelte';
   import { tone, speakerGender, addresseeGender, starred, starredOnly } from '../../lib/stores';
-  import { scrolled, initScrollListener } from '../../lib/scroll';
+  import { scrolled, activeScene, initScrollListener, jumpToScene } from '../../lib/scroll';
+  import { openPopover, togglePopover, closePopover, popover, menuKeys } from '../../lib/popover';
   import { toneOptions, speakerOptions, addresseeOptions } from '../../lib/slot-options';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
+  import scenes from '../../data/scenes.json';
   import ui from '../../content/ui/en.json';
+
+  // Nº indicator (mobile): reads the scene being read, opens the scene menu.
+  const NO_ID = 'stickybar-scenes';
+  const noOpen = $derived($openPopover === NO_ID);
+  let noEl = $state<HTMLElement>();
+  const activeRoman = $derived(
+    ((scenes.find((s) => s.id === $activeScene) ?? scenes[0])?.num ?? 'No. I').replace('No. ', ''),
+  );
+  // Keyboard activation drops focus onto the current scene's item.
+  async function onNoClick(e: MouseEvent) {
+    togglePopover(NO_ID);
+    if (openPopover.get() === NO_ID && e.detail === 0) {
+      await tick();
+      (noEl?.querySelector<HTMLElement>('.sb-toc-item.cur') ??
+        noEl?.querySelector<HTMLElement>('.sb-toc-item'))?.focus();
+    }
+  }
+  function pickScene(id: string) {
+    jumpToScene(id);
+    closePopover();
+  }
 
   function setTone(t: ToneFilter) {
     tone.set(t);
@@ -59,10 +83,40 @@
       />
     </span>
   </div>
+  <!-- mobile-only (≤640): current-scene indicator doubling as the scene
+       menu — the narrow bar's replacement for TocSide -->
+  <span class="sb-no-wrap" use:popover={NO_ID} bind:this={noEl}>
+    <button
+      class="sb-no"
+      type="button"
+      aria-haspopup="menu"
+      aria-expanded={noOpen}
+      aria-label={`Scenes — reading Nº ${activeRoman}`}
+      onclick={onNoClick}
+    >
+      Nº {activeRoman}<span class="sb-no-caret" aria-hidden="true">▾</span>
+    </button>
+    {#if noOpen}
+      <div class="sb-toc" role="menu" aria-label="Scenes" use:menuKeys>
+        {#each scenes as S (S.id)}
+          <button
+            type="button"
+            role="menuitem"
+            class="sb-toc-item"
+            class:cur={S.id === $activeScene}
+            onclick={() => pickScene(S.id)}
+          >
+            <i>{S.num.replace('No. ', '')}.</i><span>{S.title}</span>
+          </button>
+        {/each}
+      </div>
+    {/if}
+  </span>
   <div class="sb-controls">
     {#if $starred.length > 0}
-      <!-- the "Starred only" filter's only entry — starring happens
-           mid-scroll, so the filter rides the toolbar -->
+      <!-- the "Starred only" filter's only entry (≥640; the BookmarkDock
+           carries it below) — starring happens mid-scroll, so the filter
+           rides the toolbar -->
       <button
         class="sb-star"
         type="button"
@@ -87,10 +141,12 @@
 </div>
 
 <!-- Mobile's route back to the seal: ≤820 hides the bar's mark (the desktop
-     back-to-top), so a quiet paper button takes over, thumb-side. -->
+     back-to-top), so a quiet paper button takes over, thumb-side. At ≤640
+     the BookmarkDock capsule absorbs it (back-to-top is its last segment). -->
 <button class="back-top" class:on={$scrolled} onclick={backToTop} aria-label="Back to top">
   ↑
 </button>
+<BookmarkDock />
 
 <style>
   .sticky-bar {
@@ -180,6 +236,112 @@
    * row; the media query below can then drop the whole extension at once. */
   .sb-ext {
     display: contents;
+  }
+
+  /* —— Nº scene indicator + menu (mobile-only; desktop has TocSide) —— */
+  .sb-no-wrap {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .sb-no {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--gold-ink);
+    padding: 4px 2px;
+    white-space: nowrap;
+    transition: color var(--dur-hover) var(--ease-out);
+  }
+  .sb-no:hover {
+    color: var(--accent);
+  }
+  .sb-no:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .sb-no-caret {
+    font-size: 8px;
+    font-style: normal;
+    color: var(--ink-mute);
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  .sb-toc {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 216px;
+    max-height: min(60vh, 430px);
+    overflow-y: auto;
+    background: var(--paper-up);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 7px 0;
+    box-shadow:
+      var(--paper-edge),
+      0 18px 40px -20px rgba(31, 26, 20, 0.35),
+      0 0 0 1px var(--line-soft);
+    animation: sb-toc-in 0.2s ease;
+  }
+  @keyframes sb-toc-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+  .sb-toc::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 22px;
+    width: 8px;
+    height: 8px;
+    background: var(--paper-up);
+    transform: rotate(45deg);
+    border-left: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+  }
+  .sb-toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 7px 16px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: all 0.15s ease;
+  }
+  .sb-toc-item i {
+    font-style: italic;
+    font-size: 11.5px;
+    color: var(--gold-ink);
+    min-width: 2.4em;
+    text-align: right;
+    letter-spacing: 0.06em;
+  }
+  .sb-toc-item:hover {
+    background: rgba(176, 82, 46, 0.08);
+    color: var(--ink);
+  }
+  .sb-toc-item:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+  .sb-toc-item.cur,
+  .sb-toc-item.cur i {
+    color: var(--accent);
   }
 
   /* Right-anchored controls cluster — Theme + View toggles. Absolute so
@@ -299,12 +461,6 @@
     .sb-sep {
       display: none;
     }
-    /* The full sentence collides with the right-side controls on narrow
-     * screens — fall back to "I write — [tone]"; the complete slots stay
-     * available in the Stationery. */
-    .sb-ext {
-      display: none;
-    }
     .sticky-bar {
       gap: 14px;
       padding: 10px 18px;
@@ -316,39 +472,40 @@
       right: 18px;
     }
   }
-  @media (max-width: 640px) {
-    /* Symmetric composition: star pinned left, theme toggle pinned right,
-       sentence truly centered between them. sb-controls dissolves
-       (display: contents) so its children can pin to the bar itself. */
-    .sticky-bar {
-      padding: 10px 14px;
-      justify-content: center;
-      gap: 10px;
-    }
-    /* one line, always: only "I write [tone]" + star + theme toggle remain
-       at this width (ViewToggle hides <640), and a two-line bar ate a
-       quarter of a phone screen */
-    .sb-prose {
-      font-size: 13px;
-      gap: 4px;
-    }
-    .sb-prose .punct.dash {
+  /* The full sentence collides with the right-side controls in the tablet
+   * band only — there it falls back to "I write — [tone]". At ≤640 the
+   * controls leave the bar (BookmarkDock), so the sentence completes again. */
+  @media (max-width: 820px) and (min-width: 641px) {
+    .sb-ext {
       display: none;
     }
-    .sb-controls {
-      display: contents;
+  }
+  @media (max-width: 640px) {
+    /* The bar becomes sentence + Nº: the full desktop sentence centered,
+       the scene indicator pinned right; star and theme move to the
+       BookmarkDock capsule, thumb-side. */
+    .sticky-bar {
+      padding: 10px 52px 10px 10px;
+      justify-content: center;
+      gap: 8px;
+    }
+    .sb-prose {
+      font-size: 12.5px;
+      gap: 3px;
     }
     .sb-star {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
+      display: none;
     }
     .sticky-bar :global(.theme-toggle) {
-      position: absolute;
-      right: 14px;
-      top: 50%;
-      transform: translateY(-50%);
+      display: none;
+    }
+    .sb-no-wrap {
+      display: inline-block;
+    }
+  }
+  @media (max-width: 640px) {
+    .back-top {
+      display: none; /* the BookmarkDock capsule carries back-to-top here */
     }
   }
 </style>
