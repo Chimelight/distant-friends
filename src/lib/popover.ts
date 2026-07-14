@@ -22,6 +22,10 @@ let wired = false;
 function onDocClick(e: MouseEvent) {
   const id = openPopover.get();
   if (!id) return;
+  // A trigger whose inner DOM swaps on toggle (icon change) detaches the
+  // clicked node before the event reaches us — a detached target is not
+  // an outside click, it's the trigger mid-re-render.
+  if (!(e.target as Node).isConnected) return;
   const root = roots.get(id);
   // Clicks inside the root (trigger or panel) keep it open; a click on
   // another popover's trigger has already re-pointed the store by the time

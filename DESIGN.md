@@ -175,6 +175,7 @@ I write — [in any tone] — to [a friend], as [myself].
 - ⚠️ 禁止回退到各组件自挂 document 监听 + stopPropagation——会出现双层同开、Esc 后焦点落 body
 - popover id 须实例唯一（同名 slot 在 Stationery 与 StickyBar 各一份）
 - 弹层条件挂载（`{#if}`），禁止 `visibility:hidden` 常驻——曾致 ~1200 个隐藏按钮驻留 DOM 且需全套 tabindex 管理
+- ⚠️ 已摘除的点击 target 不算外部点击：触发钮内部若随开合切换图标（`{#if}`），被点的节点在事件冒泡到 document 前已离开 DOM，`contains` 判 false 会让弹层开了即关——外点检测必须先排除 `!target.isConnected`
 
 ## 5. 设计系统
 
