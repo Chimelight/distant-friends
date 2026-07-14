@@ -289,6 +289,9 @@
     padding: 10px 10px;
     margin: 0 -10px;
     border-radius: 3px;
+    /* feed this wrapper padding into VariantRow's geometry tokens so the
+       control cluster stays centered on the entry line here too */
+    --v-lead: 10px;
   }
 
   /* Cards container is always 720px max — no width jump at any viewport

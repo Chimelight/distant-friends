@@ -51,9 +51,9 @@
 
 <style>
   .speak {
-    position: absolute;
-    top: 34px;
-    inset-inline-end: 10px;
+    /* flows inside the consumer's control cluster; relative only so the
+       ::before ink halo has an anchor */
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;

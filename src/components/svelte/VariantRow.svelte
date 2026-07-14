@@ -88,8 +88,14 @@
       </div>
     {/if}
   </button>
-  <span class="copy-hint" aria-hidden="true"></span>
-  <SpeakButton text={variant.text} langCode={langCode} />
+  <!-- one control cluster, centered on the entry's first line: the copy
+       hint and the speaker belong to the entry, not to the cell's box —
+       stacking them against fixed offsets left the speaker pinned to the
+       bottom rule whenever a variant had no rom/meta below. -->
+  <span class="controls">
+    <span class="copy-hint" aria-hidden="true"></span>
+    <SpeakButton text={variant.text} langCode={langCode} />
+  </span>
 </div>
 
 <style>
@@ -98,6 +104,13 @@
     width: 100%;
     position: relative;
     transition: background 0.2s ease;
+    /* geometry tokens — the copy block, the entry type and the control
+       cluster all derive from these; the cards view contributes its extra
+       wrapper padding through --v-lead */
+    --v-pad-block: 15px;
+    --v-lead: 0px;
+    --entry-size: calc(19px * var(--script-scale, 1));
+    --entry-leading: 1.32;
   }
   /* copied: a gold line draws itself under the ink, left to right (from the
      right in RTL text), then retracts when the copied state lapses */
@@ -124,7 +137,7 @@
   .copy {
     display: block;
     width: calc(100% - 48px);
-    padding-block: 15px;
+    padding-block: var(--v-pad-block);
     padding-inline: 22px 0;
     cursor: pointer;
     font-family: inherit;
@@ -159,9 +172,9 @@
     /* entry role: a touch above auto optical size — more stroke contrast
        without display-cut fragility at reading size */
     font-variation-settings: var(--opsz-entry);
-    font-size: calc(19px * var(--script-scale, 1));
+    font-size: var(--entry-size);
     color: var(--ink);
-    line-height: 1.32;
+    line-height: var(--entry-leading);
     letter-spacing: 0.003em;
   }
   .variant-rom {
@@ -189,11 +202,20 @@
   .meta-sep {
     color: var(--gold-ink);
   }
+  /* rides the entry's first line: as tall as one entry line box, contents
+     vertically centered on it — the same geometry whatever the variant
+     stacks below (rom, meta, or nothing) */
+  .controls {
+    position: absolute;
+    top: calc(var(--v-lead) + var(--v-pad-block));
+    inset-inline-end: calc(10px + var(--v-lead));
+    height: calc(var(--entry-size) * var(--entry-leading));
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
   /* copy-hint is an empty span; ::before swaps content based on .copied. */
   .copy-hint {
-    position: absolute;
-    top: 16px;
-    inset-inline-end: 18px;
     font-family: var(--font-sans);
     font-weight: var(--label-weight);
     font-size: var(--label-size);
