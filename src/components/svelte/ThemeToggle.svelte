@@ -1,20 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { theme, type ThemeMode } from '../../lib/stores';
-
-  /**
-   * Apply theme to <html data-theme>. 'system' means "no override" — we
-   * remove the attribute so the prefers-color-scheme media query in
-   * tokens.css drives the palette.
-   */
-  function applyTheme(t: ThemeMode) {
-    const root = document.documentElement;
-    if (t === 'light' || t === 'dark') {
-      root.dataset.theme = t;
-    } else {
-      delete root.dataset.theme;
-    }
-  }
+  import { theme } from '../../lib/stores';
+  import { applyTheme, switchTheme } from '../../lib/theme';
 
   onMount(() => {
     // Initial sync (Layout's FOUC script already set data-theme; this
@@ -23,35 +10,7 @@
     return theme.subscribe(applyTheme);
   });
 
-  /**
-   * Switch theme. Prefer the View Transitions API: a single GPU-composited
-   * crossfade that stays smooth no matter how many rows are on screen.
-   * Animation timing is tuned in global.css. Firefox falls back to a
-   * grouped CSS transition.
-   */
-  function set(t: ThemeMode) {
-    const reducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (reducedMotion) {
-      theme.set(t);
-      return;
-    }
-
-    const doc = document as Document & {
-      startViewTransition?: (cb: () => void) => unknown;
-    };
-    if (typeof doc.startViewTransition === 'function') {
-      doc.startViewTransition(() => theme.set(t));
-      return;
-    }
-
-    const root = document.documentElement;
-    root.classList.add('is-theme-changing');
-    theme.set(t);
-    window.setTimeout(() => root.classList.remove('is-theme-changing'), 500);
-  }
+  const set = switchTheme;
 </script>
 
 <div class="theme-toggle" role="group" aria-label="Color theme">
