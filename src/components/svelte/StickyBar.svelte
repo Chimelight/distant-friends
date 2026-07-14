@@ -3,7 +3,7 @@
   import SlotPicker from './SlotPicker.svelte';
   import ViewToggle from './ViewToggle.svelte';
   import ThemeToggle from './ThemeToggle.svelte';
-  import { tone, speakerGender, addresseeGender } from '../../lib/stores';
+  import { tone, speakerGender, addresseeGender, starred, starredOnly } from '../../lib/stores';
   import { scrolled, initScrollListener } from '../../lib/scroll';
   import { toneOptions, speakerOptions, addresseeOptions } from '../../lib/slot-options';
   import type { ToneFilter, GenderFilter } from '../../lib/filter';
@@ -59,6 +59,27 @@
     </span>
   </div>
   <div class="sb-controls">
+    {#if $starred.length > 0}
+      <!-- the "Starred only" filter's only entry — starring happens
+           mid-scroll, so the filter rides the toolbar -->
+      <button
+        class="sb-star"
+        type="button"
+        aria-pressed={$starredOnly}
+        aria-label={`${ui.filters.starredOnly} (${$starred.length})`}
+        onclick={() => starredOnly.set(!$starredOnly)}
+      >
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path
+            d="M8 1.8l1.86 3.92 4.14.55-3.04 2.98.76 4.27L8 11.46l-3.72 2.04.76-4.27L2 6.27l4.14-.55z"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span class="sb-star-n">{$starred.length}</span>
+      </button>
+    {/if}
     <ViewToggle />
     <ThemeToggle />
   </div>
@@ -171,6 +192,45 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
+  }
+  .sb-star {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 22px;
+    padding: 0 4px;
+    background: transparent;
+    border: none;
+    color: var(--gold-ink);
+    cursor: pointer;
+    transition: color var(--dur-hover) var(--ease-out);
+  }
+  .sb-star svg {
+    width: 12px;
+    height: 12px;
+    color: var(--gold);
+    fill: none;
+    transition: fill var(--dur-hover) var(--ease-out);
+  }
+  .sb-star-n {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+  }
+  .sb-star:hover {
+    color: var(--accent);
+  }
+  .sb-star:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .sb-star[aria-pressed='true'] {
+    color: var(--accent);
+  }
+  .sb-star[aria-pressed='true'] svg {
+    fill: currentColor;
+    color: var(--accent);
   }
   .sticky-bar :global(.view-toggle) {
     background: transparent;

@@ -4,7 +4,6 @@ import Masthead from '../components/astro/Masthead.astro';
 import Footer from '../components/astro/Footer.astro';
 
 import Stationery from '../components/svelte/Stationery.svelte';
-import StarFilter from '../components/svelte/StarFilter.svelte';
 import TocTop from '../components/svelte/TocTop.svelte';
 import TocSide from '../components/svelte/TocSide.svelte';
 import StickyBar from '../components/svelte/StickyBar.svelte';
@@ -25,18 +24,16 @@ PhrasesFile.parse(phrasesRaw);
 
 <Layout>
   {/* client:idle islands only matter after a scroll or an action (StickyBar/
-      TocSide appear past 420px; Toast/StarFilter follow a copy/star) — their
-      hydration can wait so first-paint bandwidth goes to fonts and content.
-      TocTop stays client:load: it is visible and clickable on the first
-      screen, and a dead first click costs more than its few KB. */}
+      TocSide appear past 420px; Toast follows a copy) — their hydration can
+      wait so first-paint bandwidth goes to fonts and content. TocTop stays
+      client:load: it is visible and clickable on the first screen, and a
+      dead first click costs more than its few KB. */}
   <StickyBar client:idle />
 
   <div class="shell">
     <Masthead />
 
     <Stationery client:load />
-
-    <StarFilter client:idle />
 
     <TocTop client:load />
 

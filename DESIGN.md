@@ -140,7 +140,7 @@ I write — [in any tone] — to [a friend], as [myself].
 - 译文格：变体行堆叠，行间虚线。行结构：Entry 大字、rom、tag line（仅 `tone=any` 时渲染 tone/gender 标签）、note、copy hint（hover 显现）。被筛空的格显示斜纹占位。卡片头复用锚点列三层结构，语言块顺序镜像列序
 - 复制：主操作，整行可点。复制纯 `text`（不含 rom / tag / note）；成功 = 行内 `✓ copied` + Toast；失败 fallback `execCommand`。`role="button"` + `aria-label`，键盘可触发。⚠️ `.copy-hint` 必须为空 span，文字经 `::before content` 切换——innerText 与 ::before 并存会重叠
 - TTS（SpeakButton）：非主交互。`speechSynthesis`，BCP-47 取 `languages.json[lang].tts`；voice 匹配：精确 → 同语种前缀回退，按质量启发式排序；无可用 voice 或无 tts code → 按钮不渲染（规则 2）
-- 收藏（StarButton）：锚点列右上，两视图同位；`$starred: Set<phraseId>` 持久化；有收藏时显示 "Starred only" 过滤 chip（chip 状态会话级）；收藏粒度为短语级
+- 收藏（StarButton）：锚点列右上，两视图同位；`$starred: Set<phraseId>` 持久化；收藏粒度为短语级。"只看收藏"过滤的唯一入口在 StickyBar（★+计数开关，有收藏时渲染）——收藏动作发生在滚动途中，入口随工具栏就位；页面正文不再放过滤控件。过滤状态会话级；最后一颗星被取消时自动解除过滤（守护在 stores 模块层，不依赖组件挂载）
 
 ### 4.5 TOC（TocTop / TocSide）
 

@@ -181,6 +181,8 @@ test('starring a phrase reveals the "Starred only" filter and narrows the grid',
   // the scene header grows a small gold tally of starred phrases
   await expect(page.locator('.view-desktop .scene-kept').first()).toHaveText(/1/);
 
+  // the filter lives in the StickyBar, which slides in after a scroll
+  await page.evaluate(() => window.scrollTo(0, 600));
   const filter = page.getByRole('button', { name: /Starred only/i });
   await expect(filter).toBeVisible();
 

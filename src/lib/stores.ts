@@ -63,6 +63,15 @@ export function toggleStar(phraseId: string): void {
 // "starred only" filter active would read as missing content.
 export const starredOnly = atom<boolean>(false);
 
+// If the last star is removed while the filter is on, lift the filter —
+// otherwise the page silently empties. Lives here (not in a component):
+// the StickyBar toggle is the only filter UI and it mounts lazily.
+if (typeof window !== 'undefined') {
+  starred.subscribe((list) => {
+    if (list.length === 0 && starredOnly.get()) starredOnly.set(false);
+  });
+}
+
 export const uiLocale = persistentAtom<string>('distant-friends:uiLocale:v1', 'en');
 
 function ensureSelectedLangsInitialized(): void {
