@@ -120,6 +120,12 @@
           <span class="scene-rule"></span>
         </div>
         <div class="table-wrap">
+          <!-- Rides the scroll to mask the breathing gap between the
+               StickyBar and the stuck header (rows used to show through
+               that slit). At rest it hides UNDER the opaque header cells
+               (z below thead); once the header sticks it sits in the gap,
+               painting desk over whatever scrolls past. -->
+          <div class="gap-mask" aria-hidden="true"></div>
           <table class="phrase-table">
             <colgroup>
               <col style={`width:${anchorColPct}%`} />
@@ -267,6 +273,17 @@
     /* not `hidden`: an overflow container would break the sticky header */
     overflow: visible;
     position: relative;
+  }
+  .gap-mask {
+    position: sticky;
+    /* spans from under the StickyBar's bottom edge (bar ≥40px tall at any
+       width) down to the header's 58px stick offset */
+    top: 40px;
+    height: 18px;
+    margin-bottom: -18px;
+    background: var(--bg);
+    /* above passing rows, below the header cells (5) and corner marks (6) */
+    z-index: 4;
   }
   .table-wrap::before,
   .table-wrap::after {
