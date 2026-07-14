@@ -72,7 +72,9 @@
 </script>
 
 <div class="lang-line">
-  <em>{ui.stationery.langsLead}</em>
+  <!-- unbreakable lead: when the line wraps, the break must fall before
+       the language list, never inside "for friends who read" -->
+  <em class="lead">{ui.stationery.langsLead}</em>
   <!-- Wrapper (not a button) keeps the trigger and the menu buttons as
        siblings — no nested interactive controls. -->
   <span class="picker" use:popover={PICKER_ID} bind:this={pickerEl}>
@@ -132,6 +134,19 @@
     margin: 0 0 6px;
     color: var(--ink-soft);
     letter-spacing: 0.005em;
+    text-wrap: balance; /* even lines when the language list wraps (mobile) */
+  }
+
+  .lead {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .lang-line {
+      font-size: 18px;
+      line-height: 1.55;
+      margin-bottom: 10px; /* strophe rhythm, matching Stationery .prose */
+    }
   }
 
   .picker {

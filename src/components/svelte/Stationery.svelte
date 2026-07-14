@@ -57,7 +57,10 @@
   <p class="prose">
     <span class="tie">
       <em>{ui.stationery.iWrite}</em>
-      <span class="punct">—</span>
+      <!-- .dash: the em-dash pair is a one-line rhetorical pause; once the
+           sentence wraps (mobile) a dash dangling at a line end reads as a
+           strikethrough, so narrow screens drop the pair -->
+      <span class="punct dash">—</span>
     </span>
     <span class="tie">
       <SlotPicker
@@ -66,7 +69,7 @@
         value={$tone}
         onChange={setTone}
       />
-      <span class="punct">—</span>
+      <span class="punct dash">—</span>
     </span>
     <span class="tie">
       <em>{ui.stationery.to}</em>
@@ -107,6 +110,9 @@
     margin: 0 0 6px;
     color: var(--ink-soft);
     letter-spacing: 0.005em;
+    /* when the sentence must wrap (mobile), break it into even lines
+       instead of a long line + orphan ("as myself ." used to sit alone) */
+    text-wrap: balance;
   }
   .prose:last-child {
     margin-bottom: 0;
@@ -120,12 +126,22 @@
   .prose .punct {
     color: var(--ink-mute);
   }
+  /* pull sentence punctuation back toward the slot it follows — the slot's
+     hover padding + caret otherwise leave the period floating mid-air */
+  .prose :global(.slot-wrap + .punct) {
+    margin-left: -5px;
+  }
   @media (max-width: 640px) {
     .stationery {
-      margin-top: 40px;
+      margin-top: 32px;
     }
     .prose {
-      line-height: 1.8;
+      font-size: 18px;
+      line-height: 1.55;
+      margin-bottom: 10px; /* the three sentences read as strophes, not one blob */
+    }
+    .prose .punct.dash {
+      display: none;
     }
   }
 </style>

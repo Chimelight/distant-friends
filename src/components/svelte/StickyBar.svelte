@@ -32,7 +32,8 @@
   <span class="sb-sep" aria-hidden="true"></span>
   <div class="sb-prose">
     <em>{ui.stationery.iWrite}</em>
-    <span class="punct">—</span>
+    <!-- .dash: dropped on narrow screens, same as the Stationery's pair -->
+    <span class="punct dash">—</span>
     <SlotPicker
       name="tone"
       options={toneOptions}
@@ -316,15 +317,38 @@
     }
   }
   @media (max-width: 640px) {
+    /* Symmetric composition: star pinned left, theme toggle pinned right,
+       sentence truly centered between them. sb-controls dissolves
+       (display: contents) so its children can pin to the bar itself. */
     .sticky-bar {
       padding: 10px 14px;
+      justify-content: center;
+      gap: 10px;
     }
-    /* one line, always: only "I write — [tone]" + the theme toggle remain
+    /* one line, always: only "I write [tone]" + star + theme toggle remain
        at this width (ViewToggle hides <640), and a two-line bar ate a
        quarter of a phone screen */
     .sb-prose {
       font-size: 13px;
       gap: 4px;
+    }
+    .sb-prose .punct.dash {
+      display: none;
+    }
+    .sb-controls {
+      display: contents;
+    }
+    .sb-star {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .sticky-bar :global(.theme-toggle) {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 </style>

@@ -146,7 +146,7 @@ I write — [in any tone] — to [a friend], as [myself].
 
 两形态互斥，共享 `$scrolled` 阈值（`src/lib/scroll.ts`）。
 
-- TocTop：首屏横向目录，文档流内；Roman 编号 + 场景名（Index 角色）；点击平滑滚动；scrolled 后淡出但保留占位（防跳动）；移动端 flex-wrap
+- TocTop：首屏横向目录，文档流内；Roman 编号 + 场景名（Index 角色）；点击平滑滚动；scrolled 后淡出但保留占位（防跳动）；移动端不折行——与桌面同一条索引行，单行横滑，两端渐隐提示溢出（任何折行排布都会把条目打散成噪音；渐隐是 mask 增强，不承重）
 - TocSide：fixed 右侧垂直居中，锚定 shell 右内缘。显隐（阈值以 `TocSide.svelte` 为准）：cards 视图 scrolled 且 ≥640；table 视图 scrolled 且 ≥1024（更窄会挤压末列）；再窄隐藏，由回顶钮兜底
 - 静息态：无背景无边框，Roman 数字 + 竖向 rail + 阅读进度线；展开态：实纸面板 `--surface-toc-panel`（半透明会与下层表格文字透叠）；禁用 backdrop-filter
 - 展开仅由 hover / focus 触发，滚动不展开——展开面板与表格末列在常见视口必然重叠；active 场景三重标识：编号 accent、场景名加重、短横线
@@ -154,7 +154,8 @@ I write — [in any tone] — to [a friend], as [myself].
 
 ### 4.6 StickyBar
 
-- scrolled 后顶部淡入：mark（点击回顶）+ 缩略 Stationery（tone / addressee / speaker）
+- scrolled 后顶部淡入：mark（点击回顶）+ 缩略 Stationery（tone / addressee / speaker）+ 星标过滤开关（见 §4.4）
+- 移动端布局对称三段：星标开关钉左缘、句子居中、主题切换钉右缘（居中句子挨着右锚控件簇会挤成一团）；窄屏句中破折号隐去，与 Stationery 同规则
 - 不含 anchor slot：锚点切换频率极低，留在 Stationery
 - slot 与 Stationery 共享 store，双向同步；淡出时 `closeAllSlots()`
 - 表面：近实纸底 + backdrop-filter。blur 仅在浮动工具栏成立（与内容分层）；TocSide 非工具栏故禁用。可读性不依赖 blur（规则 5）
