@@ -120,12 +120,6 @@
           <span class="scene-rule"></span>
         </div>
         <div class="table-wrap">
-          <!-- Rides the scroll to mask the breathing gap between the
-               StickyBar and the stuck header (rows used to show through
-               that slit). At rest it hides UNDER the opaque header cells
-               (z below thead); once the header sticks it sits in the gap,
-               painting desk over whatever scrolls past. -->
-          <div class="gap-mask" aria-hidden="true"></div>
           <table class="phrase-table">
             <colgroup>
               <col style={`width:${anchorColPct}%`} />
@@ -274,17 +268,6 @@
     overflow: visible;
     position: relative;
   }
-  .gap-mask {
-    position: sticky;
-    /* spans from under the StickyBar's bottom edge (bar ≥40px tall at any
-       width) down to the header's 58px stick offset */
-    top: 40px;
-    height: 18px;
-    margin-bottom: -18px;
-    background: var(--bg);
-    /* above passing rows, below the header cells (5) and corner marks (6) */
-    z-index: 4;
-  }
   .table-wrap::before,
   .table-wrap::after {
     content: "";
@@ -403,10 +386,12 @@
     text-align: start;
     padding: 17px 22px;
     border-bottom: 1px solid var(--line);
-    /* Sticky a comfortable gap below the StickyBar (~44px) so the column
-       languages stay visible while reading — with breathing room, not flush. */
+    /* Sticks flush against the StickyBar's bottom edge (one shared token):
+       an air gap here was tried and reverted — it was a viewport-anchored
+       slit that scrolling rows showed through, and masking it took a
+       dedicated cover element. */
     position: sticky;
-    top: 58px;
+    top: var(--stickybar-h);
     z-index: 5;
     background: var(--paper);
   }

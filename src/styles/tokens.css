@@ -79,6 +79,12 @@
   --label-weight:  500;
   --label-track:   0.2em;
 
+  /* —— fixed chrome —— */
+  /* StickyBar's exact height (border included): the bar enforces it and the
+   * table header sticks flush against it — one number, no seam for content
+   * to show through. */
+  --stickybar-h: 45px;
+
   /* —— motion —— */
   --dur-hover:    120ms;
   --dur-switch:   240ms;

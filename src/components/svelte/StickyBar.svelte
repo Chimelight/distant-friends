@@ -159,7 +159,9 @@
     backdrop-filter: saturate(1.2) blur(14px);
     -webkit-backdrop-filter: saturate(1.2) blur(14px);
     border-bottom: 1px solid var(--line);
-    padding: 10px 24px;
+    box-sizing: border-box;
+    height: var(--stickybar-h); /* enforced: the table header sticks flush */
+    padding-inline: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -463,7 +465,7 @@
     }
     .sticky-bar {
       gap: 14px;
-      padding: 10px 18px;
+      padding-inline: 18px;
     }
     .sb-prose {
       font-size: 14px;
@@ -485,7 +487,7 @@
        the scene indicator pinned right; star and theme move to the
        BookmarkDock capsule, thumb-side. */
     .sticky-bar {
-      padding: 10px 52px 10px 10px;
+      padding-inline: 10px 52px;
       justify-content: center;
       gap: 8px;
     }
