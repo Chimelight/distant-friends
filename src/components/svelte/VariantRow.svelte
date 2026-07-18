@@ -50,77 +50,69 @@
     copiedTimer = window.setTimeout(() => (copied = false), 1400);
   }
 
-  function onKey(e: KeyboardEvent) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      onClick();
-    }
-  }
 </script>
 
-<!-- Two plain grid columns: the copy button (text stack + copy mark) and
-     the speaker. Nothing overlays anything — text wraps in its own column,
-     the icons ride the entry's first line by ordinary flow. The copy mark
-     lives inside the button (decorative span), so pressing it copies. -->
-<div class="variant" class:copied>
-  <button
-    class="copy"
-    type="button"
-    aria-label={`Copy ${variant.text}`}
-    onclick={onClick}
-    onkeydown={onKey}
-  >
-    <span class="stack">
-      <!-- langCode stays the dataset code (SpeakButton matches TTS voices on
-           it); the lang attribute needs the valid BCP-47 tag. -->
-      <span class="variant-text" lang={langTagOf(langCode)} dir="auto">
-        <!-- inline span so the copied underline hugs the ink, not the cell -->
-        <span class="ink-u">{variant.text}</span>
-      </span>
-      {#if variant.rom}
-        <span class="variant-rom">{variant.rom}</span>
-      {/if}
-      <!-- one annotation voice: tag and note share a line and a register,
-           instead of stacking two differently-styled rows -->
-      {#if tagText || variant.note}
-        <span class="variant-meta">
-          {#if tagText}<span>{tagText}</span>{/if}
-          {#if tagText && variant.note}<span class="meta-sep" aria-hidden="true"> · </span>{/if}
-          {#if variant.note}<span>{variant.note}</span>{/if}
-        </span>
-      {/if}
-    </span>
-    <!-- copy affordance: an icon in the speaker's stroke language, not a
-         text label (a label reads as its own button). Copied state swaps
-         it for an accent check. -->
-    <span class="copy-mark" aria-hidden="true">
-      {#if copied}
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3.2 8.6l3.2 3.2 6.4-7" />
-        </svg>
-      {:else}
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
-          <rect x="5.7" y="5.7" width="7.6" height="7.6" rx="1" />
-          <path d="M10.4 2.8H4.1a1.3 1.3 0 0 0-1.3 1.3v6.3" stroke-linecap="round" />
-        </svg>
-      {/if}
+<!-- Two levels, one grid: level 1 is the entry line — text and both icons
+     as grid siblings on the same row; level 2 is the annotation — rom and
+     meta each span the full row width beneath. The real <button> wraps only
+     the entry text (semantics + keyboard); the row div relays pointer
+     clicks to the same handler, so anywhere in the cell copies. Its native
+     Enter/Space click bubbles here too — one handler, one path. -->
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+<div class="variant" class:copied onclick={onClick}>
+  <button class="copy" type="button" aria-label={`Copy ${variant.text}`}>
+    <!-- langCode stays the dataset code (SpeakButton matches TTS voices on
+         it); the lang attribute needs the valid BCP-47 tag. -->
+    <span class="variant-text" lang={langTagOf(langCode)} dir="auto">
+      <!-- inline span so the copied underline hugs the ink, not the cell -->
+      <span class="ink-u">{variant.text}</span>
     </span>
   </button>
+  <!-- copy affordance: an icon in the speaker's stroke language, not a
+       text label (a label reads as its own button). Copied state swaps
+       it for an accent check. -->
+  <span class="copy-mark" aria-hidden="true">
+    {#if copied}
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3.2 8.6l3.2 3.2 6.4-7" />
+      </svg>
+    {:else}
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+        <rect x="5.7" y="5.7" width="7.6" height="7.6" rx="1" />
+        <path d="M10.4 2.8H4.1a1.3 1.3 0 0 0-1.3 1.3v6.3" stroke-linecap="round" />
+      </svg>
+    {/if}
+  </span>
   <span class="speak-slot">
     <SpeakButton text={variant.text} langCode={langCode} />
   </span>
+  {#if variant.rom}
+    <span class="variant-rom">{variant.rom}</span>
+  {/if}
+  <!-- one annotation voice: tag and note share a line and a register,
+       instead of stacking two differently-styled rows -->
+  {#if tagText || variant.note}
+    <span class="variant-meta">
+      {#if tagText}<span>{tagText}</span>{/if}
+      {#if tagText && variant.note}<span class="meta-sep" aria-hidden="true"> · </span>{/if}
+      {#if variant.note}<span>{variant.note}</span>{/if}
+    </span>
+  {/if}
 </div>
 
 <style>
   .variant {
-    /* two ordinary columns: [copy button] [speaker]; the icons ride the
-       entry's first line through flow alone (each icon box is exactly one
-       entry line tall, contents centered) — no overlays, no reserves */
+    /* level 1 = row one: [entry text][copy mark][speaker], all siblings;
+       level 2 = rows below: rom and meta spanning the full width. Icons
+       ride the entry's first line through flow alone — each icon box is
+       exactly one entry line tall, contents centered. */
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    column-gap: 10px;
     align-items: start;
-    width: 100%;
+    padding: var(--v-pad-block) 10px var(--v-pad-block) 22px;
     position: relative;
+    cursor: pointer;
     transition: background 0.2s ease;
     --v-pad-block: 15px;
     --entry-size: calc(19px * var(--script-scale, 1));
@@ -150,22 +142,15 @@
   }
 
   .copy {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start;
-    gap: 0 10px;
-    padding-block: var(--v-pad-block);
-    padding-inline: 22px 0;
+    display: block;
+    min-width: 0;
+    padding: 0;
     cursor: pointer;
     font-family: inherit;
     text-align: start;
     background: transparent;
     border: none;
     color: inherit;
-  }
-  .stack {
-    display: block;
-    min-width: 0;
   }
   /* a short tick between variants, not a full-width dashed rule — the
      stacked variants read as one cell with light punctuation, less grid */
@@ -201,6 +186,7 @@
   }
   .variant-rom {
     display: block;
+    grid-column: 1 / -1; /* annotation level: full row width */
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 12.5px;
@@ -210,6 +196,7 @@
   }
   .variant-meta {
     display: block;
+    grid-column: 1 / -1; /* annotation level: full row width */
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 12px;
@@ -244,8 +231,6 @@
     display: inline-flex;
     align-items: center;
     height: var(--entry-line);
-    margin-block-start: var(--v-pad-block);
-    margin-inline-end: 10px;
   }
   .copy-mark svg {
     width: 15px;

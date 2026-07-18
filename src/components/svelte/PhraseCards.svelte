@@ -286,7 +286,9 @@
     color: var(--ink-mute);
   }
   .lang-block :global(.variant) {
-    padding: 10px 10px;
+    /* the row's own padding (15/22/10) plus this block's 10px frame,
+       written out — the negative margin keeps the hover surface full-bleed */
+    padding: 25px 20px 25px 32px;
     margin: 0 -10px;
     border-radius: 3px;
   }
